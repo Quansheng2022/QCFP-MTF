@@ -1,0 +1,23 @@
+{
+  "generated_at": "2026-08-26 21:05:47",
+  "stock": "01951",
+  "validation": {
+    "status": "HALTED",
+    "triggered": [
+      "ledger_failure"
+    ],
+    "degraded_metrics": {
+      "wave_capture_trend": 1.0,
+      "false_entry_rate": 0.0,
+      "slippage_ratio": 1.0,
+      "mfe_bias": 0.0,
+      "mae_bias": 0.0,
+      "permission_flip_rate": 0.0,
+      "liquidity_flag": "LIQUIDITY_OK"
+    },
+    "recommendations": [
+      "HALTED：禁止产生任何新交易决策，先人工排查",
+      "台账完整性异常：立即审计 qcfp_decision_ledger"
+    ]
+  }
+}

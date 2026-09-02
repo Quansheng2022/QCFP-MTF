@@ -1,0 +1,35 @@
+{
+  "decision_id": "01951_2026-08-21",
+  "input_hash": "ce905b0325ef9822",
+  "decision_hash": "358edd2d4d47db89",
+  "certificate_hash": "358edd2d4d47db89",
+  "ledger_hash": "358edd2d4d47db89",
+  "chain": [
+    "input:ce905b0325ef9822",
+    "decision:358edd2d4d47db89",
+    "certificate:358edd2d4d47db89",
+    "ledger:358edd2d4d47db89"
+  ],
+  "status": "VERIFIED",
+  "reasons": [],
+  "diffs": [],
+  "ledger_present": true,
+  "source": "ledger:shadow_20260826_134659（正式事实源）",
+  "decision_date": "2026-08-21",
+  "generated_at": "2026-08-26 18:53:43",
+  "ledger_fingerprint": "358edd2d4d47db89",
+  "ledger_final_target": 0.0,
+  "ledger_run_id": "shadow_20260826_134659",
+  "drift": {
+    "input_fingerprint": {
+      "ledger": "d8b39be270b77429",
+      "replay": "e39b295009cef772",
+      "drifted": true
+    },
+    "settings_hash": {
+      "ledger": "530277372928",
+      "replay": "e8f1e2d6a720",
+      "drifted": true
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "stability_score": 84.44,
+  "permission_flip_rate": 0.4667,
+  "fsm_flip_rate": 0.0,
+  "exit_flip_rate": 0.0,
+  "position_sensitivity": 0.0,
+  "base_target": 0.0,
+  "n_perturbations": 30
+}

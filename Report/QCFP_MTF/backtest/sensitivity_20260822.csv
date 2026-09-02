@@ -1,0 +1,4 @@
+﻿variant,c_threshold,recovery,annualized_return,sharpe,max_drawdown,annual_turnover,01951_wave_return,01951_wave_pos_weeks,01951_wave_weeks
+C0.5,0.5,0,-0.005836,-0.0224,-0.239691,1.0521,0.0,0,39
+C0.5+RECOVERY,0.5,1,0.001242,0.0611,-0.240193,1.2052,0.0,0,39
+C0.5+RECOVERY2,0.5,2,-0.025208,-0.1244,-0.384769,1.7195,0.334146,10,39

@@ -1,0 +1,7 @@
+{
+  "static": false,
+  "golden_corpus": false,
+  "replay": false,
+  "research": false,
+  "safety_failure_injection": false
+}

@@ -1,0 +1,52 @@
+改进导入周k线分析数据程序，处理布尔数据类型。重建数据字典。
+
+将这些列转换成布尔类型：  EMA_Golden_Cross EMA_Death_Cross Golden_Triangle Death_Triangle MACD_Golden_Cross MACD_Death_Cross
+bottom_signal_cond top_signal_cond bottom_entry_signal_cond top_exit_signal_cond continuation_signal_cond decline_continuation_cond accumulation_cond distribution_cond multi_timeframe_chip_confirm_bottom_cond multi_timeframe_chip_confirm_top_cond"
+
+生成数据字典的核心要求清单
+#	要求	优先级
+1	从数据库读取表结构	🔴 必须
+2	包含所有字段	🔴 必须
+3	自动检测布尔列	🔴 必须
+4	智能生成描述	🟡 重要
+5	统计空值和示例	🟡 重要
+6	版本管理和备份	🟢 建议
+7	自动生成	🔴 必须
+8	错误处理	🔴 必须
+
+参考关键代码逻辑
+def create_data_dictionary(conn, csv_files):
+    # 1. 验证表存在
+    if not table_exists(conn, 'hk_daily_kline_analysis'):
+        return
+    
+    # 2. 获取表结构
+    cursor.execute("PRAGMA table_info(hk_daily_kline_analysis)")
+    
+    # 3. 遍历每个字段
+    for col in table_columns:
+        # 3.1 检测布尔类型
+        is_boolean = detect_boolean_column(conn, col_name)
+        
+        # 3.2 生成描述
+        description = get_field_description(col_name)
+        
+        # 3.3 获取统计信息
+        null_count = get_null_count(conn, col_name)
+        
+        # 3.4 获取示例值
+        sample_value = get_sample_value(conn, col_name)
+        
+        # 3.5 构建字段定义
+        field_def = {
+            'name': col_name,
+            'type': col_type,
+            'description': description,
+            'null_count': null_count,
+            'sample_value': sample_value
+        }
+    
+    # 4. 保存JSON
+    with open(dict_path, 'w', encoding='utf-8') as f:
+        json.dump(data_dict, f, ensure_ascii=False, indent=2)
+		

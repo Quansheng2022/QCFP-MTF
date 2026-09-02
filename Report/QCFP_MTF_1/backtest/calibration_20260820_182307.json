@@ -1,0 +1,273 @@
+{
+  "generated_at": "20260820_182307",
+  "records": [
+    {
+      "fusion": {
+        "chip_confidence": {
+          "quarterly_chip_weight": 0.5
+        }
+      },
+      "backtest": {
+        "position_target": {
+          "REDUCE": 0.7
+        }
+      },
+      "n": 294,
+      "total_return": -0.092182,
+      "annualized_return": -0.01696,
+      "sharpe": -0.0568,
+      "max_drawdown": -0.343046,
+      "win_rate": 0.5,
+      "profit_factor": 0.9789,
+      "sortino": -0.092,
+      "calmar": -0.0494,
+      "annual_turnover": 0.6072
+    },
+    {
+      "fusion": {
+        "chip_confidence": {
+          "quarterly_chip_weight": 0.7
+        }
+      },
+      "backtest": {
+        "position_target": {
+          "REDUCE": 0.7
+        }
+      },
+      "n": 294,
+      "total_return": -0.092182,
+      "annualized_return": -0.01696,
+      "sharpe": -0.0568,
+      "max_drawdown": -0.343046,
+      "win_rate": 0.5,
+      "profit_factor": 0.9789,
+      "sortino": -0.092,
+      "calmar": -0.0494,
+      "annual_turnover": 0.6072
+    },
+    {
+      "fusion": {
+        "chip_confidence": {
+          "quarterly_chip_weight": 0.6
+        }
+      },
+      "backtest": {
+        "position_target": {
+          "REDUCE": 0.7
+        }
+      },
+      "n": 294,
+      "total_return": -0.092182,
+      "annualized_return": -0.01696,
+      "sharpe": -0.0568,
+      "max_drawdown": -0.343046,
+      "win_rate": 0.5,
+      "profit_factor": 0.9789,
+      "sortino": -0.092,
+      "calmar": -0.0494,
+      "annual_turnover": 0.6072
+    },
+    {
+      "fusion": {
+        "chip_confidence": {
+          "quarterly_chip_weight": 0.7
+        }
+      },
+      "backtest": {
+        "position_target": {
+          "REDUCE": 0.5
+        }
+      },
+      "n": 294,
+      "total_return": -0.105074,
+      "annualized_return": -0.019444,
+      "sharpe": -0.0916,
+      "max_drawdown": -0.330396,
+      "win_rate": 0.4898,
+      "profit_factor": 0.9662,
+      "sortino": -0.144,
+      "calmar": -0.0588,
+      "annual_turnover": 0.7879
+    },
+    {
+      "fusion": {
+        "chip_confidence": {
+          "quarterly_chip_weight": 0.5
+        }
+      },
+      "backtest": {
+        "position_target": {
+          "REDUCE": 0.5
+        }
+      },
+      "n": 294,
+      "total_return": -0.105074,
+      "annualized_return": -0.019444,
+      "sharpe": -0.0916,
+      "max_drawdown": -0.330396,
+      "win_rate": 0.4898,
+      "profit_factor": 0.9662,
+      "sortino": -0.144,
+      "calmar": -0.0588,
+      "annual_turnover": 0.7879
+    },
+    {
+      "fusion": {
+        "chip_confidence": {
+          "quarterly_chip_weight": 0.6
+        }
+      },
+      "backtest": {
+        "position_target": {
+          "REDUCE": 0.5
+        }
+      },
+      "n": 294,
+      "total_return": -0.105074,
+      "annualized_return": -0.019444,
+      "sharpe": -0.0916,
+      "max_drawdown": -0.330396,
+      "win_rate": 0.4898,
+      "profit_factor": 0.9662,
+      "sortino": -0.144,
+      "calmar": -0.0588,
+      "annual_turnover": 0.7879
+    },
+    {
+      "fusion": {
+        "chip_confidence": {
+          "quarterly_chip_weight": 0.5
+        }
+      },
+      "backtest": {
+        "position_target": {
+          "REDUCE": 0.3
+        }
+      },
+      "n": 294,
+      "total_return": -0.118793,
+      "annualized_return": -0.022119,
+      "sharpe": -0.1313,
+      "max_drawdown": -0.317736,
+      "win_rate": 0.4762,
+      "profit_factor": 0.9521,
+      "sortino": -0.2019,
+      "calmar": -0.0696,
+      "annual_turnover": 0.9686
+    },
+    {
+      "fusion": {
+        "chip_confidence": {
+          "quarterly_chip_weight": 0.6
+        }
+      },
+      "backtest": {
+        "position_target": {
+          "REDUCE": 0.3
+        }
+      },
+      "n": 294,
+      "total_return": -0.118793,
+      "annualized_return": -0.022119,
+      "sharpe": -0.1313,
+      "max_drawdown": -0.317736,
+      "win_rate": 0.4762,
+      "profit_factor": 0.9521,
+      "sortino": -0.2019,
+      "calmar": -0.0696,
+      "annual_turnover": 0.9686
+    },
+    {
+      "fusion": {
+        "chip_confidence": {
+          "quarterly_chip_weight": 0.7
+        }
+      },
+      "backtest": {
+        "position_target": {
+          "REDUCE": 0.3
+        }
+      },
+      "n": 294,
+      "total_return": -0.118793,
+      "annualized_return": -0.022119,
+      "sharpe": -0.1313,
+      "max_drawdown": -0.317736,
+      "win_rate": 0.4762,
+      "profit_factor": 0.9521,
+      "sortino": -0.2019,
+      "calmar": -0.0696,
+      "annual_turnover": 0.9686
+    }
+  ],
+  "walk_forward_oos": [
+    {
+      "window": "20210101-20240101",
+      "train_end": "2023-01-01",
+      "test_start": "2023-01-01",
+      "test_end": "2024-01-01",
+      "train_sharpe": -0.1084,
+      "n": 52,
+      "total_return": -0.133902,
+      "annualized_return": -0.133902,
+      "sharpe": -1.162,
+      "max_drawdown": -0.198781,
+      "win_rate": 0.4231,
+      "profit_factor": 0.6559,
+      "sortino": -1.6086,
+      "calmar": -0.6736,
+      "annual_turnover": 0.6467
+    },
+    {
+      "window": "20210101-20250101",
+      "train_end": "2024-01-01",
+      "test_start": "2024-01-01",
+      "test_end": "2025-01-01",
+      "train_sharpe": -0.3753,
+      "n": 52,
+      "total_return": 0.163422,
+      "annualized_return": 0.163422,
+      "sharpe": 1.1731,
+      "max_drawdown": -0.057386,
+      "win_rate": 0.4808,
+      "profit_factor": 1.6564,
+      "sortino": 2.9789,
+      "calmar": 2.8478,
+      "annual_turnover": 0.6067
+    },
+    {
+      "window": "20210101-20260101",
+      "train_end": "2025-01-01",
+      "test_start": "2025-01-01",
+      "test_end": "2026-01-01",
+      "train_sharpe": -0.0207,
+      "n": 52,
+      "total_return": 0.093751,
+      "annualized_return": 0.093751,
+      "sharpe": 1.117,
+      "max_drawdown": -0.059016,
+      "win_rate": 0.6731,
+      "profit_factor": 1.4658,
+      "sortino": 1.4761,
+      "calmar": 1.5886,
+      "annual_turnover": 0.3867
+    },
+    {
+      "window": "20210101-20260820",
+      "train_end": "2026-01-01",
+      "test_start": "2026-01-01",
+      "test_end": "2026-08-20",
+      "train_sharpe": 0.1156,
+      "n": 33,
+      "total_return": -0.12108,
+      "annualized_return": -0.184024,
+      "sharpe": -1.7237,
+      "max_drawdown": -0.205634,
+      "win_rate": 0.3636,
+      "profit_factor": 0.5525,
+      "sortino": -3.1116,
+      "calmar": -0.8949,
+      "annual_turnover": 0.8824
+    }
+  ]
+}

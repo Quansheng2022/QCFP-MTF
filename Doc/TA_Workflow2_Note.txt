@@ -1,0 +1,13 @@
+## Powershell profile
+# Add content to Windows Powershell profile. 
+Add-Content -Path $PROFILE -Value "`nSet-Location 'C:\Users\Quansheng\Documents\projects\TA_Workflow2\SQLiteDB'"
+. $PROFILE
+Get-Location
+
+
+## SQLite 未清除的预写日志文件及共享内存索引
+应用程序运行结束后，HK_Stock.db folder 中出现HK_Stock.db-wal 及HK_Stock.db-shm 文件
+
+清除方法：
+sqlite3 HK_Stock.db "PRAGMA wal_checkpoint(TRUNCATE);"
+ 

@@ -1,0 +1,11 @@
+﻿stock_code,data_type,rows,first_date,last_date,core_missing_rate,anomalies,grade,reasons
+01951,daily_kline,1761,2019-06-25,2026-08-19,0.0,0,A,
+01951,daily_moneyflow,1355,2021-02-03,2026-08-19,0.0,0,B,轻微缺失（核心 0.0% / 辅助 87.4%）
+01951,weekly_kline,373,2019-06-28,2026-08-14,0.0,0,A,
+01951,weekly_moneyflow,288,2021-02-05,2026-08-14,0.0,0,A,
+01951,monthly_kline,86,2019-06-30,2026-07-31,0.0,1,C,异常值 1 条（换手率越界 1）；核心缺失率 0.0% 或异常
+01951,monthly_moneyflow,68,2021-02-01,2026-07-31,0.0,0,A,
+01951,quarterly_kline,29,2019-06-30,2026-06-30,0.0,3,C,异常值 3 条（换手率越界 3）；核心缺失率 0.0% 或异常
+01951,quarterly_moneyflow,22,2021-03-31,2026-06-30,0.0,0,A,
+IDX,idx_hist,2860,2015-01-02,2026-08-19,0.0,0,B,轻微缺失（核心 0.0% / 辅助 13.7%）
+01951,institutional_holdings,32,2015/Q4,2026/Q2,0.0,0,A,

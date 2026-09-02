@@ -1,0 +1,116 @@
+{
+  "generated_at": "20260819_185549",
+  "model_version": "QCFP-MTF-2.1.1",
+  "records": [
+    {
+      "stock_code": "00700",
+      "data_type": "daily_kline",
+      "rows": 4091,
+      "first_date": "2010-01-04",
+      "last_date": "2026-08-19",
+      "core_missing_rate": 0.0,
+      "anomalies": 4,
+      "grade": "C",
+      "reasons": "异常值 4 条（负价格 4）；核心缺失率 0.0% 或异常"
+    },
+    {
+      "stock_code": "00700",
+      "data_type": "daily_moneyflow",
+      "rows": 1360,
+      "first_date": "2021-02-03",
+      "last_date": "2026-08-19",
+      "core_missing_rate": 0.0,
+      "anomalies": 0,
+      "grade": "B",
+      "reasons": "轻微缺失（核心 0.0% / 辅助 87.4%）"
+    },
+    {
+      "stock_code": "00700",
+      "data_type": "weekly_kline",
+      "rows": 867,
+      "first_date": "2010-01-08",
+      "last_date": "2026-08-14",
+      "core_missing_rate": 0.0,
+      "anomalies": 0,
+      "grade": "A",
+      "reasons": ""
+    },
+    {
+      "stock_code": "00700",
+      "data_type": "weekly_moneyflow",
+      "rows": 289,
+      "first_date": "2021-02-05",
+      "last_date": "2026-08-14",
+      "core_missing_rate": 0.0,
+      "anomalies": 0,
+      "grade": "A",
+      "reasons": ""
+    },
+    {
+      "stock_code": "00700",
+      "data_type": "monthly_kline",
+      "rows": 199,
+      "first_date": "2010-01-31",
+      "last_date": "2026-07-31",
+      "core_missing_rate": 0.0,
+      "anomalies": 0,
+      "grade": "A",
+      "reasons": ""
+    },
+    {
+      "stock_code": "00700",
+      "data_type": "monthly_moneyflow",
+      "rows": 67,
+      "first_date": "2021-02-26",
+      "last_date": "2026-07-31",
+      "core_missing_rate": 0.0,
+      "anomalies": 0,
+      "grade": "A",
+      "reasons": ""
+    },
+    {
+      "stock_code": "00700",
+      "data_type": "quarterly_kline",
+      "rows": 66,
+      "first_date": "2010-03-31",
+      "last_date": "2026-06-30",
+      "core_missing_rate": 0.0,
+      "anomalies": 0,
+      "grade": "A",
+      "reasons": ""
+    },
+    {
+      "stock_code": "00700",
+      "data_type": "quarterly_moneyflow",
+      "rows": 22,
+      "first_date": "2021-03-31",
+      "last_date": "2026-06-30",
+      "core_missing_rate": 0.0,
+      "anomalies": 0,
+      "grade": "A",
+      "reasons": ""
+    },
+    {
+      "stock_code": "IDX",
+      "data_type": "idx_hist",
+      "rows": 2860,
+      "first_date": "2015-01-02",
+      "last_date": "2026-08-19",
+      "core_missing_rate": 0.0,
+      "anomalies": 0,
+      "grade": "B",
+      "reasons": "轻微缺失（核心 0.0% / 辅助 13.7%）"
+    },
+    {
+      "stock_code": "00700",
+      "data_type": "institutional_holdings",
+      "rows": 89,
+      "first_date": "2004/Q2",
+      "last_date": "2026/Q2",
+      "core_missing_rate": 0.0,
+      "anomalies": 0,
+      "grade": "B",
+      "reasons": "轻微缺失（核心 0.0% / 辅助 8.6%）"
+    }
+  ]
+}

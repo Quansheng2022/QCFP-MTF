@@ -1,0 +1,159 @@
+{
+  "run_id": "shadow_universe_2026-08-21_111728",
+  "decision_date": "2026-08-21",
+  "universe_count": 17,
+  "decision_count": 17,
+  "distinct_stock_count": 17,
+  "duplicate_decisions": 0,
+  "missing_stocks": [],
+  "state_counts": {
+    "CERTIFIED": 1,
+    "NO_TRADE": 15,
+    "SAFE_MODE": 0,
+    "ABSTAIN": 1,
+    "HALTED": 0
+  },
+  "certified": 1,
+  "no_trade": 15,
+  "abstain": 1,
+  "safe_mode": 0,
+  "halted": 0,
+  "per_stock": {
+    "00020": {
+      "state": "NO_TRADE",
+      "reason": "FORCED_DELEVERAGE",
+      "target": 0.0,
+      "permission": "WATCH",
+      "fsm": "EXITING",
+      "recorded": true
+    },
+    "00268": {
+      "state": "NO_TRADE",
+      "reason": "SETUP_ABSENT",
+      "target": 0.0,
+      "permission": "WATCH",
+      "fsm": "FLAT",
+      "recorded": true
+    },
+    "00354": {
+      "state": "NO_TRADE",
+      "reason": "FORCED_DELEVERAGE",
+      "target": 0.0,
+      "permission": "WATCH",
+      "fsm": "EXITING",
+      "recorded": true
+    },
+    "00357": {
+      "state": "NO_TRADE",
+      "reason": "SETUP_ABSENT",
+      "target": 0.0,
+      "permission": "TEST",
+      "fsm": "FLAT",
+      "recorded": true
+    },
+    "00371": {
+      "state": "NO_TRADE",
+      "reason": "HARD_EXIT",
+      "target": 0.0,
+      "permission": "WATCH",
+      "fsm": "EXITING",
+      "recorded": true
+    },
+    "00579": {
+      "state": "ABSTAIN",
+      "reason": "EVIDENCE_MISSING",
+      "recorded": true
+    },
+    "00700": {
+      "state": "NO_TRADE",
+      "reason": "FORCED_DELEVERAGE",
+      "target": 0.0,
+      "permission": "WATCH",
+      "fsm": "EXITING",
+      "recorded": true
+    },
+    "00788": {
+      "state": "NO_TRADE",
+      "reason": "FORCED_DELEVERAGE",
+      "target": 0.0,
+      "permission": "WATCH",
+      "fsm": "EXITING",
+      "recorded": true
+    },
+    "01093": {
+      "state": "CERTIFIED",
+      "reason": "POSITION_CAP",
+      "target": 0.025,
+      "permission": "WATCH",
+      "fsm": "TESTING",
+      "recorded": true
+    },
+    "01177": {
+      "state": "NO_TRADE",
+      "reason": "FORCED_DELEVERAGE",
+      "target": 0.0,
+      "permission": "WATCH",
+      "fsm": "EXITING",
+      "recorded": true
+    },
+    "01951": {
+      "state": "NO_TRADE",
+      "reason": "FORCED_DELEVERAGE",
+      "target": 0.0,
+      "permission": "WATCH",
+      "fsm": "EXITING",
+      "recorded": true
+    },
+    "02202": {
+      "state": "NO_TRADE",
+      "reason": "FORCED_DELEVERAGE",
+      "target": 0.0,
+      "permission": "WATCH",
+      "fsm": "EXITING",
+      "recorded": true
+    },
+    "02602": {
+      "state": "NO_TRADE",
+      "reason": "NONE",
+      "target": 0.0,
+      "permission": "WATCH",
+      "fsm": "FLAT",
+      "recorded": true
+    },
+    "02611": {
+      "state": "NO_TRADE",
+      "reason": "COOLDOWN",
+      "target": 0.0,
+      "permission": "WATCH",
+      "fsm": "COOLDOWN",
+      "recorded": true
+    },
+    "03033": {
+      "state": "NO_TRADE",
+      "reason": "HARD_EXIT",
+      "target": 0.0,
+      "permission": "WATCH",
+      "fsm": "EXITING",
+      "recorded": true
+    },
+    "03800": {
+      "state": "NO_TRADE",
+      "reason": "FORCED_DELEVERAGE",
+      "target": 0.0,
+      "permission": "WATCH",
+      "fsm": "EXITING",
+      "recorded": true
+    },
+    "06060": {
+      "state": "NO_TRADE",
+      "reason": "FORCED_DELEVERAGE",
+      "target": 0.0,
+      "permission": "WATCH",
+      "fsm": "EXITING",
+      "recorded": true
+    }
+  },
+  "coverage_ok": true,
+  "verdict": "SHADOW_COVERAGE_OK",
+  "rule": "Daily Shadow Decision Coverage=100%；Unexplained Missing=0"
+}

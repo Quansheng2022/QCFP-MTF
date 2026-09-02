@@ -1,0 +1,236 @@
+{
+  "table_name": "qcfp_quarterly_structural",
+  "generated_at": "2026-08-24 22:03:28",
+  "database_path": "C:\\Users\\Quansheng\\Documents\\projects\\TA_Workflow\\SQLiteDB\\HK_Stock.db",
+  "statistics": {
+    "total_records": 960,
+    "stock_count": 15
+  },
+  "field_count": 24,
+  "fields": [
+    {
+      "field_name": "id",
+      "data_type": "INTEGER",
+      "description": "主键，自增ID",
+      "sample": null
+    },
+    {
+      "field_name": "stock_code",
+      "data_type": "TEXT",
+      "description": "股票代码（5位数字，如 00700）",
+      "sample": null
+    },
+    {
+      "field_name": "stock_name",
+      "data_type": "TEXT",
+      "description": "股票名称",
+      "sample": null
+    },
+    {
+      "field_name": "period_end",
+      "data_type": "TEXT",
+      "description": "季度结束日期（YYYY-MM-DD）",
+      "sample": null
+    },
+    {
+      "field_name": "available_date",
+      "data_type": "TEXT",
+      "description": "数据真实可用日期（推算时用季度末+披露滞后，data_quality 降级）",
+      "sample": null
+    },
+    {
+      "field_name": "inst_ownership_pct_chg",
+      "data_type": "REAL",
+      "description": "机构持股比例变化（百分点，来自 TA4C）",
+      "sample": null
+    },
+    {
+      "field_name": "holder_quantity_chg_pct",
+      "data_type": "REAL",
+      "description": "股东户数变化（%）",
+      "sample": null
+    },
+    {
+      "field_name": "inst_participation_chg",
+      "data_type": "REAL",
+      "description": "机构数量变化（%）",
+      "sample": null
+    },
+    {
+      "field_name": "q_inst_flow_raw",
+      "data_type": "REAL",
+      "description": "季度机构资金净流入（原始值，IDR/FBI 派生）",
+      "sample": null
+    },
+    {
+      "field_name": "q_inst_flow_z",
+      "data_type": "REAL",
+      "description": "季度机构资金净流入 Z-Score",
+      "sample": null
+    },
+    {
+      "field_name": "q_ifa_zscore",
+      "data_type": "REAL",
+      "description": "机构资金优势 Z-Score",
+      "sample": null
+    },
+    {
+      "field_name": "q_return",
+      "data_type": "REAL",
+      "description": "季度收益率（%）",
+      "sample": null
+    },
+    {
+      "field_name": "q_trend_score",
+      "data_type": "REAL",
+      "description": "季度趋势评分（0~100，季末快照窗口）",
+      "sample": null
+    },
+    {
+      "field_name": "q_position_52w",
+      "data_type": "REAL",
+      "description": "52 周价格位置（0~1，季末快照）",
+      "sample": null
+    },
+    {
+      "field_name": "c_state",
+      "data_type": "TEXT",
+      "description": "筹码方向状态（C↑/C→/C↓）",
+      "sample": null
+    },
+    {
+      "field_name": "f_state",
+      "data_type": "TEXT",
+      "description": "资金方向状态（F↑/F→/F↓）",
+      "sample": null
+    },
+    {
+      "field_name": "p_state",
+      "data_type": "TEXT",
+      "description": "价格方向状态（P↑/P→/P↓）",
+      "sample": null
+    },
+    {
+      "field_name": "structural_regime",
+      "data_type": "TEXT",
+      "description": "季度结构状态（6 种：STRUCTURAL_BULLISH 等）",
+      "sample": null
+    },
+    {
+      "field_name": "core_score",
+      "data_type": "REAL",
+      "description": "季度核心评分（0~100，State-First）",
+      "sample": null
+    },
+    {
+      "field_name": "source_period",
+      "data_type": "TEXT",
+      "description": "来源季度标识（如 2026/Q2）",
+      "sample": null
+    },
+    {
+      "field_name": "model_version",
+      "data_type": "TEXT",
+      "description": "模型版本号（QCFP-MTF-2.1.1）",
+      "sample": null
+    },
+    {
+      "field_name": "data_quality",
+      "data_type": "TEXT",
+      "description": "数据质量等级（A/B/C/D）",
+      "sample": null
+    },
+    {
+      "field_name": "update_time",
+      "data_type": "TEXT",
+      "description": "更新时间",
+      "sample": null
+    },
+    {
+      "field_name": "resolve_method",
+      "data_type": "TEXT",
+      "description": "",
+      "sample": null
+    }
+  ],
+  "sample_data": [
+    {
+      "id": 12754,
+      "stock_code": "00020",
+      "stock_name": "商汤科技",
+      "period_end": "2021-12-31",
+      "available_date": "2022-02-14",
+      "inst_ownership_pct_chg": null,
+      "holder_quantity_chg_pct": null,
+      "inst_participation_chg": null,
+      "q_inst_flow_raw": -122380000.0,
+      "q_inst_flow_z": null,
+      "q_ifa_zscore": -0.43450011475274264,
+      "q_return": null,
+      "q_trend_score": 12.999999999999996,
+      "q_position_52w": null,
+      "c_state": null,
+      "f_state": "F→",
+      "p_state": null,
+      "structural_regime": "STATE_UNDETERMINED",
+      "core_score": null,
+      "source_period": null,
+      "model_version": "QCFP-MTF-2.1.1",
+      "data_quality": "C",
+      "update_time": "2026-08-22 00:13:20",
+      "resolve_method": "unmapped"
+    },
+    {
+      "id": 12755,
+      "stock_code": "00020",
+      "stock_name": "商汤科技",
+      "period_end": "2022-03-31",
+      "available_date": "2022-05-15",
+      "inst_ownership_pct_chg": -4.037000000000003,
+      "holder_quantity_chg_pct": -17.059033330273948,
+      "inst_participation_chg": 75.0,
+      "q_inst_flow_raw": -202761100.0,
+      "q_inst_flow_z": null,
+      "q_ifa_zscore": -0.467302544373276,
+      "q_return": 11.818181818181817,
+      "q_trend_score": 81.43643653114306,
+      "q_position_52w": 0.4963144963144965,
+      "c_state": "C↓",
+      "f_state": "F→",
+      "p_state": "P↑",
+      "structural_regime": "STATE_UNDETERMINED",
+      "core_score": null,
+      "source_period": null,
+      "model_version": "QCFP-MTF-2.1.1",
+      "data_quality": "C",
+      "update_time": "2026-08-22 00:13:20",
+      "resolve_method": "unmapped"
+    },
+    {
+      "id": 12756,
+      "stock_code": "00020",
+      "stock_name": "商汤科技",
+      "period_end": "2022-06-30",
+      "available_date": "2022-08-14",
+      "inst_ownership_pct_chg": 0.3440000000000012,
+      "holder_quantity_chg_pct": 1.8213080186551052,
+      "inst_participation_chg": 214.28571428571428,
+      "q_inst_flow_raw": -680915690.0,
+      "q_inst_flow_z": null,
+      "q_ifa_zscore": -0.622345705221883,
+      "q_return": -49.10569105691057,
+      "q_trend_score": 5.116915268021198,
+      "q_position_52w": 0.0,
+      "c_state": "C→",
+      "f_state": "F→",
+      "p_state": "P↓",
+      "structural_regime": "STATE_UNDETERMINED",
+      "core_score": null,
+      "source_period": null,
+      "model_version": "QCFP-MTF-2.1.1",
+      "data_quality": "C",
+      "update_time": "2026-08-22 00:13:20",
+      "resolve_method": "unmapped"
+    }
+  ]
+}

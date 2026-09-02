@@ -1,0 +1,54 @@
+{
+  "stock_code": "00268",
+  "decision_date": "2026-08-14",
+  "model_version": "QCFP-MTF-2.1.1",
+  "structural": {
+    "regime": "STRUCTURAL_BULLISH",
+    "core_score": 85.0,
+    "evidence_level": "A-",
+    "data_quality": "C",
+    "key_drivers": [
+      "c_state: C→",
+      "f_state: F↑",
+      "p_state: P↓"
+    ]
+  },
+  "stage": {
+    "monthly_state": "Stable",
+    "turnover_regime": "T4",
+    "vp_regime": "VP_STABLE_ASCENT",
+    "cbi_score": 5.694912115508835
+  },
+  "cost_position": {
+    "status": "COST_ADVANTAGE",
+    "vs_weekly_vwap": 0.05733420701505709,
+    "vs_monthly_vwap": 0.17351487861550208,
+    "vs_quarterly_vwap": 0.048885296071355944
+  },
+  "trigger": {
+    "signal": "Consolidation",
+    "breakout": false,
+    "breakdown": false,
+    "volume_spike": false
+  },
+  "confidence": {
+    "chip_stability_confidence": "Low",
+    "structure_behavior_alignment": "Aligned",
+    "evidence_summary": "结构:STRUCTURAL_BULLISH(A/A-); 阶段:Stable(B); 触发:Consolidation(C); 置信度:Low"
+  },
+  "risk": {
+    "risk_level": "High",
+    "divergence_detected": false,
+    "key_risks": [
+      "High"
+    ],
+    "anti_inference_check": "PASSED"
+  },
+  "decision": {
+    "mtf_regime": "BULLISH_STABLE",
+    "action": "HOLD",
+    "action_detail": "结构健康，持仓等待触发信号",
+    "position_advice": "50%~80%",
+    "stop_loss_trigger": null
+  }
+}

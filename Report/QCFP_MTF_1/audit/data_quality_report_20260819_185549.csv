@@ -1,0 +1,11 @@
+﻿stock_code,data_type,rows,first_date,last_date,core_missing_rate,anomalies,grade,reasons
+00700,daily_kline,4091,2010-01-04,2026-08-19,0.0,4,C,异常值 4 条（负价格 4）；核心缺失率 0.0% 或异常
+00700,daily_moneyflow,1360,2021-02-03,2026-08-19,0.0,0,B,轻微缺失（核心 0.0% / 辅助 87.4%）
+00700,weekly_kline,867,2010-01-08,2026-08-14,0.0,0,A,
+00700,weekly_moneyflow,289,2021-02-05,2026-08-14,0.0,0,A,
+00700,monthly_kline,199,2010-01-31,2026-07-31,0.0,0,A,
+00700,monthly_moneyflow,67,2021-02-26,2026-07-31,0.0,0,A,
+00700,quarterly_kline,66,2010-03-31,2026-06-30,0.0,0,A,
+00700,quarterly_moneyflow,22,2021-03-31,2026-06-30,0.0,0,A,
+IDX,idx_hist,2860,2015-01-02,2026-08-19,0.0,0,B,轻微缺失（核心 0.0% / 辅助 13.7%）
+00700,institutional_holdings,89,2004/Q2,2026/Q2,0.0,0,B,轻微缺失（核心 0.0% / 辅助 8.6%）

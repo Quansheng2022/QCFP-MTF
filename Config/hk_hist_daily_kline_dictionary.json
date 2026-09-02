@@ -1,0 +1,426 @@
+{
+  "table_name": "hk_hist_daily_kline",
+  "generated_at": "2026-07-15 17:03:31",
+  "database_path": "C:\\Users\\Quansheng\\Documents\\projects\\TA_Workflow\\SQLiteDB\\HK_Stock.db",
+  "statistics": {
+    "total_records": 45922,
+    "stock_count": 15,
+    "min_date": "2010-01-04",
+    "max_date": "2026-07-14",
+    "min_close": -1.07,
+    "max_close": 688.01,
+    "min_volume": null,
+    "max_volume": 6053681711.0
+  },
+  "field_count": 15,
+  "fields": [
+    {
+      "field_name": "id",
+      "data_type": "INTEGER",
+      "nullable": true,
+      "primary_key": true,
+      "default_value": null,
+      "description": "主键，自增ID",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 45922,
+        "null_percentage": 0.0,
+        "min": 1,
+        "max": 45922,
+        "avg": 22961.5,
+        "distinct_count": 45922
+      },
+      "samples": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "field_name": "stock_code",
+      "data_type": "TEXT",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "股票代码（如：00700）",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 45922,
+        "null_percentage": 0.0,
+        "distinct_count": 15
+      },
+      "samples": [
+        "00020",
+        "00020",
+        "00020"
+      ]
+    },
+    {
+      "field_name": "stock_name",
+      "data_type": "TEXT",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "股票名称（如：腾讯控股）",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 45922,
+        "null_percentage": 0.0,
+        "distinct_count": 16
+      },
+      "samples": [
+        "商汤科技",
+        "商汤科技",
+        "商汤科技"
+      ]
+    },
+    {
+      "field_name": "date",
+      "data_type": "TEXT",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "交易日期（格式：YYYY-MM-DD）",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 45922,
+        "null_percentage": 0.0,
+        "distinct_count": 4065
+      },
+      "samples": [
+        "2021-12-30",
+        "2021-12-31",
+        "2022-01-03"
+      ]
+    },
+    {
+      "field_name": "open",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "开盘价",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 45922,
+        "null_percentage": 0.0,
+        "min": -1.06,
+        "max": 688.47,
+        "avg": 27.96881124515483,
+        "distinct_count": 5367
+      },
+      "samples": [
+        3.91,
+        4.23,
+        5.99
+      ]
+    },
+    {
+      "field_name": "high",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "最高价",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 45922,
+        "null_percentage": 0.0,
+        "min": -1.05,
+        "max": 696.3,
+        "avg": 28.397861591394104,
+        "distinct_count": 5525
+      },
+      "samples": [
+        4.74,
+        5.5,
+        7.75
+      ]
+    },
+    {
+      "field_name": "low",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "最低价",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 45922,
+        "null_percentage": 0.0,
+        "min": -1.21,
+        "max": 674.18,
+        "avg": 27.496058098514872,
+        "distinct_count": 5463
+      },
+      "samples": [
+        3.9,
+        4.21,
+        5.8
+      ]
+    },
+    {
+      "field_name": "close",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "收盘价",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 45922,
+        "null_percentage": 0.0,
+        "min": -1.07,
+        "max": 688.01,
+        "avg": 27.931891903662734,
+        "distinct_count": 5491
+      },
+      "samples": [
+        4.13,
+        5.5,
+        7.75
+      ]
+    },
+    {
+      "field_name": "volume",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "成交量（股）",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 45922,
+        "null_percentage": 0.0,
+        "min": 0.0,
+        "max": 6053681711.0,
+        "avg": 68607312.9525282,
+        "distinct_count": 42825
+      },
+      "samples": [
+        329966696.0,
+        254079780.0,
+        465580254.0
+      ]
+    },
+    {
+      "field_name": "amount",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "成交额（元）",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 45922,
+        "null_percentage": 0.0,
+        "min": 0.0,
+        "max": 148682130954.0,
+        "avg": 832522011.1316326,
+        "distinct_count": 45838
+      },
+      "samples": [
+        1406160926.0,
+        1236589974.0,
+        3164819936.0
+      ]
+    },
+    {
+      "field_name": "amplitude",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "振幅（%）",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 45922,
+        "null_percentage": 0.0,
+        "min": -5500.0,
+        "max": 1375.0,
+        "avg": 4.492154522886634,
+        "distinct_count": 3184
+      },
+      "samples": [
+        21.82,
+        31.23,
+        35.45
+      ]
+    },
+    {
+      "field_name": "change_percent",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "涨跌幅（%）",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 45922,
+        "null_percentage": 0.0,
+        "min": -5000.0,
+        "max": 4000.0,
+        "avg": 0.018716083794259836,
+        "distinct_count": 3357
+      },
+      "samples": [
+        7.27,
+        33.17,
+        40.91
+      ]
+    },
+    {
+      "field_name": "change_amount",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "涨跌额",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 45922,
+        "null_percentage": 0.0,
+        "min": -62.4,
+        "max": 69.6,
+        "avg": 0.008444536387787988,
+        "distinct_count": 997
+      },
+      "samples": [
+        0.28,
+        1.37,
+        2.25
+      ]
+    },
+    {
+      "field_name": "turnover_rate",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "换手率（%）",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 45922,
+        "null_percentage": 0.0,
+        "min": 0.0,
+        "max": 337.3,
+        "avg": 0.8154760245633901,
+        "distinct_count": 1257
+      },
+      "samples": [
+        0.99,
+        0.76,
+        1.4
+      ]
+    },
+    {
+      "field_name": "previous_close",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "前收盘价",
+      "statistics": {
+        "null_count": 15,
+        "non_null_count": 45907,
+        "null_percentage": 0.03266408257480075,
+        "min": -1.07,
+        "max": 688.01,
+        "avg": 27.929464351841766,
+        "distinct_count": 5490
+      },
+      "samples": [
+        4.13,
+        5.5,
+        7.75
+      ]
+    }
+  ],
+  "sample_data": [
+    {
+      "id": 1,
+      "stock_code": "00020",
+      "stock_name": "商汤科技",
+      "date": "2021-12-30",
+      "open": 3.91,
+      "high": 4.74,
+      "low": 3.9,
+      "close": 4.13,
+      "volume": 329966696.0,
+      "amount": 1406160926.0,
+      "amplitude": 21.82,
+      "change_percent": 7.27,
+      "change_amount": 0.28,
+      "turnover_rate": 0.99,
+      "previous_close": null
+    },
+    {
+      "id": 2,
+      "stock_code": "00020",
+      "stock_name": "商汤科技",
+      "date": "2021-12-31",
+      "open": 4.23,
+      "high": 5.5,
+      "low": 4.21,
+      "close": 5.5,
+      "volume": 254079780.0,
+      "amount": 1236589974.0,
+      "amplitude": 31.23,
+      "change_percent": 33.17,
+      "change_amount": 1.37,
+      "turnover_rate": 0.76,
+      "previous_close": 4.13
+    },
+    {
+      "id": 3,
+      "stock_code": "00020",
+      "stock_name": "商汤科技",
+      "date": "2022-01-03",
+      "open": 5.99,
+      "high": 7.75,
+      "low": 5.8,
+      "close": 7.75,
+      "volume": 465580254.0,
+      "amount": 3164819936.0,
+      "amplitude": 35.45,
+      "change_percent": 40.91,
+      "change_amount": 2.25,
+      "turnover_rate": 1.4,
+      "previous_close": 5.5
+    },
+    {
+      "id": 4,
+      "stock_code": "00020",
+      "stock_name": "商汤科技",
+      "date": "2022-01-04",
+      "open": 8.39,
+      "high": 9.7,
+      "low": 7.62,
+      "close": 8.2,
+      "volume": 358971790.0,
+      "amount": 3132999153.0,
+      "amplitude": 26.84,
+      "change_percent": 5.81,
+      "change_amount": 0.45,
+      "turnover_rate": 1.08,
+      "previous_close": 7.75
+    },
+    {
+      "id": 5,
+      "stock_code": "00020",
+      "stock_name": "商汤科技",
+      "date": "2022-01-05",
+      "open": 7.9,
+      "high": 8.44,
+      "low": 6.8,
+      "close": 6.97,
+      "volume": 172749296.0,
+      "amount": 1288318508.0,
+      "amplitude": 20.0,
+      "change_percent": -15.0,
+      "change_amount": -1.23,
+      "turnover_rate": 0.52,
+      "previous_close": 8.2
+    }
+  ]
+}

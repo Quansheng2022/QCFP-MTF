@@ -1,0 +1,757 @@
+{
+  "version": "1.0.0",
+  "created_date": "2026-07-09",
+  "last_updated": "2026-07-09",
+  "database": "HK_Stock.db",
+  "description": "港股宏观数据数据字典 - 包含所有表的字段定义、数据类型、描述和约束",
+  "tables": {
+    "hk_idx_hist": {
+      "description": "港股指数合并历史数据 - 包含所有主要指数的收盘价和南向资金净流入",
+      "table_type": "merged_data",
+      "update_frequency": "daily",
+      "data_source": "富途API + AkShare",
+      "columns": {
+        "date": {
+          "data_type": "DATE",
+          "sqlite_type": "TEXT",
+          "python_type": "datetime.date",
+          "description": "交易日期",
+          "nullable": false,
+          "primary_key": true,
+          "example": "2026-07-09",
+          "format": "YYYY-MM-DD"
+        },
+        "HSI": {
+          "data_type": "REAL",
+          "sqlite_type": "REAL",
+          "python_type": "float",
+          "description": "恒生指数收盘价",
+          "nullable": true,
+          "example": "18500.50",
+          "source": "富途API HK.800000"
+        },
+        "HSCEI": {
+          "data_type": "REAL",
+          "sqlite_type": "REAL",
+          "python_type": "float",
+          "description": "恒生国企指数收盘价 (H股指数)",
+          "nullable": true,
+          "example": "6500.25",
+          "source": "富途API HK.800100"
+        },
+        "HSTECH": {
+          "data_type": "REAL",
+          "sqlite_type": "REAL",
+          "python_type": "float",
+          "description": "恒生科技指数收盘价",
+          "nullable": true,
+          "example": "4200.75",
+          "source": "富途API HK.800700"
+        },
+        "HSNF": {
+          "data_type": "REAL",
+          "sqlite_type": "REAL",
+          "python_type": "float",
+          "description": "恒生金融分类指数收盘价",
+          "nullable": true,
+          "example": "28000.00",
+          "source": "富途API HK.800152"
+        },
+        "HSNP": {
+          "data_type": "REAL",
+          "sqlite_type": "REAL",
+          "python_type": "float",
+          "description": "恒生地产分类指数收盘价",
+          "nullable": true,
+          "example": "22000.00",
+          "source": "富途API HK.800153"
+        },
+        "HSNC": {
+          "data_type": "REAL",
+          "sqlite_type": "REAL",
+          "python_type": "float",
+          "description": "恒生工商分类指数收盘价",
+          "nullable": true,
+          "example": "15000.00",
+          "source": "富途API HK.800154"
+        },
+        "HSNU": {
+          "data_type": "REAL",
+          "sqlite_type": "REAL",
+          "python_type": "float",
+          "description": "恒生公用事业分类指数收盘价",
+          "nullable": true,
+          "example": "45000.00",
+          "source": "富途API HK.800155"
+        },
+        "HSBIO": {
+          "data_type": "REAL",
+          "sqlite_type": "REAL",
+          "python_type": "float",
+          "description": "恒生生物科技指数收盘价",
+          "nullable": true,
+          "example": "2800.00",
+          "source": "富途API HK.800187"
+        },
+        "VHSI": {
+          "data_type": "REAL",
+          "sqlite_type": "REAL",
+          "python_type": "float",
+          "description": "恒指波幅指数 (香港恐慌指数)",
+          "nullable": true,
+          "example": "25.50",
+          "source": "富途API HK.800125",
+          "interpretation": "数值越高，市场恐慌程度越高"
+        },
+        "SouthboundFlow": {
+          "data_type": "REAL",
+          "sqlite_type": "REAL",
+          "python_type": "float",
+          "description": "南向资金净流入 (亿元)",
+          "nullable": true,
+          "example": "45.67",
+          "source": "AkShare stock_hsgt_hist_em",
+          "interpretation": "正值表示资金流入港股，负值表示流出"
+        }
+      },
+      "indexes": [
+        {
+          "name": "idx_hk_idx_date",
+          "columns": ["date"],
+          "type": "UNIQUE"
+        }
+      ],
+      "usage_example": "SELECT date, HSI, HSCEI, SouthboundFlow FROM hk_idx_hist WHERE date >= '2026-01-01' ORDER BY date DESC"
+    },
+    
+    "hk_idx_hsi": {
+      "description": "恒生指数完整K线数据 - 包含每日开盘、收盘、最高、最低价及技术指标",
+      "table_type": "index_kline",
+      "update_frequency": "daily",
+      "data_source": "富途API HK.800000",
+      "columns": {
+        "code": {
+          "data_type": "TEXT",
+          "sqlite_type": "TEXT",
+          "python_type": "str",
+          "description": "股票代码",
+          "nullable": false,
+          "example": "HK.800000",
+          "primary_key": false
+        },
+        "name": {
+          "data_type": "TEXT",
+          "sqlite_type": "TEXT",
+          "python_type": "str",
+          "description": "指数名称",
+          "nullable": false,
+          "example": "恒生指数"
+        },
+        "date": {
+          "data_type": "DATE",
+          "sqlite_type": "TEXT",
+          "python_type": "datetime.date",
+          "description": "交易日期",
+          "nullable": false,
+          "primary_key": true,
+          "example": "2026-07-09",
+          "format": "YYYY-MM-DD"
+        },
+        "open": {
+          "data_type": "REAL",
+          "sqlite_type": "REAL",
+          "python_type": "float",
+          "description": "开盘价",
+          "nullable": true,
+          "example": "18500.00"
+        },
+        "close": {
+          "data_type": "REAL",
+          "sqlite_type": "REAL",
+          "python_type": "float",
+          "description": "收盘价",
+          "nullable": true,
+          "example": "18500.50"
+        },
+        "high": {
+          "data_type": "REAL",
+          "sqlite_type": "REAL",
+          "python_type": "float",
+          "description": "最高价",
+          "nullable": true,
+          "example": "18600.00"
+        },
+        "low": {
+          "data_type": "REAL",
+          "sqlite_type": "REAL",
+          "python_type": "float",
+          "description": "最低价",
+          "nullable": true,
+          "example": "18400.00"
+        },
+        "pe_ratio": {
+          "data_type": "REAL",
+          "sqlite_type": "REAL",
+          "python_type": "float",
+          "description": "市盈率",
+          "nullable": true,
+          "example": "12.5",
+          "unit": "倍"
+        },
+        "turnover_rate": {
+          "data_type": "REAL",
+          "sqlite_type": "REAL",
+          "python_type": "float",
+          "description": "换手率",
+          "nullable": true,
+          "example": "0.35",
+          "unit": "%"
+        },
+        "volume": {
+          "data_type": "INTEGER",
+          "sqlite_type": "INTEGER",
+          "python_type": "int",
+          "description": "成交量 (股)",
+          "nullable": true,
+          "example": "2500000000"
+        },
+        "turnover": {
+          "data_type": "REAL",
+          "sqlite_type": "REAL",
+          "python_type": "float",
+          "description": "成交额 (港元)",
+          "nullable": true,
+          "example": "125000000000"
+        },
+        "change_rate": {
+          "data_type": "REAL",
+          "sqlite_type": "REAL",
+          "python_type": "float",
+          "description": "涨跌幅",
+          "nullable": true,
+          "example": "1.25",
+          "unit": "%"
+        },
+        "last_close": {
+          "data_type": "REAL",
+          "sqlite_type": "REAL",
+          "python_type": "float",
+          "description": "昨收价",
+          "nullable": true,
+          "example": "18275.00"
+        }
+      },
+      "indexes": [
+        {
+          "name": "idx_hsi_date",
+          "columns": ["date"],
+          "type": "UNIQUE"
+        },
+        {
+          "name": "idx_hsi_code",
+          "columns": ["code"]
+        }
+      ],
+      "usage_example": "SELECT date, open, close, high, low, volume FROM hk_idx_hsi WHERE date >= '2026-01-01' ORDER BY date DESC"
+    },
+
+    "hk_idx_hscei": {
+      "description": "恒生国企指数完整K线数据 (H股指数)",
+      "table_type": "index_kline",
+      "update_frequency": "daily",
+      "data_source": "富途API HK.800100",
+      "columns": {
+        "code": {
+          "data_type": "TEXT",
+          "sqlite_type": "TEXT",
+          "python_type": "str",
+          "description": "股票代码",
+          "nullable": false,
+          "example": "HK.800100"
+        },
+        "name": {
+          "data_type": "TEXT",
+          "sqlite_type": "TEXT",
+          "python_type": "str",
+          "description": "指数名称",
+          "nullable": false,
+          "example": "恒生国企指数"
+        },
+        "date": {
+          "data_type": "DATE",
+          "sqlite_type": "TEXT",
+          "python_type": "datetime.date",
+          "description": "交易日期",
+          "nullable": false,
+          "primary_key": true,
+          "example": "2026-07-09",
+          "format": "YYYY-MM-DD"
+        },
+        "open": {
+          "data_type": "REAL",
+          "sqlite_type": "REAL",
+          "python_type": "float",
+          "description": "开盘价",
+          "nullable": true
+        },
+        "close": {
+          "data_type": "REAL",
+          "sqlite_type": "REAL",
+          "python_type": "float",
+          "description": "收盘价",
+          "nullable": true
+        },
+        "high": {
+          "data_type": "REAL",
+          "sqlite_type": "REAL",
+          "python_type": "float",
+          "description": "最高价",
+          "nullable": true
+        },
+        "low": {
+          "data_type": "REAL",
+          "sqlite_type": "REAL",
+          "python_type": "float",
+          "description": "最低价",
+          "nullable": true
+        },
+        "pe_ratio": {
+          "data_type": "REAL",
+          "sqlite_type": "REAL",
+          "python_type": "float",
+          "description": "市盈率",
+          "nullable": true,
+          "unit": "倍"
+        },
+        "turnover_rate": {
+          "data_type": "REAL",
+          "sqlite_type": "REAL",
+          "python_type": "float",
+          "description": "换手率",
+          "nullable": true,
+          "unit": "%"
+        },
+        "volume": {
+          "data_type": "INTEGER",
+          "sqlite_type": "INTEGER",
+          "python_type": "int",
+          "description": "成交量 (股)",
+          "nullable": true
+        },
+        "turnover": {
+          "data_type": "REAL",
+          "sqlite_type": "REAL",
+          "python_type": "float",
+          "description": "成交额 (港元)",
+          "nullable": true
+        },
+        "change_rate": {
+          "data_type": "REAL",
+          "sqlite_type": "REAL",
+          "python_type": "float",
+          "description": "涨跌幅",
+          "nullable": true,
+          "unit": "%"
+        },
+        "last_close": {
+          "data_type": "REAL",
+          "sqlite_type": "REAL",
+          "python_type": "float",
+          "description": "昨收价",
+          "nullable": true
+        }
+      },
+      "indexes": [
+        {
+          "name": "idx_hscei_date",
+          "columns": ["date"],
+          "type": "UNIQUE"
+        }
+      ],
+      "usage_example": "SELECT date, close FROM hk_idx_hscei WHERE close IS NOT NULL"
+    },
+
+    "hk_idx_hstech": {
+      "description": "恒生科技指数完整K线数据",
+      "table_type": "index_kline",
+      "update_frequency": "daily",
+      "data_source": "富途API HK.800700",
+      "columns": {
+        "code": {
+          "data_type": "TEXT",
+          "sqlite_type": "TEXT",
+          "python_type": "str",
+          "description": "股票代码",
+          "nullable": false,
+          "example": "HK.800700"
+        },
+        "name": {
+          "data_type": "TEXT",
+          "sqlite_type": "TEXT",
+          "python_type": "str",
+          "description": "指数名称",
+          "nullable": false,
+          "example": "恒生科技指数"
+        },
+        "date": {
+          "data_type": "DATE",
+          "sqlite_type": "TEXT",
+          "python_type": "datetime.date",
+          "description": "交易日期",
+          "nullable": false,
+          "primary_key": true,
+          "format": "YYYY-MM-DD"
+        },
+        "open": {"data_type": "REAL", "sqlite_type": "REAL", "python_type": "float", "description": "开盘价", "nullable": true},
+        "close": {"data_type": "REAL", "sqlite_type": "REAL", "python_type": "float", "description": "收盘价", "nullable": true},
+        "high": {"data_type": "REAL", "sqlite_type": "REAL", "python_type": "float", "description": "最高价", "nullable": true},
+        "low": {"data_type": "REAL", "sqlite_type": "REAL", "python_type": "float", "description": "最低价", "nullable": true},
+        "pe_ratio": {"data_type": "REAL", "sqlite_type": "REAL", "python_type": "float", "description": "市盈率", "nullable": true, "unit": "倍"},
+        "turnover_rate": {"data_type": "REAL", "sqlite_type": "REAL", "python_type": "float", "description": "换手率", "nullable": true, "unit": "%"},
+        "volume": {"data_type": "INTEGER", "sqlite_type": "INTEGER", "python_type": "int", "description": "成交量 (股)", "nullable": true},
+        "turnover": {"data_type": "REAL", "sqlite_type": "REAL", "python_type": "float", "description": "成交额 (港元)", "nullable": true},
+        "change_rate": {"data_type": "REAL", "sqlite_type": "REAL", "python_type": "float", "description": "涨跌幅", "nullable": true, "unit": "%"},
+        "last_close": {"data_type": "REAL", "sqlite_type": "REAL", "python_type": "float", "description": "昨收价", "nullable": true}
+      },
+      "indexes": [
+        {"name": "idx_hstech_date", "columns": ["date"], "type": "UNIQUE"}
+      ]
+    },
+
+    "hk_idx_hnf": {
+      "description": "恒生金融分类指数完整K线数据",
+      "table_type": "index_kline",
+      "update_frequency": "daily",
+      "data_source": "富途API HK.800152",
+      "columns": {
+        "code": {"data_type": "TEXT", "sqlite_type": "TEXT", "python_type": "str", "description": "股票代码", "nullable": false, "example": "HK.800152"},
+        "name": {"data_type": "TEXT", "sqlite_type": "TEXT", "python_type": "str", "description": "指数名称", "nullable": false, "example": "恒生金融分类指数"},
+        "date": {"data_type": "DATE", "sqlite_type": "TEXT", "python_type": "datetime.date", "description": "交易日期", "nullable": false, "primary_key": true, "format": "YYYY-MM-DD"},
+        "open": {"data_type": "REAL", "sqlite_type": "REAL", "python_type": "float", "description": "开盘价", "nullable": true},
+        "close": {"data_type": "REAL", "sqlite_type": "REAL", "python_type": "float", "description": "收盘价", "nullable": true},
+        "high": {"data_type": "REAL", "sqlite_type": "REAL", "python_type": "float", "description": "最高价", "nullable": true},
+        "low": {"data_type": "REAL", "sqlite_type": "REAL", "python_type": "float", "description": "最低价", "nullable": true},
+        "pe_ratio": {"data_type": "REAL", "sqlite_type": "REAL", "python_type": "float", "description": "市盈率", "nullable": true, "unit": "倍"},
+        "turnover_rate": {"data_type": "REAL", "sqlite_type": "REAL", "python_type": "float", "description": "换手率", "nullable": true, "unit": "%"},
+        "volume": {"data_type": "INTEGER", "sqlite_type": "INTEGER", "python_type": "int", "description": "成交量 (股)", "nullable": true},
+        "turnover": {"data_type": "REAL", "sqlite_type": "REAL", "python_type": "float", "description": "成交额 (港元)", "nullable": true},
+        "change_rate": {"data_type": "REAL", "sqlite_type": "REAL", "python_type": "float", "description": "涨跌幅", "nullable": true, "unit": "%"},
+        "last_close": {"data_type": "REAL", "sqlite_type": "REAL", "python_type": "float", "description": "昨收价", "nullable": true}
+      },
+      "indexes": [
+        {"name": "idx_hnf_date", "columns": ["date"], "type": "UNIQUE"}
+      ]
+    },
+
+    "hk_idx_hnp": {
+      "description": "恒生地产分类指数完整K线数据",
+      "table_type": "index_kline",
+      "update_frequency": "daily",
+      "data_source": "富途API HK.800153",
+      "columns": {
+        "code": {"data_type": "TEXT", "sqlite_type": "TEXT", "python_type": "str", "description": "股票代码", "nullable": false, "example": "HK.800153"},
+        "name": {"data_type": "TEXT", "sqlite_type": "TEXT", "python_type": "str", "description": "指数名称", "nullable": false, "example": "恒生地产分类指数"},
+        "date": {"data_type": "DATE", "sqlite_type": "TEXT", "python_type": "datetime.date", "description": "交易日期", "nullable": false, "primary_key": true, "format": "YYYY-MM-DD"},
+        "open": {"data_type": "REAL", "sqlite_type": "REAL", "python_type": "float", "description": "开盘价", "nullable": true},
+        "close": {"data_type": "REAL", "sqlite_type": "REAL", "python_type": "float", "description": "收盘价", "nullable": true},
+        "high": {"data_type": "REAL", "sqlite_type": "REAL", "python_type": "float", "description": "最高价", "nullable": true},
+        "low": {"data_type": "REAL", "sqlite_type": "REAL", "python_type": "float", "description": "最低价", "nullable": true},
+        "pe_ratio": {"data_type": "REAL", "sqlite_type": "REAL", "python_type": "float", "description": "市盈率", "nullable": true, "unit": "倍"},
+        "turnover_rate": {"data_type": "REAL", "sqlite_type": "REAL", "python_type": "float", "description": "换手率", "nullable": true, "unit": "%"},
+        "volume": {"data_type": "INTEGER", "sqlite_type": "INTEGER", "python_type": "int", "description": "成交量 (股)", "nullable": true},
+        "turnover": {"data_type": "REAL", "sqlite_type": "REAL", "python_type": "float", "description": "成交额 (港元)", "nullable": true},
+        "change_rate": {"data_type": "REAL", "sqlite_type": "REAL", "python_type": "float", "description": "涨跌幅", "nullable": true, "unit": "%"},
+        "last_close": {"data_type": "REAL", "sqlite_type": "REAL", "python_type": "float", "description": "昨收价", "nullable": true}
+      },
+      "indexes": [
+        {"name": "idx_hnp_date", "columns": ["date"], "type": "UNIQUE"}
+      ]
+    },
+
+    "hk_idx_hnc": {
+      "description": "恒生工商分类指数完整K线数据",
+      "table_type": "index_kline",
+      "update_frequency": "daily",
+      "data_source": "富途API HK.800154",
+      "columns": {
+        "code": {"data_type": "TEXT", "sqlite_type": "TEXT", "python_type": "str", "description": "股票代码", "nullable": false, "example": "HK.800154"},
+        "name": {"data_type": "TEXT", "sqlite_type": "TEXT", "python_type": "str", "description": "指数名称", "nullable": false, "example": "恒生工商分类指数"},
+        "date": {"data_type": "DATE", "sqlite_type": "TEXT", "python_type": "datetime.date", "description": "交易日期", "nullable": false, "primary_key": true, "format": "YYYY-MM-DD"},
+        "open": {"data_type": "REAL", "sqlite_type": "REAL", "python_type": "float", "description": "开盘价", "nullable": true},
+        "close": {"data_type": "REAL", "sqlite_type": "REAL", "python_type": "float", "description": "收盘价", "nullable": true},
+        "high": {"data_type": "REAL", "sqlite_type": "REAL", "python_type": "float", "description": "最高价", "nullable": true},
+        "low": {"data_type": "REAL", "sqlite_type": "REAL", "python_type": "float", "description": "最低价", "nullable": true},
+        "pe_ratio": {"data_type": "REAL", "sqlite_type": "REAL", "python_type": "float", "description": "市盈率", "nullable": true, "unit": "倍"},
+        "turnover_rate": {"data_type": "REAL", "sqlite_type": "REAL", "python_type": "float", "description": "换手率", "nullable": true, "unit": "%"},
+        "volume": {"data_type": "INTEGER", "sqlite_type": "INTEGER", "python_type": "int", "description": "成交量 (股)", "nullable": true},
+        "turnover": {"data_type": "REAL", "sqlite_type": "REAL", "python_type": "float", "description": "成交额 (港元)", "nullable": true},
+        "change_rate": {"data_type": "REAL", "sqlite_type": "REAL", "python_type": "float", "description": "涨跌幅", "nullable": true, "unit": "%"},
+        "last_close": {"data_type": "REAL", "sqlite_type": "REAL", "python_type": "float", "description": "昨收价", "nullable": true}
+      },
+      "indexes": [
+        {"name": "idx_hnc_date", "columns": ["date"], "type": "UNIQUE"}
+      ]
+    },
+
+    "hk_idx_hnu": {
+      "description": "恒生公用事业分类指数完整K线数据",
+      "table_type": "index_kline",
+      "update_frequency": "daily",
+      "data_source": "富途API HK.800155",
+      "columns": {
+        "code": {"data_type": "TEXT", "sqlite_type": "TEXT", "python_type": "str", "description": "股票代码", "nullable": false, "example": "HK.800155"},
+        "name": {"data_type": "TEXT", "sqlite_type": "TEXT", "python_type": "str", "description": "指数名称", "nullable": false, "example": "恒生公用事业分类指数"},
+        "date": {"data_type": "DATE", "sqlite_type": "TEXT", "python_type": "datetime.date", "description": "交易日期", "nullable": false, "primary_key": true, "format": "YYYY-MM-DD"},
+        "open": {"data_type": "REAL", "sqlite_type": "REAL", "python_type": "float", "description": "开盘价", "nullable": true},
+        "close": {"data_type": "REAL", "sqlite_type": "REAL", "python_type": "float", "description": "收盘价", "nullable": true},
+        "high": {"data_type": "REAL", "sqlite_type": "REAL", "python_type": "float", "description": "最高价", "nullable": true},
+        "low": {"data_type": "REAL", "sqlite_type": "REAL", "python_type": "float", "description": "最低价", "nullable": true},
+        "pe_ratio": {"data_type": "REAL", "sqlite_type": "REAL", "python_type": "float", "description": "市盈率", "nullable": true, "unit": "倍"},
+        "turnover_rate": {"data_type": "REAL", "sqlite_type": "REAL", "python_type": "float", "description": "换手率", "nullable": true, "unit": "%"},
+        "volume": {"data_type": "INTEGER", "sqlite_type": "INTEGER", "python_type": "int", "description": "成交量 (股)", "nullable": true},
+        "turnover": {"data_type": "REAL", "sqlite_type": "REAL", "python_type": "float", "description": "成交额 (港元)", "nullable": true},
+        "change_rate": {"data_type": "REAL", "sqlite_type": "REAL", "python_type": "float", "description": "涨跌幅", "nullable": true, "unit": "%"},
+        "last_close": {"data_type": "REAL", "sqlite_type": "REAL", "python_type": "float", "description": "昨收价", "nullable": true}
+      },
+      "indexes": [
+        {"name": "idx_hnu_date", "columns": ["date"], "type": "UNIQUE"}
+      ]
+    },
+
+    "hk_idx_hsbio": {
+      "description": "恒生生物科技指数完整K线数据",
+      "table_type": "index_kline",
+      "update_frequency": "daily",
+      "data_source": "富途API HK.800187",
+      "columns": {
+        "code": {"data_type": "TEXT", "sqlite_type": "TEXT", "python_type": "str", "description": "股票代码", "nullable": false, "example": "HK.800187"},
+        "name": {"data_type": "TEXT", "sqlite_type": "TEXT", "python_type": "str", "description": "指数名称", "nullable": false, "example": "恒生生物科技指数"},
+        "date": {"data_type": "DATE", "sqlite_type": "TEXT", "python_type": "datetime.date", "description": "交易日期", "nullable": false, "primary_key": true, "format": "YYYY-MM-DD"},
+        "open": {"data_type": "REAL", "sqlite_type": "REAL", "python_type": "float", "description": "开盘价", "nullable": true},
+        "close": {"data_type": "REAL", "sqlite_type": "REAL", "python_type": "float", "description": "收盘价", "nullable": true},
+        "high": {"data_type": "REAL", "sqlite_type": "REAL", "python_type": "float", "description": "最高价", "nullable": true},
+        "low": {"data_type": "REAL", "sqlite_type": "REAL", "python_type": "float", "description": "最低价", "nullable": true},
+        "pe_ratio": {"data_type": "REAL", "sqlite_type": "REAL", "python_type": "float", "description": "市盈率", "nullable": true, "unit": "倍"},
+        "turnover_rate": {"data_type": "REAL", "sqlite_type": "REAL", "python_type": "float", "description": "换手率", "nullable": true, "unit": "%"},
+        "volume": {"data_type": "INTEGER", "sqlite_type": "INTEGER", "python_type": "int", "description": "成交量 (股)", "nullable": true},
+        "turnover": {"data_type": "REAL", "sqlite_type": "REAL", "python_type": "float", "description": "成交额 (港元)", "nullable": true},
+        "change_rate": {"data_type": "REAL", "sqlite_type": "REAL", "python_type": "float", "description": "涨跌幅", "nullable": true, "unit": "%"},
+        "last_close": {"data_type": "REAL", "sqlite_type": "REAL", "python_type": "float", "description": "昨收价", "nullable": true}
+      },
+      "indexes": [
+        {"name": "idx_hsbio_date", "columns": ["date"], "type": "UNIQUE"}
+      ]
+    },
+
+    "hk_idx_vhsi": {
+      "description": "恒指波幅指数完整K线数据 (香港恐慌指数)",
+      "table_type": "index_kline",
+      "update_frequency": "daily",
+      "data_source": "富途API HK.800125",
+      "columns": {
+        "code": {"data_type": "TEXT", "sqlite_type": "TEXT", "python_type": "str", "description": "股票代码", "nullable": false, "example": "HK.800125"},
+        "name": {"data_type": "TEXT", "sqlite_type": "TEXT", "python_type": "str", "description": "指数名称", "nullable": false, "example": "恒指波幅指数"},
+        "date": {"data_type": "DATE", "sqlite_type": "TEXT", "python_type": "datetime.date", "description": "交易日期", "nullable": false, "primary_key": true, "format": "YYYY-MM-DD"},
+        "open": {"data_type": "REAL", "sqlite_type": "REAL", "python_type": "float", "description": "开盘价", "nullable": true},
+        "close": {"data_type": "REAL", "sqlite_type": "REAL", "python_type": "float", "description": "收盘价", "nullable": true},
+        "high": {"data_type": "REAL", "sqlite_type": "REAL", "python_type": "float", "description": "最高价", "nullable": true},
+        "low": {"data_type": "REAL", "sqlite_type": "REAL", "python_type": "float", "description": "最低价", "nullable": true},
+        "pe_ratio": {"data_type": "REAL", "sqlite_type": "REAL", "python_type": "float", "description": "市盈率", "nullable": true, "unit": "倍"},
+        "turnover_rate": {"data_type": "REAL", "sqlite_type": "REAL", "python_type": "float", "description": "换手率", "nullable": true, "unit": "%"},
+        "volume": {"data_type": "INTEGER", "sqlite_type": "INTEGER", "python_type": "int", "description": "成交量 (股)", "nullable": true},
+        "turnover": {"data_type": "REAL", "sqlite_type": "REAL", "python_type": "float", "description": "成交额 (港元)", "nullable": true},
+        "change_rate": {"data_type": "REAL", "sqlite_type": "REAL", "python_type": "float", "description": "涨跌幅", "nullable": true, "unit": "%"},
+        "last_close": {"data_type": "REAL", "sqlite_type": "REAL", "python_type": "float", "description": "昨收价", "nullable": true}
+      },
+      "indexes": [
+        {"name": "idx_vhsi_date", "columns": ["date"], "type": "UNIQUE"}
+      ],
+      "notes": "VHSI指数越高，表示市场预期波动性越大，投资者恐慌程度越高"
+    },
+
+    "macro_data_hist": {
+      "description": "宏观经济历史数据 - 包含美国国债收益率、VIX指数、美元指数等",
+      "table_type": "macro_data",
+      "update_frequency": "daily",
+      "data_source": "FRED API + Yahoo Finance",
+      "columns": {
+        "date": {
+          "data_type": "DATE",
+          "sqlite_type": "TEXT",
+          "python_type": "datetime.date",
+          "description": "交易日期",
+          "nullable": false,
+          "primary_key": true,
+          "example": "2026-07-09",
+          "format": "YYYY-MM-DD"
+        },
+        "DXY": {
+          "data_type": "REAL",
+          "sqlite_type": "REAL",
+          "python_type": "float",
+          "description": "美元指数 (DXY) - 衡量美元对一篮子货币的强弱",
+          "nullable": true,
+          "example": "105.50",
+          "source": "Yahoo Finance DX-Y.NYB",
+          "interpretation": ">108高风险, >105承压"
+        },
+        "US2Y": {
+          "data_type": "REAL",
+          "sqlite_type": "REAL",
+          "python_type": "float",
+          "description": "美国2年期国债收益率",
+          "nullable": true,
+          "example": "4.25",
+          "source": "FRED DGS2",
+          "unit": "%"
+        },
+        "US10Y": {
+          "data_type": "REAL",
+          "sqlite_type": "REAL",
+          "python_type": "float",
+          "description": "美国10年期国债收益率 (全球资产定价之锚)",
+          "nullable": true,
+          "example": "4.50",
+          "source": "FRED DGS10",
+          "unit": "%",
+          "interpretation": ">5% 风险资产受压"
+        },
+        "US30Y": {
+          "data_type": "REAL",
+          "sqlite_type": "REAL",
+          "python_type": "float",
+          "description": "美国30年期国债收益率",
+          "nullable": true,
+          "example": "4.75",
+          "source": "FRED DGS30",
+          "unit": "%",
+          "interpretation": ">5.2% 长债风险"
+        },
+        "VIX": {
+          "data_type": "REAL",
+          "sqlite_type": "REAL",
+          "python_type": "float",
+          "description": "VIX恐慌指数 (芝加哥期权交易所波动率指数)",
+          "nullable": true,
+          "example": "28.50",
+          "source": "FRED VIXCLS",
+          "interpretation": ">35恐慌, >25风险下降"
+        },
+        "USDCNY": {
+          "data_type": "REAL",
+          "sqlite_type": "REAL",
+          "python_type": "float",
+          "description": "美元兑人民币汇率",
+          "nullable": true,
+          "example": "7.25",
+          "source": "FRED DEXCHUS"
+        },
+        "FEDFUNDS": {
+          "data_type": "REAL",
+          "sqlite_type": "REAL",
+          "python_type": "float",
+          "description": "美联储联邦基金利率",
+          "nullable": true,
+          "example": "5.50",
+          "source": "FRED FEDFUNDS",
+          "unit": "%"
+        },
+        "SOFR": {
+          "data_type": "REAL",
+          "sqlite_type": "REAL",
+          "python_type": "float",
+          "description": "担保隔夜融资利率 (SOFR)",
+          "nullable": true,
+          "example": "5.35",
+          "source": "FRED SOFR",
+          "unit": "%"
+        },
+        "UNRATE": {
+          "data_type": "REAL",
+          "sqlite_type": "REAL",
+          "python_type": "float",
+          "description": "美国失业率",
+          "nullable": true,
+          "example": "3.80",
+          "source": "FRED UNRATE",
+          "unit": "%"
+        },
+        "CORE_CPI_YOY": {
+          "data_type": "REAL",
+          "sqlite_type": "REAL",
+          "python_type": "float",
+          "description": "美国核心CPI同比增速 (不含食品和能源)",
+          "nullable": true,
+          "example": "3.20",
+          "source": "FRED CPILFESL",
+          "unit": "%"
+        }
+      },
+      "indexes": [
+        {
+          "name": "idx_macro_date",
+          "columns": ["date"],
+          "type": "UNIQUE"
+        }
+      ],
+      "usage_example": "SELECT date, DXY, US10Y, VIX FROM macro_data_hist WHERE date >= '2026-01-01' ORDER BY date DESC",
+      "notes": "所有收益率数据以百分比(%)表示，例如4.25表示4.25%"
+    },
+
+    "southbound_flow_hist": {
+      "description": "南向资金每日明细数据 - 港股通(沪+深)每日买入、卖出和净流入金额",
+      "table_type": "flow_data",
+      "update_frequency": "daily",
+      "data_source": "AkShare stock_hsgt_hist_em",
+      "columns": {
+        "date": {
+          "data_type": "DATE",
+          "sqlite_type": "TEXT",
+          "python_type": "datetime.date",
+          "description": "交易日期",
+          "nullable": false,
+          "primary_key": true,
+          "example": "2026-07-09",
+          "format": "YYYY-MM-DD"
+        },
+        "buy_amount": {
+          "data_type": "REAL",
+          "sqlite_type": "REAL",
+          "python_type": "float",
+          "description": "南向资金买入金额 (亿元)",
+          "nullable": true,
+          "example": "125.50",
+          "unit": "亿元"
+        },
+        "sell_amount": {
+          "data_type": "REAL",
+          "sqlite_type": "REAL",
+          "python_type": "float",
+          "description": "南向资金卖出金额 (亿元)",
+          "nullable": true,
+          "example": "80.00",
+          "unit": "亿元"
+        },
+        "net_inflow": {
+          "data_type": "REAL",
+          "sqlite_type": "REAL",
+          "python_type": "float",
+          "description": "南向资金净流入 (亿元) = 买入 - 卖出",
+          "nullable": true,
+          "example": "45.50",
+          "unit": "亿元",
+          "interpretation": "正值表示净流入港股，负值表示净流出"
+        }
+      },
+      "indexes": [
+        {
+          "name": "idx_south_date",
+          "columns": ["date"],
+          "type": "UNIQUE"
+        }
+      ],
+      "usage_example": "SELECT date, buy_amount, sell_amount, net_inflow FROM southbound_flow_hist WHERE date >= '2026-01-01' ORDER BY date DESC",
+      "notes": "南向资金 = 港股通(沪) + 港股通(深)，单位为亿元人民币"
+    }
+  }
+}

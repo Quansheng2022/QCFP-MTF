@@ -1,0 +1,56 @@
+[
+  {
+    "name": "baseline",
+    "mdd": -0.2464529384670766,
+    "recovery_days": 25,
+    "cost_scale": 1.0
+  },
+  {
+    "name": "market_5%",
+    "mdd": -0.24645293846707683,
+    "recovery_days": 25,
+    "cost_scale": 1.0
+  },
+  {
+    "name": "market_10%",
+    "mdd": -0.2464529384670764,
+    "recovery_days": 25,
+    "cost_scale": 1.0
+  },
+  {
+    "name": "market_15%",
+    "mdd": -0.2464529384670764,
+    "recovery_days": 25,
+    "cost_scale": 1.0
+  },
+  {
+    "name": "market_20%",
+    "mdd": -0.2464529384670766,
+    "recovery_days": 25,
+    "cost_scale": 1.0
+  },
+  {
+    "name": "vol_x1.5",
+    "mdd": -0.392481188915771,
+    "recovery_days": -1,
+    "cost_scale": 1.0
+  },
+  {
+    "name": "vol_x2.0",
+    "mdd": -0.489943453113466,
+    "recovery_days": -1,
+    "cost_scale": 1.0
+  },
+  {
+    "name": "vol_x3.0",
+    "mdd": -0.6456713292370371,
+    "recovery_days": -1,
+    "cost_scale": 1.0
+  },
+  {
+    "name": "correlation_0.9",
+    "mdd": -0.39269491101626075,
+    "recovery_days": 25,
+    "cost_scale": 2.0
+  }
+]

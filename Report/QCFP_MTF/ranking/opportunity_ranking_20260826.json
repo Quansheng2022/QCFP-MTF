@@ -1,0 +1,155 @@
+{
+  "generated_at": "20260826",
+  "top_n": 5,
+  "ranked": [
+    {
+      "stock_code": "01093",
+      "score": 41.5,
+      "permission": "WATCH",
+      "setup": "ACCUMULATION",
+      "tradable": true
+    },
+    {
+      "stock_code": "01177",
+      "score": 39.0,
+      "permission": "WATCH",
+      "setup": "ACCUMULATION",
+      "tradable": true
+    },
+    {
+      "stock_code": "01951",
+      "score": 38.25,
+      "permission": "WATCH",
+      "setup": "ACCUMULATION",
+      "tradable": true
+    },
+    {
+      "stock_code": "06060",
+      "score": 37.25,
+      "permission": "WATCH",
+      "setup": "ACCUMULATION",
+      "tradable": true
+    },
+    {
+      "stock_code": "00357",
+      "score": 34.75,
+      "permission": "TEST",
+      "setup": "NONE",
+      "tradable": true
+    },
+    {
+      "stock_code": "02602",
+      "score": 27.5,
+      "permission": "WATCH",
+      "setup": "NONE",
+      "tradable": true
+    },
+    {
+      "stock_code": "00268",
+      "score": 27.0,
+      "permission": "WATCH",
+      "setup": "NONE",
+      "tradable": true
+    },
+    {
+      "stock_code": "02611",
+      "score": 27.0,
+      "permission": "WATCH",
+      "setup": "NONE",
+      "tradable": true
+    },
+    {
+      "stock_code": "00354",
+      "score": 23.75,
+      "permission": "WATCH",
+      "setup": "NONE",
+      "tradable": true
+    },
+    {
+      "stock_code": "00788",
+      "score": 23.75,
+      "permission": "WATCH",
+      "setup": "NONE",
+      "tradable": true
+    },
+    {
+      "stock_code": "02202",
+      "score": 23.75,
+      "permission": "WATCH",
+      "setup": "NONE",
+      "tradable": true
+    },
+    {
+      "stock_code": "00020",
+      "score": 22.75,
+      "permission": "WATCH",
+      "setup": "NONE",
+      "tradable": true
+    },
+    {
+      "stock_code": "00371",
+      "score": 22.75,
+      "permission": "WATCH",
+      "setup": "NONE",
+      "tradable": true
+    },
+    {
+      "stock_code": "00700",
+      "score": 22.75,
+      "permission": "WATCH",
+      "setup": "NONE",
+      "tradable": true
+    },
+    {
+      "stock_code": "03800",
+      "score": 22.75,
+      "permission": "WATCH",
+      "setup": "NONE",
+      "tradable": true
+    },
+    {
+      "stock_code": "03033",
+      "score": 21.75,
+      "permission": "WATCH",
+      "setup": "NONE",
+      "tradable": true
+    }
+  ],
+  "selected": [
+    {
+      "stock_code": "01093",
+      "score": 41.5,
+      "permission": "WATCH",
+      "setup": "ACCUMULATION",
+      "tradable": true
+    },
+    {
+      "stock_code": "01177",
+      "score": 39.0,
+      "permission": "WATCH",
+      "setup": "ACCUMULATION",
+      "tradable": true
+    },
+    {
+      "stock_code": "01951",
+      "score": 38.25,
+      "permission": "WATCH",
+      "setup": "ACCUMULATION",
+      "tradable": true
+    },
+    {
+      "stock_code": "06060",
+      "score": 37.25,
+      "permission": "WATCH",
+      "setup": "ACCUMULATION",
+      "tradable": true
+    },
+    {
+      "stock_code": "00357",
+      "score": 34.75,
+      "permission": "TEST",
+      "setup": "NONE",
+      "tradable": true
+    }
+  ]
+}

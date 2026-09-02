@@ -1,0 +1,21 @@
+{
+  "run_id": "bt_20260828_133340",
+  "model_version": "QCFP-MTF-2.5.0",
+  "git_commit": "n/a（非 git 工作区）",
+  "config_hash": "ca16a8d58a05",
+  "code_hash": "91558c932d26",
+  "data_snapshot": {
+    "qcfp_quarterly_structural": 960,
+    "qcfp_monthly_behavior": 2307,
+    "qcfp_weekly_tactical": 10046,
+    "qcfp_daily_tactical": 47361,
+    "qcfp_mtf_decision": 10046
+  },
+  "pit_mode": "ESTIMATED",
+  "pit_grade": "C",
+  "universe_version": "none",
+  "start": "2021-01-01",
+  "end": "2026-08-21",
+  "cost_model_version": "directional_v2",
+  "parameter_hash": "ca16a8d58a05"
+}

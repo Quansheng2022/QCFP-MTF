@@ -1,0 +1,141 @@
+{
+  "decision_id": "01951_2026-08-21",
+  "stock_code": "01951",
+  "decision_date": "2026-08-21",
+  "institutional_state": "ACCUMULATION_WEAK",
+  "institutional_permission": "WATCH",
+  "permission_cap": "TESTING",
+  "exit_event_kind": "FORCED_DELEVERAGE",
+  "exit_event_reason": "extreme_risk",
+  "setup_type": "ACCUMULATION",
+  "prev_fsm_state": "FLAT",
+  "next_fsm_state": "COOLDOWN",
+  "previous_position": 0.0,
+  "target_position": 0.0,
+  "decision_path": [
+    "evidence",
+    "institutional",
+    "exit_events",
+    "setup",
+    "participation_budget",
+    "fsm",
+    "sizing",
+    "permission_cap",
+    "trade_quality",
+    "governance",
+    "final_target"
+  ],
+  "rule_version": "GOV-2.5.0",
+  "model_version": "QCFP-MTF-2.5.0",
+  "schema_version": "DECISION-1.1",
+  "base_fsm_state": "FLAT",
+  "raw_target_position": 0.0,
+  "permission_constraint_applied": false,
+  "override_rule_ids": [
+    "hard_exit"
+  ],
+  "input_fingerprint": "19927e5d2ac3c52d",
+  "settings_hash": "e8f1e2d6a720",
+  "institutional_pressure": 1,
+  "institutional_persistence": 0,
+  "institutional_reasons": [],
+  "context": {
+    "structural_regime": "STRUCTURAL_DECLINE",
+    "mtf_regime": "BULLISH_WARNING",
+    "market_context": "risk_on",
+    "market_regime": "Bull",
+    "daily_trigger": "DAILY_ACCUMULATION",
+    "data_quality": "C",
+    "participation": {
+      "mode": "STAND",
+      "cap": 0.0,
+      "reason": "watch_no_setup_or_high_risk"
+    },
+    "position_class": "NONE",
+    "pit_grade": "C",
+    "evidence_grade": "C",
+    "grade_reasons": [
+      "dq=C",
+      "estimated_period_end_lag"
+    ],
+    "trace": {
+      "institutional": [
+        "base"
+      ],
+      "exit": "FORCED_DELEVERAGE",
+      "setup": "ACCUMULATION",
+      "participation": "STAND",
+      "fsm": [
+        "hard_exit"
+      ],
+      "sizing_raw": 0.0,
+      "permission_cap": 0.0,
+      "trade_quality": 45.0,
+      "governance": "PASSED"
+    },
+    "governance_proof": {
+      "permission": "WATCH",
+      "participation_mode": "STAND",
+      "raw_target": 0.0,
+      "permission_cap": 0.2,
+      "risk_cap": 0.0,
+      "budget_cap": 0.0,
+      "final_target": 0.0,
+      "previous_position": 0.0,
+      "hard_exit": false,
+      "data_quality": "C",
+      "violations": [],
+      "proof": "PASS"
+    },
+    "conflict": {
+      "conflict_id": "HARD_EXIT|FORCED_DELEVERAGE",
+      "winning_rule": "HARD_EXIT",
+      "winning_value": "FORCED_DELEVERAGE",
+      "suppressed": [
+        "RISK_BLOCK",
+        "INSTITUTIONAL_PERMISSION",
+        "FSM",
+        "SETUP",
+        "TECHNICAL_TRIGGER"
+      ],
+      "reason": "HARD_EXIT 优先于 ['RISK_BLOCK', 'INSTITUTIONAL_PERMISSION', 'FSM', 'SETUP', 'TECHNICAL_TRIGGER']"
+    },
+    "confidence": {
+      "institutional_evidence": 8,
+      "wave_evidence": 14,
+      "risk_evidence": 0,
+      "data_quality": "C",
+      "pit_quality": "C",
+      "score": 34,
+      "band": "Low"
+    },
+    "action": "WAIT",
+    "action_reasons": [
+      "COOLDOWN"
+    ],
+    "config": {
+      "permission": true,
+      "soft_exit": true,
+      "hard_exit": true,
+      "daily": true,
+      "budget": true
+    }
+  },
+  "primary_reason": "FORCED_DELEVERAGE",
+  "secondary_reasons": [
+    "INST_ACCUMULATION_WEAK",
+    "PRICE_DECLINE"
+  ],
+  "run_id": "",
+  "participation_mode": "STAND",
+  "participation_cap": 0.0,
+  "position_class": "NONE",
+  "exit_severity": 2,
+  "feature_manifest_hash": "ed8b6eceb02a5815",
+  "trade_quality": 45.0,
+  "trade_quality_band": "Tradable",
+  "pit_grade": "C",
+  "evidence_grade": "C",
+  "data_snapshot_id": "",
+  "data_version": "1.0"
+}

@@ -1,0 +1,2483 @@
+{
+  "register": {
+    "ablation.experiments": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "ablation.incremental": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "ablation.marginal": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "ablation.matrix": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "ablation.portfolio_counterfactual": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "ablation.statistical": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "alpha.correlation": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "alpha.halflife": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "alpha.registry": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "backtest.benchmark": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "backtest.benchmarks": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "backtest.calibration": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "backtest.canonical": {
+      "prod_reachable": true,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "MERGE"
+    },
+    "backtest.canonical_runs": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "backtest.cost_model": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "backtest.cross_sectional": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "backtest.cross_validation": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "backtest.data_pipeline": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "backtest.engine": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "backtest.information_analysis": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "backtest.lookahead_filter": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "backtest.performance": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "backtest.pit_universe": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "backtest.portfolio_constraints": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "backtest.portfolio_risk": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "backtest.research_gate": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "backtest.retail_utility": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "backtest.robustness": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "backtest.run_status": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "backtest.trade_ledger": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "backtest.wave_capture": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "behavioral.cbi": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "behavioral.cost_position": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "behavioral.monthly_stage": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "behavioral.turnover_factors": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "behavioral.volume_factors": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "behavioral.vp_matrix": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "common.asof": {
+      "prod_reachable": true,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "MERGE"
+    },
+    "common.calendar": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "common.config_par": {
+      "prod_reachable": true,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "MERGE"
+    },
+    "common.db": {
+      "prod_reachable": true,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "MERGE"
+    },
+    "common.logger": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "common.normalization": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "common.paths": {
+      "prod_reachable": true,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "MERGE"
+    },
+    "config.governance": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "config.settings": {
+      "prod_reachable": true,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "MERGE"
+    },
+    "data.asof_contract": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "data.evidence": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "data.feature_contract": {
+      "prod_reachable": true,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "MERGE"
+    },
+    "data.feature_registry": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "data.information_set": {
+      "prod_reachable": true,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "MERGE"
+    },
+    "data.lineage": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "data.loader": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "data.pit_registry": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "data.quality": {
+      "prod_reachable": true,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "MERGE"
+    },
+    "data.tradability": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "data.universe_snapshot": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "decision.abstain": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "decision.action_classifier": {
+      "prod_reachable": true,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "MERGE"
+    },
+    "decision.action_gate": {
+      "prod_reachable": true,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "MERGE"
+    },
+    "decision.action_generator": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "decision.boundary_test": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "decision.canonical_action": {
+      "prod_reachable": true,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "MERGE"
+    },
+    "decision.catalyst_quality": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "decision.certified_decision": {
+      "prod_reachable": true,
+      "authority": "EXECUTION_ELIGIBILITY",
+      "decision_critical": true,
+      "decision": "KEEP"
+    },
+    "decision.confidence": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "decision.consensus": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "decision.constraint_trace": {
+      "prod_reachable": true,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "MERGE"
+    },
+    "decision.decision_certificate": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "decision.decision_delta": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "decision.decision_ledger": {
+      "prod_reachable": true,
+      "authority": "FACT",
+      "decision_critical": true,
+      "decision": "KEEP"
+    },
+    "decision.decision_snapshot": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "decision.downside_risk": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "decision.dss_output": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "decision.dynamic_risk_budget": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "decision.engine": {
+      "prod_reachable": true,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "MERGE"
+    },
+    "decision.entry_quality": {
+      "prod_reachable": true,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "MERGE"
+    },
+    "decision.exit_quality": {
+      "prod_reachable": true,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "MERGE"
+    },
+    "decision.feature_manifest": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "decision.field_lineage": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "decision.fsm_authority": {
+      "prod_reachable": true,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "MERGE"
+    },
+    "decision.governance": {
+      "prod_reachable": true,
+      "authority": "FINAL_TARGET",
+      "decision_critical": true,
+      "decision": "KEEP"
+    },
+    "decision.governance_caps": {
+      "prod_reachable": true,
+      "authority": "CAP",
+      "decision_critical": true,
+      "decision": "KEEP"
+    },
+    "decision.governance_card": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "decision.governance_proof": {
+      "prod_reachable": true,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "MERGE"
+    },
+    "decision.hard_exit": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "decision.historical_integrity": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "decision.institutional_filter": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "decision.institutional_permission": {
+      "prod_reachable": true,
+      "authority": "RISK_UPPER_BOUND",
+      "decision_critical": true,
+      "decision": "KEEP"
+    },
+    "decision.object": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "decision.optimal_position": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "decision.participation_budget": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "decision.path_hash": {
+      "prod_reachable": true,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "MERGE"
+    },
+    "decision.permission_gate": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "decision.permission_policy": {
+      "prod_reachable": true,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "MERGE"
+    },
+    "decision.position_scaling": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "decision.position_sizing": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "decision.reason_codes": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "decision.release_identity": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "decision.replay_cert": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "decision.replay_contract": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "decision.replay_engine": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "decision.retail": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "decision.retail_fsm": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "decision.retail_position_fsm": {
+      "prod_reachable": false,
+      "authority": "LIFECYCLE_PROPOSAL",
+      "decision_critical": true,
+      "decision": "RESEARCH_ONLY"
+    },
+    "decision.retail_position_sizing": {
+      "prod_reachable": true,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "MERGE"
+    },
+    "decision.risk_evaluator": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "decision.schema_contract": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "decision.schema_registry": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "decision.score_calculator": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "decision.stability": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "decision.stop_loss": {
+      "prod_reachable": true,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "MERGE"
+    },
+    "decision.time_in_trade": {
+      "prod_reachable": true,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "MERGE"
+    },
+    "decision.trade_quality": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "decision.types": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "decision.versions": {
+      "prod_reachable": true,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "MERGE"
+    },
+    "evaluation.challenger": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "evaluation.counterfactual_audit": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "evaluation.counterfactual_value": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "evaluation.decision_compression": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "evaluation.decision_cost_budget": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "evaluation.decision_stability_diag": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "evaluation.decision_surface_audit": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "evaluation.fpfn_lab": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "evaluation.governance_alpha": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "evaluation.miss_analysis": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "evaluation.module_value": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "evaluation.no_trade": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "evaluation.opportunity_funnel": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "evaluation.override_outcome_review": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "evaluation.permission_value": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "evaluation.position_lifecycle": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "evaluation.regime_matrix": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "evaluation.regret": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "evaluation.retail_scorecard": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "evaluation.risk_reduction_attribution": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "evaluation.timing_alpha": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "evaluation.trade_outcome": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "evaluation.wave_quality_matrix": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "evidence.snapshot": {
+      "prod_reachable": true,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "MERGE"
+    },
+    "execution.capacity": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "execution.executable_target": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "execution.execution_gate": {
+      "prod_reachable": true,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "MERGE"
+    },
+    "execution.liquidity_exit": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "execution.order_state_machine": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "execution.simulator": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "explainability.engine": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "explainability.graph": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "failure.decision_error_taxonomy": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "failure.degradation": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "failure.failure_modes": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "failure.loss_cluster": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "fsm.transition_matrix": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "fusion.anti_inference": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "fusion.chip_confidence": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "fusion.daily_timing": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "fusion.mtf_alignment": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "fusion.mtf_fsm": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "governance.architecture_conformance": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "governance.artifact_registry": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "governance.autonomy": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "governance.certification": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "governance.certification_scope": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "governance.change_impact": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "governance.completeness_review": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "governance.complexity_budget": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "governance.complexity_ceiling": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "governance.conflict": {
+      "prod_reachable": true,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "MERGE"
+    },
+    "governance.convergence_release": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "governance.cross_layer_contradiction": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "governance.dead_authority": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "governance.decision_changelog": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "governance.decision_necessity": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "governance.determinism": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "governance.doubt_index": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "governance.duplicate_logic_detector": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "governance.evidence_expiry": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "governance.evidence_provider": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "governance.failure_injection": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "governance.feature_freeze": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "governance.feature_gate": {
+      "prod_reachable": true,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "MERGE"
+    },
+    "governance.final_design_principles": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "governance.golden_decision_corpus": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "governance.governance_aging": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "governance.governance_minimalism": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "governance.human_override": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "governance.lifecycle": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "governance.minimal_governed_core": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "governance.model_decay": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "governance.module_retirement": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "governance.module_trim": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "governance.one_page_canonical": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "governance.performance_metric_contract": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "governance.production_acceptance": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "governance.production_dependency_allowlist": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "governance.production_evidence_pack": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "governance.production_feature_manifest": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "governance.production_simplicity_kpi": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "governance.promotion_gate": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "governance.provenance": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "governance.pwc2_authority_graph": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "governance.reentry": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "governance.release_manifest": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "governance.research_debt_register": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "governance.research_guard": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "governance.research_production_leakage": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "governance.rule_ownership": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "governance.rule_removal_test": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "governance.shadow_divergence": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "governance.simplification_release": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "governance.sunset_policy": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "governance.system_constitution": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "governance.three_worlds": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "governance.trade_frequency": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "governance.validation_certificate": {
+      "prod_reachable": false,
+      "authority": "FORMAL_RESEARCH_STATUS",
+      "decision_critical": true,
+      "decision": "RESEARCH_ONLY"
+    },
+    "governance.version_impact": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "governance.zero_trust": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "institutional.confidence": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "institutional.divergence": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "institutional.permission": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "institutional.persistence": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "institutional.pressure": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "institutional.state_engine": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "learning.adaptive_sandbox": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "learning.controlled_loop": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "learning.post_trade": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "market.opportunity_regime": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "market.regime": {
+      "prod_reachable": true,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "MERGE"
+    },
+    "market.regime_conditioned": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "market.regime_fsm": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "market.regime_robustness": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "market.transition": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "monitoring.benchmark": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "monitoring.binding_constraint_frequency": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "monitoring.confidence_calibration": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "monitoring.critical_path_observability": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "monitoring.data_trust_report": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "monitoring.decision_coverage": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "monitoring.decision_latency_budget": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "monitoring.decision_quality": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "monitoring.drift_monitor": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "monitoring.execution_calibration": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "monitoring.forecast_realized": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "monitoring.gap_monitor": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "monitoring.observability": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "monitoring.research_production_drift": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "monitoring.risk_budget_utilization": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "monitoring.state_transition_audit": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "monitoring.strategy_health": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "monitoring.validation_controller": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "performance.attribution": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "performance.contract": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "portfolio.aggregator": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "portfolio.budget": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "portfolio.concentration": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "portfolio.drawdown_response": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "portfolio.exposure_engine": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "portfolio.interaction_graph": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "portfolio.lifecycle_gate": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "portfolio.portfolio_ledger": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "portfolio.rebalancing": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "portfolio.risk_contagion": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "portfolio.state_engine": {
+      "prod_reachable": true,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "MERGE"
+    },
+    "portfolio.strategy_allocation": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "portfolio.tail_gap": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "ranking.allocator": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "ranking.competition": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "ranking.opportunity_ranking": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "ranking.queue": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "replacement.replacement_engine": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "report.contract": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "report.information_budget": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "research.alpha_discovery": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "research.autonomous_loop": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "research.benchmark_ladder": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "research.causal_evidence": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "research.ci_engine": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "research.dominated_rule_detection": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "research.evidence_contradiction": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "research.evidence_hierarchy": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "research.factory": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "research.feature_pruning": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "research.minimum_viable_canonical": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "research.negative_result_registry": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "research.overfitting_firewall": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "research.policy_optimizer": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "research.research_artifact_bundle": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "research.rule_interaction_audit": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "research.simplification": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "research.strategy_competition": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "research.threshold_sensitivity_map": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "research.transferability": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "review.strategic_review": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "safety.continuous_validation": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "safety.incident_protocol": {
+      "prod_reachable": true,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "MERGE"
+    },
+    "safety.kill_switch": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "safety.reactivation_gate": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "safety.recovery_replay_test": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "safety.safety_case": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "safety.strategy_kill": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "safety.system_health": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "scripts.all_in_one_report": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "KEEP"
+    },
+    "scripts.attribution_report": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "KEEP"
+    },
+    "scripts.audit_coverage": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "KEEP"
+    },
+    "scripts.audit_report": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "KEEP"
+    },
+    "scripts.backtest_runner": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "KEEP"
+    },
+    "scripts.benchmark_report": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "KEEP"
+    },
+    "scripts.calibration": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "KEEP"
+    },
+    "scripts.canonical_audit": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "KEEP"
+    },
+    "scripts.capacity_report": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "KEEP"
+    },
+    "scripts.check_data_quality": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "KEEP"
+    },
+    "scripts.complexity_report": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "KEEP"
+    },
+    "scripts.continuous_validation_report": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "KEEP"
+    },
+    "scripts.cost_stress_test": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "KEEP"
+    },
+    "scripts.counterfactual_portfolio": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "KEEP"
+    },
+    "scripts.counterfactual_replay": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "KEEP"
+    },
+    "scripts.counterfactual_report": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "KEEP"
+    },
+    "scripts.cross_sectional_backtest": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "KEEP"
+    },
+    "scripts.daily_alpha_test": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "KEEP"
+    },
+    "scripts.daily_tactical_engine": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "KEEP"
+    },
+    "scripts.decision_engine": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "KEEP"
+    },
+    "scripts.decision_report": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "KEEP"
+    },
+    "scripts.dss_report": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "KEEP"
+    },
+    "scripts.execution_ablation": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "KEEP"
+    },
+    "scripts.failure_report": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "KEEP"
+    },
+    "scripts.forecast_realized_report": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "KEEP"
+    },
+    "scripts.fsm_transition_report": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "KEEP"
+    },
+    "scripts.governance_certification": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "KEEP"
+    },
+    "scripts.html_report": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "KEEP"
+    },
+    "scripts.ic_analysis": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "KEEP"
+    },
+    "scripts.incremental_alpha_test": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "KEEP"
+    },
+    "scripts.incremental_evidence_report": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "KEEP"
+    },
+    "scripts.init_db": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "KEEP"
+    },
+    "scripts.layer_ablation_test": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "KEEP"
+    },
+    "scripts.legacy_replace_check": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "KEEP"
+    },
+    "scripts.lineage_report": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "KEEP"
+    },
+    "scripts.liquidity_exit_report": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "KEEP"
+    },
+    "scripts.monthly_behavior_engine": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "KEEP"
+    },
+    "scripts.mtf_fusion_engine": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "KEEP"
+    },
+    "scripts.opportunity_ranking_report": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "KEEP"
+    },
+    "scripts.permission_fsm_ablation": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "KEEP"
+    },
+    "scripts.portfolio_state_report": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "KEEP"
+    },
+    "scripts.pwc2_convergence": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "KEEP"
+    },
+    "scripts.regime_gate_test": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "KEEP"
+    },
+    "scripts.regime_transition_report": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "KEEP"
+    },
+    "scripts.release_gate": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "KEEP"
+    },
+    "scripts.replay_certify": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "KEEP"
+    },
+    "scripts.research_registry_report": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "KEEP"
+    },
+    "scripts.research_validation": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "KEEP"
+    },
+    "scripts.retail_swing_report": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "KEEP"
+    },
+    "scripts.safety_report": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "KEEP"
+    },
+    "scripts.sensitivity_backtest": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "KEEP"
+    },
+    "scripts.shadow_live": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "KEEP"
+    },
+    "scripts.shadow_mode": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "KEEP"
+    },
+    "scripts.stability_report": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "KEEP"
+    },
+    "scripts.state_validation": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "KEEP"
+    },
+    "scripts.stock_pool_report": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "KEEP"
+    },
+    "scripts.strategy_lifecycle": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "KEEP"
+    },
+    "scripts.stress_report": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "KEEP"
+    },
+    "scripts.structural_engine": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "KEEP"
+    },
+    "scripts.trigger_sensitivity": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "KEEP"
+    },
+    "scripts.validate_structural": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "KEEP"
+    },
+    "scripts.version_impact_report": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "KEEP"
+    },
+    "scripts.wave_capture_report": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "KEEP"
+    },
+    "scripts.wave_replay": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "KEEP"
+    },
+    "scripts.weekly_tactical_engine": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "KEEP"
+    },
+    "setup.swing_setup": {
+      "prod_reachable": true,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "MERGE"
+    },
+    "shadow.drift": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "stress.data_degradation": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "stress.engine": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "stress.joint_stress": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "stress.scenario_engine": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "stress.scenario_library": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "stress.stress_matrix": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "structural.chip_factors": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "structural.divergence": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "structural.flow_factors": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "structural.price_factors": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "structural.structural_regime": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "tactical.daily_tactical": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "tactical.weekly_signal": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "tactical.weekly_turnover": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "tactical.weekly_volume": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "tactical.weekly_vwap": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "wave.aging": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "wave.asof_opportunity": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "wave.canonical": {
+      "prod_reachable": true,
+      "authority": "OPPORTUNITY_PROPOSAL",
+      "decision_critical": true,
+      "decision": "KEEP"
+    },
+    "wave.label": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "wave.lifecycle": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "wave.opportunity": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "wave.outcome_label": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "wave.quality": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "wave.signal": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    },
+    "wave.stage_gate": {
+      "prod_reachable": true,
+      "authority": "OPPORTUNITY_PROPOSAL",
+      "decision_critical": true,
+      "decision": "KEEP"
+    },
+    "wave.stage_output": {
+      "prod_reachable": false,
+      "authority": "NONE",
+      "decision_critical": false,
+      "decision": "RESEARCH_ONLY"
+    }
+  },
+  "delete": [],
+  "merge": [
+    "backtest.canonical",
+    "common.asof",
+    "common.config_par",
+    "common.db",
+    "common.paths",
+    "config.settings",
+    "data.feature_contract",
+    "data.information_set",
+    "data.quality",
+    "decision.action_classifier",
+    "decision.action_gate",
+    "decision.canonical_action",
+    "decision.constraint_trace",
+    "decision.engine",
+    "decision.entry_quality",
+    "decision.exit_quality",
+    "decision.fsm_authority",
+    "decision.governance_proof",
+    "decision.path_hash",
+    "decision.permission_policy",
+    "decision.retail_position_sizing",
+    "decision.stop_loss",
+    "decision.time_in_trade",
+    "decision.versions",
+    "evidence.snapshot",
+    "execution.execution_gate",
+    "governance.conflict",
+    "governance.feature_gate",
+    "market.regime",
+    "portfolio.state_engine",
+    "safety.incident_protocol",
+    "setup.swing_setup"
+  ],
+  "keep": [
+    "decision.certified_decision",
+    "decision.decision_ledger",
+    "decision.governance",
+    "decision.governance_caps",
+    "decision.institutional_permission",
+    "scripts.all_in_one_report",
+    "scripts.attribution_report",
+    "scripts.audit_coverage",
+    "scripts.audit_report",
+    "scripts.backtest_runner",
+    "scripts.benchmark_report",
+    "scripts.calibration",
+    "scripts.canonical_audit",
+    "scripts.capacity_report",
+    "scripts.check_data_quality",
+    "scripts.complexity_report",
+    "scripts.continuous_validation_report",
+    "scripts.cost_stress_test",
+    "scripts.counterfactual_portfolio",
+    "scripts.counterfactual_replay",
+    "scripts.counterfactual_report",
+    "scripts.cross_sectional_backtest",
+    "scripts.daily_alpha_test",
+    "scripts.daily_tactical_engine",
+    "scripts.decision_engine",
+    "scripts.decision_report",
+    "scripts.dss_report",
+    "scripts.execution_ablation",
+    "scripts.failure_report",
+    "scripts.forecast_realized_report",
+    "scripts.fsm_transition_report",
+    "scripts.governance_certification",
+    "scripts.html_report",
+    "scripts.ic_analysis",
+    "scripts.incremental_alpha_test",
+    "scripts.incremental_evidence_report",
+    "scripts.init_db",
+    "scripts.layer_ablation_test",
+    "scripts.legacy_replace_check",
+    "scripts.lineage_report",
+    "scripts.liquidity_exit_report",
+    "scripts.monthly_behavior_engine",
+    "scripts.mtf_fusion_engine",
+    "scripts.opportunity_ranking_report",
+    "scripts.permission_fsm_ablation",
+    "scripts.portfolio_state_report",
+    "scripts.pwc2_convergence",
+    "scripts.regime_gate_test",
+    "scripts.regime_transition_report",
+    "scripts.release_gate",
+    "scripts.replay_certify",
+    "scripts.research_registry_report",
+    "scripts.research_validation",
+    "scripts.retail_swing_report",
+    "scripts.safety_report",
+    "scripts.sensitivity_backtest",
+    "scripts.shadow_live",
+    "scripts.shadow_mode",
+    "scripts.stability_report",
+    "scripts.state_validation",
+    "scripts.stock_pool_report",
+    "scripts.strategy_lifecycle",
+    "scripts.stress_report",
+    "scripts.structural_engine",
+    "scripts.trigger_sensitivity",
+    "scripts.validate_structural",
+    "scripts.version_impact_report",
+    "scripts.wave_capture_report",
+    "scripts.wave_replay",
+    "scripts.weekly_tactical_engine",
+    "wave.canonical",
+    "wave.stage_gate"
+  ]
+}

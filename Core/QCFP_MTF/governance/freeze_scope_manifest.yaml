@@ -1,0 +1,56 @@
+# Phase 1 — Freeze Scope Manifest（Authority Surface）
+#
+# 明确哪些文件属于 Phase 1 Authority Surface；报告/说明文档（Doc/、Report/、
+# Prompt/）不是 Authority，不得作为版本/架构/权威依据。
+# 路径相对 Core/QCFP_MTF 模块根（governance_baseline.json 例外，指向项目根 audit/）。
+
+schema: PHASE1-FREEZE-SCOPE-1
+purpose: Phase 1 Architecture & Specification Freeze 的 Authority Surface
+
+canonical_specification:
+  - path: CANONICAL_SPEC.md
+    role: Highest System Authority（What must always be true）
+
+architecture_baseline:
+  - path: ARCHITECTURE.md
+    role: Current Architecture Authority（可演进；变化需 Baseline Candidate → Human Approval）
+
+runtime_version_authority:
+  - path: decision/versions.py
+    role: Runtime Version Authority（Model/Rule/Schema/Engine 版本唯一来源）
+
+decision_authority:
+  - path: governance/decision_authority_matrix.yaml
+    role: Spec Authority ↔ Rule Owner ↔ Production Module 对齐矩阵
+  - path: governance/rule_ownership.py
+    role: 决策关键规则唯一 Owner Registry
+  - path: governance/pwc2_authority_graph.py
+    role: Authority Graph 生成器（duplicate/unauthorized writer 审计）
+
+traceability:
+  - path: governance/traceability_manifest.yaml
+    role: Requirement Traceability（Spec → Architecture → Owner → Module → Test → Evidence → Gate）
+
+constitution:
+  - path: governance/system_constitution.py
+    role: 系统宪法不变量（最高过滤器）
+  - path: governance/final_design_principles.py
+    role: 最终设计原则（停止规则）
+
+governance_baseline:
+  - path: governance/governance_baseline.py
+    role: Baseline 计算/验证/审批（Create-Only / Immutable）
+  - path: ../../audit/baseline/governance_baseline.json
+    role: Frozen Governance Baseline（唯一冻结基线）
+
+non_authority:
+  - Doc/**
+  - Report/**
+  - Prompt/**
+  - Merged_Code/**
+  - Log/**
+  - Temp/**
+
+rule: >-
+  只有 Authority Surface 内的文件可以作为 Phase 1 冻结依据；
+  报告/说明/产物文档一律不是 Authority，不得被当作版本或架构权威。

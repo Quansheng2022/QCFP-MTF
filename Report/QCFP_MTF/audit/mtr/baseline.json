@@ -1,0 +1,20 @@
+{
+  "release": "MINIMAL_TRUSTED_PRODUCTION_RELEASE",
+  "baseline": {
+    "production_files": 397,
+    "production_critical_loc": 2455,
+    "production_modules": 17,
+    "active_features": 17,
+    "executable_decision_paths": 3,
+    "duplicate_authorities": 2,
+    "legacy_production_imports": 2,
+    "canonical_golden_pass": 1.0,
+    "replay_coverage": 0.96,
+    "invariant_coverage": 0.92,
+    "pit_compliance": 1.0,
+    "oos_evidence_grade": "A",
+    "failure_injection_cases": 12,
+    "invariant_checks": 14
+  },
+  "frozen": true
+}

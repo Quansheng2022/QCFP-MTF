@@ -1,0 +1,137 @@
+{
+  "table_name": "qcfp_data_quality_audit",
+  "generated_at": "2026-08-24 22:03:30",
+  "database_path": "C:\\Users\\Quansheng\\Documents\\projects\\TA_Workflow\\SQLiteDB\\HK_Stock.db",
+  "statistics": {
+    "total_records": 154,
+    "stock_count": 17
+  },
+  "field_count": 13,
+  "fields": [
+    {
+      "field_name": "id",
+      "data_type": "INTEGER",
+      "description": "主键，自增ID",
+      "sample": null
+    },
+    {
+      "field_name": "stock_code",
+      "data_type": "TEXT",
+      "description": "股票代码（5位数字；IDX 表示大盘指数）",
+      "sample": null
+    },
+    {
+      "field_name": "data_type",
+      "data_type": "TEXT",
+      "description": "数据源类型（如 daily_kline / institutional_holdings）",
+      "sample": null
+    },
+    {
+      "field_name": "grade",
+      "data_type": "TEXT",
+      "description": "质量等级（A/B/C/D）",
+      "sample": null
+    },
+    {
+      "field_name": "rows",
+      "data_type": "INTEGER",
+      "description": "记录数",
+      "sample": null
+    },
+    {
+      "field_name": "first_date",
+      "data_type": "TEXT",
+      "description": "首条日期",
+      "sample": null
+    },
+    {
+      "field_name": "last_date",
+      "data_type": "TEXT",
+      "description": "末条日期",
+      "sample": null
+    },
+    {
+      "field_name": "core_missing_rate",
+      "data_type": "REAL",
+      "description": "核心字段缺失率（0~1）",
+      "sample": null
+    },
+    {
+      "field_name": "anomalies",
+      "data_type": "INTEGER",
+      "description": "异常值数量",
+      "sample": null
+    },
+    {
+      "field_name": "reasons",
+      "data_type": "TEXT",
+      "description": "降级原因说明",
+      "sample": null
+    },
+    {
+      "field_name": "model_version",
+      "data_type": "TEXT",
+      "description": "模型版本号",
+      "sample": null
+    },
+    {
+      "field_name": "audit_date",
+      "data_type": "TEXT",
+      "description": "审计日期（YYYY-MM-DD）",
+      "sample": null
+    },
+    {
+      "field_name": "update_time",
+      "data_type": "TEXT",
+      "description": "更新时间",
+      "sample": null
+    }
+  ],
+  "sample_data": [
+    {
+      "id": 1371,
+      "stock_code": "00020",
+      "data_type": "daily_kline",
+      "grade": "A",
+      "rows": 1139,
+      "first_date": "2021-12-30",
+      "last_date": "2026-08-21",
+      "core_missing_rate": 0.0,
+      "anomalies": 0,
+      "reasons": "",
+      "model_version": "QCFP-MTF-2.1.1",
+      "audit_date": "2026-08-22",
+      "update_time": "2026-08-22 00:13:17"
+    },
+    {
+      "id": 1372,
+      "stock_code": "00268",
+      "data_type": "daily_kline",
+      "grade": "A",
+      "rows": 4092,
+      "first_date": "2010-01-04",
+      "last_date": "2026-08-21",
+      "core_missing_rate": 0.0,
+      "anomalies": 0,
+      "reasons": "",
+      "model_version": "QCFP-MTF-2.1.1",
+      "audit_date": "2026-08-22",
+      "update_time": "2026-08-22 00:13:17"
+    },
+    {
+      "id": 1373,
+      "stock_code": "00354",
+      "data_type": "daily_kline",
+      "grade": "C",
+      "rows": 4080,
+      "first_date": "2010-01-04",
+      "last_date": "2026-08-21",
+      "core_missing_rate": 0.0,
+      "anomalies": 7,
+      "reasons": "异常值 7 条（零/负成交量 7）；核心缺失率 0.0% 或异常",
+      "model_version": "QCFP-MTF-2.1.1",
+      "audit_date": "2026-08-22",
+      "update_time": "2026-08-22 00:13:17"
+    }
+  ]
+}

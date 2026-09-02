@@ -1,0 +1,193 @@
+修改程序：Daily_TA1B_download_data_moomoo.py
+要求：改写下载数据子模块中的数据存储部分，下载数据后直接保存在SQLiteDB中，不再使用csv文件保存数据。
+如果没有找到新数据，就显示：[某股票代码][某日期]后无最新数据。另外保留数据下载处理的日志文件：[log_dir]\Daily_TA1B_download_data_moomoo.log
+
+SQLiteDB:HK_Stock.db
+表名: hk_hist_daily_kline
+字段列表:
++--------+----------------+------------+----------+----------+----------+
+| 主键   | 字段名         | 数据类型   | 可为空   |   主键值 | 说明     |
++========+================+============+==========+==========+==========+
+| 🔑     | id             | INTEGER    | ✅       |        1 | 主键ID   |
++--------+----------------+------------+----------+----------+----------+
+|        | stock_code     | TEXT       | ✅       |        0 | 股票代码 |
++--------+----------------+------------+----------+----------+----------+
+|        | stock_name     | TEXT       | ✅       |        0 | 股票名称 |
++--------+----------------+------------+----------+----------+----------+
+|        | date           | TEXT       | ✅       |        0 | 交易日期 |
++--------+----------------+------------+----------+----------+----------+
+|        | Open           | REAL       | ✅       |        0 | 开盘价   |
++--------+----------------+------------+----------+----------+----------+
+|        | High           | REAL       | ✅       |        0 | 最高价   |
++--------+----------------+------------+----------+----------+----------+
+|        | Low            | REAL       | ✅       |        0 | 最低价   |
++--------+----------------+------------+----------+----------+----------+
+|        | Close          | REAL       | ✅       |        0 | 收盘价   |
++--------+----------------+------------+----------+----------+----------+
+|        | Volume         | REAL       | ✅       |        0 | 成交量   |
++--------+----------------+------------+----------+----------+----------+
+|        | Amount         | REAL       | ✅       |        0 | 成交金额 |
++--------+----------------+------------+----------+----------+----------+
+|        | Amplitude      | REAL       | ✅       |        0 |          |
++--------+----------------+------------+----------+----------+----------+
+|        | Change_Percent | REAL       | ✅       |        0 |          |
++--------+----------------+------------+----------+----------+----------+
+|        | Change_Amount  | REAL       | ✅       |        0 |          |
++--------+----------------+------------+----------+----------+----------+
+|        | Turnover_Rate  | REAL       | ✅       |        0 |          |
++--------+----------------+------------+----------+----------+----------+
+|        | Previous_Close | REAL       | ✅       |        0 |          |
++--------+----------------+------------+----------+----------+----------+
+
+路径结构：
+$PROJECT_DIR
+	.venv
+	Config
+		hk_daily_kline_analysis.json
+		hk_daily_moneyflow_analysis_dictionary.json
+		hk_hist_daily_kline_dictionary.json
+		hk_hist_daily_moneyflow_dictionary.json
+		hk_hist_monthly_kline.json
+		hk_hist_Monthly_moneyflow_dictionary.json
+		hk_hist_weekly_kline.json
+		hk_hist_weekly_moneyflow_dictionary.json
+		hk_macro_data_dictionary.json
+		hk_monthly_kline_analysis.json
+		hk_monthly_moneyflow_Analysis_dictionary.json
+		hk_monthly_moneyflow_dictionary.json
+		hk_weekly_kline_analysis.json
+		hk_weekly_moneyflow_analysis_dictionary.json
+		stock_list.json
+	Code_utl
+		collect_source_daily_TA.py
+		collect_source_HK_Macro.py
+		collect_source_weekly_TA.py
+		Import_Daily_Kline_Analysis.py
+		Import_Daily_Kline_Data.py
+		Import_Daily_Moneyflow.py
+		Import_Daily_Moneyflow_Analysis.py
+		Import_Monthly_Kline_Analysis.py
+		Import_Monthly_Kline_Data.py
+		Import_Monthly_Moneyflow.py
+		Import_Monthly_Moneyflow_Analysis.py
+		Import_Weekly_Kline_Analysis.py
+		Import_Weekly_Kline_Data.py
+		Import_Weekly_Moneyflow.py
+		Import_Weekly_Moneyflow_Analysis.py
+		synch_folders.py
+		Verify_Daily_Kline_analysis.py
+		Verify_Daily_Kline_Data - Copy.py
+		Verify_Daily_Kline_Data.py
+		Verify_Daily_Moneyflow.py
+		Verify_Daily_Moneyflow_Analysis.py
+		Verify_HK_Macro_Data.py
+		Verify_Monthly_Kline_Analysis.py
+		Verify_Monthly_Kline_Data.py
+		Verify_Monthly_Moneyflow.py
+		Verify_Monthly_Moneyflow_Analysis.py
+		Verify_Weekly_Kline_Analysis.py
+		Verify_Weekly_Kline_Data.py
+		Verify_Weekly_Moneyflow.py
+		Verify_Weekly_Moneyflow_Analysis.py
+
+		
+	Core
+		Daily
+		Weekly
+		Monthly
+		HK_Macro
+			HK_Macro_History.py
+			HK_Macro_Dashboard.py
+		Utl
+			path_utils.py
+			stock_analysis_utl.py
+			stock_list_loader.py
+	Report
+	Log
+	Temp
+	Data
+	Doc
+	SQLiteDB
+		HK_Stock.db
+	run_Daily_TA_workflow.py
+	run_HK_macro_dashboard_workflow.py
+	run_Monthly_TA_workflow.py
+	run_Weekly_TA_workflow.py
+	
+
+数据字典：hk_hist_daily_kline_dictionary.json
+
+主要配置文件是config\stock_data_analysis.par
+
+#####################################################
+#													#
+# 			Stock data/Money flow analysis			#
+#           Name:   stock_data_analysis.par         #
+# 			Author: Quansheng						#
+# 			Date:   2025-08-11						#
+# 			Version 1.0								#
+#													#
+#####################################################
+[FOLDERS]
+# Stock data analysis parameters
+# subfolders
+converted_scripts_dir = converted_scripts
+report_dir = Report
+data_dir = Data
+log_dir = log
+temp_dir = Temp
+utl_dir = Utl
+sqlite_dir = SQLiteDB
+
+[DATABASE]
+# SQLite database configuration
+db_name = HK_Stock.db
+
+[ANALYSIS_PERIOD]
+# Analysis period
+#start_date = 2024-07-01
+start_date = 2025-01-01
+end_date = 
+
+# Weekly analysis period
+#start_date_week = 2024-01-01
+start_date_week = 
+end_date_week = 
+
+[TICKERS]
+# Holding
+tickers = 00788,00371,02202,00354,00357,03800,00020,00268,01093,06060,01951,01177,03033,02611,00700
+#tickers = HK.HSTECH
+#, HSI, HSCEI
+
+[PROCESS_SWITCHES]
+download_trading_data = Yes
+calculate_ta_indicators = Yes
+display_last_day_ta_indicators = No
+convert_money_flow = Yes
+auto_open_pdf = Yes
+
+[MULTI_PROCESSING]
+# 启用/禁用多进程
+use_multiprocessing = Yes  
+# 自定义最大进程数（可选）
+max_workers = 10             
+
+[FUTU_MOOMOO]
+futu_account = 31457220
+futu_pwd_md5 = 029f94dc345e3d4dacc5887907197353
+opend_exec_path = C:\Users\Quansheng\Documents\Futu_OpenD_10.4.6408_Windows\Futu_OpenD_10.4.6408_Windows\FutuOpenD.exe
+api_host = 127.0.0.1
+api_port = 11111
+
+[FREDAPI]
+FRED_API_KEY = f5c85117a899af8b5e2b2dbcf3bbc01a
+
+[HK_MACRO_DATA]
+# macro_data_download_start_date: > 10 years
+macro_data_download_start_date= 2015-01-01
+# macro_data_download_days < 30
+macro_data_download_days = 5
+
+
+========================

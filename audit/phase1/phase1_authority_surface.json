@@ -1,0 +1,42 @@
+{
+  "schema": "PHASE1-AUTHORITY-SURFACE-1",
+  "files": [
+    {
+      "path": "Core/QCFP_MTF/ARCHITECTURE.md",
+      "sha256": "52489321c4d910bf797cead51795b1beda7dda5221b1e5bb72b5817d4edc29b9"
+    },
+    {
+      "path": "Core/QCFP_MTF/CANONICAL_SPEC.md",
+      "sha256": "d6bd7a086fea84036a0c4e6b2f276d303df0698d4c6da45061e91c9cc5ecea9f"
+    },
+    {
+      "path": "Core/QCFP_MTF/decision/versions.py",
+      "sha256": "60cfb84b0949295081a644c65b9a9328099ed9990d0592bdfb55092c9062fa35"
+    },
+    {
+      "path": "Core/QCFP_MTF/governance/decision_authority_matrix.yaml",
+      "sha256": "ffe5bb8796cd73f134acb65966d1e3fb0341238859231cce5943bf6d6a273943"
+    },
+    {
+      "path": "Core/QCFP_MTF/governance/final_design_principles.py",
+      "sha256": "fddc603d706f9f5e002a1d6f986fab7ac4d68edfea902e182b26875473fc577a"
+    },
+    {
+      "path": "Core/QCFP_MTF/governance/pwc2_authority_graph.py",
+      "sha256": "345bb22e6b845e6a831743d6a2e9a023304016b32a0bb55f9b8ac05e8c5dcd2d"
+    },
+    {
+      "path": "Core/QCFP_MTF/governance/rule_ownership.py",
+      "sha256": "72bfb6ef3f72ce50e8dba6e23923ddc87e2503f25a5c223dbca650e902799d62"
+    },
+    {
+      "path": "Core/QCFP_MTF/governance/system_constitution.py",
+      "sha256": "8f49a88691e117201909c2c742a9caaa73e5b3a80d1409328853bbff439d3adf"
+    },
+    {
+      "path": "Core/QCFP_MTF/governance/traceability_manifest.yaml",
+      "sha256": "1bd22d3f84b970bb3d2d2a55878a9eb366936c469b718cb199f7be369dd8170e"
+    }
+  ],
+  "phase1_authority_surface_sha256": "c3a848a9361d49d05ceee77480be9e70590a0ae0f650c58f59a2147f3bdba5bc"
+}

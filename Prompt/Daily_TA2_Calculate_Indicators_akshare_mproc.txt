@@ -1,0 +1,160 @@
+修改程序：Daily_TA2_Calculate_Indicators_akshare_mproc.py
+要求：改写下载数据子模块中的数据存储部分，下载数据后直接保存在SQLiteDB中，不再使用csv文件保存数据。
+1 先检查hk_daily_kline_analysis，
+查看[某股票代码]及其最新分析数据日期。
+如果最新分析数据日期 < 原始k线数据: hk_hist_daily_kline 中的该股票代码的最新日期，
+  则进行分析数据计算， 并将计算结果保留在hk_daily_kline_analysis表中。
+如果最新分析数据日期 = 原始k线数据: hk_hist_daily_kline 中的该股票代码的最新日期，
+  则显示信息：[某股票代码]k线分析数据已存在，无需重复计算。
+如果最新分析数据日期 > 原始k线数据: hk_hist_daily_kline 中的该股票代码的最新日期，
+  则显示信息：[某股票代码]k线原始数据缺失或k线分析数据有误，需进行核查。
+
+
+另外保留数据处理的日志文件：[log_dir]\Daily_TA2_Calculate_Indicators_akshare_mproc.log
+
+SQLiteDB:HK_Stock.db
+原始k线数据: hk_hist_daily_kline
+字段列表:
+sqlite> PRAGMA table_info(hk_hist_daily_kline);
+╭─────┬────────────────┬─────────┬─────────┬────────────┬────╮
+│ cid │      name      │  type   │ notnull │ dflt_value │ pk │
+╞═════╪════════════════╪═════════╪═════════╪════════════╪════╡
+│   0 │ id             │ INTEGER │       0 │ NULL       │  1 │
+│   1 │ stock_code     │ TEXT    │       0 │ NULL       │  0 │
+│   2 │ stock_name     │ TEXT    │       0 │ NULL       │  0 │
+│   3 │ date           │ TEXT    │       0 │ NULL       │  0 │
+│   4 │ Open           │ REAL    │       0 │ NULL       │  0 │
+│   5 │ High           │ REAL    │       0 │ NULL       │  0 │
+│   6 │ Low            │ REAL    │       0 │ NULL       │  0 │
+│   7 │ Close          │ REAL    │       0 │ NULL       │  0 │
+│   8 │ Volume         │ REAL    │       0 │ NULL       │  0 │
+│   9 │ Amount         │ REAL    │       0 │ NULL       │  0 │
+│  10 │ Amplitude      │ REAL    │       0 │ NULL       │  0 │
+│  11 │ Change_Percent │ REAL    │       0 │ NULL       │  0 │
+│  12 │ Change_Amount  │ REAL    │       0 │ NULL       │  0 │
+│  13 │ Turnover_Rate  │ REAL    │       0 │ NULL       │  0 │
+│  14 │ Previous_Close │ REAL    │       0 │ NULL       │  0 │
+╰─────┴────────────────┴─────────┴─────────┴────────────┴────╯
+sqlite> PRAGMA index_list(hk_hist_daily_kline);
+╭─────┬─────────────────┬────────┬────────┬─────────╮
+│ seq │      name       │ unique │ origin │ partial │
+╞═════╪═════════════════╪════════╪════════╪═════════╡
+│   0 │ idx_daily_kline │      0 │ c      │       0 │
+╰─────┴─────────────────┴────────┴────────┴─────────╯
+sqlite>
+
+
+k线分析结果数据：hk_daily_kline_analysis
+PRAGMA table_info(hk_daily_kline_analysis);
+sqlite> PRAGMA table_info(hk_daily_kline_analysis);
+╭─────┬────────────────────────────────────────────┬─────────┬─────────┬────────────┬────╮
+│ cid │                    name                    │  type   │ notnull │ dflt_value │ pk │
+╞═════╪════════════════════════════════════════════╪═════════╪═════════╪════════════╪════╡
+│   0 │ id                                         │ INTEGER │       0 │ NULL       │  1 │
+│   1 │ stock_code                                 │ TEXT    │       1 │ NULL       │  0 │
+│   2 │ stock_name                                 │ TEXT    │       1 │ NULL       │  0 │
+│   3 │ date                                       │ TEXT    │       1 │ NULL       │  0 │
+│   4 │ Open                                       │ REAL    │       0 │ NULL       │  0 │
+│   5 │ High                                       │ REAL    │       0 │ NULL       │  0 │
+│   6 │ Low                                        │ REAL    │       0 │ NULL       │  0 │
+│   7 │ Close                                      │ REAL    │       0 │ NULL       │  0 │
+│   8 │ Volume                                     │ REAL    │       0 │ NULL       │  0 │
+│   9 │ Amount                                     │ REAL    │       0 │ NULL       │  0 │
+│  10 │ Amplitude                                  │ REAL    │       0 │ NULL       │  0 │
+│  11 │ Change_Percent                             │ REAL    │       0 │ NULL       │  0 │
+│  12 │ Change_Amount                              │ REAL    │       0 │ NULL       │  0 │
+│  13 │ Turnover_Rate                              │ REAL    │       0 │ NULL       │  0 │
+│  14 │ Previous_Close                             │ REAL    │       0 │ NULL       │  0 │
+│  15 │ Avg_Price                                  │ REAL    │       0 │ NULL       │  0 │
+│  16 │ Close_ChgPct                               │ REAL    │       0 │ NULL       │  0 │
+│  17 │ Avg_Volume_5d                              │ REAL    │       0 │ NULL       │  0 │
+│  18 │ Volume_Ratio5                              │ REAL    │       0 │ NULL       │  0 │
+│  19 │ Avg_Volume_20d                             │ REAL    │       0 │ NULL       │  0 │
+│  20 │ Volume_Ratio20                             │ REAL    │       0 │ NULL       │  0 │
+......
+
+PRAGMA index_list(hk_daily_kline_analysis);
+sqlite> PRAGMA index_list(hk_daily_kline_analysis);
+╭─────┬──────────────────────────┬────────┬────────┬─────────╮
+│ seq │           name           │ unique │ origin │ partial │
+╞═════╪══════════════════════════╪════════╪════════╪═════════╡
+│   0 │ idx_daily_kline_analysis │      0 │ c      │       0 │
+╰─────┴──────────────────────────┴────────┴────────┴─────────╯
+sqlite>
+
+路径结构：
+$PROJECT_DIR
+	.venv
+	Config
+		hk_daily_kline_analysis.json
+		hk_daily_moneyflow_analysis_dictionary.json
+		hk_hist_daily_kline_dictionary.json
+		hk_hist_daily_moneyflow_dictionary.json
+		hk_hist_monthly_kline.json
+		hk_hist_Monthly_moneyflow_dictionary.json
+		hk_hist_weekly_kline.json
+		hk_hist_weekly_moneyflow_dictionary.json
+		hk_macro_data_dictionary.json
+		hk_monthly_kline_analysis.json
+		hk_monthly_moneyflow_Analysis_dictionary.json
+		hk_monthly_moneyflow_dictionary.json
+		hk_weekly_kline_analysis.json
+		hk_weekly_moneyflow_analysis_dictionary.json
+		stock_list.json
+	Code_utl
+		collect_source_daily_TA.py
+		collect_source_HK_Macro.py
+		collect_source_weekly_TA.py
+		Import_Daily_Kline_Analysis.py
+		Import_Daily_Kline_Data.py
+		Import_Daily_Moneyflow.py
+		Import_Daily_Moneyflow_Analysis.py
+		Import_Monthly_Kline_Analysis.py
+		Import_Monthly_Kline_Data.py
+		Import_Monthly_Moneyflow.py
+		Import_Monthly_Moneyflow_Analysis.py
+		Import_Weekly_Kline_Analysis.py
+		Import_Weekly_Kline_Data.py
+		Import_Weekly_Moneyflow.py
+		Import_Weekly_Moneyflow_Analysis.py
+		synch_folders.py
+		Verify_Daily_Kline_analysis.py
+		Verify_Daily_Kline_Data - Copy.py
+		Verify_Daily_Kline_Data.py
+		Verify_Daily_Moneyflow.py
+		Verify_Daily_Moneyflow_Analysis.py
+		Verify_HK_Macro_Data.py
+		Verify_Monthly_Kline_Analysis.py
+		Verify_Monthly_Kline_Data.py
+		Verify_Monthly_Moneyflow.py
+		Verify_Monthly_Moneyflow_Analysis.py
+		Verify_Weekly_Kline_Analysis.py
+		Verify_Weekly_Kline_Data.py
+		Verify_Weekly_Moneyflow.py
+		Verify_Weekly_Moneyflow_Analysis.py
+
+		
+	Core
+		Daily
+		Weekly
+		Monthly
+		HK_Macro
+			HK_Macro_History.py
+			HK_Macro_Dashboard.py
+		Utl
+			path_utils.py
+			stock_analysis_utl.py
+			stock_list_loader.py
+	Report
+	Log
+	Temp
+	Data
+	Doc
+	SQLiteDB
+		HK_Stock.db
+	run_Daily_TA_workflow.py
+	run_HK_macro_dashboard_workflow.py
+	run_Monthly_TA_workflow.py
+	run_Weekly_TA_workflow.py
+	
+	

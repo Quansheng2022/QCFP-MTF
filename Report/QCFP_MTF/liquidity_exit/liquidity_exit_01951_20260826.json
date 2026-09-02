@@ -1,0 +1,42 @@
+{
+  "generated_at": "2026-08-26 18:41:39",
+  "stock": "01951",
+  "decision_date": "2026-08-21",
+  "position_value": 5000000.0,
+  "adv": 22349343.4,
+  "participation": 0.1,
+  "exit_days": 3,
+  "impact": 0.014957,
+  "slippage_bps": 10.0,
+  "stress_cost_bps": 20.0,
+  "liquidity_flag": "LIQUIDITY_LOW",
+  "exit_required": true,
+  "deleverage_plan": {
+    "daily_cap": 2234934.34,
+    "days": 3,
+    "slices": [
+      {
+        "date": "2026-08-21",
+        "amount": 2234934.34,
+        "cumulative_pct": 0.447
+      },
+      {
+        "date": "2026-08-22",
+        "amount": 2234934.34,
+        "cumulative_pct": 0.447
+      },
+      {
+        "date": "2026-08-23",
+        "amount": 530131.32,
+        "cumulative_pct": 0.106
+      }
+    ],
+    "end_date": "2026-08-23",
+    "note": "分批退出计划（每日 ≤ ADV × participation）"
+  },
+  "reasons": [
+    "EXIT_DAYS=3>=3",
+    "IMPACT=0.0150>0.01",
+    "DELEVERAGE_PLAN_REQUIRED"
+  ]
+}

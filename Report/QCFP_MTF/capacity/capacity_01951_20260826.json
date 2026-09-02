@@ -1,0 +1,38 @@
+{
+  "stock": "01951",
+  "capital": 5000000.0,
+  "adv": 27700807.73,
+  "weekly_vol": 0.0436,
+  "rows": [
+    {
+      "position_value": 5000000.0,
+      "impact": 0.006008,
+      "stress_exit_days": 10,
+      "liquidity_adj_risk": 0.007875,
+      "flags": [
+        "SLOW_EXIT"
+      ],
+      "participation": 0.02
+    },
+    {
+      "position_value": 5000000.0,
+      "impact": 0.0095,
+      "stress_exit_days": 4,
+      "liquidity_adj_risk": 0.007875,
+      "flags": [
+        "SLOW_EXIT"
+      ],
+      "participation": 0.05
+    },
+    {
+      "position_value": 5000000.0,
+      "impact": 0.013435,
+      "stress_exit_days": 2,
+      "liquidity_adj_risk": 0.007875,
+      "flags": [
+        "HIGH_IMPACT"
+      ],
+      "participation": 0.1
+    }
+  ]
+}

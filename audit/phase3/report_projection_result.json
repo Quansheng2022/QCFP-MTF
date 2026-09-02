@@ -1,0 +1,19 @@
+{
+  "checks": {
+    "report_equals_ledger": {
+      "ok": true,
+      "mismatches": []
+    },
+    "report_rewrite_rejected": {
+      "ok": true,
+      "mismatches": [
+        "Report 违反 Ledger-only 契约（报告重算了决策）：target_position=0.15 vs ledger.final_target=0.05"
+      ]
+    },
+    "adapter_no_recompute": {
+      "forbidden_imports": []
+    }
+  },
+  "pass": true,
+  "verdict": "REPORT_PROJECTION_PASS"
+}

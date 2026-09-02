@@ -1,0 +1,38 @@
+{
+  "generated_at": "2026-08-25 23:09:23",
+  "stock": "01951",
+  "verdict": "PASS（可切换默认 engine_source=canonical）",
+  "checks": [
+    {
+      "name": "C1 Consistency（重放确定性）",
+      "status": "PASS",
+      "evidence": "两次 canonical_replay target 完全一致"
+    },
+    {
+      "name": "C2 OOS（Rolling OOS Sharpe 中位数）",
+      "status": "PASS",
+      "evidence": "median=0.4521"
+    },
+    {
+      "name": "C3 Ablation（Governance 层有效）",
+      "status": "PASS",
+      "evidence": "New 捕获比=0.0012，Legacy=-0.1068"
+    },
+    {
+      "name": "C4 Governance（版本身份/越权）",
+      "status": "PASS",
+      "evidence": "QCFP-MTF-2.5.0/GOV-2.5.0/DECISION-1.1；引擎内断言越权=0"
+    }
+  ],
+  "legacy": {
+    "annualized_return": -0.098253,
+    "max_drawdown": -0.450258,
+    "wave_capture": -0.1068
+  },
+  "new": {
+    "annualized_return": 0.000168,
+    "max_drawdown": -0.000239,
+    "wave_capture": 0.0012,
+    "oos_median_sharpe": 0.4521
+  }
+}

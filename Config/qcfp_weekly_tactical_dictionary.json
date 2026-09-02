@@ -1,0 +1,164 @@
+{
+  "table_name": "qcfp_weekly_tactical",
+  "generated_at": "2026-08-24 22:03:30",
+  "database_path": "C:\\Users\\Quansheng\\Documents\\projects\\TA_Workflow\\SQLiteDB\\HK_Stock.db",
+  "statistics": {
+    "total_records": 10046,
+    "stock_count": 16
+  },
+  "field_count": 16,
+  "fields": [
+    {
+      "field_name": "id",
+      "data_type": "INTEGER",
+      "description": "主键，自增ID",
+      "sample": null
+    },
+    {
+      "field_name": "stock_code",
+      "data_type": "TEXT",
+      "description": "股票代码（5位数字）",
+      "sample": null
+    },
+    {
+      "field_name": "stock_name",
+      "data_type": "TEXT",
+      "description": "股票名称",
+      "sample": null
+    },
+    {
+      "field_name": "week_end",
+      "data_type": "TEXT",
+      "description": "周结束日期（YYYY-MM-DD）",
+      "sample": null
+    },
+    {
+      "field_name": "w_turnover_deviation",
+      "data_type": "REAL",
+      "description": "周换手偏离度（%）",
+      "sample": null
+    },
+    {
+      "field_name": "w_turnover_spike",
+      "data_type": "INTEGER",
+      "description": "是否极端换手（1/0）",
+      "sample": null
+    },
+    {
+      "field_name": "w_volume_breakout",
+      "data_type": "INTEGER",
+      "description": "是否放量突破（1/0）",
+      "sample": null
+    },
+    {
+      "field_name": "w_vwap_deviation",
+      "data_type": "REAL",
+      "description": "收盘价 vs 周 VWAP 偏离（%）",
+      "sample": null
+    },
+    {
+      "field_name": "w_ma_slope",
+      "data_type": "TEXT",
+      "description": "周均线斜率方向（5/10/20 周二阶差分）",
+      "sample": null
+    },
+    {
+      "field_name": "w_breakout",
+      "data_type": "INTEGER",
+      "description": "是否有效突破（1/0）",
+      "sample": null
+    },
+    {
+      "field_name": "w_breakdown",
+      "data_type": "INTEGER",
+      "description": "是否有效破位（1/0）",
+      "sample": null
+    },
+    {
+      "field_name": "tactical_signal",
+      "data_type": "TEXT",
+      "description": "战术信号（Breakout/Pullback/Consolidation/Breakdown）",
+      "sample": null
+    },
+    {
+      "field_name": "model_version",
+      "data_type": "TEXT",
+      "description": "模型版本号",
+      "sample": null
+    },
+    {
+      "field_name": "data_quality",
+      "data_type": "TEXT",
+      "description": "数据质量等级（A/B/C/D）",
+      "sample": null
+    },
+    {
+      "field_name": "update_time",
+      "data_type": "TEXT",
+      "description": "更新时间",
+      "sample": null
+    },
+    {
+      "field_name": "w_volume_shrink",
+      "data_type": "INTEGER",
+      "description": "",
+      "sample": null
+    }
+  ],
+  "sample_data": [
+    {
+      "id": 72258,
+      "stock_code": "00020",
+      "stock_name": "商汤科技",
+      "week_end": "2021-12-31",
+      "w_turnover_deviation": null,
+      "w_turnover_spike": 0,
+      "w_volume_breakout": 0,
+      "w_vwap_deviation": 0.21549693465244868,
+      "w_ma_slope": null,
+      "w_breakout": 0,
+      "w_breakdown": 0,
+      "tactical_signal": "Consolidation",
+      "model_version": "QCFP-MTF-2.1.1",
+      "data_quality": "A",
+      "update_time": "2026-08-22 00:13:27",
+      "w_volume_shrink": 0
+    },
+    {
+      "id": 72259,
+      "stock_code": "00020",
+      "stock_name": "商汤科技",
+      "week_end": "2022-01-07",
+      "w_turnover_deviation": null,
+      "w_turnover_spike": 0,
+      "w_volume_breakout": 0,
+      "w_vwap_deviation": -0.02004346348569841,
+      "w_ma_slope": null,
+      "w_breakout": 0,
+      "w_breakdown": 0,
+      "tactical_signal": "Consolidation",
+      "model_version": "QCFP-MTF-2.1.1",
+      "data_quality": "A",
+      "update_time": "2026-08-22 00:13:27",
+      "w_volume_shrink": 0
+    },
+    {
+      "id": 72260,
+      "stock_code": "00020",
+      "stock_name": "商汤科技",
+      "week_end": "2022-01-14",
+      "w_turnover_deviation": null,
+      "w_turnover_spike": 0,
+      "w_volume_breakout": 0,
+      "w_vwap_deviation": -0.05871530561739413,
+      "w_ma_slope": "减速",
+      "w_breakout": 0,
+      "w_breakdown": 0,
+      "tactical_signal": "Consolidation",
+      "model_version": "QCFP-MTF-2.1.1",
+      "data_quality": "A",
+      "update_time": "2026-08-22 00:13:27",
+      "w_volume_shrink": 0
+    }
+  ]
+}

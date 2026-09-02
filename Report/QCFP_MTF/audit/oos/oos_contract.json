@@ -1,0 +1,61 @@
+{
+  "schema": "OOS-CONTRACT-2",
+  "contract_version": "OOS-CONTRACT-2",
+  "dataset_id": "1076906b50de98d0",
+  "data_snapshot_hash": "1076906b50de98d0",
+  "universe_snapshot_hash": "86f225dfc84b2070",
+  "pit_specification_hash": "b2abaf054f7796a0",
+  "train_start": "2015-01-01",
+  "train_end": "2026-05-31",
+  "validation_start": "2026-06-01",
+  "validation_end": "2026-06-30",
+  "oos_start": "2026-07-01",
+  "oos_end": "2026-08-21",
+  "cost_model_hash": "9705a0a5d3e9f53b",
+  "execution_model_hash": "5a7c80108a3f5ac2",
+  "metric_contract_hash": "b7ddd765f8c8cb19",
+  "previous_release_id": "MERGED_CODE_9",
+  "current_release_id": "MTR-CLOSURE-1",
+  "holdout_locked": true,
+  "used_in_selection": false,
+  "used_for_tuning": false,
+  "pit_validation": {
+    "pit_grade": "A",
+    "pit_violation_count": 0,
+    "future_leakage_count": 0,
+    "universe_leakage_count": 0
+  },
+  "non_inferiority": [
+    {
+      "metric": "mdd",
+      "direction": "lower_is_better",
+      "max_allowed_regression": 0.05,
+      "hard_or_soft": "hard"
+    },
+    {
+      "metric": "return",
+      "direction": "higher_is_better",
+      "max_allowed_regression": 0.05,
+      "hard_or_soft": "soft"
+    },
+    {
+      "metric": "turnover",
+      "direction": "lower_is_better",
+      "max_allowed_regression": 0.1,
+      "hard_or_soft": "soft"
+    },
+    {
+      "metric": "cost",
+      "direction": "lower_is_better",
+      "max_allowed_regression": 0.005,
+      "hard_or_soft": "soft"
+    }
+  ],
+  "non_inferiority_omitted": {
+    "wave_capture": "窗口内无波段（find_waves 无 ≥50% 波段）→ 无法测量",
+    "mae": "窗口内无交易（build_trade_ledger 无 trades）→ 无法测量",
+    "sharpe": "零方差（无持仓）→ sharpe=NaN，无比较意义",
+    "capital_efficiency": "零暴露 → 0/0 退化，无比较意义"
+  },
+  "rule": "冻结于任何 Current OOS 结果之前；结果出来后禁止修改，否则 OOS_NOT_COMPARABLE；non_inferiority 只含 Canonical OOS Runner 对 Frozen 窗口确定性产出的 metric（§16：optional 指标不得进 contract）；hard regression 才阻断，soft 只记录"
+}

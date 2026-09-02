@@ -1,0 +1,74 @@
+{
+  "generated_at": "20260826",
+  "focus": "01951",
+  "overall_matrix": {
+    "COOLDOWN": {
+      "COOLDOWN": 0.8492,
+      "EXITING": 0.067,
+      "FLAT": 0.067,
+      "TESTING": 0.0168
+    },
+    "EXITING": {
+      "EXITING": 0.9931,
+      "COOLDOWN": 0.0048,
+      "FLAT": 0.001,
+      "TESTING": 0.001
+    },
+    "FLAT": {
+      "FLAT": 0.9291,
+      "COOLDOWN": 0.0315,
+      "EXITING": 0.0236,
+      "TESTING": 0.0157
+    },
+    "TESTING": {
+      "TESTING": 0.7059,
+      "COOLDOWN": 0.1176,
+      "EXITING": 0.0882,
+      "FLAT": 0.0882
+    }
+  },
+  "expected_state_value": {
+    "COOLDOWN": -0.01,
+    "EXITING": -0.1984,
+    "FLAT": -0.0016,
+    "TESTING": 0.1235
+  },
+  "by_permission": {
+    "('BLOCK',)": {
+      "EXITING": {
+        "EXITING": 0.9978,
+        "COOLDOWN": 0.0022
+      },
+      "COOLDOWN": {
+        "COOLDOWN": 0.8889,
+        "EXITING": 0.1111
+      }
+    },
+    "('WATCH',)": {
+      "COOLDOWN": {
+        "COOLDOWN": 0.8118,
+        "EXITING": 0.0706,
+        "FLAT": 0.0882,
+        "TESTING": 0.0294
+      },
+      "EXITING": {
+        "EXITING": 0.9922,
+        "COOLDOWN": 0.0049,
+        "FLAT": 0.0012,
+        "TESTING": 0.0016
+      },
+      "FLAT": {
+        "FLAT": 0.9134,
+        "COOLDOWN": 0.0551,
+        "EXITING": 0.0118,
+        "TESTING": 0.0197
+      },
+      "TESTING": {
+        "TESTING": 0.5882,
+        "FLAT": 0.1176,
+        "EXITING": 0.1471,
+        "COOLDOWN": 0.1471
+      }
+    }
+  }
+}

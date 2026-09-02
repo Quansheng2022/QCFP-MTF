@@ -1,0 +1,136 @@
+{
+  "corpus_version": "GOLDEN-CONSTITUTION-1",
+  "n_cases": 14,
+  "n_failed": 0,
+  "failed_cases": [],
+  "coverage": {
+    "permissions": [
+      "ALLOW",
+      "BLOCK",
+      "STRONG_ALLOW",
+      "TEST",
+      "WATCH"
+    ],
+    "waves": [
+      "ACTIVE",
+      "DISCOVERY",
+      "INVALID",
+      "MATURE"
+    ],
+    "events": [
+      "HARD_EXIT",
+      "LIQUIDITY_CAP",
+      "NONE",
+      "PIT_FAILURE",
+      "PORTFOLIO_CAP",
+      "REPLAY_FAILURE",
+      "SAFE_MODE"
+    ],
+    "ok": true
+  },
+  "results": {
+    "G_BLOCK_STRONG": {
+      "case_id": "G_BLOCK_STRONG",
+      "expected": "BLOCK + target=0",
+      "actual": "BLOCK + 0.0",
+      "pass": true,
+      "detail": ""
+    },
+    "G_WATCH_OBSERVE": {
+      "case_id": "G_WATCH_OBSERVE",
+      "expected": "WATCH + 无新增风险",
+      "actual": "WATCH + 0.0",
+      "pass": true,
+      "detail": ""
+    },
+    "G_TEST_LIMITED": {
+      "case_id": "G_TEST_LIMITED",
+      "expected": "TEST + 限额定仓",
+      "actual": "TEST + 0.064",
+      "pass": true,
+      "detail": ""
+    },
+    "G_ALLOW_TRADE": {
+      "case_id": "G_ALLOW_TRADE",
+      "expected": "ALLOW + 可交易",
+      "actual": "perm=ALLOW engine_perm=ALLOW target=0.064 action=ENTRY",
+      "pass": true,
+      "detail": "标准输入 ACCUMULATION+p1 命中 RECOVERY→TEST；ALLOW 经组件状态机与引擎 override 验证"
+    },
+    "G_STRONG_ALLOW": {
+      "case_id": "G_STRONG_ALLOW",
+      "expected": "STRONG_ALLOW + 可交易",
+      "actual": "STRONG_ALLOW + 0.064",
+      "pass": true,
+      "detail": ""
+    },
+    "G_WAVE_DISCOVERY": {
+      "case_id": "G_WAVE_DISCOVERY",
+      "expected": "DISCOVERY 禁止进场",
+      "actual": "wave_allowed=False target=0.0",
+      "pass": true,
+      "detail": ""
+    },
+    "G_WAVE_MATURE": {
+      "case_id": "G_WAVE_MATURE",
+      "expected": "MATURE 按比例缩仓",
+      "actual": "scale=0.5 target=0.032",
+      "pass": true,
+      "detail": ""
+    },
+    "G_WAVE_INVALID": {
+      "case_id": "G_WAVE_INVALID",
+      "expected": "INVALID 禁止进场",
+      "actual": "wave_allowed=False target=0.0",
+      "pass": true,
+      "detail": ""
+    },
+    "G_HARD_EXIT": {
+      "case_id": "G_HARD_EXIT",
+      "expected": "HARD_EXIT 覆盖一切看多",
+      "actual": "HARD_EXIT + 0.0",
+      "pass": true,
+      "detail": ""
+    },
+    "G_LIQUIDITY_BINDING": {
+      "case_id": "G_LIQUIDITY_BINDING",
+      "expected": "liquidity_cap binding",
+      "actual": "target=0.2",
+      "pass": true,
+      "detail": ""
+    },
+    "G_PORTFOLIO_BINDING": {
+      "case_id": "G_PORTFOLIO_BINDING",
+      "expected": "portfolio_cap binding",
+      "actual": "target=0.25",
+      "pass": true,
+      "detail": ""
+    },
+    "G_PIT_FAILURE": {
+      "case_id": "G_PIT_FAILURE",
+      "expected": "PIT invalid → 拒绝",
+      "actual": "EvidenceContractError",
+      "pass": true,
+      "detail": ""
+    },
+    "G_REPLAY_FAILURE": {
+      "case_id": "G_REPLAY_FAILURE",
+      "expected": "Replay mismatch → REPLAY_MISMATCH",
+      "actual": "REPLAY_MISMATCH",
+      "pass": true,
+      "detail": ""
+    },
+    "G_SAFE_MODE": {
+      "case_id": "G_SAFE_MODE",
+      "expected": "SAFE_MODE 禁止新增风险",
+      "actual": "SAFE_MODE blocked=SAFE_MODE_NEW_RISK_BLOCKED",
+      "pass": true,
+      "detail": "",
+      "drawdown": "SAFE_MODE"
+    }
+  },
+  "hash_change_requires_review": true,
+  "unexplained_change_blocked": true,
+  "pass": true,
+  "verdict": "GOLDEN_PASS"
+}

@@ -1,0 +1,41 @@
+{
+  "generated_at": "20260829",
+  "model_version": "QCFP-MTF-2.5.0",
+  "settings_hash": "e8f1e2d6a720",
+  "projection_only": true,
+  "ledger_missing_count": 867,
+  "records": [
+    {
+      "stock_code": "00700",
+      "stock_name": "腾讯控股",
+      "decision_date": "2026-08-21",
+      "structural_regime": "STRUCTURAL_DECLINE",
+      "monthly_behavior_state": "Stable",
+      "tactical_signal": "Consolidation",
+      "chip_stability_confidence": "Low",
+      "mtf_regime": "BULLISH_WARNING",
+      "qcfp_score": 0.0,
+      "structure_behavior_alignment": "Aligned",
+      "market_context": "risk_on",
+      "data_quality": "B",
+      "catalyst_score": 1.0,
+      "align_method": "tactical_override",
+      "des_score": 6,
+      "des_band": "REDUCE",
+      "risk_override_active": 1,
+      "alignment_override": 1,
+      "action_signal": "NO_TRADE",
+      "base_action": "NO_TRADE",
+      "base_target": 0.0,
+      "final_action": "NO_TRADE",
+      "final_target": 0.0,
+      "risk_level": "Medium",
+      "risk_reasons": "FORCED_DELEVERAGE",
+      "engine_source": "ledger",
+      "authority": "LEDGER_PROJECTION_ONLY",
+      "ledger_run_id": "daily_2026-08-21_runtime_2026-08-21_SHADOW_162852",
+      "ledger_decision_id": "00700_2026-08-21",
+      "ledger_status": "PROJECTED"
+    }
+  ]
+}

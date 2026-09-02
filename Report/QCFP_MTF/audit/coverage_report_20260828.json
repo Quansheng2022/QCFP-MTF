@@ -1,0 +1,1546 @@
+{
+  "generated_at": "20260828",
+  "model_version": "QCFP-MTF-2.5.0",
+  "records": [
+    {
+      "stock_code": "00020",
+      "data_type": "daily_kline",
+      "rows": 1144,
+      "first_date": "2021-12-30",
+      "last_date": "2026-08-28",
+      "actual_periods": 1144.0,
+      "expected_periods": 1144.0,
+      "note": "周期完整度 1144/1144"
+    },
+    {
+      "stock_code": "00020",
+      "data_type": "daily_moneyflow",
+      "rows": 1139,
+      "first_date": "2021-12-30",
+      "last_date": "2026-08-28",
+      "actual_periods": 1139.0,
+      "expected_periods": NaN,
+      "note": ""
+    },
+    {
+      "stock_code": "00020",
+      "data_type": "institutional_holdings",
+      "rows": 19,
+      "first_date": NaN,
+      "last_date": NaN,
+      "actual_periods": NaN,
+      "expected_periods": NaN,
+      "note": ""
+    },
+    {
+      "stock_code": "00020",
+      "data_type": "monthly_kline",
+      "rows": 56,
+      "first_date": "2021-12-31",
+      "last_date": "2026-07-31",
+      "actual_periods": 56.0,
+      "expected_periods": 56.0,
+      "note": "周期完整度 56/56"
+    },
+    {
+      "stock_code": "00020",
+      "data_type": "monthly_moneyflow",
+      "rows": 59,
+      "first_date": "2021-12-01",
+      "last_date": "2026-08-21",
+      "actual_periods": 59.0,
+      "expected_periods": NaN,
+      "note": ""
+    },
+    {
+      "stock_code": "00020",
+      "data_type": "quarterly_kline",
+      "rows": 19,
+      "first_date": "2021-12-31",
+      "last_date": "2026-06-30",
+      "actual_periods": 19.0,
+      "expected_periods": 19.0,
+      "note": "周期完整度 19/19"
+    },
+    {
+      "stock_code": "00020",
+      "data_type": "quarterly_moneyflow",
+      "rows": 20,
+      "first_date": "2021-12-31",
+      "last_date": "2026-08-21",
+      "actual_periods": 20.0,
+      "expected_periods": NaN,
+      "note": ""
+    },
+    {
+      "stock_code": "00020",
+      "data_type": "weekly_kline",
+      "rows": 243,
+      "first_date": "2021-12-31",
+      "last_date": "2026-08-21",
+      "actual_periods": 243.0,
+      "expected_periods": 243.0,
+      "note": "周期完整度 243/243"
+    },
+    {
+      "stock_code": "00020",
+      "data_type": "weekly_moneyflow",
+      "rows": 242,
+      "first_date": "2021-12-31",
+      "last_date": "2026-08-21",
+      "actual_periods": 242.0,
+      "expected_periods": NaN,
+      "note": ""
+    },
+    {
+      "stock_code": "00268",
+      "data_type": "daily_kline",
+      "rows": 4097,
+      "first_date": "2010-01-04",
+      "last_date": "2026-08-28",
+      "actual_periods": 4097.0,
+      "expected_periods": 4098.0,
+      "note": "周期完整度 4097/4098"
+    },
+    {
+      "stock_code": "00268",
+      "data_type": "daily_moneyflow",
+      "rows": 1362,
+      "first_date": "2021-02-03",
+      "last_date": "2026-08-28",
+      "actual_periods": 1362.0,
+      "expected_periods": NaN,
+      "note": ""
+    },
+    {
+      "stock_code": "00268",
+      "data_type": "institutional_holdings",
+      "rows": 90,
+      "first_date": NaN,
+      "last_date": NaN,
+      "actual_periods": NaN,
+      "expected_periods": NaN,
+      "note": ""
+    },
+    {
+      "stock_code": "00268",
+      "data_type": "monthly_kline",
+      "rows": 199,
+      "first_date": "2010-01-31",
+      "last_date": "2026-07-31",
+      "actual_periods": 199.0,
+      "expected_periods": 199.0,
+      "note": "周期完整度 199/199"
+    },
+    {
+      "stock_code": "00268",
+      "data_type": "monthly_moneyflow",
+      "rows": 69,
+      "first_date": "2021-02-01",
+      "last_date": "2026-08-21",
+      "actual_periods": 69.0,
+      "expected_periods": NaN,
+      "note": ""
+    },
+    {
+      "stock_code": "00268",
+      "data_type": "quarterly_kline",
+      "rows": 66,
+      "first_date": "2010-03-31",
+      "last_date": "2026-06-30",
+      "actual_periods": 66.0,
+      "expected_periods": 66.0,
+      "note": "周期完整度 66/66"
+    },
+    {
+      "stock_code": "00268",
+      "data_type": "quarterly_moneyflow",
+      "rows": 23,
+      "first_date": "2021-03-31",
+      "last_date": "2026-08-21",
+      "actual_periods": 23.0,
+      "expected_periods": NaN,
+      "note": ""
+    },
+    {
+      "stock_code": "00268",
+      "data_type": "weekly_kline",
+      "rows": 868,
+      "first_date": "2010-01-08",
+      "last_date": "2026-08-21",
+      "actual_periods": 868.0,
+      "expected_periods": 868.0,
+      "note": "周期完整度 868/868"
+    },
+    {
+      "stock_code": "00268",
+      "data_type": "weekly_moneyflow",
+      "rows": 289,
+      "first_date": "2021-02-05",
+      "last_date": "2026-08-21",
+      "actual_periods": 289.0,
+      "expected_periods": NaN,
+      "note": ""
+    },
+    {
+      "stock_code": "00354",
+      "data_type": "daily_kline",
+      "rows": 4085,
+      "first_date": "2010-01-04",
+      "last_date": "2026-08-28",
+      "actual_periods": 4085.0,
+      "expected_periods": 4098.0,
+      "note": "周期完整度 4085/4098"
+    },
+    {
+      "stock_code": "00354",
+      "data_type": "daily_moneyflow",
+      "rows": 1362,
+      "first_date": "2021-02-03",
+      "last_date": "2026-08-28",
+      "actual_periods": 1362.0,
+      "expected_periods": NaN,
+      "note": ""
+    },
+    {
+      "stock_code": "00354",
+      "data_type": "institutional_holdings",
+      "rows": 87,
+      "first_date": NaN,
+      "last_date": NaN,
+      "actual_periods": NaN,
+      "expected_periods": NaN,
+      "note": ""
+    },
+    {
+      "stock_code": "00354",
+      "data_type": "monthly_kline",
+      "rows": 199,
+      "first_date": "2010-01-31",
+      "last_date": "2026-07-31",
+      "actual_periods": 199.0,
+      "expected_periods": 199.0,
+      "note": "周期完整度 199/199"
+    },
+    {
+      "stock_code": "00354",
+      "data_type": "monthly_moneyflow",
+      "rows": 69,
+      "first_date": "2021-02-01",
+      "last_date": "2026-08-21",
+      "actual_periods": 69.0,
+      "expected_periods": NaN,
+      "note": ""
+    },
+    {
+      "stock_code": "00354",
+      "data_type": "quarterly_kline",
+      "rows": 66,
+      "first_date": "2010-03-31",
+      "last_date": "2026-06-30",
+      "actual_periods": 66.0,
+      "expected_periods": 66.0,
+      "note": "周期完整度 66/66"
+    },
+    {
+      "stock_code": "00354",
+      "data_type": "quarterly_moneyflow",
+      "rows": 23,
+      "first_date": "2021-03-31",
+      "last_date": "2026-08-21",
+      "actual_periods": 23.0,
+      "expected_periods": NaN,
+      "note": ""
+    },
+    {
+      "stock_code": "00354",
+      "data_type": "weekly_kline",
+      "rows": 867,
+      "first_date": "2010-01-08",
+      "last_date": "2026-08-21",
+      "actual_periods": 867.0,
+      "expected_periods": 868.0,
+      "note": "周期完整度 867/868"
+    },
+    {
+      "stock_code": "00354",
+      "data_type": "weekly_moneyflow",
+      "rows": 289,
+      "first_date": "2021-02-05",
+      "last_date": "2026-08-21",
+      "actual_periods": 289.0,
+      "expected_periods": NaN,
+      "note": ""
+    },
+    {
+      "stock_code": "00357",
+      "data_type": "daily_kline",
+      "rows": 4069,
+      "first_date": "2010-01-04",
+      "last_date": "2026-08-28",
+      "actual_periods": 4069.0,
+      "expected_periods": 4098.0,
+      "note": "周期完整度 4069/4098"
+    },
+    {
+      "stock_code": "00357",
+      "data_type": "daily_moneyflow",
+      "rows": 1349,
+      "first_date": "2021-02-03",
+      "last_date": "2026-08-28",
+      "actual_periods": 1349.0,
+      "expected_periods": NaN,
+      "note": ""
+    },
+    {
+      "stock_code": "00357",
+      "data_type": "institutional_holdings",
+      "rows": 90,
+      "first_date": NaN,
+      "last_date": NaN,
+      "actual_periods": NaN,
+      "expected_periods": NaN,
+      "note": ""
+    },
+    {
+      "stock_code": "00357",
+      "data_type": "monthly_kline",
+      "rows": 199,
+      "first_date": "2010-01-31",
+      "last_date": "2026-07-31",
+      "actual_periods": 199.0,
+      "expected_periods": 199.0,
+      "note": "周期完整度 199/199"
+    },
+    {
+      "stock_code": "00357",
+      "data_type": "monthly_moneyflow",
+      "rows": 69,
+      "first_date": "2021-02-01",
+      "last_date": "2026-08-21",
+      "actual_periods": 69.0,
+      "expected_periods": NaN,
+      "note": ""
+    },
+    {
+      "stock_code": "00357",
+      "data_type": "quarterly_kline",
+      "rows": 66,
+      "first_date": "2010-03-31",
+      "last_date": "2026-06-30",
+      "actual_periods": 66.0,
+      "expected_periods": 66.0,
+      "note": "周期完整度 66/66"
+    },
+    {
+      "stock_code": "00357",
+      "data_type": "quarterly_moneyflow",
+      "rows": 23,
+      "first_date": "2021-03-31",
+      "last_date": "2026-08-21",
+      "actual_periods": 23.0,
+      "expected_periods": NaN,
+      "note": ""
+    },
+    {
+      "stock_code": "00357",
+      "data_type": "weekly_kline",
+      "rows": 864,
+      "first_date": "2010-01-08",
+      "last_date": "2026-08-21",
+      "actual_periods": 864.0,
+      "expected_periods": 868.0,
+      "note": "周期完整度 864/868"
+    },
+    {
+      "stock_code": "00357",
+      "data_type": "weekly_moneyflow",
+      "rows": 287,
+      "first_date": "2021-02-05",
+      "last_date": "2026-08-21",
+      "actual_periods": 287.0,
+      "expected_periods": NaN,
+      "note": ""
+    },
+    {
+      "stock_code": "00371",
+      "data_type": "daily_kline",
+      "rows": 4093,
+      "first_date": "2010-01-04",
+      "last_date": "2026-08-28",
+      "actual_periods": 4093.0,
+      "expected_periods": 4098.0,
+      "note": "周期完整度 4093/4098"
+    },
+    {
+      "stock_code": "00371",
+      "data_type": "daily_moneyflow",
+      "rows": 1363,
+      "first_date": "2021-02-03",
+      "last_date": "2026-08-28",
+      "actual_periods": 1363.0,
+      "expected_periods": NaN,
+      "note": ""
+    },
+    {
+      "stock_code": "00371",
+      "data_type": "institutional_holdings",
+      "rows": 82,
+      "first_date": NaN,
+      "last_date": NaN,
+      "actual_periods": NaN,
+      "expected_periods": NaN,
+      "note": ""
+    },
+    {
+      "stock_code": "00371",
+      "data_type": "monthly_kline",
+      "rows": 199,
+      "first_date": "2010-01-31",
+      "last_date": "2026-07-31",
+      "actual_periods": 199.0,
+      "expected_periods": 199.0,
+      "note": "周期完整度 199/199"
+    },
+    {
+      "stock_code": "00371",
+      "data_type": "monthly_moneyflow",
+      "rows": 69,
+      "first_date": "2021-02-01",
+      "last_date": "2026-08-21",
+      "actual_periods": 69.0,
+      "expected_periods": NaN,
+      "note": ""
+    },
+    {
+      "stock_code": "00371",
+      "data_type": "quarterly_kline",
+      "rows": 66,
+      "first_date": "2010-03-31",
+      "last_date": "2026-06-30",
+      "actual_periods": 66.0,
+      "expected_periods": 66.0,
+      "note": "周期完整度 66/66"
+    },
+    {
+      "stock_code": "00371",
+      "data_type": "quarterly_moneyflow",
+      "rows": 23,
+      "first_date": "2021-03-31",
+      "last_date": "2026-08-21",
+      "actual_periods": 23.0,
+      "expected_periods": NaN,
+      "note": ""
+    },
+    {
+      "stock_code": "00371",
+      "data_type": "weekly_kline",
+      "rows": 868,
+      "first_date": "2010-01-08",
+      "last_date": "2026-08-21",
+      "actual_periods": 868.0,
+      "expected_periods": 868.0,
+      "note": "周期完整度 868/868"
+    },
+    {
+      "stock_code": "00371",
+      "data_type": "weekly_moneyflow",
+      "rows": 290,
+      "first_date": "2021-02-05",
+      "last_date": "2026-08-21",
+      "actual_periods": 290.0,
+      "expected_periods": NaN,
+      "note": ""
+    },
+    {
+      "stock_code": "00579",
+      "data_type": "daily_kline",
+      "rows": 0,
+      "first_date": null,
+      "last_date": null,
+      "actual_periods": 0.0,
+      "expected_periods": 0.0,
+      "note": "无数据"
+    },
+    {
+      "stock_code": "00579",
+      "data_type": "daily_moneyflow",
+      "rows": 0,
+      "first_date": null,
+      "last_date": null,
+      "actual_periods": 0.0,
+      "expected_periods": 0.0,
+      "note": "无数据"
+    },
+    {
+      "stock_code": "00579",
+      "data_type": "institutional_holdings",
+      "rows": 0,
+      "first_date": null,
+      "last_date": null,
+      "actual_periods": 0.0,
+      "expected_periods": 0.0,
+      "note": "无数据"
+    },
+    {
+      "stock_code": "00579",
+      "data_type": "monthly_kline",
+      "rows": 0,
+      "first_date": null,
+      "last_date": null,
+      "actual_periods": 0.0,
+      "expected_periods": 0.0,
+      "note": "无数据"
+    },
+    {
+      "stock_code": "00579",
+      "data_type": "monthly_moneyflow",
+      "rows": 0,
+      "first_date": null,
+      "last_date": null,
+      "actual_periods": 0.0,
+      "expected_periods": 0.0,
+      "note": "无数据"
+    },
+    {
+      "stock_code": "00579",
+      "data_type": "quarterly_kline",
+      "rows": 0,
+      "first_date": null,
+      "last_date": null,
+      "actual_periods": 0.0,
+      "expected_periods": 0.0,
+      "note": "无数据"
+    },
+    {
+      "stock_code": "00579",
+      "data_type": "quarterly_moneyflow",
+      "rows": 0,
+      "first_date": null,
+      "last_date": null,
+      "actual_periods": 0.0,
+      "expected_periods": 0.0,
+      "note": "无数据"
+    },
+    {
+      "stock_code": "00579",
+      "data_type": "weekly_kline",
+      "rows": 0,
+      "first_date": null,
+      "last_date": null,
+      "actual_periods": 0.0,
+      "expected_periods": 0.0,
+      "note": "无数据"
+    },
+    {
+      "stock_code": "00579",
+      "data_type": "weekly_moneyflow",
+      "rows": 0,
+      "first_date": null,
+      "last_date": null,
+      "actual_periods": 0.0,
+      "expected_periods": 0.0,
+      "note": "无数据"
+    },
+    {
+      "stock_code": "00700",
+      "data_type": "daily_kline",
+      "rows": 4098,
+      "first_date": "2010-01-04",
+      "last_date": "2026-08-28",
+      "actual_periods": 4098.0,
+      "expected_periods": 4098.0,
+      "note": "周期完整度 4098/4098"
+    },
+    {
+      "stock_code": "00700",
+      "data_type": "daily_moneyflow",
+      "rows": 1367,
+      "first_date": "2021-02-03",
+      "last_date": "2026-08-28",
+      "actual_periods": 1367.0,
+      "expected_periods": NaN,
+      "note": ""
+    },
+    {
+      "stock_code": "00700",
+      "data_type": "institutional_holdings",
+      "rows": 89,
+      "first_date": NaN,
+      "last_date": NaN,
+      "actual_periods": NaN,
+      "expected_periods": NaN,
+      "note": ""
+    },
+    {
+      "stock_code": "00700",
+      "data_type": "monthly_kline",
+      "rows": 199,
+      "first_date": "2010-01-31",
+      "last_date": "2026-07-31",
+      "actual_periods": 199.0,
+      "expected_periods": 199.0,
+      "note": "周期完整度 199/199"
+    },
+    {
+      "stock_code": "00700",
+      "data_type": "monthly_moneyflow",
+      "rows": 68,
+      "first_date": "2021-02-26",
+      "last_date": "2026-08-21",
+      "actual_periods": 68.0,
+      "expected_periods": NaN,
+      "note": ""
+    },
+    {
+      "stock_code": "00700",
+      "data_type": "quarterly_kline",
+      "rows": 66,
+      "first_date": "2010-03-31",
+      "last_date": "2026-06-30",
+      "actual_periods": 66.0,
+      "expected_periods": 66.0,
+      "note": "周期完整度 66/66"
+    },
+    {
+      "stock_code": "00700",
+      "data_type": "quarterly_moneyflow",
+      "rows": 23,
+      "first_date": "2021-03-31",
+      "last_date": "2026-08-21",
+      "actual_periods": 23.0,
+      "expected_periods": NaN,
+      "note": ""
+    },
+    {
+      "stock_code": "00700",
+      "data_type": "weekly_kline",
+      "rows": 868,
+      "first_date": "2010-01-08",
+      "last_date": "2026-08-21",
+      "actual_periods": 868.0,
+      "expected_periods": 868.0,
+      "note": "周期完整度 868/868"
+    },
+    {
+      "stock_code": "00700",
+      "data_type": "weekly_moneyflow",
+      "rows": 290,
+      "first_date": "2021-02-05",
+      "last_date": "2026-08-21",
+      "actual_periods": 290.0,
+      "expected_periods": NaN,
+      "note": ""
+    },
+    {
+      "stock_code": "00788",
+      "data_type": "daily_kline",
+      "rows": 1982,
+      "first_date": "2018-08-08",
+      "last_date": "2026-08-28",
+      "actual_periods": 1982.0,
+      "expected_periods": 1982.0,
+      "note": "周期完整度 1982/1982"
+    },
+    {
+      "stock_code": "00788",
+      "data_type": "daily_moneyflow",
+      "rows": 1349,
+      "first_date": "2021-02-03",
+      "last_date": "2026-08-28",
+      "actual_periods": 1349.0,
+      "expected_periods": NaN,
+      "note": ""
+    },
+    {
+      "stock_code": "00788",
+      "data_type": "institutional_holdings",
+      "rows": 33,
+      "first_date": NaN,
+      "last_date": NaN,
+      "actual_periods": NaN,
+      "expected_periods": NaN,
+      "note": ""
+    },
+    {
+      "stock_code": "00788",
+      "data_type": "monthly_kline",
+      "rows": 96,
+      "first_date": "2018-08-31",
+      "last_date": "2026-07-31",
+      "actual_periods": 96.0,
+      "expected_periods": 96.0,
+      "note": "周期完整度 96/96"
+    },
+    {
+      "stock_code": "00788",
+      "data_type": "monthly_moneyflow",
+      "rows": 69,
+      "first_date": "2021-02-01",
+      "last_date": "2026-08-21",
+      "actual_periods": 69.0,
+      "expected_periods": NaN,
+      "note": ""
+    },
+    {
+      "stock_code": "00788",
+      "data_type": "quarterly_kline",
+      "rows": 32,
+      "first_date": "2018-09-30",
+      "last_date": "2026-06-30",
+      "actual_periods": 32.0,
+      "expected_periods": 32.0,
+      "note": "周期完整度 32/32"
+    },
+    {
+      "stock_code": "00788",
+      "data_type": "quarterly_moneyflow",
+      "rows": 23,
+      "first_date": "2021-03-31",
+      "last_date": "2026-08-21",
+      "actual_periods": 23.0,
+      "expected_periods": NaN,
+      "note": ""
+    },
+    {
+      "stock_code": "00788",
+      "data_type": "weekly_kline",
+      "rows": 420,
+      "first_date": "2018-08-10",
+      "last_date": "2026-08-21",
+      "actual_periods": 420.0,
+      "expected_periods": 420.0,
+      "note": "周期完整度 420/420"
+    },
+    {
+      "stock_code": "00788",
+      "data_type": "weekly_moneyflow",
+      "rows": 288,
+      "first_date": "2021-02-05",
+      "last_date": "2026-08-21",
+      "actual_periods": 288.0,
+      "expected_periods": NaN,
+      "note": ""
+    },
+    {
+      "stock_code": "01093",
+      "data_type": "daily_kline",
+      "rows": 4097,
+      "first_date": "2010-01-04",
+      "last_date": "2026-08-28",
+      "actual_periods": 4097.0,
+      "expected_periods": 4098.0,
+      "note": "周期完整度 4097/4098"
+    },
+    {
+      "stock_code": "01093",
+      "data_type": "daily_moneyflow",
+      "rows": 1362,
+      "first_date": "2021-02-03",
+      "last_date": "2026-08-28",
+      "actual_periods": 1362.0,
+      "expected_periods": NaN,
+      "note": ""
+    },
+    {
+      "stock_code": "01093",
+      "data_type": "institutional_holdings",
+      "rows": 90,
+      "first_date": NaN,
+      "last_date": NaN,
+      "actual_periods": NaN,
+      "expected_periods": NaN,
+      "note": ""
+    },
+    {
+      "stock_code": "01093",
+      "data_type": "monthly_kline",
+      "rows": 199,
+      "first_date": "2010-01-31",
+      "last_date": "2026-07-31",
+      "actual_periods": 199.0,
+      "expected_periods": 199.0,
+      "note": "周期完整度 199/199"
+    },
+    {
+      "stock_code": "01093",
+      "data_type": "monthly_moneyflow",
+      "rows": 69,
+      "first_date": "2021-02-01",
+      "last_date": "2026-08-21",
+      "actual_periods": 69.0,
+      "expected_periods": NaN,
+      "note": ""
+    },
+    {
+      "stock_code": "01093",
+      "data_type": "quarterly_kline",
+      "rows": 66,
+      "first_date": "2010-03-31",
+      "last_date": "2026-06-30",
+      "actual_periods": 66.0,
+      "expected_periods": 66.0,
+      "note": "周期完整度 66/66"
+    },
+    {
+      "stock_code": "01093",
+      "data_type": "quarterly_moneyflow",
+      "rows": 23,
+      "first_date": "2021-03-31",
+      "last_date": "2026-08-21",
+      "actual_periods": 23.0,
+      "expected_periods": NaN,
+      "note": ""
+    },
+    {
+      "stock_code": "01093",
+      "data_type": "weekly_kline",
+      "rows": 868,
+      "first_date": "2010-01-08",
+      "last_date": "2026-08-21",
+      "actual_periods": 868.0,
+      "expected_periods": 868.0,
+      "note": "周期完整度 868/868"
+    },
+    {
+      "stock_code": "01093",
+      "data_type": "weekly_moneyflow",
+      "rows": 289,
+      "first_date": "2021-02-05",
+      "last_date": "2026-08-21",
+      "actual_periods": 289.0,
+      "expected_periods": NaN,
+      "note": ""
+    },
+    {
+      "stock_code": "01177",
+      "data_type": "daily_kline",
+      "rows": 4095,
+      "first_date": "2010-01-04",
+      "last_date": "2026-08-28",
+      "actual_periods": 4095.0,
+      "expected_periods": 4098.0,
+      "note": "周期完整度 4095/4098"
+    },
+    {
+      "stock_code": "01177",
+      "data_type": "daily_moneyflow",
+      "rows": 1362,
+      "first_date": "2021-02-03",
+      "last_date": "2026-08-28",
+      "actual_periods": 1362.0,
+      "expected_periods": NaN,
+      "note": ""
+    },
+    {
+      "stock_code": "01177",
+      "data_type": "institutional_holdings",
+      "rows": 86,
+      "first_date": NaN,
+      "last_date": NaN,
+      "actual_periods": NaN,
+      "expected_periods": NaN,
+      "note": ""
+    },
+    {
+      "stock_code": "01177",
+      "data_type": "monthly_kline",
+      "rows": 199,
+      "first_date": "2010-01-31",
+      "last_date": "2026-07-31",
+      "actual_periods": 199.0,
+      "expected_periods": 199.0,
+      "note": "周期完整度 199/199"
+    },
+    {
+      "stock_code": "01177",
+      "data_type": "monthly_moneyflow",
+      "rows": 69,
+      "first_date": "2021-02-01",
+      "last_date": "2026-08-21",
+      "actual_periods": 69.0,
+      "expected_periods": NaN,
+      "note": ""
+    },
+    {
+      "stock_code": "01177",
+      "data_type": "quarterly_kline",
+      "rows": 66,
+      "first_date": "2010-03-31",
+      "last_date": "2026-06-30",
+      "actual_periods": 66.0,
+      "expected_periods": 66.0,
+      "note": "周期完整度 66/66"
+    },
+    {
+      "stock_code": "01177",
+      "data_type": "quarterly_moneyflow",
+      "rows": 23,
+      "first_date": "2021-03-31",
+      "last_date": "2026-08-21",
+      "actual_periods": 23.0,
+      "expected_periods": NaN,
+      "note": ""
+    },
+    {
+      "stock_code": "01177",
+      "data_type": "weekly_kline",
+      "rows": 868,
+      "first_date": "2010-01-08",
+      "last_date": "2026-08-21",
+      "actual_periods": 868.0,
+      "expected_periods": 868.0,
+      "note": "周期完整度 868/868"
+    },
+    {
+      "stock_code": "01177",
+      "data_type": "weekly_moneyflow",
+      "rows": 289,
+      "first_date": "2021-02-05",
+      "last_date": "2026-08-21",
+      "actual_periods": 289.0,
+      "expected_periods": NaN,
+      "note": ""
+    },
+    {
+      "stock_code": "01951",
+      "data_type": "daily_kline",
+      "rows": 1768,
+      "first_date": "2019-06-25",
+      "last_date": "2026-08-28",
+      "actual_periods": 1768.0,
+      "expected_periods": 1768.0,
+      "note": "周期完整度 1768/1768"
+    },
+    {
+      "stock_code": "01951",
+      "data_type": "daily_moneyflow",
+      "rows": 1362,
+      "first_date": "2021-02-03",
+      "last_date": "2026-08-28",
+      "actual_periods": 1362.0,
+      "expected_periods": NaN,
+      "note": ""
+    },
+    {
+      "stock_code": "01951",
+      "data_type": "institutional_holdings",
+      "rows": 32,
+      "first_date": NaN,
+      "last_date": NaN,
+      "actual_periods": NaN,
+      "expected_periods": NaN,
+      "note": ""
+    },
+    {
+      "stock_code": "01951",
+      "data_type": "monthly_kline",
+      "rows": 86,
+      "first_date": "2019-06-30",
+      "last_date": "2026-07-31",
+      "actual_periods": 86.0,
+      "expected_periods": 86.0,
+      "note": "周期完整度 86/86"
+    },
+    {
+      "stock_code": "01951",
+      "data_type": "monthly_moneyflow",
+      "rows": 69,
+      "first_date": "2021-02-01",
+      "last_date": "2026-08-21",
+      "actual_periods": 69.0,
+      "expected_periods": NaN,
+      "note": ""
+    },
+    {
+      "stock_code": "01951",
+      "data_type": "quarterly_kline",
+      "rows": 29,
+      "first_date": "2019-06-30",
+      "last_date": "2026-06-30",
+      "actual_periods": 29.0,
+      "expected_periods": 29.0,
+      "note": "周期完整度 29/29"
+    },
+    {
+      "stock_code": "01951",
+      "data_type": "quarterly_moneyflow",
+      "rows": 23,
+      "first_date": "2021-03-31",
+      "last_date": "2026-08-21",
+      "actual_periods": 23.0,
+      "expected_periods": NaN,
+      "note": ""
+    },
+    {
+      "stock_code": "01951",
+      "data_type": "weekly_kline",
+      "rows": 374,
+      "first_date": "2019-06-28",
+      "last_date": "2026-08-21",
+      "actual_periods": 374.0,
+      "expected_periods": 374.0,
+      "note": "周期完整度 374/374"
+    },
+    {
+      "stock_code": "01951",
+      "data_type": "weekly_moneyflow",
+      "rows": 289,
+      "first_date": "2021-02-05",
+      "last_date": "2026-08-21",
+      "actual_periods": 289.0,
+      "expected_periods": NaN,
+      "note": ""
+    },
+    {
+      "stock_code": "02202",
+      "data_type": "daily_kline",
+      "rows": 2986,
+      "first_date": "2014-06-25",
+      "last_date": "2026-08-28",
+      "actual_periods": 2986.0,
+      "expected_periods": 2997.0,
+      "note": "周期完整度 2986/2997"
+    },
+    {
+      "stock_code": "02202",
+      "data_type": "daily_moneyflow",
+      "rows": 1361,
+      "first_date": "2021-02-03",
+      "last_date": "2026-08-28",
+      "actual_periods": 1361.0,
+      "expected_periods": NaN,
+      "note": ""
+    },
+    {
+      "stock_code": "02202",
+      "data_type": "institutional_holdings",
+      "rows": 90,
+      "first_date": NaN,
+      "last_date": NaN,
+      "actual_periods": NaN,
+      "expected_periods": NaN,
+      "note": ""
+    },
+    {
+      "stock_code": "02202",
+      "data_type": "monthly_kline",
+      "rows": 146,
+      "first_date": "2014-06-30",
+      "last_date": "2026-07-31",
+      "actual_periods": 146.0,
+      "expected_periods": 146.0,
+      "note": "周期完整度 146/146"
+    },
+    {
+      "stock_code": "02202",
+      "data_type": "monthly_moneyflow",
+      "rows": 69,
+      "first_date": "2021-02-01",
+      "last_date": "2026-08-21",
+      "actual_periods": 69.0,
+      "expected_periods": NaN,
+      "note": ""
+    },
+    {
+      "stock_code": "02202",
+      "data_type": "quarterly_kline",
+      "rows": 49,
+      "first_date": "2014-06-30",
+      "last_date": "2026-06-30",
+      "actual_periods": 49.0,
+      "expected_periods": 49.0,
+      "note": "周期完整度 49/49"
+    },
+    {
+      "stock_code": "02202",
+      "data_type": "quarterly_moneyflow",
+      "rows": 23,
+      "first_date": "2021-03-31",
+      "last_date": "2026-08-21",
+      "actual_periods": 23.0,
+      "expected_periods": NaN,
+      "note": ""
+    },
+    {
+      "stock_code": "02202",
+      "data_type": "weekly_kline",
+      "rows": 633,
+      "first_date": "2014-06-27",
+      "last_date": "2026-08-21",
+      "actual_periods": 633.0,
+      "expected_periods": 635.0,
+      "note": "周期完整度 633/635"
+    },
+    {
+      "stock_code": "02202",
+      "data_type": "weekly_moneyflow",
+      "rows": 289,
+      "first_date": "2021-02-05",
+      "last_date": "2026-08-21",
+      "actual_periods": 289.0,
+      "expected_periods": NaN,
+      "note": ""
+    },
+    {
+      "stock_code": "02602",
+      "data_type": "daily_kline",
+      "rows": 960,
+      "first_date": "2022-09-29",
+      "last_date": "2026-08-28",
+      "actual_periods": 960.0,
+      "expected_periods": 960.0,
+      "note": "周期完整度 960/960"
+    },
+    {
+      "stock_code": "02602",
+      "data_type": "daily_moneyflow",
+      "rows": 251,
+      "first_date": "2025-08-21",
+      "last_date": "2026-08-28",
+      "actual_periods": 251.0,
+      "expected_periods": NaN,
+      "note": ""
+    },
+    {
+      "stock_code": "02602",
+      "data_type": "institutional_holdings",
+      "rows": 16,
+      "first_date": NaN,
+      "last_date": NaN,
+      "actual_periods": NaN,
+      "expected_periods": NaN,
+      "note": ""
+    },
+    {
+      "stock_code": "02602",
+      "data_type": "monthly_kline",
+      "rows": 47,
+      "first_date": "2022-09-30",
+      "last_date": "2026-07-31",
+      "actual_periods": 47.0,
+      "expected_periods": 47.0,
+      "note": "周期完整度 47/47"
+    },
+    {
+      "stock_code": "02602",
+      "data_type": "monthly_moneyflow",
+      "rows": 12,
+      "first_date": "2025-08-29",
+      "last_date": "2026-07-31",
+      "actual_periods": 12.0,
+      "expected_periods": NaN,
+      "note": ""
+    },
+    {
+      "stock_code": "02602",
+      "data_type": "quarterly_kline",
+      "rows": 16,
+      "first_date": "2022-09-30",
+      "last_date": "2026-06-30",
+      "actual_periods": 16.0,
+      "expected_periods": 16.0,
+      "note": "周期完整度 16/16"
+    },
+    {
+      "stock_code": "02602",
+      "data_type": "quarterly_moneyflow",
+      "rows": 5,
+      "first_date": "2025-09-30",
+      "last_date": "2026-08-21",
+      "actual_periods": 5.0,
+      "expected_periods": NaN,
+      "note": ""
+    },
+    {
+      "stock_code": "02602",
+      "data_type": "weekly_kline",
+      "rows": 204,
+      "first_date": "2022-09-30",
+      "last_date": "2026-08-21",
+      "actual_periods": 204.0,
+      "expected_periods": 204.0,
+      "note": "周期完整度 204/204"
+    },
+    {
+      "stock_code": "02602",
+      "data_type": "weekly_moneyflow",
+      "rows": 53,
+      "first_date": "2025-08-22",
+      "last_date": "2026-08-21",
+      "actual_periods": 53.0,
+      "expected_periods": NaN,
+      "note": ""
+    },
+    {
+      "stock_code": "02611",
+      "data_type": "daily_kline",
+      "rows": 2287,
+      "first_date": "2017-04-11",
+      "last_date": "2026-08-28",
+      "actual_periods": 2287.0,
+      "expected_periods": 2308.0,
+      "note": "周期完整度 2287/2308"
+    },
+    {
+      "stock_code": "02611",
+      "data_type": "daily_moneyflow",
+      "rows": 1344,
+      "first_date": "2021-02-03",
+      "last_date": "2026-08-28",
+      "actual_periods": 1344.0,
+      "expected_periods": NaN,
+      "note": ""
+    },
+    {
+      "stock_code": "02611",
+      "data_type": "institutional_holdings",
+      "rows": 45,
+      "first_date": NaN,
+      "last_date": NaN,
+      "actual_periods": NaN,
+      "expected_periods": NaN,
+      "note": ""
+    },
+    {
+      "stock_code": "02611",
+      "data_type": "monthly_kline",
+      "rows": 112,
+      "first_date": "2017-04-30",
+      "last_date": "2026-07-31",
+      "actual_periods": 112.0,
+      "expected_periods": 112.0,
+      "note": "周期完整度 112/112"
+    },
+    {
+      "stock_code": "02611",
+      "data_type": "monthly_moneyflow",
+      "rows": 69,
+      "first_date": "2021-02-01",
+      "last_date": "2026-08-21",
+      "actual_periods": 69.0,
+      "expected_periods": NaN,
+      "note": ""
+    },
+    {
+      "stock_code": "02611",
+      "data_type": "quarterly_kline",
+      "rows": 37,
+      "first_date": "2017-06-30",
+      "last_date": "2026-06-30",
+      "actual_periods": 37.0,
+      "expected_periods": 37.0,
+      "note": "周期完整度 37/37"
+    },
+    {
+      "stock_code": "02611",
+      "data_type": "quarterly_moneyflow",
+      "rows": 23,
+      "first_date": "2021-03-31",
+      "last_date": "2026-08-21",
+      "actual_periods": 23.0,
+      "expected_periods": NaN,
+      "note": ""
+    },
+    {
+      "stock_code": "02611",
+      "data_type": "weekly_kline",
+      "rows": 485,
+      "first_date": "2017-04-14",
+      "last_date": "2026-08-21",
+      "actual_periods": 485.0,
+      "expected_periods": 489.0,
+      "note": "周期完整度 485/489"
+    },
+    {
+      "stock_code": "02611",
+      "data_type": "weekly_moneyflow",
+      "rows": 286,
+      "first_date": "2021-02-05",
+      "last_date": "2026-08-21",
+      "actual_periods": 286.0,
+      "expected_periods": NaN,
+      "note": ""
+    },
+    {
+      "stock_code": "03033",
+      "data_type": "daily_kline",
+      "rows": 1474,
+      "first_date": "2020-08-28",
+      "last_date": "2026-08-28",
+      "actual_periods": 1474.0,
+      "expected_periods": 1474.0,
+      "note": "周期完整度 1474/1474"
+    },
+    {
+      "stock_code": "03033",
+      "data_type": "daily_moneyflow",
+      "rows": 1318,
+      "first_date": "2021-04-19",
+      "last_date": "2026-08-28",
+      "actual_periods": 1318.0,
+      "expected_periods": NaN,
+      "note": ""
+    },
+    {
+      "stock_code": "03033",
+      "data_type": "institutional_holdings",
+      "rows": 0,
+      "first_date": null,
+      "last_date": null,
+      "actual_periods": 0.0,
+      "expected_periods": 0.0,
+      "note": "无数据"
+    },
+    {
+      "stock_code": "03033",
+      "data_type": "monthly_kline",
+      "rows": 72,
+      "first_date": "2020-08-31",
+      "last_date": "2026-07-31",
+      "actual_periods": 72.0,
+      "expected_periods": 72.0,
+      "note": "周期完整度 72/72"
+    },
+    {
+      "stock_code": "03033",
+      "data_type": "monthly_moneyflow",
+      "rows": 67,
+      "first_date": "2021-04-01",
+      "last_date": "2026-08-21",
+      "actual_periods": 67.0,
+      "expected_periods": NaN,
+      "note": ""
+    },
+    {
+      "stock_code": "03033",
+      "data_type": "quarterly_kline",
+      "rows": 24,
+      "first_date": "2020-09-30",
+      "last_date": "2026-06-30",
+      "actual_periods": 24.0,
+      "expected_periods": 24.0,
+      "note": "周期完整度 24/24"
+    },
+    {
+      "stock_code": "03033",
+      "data_type": "quarterly_moneyflow",
+      "rows": 22,
+      "first_date": "2021-06-30",
+      "last_date": "2026-08-21",
+      "actual_periods": 22.0,
+      "expected_periods": NaN,
+      "note": ""
+    },
+    {
+      "stock_code": "03033",
+      "data_type": "weekly_kline",
+      "rows": 313,
+      "first_date": "2020-08-28",
+      "last_date": "2026-08-21",
+      "actual_periods": 313.0,
+      "expected_periods": 313.0,
+      "note": "周期完整度 313/313"
+    },
+    {
+      "stock_code": "03033",
+      "data_type": "weekly_moneyflow",
+      "rows": 279,
+      "first_date": "2021-04-23",
+      "last_date": "2026-08-21",
+      "actual_periods": 279.0,
+      "expected_periods": NaN,
+      "note": ""
+    },
+    {
+      "stock_code": "03800",
+      "data_type": "daily_kline",
+      "rows": 3950,
+      "first_date": "2010-01-04",
+      "last_date": "2026-08-28",
+      "actual_periods": 3950.0,
+      "expected_periods": 4098.0,
+      "note": "周期完整度 3950/4098"
+    },
+    {
+      "stock_code": "03800",
+      "data_type": "daily_moneyflow",
+      "rows": 1219,
+      "first_date": "2021-02-03",
+      "last_date": "2026-08-28",
+      "actual_periods": 1219.0,
+      "expected_periods": NaN,
+      "note": ""
+    },
+    {
+      "stock_code": "03800",
+      "data_type": "institutional_holdings",
+      "rows": 75,
+      "first_date": NaN,
+      "last_date": NaN,
+      "actual_periods": NaN,
+      "expected_periods": NaN,
+      "note": ""
+    },
+    {
+      "stock_code": "03800",
+      "data_type": "monthly_kline",
+      "rows": 192,
+      "first_date": "2010-01-31",
+      "last_date": "2026-07-31",
+      "actual_periods": 192.0,
+      "expected_periods": 199.0,
+      "note": "周期完整度 192/199"
+    },
+    {
+      "stock_code": "03800",
+      "data_type": "monthly_moneyflow",
+      "rows": 62,
+      "first_date": "2021-02-01",
+      "last_date": "2026-08-21",
+      "actual_periods": 62.0,
+      "expected_periods": NaN,
+      "note": ""
+    },
+    {
+      "stock_code": "03800",
+      "data_type": "quarterly_kline",
+      "rows": 64,
+      "first_date": "2010-03-31",
+      "last_date": "2026-06-30",
+      "actual_periods": 64.0,
+      "expected_periods": 66.0,
+      "note": "周期完整度 64/66"
+    },
+    {
+      "stock_code": "03800",
+      "data_type": "quarterly_moneyflow",
+      "rows": 21,
+      "first_date": "2021-03-31",
+      "last_date": "2026-08-21",
+      "actual_periods": 21.0,
+      "expected_periods": NaN,
+      "note": ""
+    },
+    {
+      "stock_code": "03800",
+      "data_type": "weekly_kline",
+      "rows": 838,
+      "first_date": "2010-01-08",
+      "last_date": "2026-08-21",
+      "actual_periods": 838.0,
+      "expected_periods": 868.0,
+      "note": "周期完整度 838/868"
+    },
+    {
+      "stock_code": "03800",
+      "data_type": "weekly_moneyflow",
+      "rows": 259,
+      "first_date": "2021-02-05",
+      "last_date": "2026-08-21",
+      "actual_periods": 259.0,
+      "expected_periods": NaN,
+      "note": ""
+    },
+    {
+      "stock_code": "06060",
+      "data_type": "daily_kline",
+      "rows": 2192,
+      "first_date": "2017-09-28",
+      "last_date": "2026-08-28",
+      "actual_periods": 2192.0,
+      "expected_periods": 2192.0,
+      "note": "周期完整度 2192/2192"
+    },
+    {
+      "stock_code": "06060",
+      "data_type": "daily_moneyflow",
+      "rows": 1362,
+      "first_date": "2021-02-03",
+      "last_date": "2026-08-28",
+      "actual_periods": 1362.0,
+      "expected_periods": NaN,
+      "note": ""
+    },
+    {
+      "stock_code": "06060",
+      "data_type": "institutional_holdings",
+      "rows": 36,
+      "first_date": NaN,
+      "last_date": NaN,
+      "actual_periods": NaN,
+      "expected_periods": NaN,
+      "note": ""
+    },
+    {
+      "stock_code": "06060",
+      "data_type": "monthly_kline",
+      "rows": 107,
+      "first_date": "2017-09-30",
+      "last_date": "2026-07-31",
+      "actual_periods": 107.0,
+      "expected_periods": 107.0,
+      "note": "周期完整度 107/107"
+    },
+    {
+      "stock_code": "06060",
+      "data_type": "monthly_moneyflow",
+      "rows": 69,
+      "first_date": "2021-02-01",
+      "last_date": "2026-08-21",
+      "actual_periods": 69.0,
+      "expected_periods": NaN,
+      "note": ""
+    },
+    {
+      "stock_code": "06060",
+      "data_type": "quarterly_kline",
+      "rows": 36,
+      "first_date": "2017-09-30",
+      "last_date": "2026-06-30",
+      "actual_periods": 36.0,
+      "expected_periods": 36.0,
+      "note": "周期完整度 36/36"
+    },
+    {
+      "stock_code": "06060",
+      "data_type": "quarterly_moneyflow",
+      "rows": 23,
+      "first_date": "2021-03-31",
+      "last_date": "2026-08-21",
+      "actual_periods": 23.0,
+      "expected_periods": NaN,
+      "note": ""
+    },
+    {
+      "stock_code": "06060",
+      "data_type": "weekly_kline",
+      "rows": 465,
+      "first_date": "2017-09-29",
+      "last_date": "2026-08-21",
+      "actual_periods": 465.0,
+      "expected_periods": 465.0,
+      "note": "周期完整度 465/465"
+    },
+    {
+      "stock_code": "06060",
+      "data_type": "weekly_moneyflow",
+      "rows": 289,
+      "first_date": "2021-02-05",
+      "last_date": "2026-08-21",
+      "actual_periods": 289.0,
+      "expected_periods": NaN,
+      "note": ""
+    },
+    {
+      "stock_code": "IDX",
+      "data_type": "idx_hist",
+      "rows": 2867,
+      "first_date": "2015-01-02",
+      "last_date": "2026-08-28",
+      "actual_periods": NaN,
+      "expected_periods": NaN,
+      "note": ""
+    }
+  ]
+}

@@ -1,0 +1,1753 @@
+修改Gen_Daily_Prompt.py。
+不再使用{ticker}_daily_ta_mf_analysis.csv， 可以将hk_daily_kline_analysis和hk_daily_moneyflow_analysis两个表通过stock_code 和date列进行连接，创建新的dataset。
+
+可以参考Daily_TA3A_Analyze_Indicators_Plot.py程序中的数据库操作方法及路径设置方法。
+Gen_Daily_Prompt.py 路径： C:\Users\Quansheng\Documents\projects\TA_Workflow2\Code_Prompt\Gen_Daily_Prompt.py、
+
+输出文件路径：C:\Users\Quansheng\Documents\projects\TA_Workflow2\Prompt\Prompt_Daily.txt
+
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
+# ==================================================
+# Gen_Daily_Prompt.py -- 构建提问模板（近日走势复盘分析专用）
+# 功能：自动处理股票列表，生成复盘分析提问，输出最近5个交易日的数据表格
+# 保留原程序逻辑架构，移除未使用的指标筛选函数
+# 改进：同时将结果输出到屏幕和指定的文本文件
+# ==================================================
+
+import pandas as pd
+import os
+from datetime import datetime
+import sys
+
+# ==================== 配置参数 ====================
+# 股票列表：代码和名称
+STOCK_LIST = [
+    {'code': '00371', 'name': '北控水务'},
+    {'code': '00788', 'name': '中国铁塔'},
+    {'code': '02202', 'name': '港股万科企业'},
+    {'code': '01951', 'name': '锦鑫生殖'},
+    {'code': '00268', 'name': '金蝶国际'},
+    {'code': '00354', 'name': '中软国际'},
+    {'code': '06060', 'name': '众安在线'},
+    {'code': '00357', 'name': '美兰空港'},
+    {'code': '01177', 'name': '中生制药'},
+    {'code': '01093', 'name': '石药集团'},
+    {'code': '03800', 'name': '协鑫科技'},
+    {'code': '00020', 'name': '商汤科技'},
+    {'code': '02611', 'name': '国泰海通'},
+    # {'code': '00579', 'name': '京能清洁能源'},
+    # {'code': '02602', 'name': '港股万物云'},
+]
+
+# 复盘区间：取最近 N 个交易日
+REVIEW_DAYS = 10
+
+# 数据文件所在目录（相对于当前脚本）
+DATA_DIR = os.path.join("..", "data")
+
+# 输出文本文件路径
+OUTPUT_FILEPATH = r"C:\Users\Quansheng\Documents\projects\BackTest2\data\DS_Prompt_daily.txt"
+
+# 需要输出的字段（与示例完全一致）
+OUTPUT_COLUMNS = [
+    "Date", "Close", "EMA5", "EMA20","EMA100", "EMA200","Volume_Ratio5",
+    "MACD_Histogram", "MACD_Status",
+    "Institutional_Flow", "Individual_Flow", "Inst_5MA", "Ind_5MA",
+    "Turnover_Rate"
+]
+
+# ==================== 辅助函数 ====================
+def load_stock_data(ticker):
+    """
+    加载股票日线数据，返回 DataFrame（已排序）
+    仅读取 OUTPUT_COLUMNS 中存在的列
+    """
+    file_path = os.path.join(DATA_DIR, f"{ticker}_daily_ta_mf_analysis.csv")
+    try:
+        sample = pd.read_csv(file_path, nrows=0)
+        existing_cols = [c.replace(' ', '_') for c in sample.columns]
+        cols_to_read = [col for col in OUTPUT_COLUMNS if col in existing_cols]
+        if not cols_to_read:
+            raise ValueError(f"文件 {file_path} 中无任何所需列")
+        
+        df = pd.read_csv(file_path, usecols=cols_to_read)
+        df.columns = df.columns.str.replace(' ', '_')
+        df['Date'] = pd.to_datetime(df['Date'])
+        df = df.sort_values('Date').reset_index(drop=True)
+        return df
+    except Exception as e:
+        print(f"读取 {ticker} 数据失败: {e}")
+        return None
+
+def get_recent_data(df, days):
+    """获取最近 days 个交易日的数据切片，返回 (start_date, end_date, data_slice)"""
+    if df is None or df.empty:
+        return None, None, None
+    data_slice = df.tail(days).copy()
+    if data_slice.empty:
+        return None, None, None
+    start_date = data_slice['Date'].min()
+    end_date = data_slice['Date'].max()
+    return start_date, end_date, data_slice
+
+def format_dataframe(df):
+    """格式化数据表格：日期字符串、数值保留指定位数，空值处理为空字符串"""
+    formatted = df.copy()
+    formatted['Date'] = formatted['Date'].dt.strftime('%Y-%m-%d')
+    
+    format_rules = {
+        'Close': '{:.2f}',
+        'EMA5': '{:.3f}',
+        'EMA20': '{:.3f}',
+        'EMA100': '{:.3f}',
+        'EMA200': '{:.3f}',
+        'Volume_Ratio5': '{:.3f}',
+        'MACD_Histogram': '{:.4f}',
+        'Institutional_Flow': '{:,.0f}',
+        'Individual_Flow': '{:,.0f}',
+        'Inst_5MA': '{:,.0f}',
+        'Ind_5MA': '{:,.0f}',
+        'Turnover_Rate': '{:.2f}'
+    }
+    for col, fmt in format_rules.items():
+        if col in formatted.columns:
+            formatted[col] = formatted[col].apply(
+                lambda x: fmt.format(x) if pd.notna(x) else ''
+            )
+    return formatted
+
+def generate_question(stock_name, stock_code, start_date, end_date):
+    """生成问题标题文本"""
+    start_str = start_date.strftime('%Y年%m月%d日')
+    end_str = end_date.strftime('%Y年%m月%d日')
+    return f"问题: 对{stock_name} ({stock_code})近日走势进行复盘分析，复盘区间：{start_str} – {end_str}"
+
+def write_and_print(output_file, text):
+    """将文本同时写入文件和控制台"""
+    print(text)
+    output_file.write(text + "\n")
+
+# ==================== 主流程 ====================
+def main():
+    # 确保输出目录存在
+    output_dir = os.path.dirname(OUTPUT_FILEPATH)
+    if output_dir and not os.path.exists(output_dir):
+        os.makedirs(output_dir)
+    
+    # 打开输出文件（UTF-8 编码，确保中文正常）
+    with open(OUTPUT_FILEPATH, 'w', encoding='utf-8') as f:
+        # 写入标题
+        header = "=" * 80 + "\n近日走势复盘分析 - 自动生成提问模板\n" + "=" * 80
+        print(header)
+        f.write(header + "\n\n")
+        
+        for stock in STOCK_LIST:
+            code = stock["code"]
+            name = stock["name"]
+            log_msg = f"\n处理 {name} ({code}) ..."
+            print(log_msg)
+            f.write(log_msg + "\n")
+            
+            df = load_stock_data(code)
+            if df is None:
+                skip_msg = f"  跳过 {code}（数据加载失败）"
+                print(skip_msg)
+                f.write(skip_msg + "\n")
+                continue
+            
+            start_date, end_date, data_slice = get_recent_data(df, REVIEW_DAYS)
+            if data_slice is None or data_slice.empty:
+                skip_msg = f"  跳过 {code}（无足够数据）"
+                print(skip_msg)
+                f.write(skip_msg + "\n")
+                continue
+            
+            formatted_df = format_dataframe(data_slice)
+            question = generate_question(name, code, start_date, end_date)
+            
+            # 输出问题及表格
+            write_and_print(f, "\n" + question)
+            # 将表格内容写入文件（使用 to_string 保持格式）
+            table_str = formatted_df.to_string(index=False)
+            write_and_print(f, table_str)
+            write_and_print(f, "\n" + "-" * 80)
+        
+        # 写入完成提示
+        completion_msg = f"\n输出已保存至：{OUTPUT_FILEPATH}"
+        print(completion_msg)
+        f.write(completion_msg + "\n")
+
+if __name__ == "__main__":
+    main()
+	
+	
+=========================
+#!/usr/bin/env python
+# coding: utf-8
+
+# ===== 最早期调试信息 =====
+import sys
+print("程序开始运行...")
+sys.stdout.flush()
+
+"""
+Step 4: 读取交易数据及技术分析指标数据，显示日线图及技术指标。
+Source code: Daily_TA3A_Analyze_Indicators_Plot.py
+Input data:hk_daily_kline_analysis
+Output data: 日k线技术分析报告pdf：daily_TA_indicator_analysis.pdf, daily_TA_indicator_plot.pdf,daily_TA_indicator_sum.pdf
+Function:
+1. 绘制日线图
+    1.K线图，EMA5/20/200
+    2.成交量
+    3.MACD
+    4.RSI
+2. 列举主要技术指标
+"""
+
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+from matplotlib.pylab import date2num
+from mplfinance.original_flavor import candlestick_ohlc
+from matplotlib.gridspec import GridSpec
+import matplotlib.dates as mdates
+import os
+from matplotlib.backends.backend_pdf import PdfPages
+import matplotlib as mpl
+import traceback
+
+from PyPDF2 import PdfMerger
+from reportlab.pdfgen import canvas
+from reportlab.lib.pagesizes import letter
+from io import BytesIO
+
+import contextlib
+import PyPDF2
+
+import mplfinance as mpf
+import warnings
+
+import io
+from datetime import datetime, timedelta
+import time
+from pathlib import Path
+import traceback
+import sqlite3
+import logging
+
+import warnings
+warnings.filterwarnings("ignore", message="Failed to find font weight bold")
+warnings.filterwarnings("ignore", category=DeprecationWarning)
+
+print("所有模块导入完成...")
+sys.stdout.flush()
+
+# ===== 日志配置 =====
+def setup_logging(log_dir):
+    """
+    配置日志系统
+    
+    参数:
+    log_dir: 日志目录路径
+    """
+    try:
+        print(f"开始配置日志系统，日志目录: {log_dir}")
+        sys.stdout.flush()
+        
+        # 确保日志目录存在
+        if not os.path.exists(log_dir):
+            print(f"日志目录不存在，创建: {log_dir}")
+            sys.stdout.flush()
+            os.makedirs(log_dir, exist_ok=True)
+        
+        # 日志文件路径
+        log_file = os.path.join(log_dir, 'Daily_TA3A_Analyze_Indicators_Plot.log')
+        print(f"日志文件路径: {log_file}")
+        sys.stdout.flush()
+        
+        # 配置日志格式
+        log_format = '%(asctime)s - %(levelname)s - %(message)s'
+        date_format = '%Y-%m-%d %H:%M:%S'
+        
+        # 清除已有的处理器，避免重复
+        for handler in logging.root.handlers[:]:
+            logging.root.removeHandler(handler)
+        
+        # 配置日志 - 使用 'w' 模式覆盖原有日志文件
+        logging.basicConfig(
+            level=logging.INFO,
+            format=log_format,
+            datefmt=date_format,
+            handlers=[
+                logging.FileHandler(log_file, mode='w', encoding='utf-8'),  # 添加 mode='w' 覆盖模式
+                logging.StreamHandler(sys.stdout)  # 同时输出到控制台
+            ]
+        )
+        
+        logging.info("=" * 60)
+        logging.info("日志系统初始化完成")
+        logging.info(f"日志文件: {log_file}")
+        logging.info("=" * 60)
+        
+        print(f"日志系统初始化成功")
+        sys.stdout.flush()
+        
+        return log_file
+        
+    except Exception as e:
+        print(f"配置日志系统时出错: {str(e)}")
+        sys.stdout.flush()
+        traceback.print_exc()
+        return None
+# ===== 全局日志对象 =====
+logger = logging.getLogger(__name__)
+
+
+def load_data_from_db(ticker, start_date, end_date, db_path):
+    """
+    从SQLite数据库加载股票技术分析数据
+    
+    参数:
+    ticker: 股票代码
+    start_date: 开始日期 (datetime.date对象)
+    end_date: 结束日期 (datetime.date对象)
+    db_path: 数据库文件路径
+    
+    返回:
+    df: 包含技术分析数据的DataFrame
+    """
+    try:
+        logger.info(f"开始从数据库加载股票 {ticker} 的数据...")
+        conn = sqlite3.connect(db_path)
+        
+        # 将日期转换为字符串格式
+        start_date_str = start_date.strftime('%Y-%m-%d')
+        end_date_str = end_date.strftime('%Y-%m-%d')
+        
+        logger.debug(f"查询日期范围: {start_date_str} 到 {end_date_str}")
+        
+        # 先获取表的所有列名
+        cursor = conn.cursor()
+        cursor.execute("PRAGMA table_info(hk_daily_kline_analysis)")
+        existing_columns = [row[1] for row in cursor.fetchall()]
+        
+        # 定义需要查询的列（使用集合去除重复）- 全部改为小写
+        desired_columns_set = {
+            'stock_code',
+            'stock_name',
+            'date',
+            'open',
+            'high',
+            'low',
+            'close',
+            'volume',
+            'amount',
+            'amplitude',
+            'change_percent',
+            'change_amount',
+            'turnover_rate',
+            'previous_close',
+            'avg_price',
+            'close_chgpct',
+            'avg_volume_5d',
+            'volume_ratio5',
+            'avg_volume_20d',
+            'volume_ratio20',
+            'ema5',
+            'ema10',
+            'ema20',
+            'ema50',
+            'ema60',
+            'ema100',
+            'ema200',
+            'vol_ema5',
+            'vol_ema20',
+            'rsi14',
+            'rsi14_status',
+            'rsi14_overbought_osc',
+            'rsi14_oversold_osc',
+            'rsi14_divergence',
+            'macd_dif',
+            'macd_signal',
+            'macd_histogram',
+            'macd',
+            'macd_status',
+            'macd_golden_streak',
+            'macd_death_streak',
+            'macd_convergence',
+            'macd_divergence',
+            'macd_divergence_type',
+            'kdj_k',
+            'kdj_d',
+            'kdj_j',
+            'kdj_status',
+            'kdj_date',
+            'atr',
+            'bollinger_upper',
+            'bollinger_middle',
+            'bollinger_lower',
+            'bollinger_width',
+            'bollinger_status',
+            'golden_triangle',
+            'death_triangle',
+            'price_amp_market_chip_concentration',
+            'cost_spread_chip_concentration',
+            'price_amp_market_chip_concentration_60_70',
+            'cost_spread_chip_concentration_60_70',
+            'ema5_10_status',
+            'ema5_10_streak',
+            'ema5_20_status',
+            'ema5_20_streak',
+            'ema10_20_status',
+            'ema10_20_streak',
+            'ema20_50_status',
+            'ema20_50_streak',
+            'ema20_200_status',
+            'ema20_200_streak',
+            'ema50_200_status',
+            'ema50_200_streak',
+            'close_position',
+            'close_deviation',
+            'trend_score',
+            'trend_status',
+            'trend_strength',
+            'support_level',
+            'resistance_level',
+            'created_date',
+            'updated_date',
+            # 新增布尔类型列
+            'ema_golden_cross',
+            'ema_death_cross',
+            'macd_golden_cross',
+            'macd_death_cross',
+            'bottom_signal_cond',
+            'top_signal_cond',
+            'bottom_entry_signal_cond',
+            'top_exit_signal_cond',
+            'continuation_signal_cond',
+            'decline_continuation_cond',
+            'accumulation_cond',
+            'distribution_cond',
+            'multi_timeframe_chip_confirm_bottom_cond',
+            'multi_timeframe_chip_confirm_top_cond'
+        }
+        
+        # 只选择表中存在的列
+        available_columns = [col for col in desired_columns_set if col in existing_columns]
+        logger.debug(f"可用列数: {len(available_columns)}")
+        
+        # 构建SELECT语句
+        columns_str = ', '.join(available_columns)
+        
+        # 查询数据
+        query = f"""
+        SELECT {columns_str}
+        FROM hk_daily_kline_analysis
+        WHERE stock_code = '{ticker}'
+            AND date >= '{start_date_str}'
+            AND date <= '{end_date_str}'
+        ORDER BY date ASC
+        """
+        
+        df = pd.read_sql_query(query, conn)
+        conn.close()
+        
+        if df.empty:
+            logger.warning(f"在数据库中未找到股票 {ticker} 在 {start_date_str} 到 {end_date_str} 期间的数据")
+            return None
+        
+        # 转换日期列为datetime类型
+        df['date'] = pd.to_datetime(df['date'])
+        
+        # 确保布尔类型列正确转换为布尔类型
+        bool_columns = [
+            'ema_golden_cross', 'ema_death_cross', 'golden_triangle', 'death_triangle',
+            'macd_golden_cross', 'macd_death_cross', 'bottom_signal_cond', 'top_signal_cond',
+            'bottom_entry_signal_cond', 'top_exit_signal_cond', 'continuation_signal_cond',
+            'decline_continuation_cond', 'accumulation_cond', 'distribution_cond',
+            'multi_timeframe_chip_confirm_bottom_cond', 'multi_timeframe_chip_confirm_top_cond'
+        ]
+        
+        for col in bool_columns:
+            if col in df.columns:
+                # 转换为布尔类型
+                df[col] = df[col].astype(bool)
+                logger.debug(f"列 {col} 已转换为布尔类型")
+        
+        logger.info(f"成功从数据库读取股票 {ticker} 的 {len(df)} 行数据")
+        logger.debug(f"日期范围: {df['date'].min().date()} 到 {df['date'].max().date()}")
+        
+        return df
+        
+    except sqlite3.Error as e:
+        logger.error(f"数据库错误 - 股票 {ticker}: {str(e)}")
+        traceback.print_exc()
+        return None
+    except Exception as e:
+        logger.error(f"加载数据时出错 - 股票 {ticker}: {str(e)}")
+        traceback.print_exc()
+        return None
+
+
+def get_db_path():
+    """
+    获取SQLite数据库路径
+    
+    返回:
+    db_path: 数据库文件路径
+    """
+    script_dir = Path(__file__).resolve().parent
+    core_dir = script_dir.parent
+    project_dir = core_dir.parent
+    
+    db_dir = project_dir / 'SQLiteDB'
+    db_path = db_dir / 'HK_Stock.db'
+    
+    return str(db_path)
+
+
+def plot_daily_chart(ticker, df, output_pdf, start_date, end_date):
+    """
+    使用DataFrame数据绘制日线图表，包含价格、成交量、MACD和RSI指标
+    """
+    try:
+        if df is None or df.empty:
+            logger.error(f"没有数据可用于绘制 {ticker} 的图表")
+            return
+
+        logger.info(f"开始绘制 {ticker} 的日线图表...")
+        
+        # 1. 设置支持中文字符的字体
+        plt.rcParams['font.sans-serif'] = ['Microsoft YaHei', 'SimHei', 'Arial Unicode MS']
+        plt.rcParams['axes.unicode_minus'] = False
+        plt.rcParams['font.weight'] = 'normal'
+
+        # 2. 获取数据表中的实际日期范围 - 使用小写列名
+        actual_start_date = df['date'].min()
+        actual_end_date = df['date'].max()
+        stock_name = df['stock_name'].iloc[0] if 'stock_name' in df.columns else ticker
+
+        # 3. 创建PDF对象
+        with PdfPages(output_pdf) as pdf:
+            # ========== 第一页: 价格图表 + 指标图表 ==========
+            # 4. 准备蜡烛图数据 - 使用小写列名
+            df['date_num'] = df['date'].apply(mdates.date2num)
+            ohlc = df[['date_num', 'open', 'high', 'low', 'close']].values
+
+            # 5. 创建图表
+            fig = plt.figure(figsize=(24, 24), dpi=100)
+            gs = GridSpec(nrows=4, ncols=1, height_ratios=[4, 1.2, 1.2, 1.5], hspace=0.25)
+
+            # 第一区域：价格图表
+            ax1 = fig.add_subplot(gs[0])
+            date_range_str = f"{actual_start_date.strftime('%Y-%m-%d')} 至 {actual_end_date.strftime('%Y-%m-%d')}"
+            ax1.set_title(f'{ticker} {stock_name} 日线图 - {date_range_str}', fontsize=24)
+
+            # 动态调整蜡烛图宽度
+            num_points = len(df)
+            base_width = 0.8
+            candle_width = base_width * (0.5 if num_points>100 else 0.7 if num_points>50 else 0.9 if num_points>20 else 1)
+
+            # 绘制蜡烛图
+            candlestick_ohlc(ax1, ohlc, width=candle_width, colorup='g', colordown='r', alpha=0.8)
+
+            # 绘制EMA均线 - 使用小写列名
+            ema_cols = ['ema5', 'ema20', 'ema200']
+            for ema in ema_cols:
+                if ema in df.columns:
+                    ax1.plot(df['date_num'], df[ema], label=ema.upper(), linewidth=2.5, alpha=0.9)
+            ax1.set_ylabel('价格', fontsize=14)
+            ax1.legend(loc='best', fontsize=12)
+            ax1.grid(True, alpha=0.3)
+            ax1.tick_params(axis='both', labelsize=12)
+            ax1.set_xlim(df['date_num'].min()-candle_width*5, df['date_num'].max()+candle_width*5)
+
+            # 第二区域：成交量
+            ax2 = fig.add_subplot(gs[1], sharex=ax1)
+            ax2.set_xlim(df['date_num'].min()-candle_width*5, df['date_num'].max()+candle_width*5)
+            colors = ['g' if close>open_ else 'r' for open_, close in zip(df['open'], df['close'])]
+            ax2.bar(df['date_num'], df['volume'], color=colors, width=candle_width, alpha=0.7, label='成交量')
+
+            # 绘制成交量均线 - 使用小写列名
+            if 'vol_ema5' in df.columns:
+                ax2.plot(df['date_num'], df['vol_ema5'], color='blue', linewidth=2, label='5日成交量均线')
+            if 'vol_ema20' in df.columns:
+                ax2.plot(df['date_num'], df['vol_ema20'], color='gold', linewidth=2, label='20日成交量均线')
+            ax2.set_ylabel('成交量', fontsize=14)
+            ax2.grid(True, alpha=0.3)
+            ax2.legend(loc='best', fontsize=12)
+
+            # 第三区域：MACD - 使用小写列名
+            ax3 = fig.add_subplot(gs[2], sharex=ax1)
+            ax3.set_xlim(df['date_num'].min()-candle_width*5, df['date_num'].max()+candle_width*5)
+
+            if 'macd_histogram' in df.columns:
+                macd_colors = ['g' if val>0 else 'r' for val in df['macd_histogram']]
+                ax3.bar(df['date_num'], df['macd_histogram'], color=macd_colors, width=candle_width, alpha=0.7, label='MACD')
+
+            if 'macd_dif' in df.columns:
+                ax3.plot(df['date_num'], df['macd_dif'], label='DIF', color='blue', linewidth=2.5, alpha=0.9)
+
+            if 'macd_signal' in df.columns:
+                ax3.plot(df['date_num'], df['macd_signal'], label='Signal', color='orange', linewidth=2.5, alpha=0.9)
+
+            ax3.set_ylabel('MACD', fontsize=14)
+            ax3.axhline(0, color='gray', linestyle='--', alpha=0.5)
+            ax3.legend(loc='best', fontsize=12)
+            ax3.grid(True, alpha=0.3)
+            ax3.tick_params(axis='both', labelsize=12)
+
+            # 第四区域：RSI - 使用小写列名
+            ax4 = fig.add_subplot(gs[3], sharex=ax1)
+            ax4.set_xlim(df['date_num'].min()-candle_width*5, df['date_num'].max()+candle_width*5)
+            if 'rsi14' in df.columns:
+                ax4.plot(df['date_num'], df['rsi14'], label='RSI14', color='blue', linewidth=2, alpha=0.9)
+                ax4.axhline(70, color='red', linestyle='--', alpha=0.7, linewidth=1.5)
+                ax4.axhline(30, color='green', linestyle='--', alpha=0.7, linewidth=1.5)
+                ax4.axhline(50, color='gray', linestyle='-', alpha=0.5, linewidth=1.0)
+                ax4.fill_between(df['date_num'], df['rsi14'], 70, where=df['rsi14']>=70, color='red', alpha=0.2)
+                ax4.fill_between(df['date_num'], df['rsi14'], 30, where=df['rsi14']<=30, color='green', alpha=0.2)
+                ax4.set_ylabel('RSI14', fontsize=14)
+                ax4.set_ylim(0, 100)
+                ax4.legend(loc='best', fontsize=12)
+                ax4.grid(True, alpha=0.3)
+                ax4.tick_params(axis='both', labelsize=12)
+            else:
+                ax4.axis('off')
+
+            # 统一时间轴标签
+            date_format = mdates.DateFormatter('%Y-%m-%d')
+            tick_positions, tick_labels = [], []
+            if len(df) < 30:
+                tick_positions = df['date_num']
+                tick_labels = [d.strftime('%Y-%m-%d') for d in df['date']]
+            else:
+                interval = max(1, len(df)//15)
+                tick_positions = df['date_num'][::interval]
+                tick_labels = [df['date'].iloc[i].strftime('%Y-%m-%d') for i in range(0, len(df), interval)]
+
+            for ax in [ax1, ax2, ax3, ax4]:
+                if ax.axison:
+                    ax.xaxis.set_major_formatter(date_format)
+                    ax.set_xticks(tick_positions)
+                    plt.setp(ax.get_xticklabels(), rotation=30, ha='right', fontsize=10)
+
+            plt.subplots_adjust(left=0.05, right=0.95, bottom=0.12, top=0.95, hspace=0.25)
+
+            # 保存价格图表到PDF
+            pdf_metadata = {
+                'Title': f'{ticker} 日线分析图表',
+                'Author': '量化分析系统',
+                'Subject': f'{ticker} 技术分析 ({actual_start_date.strftime("%Y-%m-%d")} 至 {actual_end_date.strftime("%Y-%m-%d")})',
+                'Keywords': f'股票分析,技术分析,EMA,MACD,RSI14,成交量,{ticker}',
+                'CreationDate': pd.Timestamp.now()
+            }
+            pdf.savefig(fig, bbox_inches='tight', metadata=pdf_metadata)
+            plt.close(fig)
+
+            logger.info(f"图表已成功保存为PDF: {output_pdf}")
+
+    except Exception as e:
+        logger.error(f"处理数据或绘制图表时出错 - {ticker}: {str(e)}")
+        traceback.print_exc()
+        return
+
+
+def display_indicator_summary(ticker, df, output_pdf, start_date, end_date):
+    """
+    使用DataFrame数据生成技术指标状态表格，结果追加到指定的PDF文件中
+    """
+    try:
+        if df is None or df.empty:
+            logger.error(f"没有数据可用于生成 {ticker} 的技术指标表格")
+            return
+
+        logger.info(f"开始生成 {ticker} 的技术指标表格...")
+
+        # 1. 设置支持中文字符的字体
+        plt.rcParams['font.sans-serif'] = ['SimHei']
+        plt.rcParams['axes.unicode_minus'] = False
+
+        # 2. 获取数据表中的实际日期范围 - 使用小写列名
+        actual_start_date = df['date'].min()
+        actual_end_date = df['date'].max()
+        stock_name = df['stock_name'].iloc[0] if 'stock_name' in df.columns else ticker
+
+        # 3. 创建技术指标表格图表
+        fig_table = plt.figure(figsize=(24, 14), dpi=100)
+        ax_table = fig_table.add_subplot(111)
+        ax_table.axis('off')
+
+        # 获取最后交易日数据
+        last_row = df.iloc[-1]
+        table_data = [["指标", "状态", "详细信息"]]
+        streak_values = [None]
+
+        # ===== 新增：处理布尔类型信号列 - 使用小写列名 =====
+        bool_signal_columns = {
+            'ema_golden_cross': 'EMA金叉信号',
+            'ema_death_cross': 'EMA死叉信号',
+            'macd_golden_cross': 'MACD金叉信号',
+            'macd_death_cross': 'MACD死叉信号',
+            'bottom_signal_cond': '底部信号',
+            'top_signal_cond': '顶部信号',
+            'bottom_entry_signal_cond': '底部入场信号',
+            'top_exit_signal_cond': '顶部出场信号',
+            'continuation_signal_cond': '趋势延续信号',
+            'decline_continuation_cond': '下跌延续信号',
+            'accumulation_cond': '底部吸筹信号',
+            'distribution_cond': '顶部派发信号',
+            'multi_timeframe_chip_confirm_bottom_cond': '多周期筹码底部确认',
+            'multi_timeframe_chip_confirm_top_cond': '多周期筹码顶部确认'
+        }
+        
+        # 检查并显示布尔信号列
+        for col, label in bool_signal_columns.items():
+            if col in df.columns:
+                # 获取最新值（布尔类型）
+                value = last_row.get(col, False)
+                status = "TRUE" if value else "FALSE"
+                
+                # 如果是TRUE，计算持续天数
+                if status == "TRUE":
+                    # 查找第一次出现的位置
+                    first_true_idx = None
+                    for i in range(len(df)-1, -1, -1):
+                        if df.iloc[i].get(col, False):
+                            first_true_idx = i
+                        else:
+                            break
+                    
+                    if first_true_idx is not None:
+                        first_date = df.iloc[first_true_idx]['date']
+                        days = (df['date'].iloc[-1] - first_date).days
+                        detail = f"{first_date.strftime('%Y-%m-%d')}起，持续{days}天"
+                    else:
+                        detail = "今日触发"
+                else:
+                    detail = ""
+                
+                table_data.append([label, status, detail])
+                streak_values.append(None if status == "FALSE" else 1)
+
+        # ===== EMA交叉指标 - 使用小写列名 =====
+        ema_pairs = [("EMA5/10", "ema5_10_status", "ema5_10_streak"),
+                     ("EMA5/20", "ema5_20_status", "ema5_20_streak"),
+                     ("EMA10/20", "ema10_20_status", "ema10_20_streak"),
+                     ("EMA20/50", "ema20_50_status", "ema20_50_streak"),
+                     ("EMA20/200", "ema20_200_status", "ema20_200_streak"),
+                     ("EMA50/200", "ema50_200_status", "ema50_200_streak")]
+        for label, status_col, streak_col in ema_pairs:
+            status = last_row.get(status_col, 'N/A')
+            streak = last_row.get(streak_col, 'N/A')
+            if status in ['Golden', 'Death']:
+                table_data.append([label, status, f"持续{streak}天" if streak != 'N/A' else ''])
+            streak_values.append(streak if status in ['Golden', 'Death'] else None)
+
+        # ===== 均线突破确认 - 使用小写列名 =====
+        ema20_break_above, start_date_above = check_breakthrough(df, 'ema20', 'above')
+        if ema20_break_above:
+            table_data.append(["确认突破EMA20", "TRUE", 
+                              f"起始日：{start_date_above.strftime('%Y-%m-%d')}"])
+            streak_values.append(None)
+
+        ema20_break_below, start_date_below = check_breakthrough(df, 'ema20', 'below')
+        if ema20_break_below:
+            table_data.append(["确认跌破EMA20", "TRUE", 
+                              f"起始日：{start_date_below.strftime('%Y-%m-%d')}"])
+            streak_values.append(None)
+
+        ema200_break_above, start_date_200_above = check_breakthrough(df, 'ema200', 'above')
+        if ema200_break_above:
+            table_data.append(["确认突破EMA200", "TRUE", 
+                              f"起始日：{start_date_200_above.strftime('%Y-%m-%d')}"])
+            streak_values.append(None)
+
+        ema200_break_below, start_date_200_below = check_breakthrough(df, 'ema200', 'below')
+        if ema200_break_below:
+            table_data.append(["确认跌破EMA200", "TRUE", 
+                              f"起始日：{start_date_200_below.strftime('%Y-%m-%d')}"])
+            streak_values.append(None)
+
+        # ===== EMA5/20/200黄金三角 - 使用小写列名 =====
+        if len(df) > 0 and 'golden_triangle' in df.columns:
+            # golden_triangle已经是布尔类型
+            lookback_days = 30
+            n = min(lookback_days, len(df))
+            df_sub = df.tail(n).copy()
+            golden_true = df_sub[df_sub['golden_triangle'] == True]
+            if not golden_true.empty:
+                last_date = df['date'].iloc[-1]
+                first_golden_date = golden_true['date'].iloc[0]
+                delta_days = (last_date - first_golden_date).days
+                table_data.append([
+                    "EMA5/20/200黄金三角", 
+                    "TRUE", 
+                    f"{first_golden_date.strftime('%Y-%m-%d')}，已出现{delta_days}天"
+                ])
+                streak_values.append(delta_days)
+
+        # ===== EMA5/20/200死亡三角 - 使用小写列名 =====
+        if len(df) > 0 and 'death_triangle' in df.columns:
+            # death_triangle已经是布尔类型
+            lookback_days = 30
+            n = min(lookback_days, len(df))
+            df_sub = df.tail(n).copy()
+            death_true = df_sub[df_sub['death_triangle'] == True]
+            if not death_true.empty:
+                last_date = df['date'].iloc[-1]
+                first_death_date = death_true['date'].iloc[0]
+                delta_days = (last_date - first_death_date).days
+                table_data.append([
+                    "EMA5/20/200死亡三角", 
+                    "TRUE", 
+                    f"{first_death_date.strftime('%Y-%m-%d')}，已出现{delta_days}天"
+                ])
+                streak_values.append(delta_days)
+
+        # ===== 均线趋势排列 - 使用小写列名 =====
+        trend_ema = [
+            ("短线多头", ['ema5', 'ema10', 'ema20'], lambda x: x[0]>x[1]>x[2]),
+            ("短线空头", ['ema5', 'ema10', 'ema20'], lambda x: x[0]<x[1]<x[2]),
+            ("长线多头", ['ema20', 'ema50', 'ema200'], lambda x: x[0]>x[1]>x[2]),
+            ("长线空头", ['ema20', 'ema50', 'ema200'], lambda x: x[0]<x[1]<x[2])
+        ]
+        for label, ema_list, condition in trend_ema:
+            ema_vals = [last_row.get(ema, float('nan')) for ema in ema_list]
+            if not any(pd.isna(v) for v in ema_vals) and condition(ema_vals):
+                table_data.append([label, "TRUE", ""])
+                streak_values.append(None)
+
+        # ===== EMA20上方阳线 - 使用小写列名 =====
+        last_date = df['date'].iloc[-1]
+        ema20_up_yang = None
+        ema20_up_yang_count = 0
+
+        for i in range(len(df)-1, len(df)-11, -1):
+            if i < 1: continue
+            row, prev_row = df.iloc[i], df.iloc[i-1]
+            if row['close'] <= row['open']: continue
+
+            if prev_row['close'] < prev_row['ema20'] and row['close'] > row['ema20']:
+                ema20_up_yang = row['date'] if ema20_up_yang is None else ema20_up_yang
+                ema20_up_yang_count += 1
+            elif row['ema20'] <= row['open'] <= row['ema20']*1.03 and row['close'] >= row['open']:
+                ema20_up_yang = row['date'] if ema20_up_yang is None else ema20_up_yang
+                ema20_up_yang_count += 1
+
+        if ema20_up_yang is not None:
+            delta_days = (last_date - ema20_up_yang).days
+            table_data.append([
+                "EMA20上方阳线", 
+                "TRUE", 
+                f"{ema20_up_yang.strftime('%Y-%m-%d')}，已出现{delta_days}天，累计{ema20_up_yang_count}次"
+            ])
+            streak_values.append(None)
+
+        # ===== EMA20下方阴线 - 使用小写列名 =====
+        ema20_down_yin = None
+        ema20_down_yin_count = 0
+
+        for i in range(len(df)-1, len(df)-11, -1):
+            if i < 1: continue
+            row, prev_row = df.iloc[i], df.iloc[i-1]
+            if row['close'] >= row['open']: continue
+
+            if prev_row['close'] > prev_row['ema20'] and row['close'] < row['ema20']:
+                ema20_down_yin = row['date'] if ema20_down_yin is None else ema20_down_yin
+                ema20_down_yin_count += 1
+            elif row['ema20']*0.97 <= row['open'] <= row['ema20'] and row['close'] <= row['open']:
+                ema20_down_yin = row['date'] if ema20_down_yin is None else ema20_down_yin
+                ema20_down_yin_count += 1
+
+        if ema20_down_yin is not None:
+            delta_days = (last_date - ema20_down_yin).days
+            table_data.append([
+                "EMA20下方阴线", 
+                "TRUE", 
+                f"{ema20_down_yin.strftime('%Y-%m-%d')}，已出现{delta_days}天，累计{ema20_down_yin_count}次"
+            ])
+            streak_values.append(None)
+
+        # ===== 跳空高开阳线 - 使用小写列名 =====
+        up_red_dates = []
+        start_idx = max(0, len(df)-10)
+        for i in range(start_idx, len(df)):
+            if i < 1: 
+                continue
+            row, prev_row = df.iloc[i], df.iloc[i-1]
+            if row['open'] > prev_row['high'] and row['close'] > row['open']:
+                up_red_dates.append(row['date'])
+
+        if up_red_dates:
+            up_red_dates.sort()
+            last_occurrence = up_red_dates[-1].strftime('%Y-%m-%d')
+            table_data.append([
+                "跳空高开阳线", 
+                "TRUE", 
+                f"10日数量: {len(up_red_dates)}，最近出现: {last_occurrence}"
+            ])
+            streak_values.append(None)
+
+        # ===== 跳空低开阴线 - 使用小写列名 =====
+        down_black_dates = []
+        for i in range(start_idx, len(df)):
+            if i < 1: 
+                continue
+            row, prev_row = df.iloc[i], df.iloc[i-1]
+            if row['open'] < prev_row['low'] and row['close'] < row['open']:
+                down_black_dates.append(row['date'])
+
+        if down_black_dates:
+            down_black_dates.sort()
+            last_occurrence = down_black_dates[-1].strftime('%Y-%m-%d')
+            table_data.append([
+                "跳空低开阴线", 
+                "TRUE", 
+                f"10日数量: {len(down_black_dates)}，最近出现: {last_occurrence}"
+            ])
+            streak_values.append(None)
+
+        # ===== 多均线粘合 - 使用小写列名 =====
+        ema_columns = ['ema5', 'ema10', 'ema20', 'ema50', 'ema60', 'ema100', 'ema200']
+        if all(col in df.columns for col in ema_columns):
+            recent_data = df.tail(10).copy()
+            convergence_dates = []
+            convergence_groups = []
+
+            for idx, row in recent_data.iterrows():
+                date = row['date']
+                ema_values = {col: row[col] for col in ema_columns if not pd.isna(row[col])}
+                convergence_groups_for_day = find_convergence_groups_clustering(ema_values, threshold=0.005)
+                significant_groups = [group for group in convergence_groups_for_day if len(group) >= 3]
+                if significant_groups:
+                    convergence_dates.append(date)
+                    convergence_groups.append({
+                        'date': date,
+                        'groups': significant_groups,
+                        'largest_group': max(significant_groups, key=len) if significant_groups else []
+                    })
+
+            if convergence_dates:
+                convergence_dates.sort()
+                last_convergence_date = convergence_dates[-1].strftime('%Y-%m-%d')
+                last_detail = convergence_groups[-1]
+                largest_group = last_detail['largest_group']
+                sorted_group = sort_ema_by_period(largest_group)
+                group_str = "/".join(sorted_group)
+                detail_str = f"最近日期: {last_convergence_date}，粘合均线组: {group_str}（{len(largest_group)}条）"
+                table_data.append(["多均线粘合", "TRUE", detail_str])
+                streak_values.append(None)
+
+        # ===== 一阳穿越多条均线 - 使用小写列名 =====
+        if all(col in df.columns for col in ema_columns):
+            recent_data = df.tail(10).copy()
+            cross_dates = []
+            cross_details = []
+
+            for idx, row in recent_data.iterrows():
+                date = row['date']
+                if row['close'] <= row['open']:
+                    continue
+                open_price = row['open']
+                close_price = row['close']
+                cross_count = 0
+                crossed_emas = []
+
+                for ema_col in ema_columns:
+                    ema_value = row[ema_col]
+                    if pd.isna(ema_value):
+                        continue
+                    if open_price <= ema_value <= close_price:
+                        cross_count += 1
+                        crossed_emas.append(ema_col.upper())
+
+                if cross_count >= 2:
+                    cross_dates.append(date)
+                    cross_details.append({
+                        'date': date,
+                        'emas': crossed_emas,
+                        'count': cross_count
+                    })
+
+            if cross_dates:
+                cross_dates.sort()
+                last_cross_date = cross_dates[-1].strftime('%Y-%m-%d')
+                last_detail = cross_details[-1]
+                ema_names = ", ".join(last_detail['emas'][:3])
+                if len(last_detail['emas']) > 3:
+                    ema_names += f"等{last_detail['count']}条均线"
+                else:
+                    ema_names = f"{last_detail['count']}条均线: {ema_names}"
+                detail_str = f"最近日期: {last_cross_date}，穿越{ema_names}"
+                table_data.append(["一阳穿越多条均线", "TRUE", detail_str])
+                streak_values.append(None)
+
+        # ===== 一阴穿越多条均线 - 使用小写列名 =====
+        if all(col in df.columns for col in ema_columns):
+            recent_data = df.tail(10).copy()
+            cross_dates = []
+            cross_details = []
+
+            for idx, row in recent_data.iterrows():
+                date = row['date']
+                if row['close'] >= row['open']:
+                    continue
+                open_price = row['open']
+                close_price = row['close']
+                cross_count = 0
+                crossed_emas = []
+
+                for ema_col in ema_columns:
+                    ema_value = row[ema_col]
+                    if pd.isna(ema_value):
+                        continue
+                    if close_price <= ema_value <= open_price:
+                        cross_count += 1
+                        crossed_emas.append(ema_col.upper())
+
+                if cross_count >= 2:
+                    cross_dates.append(date)
+                    cross_details.append({
+                        'date': date,
+                        'emas': crossed_emas,
+                        'count': cross_count
+                    })
+
+            if cross_dates:
+                cross_dates.sort()
+                last_cross_date = cross_dates[-1].strftime('%Y-%m-%d')
+                last_detail = cross_details[-1]
+                ema_names = ", ".join(last_detail['emas'][:3])
+                if len(last_detail['emas']) > 3:
+                    ema_names += f"等{last_detail['count']}条均线"
+                else:
+                    ema_names = f"{last_detail['count']}条均线: {ema_names}"
+                detail_str = f"最近日期: {last_cross_date}，穿越{ema_names}"
+                table_data.append(["一阴穿越多条均线", "TRUE", detail_str])
+                streak_values.append(None)
+
+        # ===== KDJ线金叉/死叉 - 使用小写列名 =====
+        has_kdj = all(col in df.columns for col in ['kdj_k', 'kdj_d', 'kdj_j'])
+        kdj_golden, kdj_death = None, None
+
+        if has_kdj:
+            lookback_window = df.tail(10).copy()
+            for i in range(1, len(lookback_window)):
+                prev, curr = lookback_window.iloc[i-1], lookback_window.iloc[i]
+                if curr['kdj_j'] <= 30 and prev['kdj_k'] < prev['kdj_d'] and curr['kdj_k'] > curr['kdj_d']:
+                    kdj_golden = {'date': curr['date'], 'days': (df['date'].iloc[-1] - curr['date']).days}
+                    break
+                if curr['kdj_j'] >= 70 and prev['kdj_k'] > prev['kdj_d'] and curr['kdj_k'] < curr['kdj_d']:
+                    kdj_death = {'date': curr['date'], 'days': (df['date'].iloc[-1] - curr['date']).days}
+                    break
+
+        if kdj_golden:
+            table_data.append([
+                "KDJ线金叉", "TRUE", 
+                f"金叉日期: {kdj_golden['date'].strftime('%Y-%m-%d')}, 持续天数: {kdj_golden['days']}"
+            ])
+            streak_values.append(kdj_golden['days'])
+
+        if kdj_death:
+            table_data.append([
+                "KDJ线死叉", "TRUE", 
+                f"死叉日期: {kdj_death['date'].strftime('%Y-%m-%d')}, 持续天数: {kdj_death['days']}"
+            ])
+            streak_values.append(kdj_death['days'])
+
+        # ===== MACD - 使用小写列名 =====
+        macd_status = last_row.get('macd_status', 'N/A')
+        macd_value = f"{last_row.get('macd', 'N/A'):.4f}" if 'macd' in df.columns else 'N/A'
+        macd_details = macd_value
+        if macd_status == 'Golden':
+            macd_details += f"/金叉持续: {last_row.get('macd_golden_streak', 0)}天"
+        elif macd_status == 'Death':
+            macd_details += f"/死叉持续: {last_row.get('macd_death_streak', 0)}天"
+        table_data.append(["MACD", macd_status, macd_details])
+        streak_values.append(last_row.get('macd_golden_streak', 0) if macd_status=='Golden' else 
+                            last_row.get('macd_death_streak', 0) if macd_status=='Death' else None)
+
+        # ===== 成交量 - 使用小写列名 =====
+        volume = f"{last_row['volume']:,.0f}"
+        volume_ratio5 = f"{last_row.get('volume_ratio5', 1):.2f}x" if 'volume_ratio5' in df.columns else 'N/A'
+        table_data.append(["成交量", volume, volume_ratio5])
+        streak_values.append(None)
+
+        # ===== 成交量金叉/死叉 - 使用小写列名 =====
+        if all(col in df.columns for col in ['vol_ema5', 'vol_ema20']):
+            recent_data = df.tail(10).copy()
+            golden_cross_dates = []
+            death_cross_dates = []
+
+            for i in range(1, len(recent_data)):
+                prev_row = recent_data.iloc[i-1]
+                curr_row = recent_data.iloc[i]
+                if prev_row['vol_ema5'] <= prev_row['vol_ema20'] and curr_row['vol_ema5'] > curr_row['vol_ema20']:
+                    golden_cross_dates.append(curr_row['date'])
+                if prev_row['vol_ema5'] >= prev_row['vol_ema20'] and curr_row['vol_ema5'] < curr_row['vol_ema20']:
+                    death_cross_dates.append(curr_row['date'])
+
+            if golden_cross_dates:
+                golden_cross_dates.sort()
+                last_golden_date = golden_cross_dates[-1].strftime('%Y-%m-%d')
+                count = len(golden_cross_dates)
+                table_data.append([
+                    "成交量金叉", 
+                    "TRUE", 
+                    f"10日内发生{count}次，最近日期: {last_golden_date}"
+                ])
+                streak_values.append(None)
+
+            if death_cross_dates:
+                death_cross_dates.sort()
+                last_death_date = death_cross_dates[-1].strftime('%Y-%m-%d')
+                count = len(death_cross_dates)
+                table_data.append([
+                    "成交量死叉", 
+                    "TRUE", 
+                    f"10日内发生{count}次，最近日期: {last_death_date}"
+                ])
+                streak_values.append(None)
+
+        # ===== 跌破止损位 - 使用小写列名 =====
+        if 'change_percent' in df.columns and 'ema20' in df.columns and 'atr' in df.columns:
+            ema20_support = df['ema20'].tail(30).max()
+            recent_data = df.tail(10).copy()
+            condition = (recent_data['change_percent'] < 0) & (
+                (recent_data['close'] < ema20_support * 0.95) | 
+                (recent_data['close'] < 1 * recent_data['atr'])
+            )
+            breach_count = condition.sum()
+            breach_dates = recent_data.loc[condition, 'date']
+
+            if breach_count > 0:
+                latest_date = breach_dates.iloc[-1].strftime('%Y-%m-%d')
+                table_data.append(["跌破止损位", "TRUE", f"10日内发生{breach_count}次，最近日期: {latest_date}"])
+                streak_values.append(None)
+
+        # ===== 高位滞涨 - 使用小写列名 =====
+        required_cols = ['turnover_rate', 'volume_ratio5', 'change_percent']
+        if all(col in df.columns for col in required_cols):
+            recent_data = df.tail(10).copy()
+            condition1 = (recent_data['turnover_rate'] > 15) & (recent_data['volume_ratio5'] > 3) & (recent_data['change_percent'] < 2)
+            condition2 = pd.Series([False] * len(recent_data))
+            for i in range(2, len(recent_data)):
+                if all(recent_data['volume_ratio5'].iloc[i-j] > 1.5 for j in range(3)) and \
+                   all(recent_data['change_percent'].iloc[i-j] < 2 for j in range(3)):
+                    condition2.iloc[i] = True
+            high_stagnation = condition1 | condition2
+            stagnation_count = high_stagnation.sum()
+            stagnation_dates = recent_data.loc[high_stagnation, 'date']
+
+            if stagnation_count > 0:
+                latest_date = stagnation_dates.iloc[-1].strftime('%Y-%m-%d')
+                table_data.append(["高位滞涨", "TRUE", f"10日内发生{stagnation_count}次，最近日期: {latest_date}"])
+                streak_values.append(None)
+
+        # ===== RSI14 - 使用小写列名 =====
+        rsi_value = f"{last_row.get('rsi14', 'N/A'):.1f}" if 'rsi14' in df.columns else 'N/A'
+        rsi_status = last_row.get('rsi14_status', 'N/A')
+        table_data.append(["RSI14", rsi_value, rsi_status])
+        streak_values.append(None)
+
+        # ===== 集中度指标 - 使用小写列名 =====
+        conc_cols = [
+            ("价格振幅集中度", "price_amp_market_chip_concentration"),
+            ("成本价差集中度", "cost_spread_chip_concentration")
+        ]
+        for label, col in conc_cols:
+            if col in df.columns:
+                value = f"{last_row[col]:.2f}%" if not pd.isna(last_row[col]) else 'N/A'
+                table_data.append([label, value, ""])
+                streak_values.append(None)
+
+        # ===== 筹码相关指标 - 使用小写列名 =====
+        chip_cols = ['cost_spread_chip_concentration_60_70', 'price_amp_market_chip_concentration_60_70', 
+                    'turnover_rate', 'volume_ratio5']
+
+        if all(col in df.columns for col in chip_cols):
+            recent_data = df.tail(10).copy()
+            condition1 = (recent_data['cost_spread_chip_concentration_60_70'] < 8) & \
+                        (recent_data['price_amp_market_chip_concentration_60_70'] > 35)
+            chip_concentration = condition1
+            concentration_count = chip_concentration.sum()
+            concentration_dates = recent_data.loc[chip_concentration, 'date']
+
+            if concentration_count > 0:
+                latest_date = concentration_dates.iloc[-1].strftime('%Y-%m-%d')
+                table_data.append(["筹码高度集中，蓄势拉升", "TRUE", f"10日内发生{concentration_count}次，最近日期: {latest_date}"])
+                streak_values.append(None)
+
+            condition2 = (recent_data['cost_spread_chip_concentration_60_70'] > 15) & \
+                        (recent_data['price_amp_market_chip_concentration_60_70'] < 25)
+            chip_dispersion = condition2
+            dispersion_count = chip_dispersion.sum()
+            dispersion_dates = recent_data.loc[chip_dispersion, 'date']
+
+            if dispersion_count > 0:
+                latest_date = dispersion_dates.iloc[-1].strftime('%Y-%m-%d')
+                table_data.append(["筹码分散，波段减仓", "TRUE", f"10日内发生{dispersion_count}次，最近日期: {latest_date}"])
+                streak_values.append(None)
+
+        # ===== 收盘价 - 使用小写列名 =====
+        close_price = f"{last_row['close']:.2f}"
+        table_data.append(["收盘价", close_price, ""])
+        streak_values.append(None)
+
+        # ===== EMA均线 - 使用小写列名 =====
+        ema_list = ["ema5", "ema10", "ema20", "ema50", "ema60", "ema100", "ema200"]
+        for ema in ema_list:
+            if ema in df.columns:
+                value = f"{last_row[ema]:.2f}" if not pd.isna(last_row[ema]) else 'N/A'
+                table_data.append([ema.upper(), value, ""])
+                streak_values.append(None)
+
+        # ===== 动态止损价位 - 使用小写列名 =====
+        if all(col in df.columns for col in ['ema20', 'atr', 'close']):
+            ema20_support = df['ema20'].tail(30).max()
+            current_atr = last_row['atr']
+            current_close = last_row['close']
+
+            stop_loss_1 = min(0.95 * ema20_support, ema20_support - 1 * current_atr)
+            stop_loss_1_status = "GREEN" if current_close > stop_loss_1 else "RED"
+            table_data.append(["动态止损价位1", f"{stop_loss_1:.2f}", f"EMA20支撑位下方5%与1*ATR的最小值"])
+            streak_values.append(None)
+
+            stop_loss_2 = min(0.93 * ema20_support, ema20_support - 2 * current_atr)
+            stop_loss_2_status = "GREEN" if current_close > stop_loss_2 else "RED"
+            table_data.append(["动态止损价位2", f"{stop_loss_2:.2f}", f"EMA20支撑位下方7%与2*ATR的最小值"])
+            streak_values.append(None)
+
+        # 创建表格
+        table = ax_table.table(cellText=table_data, cellLoc='center', loc='center', colWidths=[0.2, 0.2, 0.4])
+        table.auto_set_font_size(False)
+        table.set_fontsize(16)
+        table.scale(1, 1.8)
+        date_range_str = f"{actual_start_date.strftime('%Y-%m-%d')} 至 {actual_end_date.strftime('%Y-%m-%d')}"
+        plt.suptitle(f'{ticker} {stock_name} 日线图技术指标状态 {date_range_str}', fontsize=24, y=0.95)
+
+        # 设置单元格背景色
+        for key, cell in table.get_celld().items():
+            row, col = key
+
+            if row == 0:
+                cell.set_text_props(weight='bold', size=18)
+                cell.set_facecolor('#CCCCFF')
+                continue
+
+            if row >= len(table_data): continue
+
+            indicator = table_data[row][0]
+            status = table_data[row][1]
+
+            # 状态列高亮
+            if col == 1:
+                if status == "TRUE":
+                    # 新增：布尔信号列的高亮
+                    if indicator in ['EMA金叉信号', 'EMA死叉信号', 'MACD金叉信号', 'MACD死叉信号',
+                                    '底部信号', '底部入场信号', '趋势延续信号', '底部吸筹信号',
+                                    '多周期筹码底部确认']:
+                        cell.set_facecolor('#90EE90')  # 绿色 - 看涨信号
+                    elif indicator in ['顶部信号', '顶部出场信号', '下跌延续信号', '顶部派发信号',
+                                      '多周期筹码顶部确认']:
+                        cell.set_facecolor('#FFCCCB')  # 红色 - 看跌信号
+                    elif indicator in ["成交量金叉", "成交量死叉", "多均线粘合"]:
+                        cell.set_facecolor('yellow')
+                    elif indicator == "一阳穿越多条均线":
+                        cell.set_facecolor('#90EE90')
+                    elif indicator in ["一阴穿越多条均线", "跌破止损位", "高位滞涨"]:
+                        cell.set_facecolor('#FFCCCB')
+                    elif indicator == "筹码高度集中，蓄势拉升":
+                        cell.set_facecolor('#90EE90')
+                    elif indicator == "筹码分散，波段减仓":
+                        cell.set_facecolor('#FFCCCB')
+                    elif indicator.startswith("确认突破"):
+                        cell.set_facecolor('#90EE90')
+                    elif indicator.startswith("确认跌破"):
+                        cell.set_facecolor('#FFCCCB')
+                    elif indicator == "EMA5/20/200黄金三角":
+                        cell.set_facecolor('#90EE90')
+                    elif indicator == "EMA5/20/200死亡三角":
+                        cell.set_facecolor('#FFCCCB')
+                    elif indicator == "跳空高开阳线":
+                        cell.set_facecolor('#90EE90')
+                    elif indicator == "跳空低开阴线":
+                        cell.set_facecolor('#FFCCCB')
+                    elif "多头" in indicator or "上方阳线" in indicator:
+                        cell.set_facecolor('#90EE90')
+                    elif "空头" in indicator or "下方阴线" in indicator:
+                        cell.set_facecolor('#FFCCCB')
+                    elif "金叉" in indicator:
+                        cell.set_facecolor('#90EE90')
+                    elif "死叉" in indicator:
+                        cell.set_facecolor('#FFCCCB')
+                elif status in ["Golden", "Death"]:
+                    cell.set_facecolor('#90EE90' if status=="Golden" else '#FFCCCB')
+                elif indicator == "动态止损价位1":
+                    if stop_loss_1_status == "GREEN":
+                        cell.set_facecolor('#90EE90')
+                    else:
+                        cell.set_facecolor('#FFCCCB')
+                elif indicator == "动态止损价位2":
+                    if stop_loss_2_status == "GREEN":
+                        cell.set_facecolor('#90EE90')
+                    else:
+                        cell.set_facecolor('#FFCCCB')
+
+            # 数值高亮
+            elif col == 2:
+                if indicator == "成交量":
+                    try:
+                        ratio = float(table_data[row][2].split('x')[0])
+                        if ratio > 1.5:
+                            cell.set_facecolor('#FFFF99')
+                    except:
+                        pass
+
+            # 筹码集中度高亮
+            if col == 1:
+                indicator_name = table_data[row][0]
+                if indicator_name == "价格振幅集中度":
+                    try:
+                        value_str = table_data[row][1]
+                        value = float(value_str.replace('%', ''))
+                        if value <= 25:
+                            cell.set_facecolor('#90EE90')
+                        elif value >= 50:
+                            cell.set_facecolor('#FFCCCB')
+                    except:
+                        pass
+                elif indicator_name == "成本价差集中度":
+                    try:
+                        value_str = table_data[row][1]
+                        value = float(value_str.replace('%', ''))
+                        if value <= 8:
+                            cell.set_facecolor('#90EE90')
+                        elif value >= 25:
+                            cell.set_facecolor('#FFCCCB')
+                    except:
+                        pass
+
+        # EMA均线状态列高亮
+        ema_highlight_list = ["EMA5", "EMA10", "EMA20", "EMA50", "EMA60", "EMA100", "EMA200"]
+        for data_row_idx in range(1, len(table_data)):
+            indicator = table_data[data_row_idx][0]
+            if indicator in ema_highlight_list:
+                close_price = last_row['close']
+                # 将EMA名称转为小写以匹配列名
+                ema_col = indicator.lower()
+                ema_value = last_row.get(ema_col)
+                if ema_value is not None and not pd.isna(ema_value):
+                    cell = table.get_celld().get((data_row_idx, 1))
+                    if cell:
+                        if close_price >= ema_value:
+                            cell.set_facecolor('#90EE90')
+                        else:
+                            cell.set_facecolor('#FFCCCB')
+
+        # 保存表格到PDF
+        with PdfPages(output_pdf, 'a') as pdf:
+            pdf.savefig(fig_table, bbox_inches='tight')
+
+        plt.close(fig_table)
+
+        logger.info(f"技术指标表格已成功保存为PDF文件: {output_pdf}")
+
+    except Exception as e:
+        logger.error(f"处理数据或生成技术指标表格时出错 - {ticker}: {str(e)}")
+        traceback.print_exc()
+        return
+
+
+def find_convergence_groups_clustering(ema_values, threshold=0.005):
+    """
+    使用聚类算法检测均线粘合
+    """
+    if not ema_values:
+        return []
+
+    sorted_emas = sorted(ema_values.items(), key=lambda x: x[1])
+    groups = []
+    current_group = [sorted_emas[0][0]]
+
+    for i in range(1, len(sorted_emas)):
+        current_ema_name, current_ema_value = sorted_emas[i]
+        prev_ema_name, prev_ema_value = sorted_emas[i-1]
+        max_val = max(current_ema_value, prev_ema_value)
+        min_val = min(current_ema_value, prev_ema_value)
+        if max_val == 0:
+            continue
+        diff_ratio = (max_val - min_val) / max_val
+
+        if diff_ratio < threshold:
+            if current_ema_name not in current_group:
+                current_group.append(current_ema_name)
+            if prev_ema_name not in current_group:
+                current_group.append(prev_ema_name)
+        else:
+            if len(current_group) >= 2:
+                groups.append(current_group)
+            current_group = [current_ema_name]
+
+    if len(current_group) >= 2:
+        groups.append(current_group)
+
+    return merge_overlapping_groups(groups)
+
+
+def merge_overlapping_groups(groups):
+    """
+    合并有重叠的均线组
+    """
+    if not groups:
+        return []
+
+    merged = True
+    current_groups = groups.copy()
+
+    while merged:
+        merged = False
+        new_groups = []
+        used = [False] * len(current_groups)
+
+        for i in range(len(current_groups)):
+            if used[i]:
+                continue
+            group1 = set(current_groups[i])
+            merged_group = set(group1)
+            used[i] = True
+
+            for j in range(i+1, len(current_groups)):
+                if used[j]:
+                    continue
+                group2 = set(current_groups[j])
+                if group1 & group2:
+                    merged_group |= group2
+                    used[j] = True
+                    merged = True
+
+            new_groups.append(list(merged_group))
+
+        for i in range(len(current_groups)):
+            if not used[i]:
+                new_groups.append(current_groups[i])
+
+        current_groups = new_groups
+
+    return current_groups
+
+
+def sort_ema_by_period(ema_list):
+    """
+    按周期顺序对均线进行排序
+    """
+    period_order = {
+        'ema5': 0,
+        'ema10': 1,
+        'ema20': 2,
+        'ema50': 3,
+        'ema60': 4,
+        'ema100': 5,
+        'ema200': 6
+    }
+    return sorted(ema_list, key=lambda x: period_order.get(x, 999))
+
+
+def check_breakthrough(df, ema_col, direction='above'):
+    """
+    检查是否确认突破/跌破指定EMA均线
+    """
+    if len(df) < 10:
+        return False, None
+
+    recent_data = df.tail(10).copy()
+
+    if direction == 'above':
+        above_count = 0
+        start_date = None
+        for i in range(len(recent_data)-1, -1, -1):
+            if recent_data.iloc[i]['close'] > recent_data.iloc[i][ema_col]:
+                above_count += 1
+                if above_count == 1:
+                    start_date = recent_data.iloc[i]['date']
+                if above_count >= 3:
+                    if i > 0 and recent_data.iloc[i-1]['close'] <= recent_data.iloc[i-1][ema_col]:
+                        return True, start_date
+            else:
+                above_count = 0
+                start_date = None
+    else:
+        below_count = 0
+        start_date = None
+        for i in range(len(recent_data)-1, -1, -1):
+            if recent_data.iloc[i]['close'] < recent_data.iloc[i][ema_col]:
+                below_count += 1
+                if below_count == 1:
+                    start_date = recent_data.iloc[i]['date']
+                if below_count >= 3:
+                    if i > 0 and recent_data.iloc[i-1]['close'] >= recent_data.iloc[i-1][ema_col]:
+                        return True, start_date
+            else:
+                below_count = 0
+                start_date = None
+
+    return False, None
+
+
+def merge_pdfs(pdf_inputs, pdf_output):
+    """
+    将多个PDF文件合并为一个PDF文件
+    """
+    merger = PyPDF2.PdfMerger()
+    merged_count = 0
+    missing_files = []
+
+    try:
+        for pdf in pdf_inputs:
+            if not os.path.exists(pdf):
+                logger.warning(f"{pdf} 文件不存在，跳过合并")
+                missing_files.append(pdf)
+                continue
+
+            try:
+                with open(pdf, 'rb') as f:
+                    merger.append(f)
+                merged_count += 1
+            except Exception as e:
+                logger.error(f"处理文件 {pdf} 时出错: {str(e)}")
+                raise
+
+        if merged_count > 0:
+            with open(pdf_output, 'wb') as output_file:
+                merger.write(output_file)
+            logger.info(f"成功合并 {merged_count} 个PDF文件到: {pdf_output}")
+        else:
+            logger.warning("没有有效的PDF文件可供合并")
+
+    except Exception as e:
+        logger.error(f"合并PDF时出错: {str(e)}")
+        raise
+    finally:
+        merger.close()
+
+    return merged_count, missing_files
+
+
+# === 添加UTL路径到系统路径 ===
+print("开始设置路径...")
+sys.stdout.flush()
+
+script_dir = Path(__file__).resolve().parent
+print(f"script_dir: {script_dir}")
+sys.stdout.flush()
+
+core_dir = script_dir.parent
+print(f"core_dir: {core_dir}")
+sys.stdout.flush()
+
+if str(core_dir) not in sys.path:
+    sys.path.insert(0, str(core_dir))
+    print(f"已将 {core_dir} 添加到 sys.path")
+    sys.stdout.flush()
+
+try:
+    from utl.path_utils import get_project_root
+    print("成功导入 utl.path_utils")
+    sys.stdout.flush()
+except ImportError as e:
+    print(f"导入 utl.path_utils 失败: {e}")
+    sys.stdout.flush()
+    sys.exit(1)
+
+core_dir_from_utils = get_project_root()
+project_dir = core_dir_from_utils.parent
+print(f"project_dir: {project_dir}")
+sys.stdout.flush()
+
+if str(project_dir) not in sys.path:
+    sys.path.insert(0, str(project_dir))
+
+try:
+    from utl.stock_analysis_utl import (
+        load_config,
+        setup_windows_encoding,
+        GlobalConfig,
+        get_validated_dates 
+    )
+    print("成功导入 utl.stock_analysis_utl")
+    sys.stdout.flush()
+except ImportError as e:
+    print("=" * 60)
+    print("❌ 严重错误：无法导入 utl.stock_analysis_utl 模块")
+    print(f"   期望路径: {core_dir / 'utl' / 'stock_analysis_utl.py'}")
+    print(f"   详细错误: {e}")
+    print("=" * 60)
+    sys.stdout.flush()
+    sys.exit(1)
+
+# === 强制UTF-8编码输出 ===
+if 'get_ipython' not in globals():
+    sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
+    sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding='utf-8', errors='replace')
+else:
+    import ipykernel
+    if ipykernel:
+        sys.stdout.encoding = 'utf-8'
+        sys.stderr.encoding = 'utf-8'
+
+setup_windows_encoding()
+print("路径设置和导入完成")
+sys.stdout.flush()
+
+
+def main():
+    """主函数，程序的入口点"""
+    try:
+        print("进入 main 函数...")
+        sys.stdout.flush()
+        
+        # ========== 主程序路径配置 ==========        
+        config_path = os.path.join(project_dir, 'config', 'stock_data_analysis.par')
+        print(f"配置文件路径: {config_path}")
+        sys.stdout.flush()
+
+        # ========== 加载配置 ==========
+        print("开始加载配置...")
+        sys.stdout.flush()
+        CONFIG = load_config(config_path, project_dir)
+        print(f"配置文件加载成功: {config_path}")
+        sys.stdout.flush()
+
+        print("开始更新路径...")
+        sys.stdout.flush()
+        GlobalConfig.update_paths(CONFIG, project_dir)
+
+        # ========== 初始化日志系统 ==========
+        log_dir = GlobalConfig.full_log_dir
+        print(f"日志目录: {log_dir}")
+        sys.stdout.flush()
+        
+        log_file = setup_logging(log_dir)
+        if log_file:
+            logger.info("=" * 60)
+            logger.info("Daily_TA3A_Analyze_Indicators_Plot 程序开始运行")
+            logger.info("=" * 60)
+        else:
+            print("警告: 日志系统初始化失败")
+            sys.stdout.flush()
+
+        # ========== 打印配置信息 ==========
+        logger.info("=" * 50)
+        logger.info(f"项目目录: {project_dir}")
+        logger.info(f"配置文件位置: {config_path}")
+        logger.info(f"数据目录: {GlobalConfig.full_data_dir}")
+        logger.info(f"报告目录: {GlobalConfig.full_report_dir}")
+        logger.info(f"日志目录: {GlobalConfig.full_log_dir}")
+        logger.info(f"日志文件: {log_file}")
+
+        if CONFIG.get('tickers'):
+            tickers = CONFIG['tickers']
+            logger.info(f"股票代码数量: {len(tickers)}")
+            if len(tickers) > 5:
+                logger.info(f"前5个股票代码: {tickers[:5]}... 等")
+            else:
+                logger.info(f"股票代码: {tickers}")
+        else:
+            logger.warning("配置文件中未找到tickers设置")
+
+        # ========== 获取数据库路径 ==========
+        db_path = get_db_path()
+        logger.info(f"数据库路径: {db_path}")
+
+        if not os.path.exists(db_path):
+            logger.error(f"数据库文件不存在: {db_path}")
+            return
+
+        # ========== 根据配置生成技术分析指标报告 ==========
+        try:
+            start_date, end_date = get_validated_dates(CONFIG, project_dir)
+            logger.info(f"📅 验证通过的日期范围:")
+            logger.info(f"开始日期: {start_date.strftime('%Y-%m-%d')}")
+            logger.info(f"结束日期: {end_date.strftime('%Y-%m-%d')}")
+
+            if not tickers:
+                logger.error("无法进行技术分析 - 没有配置股票代码")
+            else:
+                current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+                logger.info(f"{current_time} 开始进行技术分析...")
+                
+                success_count = 0
+                fail_count = 0
+                
+                for ticker in tickers:
+                    try:
+                        current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+                        logger.info(f"\n{current_time} 正在分析 {ticker} 的技术指标...")
+
+                        # 从数据库加载数据
+                        df = load_data_from_db(ticker, start_date, end_date, db_path)
+                        
+                        if df is None or df.empty:
+                            logger.warning(f"股票 {ticker} 在指定日期范围内没有数据，跳过")
+                            fail_count += 1
+                            continue
+
+                        # 生成PDF报告
+                        output_pdf_file = os.path.join(GlobalConfig.full_report_dir, f'{ticker}_daily_TA_indicator_analysis.pdf')
+                        output_pdf_tmp1 = os.path.join(GlobalConfig.full_temp_dir, f'{ticker}_daily_TA_indicator_plot.pdf')
+                        output_pdf_tmp2 = os.path.join(GlobalConfig.full_temp_dir, f'{ticker}_daily_TA_indicator_sum.pdf')
+
+                        # 绘制图表
+                        plot_daily_chart(ticker, df, output_pdf_tmp1, start_date, end_date)
+
+                        # 显示指标表格
+                        display_indicator_summary(ticker, df, output_pdf_tmp2, start_date, end_date)
+
+                        # 合并PDF文件
+                        input_files = [output_pdf_tmp1, output_pdf_tmp2]
+                        merge_pdfs(input_files, output_pdf_file)
+
+                        # 删除临时文件
+                        for tmp_file in [output_pdf_tmp1, output_pdf_tmp2]:
+                            if os.path.exists(tmp_file):
+                                os.remove(tmp_file)
+                                logger.debug(f"删除临时文件: {tmp_file}")
+
+                        current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+                        logger.info(f"{current_time} {ticker} 技术指标分析完成！")
+                        success_count += 1
+                        
+                    except Exception as e:
+                        logger.error(f"处理股票 {ticker} 时出错: {str(e)}")
+                        traceback.print_exc()
+                        fail_count += 1
+                        continue
+
+                current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+                logger.info(f"{current_time} ✅ 技术分析完成！成功: {success_count}, 失败: {fail_count}")
+
+        except Exception as e:
+            logger.error(f"❌ 错误: {str(e)}")
+            traceback.print_exc()
+            logger.error("导出过程失败")
+
+    except Exception as e:
+        print(f"main 函数出错: {type(e).__name__}: {e}")
+        sys.stdout.flush()
+        traceback.print_exc()
+        
+        if 'get_ipython' not in globals():
+            sys.exit(1)
+        else:
+            print("在Jupyter环境中运行，程序继续但可能无法正常工作")
+    finally:
+        logger.info("=" * 60)
+        logger.info("Daily_TA3A_Analyze_Indicators_Plot 程序运行结束")
+        logger.info("=" * 60)
+
+
+if __name__ == "__main__":
+    main()	

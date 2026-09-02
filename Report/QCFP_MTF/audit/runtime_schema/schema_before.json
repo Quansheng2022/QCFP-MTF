@@ -1,0 +1,976 @@
+{
+  "schema_version": "RUNTIME-SCHEMA-1",
+  "captured_at": "2026-08-29 14:48:54",
+  "tables": {
+    "qcfp_decision_ledger": {
+      "exists": true,
+      "columns": {
+        "id": {
+          "type": "INTEGER",
+          "nullable": true,
+          "default": null,
+          "primary_key": true
+        },
+        "decision_id": {
+          "type": "TEXT",
+          "nullable": false,
+          "default": null,
+          "primary_key": false
+        },
+        "run_id": {
+          "type": "TEXT",
+          "nullable": false,
+          "default": null,
+          "primary_key": false
+        },
+        "stock_code": {
+          "type": "TEXT",
+          "nullable": false,
+          "default": null,
+          "primary_key": false
+        },
+        "decision_date": {
+          "type": "TEXT",
+          "nullable": false,
+          "default": null,
+          "primary_key": false
+        },
+        "input_fingerprint": {
+          "type": "TEXT",
+          "nullable": true,
+          "default": null,
+          "primary_key": false
+        },
+        "settings_hash": {
+          "type": "TEXT",
+          "nullable": true,
+          "default": null,
+          "primary_key": false
+        },
+        "model_version": {
+          "type": "TEXT",
+          "nullable": true,
+          "default": null,
+          "primary_key": false
+        },
+        "rule_version": {
+          "type": "TEXT",
+          "nullable": true,
+          "default": null,
+          "primary_key": false
+        },
+        "schema_version": {
+          "type": "TEXT",
+          "nullable": true,
+          "default": null,
+          "primary_key": false
+        },
+        "institutional_state": {
+          "type": "TEXT",
+          "nullable": true,
+          "default": null,
+          "primary_key": false
+        },
+        "institutional_pressure": {
+          "type": "INTEGER",
+          "nullable": true,
+          "default": null,
+          "primary_key": false
+        },
+        "institutional_persistence": {
+          "type": "INTEGER",
+          "nullable": true,
+          "default": null,
+          "primary_key": false
+        },
+        "institutional_permission": {
+          "type": "TEXT",
+          "nullable": true,
+          "default": null,
+          "primary_key": false
+        },
+        "permission_cap": {
+          "type": "TEXT",
+          "nullable": true,
+          "default": null,
+          "primary_key": false
+        },
+        "institutional_reasons": {
+          "type": "TEXT",
+          "nullable": true,
+          "default": null,
+          "primary_key": false
+        },
+        "setup_type": {
+          "type": "TEXT",
+          "nullable": true,
+          "default": null,
+          "primary_key": false
+        },
+        "daily_trigger": {
+          "type": "TEXT",
+          "nullable": true,
+          "default": null,
+          "primary_key": false
+        },
+        "exit_event": {
+          "type": "TEXT",
+          "nullable": true,
+          "default": null,
+          "primary_key": false
+        },
+        "exit_reason": {
+          "type": "TEXT",
+          "nullable": true,
+          "default": null,
+          "primary_key": false
+        },
+        "previous_fsm_state": {
+          "type": "TEXT",
+          "nullable": true,
+          "default": null,
+          "primary_key": false
+        },
+        "next_fsm_state": {
+          "type": "TEXT",
+          "nullable": true,
+          "default": null,
+          "primary_key": false
+        },
+        "base_fsm_state": {
+          "type": "TEXT",
+          "nullable": true,
+          "default": null,
+          "primary_key": false
+        },
+        "previous_position": {
+          "type": "REAL",
+          "nullable": true,
+          "default": null,
+          "primary_key": false
+        },
+        "raw_target": {
+          "type": "REAL",
+          "nullable": true,
+          "default": null,
+          "primary_key": false
+        },
+        "final_target": {
+          "type": "REAL",
+          "nullable": true,
+          "default": null,
+          "primary_key": false
+        },
+        "permission_constraint_applied": {
+          "type": "INTEGER",
+          "nullable": true,
+          "default": "0",
+          "primary_key": false
+        },
+        "override_rule_ids": {
+          "type": "TEXT",
+          "nullable": true,
+          "default": null,
+          "primary_key": false
+        },
+        "decision_path": {
+          "type": "TEXT",
+          "nullable": true,
+          "default": null,
+          "primary_key": false
+        },
+        "primary_reason": {
+          "type": "TEXT",
+          "nullable": true,
+          "default": null,
+          "primary_key": false
+        },
+        "secondary_reasons": {
+          "type": "TEXT",
+          "nullable": true,
+          "default": null,
+          "primary_key": false
+        },
+        "pit_grade": {
+          "type": "TEXT",
+          "nullable": true,
+          "default": null,
+          "primary_key": false
+        },
+        "data_quality": {
+          "type": "TEXT",
+          "nullable": true,
+          "default": null,
+          "primary_key": false
+        },
+        "evidence_grade": {
+          "type": "TEXT",
+          "nullable": true,
+          "default": null,
+          "primary_key": false
+        },
+        "context": {
+          "type": "TEXT",
+          "nullable": true,
+          "default": null,
+          "primary_key": false
+        },
+        "created_at": {
+          "type": "TEXT",
+          "nullable": true,
+          "default": null,
+          "primary_key": false
+        },
+        "status": {
+          "type": "TEXT",
+          "nullable": true,
+          "default": "'ACTIVE'",
+          "primary_key": false
+        },
+        "superseded_by": {
+          "type": "TEXT",
+          "nullable": true,
+          "default": null,
+          "primary_key": false
+        },
+        "participation_mode": {
+          "type": "TEXT",
+          "nullable": true,
+          "default": null,
+          "primary_key": false
+        },
+        "participation_cap": {
+          "type": "REAL",
+          "nullable": true,
+          "default": null,
+          "primary_key": false
+        },
+        "position_class": {
+          "type": "TEXT",
+          "nullable": true,
+          "default": null,
+          "primary_key": false
+        },
+        "exit_severity": {
+          "type": "INTEGER",
+          "nullable": true,
+          "default": "0",
+          "primary_key": false
+        },
+        "feature_manifest_hash": {
+          "type": "TEXT",
+          "nullable": true,
+          "default": null,
+          "primary_key": false
+        },
+        "trade_quality": {
+          "type": "REAL",
+          "nullable": true,
+          "default": null,
+          "primary_key": false
+        },
+        "trade_quality_band": {
+          "type": "TEXT",
+          "nullable": true,
+          "default": null,
+          "primary_key": false
+        },
+        "data_snapshot_id": {
+          "type": "TEXT",
+          "nullable": true,
+          "default": null,
+          "primary_key": false
+        },
+        "data_version": {
+          "type": "TEXT",
+          "nullable": true,
+          "default": null,
+          "primary_key": false
+        }
+      },
+      "indexes": [
+        {
+          "name": "idx_qcfp_dl_identity",
+          "unique": true
+        },
+        {
+          "name": "idx_qcfp_dl_settings",
+          "unique": false
+        },
+        {
+          "name": "idx_qcfp_dl_code_date",
+          "unique": false
+        }
+      ],
+      "column_count": 47
+    },
+    "qcfp_model_registry": {
+      "exists": true,
+      "columns": {
+        "id": {
+          "type": "INTEGER",
+          "nullable": true,
+          "default": null,
+          "primary_key": true
+        },
+        "model_version": {
+          "type": "TEXT",
+          "nullable": false,
+          "default": null,
+          "primary_key": false
+        },
+        "rule_version": {
+          "type": "TEXT",
+          "nullable": false,
+          "default": null,
+          "primary_key": false
+        },
+        "schema_version": {
+          "type": "TEXT",
+          "nullable": false,
+          "default": null,
+          "primary_key": false
+        },
+        "feature_manifest_hash": {
+          "type": "TEXT",
+          "nullable": true,
+          "default": null,
+          "primary_key": false
+        },
+        "settings_hash": {
+          "type": "TEXT",
+          "nullable": false,
+          "default": null,
+          "primary_key": false
+        },
+        "settings_blob": {
+          "type": "TEXT",
+          "nullable": true,
+          "default": null,
+          "primary_key": false
+        },
+        "code_commit": {
+          "type": "TEXT",
+          "nullable": true,
+          "default": null,
+          "primary_key": false
+        },
+        "python_version": {
+          "type": "TEXT",
+          "nullable": true,
+          "default": null,
+          "primary_key": false
+        },
+        "dependency_hash": {
+          "type": "TEXT",
+          "nullable": true,
+          "default": null,
+          "primary_key": false
+        },
+        "created_at": {
+          "type": "TEXT",
+          "nullable": true,
+          "default": null,
+          "primary_key": false
+        },
+        "status": {
+          "type": "TEXT",
+          "nullable": true,
+          "default": "'ACTIVE'",
+          "primary_key": false
+        }
+      },
+      "indexes": [
+        {
+          "name": "idx_qcfp_mr_identity",
+          "unique": true
+        }
+      ],
+      "column_count": 12
+    },
+    "qcfp_shadow_decision_fact": {
+      "exists": true,
+      "columns": {
+        "fact_id": {
+          "type": "TEXT",
+          "nullable": true,
+          "default": null,
+          "primary_key": true
+        },
+        "stock_code": {
+          "type": "TEXT",
+          "nullable": false,
+          "default": null,
+          "primary_key": false
+        },
+        "decision_date": {
+          "type": "TEXT",
+          "nullable": false,
+          "default": null,
+          "primary_key": false
+        },
+        "terminal_state": {
+          "type": "TEXT",
+          "nullable": false,
+          "default": null,
+          "primary_key": false
+        },
+        "reason": {
+          "type": "TEXT",
+          "nullable": true,
+          "default": null,
+          "primary_key": false
+        },
+        "run_id": {
+          "type": "TEXT",
+          "nullable": true,
+          "default": null,
+          "primary_key": false
+        },
+        "release_id": {
+          "type": "TEXT",
+          "nullable": true,
+          "default": null,
+          "primary_key": false
+        },
+        "created_at": {
+          "type": "TEXT",
+          "nullable": true,
+          "default": null,
+          "primary_key": false
+        }
+      },
+      "indexes": [
+        {
+          "name": "sqlite_autoindex_qcfp_shadow_decision_fact_1",
+          "unique": true
+        }
+      ],
+      "column_count": 8
+    },
+    "qcfp_decision_certificate": {
+      "exists": false,
+      "columns": {}
+    },
+    "qcfp_runtime_event_ledger": {
+      "exists": true,
+      "columns": {
+        "event_seq": {
+          "type": "INTEGER",
+          "nullable": true,
+          "default": null,
+          "primary_key": true
+        },
+        "event_id": {
+          "type": "TEXT",
+          "nullable": true,
+          "default": null,
+          "primary_key": false
+        },
+        "event_type": {
+          "type": "TEXT",
+          "nullable": true,
+          "default": null,
+          "primary_key": false
+        },
+        "event_time": {
+          "type": "TEXT",
+          "nullable": true,
+          "default": null,
+          "primary_key": false
+        },
+        "decision_id": {
+          "type": "TEXT",
+          "nullable": true,
+          "default": null,
+          "primary_key": false
+        },
+        "release_id": {
+          "type": "TEXT",
+          "nullable": true,
+          "default": null,
+          "primary_key": false
+        },
+        "certificate_id": {
+          "type": "TEXT",
+          "nullable": true,
+          "default": null,
+          "primary_key": false
+        },
+        "execution_mode": {
+          "type": "TEXT",
+          "nullable": true,
+          "default": null,
+          "primary_key": false
+        },
+        "account_id": {
+          "type": "TEXT",
+          "nullable": true,
+          "default": null,
+          "primary_key": false
+        },
+        "stock_code": {
+          "type": "TEXT",
+          "nullable": true,
+          "default": null,
+          "primary_key": false
+        },
+        "order_intent_id": {
+          "type": "TEXT",
+          "nullable": true,
+          "default": null,
+          "primary_key": false
+        },
+        "broker_order_id": {
+          "type": "TEXT",
+          "nullable": true,
+          "default": null,
+          "primary_key": false
+        },
+        "side": {
+          "type": "TEXT",
+          "nullable": true,
+          "default": null,
+          "primary_key": false
+        },
+        "requested_qty": {
+          "type": "REAL",
+          "nullable": true,
+          "default": null,
+          "primary_key": false
+        },
+        "filled_qty": {
+          "type": "REAL",
+          "nullable": true,
+          "default": null,
+          "primary_key": false
+        },
+        "fill_price": {
+          "type": "REAL",
+          "nullable": true,
+          "default": null,
+          "primary_key": false
+        },
+        "commission": {
+          "type": "REAL",
+          "nullable": true,
+          "default": null,
+          "primary_key": false
+        },
+        "stamp_duty": {
+          "type": "REAL",
+          "nullable": true,
+          "default": null,
+          "primary_key": false
+        },
+        "exchange_fee": {
+          "type": "REAL",
+          "nullable": true,
+          "default": null,
+          "primary_key": false
+        },
+        "other_fee": {
+          "type": "REAL",
+          "nullable": true,
+          "default": null,
+          "primary_key": false
+        },
+        "internal_position": {
+          "type": "REAL",
+          "nullable": true,
+          "default": null,
+          "primary_key": false
+        },
+        "broker_position": {
+          "type": "REAL",
+          "nullable": true,
+          "default": null,
+          "primary_key": false
+        },
+        "reconciliation_status": {
+          "type": "TEXT",
+          "nullable": true,
+          "default": null,
+          "primary_key": false
+        },
+        "incident_id": {
+          "type": "TEXT",
+          "nullable": true,
+          "default": null,
+          "primary_key": false
+        },
+        "payload": {
+          "type": "TEXT",
+          "nullable": true,
+          "default": null,
+          "primary_key": false
+        },
+        "payload_hash": {
+          "type": "TEXT",
+          "nullable": true,
+          "default": null,
+          "primary_key": false
+        },
+        "previous_event_hash": {
+          "type": "TEXT",
+          "nullable": true,
+          "default": null,
+          "primary_key": false
+        },
+        "current_event_hash": {
+          "type": "TEXT",
+          "nullable": true,
+          "default": null,
+          "primary_key": false
+        }
+      },
+      "indexes": [
+        {
+          "name": "sqlite_autoindex_qcfp_runtime_event_ledger_1",
+          "unique": true
+        }
+      ],
+      "column_count": 28
+    },
+    "qcfp_research_outcome": {
+      "exists": true,
+      "columns": {
+        "outcome_id": {
+          "type": "TEXT",
+          "nullable": true,
+          "default": null,
+          "primary_key": true
+        },
+        "decision_id": {
+          "type": "TEXT",
+          "nullable": true,
+          "default": null,
+          "primary_key": false
+        },
+        "release_id": {
+          "type": "TEXT",
+          "nullable": true,
+          "default": null,
+          "primary_key": false
+        },
+        "stock_code": {
+          "type": "TEXT",
+          "nullable": true,
+          "default": null,
+          "primary_key": false
+        },
+        "decision_date": {
+          "type": "TEXT",
+          "nullable": true,
+          "default": null,
+          "primary_key": false
+        },
+        "evaluation_time": {
+          "type": "TEXT",
+          "nullable": true,
+          "default": null,
+          "primary_key": false
+        },
+        "horizon": {
+          "type": "TEXT",
+          "nullable": true,
+          "default": null,
+          "primary_key": false
+        },
+        "horizon_end": {
+          "type": "TEXT",
+          "nullable": true,
+          "default": null,
+          "primary_key": false
+        },
+        "entry_reference_price": {
+          "type": "REAL",
+          "nullable": true,
+          "default": null,
+          "primary_key": false
+        },
+        "exit_reference_price": {
+          "type": "REAL",
+          "nullable": true,
+          "default": null,
+          "primary_key": false
+        },
+        "future_return": {
+          "type": "REAL",
+          "nullable": true,
+          "default": null,
+          "primary_key": false
+        },
+        "mfe": {
+          "type": "REAL",
+          "nullable": true,
+          "default": null,
+          "primary_key": false
+        },
+        "mae": {
+          "type": "REAL",
+          "nullable": true,
+          "default": null,
+          "primary_key": false
+        },
+        "mfe_date": {
+          "type": "TEXT",
+          "nullable": true,
+          "default": null,
+          "primary_key": false
+        },
+        "mae_date": {
+          "type": "TEXT",
+          "nullable": true,
+          "default": null,
+          "primary_key": false
+        },
+        "wave_peak_return": {
+          "type": "REAL",
+          "nullable": true,
+          "default": null,
+          "primary_key": false
+        },
+        "wave_capture": {
+          "type": "REAL",
+          "nullable": true,
+          "default": null,
+          "primary_key": false
+        },
+        "outcome_type": {
+          "type": "TEXT",
+          "nullable": true,
+          "default": null,
+          "primary_key": false
+        },
+        "missed_opportunity": {
+          "type": "INTEGER",
+          "nullable": true,
+          "default": null,
+          "primary_key": false
+        },
+        "false_participation": {
+          "type": "INTEGER",
+          "nullable": true,
+          "default": null,
+          "primary_key": false
+        },
+        "future_aware": {
+          "type": "INTEGER",
+          "nullable": true,
+          "default": null,
+          "primary_key": false
+        },
+        "research_only": {
+          "type": "INTEGER",
+          "nullable": true,
+          "default": null,
+          "primary_key": false
+        },
+        "source_data_snapshot_id": {
+          "type": "TEXT",
+          "nullable": true,
+          "default": null,
+          "primary_key": false
+        },
+        "outcome_hash": {
+          "type": "TEXT",
+          "nullable": true,
+          "default": null,
+          "primary_key": false
+        },
+        "created_at": {
+          "type": "TEXT",
+          "nullable": true,
+          "default": null,
+          "primary_key": false
+        }
+      },
+      "indexes": [
+        {
+          "name": "sqlite_autoindex_qcfp_research_outcome_1",
+          "unique": true
+        }
+      ],
+      "column_count": 25
+    },
+    "qcfp_runtime_evidence_daily": {
+      "exists": true,
+      "columns": {
+        "evidence_id": {
+          "type": "TEXT",
+          "nullable": true,
+          "default": null,
+          "primary_key": true
+        },
+        "release_id": {
+          "type": "TEXT",
+          "nullable": false,
+          "default": null,
+          "primary_key": false
+        },
+        "execution_mode": {
+          "type": "TEXT",
+          "nullable": false,
+          "default": null,
+          "primary_key": false
+        },
+        "trade_date": {
+          "type": "TEXT",
+          "nullable": false,
+          "default": null,
+          "primary_key": false
+        },
+        "run_id": {
+          "type": "TEXT",
+          "nullable": true,
+          "default": null,
+          "primary_key": false
+        },
+        "revision_no": {
+          "type": "INTEGER",
+          "nullable": false,
+          "default": "1",
+          "primary_key": false
+        },
+        "supersedes_evidence_id": {
+          "type": "TEXT",
+          "nullable": true,
+          "default": null,
+          "primary_key": false
+        },
+        "universe_count": {
+          "type": "INTEGER",
+          "nullable": true,
+          "default": null,
+          "primary_key": false
+        },
+        "actual_decisions": {
+          "type": "INTEGER",
+          "nullable": true,
+          "default": null,
+          "primary_key": false
+        },
+        "coverage": {
+          "type": "REAL",
+          "nullable": true,
+          "default": null,
+          "primary_key": false
+        },
+        "certified_count": {
+          "type": "INTEGER",
+          "nullable": true,
+          "default": null,
+          "primary_key": false
+        },
+        "no_trade_count": {
+          "type": "INTEGER",
+          "nullable": true,
+          "default": null,
+          "primary_key": false
+        },
+        "abstain_count": {
+          "type": "INTEGER",
+          "nullable": true,
+          "default": null,
+          "primary_key": false
+        },
+        "safe_mode_count": {
+          "type": "INTEGER",
+          "nullable": true,
+          "default": null,
+          "primary_key": false
+        },
+        "halted_count": {
+          "type": "INTEGER",
+          "nullable": true,
+          "default": null,
+          "primary_key": false
+        },
+        "permission_violations": {
+          "type": "INTEGER",
+          "nullable": true,
+          "default": null,
+          "primary_key": false
+        },
+        "pit_violations": {
+          "type": "INTEGER",
+          "nullable": true,
+          "default": null,
+          "primary_key": false
+        },
+        "uncertified_executions": {
+          "type": "INTEGER",
+          "nullable": true,
+          "default": null,
+          "primary_key": false
+        },
+        "replay_eligible": {
+          "type": "INTEGER",
+          "nullable": true,
+          "default": null,
+          "primary_key": false
+        },
+        "replay_exact": {
+          "type": "INTEGER",
+          "nullable": true,
+          "default": null,
+          "primary_key": false
+        },
+        "critical_replay_mismatch": {
+          "type": "INTEGER",
+          "nullable": true,
+          "default": null,
+          "primary_key": false
+        },
+        "incident_count": {
+          "type": "INTEGER",
+          "nullable": true,
+          "default": null,
+          "primary_key": false
+        },
+        "unresolved_unknown": {
+          "type": "INTEGER",
+          "nullable": true,
+          "default": null,
+          "primary_key": false
+        },
+        "unresolved_mismatch": {
+          "type": "INTEGER",
+          "nullable": true,
+          "default": null,
+          "primary_key": false
+        },
+        "evidence_hash": {
+          "type": "TEXT",
+          "nullable": true,
+          "default": null,
+          "primary_key": false
+        },
+        "verdict": {
+          "type": "TEXT",
+          "nullable": true,
+          "default": null,
+          "primary_key": false
+        },
+        "created_at": {
+          "type": "TEXT",
+          "nullable": true,
+          "default": null,
+          "primary_key": false
+        }
+      },
+      "indexes": [
+        {
+          "name": "sqlite_autoindex_qcfp_runtime_evidence_daily_2",
+          "unique": true
+        },
+        {
+          "name": "sqlite_autoindex_qcfp_runtime_evidence_daily_1",
+          "unique": true
+        }
+      ],
+      "column_count": 27
+    }
+  }
+}

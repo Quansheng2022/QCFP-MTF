@@ -1,0 +1,90 @@
+{
+  "stock_code": "01951",
+  "decision_date": "2026-08-21",
+  "model_version": "QCFP-MTF-2.5.0",
+  "structural": {
+    "regime": "STRUCTURAL_DECLINE",
+    "core_score": 20.0,
+    "evidence_level": "A-",
+    "data_quality": "C",
+    "key_drivers": [
+      "c_state: C↑",
+      "f_state: F→",
+      "p_state: P↓"
+    ]
+  },
+  "stage": {
+    "monthly_state": "Improving",
+    "turnover_regime": "T2",
+    "vp_regime": "VP_LOCKED_CANDIDATE",
+    "cbi_score": 51.659718711036014
+  },
+  "cost_position": {
+    "status": "COST_NEUTRAL",
+    "vs_weekly_vwap": -0.018453219614541605,
+    "vs_monthly_vwap": 0.004611179110664665,
+    "vs_quarterly_vwap": -0.05455751297446243
+  },
+  "trigger": {
+    "signal": "Consolidation",
+    "breakout": false,
+    "breakdown": false,
+    "volume_spike": false
+  },
+  "confidence": {
+    "chip_stability_confidence": "Medium",
+    "structure_behavior_alignment": "Divergence",
+    "evidence_summary": "结构:STRUCTURAL_DECLINE(A/A-); 阶段:Improving(B); 触发:Consolidation(C); 置信度:Medium"
+  },
+  "risk": {
+    "risk_level": "Extreme",
+    "divergence_detected": true,
+    "key_risks": [
+      "Extreme"
+    ],
+    "anti_inference_check": "PASSED"
+  },
+  "decision": {
+    "mtf_regime": "BULLISH_WARNING",
+    "action": "REDUCE",
+    "source": "legacy_mtf",
+    "action_detail": "结构性强势下的战术预警，减仓观察，严禁清仓",
+    "position_advice": "20%（CQS 观察仓 × Risk 上限）",
+    "stop_loss_trigger": "移动止损：收盘跌破建仓周最低价×(1-2%)（周线收盘确认 → 次周离场；不做盘中触发）"
+  },
+  "decision_2_2": {
+    "run_id": "shadow_20260825_235949",
+    "institutional_state": "ACCUMULATION_WEAK",
+    "institutional_permission": "WATCH",
+    "permission_cap": "TESTING",
+    "exit_event": "FORCED_DELEVERAGE",
+    "exit_reason": "extreme_risk",
+    "setup_type": "ACCUMULATION",
+    "base_fsm_state": "EXITING",
+    "prev_fsm_state": "EXITING",
+    "next_fsm_state": "EXITING",
+    "raw_target_position": 0.0,
+    "target_position": 0.0,
+    "permission_constraint_applied": false,
+    "action": "EXIT",
+    "primary_reason": "FORCED_DELEVERAGE",
+    "secondary_reasons": [
+      "INST_ACCUMULATION_WEAK",
+      "PRICE_DECLINE"
+    ],
+    "participation_mode": "STAND",
+    "participation_cap": 0.0,
+    "position_class": "NONE",
+    "exit_severity": 2,
+    "trade_quality": 41.0,
+    "trade_quality_band": "Tradable",
+    "feature_manifest_hash": "ed8b6eceb02a5815",
+    "opportunity_level": "Mid",
+    "opportunity_cell": "OBS",
+    "override_rule_ids": [
+      "hard_exit"
+    ],
+    "input_fingerprint": "d8b39be270b77429",
+    "settings_hash": "b32234659953"
+  }
+}

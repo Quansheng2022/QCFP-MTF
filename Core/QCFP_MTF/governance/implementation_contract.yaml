@@ -1,0 +1,70 @@
+# QCFP-MTF Implementation Contract 模板（流程治理 Sprint B #4）
+#
+# 使用规则：
+#   * 没有 Change Impact（change_impact.json）不得生成本 Contract；
+#   * DeepSeek Builder 只允许修改 allowed_files / allowed_new_files，
+#     触碰 forbidden_files 或新增 Authority/Schema/ACTIVE Feature → SCOPE_VIOLATION；
+#   * expected_unchanged_behavior 与 expected_behavior_change 同等重要，必须填写；
+#   * 测试失败不得修改 Contract 让测试重新 PASS（QCFP-SPEC-CHG-004）。
+
+change_id: ""
+objective: ""
+
+# 对应 CANONICAL_SPEC.md 的永久 ID（QCFP-SPEC-*）
+spec_ids: []
+
+# 关联 ADR（如无写空列表；Test Oracle 变更必须独立 ADR + Human Approval）
+adr_ids: []
+
+# change_type: LOW | STANDARD | HIGH（与 change_impact_classification 一致）
+change_type: ""
+
+# C2：强绑定 Change Impact Artifact（CHANGE-IMPACT-2）
+#   change_id / change_tier / change_impact_hash 必须与 change_impact.json 一致
+change_impact_artifact: ""
+change_impact_hash: ""
+change_tier: ""
+
+# Allowed Change Surface：可以修改的现有文件（相对项目根）
+allowed_files: []
+
+# 允许新增的文件（相对项目根）
+allowed_new_files: []
+
+# 允许物理删除的文件
+files_to_delete: []
+
+# Protected Surface：绝对不能动的模块/文件
+forbidden_files: []
+
+# 触碰的权威（decision.institutional_permission / decision.governance / ...）
+authorities_touched: []
+
+# 本次修改期望改变的行为（具体、可验证）
+expected_behavior_change: ""
+
+# 本次修改绝对不能改变的行为（与 above 同等重要）
+expected_unchanged_behavior: ""
+
+# 是否触碰以下关键面（true 时自动升级为 HIGH + FULL_VALIDATION）
+schema_change: false
+permission_change: false
+final_target_change: false
+pit_change: false
+
+# 必须提供的测试（positive / negative / failure injection / ablation / oos / shadow）
+required_tests: []
+required_negative_tests: []
+required_failure_injection: []
+required_ablation: []
+required_oos: []
+required_shadow: []
+
+# 复杂度预算（例如：新增 LOC 上限 / 模块数上限；超预算 = COMPLEXITY_VIOLATION）
+complexity_budget: ""
+
+# 退役效应（本次修改是否退役既有能力，退役条件是什么）
+retirement_effect: ""
+
+# 验收标准（Acceptance Criteria，与 acceptance_contract.yaml 对齐）
+acceptance_criteria: []

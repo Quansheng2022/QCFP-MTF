@@ -1,0 +1,79 @@
+{
+  "permission": {
+    "class": "governance",
+    "verdict": "mixed",
+    "deltas": {
+      "class": "governance",
+      "return_delta": -0.0091,
+      "mdd_delta": 0.0933,
+      "capture_delta": -0.0347,
+      "turnover_delta": -0.8837
+    }
+  },
+  "fsm": {
+    "class": "retail",
+    "verdict": "mixed",
+    "deltas": {
+      "class": "retail",
+      "return_delta": 0.0275,
+      "mdd_delta": 0.1202,
+      "capture_delta": -0.0677,
+      "turnover_delta": -1.9297
+    }
+  },
+  "soft_exit": {
+    "class": "governance",
+    "verdict": "mixed",
+    "deltas": {
+      "class": "governance",
+      "return_delta": -0.0087,
+      "mdd_delta": 0.0415,
+      "capture_delta": -0.0262,
+      "turnover_delta": -0.0174
+    }
+  },
+  "hard_exit": {
+    "class": "governance",
+    "verdict": "mixed",
+    "deltas": {
+      "class": "governance",
+      "return_delta": -0.0075,
+      "mdd_delta": 0.0894,
+      "capture_delta": -0.025,
+      "turnover_delta": -0.6839
+    }
+  },
+  "daily": {
+    "class": "alpha",
+    "verdict": "neutral",
+    "deltas": {
+      "class": "alpha",
+      "return_delta": -0.0,
+      "mdd_delta": -0.0011,
+      "capture_delta": NaN,
+      "turnover_delta": 0.0186
+    }
+  },
+  "budget": {
+    "class": "governance",
+    "verdict": "neutral",
+    "deltas": {
+      "class": "governance",
+      "return_delta": -0.0,
+      "mdd_delta": -0.0011,
+      "capture_delta": NaN,
+      "turnover_delta": 0.0186
+    }
+  },
+  "observation": {
+    "class": "governance",
+    "verdict": "neutral",
+    "deltas": {
+      "class": "governance",
+      "return_delta": -0.0,
+      "mdd_delta": -0.0011,
+      "capture_delta": NaN,
+      "turnover_delta": 0.0186
+    }
+  }
+}

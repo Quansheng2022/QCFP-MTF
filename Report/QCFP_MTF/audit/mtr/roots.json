@@ -1,0 +1,10 @@
+{
+  "roots": {
+    "daily_pipeline": "scripts/run workflow",
+    "canonical_engine": "decision.engine.evaluate",
+    "certification": "decision.certified_decision.certify_decision",
+    "execution": "execution.execution_gate.execute",
+    "ledger": "decision.decision_ledger.record_snapshot",
+    "runtime_safety": "safety.incident_protocol.incident_protocol"
+  }
+}

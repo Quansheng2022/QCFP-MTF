@@ -1,0 +1,31 @@
+{
+  "generated_at": "2026-08-26 21:05:16",
+  "stock": "01951",
+  "report": {
+    "total_return": 0.14,
+    "decomposition": {
+      "market_beta": 0.0117,
+      "wave": 0.0383,
+      "entry_timing": -0.0167,
+      "sizing": 0.0287,
+      "exit_timing": -0.04,
+      "regime": 0.0383,
+      "sector": 0.0,
+      "risk_avoidance": 0.08,
+      "execution_cost": 0.009,
+      "slippage": 0.0,
+      "alpha": -0.0093
+    },
+    "buckets": {
+      "Beta": 0.0117,
+      "Wave": 0.0766,
+      "Timing": -0.0567,
+      "Sizing": 0.0287,
+      "Risk_Avoidance": 0.08,
+      "Execution": 0.009,
+      "Alpha": -0.0093
+    },
+    "n_trades": 3,
+    "n_blocked": 1
+  }
+}

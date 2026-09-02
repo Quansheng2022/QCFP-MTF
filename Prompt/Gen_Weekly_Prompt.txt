@@ -1,0 +1,350 @@
+参考Gen_Daily_Prompt.py， 创建Gen_Weekly_Prompt.py
+从SQLite数据库读取数据，连接hk_daily_kline_analysis和hk_daily_moneyflow_analysis两个表
+
+OUTPUT_FILEPATH = r"C:\Users\Quansheng\Documents\projects\TA_Workflow2\Prompt\Prompt_Weekly.txt"
+
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
+# ==================================================
+# Gen_Daily_Prompt.py -- 构建提问模板（近日走势复盘分析专用）
+# 功能：自动处理股票列表，生成复盘分析提问，输出最近10个交易日的数据表格
+# 改进：从SQLite数据库读取数据，连接hk_daily_kline_analysis和hk_daily_moneyflow_analysis两个表
+# 改进：同时将结果输出到屏幕和指定的文本文件
+# ==================================================
+
+import pandas as pd
+import os
+from datetime import datetime
+import sys
+import sqlite3
+from pathlib import Path
+import logging
+
+# ==================== 配置参数 ====================
+# 股票列表：代码和名称
+STOCK_LIST = [
+    {'code': '00371', 'name': '北控水务'},
+    {'code': '00788', 'name': '中国铁塔'},
+    {'code': '02202', 'name': '港股万科企业'},
+    {'code': '01951', 'name': '锦鑫生殖'},
+    {'code': '00268', 'name': '金蝶国际'},
+    {'code': '00354', 'name': '中软国际'},
+    {'code': '06060', 'name': '众安在线'},
+    {'code': '00357', 'name': '美兰空港'},
+    {'code': '01177', 'name': '中生制药'},
+    {'code': '01093', 'name': '石药集团'},
+    {'code': '03800', 'name': '协鑫科技'},
+    {'code': '00020', 'name': '商汤科技'},
+    {'code': '02611', 'name': '国泰海通'},
+    # {'code': '00579', 'name': '京能清洁能源'},
+    # {'code': '02602', 'name': '港股万物云'},
+]
+
+# 复盘区间：取最近 N 个交易日
+REVIEW_DAYS = 10
+
+# 输出文本文件路径
+OUTPUT_FILEPATH = r"C:\Users\Quansheng\Documents\projects\TA_Workflow2\Prompt\Prompt_Daily.txt"
+
+# 需要输出的字段（从两个表连接后选择）
+OUTPUT_COLUMNS = [
+    "date", "close", "ema5", "ema20", "ema100", "ema200",
+    "volume_ratio5", "macd_histogram", "macd_status",
+    "institutional_flow", "individual_flow", "inst_5ma", "ind_5ma",
+    "turnover_rate"
+]
+
+# ==================== 数据库路径设置 ====================
+def get_db_path():
+    """
+    获取SQLite数据库路径
+    参考 Daily_TA3A_Analyze_Indicators_Plot.py 中的路径设置方法
+    """
+    # 获取当前脚本所在目录
+    script_dir = Path(__file__).resolve().parent
+    # 获取项目根目录 (TA_Workflow2)
+    project_dir = script_dir.parent
+    
+    # 数据库目录和文件路径
+    db_dir = project_dir / 'SQLiteDB'
+    db_path = db_dir / 'HK_Stock.db'
+    
+    return str(db_path)
+
+# ==================== 辅助函数 ====================
+def setup_logging():
+    """配置日志系统"""
+    logging.basicConfig(
+        level=logging.INFO,
+        format='%(asctime)s - %(levelname)s - %(message)s',
+        datefmt='%Y-%m-%d %H:%M:%S'
+    )
+    return logging.getLogger(__name__)
+
+# 初始化日志
+logger = setup_logging()
+
+def load_stock_data_from_db(ticker, days):
+    """
+    从SQLite数据库加载股票数据，连接两个表
+    
+    参数:
+    ticker: 股票代码
+    days: 获取最近多少个交易日的数据
+    
+    返回:
+    df: 连接后的DataFrame
+    """
+    try:
+        db_path = get_db_path()
+        logger.info(f"从数据库加载股票 {ticker} 的数据...")
+        
+        if not os.path.exists(db_path):
+            logger.error(f"数据库文件不存在: {db_path}")
+            return None
+        
+        conn = sqlite3.connect(db_path)
+        
+        # ===== 修改点1: 使用更直接的查询方式，并使用COALESCE确保资金流数据不为NULL =====
+        query = f"""
+        SELECT 
+            k.date,
+            k.close,
+            k.ema5,
+            k.ema20,
+            k.ema100,
+            k.ema200,
+            k.volume_ratio5,
+            k.macd_histogram,
+            k.macd_status,
+            k.turnover_rate,
+            COALESCE(m.institutional_flow, 0) as institutional_flow,
+            COALESCE(m.individual_flow, 0) as individual_flow,
+            COALESCE(m.inst_5ma, 0) as inst_5ma,
+            COALESCE(m.ind_5ma, 0) as ind_5ma
+        FROM hk_daily_kline_analysis k
+        LEFT JOIN hk_daily_moneyflow_analysis m 
+            ON m.stock_code = k.stock_code 
+            AND m.date = k.date
+        WHERE k.stock_code = '{ticker}'
+        ORDER BY k.date DESC
+        LIMIT {days}
+        """
+        
+        logger.debug(f"执行查询...")
+        df = pd.read_sql_query(query, conn)
+        conn.close()
+        
+        if df.empty:
+            logger.warning(f"股票 {ticker} 在数据库中无数据")
+            return None
+        
+        # 按日期升序排列
+        df = df.sort_values('date').reset_index(drop=True)
+        
+        # 转换日期列为datetime类型
+        df['date'] = pd.to_datetime(df['date'])
+        
+        # ===== 修改点2: 添加详细的调试信息 =====
+        logger.info(f"成功加载股票 {ticker} 的 {len(df)} 行数据")
+        logger.info(f"日期范围: {df['date'].min().date()} 到 {df['date'].max().date()}")
+        
+        # 检查资金流数据
+        if 'institutional_flow' in df.columns:
+            has_data = (df['institutional_flow'] != 0).sum()
+            logger.info(f"资金流数据: {has_data}/{len(df)} 行有数据")
+            if has_data > 0:
+                logger.info(f"资金流数据范围 - 机构: {df['institutional_flow'].min():.0f} 到 {df['institutional_flow'].max():.0f}")
+                logger.info(f"资金流数据范围 - 散户: {df['individual_flow'].min():.0f} 到 {df['individual_flow'].max():.0f}")
+            else:
+                logger.warning(f"股票 {ticker} 的资金流数据全部为0！")
+                # 直接查询数据库验证
+                conn2 = sqlite3.connect(db_path)
+                check_query = f"""
+                SELECT COUNT(*) as cnt
+                FROM hk_daily_moneyflow_analysis
+                WHERE stock_code = '{ticker}'
+                """
+                df_check = pd.read_sql_query(check_query, conn2)
+                logger.info(f"资金流表中该股票记录数: {df_check['cnt'][0]}")
+                conn2.close()
+        
+        return df
+        
+    except sqlite3.Error as e:
+        logger.error(f"数据库错误 - 股票 {ticker}: {str(e)}")
+        return None
+    except Exception as e:
+        logger.error(f"加载数据时出错 - 股票 {ticker}: {str(e)}")
+        import traceback
+        traceback.print_exc()
+        return None
+
+def get_recent_data(df, days):
+    """获取最近 days 个交易日的数据切片，返回 (start_date, end_date, data_slice)"""
+    if df is None or df.empty:
+        return None, None, None
+    
+    # 确保数据按日期排序
+    df_sorted = df.sort_values('date').reset_index(drop=True)
+    
+    # 获取最近 days 条数据
+    data_slice = df_sorted.tail(days).copy()
+    
+    if data_slice.empty:
+        return None, None, None
+    
+    start_date = data_slice['date'].min()
+    end_date = data_slice['date'].max()
+    return start_date, end_date, data_slice
+
+def format_dataframe(df):
+    """
+    格式化数据表格：日期字符串、数值保留指定位数，空值处理为空字符串
+    
+    ===== 修改点3: 增加调试信息和更好的空值处理 =====
+    """
+    formatted = df.copy()
+    formatted['date'] = formatted['date'].dt.strftime('%Y-%m-%d')
+    
+    # 调试信息（可选，如果不需要可以注释掉）
+    # print(f"\n调试信息 - 资金流列前3行:")
+    # if 'institutional_flow' in formatted.columns:
+    #     print(formatted[['date', 'institutional_flow', 'individual_flow']].head(3))
+    
+    format_rules = {
+        'close': '{:.2f}',
+        'ema5': '{:.3f}',
+        'ema20': '{:.3f}',
+        'ema100': '{:.3f}',
+        'ema200': '{:.3f}',
+        'volume_ratio5': '{:.3f}',
+        'macd_histogram': '{:.4f}',
+        'institutional_flow': '{:,.0f}',
+        'individual_flow': '{:,.0f}',
+        'inst_5ma': '{:,.0f}',
+        'ind_5ma': '{:,.0f}',
+        'turnover_rate': '{:.2f}'
+    }
+    
+    for col, fmt in format_rules.items():
+        if col in formatted.columns:
+            # ===== 修改点4: 确保数值类型正确，并处理各种空值情况 =====
+            # 先将列转换为数值类型，无法转换的变为NaN
+            formatted[col] = pd.to_numeric(formatted[col], errors='coerce')
+            
+            # 应用格式化，对NaN或空值显示为空字符串
+            formatted[col] = formatted[col].apply(
+                lambda x: fmt.format(x) if pd.notna(x) and x != 0 else ''
+            )
+    
+    return formatted
+
+def generate_question(stock_name, stock_code, start_date, end_date):
+    """生成问题标题文本"""
+    start_str = start_date.strftime('%Y年%m月%d日')
+    end_str = end_date.strftime('%Y年%m月%d日')
+    return f"问题: 对{stock_name} ({stock_code})近日走势进行复盘分析，复盘区间：{start_str} – {end_str}"
+
+def write_and_print(output_file, text):
+    """将文本同时写入文件和控制台"""
+    print(text)
+    output_file.write(text + "\n")
+
+# ==================== 主流程 ====================
+def main():
+    # 确保输出目录存在
+    output_dir = os.path.dirname(OUTPUT_FILEPATH)
+    if output_dir and not os.path.exists(output_dir):
+        os.makedirs(output_dir)
+    
+    # 检查数据库是否存在
+    db_path = get_db_path()
+    logger.info(f"数据库路径: {db_path}")
+    if not os.path.exists(db_path):
+        logger.error(f"数据库文件不存在: {db_path}")
+        print(f"错误: 数据库文件不存在: {db_path}")
+        return
+    
+    # 打开输出文件（UTF-8 编码，确保中文正常）
+    with open(OUTPUT_FILEPATH, 'w', encoding='utf-8') as f:
+        # 写入标题
+        header = "=" * 80 + "\n近日走势复盘分析 - 自动生成提问模板\n" + "=" * 80
+        print(header)
+        f.write(header + "\n\n")
+        
+        success_count = 0
+        fail_count = 0
+        
+        for stock in STOCK_LIST:
+            code = stock["code"]
+            name = stock["name"]
+            log_msg = f"\n处理 {name} ({code}) ..."
+            print(log_msg)
+            f.write(log_msg + "\n")
+            
+            # 从数据库加载数据（连接两个表）
+            df = load_stock_data_from_db(code, REVIEW_DAYS)
+            
+            if df is None:
+                skip_msg = f"  跳过 {code}（数据加载失败）"
+                print(skip_msg)
+                f.write(skip_msg + "\n")
+                fail_count += 1
+                continue
+            
+            # 检查数据是否足够
+            if len(df) < 2:
+                skip_msg = f"  跳过 {code}（数据不足，仅 {len(df)} 条）"
+                print(skip_msg)
+                f.write(skip_msg + "\n")
+                fail_count += 1
+                continue
+            
+            start_date, end_date, data_slice = get_recent_data(df, REVIEW_DAYS)
+            
+            if data_slice is None or data_slice.empty:
+                skip_msg = f"  跳过 {code}（无足够数据）"
+                print(skip_msg)
+                f.write(skip_msg + "\n")
+                fail_count += 1
+                continue
+            
+            # ===== 修改点5: 在格式化前检查数据 =====
+            print(f"  {name} 资金流数据检查:")
+            if 'institutional_flow' in data_slice.columns:
+                non_zero = (data_slice['institutional_flow'] != 0).sum()
+                print(f"    机构资金流非零行数: {non_zero}/{len(data_slice)}")
+                if non_zero > 0:
+                    print(f"    机构资金流范围: {data_slice['institutional_flow'].min():.0f} 到 {data_slice['institutional_flow'].max():.0f}")
+            
+            # 格式化数据
+            formatted_df = format_dataframe(data_slice)
+            
+            # 生成问题
+            question = generate_question(name, code, start_date, end_date)
+            
+            # 输出问题及表格
+            write_and_print(f, "\n" + question)
+            
+            # 将表格内容写入文件（使用 to_string 保持格式）
+            table_str = formatted_df.to_string(index=False)
+            write_and_print(f, table_str)
+            write_and_print(f, "\n" + "-" * 80)
+            
+            success_count += 1
+        
+        # 写入完成提示
+        completion_msg = f"\n处理完成: 成功 {success_count} 只股票，失败 {fail_count} 只"
+        print(completion_msg)
+        f.write(completion_msg + "\n")
+        
+        completion_msg = f"输出已保存至：{OUTPUT_FILEPATH}"
+        print(completion_msg)
+        f.write(completion_msg + "\n")
+        
+        logger.info(f"程序执行完成: 成功 {success_count}, 失败 {fail_count}")
+
+if __name__ == "__main__":
+    main()

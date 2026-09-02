@@ -1,0 +1,538 @@
+{
+  "metadata": {
+    "table_name": "hk_monthly_moneyflow_analysis",
+    "description": "港股月度资金流分析数据表",
+    "created_date": "2026-07-12 17:01:08",
+    "version": "1.0",
+    "database": "HK_Stock.db",
+    "data_source": "01951_monthly_moneyflow_analysis.csv",
+    "stock_code": "01951",
+    "stock_name": "锦鑫生殖",
+    "total_stocks": 14,
+    "last_updated": "2026-07-12 17:05:24",
+    "total_files": 14
+  },
+  "table_schema": {
+    "primary_key": "id",
+    "columns_order": [
+      "stock_code",
+      "stock_name",
+      "date",
+      "Date",
+      "Price_ChgPct",
+      "Capital_Trend",
+      "Extra_Large",
+      "Large",
+      "Medium",
+      "Small",
+      "Institutional_Flow",
+      "Individual_Flow",
+      "Inst_5MA",
+      "Ind_5MA",
+      "IDR",
+      "FBI"
+    ],
+    "columns": [
+      {
+        "name": "id",
+        "type": "INTEGER",
+        "description": "自增主键",
+        "is_key": true
+      },
+      {
+        "name": "stock_code",
+        "type": "TEXT",
+        "description": "股票代码（5位数字）",
+        "is_key": true
+      },
+      {
+        "name": "stock_name",
+        "type": "TEXT",
+        "description": "股票名称",
+        "is_key": true
+      },
+      {
+        "name": "date",
+        "type": "TEXT",
+        "description": "交易日期（YYYY-MM-DD格式）",
+        "is_key": true
+      },
+      {
+        "name": "Date",
+        "type": "TEXT",
+        "description": "资金流分析指标: Date",
+        "is_key": false
+      },
+      {
+        "name": "Price_ChgPct",
+        "type": "REAL",
+        "description": "百分比指标: Price_Chg%",
+        "is_key": false
+      },
+      {
+        "name": "Capital_Trend",
+        "type": "REAL",
+        "description": "资金流分析指标: Capital_Trend",
+        "is_key": false
+      },
+      {
+        "name": "Extra_Large",
+        "type": "REAL",
+        "description": "资金流分析指标: Extra_Large",
+        "is_key": false
+      },
+      {
+        "name": "Large",
+        "type": "REAL",
+        "description": "资金流分析指标: Large",
+        "is_key": false
+      },
+      {
+        "name": "Medium",
+        "type": "REAL",
+        "description": "资金流分析指标: Medium",
+        "is_key": false
+      },
+      {
+        "name": "Small",
+        "type": "REAL",
+        "description": "资金流分析指标: Small",
+        "is_key": false
+      },
+      {
+        "name": "Institutional_Flow",
+        "type": "REAL",
+        "description": "资金流分析指标: Institutional_Flow",
+        "is_key": false
+      },
+      {
+        "name": "Individual_Flow",
+        "type": "REAL",
+        "description": "资金流分析指标: Individual_Flow",
+        "is_key": false
+      },
+      {
+        "name": "Inst_5MA",
+        "type": "REAL",
+        "description": "资金流分析指标: Inst_5MA",
+        "is_key": false
+      },
+      {
+        "name": "Ind_5MA",
+        "type": "REAL",
+        "description": "资金流分析指标: Ind_5MA",
+        "is_key": false
+      },
+      {
+        "name": "IDR",
+        "type": "REAL",
+        "description": "资金流分析指标: IDR",
+        "is_key": false
+      },
+      {
+        "name": "FBI",
+        "type": "REAL",
+        "description": "资金流分析指标: FBI",
+        "is_key": false
+      }
+    ],
+    "indexes": [
+      {
+        "name": "idx_stock_code_date",
+        "fields": [
+          "stock_code",
+          "date"
+        ],
+        "type": "复合索引",
+        "description": "用于快速查询特定股票的月度资金流分析数据"
+      }
+    ],
+    "constraints": [
+      "PRIMARY KEY (id)",
+      "UNIQUE (stock_code, date)"
+    ]
+  },
+  "field_definitions": [],
+  "data_dictionary": {
+    "column_definitions": [
+      {
+        "name": "id",
+        "original_name": "id",
+        "type": "INTEGER",
+        "description": "自增主键",
+        "constraint": "PRIMARY KEY AUTOINCREMENT",
+        "null_count": 0,
+        "sample_value": "",
+        "example": "1",
+        "is_key": true,
+        "is_required": true
+      },
+      {
+        "name": "stock_code",
+        "original_name": "stock_code",
+        "type": "TEXT",
+        "description": "股票代码（5位数字）",
+        "constraint": "NOT NULL",
+        "null_count": 0,
+        "sample_value": "",
+        "example": "01951",
+        "is_key": true,
+        "is_required": true
+      },
+      {
+        "name": "stock_name",
+        "original_name": "stock_name",
+        "type": "TEXT",
+        "description": "股票名称",
+        "constraint": "NOT NULL",
+        "null_count": 0,
+        "sample_value": "",
+        "example": "锦鑫生殖",
+        "is_key": true,
+        "is_required": true
+      },
+      {
+        "name": "date",
+        "original_name": "date",
+        "type": "TEXT",
+        "description": "交易日期（YYYY-MM-DD格式）",
+        "constraint": "NOT NULL",
+        "null_count": 0,
+        "sample_value": "",
+        "example": "2024-01-01",
+        "is_key": true,
+        "is_required": true
+      },
+      {
+        "name": "Date",
+        "original_name": "Date",
+        "type": "TEXT",
+        "description": "资金流分析指标: Date",
+        "constraint": "",
+        "null_count": 0,
+        "sample_value": "2021-12-01",
+        "is_key": false,
+        "is_required": false
+      },
+      {
+        "name": "Price_ChgPct",
+        "original_name": "Price_Chg%",
+        "type": "REAL",
+        "description": "百分比指标: Price_Chg%",
+        "constraint": "",
+        "null_count": 0,
+        "sample_value": "0.4285",
+        "is_key": false,
+        "is_required": false
+      },
+      {
+        "name": "Capital_Trend",
+        "original_name": "Capital_Trend",
+        "type": "REAL",
+        "description": "资金流分析指标: Capital_Trend",
+        "constraint": "",
+        "null_count": 0,
+        "sample_value": "14510000.0",
+        "is_key": false,
+        "is_required": false
+      },
+      {
+        "name": "Extra_Large",
+        "original_name": "Extra_Large",
+        "type": "REAL",
+        "description": "资金流分析指标: Extra_Large",
+        "constraint": "",
+        "null_count": 0,
+        "sample_value": "-75320000.0",
+        "is_key": false,
+        "is_required": false
+      },
+      {
+        "name": "Large",
+        "original_name": "Large",
+        "type": "REAL",
+        "description": "资金流分析指标: Large",
+        "constraint": "",
+        "null_count": 0,
+        "sample_value": "-47060000.0",
+        "is_key": false,
+        "is_required": false
+      },
+      {
+        "name": "Medium",
+        "original_name": "Medium",
+        "type": "REAL",
+        "description": "资金流分析指标: Medium",
+        "constraint": "",
+        "null_count": 0,
+        "sample_value": "52920000.0",
+        "is_key": false,
+        "is_required": false
+      },
+      {
+        "name": "Small",
+        "original_name": "Small",
+        "type": "REAL",
+        "description": "资金流分析指标: Small",
+        "constraint": "",
+        "null_count": 0,
+        "sample_value": "83970000.0",
+        "is_key": false,
+        "is_required": false
+      },
+      {
+        "name": "Institutional_Flow",
+        "original_name": "Institutional_Flow",
+        "type": "REAL",
+        "description": "资金流分析指标: Institutional_Flow",
+        "constraint": "",
+        "null_count": 0,
+        "sample_value": "-122380000.0",
+        "is_key": false,
+        "is_required": false
+      },
+      {
+        "name": "Individual_Flow",
+        "original_name": "Individual_Flow",
+        "type": "REAL",
+        "description": "资金流分析指标: Individual_Flow",
+        "constraint": "",
+        "null_count": 0,
+        "sample_value": "136890000.0",
+        "is_key": false,
+        "is_required": false
+      },
+      {
+        "name": "Inst_5MA",
+        "original_name": "Inst_5MA",
+        "type": "REAL",
+        "description": "资金流分析指标: Inst_5MA",
+        "constraint": "",
+        "null_count": 4,
+        "sample_value": "",
+        "is_key": false,
+        "is_required": false
+      },
+      {
+        "name": "Ind_5MA",
+        "original_name": "Ind_5MA",
+        "type": "REAL",
+        "description": "资金流分析指标: Ind_5MA",
+        "constraint": "",
+        "null_count": 4,
+        "sample_value": "",
+        "is_key": false,
+        "is_required": false
+      },
+      {
+        "name": "IDR",
+        "original_name": "IDR",
+        "type": "REAL",
+        "description": "资金流分析指标: IDR",
+        "constraint": "",
+        "null_count": 0,
+        "sample_value": "0.4720175878427893",
+        "is_key": false,
+        "is_required": false
+      },
+      {
+        "name": "FBI",
+        "original_name": "FBI",
+        "type": "REAL",
+        "description": "资金流分析指标: FBI",
+        "constraint": "",
+        "null_count": 0,
+        "sample_value": "-1.0",
+        "is_key": false,
+        "is_required": false
+      }
+    ],
+    "relationships": [
+      {
+        "type": "外键关联",
+        "table": "hk_monthly_moneyflow_analysis",
+        "field": "stock_code",
+        "description": "可通过股票代码与股票列表关联"
+      }
+    ],
+    "business_rules": [
+      {
+        "rule": "每月每个股票只有一条记录",
+        "description": "数据按月去重，同一股票在同一个月份只有一条资金流分析数据"
+      },
+      {
+        "rule": "数据精度",
+        "description": "金额和百分比数据保留4位小数"
+      },
+      {
+        "rule": "索引优化",
+        "description": "使用复合索引 (stock_code, date) 优化查询性能"
+      }
+    ]
+  },
+  "data_statistics": {
+    "total_records": 877,
+    "date_range": {
+      "earliest": "2021-02-01",
+      "latest": "2026-05-01"
+    },
+    "stocks": [
+      {
+        "code": "00020",
+        "name": "商汤科技",
+        "record_count": 54
+      },
+      {
+        "code": "00268",
+        "name": "金蝶国际",
+        "record_count": 64
+      },
+      {
+        "code": "00354",
+        "name": "中软国际",
+        "record_count": 64
+      },
+      {
+        "code": "00357",
+        "name": "美兰空港",
+        "record_count": 64
+      },
+      {
+        "code": "00371",
+        "name": "北控水务",
+        "record_count": 64
+      },
+      {
+        "code": "00788",
+        "name": "中国铁塔",
+        "record_count": 64
+      },
+      {
+        "code": "01093",
+        "name": "石药集团",
+        "record_count": 64
+      },
+      {
+        "code": "01177",
+        "name": "中生制药",
+        "record_count": 64
+      },
+      {
+        "code": "01951",
+        "name": "锦鑫生殖",
+        "record_count": 64
+      },
+      {
+        "code": "02202",
+        "name": "港股万科企业",
+        "record_count": 64
+      },
+      {
+        "code": "02611",
+        "name": "国泰海通",
+        "record_count": 64
+      },
+      {
+        "code": "03033",
+        "name": "南方恒生科技",
+        "record_count": 62
+      },
+      {
+        "code": "03800",
+        "name": "协鑫科技",
+        "record_count": 57
+      },
+      {
+        "code": "06060",
+        "name": "众安在线",
+        "record_count": 64
+      }
+    ]
+  },
+  "stocks_info": [
+    {
+      "stock_code": "01951",
+      "stock_name": "锦鑫生殖",
+      "added_date": "2026-07-12 17:01:08",
+      "last_updated": "2026-07-12 17:01:08"
+    },
+    {
+      "stock_code": "00020",
+      "stock_name": "商汤科技",
+      "added_date": "2026-07-12 17:05:24",
+      "last_updated": "2026-07-12 17:05:24"
+    },
+    {
+      "stock_code": "00268",
+      "stock_name": "金蝶国际",
+      "added_date": "2026-07-12 17:05:24",
+      "last_updated": "2026-07-12 17:05:24"
+    },
+    {
+      "stock_code": "00354",
+      "stock_name": "中软国际",
+      "added_date": "2026-07-12 17:05:24",
+      "last_updated": "2026-07-12 17:05:24"
+    },
+    {
+      "stock_code": "00357",
+      "stock_name": "美兰空港",
+      "added_date": "2026-07-12 17:05:24",
+      "last_updated": "2026-07-12 17:05:24"
+    },
+    {
+      "stock_code": "00371",
+      "stock_name": "北控水务",
+      "added_date": "2026-07-12 17:05:24",
+      "last_updated": "2026-07-12 17:05:24"
+    },
+    {
+      "stock_code": "00788",
+      "stock_name": "中国铁塔",
+      "added_date": "2026-07-12 17:05:24",
+      "last_updated": "2026-07-12 17:05:24"
+    },
+    {
+      "stock_code": "01093",
+      "stock_name": "石药集团",
+      "added_date": "2026-07-12 17:05:24",
+      "last_updated": "2026-07-12 17:05:24"
+    },
+    {
+      "stock_code": "01177",
+      "stock_name": "中生制药",
+      "added_date": "2026-07-12 17:05:24",
+      "last_updated": "2026-07-12 17:05:24"
+    },
+    {
+      "stock_code": "02202",
+      "stock_name": "港股万科企业",
+      "added_date": "2026-07-12 17:05:24",
+      "last_updated": "2026-07-12 17:05:24"
+    },
+    {
+      "stock_code": "02611",
+      "stock_name": "国泰海通",
+      "added_date": "2026-07-12 17:05:24",
+      "last_updated": "2026-07-12 17:05:24"
+    },
+    {
+      "stock_code": "03033",
+      "stock_name": "南方恒生科技",
+      "added_date": "2026-07-12 17:05:24",
+      "last_updated": "2026-07-12 17:05:24"
+    },
+    {
+      "stock_code": "03800",
+      "stock_name": "协鑫科技",
+      "added_date": "2026-07-12 17:05:24",
+      "last_updated": "2026-07-12 17:05:24"
+    },
+    {
+      "stock_code": "06060",
+      "stock_name": "众安在线",
+      "added_date": "2026-07-12 17:05:24",
+      "last_updated": "2026-07-12 17:05:24"
+    }
+  ]
+}

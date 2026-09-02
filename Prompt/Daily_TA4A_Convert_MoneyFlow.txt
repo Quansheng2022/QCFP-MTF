@@ -1,0 +1,8 @@
+修改程序：Daily_TA4A_Convert_MoneyFlow.py
+要求：改写转换资金流数据子模块中的数据存储部分，直接保存在SQLiteDB中，不再使用csv文件保存数据。
+
+
+另外保留数据处理的日志文件：[log_dir]\Daily_TA4A_Convert_MoneyFlow.log
+
+SQLiteDB:HK_Stock.db
+原始日资金流数据: hk_hist_daily_moneyflow

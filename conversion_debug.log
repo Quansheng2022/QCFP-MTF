@@ -1,0 +1,60 @@
+2026-07-10 16:31:19,847 - INFO - Read 14 lines from C:\Users\Quansheng\Documents\projects\TA_Workflow2\Temp\00788_moneyflow.txt
+2026-07-10 16:31:19,847 - INFO - Structured 2 records
+2026-07-10 16:31:19,847 - INFO - Appended 2 new records
+2026-07-10 16:31:19,977 - INFO - Updated C:\Users\Quansheng\Documents\projects\TA_Workflow2\Data\00788_daily_moneyflow.csv with 1314 records
+2026-07-10 16:31:19,980 - INFO - Read 14 lines from C:\Users\Quansheng\Documents\projects\TA_Workflow2\Temp\00371_moneyflow.txt
+2026-07-10 16:31:19,980 - INFO - Structured 2 records
+2026-07-10 16:31:19,980 - INFO - Appended 2 new records
+2026-07-10 16:31:19,992 - INFO - Updated C:\Users\Quansheng\Documents\projects\TA_Workflow2\Data\00371_daily_moneyflow.csv with 1328 records
+2026-07-10 16:31:19,995 - INFO - Read 14 lines from C:\Users\Quansheng\Documents\projects\TA_Workflow2\Temp\02202_moneyflow.txt
+2026-07-10 16:31:19,995 - INFO - Structured 2 records
+2026-07-10 16:31:19,996 - INFO - Appended 2 new records
+2026-07-10 16:31:20,008 - INFO - Updated C:\Users\Quansheng\Documents\projects\TA_Workflow2\Data\02202_daily_moneyflow.csv with 1326 records
+2026-07-10 16:31:20,010 - INFO - Read 14 lines from C:\Users\Quansheng\Documents\projects\TA_Workflow2\Temp\00354_moneyflow.txt
+2026-07-10 16:31:20,011 - INFO - Structured 2 records
+2026-07-10 16:31:20,011 - INFO - Appended 2 new records
+2026-07-10 16:31:20,022 - INFO - Updated C:\Users\Quansheng\Documents\projects\TA_Workflow2\Data\00354_daily_moneyflow.csv with 1327 records
+2026-07-10 16:31:20,025 - INFO - Read 14 lines from C:\Users\Quansheng\Documents\projects\TA_Workflow2\Temp\00357_moneyflow.txt
+2026-07-10 16:31:20,025 - INFO - Structured 2 records
+2026-07-10 16:31:20,025 - INFO - Appended 2 new records
+2026-07-10 16:31:20,037 - INFO - Updated C:\Users\Quansheng\Documents\projects\TA_Workflow2\Data\00357_daily_moneyflow.csv with 1314 records
+2026-07-10 16:31:20,041 - INFO - Read 14 lines from C:\Users\Quansheng\Documents\projects\TA_Workflow2\Temp\03800_moneyflow.txt
+2026-07-10 16:31:20,041 - INFO - Structured 2 records
+2026-07-10 16:31:20,041 - INFO - Appended 2 new records
+2026-07-10 16:31:20,053 - INFO - Updated C:\Users\Quansheng\Documents\projects\TA_Workflow2\Data\03800_daily_moneyflow.csv with 1184 records
+2026-07-10 16:31:20,056 - INFO - Read 14 lines from C:\Users\Quansheng\Documents\projects\TA_Workflow2\Temp\00020_moneyflow.txt
+2026-07-10 16:31:20,056 - INFO - Structured 2 records
+2026-07-10 16:31:20,056 - INFO - Appended 2 new records
+2026-07-10 16:31:20,067 - INFO - Updated C:\Users\Quansheng\Documents\projects\TA_Workflow2\Data\00020_daily_moneyflow.csv with 1104 records
+2026-07-10 16:31:20,070 - INFO - Read 14 lines from C:\Users\Quansheng\Documents\projects\TA_Workflow2\Temp\00268_moneyflow.txt
+2026-07-10 16:31:20,070 - INFO - Structured 2 records
+2026-07-10 16:31:20,070 - INFO - Appended 2 new records
+2026-07-10 16:31:20,082 - INFO - Updated C:\Users\Quansheng\Documents\projects\TA_Workflow2\Data\00268_daily_moneyflow.csv with 1327 records
+2026-07-10 16:31:20,085 - INFO - Read 14 lines from C:\Users\Quansheng\Documents\projects\TA_Workflow2\Temp\01093_moneyflow.txt
+2026-07-10 16:31:20,085 - INFO - Structured 2 records
+2026-07-10 16:31:20,085 - INFO - Appended 2 new records
+2026-07-10 16:31:20,099 - INFO - Updated C:\Users\Quansheng\Documents\projects\TA_Workflow2\Data\01093_daily_moneyflow.csv with 1327 records
+2026-07-10 16:31:20,102 - INFO - Read 14 lines from C:\Users\Quansheng\Documents\projects\TA_Workflow2\Temp\06060_moneyflow.txt
+2026-07-10 16:31:20,102 - INFO - Structured 2 records
+2026-07-10 16:31:20,102 - INFO - Appended 2 new records
+2026-07-10 16:31:20,115 - INFO - Updated C:\Users\Quansheng\Documents\projects\TA_Workflow2\Data\06060_daily_moneyflow.csv with 1327 records
+2026-07-10 16:31:20,119 - INFO - Read 14 lines from C:\Users\Quansheng\Documents\projects\TA_Workflow2\Temp\01951_moneyflow.txt
+2026-07-10 16:31:20,119 - INFO - Structured 2 records
+2026-07-10 16:31:20,119 - INFO - Appended 2 new records
+2026-07-10 16:31:20,136 - INFO - Updated C:\Users\Quansheng\Documents\projects\TA_Workflow2\Data\01951_daily_moneyflow.csv with 1327 records
+2026-07-10 16:31:20,139 - INFO - Read 14 lines from C:\Users\Quansheng\Documents\projects\TA_Workflow2\Temp\01177_moneyflow.txt
+2026-07-10 16:31:20,139 - INFO - Structured 2 records
+2026-07-10 16:31:20,139 - INFO - Appended 2 new records
+2026-07-10 16:31:20,152 - INFO - Updated C:\Users\Quansheng\Documents\projects\TA_Workflow2\Data\01177_daily_moneyflow.csv with 1327 records
+2026-07-10 16:31:20,155 - INFO - Read 14 lines from C:\Users\Quansheng\Documents\projects\TA_Workflow2\Temp\03033_moneyflow.txt
+2026-07-10 16:31:20,155 - INFO - Structured 2 records
+2026-07-10 16:31:20,155 - INFO - Appended 2 new records
+2026-07-10 16:31:20,171 - INFO - Updated C:\Users\Quansheng\Documents\projects\TA_Workflow2\Data\03033_daily_moneyflow.csv with 1283 records
+2026-07-10 16:31:20,174 - INFO - Read 14 lines from C:\Users\Quansheng\Documents\projects\TA_Workflow2\Temp\02611_moneyflow.txt
+2026-07-10 16:31:20,174 - INFO - Structured 2 records
+2026-07-10 16:31:20,174 - INFO - Appended 2 new records
+2026-07-10 16:31:20,187 - INFO - Updated C:\Users\Quansheng\Documents\projects\TA_Workflow2\Data\02611_daily_moneyflow.csv with 1309 records
+2026-07-10 16:31:20,190 - INFO - Read 14 lines from C:\Users\Quansheng\Documents\projects\TA_Workflow2\Temp\00700_moneyflow.txt
+2026-07-10 16:31:20,190 - INFO - Structured 2 records
+2026-07-10 16:31:20,190 - INFO - Appended 2 new records
+2026-07-10 16:31:20,202 - INFO - Updated C:\Users\Quansheng\Documents\projects\TA_Workflow2\Data\00700_daily_moneyflow.csv with 1332 records

@@ -1,0 +1,191 @@
+{
+  "table_name": "qcfp_daily_tactical",
+  "generated_at": "2026-08-24 22:03:30",
+  "database_path": "C:\\Users\\Quansheng\\Documents\\projects\\TA_Workflow\\SQLiteDB\\HK_Stock.db",
+  "statistics": {
+    "total_records": 47313,
+    "stock_count": 16
+  },
+  "field_count": 19,
+  "fields": [
+    {
+      "field_name": "id",
+      "data_type": "INTEGER",
+      "description": "主键，自增ID",
+      "sample": null
+    },
+    {
+      "field_name": "stock_code",
+      "data_type": "TEXT",
+      "description": "股票代码（5位数字）",
+      "sample": null
+    },
+    {
+      "field_name": "stock_name",
+      "data_type": "TEXT",
+      "description": "股票名称",
+      "sample": null
+    },
+    {
+      "field_name": "trade_date",
+      "data_type": "TEXT",
+      "description": "交易日（YYYY-MM-DD）",
+      "sample": null
+    },
+    {
+      "field_name": "daily_state",
+      "data_type": "TEXT",
+      "description": "日线战术状态（DAILY_BREAKOUT/ACCUMULATION/PULLBACK/DISTRIBUTION/NEUTRAL）",
+      "sample": null
+    },
+    {
+      "field_name": "d_breakout",
+      "data_type": "INTEGER",
+      "description": "日线突破标记（1/0）：收盘>前20日高+量比≥1.5+站上20日VWAP",
+      "sample": null
+    },
+    {
+      "field_name": "d_distribution",
+      "data_type": "INTEGER",
+      "description": "日线派发标记（1/0）：接近前高+放量滞涨+资金流出",
+      "sample": null
+    },
+    {
+      "field_name": "d_pullback",
+      "data_type": "INTEGER",
+      "description": "日线回调标记（1/0）：中期趋势向上+短期回调",
+      "sample": null
+    },
+    {
+      "field_name": "d_accumulation",
+      "data_type": "INTEGER",
+      "description": "日线吸筹标记（1/0）：资金改善+量结构改善+价格未突破",
+      "sample": null
+    },
+    {
+      "field_name": "d_trend_score",
+      "data_type": "REAL",
+      "description": "日线趋势评分（0~100）",
+      "sample": null
+    },
+    {
+      "field_name": "d_vol_ratio",
+      "data_type": "REAL",
+      "description": "当日量 / 前 5 日均量",
+      "sample": null
+    },
+    {
+      "field_name": "d_near_high",
+      "data_type": "REAL",
+      "description": "收盘 / 前 N 日最高（<1）",
+      "sample": null
+    },
+    {
+      "field_name": "d_inst_flow",
+      "data_type": "REAL",
+      "description": "日机构净流入代理（超大单+大单净额）",
+      "sample": null
+    },
+    {
+      "field_name": "d_flow_z",
+      "data_type": "REAL",
+      "description": "日资金流 PIT Z（60 日滚动）",
+      "sample": null
+    },
+    {
+      "field_name": "d_flow_slope",
+      "data_type": "REAL",
+      "description": "资金流改善斜率（5 日均-20 日均）",
+      "sample": null
+    },
+    {
+      "field_name": "model_version",
+      "data_type": "TEXT",
+      "description": "模型版本号",
+      "sample": null
+    },
+    {
+      "field_name": "data_quality",
+      "data_type": "TEXT",
+      "description": "数据质量等级（A/B/C/D）",
+      "sample": null
+    },
+    {
+      "field_name": "update_time",
+      "data_type": "TEXT",
+      "description": "更新时间",
+      "sample": null
+    },
+    {
+      "field_name": "d_decline",
+      "data_type": "INTEGER",
+      "description": "",
+      "sample": null
+    }
+  ],
+  "sample_data": [
+    {
+      "id": 141892,
+      "stock_code": "00020",
+      "stock_name": "商汤科技",
+      "trade_date": "2021-12-30",
+      "daily_state": "DAILY_NEUTRAL",
+      "d_breakout": 0,
+      "d_distribution": 0,
+      "d_pullback": 0,
+      "d_accumulation": 0,
+      "d_trend_score": 0.0,
+      "d_vol_ratio": null,
+      "d_near_high": null,
+      "d_inst_flow": -217440000.0,
+      "d_flow_z": null,
+      "d_flow_slope": null,
+      "model_version": "QCFP-MTF-2.1.1",
+      "data_quality": "B",
+      "update_time": "2026-08-24 17:36:59",
+      "d_decline": 0
+    },
+    {
+      "id": 141893,
+      "stock_code": "00020",
+      "stock_name": "商汤科技",
+      "trade_date": "2021-12-31",
+      "daily_state": "DAILY_NEUTRAL",
+      "d_breakout": 0,
+      "d_distribution": 0,
+      "d_pullback": 0,
+      "d_accumulation": 0,
+      "d_trend_score": 0.0,
+      "d_vol_ratio": null,
+      "d_near_high": null,
+      "d_inst_flow": 95060000.0,
+      "d_flow_z": null,
+      "d_flow_slope": null,
+      "model_version": "QCFP-MTF-2.1.1",
+      "data_quality": "B",
+      "update_time": "2026-08-24 17:36:59",
+      "d_decline": 0
+    },
+    {
+      "id": 141894,
+      "stock_code": "00020",
+      "stock_name": "商汤科技",
+      "trade_date": "2022-01-03",
+      "daily_state": "DAILY_NEUTRAL",
+      "d_breakout": 0,
+      "d_distribution": 0,
+      "d_pullback": 0,
+      "d_accumulation": 0,
+      "d_trend_score": 0.0,
+      "d_vol_ratio": null,
+      "d_near_high": null,
+      "d_inst_flow": 80450000.0,
+      "d_flow_z": null,
+      "d_flow_slope": null,
+      "model_version": "QCFP-MTF-2.1.1",
+      "data_quality": "B",
+      "update_time": "2026-08-24 17:36:59",
+      "d_decline": 0
+    }
+  ]
+}

@@ -1,0 +1,134 @@
+修改Weekly_TA5_MergePDF.py。
+
+数据已经移植到sqlite db. 不再使用csv 文件
+
+1. 合并周线技术分析与资金流分析图表文件.
+2. 输入数据文件: 
+    1) 周线技术分析图表文件{ticker}_weekly_TA_analysis.pdf
+    2) 周线资金流分析图表文件{ticker}_weekly_moneyflow_analysis.pdf
+3. 输出数据文件: 
+    1) 周线资金流技术指标文件：{ticker}_weekly_analysis_report.pdf 
+
+不再进行输出列名文件。
+
+所有字段都使用小写。
+进行表查询时，使用stock_code 字段名，不是ticker 变量。
+日志文件：full_log_dir\Weekly_TA5_MergePDF.log
+数据库路径：full_sqlite_dir
+
+
+路径变量设置：
+class GlobalConfig:
+    full_data_dir = None
+    full_report_dir = None
+    full_log_dir = None
+    full_temp_dir = None
+    full_sqlite_dir = None      # 新增：SQLite数据库目录
+    db_name = None               # 新增：数据库名称
+    full_db_path = None          # 新增：完整数据库路径
+
+输出信息要导入日志文件： full_log_dir\Weekly_TA2B_Calculate_indicators.log 
+
+路径结构：
+$PROJECT_DIR
+	.venv
+	Config
+		hk_daily_kline_analysis.json
+		hk_daily_moneyflow_analysis_dictionary.json
+		hk_hist_daily_kline_dictionary.json
+		hk_hist_daily_moneyflow_dictionary.json
+		hk_hist_monthly_kline.json
+		hk_hist_Monthly_moneyflow_dictionary.json
+		hk_hist_weekly_kline.json
+		hk_hist_weekly_moneyflow_dictionary.json
+		hk_macro_data_dictionary.json
+		hk_monthly_kline_analysis.json
+		hk_monthly_moneyflow_Analysis_dictionary.json
+		hk_monthly_moneyflow_dictionary.json
+		hk_weekly_kline_analysis.json
+		hk_weekly_moneyflow_analysis_dictionary.json
+		stock_list.json
+	Code_utl
+		collect_source_daily_TA.py
+		collect_source_HK_Macro.py
+		collect_source_weekly_TA.py
+		Import_Daily_Kline_Analysis.py
+		Import_Daily_Kline_Data.py
+		Import_Daily_Moneyflow.py
+		Import_Daily_Moneyflow_Analysis.py
+		Import_Monthly_Kline_Analysis.py
+		Import_Monthly_Kline_Data.py
+		Import_Monthly_Moneyflow.py
+		Import_Monthly_Moneyflow_Analysis.py
+		Import_Weekly_Kline_Analysis.py
+		Import_Weekly_Kline_Data.py
+		Import_Weekly_Moneyflow.py
+		Import_Weekly_Moneyflow_Analysis.py
+		synch_folders.py
+		Verify_Daily_Kline_analysis.py
+		Verify_Daily_Kline_Data - Copy.py
+		Verify_Daily_Kline_Data.py
+		Verify_Daily_Moneyflow.py
+		Verify_Daily_Moneyflow_Analysis.py
+		Verify_HK_Macro_Data.py
+		Verify_Monthly_Kline_Analysis.py
+		Verify_Monthly_Kline_Data.py
+		Verify_Monthly_Moneyflow.py
+		Verify_Monthly_Moneyflow_Analysis.py
+		Verify_Weekly_Kline_Analysis.py
+		Verify_Weekly_Kline_Data.py
+		Verify_Weekly_Moneyflow.py
+		Verify_Weekly_Moneyflow_Analysis.py
+
+		
+	Core
+		Daily
+		Weekly
+		Monthly
+		HK_Macro
+			HK_Macro_History.py
+			HK_Macro_Dashboard.py
+		Utl
+			path_utils.py
+			stock_analysis_utl.py
+			stock_list_loader.py
+	Report
+	Log
+	Temp
+	Data
+	Doc
+	SQLiteDB
+		HK_Stock.db
+	run_Daily_TA_workflow.py
+	run_HK_macro_dashboard_workflow.py
+	run_Monthly_TA_workflow.py
+	run_Weekly_TA_workflow.py
+	
+	从stock_list.json 获取stock_name. 
+
+{
+  "stocks": [
+    {"code": "00371", "name": "北控水务", "sector": "公用事业", "market": "HKEX"},
+    {"code": "00788", "name": "中国铁塔", "sector": "电信服务", "market": "HKEX"},
+    {"code": "02202", "name": "港股万科企业", "sector": "房地产", "market": "HKEX"},
+    {"code": "01951", "name": "锦鑫生殖", "sector": "医疗保健", "market": "HKEX"},
+    {"code": "00268", "name": "金蝶国际", "sector": "信息技术", "market": "HKEX"},
+    {"code": "00354", "name": "中软国际", "sector": "信息技术", "market": "HKEX"},
+	{"code": "03033", "name": "南方恒生科技", "sector": "ETF", "market": "HKEX"},
+    {"code": "00700", "name": "腾讯控股", "sector": "信息技术", "market": "HKEX"},
+    {"code": "06060", "name": "众安在线", "sector": "金融", "market": "HKEX"},
+    {"code": "00357", "name": "美兰空港", "sector": "交通运输", "market": "HKEX"},
+    {"code": "01177", "name": "中生制药", "sector": "医疗保健", "market": "HKEX"},
+    {"code": "01093", "name": "石药集团", "sector": "医疗保健", "market": "HKEX"},
+    {"code": "03800", "name": "协鑫科技", "sector": "新能源", "market": "HKEX"},
+    {"code": "00020", "name": "商汤科技", "sector": "信息技术", "market": "HKEX"},
+    {"code": "02611", "name": "国泰海通", "sector": "金融", "market": "HKEX"},
+    {"code": "00579", "name": "京能清洁能源", "sector": "公用事业", "market": "HKEX"},
+    {"code": "02602", "name": "港股万物云", "sector": "信息技术", "market": "HKEX"}
+  ],
+  "metadata": {
+    "version": "1.0",
+    "last_updated": "2026-07-10",
+    "description": "港股股票列表，用于数据导入和验证"
+  }
+}

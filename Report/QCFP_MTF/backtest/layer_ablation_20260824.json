@@ -1,0 +1,81 @@
+{
+  "generated_at": "20260824",
+  "focus": null,
+  "models": [
+    {
+      "model": "Q",
+      "annualized_return": -0.013267,
+      "sharpe": -0.0429,
+      "max_drawdown": -0.327434,
+      "profit_factor": 0.9835,
+      "annual_turnover": 0.3269,
+      "avg_weekly_cost": 2.6e-05,
+      "rank_ic_4w": -0.0003,
+      "rank_ic_13w": 0.0257,
+      "rank_ic_26w": 0.0473,
+      "icir_13w": 0.0789,
+      "upside_capture": 0.3477,
+      "downside_capture": 0.3531,
+      "trial": null
+    },
+    {
+      "model": "QM",
+      "annualized_return": -0.023017,
+      "sharpe": -0.24,
+      "max_drawdown": -0.259076,
+      "profit_factor": 0.9126,
+      "annual_turnover": 1.1971,
+      "avg_weekly_cost": 9.3e-05,
+      "rank_ic_4w": 0.0021,
+      "rank_ic_13w": 0.0202,
+      "rank_ic_26w": 0.0363,
+      "icir_13w": 0.0617,
+      "upside_capture": 0.222,
+      "downside_capture": 0.2446,
+      "trial": null
+    },
+    {
+      "model": "QMW",
+      "annualized_return": -0.017947,
+      "sharpe": -0.3168,
+      "max_drawdown": -0.202271,
+      "profit_factor": 0.874,
+      "annual_turnover": 2.5198,
+      "avg_weekly_cost": 0.000199,
+      "rank_ic_4w": 0.0071,
+      "rank_ic_13w": 0.0258,
+      "rank_ic_26w": 0.0561,
+      "icir_13w": 0.0798,
+      "upside_capture": 0.1109,
+      "downside_capture": 0.1301,
+      "trial": null
+    },
+    {
+      "model": "Full",
+      "annualized_return": -0.019417,
+      "sharpe": -0.3219,
+      "max_drawdown": -0.219493,
+      "profit_factor": 0.875,
+      "annual_turnover": 2.9174,
+      "avg_weekly_cost": 0.000229,
+      "rank_ic_4w": 0.0071,
+      "rank_ic_13w": 0.0253,
+      "rank_ic_26w": 0.0541,
+      "icir_13w": 0.079,
+      "upside_capture": 0.1249,
+      "downside_capture": 0.1456,
+      "trial": {
+        "n_override_weeks": 1058,
+        "n_override_stocks": 12,
+        "avg_weekly_pnl": 0.000299,
+        "avg_override_target": 0.112
+      }
+    }
+  ],
+  "trial_stats": {
+    "n_override_weeks": 1058,
+    "n_override_stocks": 12,
+    "avg_weekly_pnl": 0.000299,
+    "avg_override_target": 0.112
+  }
+}

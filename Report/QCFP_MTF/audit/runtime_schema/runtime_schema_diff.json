@@ -1,0 +1,44 @@
+{
+  "qcfp_decision_ledger": {
+    "created": false,
+    "added_columns": [],
+    "removed_columns": []
+  },
+  "qcfp_model_registry": {
+    "created": false,
+    "added_columns": [],
+    "removed_columns": []
+  },
+  "qcfp_shadow_decision_fact": {
+    "created": false,
+    "added_columns": [],
+    "removed_columns": []
+  },
+  "qcfp_decision_certificate": {
+    "created": true,
+    "added_columns": [
+      "certificate_id",
+      "created_at",
+      "decision_id",
+      "evidence_pack_hash",
+      "release_id",
+      "snapshot_hash"
+    ],
+    "removed_columns": []
+  },
+  "qcfp_runtime_event_ledger": {
+    "created": false,
+    "added_columns": [],
+    "removed_columns": []
+  },
+  "qcfp_research_outcome": {
+    "created": false,
+    "added_columns": [],
+    "removed_columns": []
+  },
+  "qcfp_runtime_evidence_daily": {
+    "created": false,
+    "added_columns": [],
+    "removed_columns": []
+  }
+}

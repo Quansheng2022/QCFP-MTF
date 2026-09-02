@@ -1,0 +1,18 @@
+{
+  "baseline_id": "GOV-BASELINE-2",
+  "created_at": "2026-08-30T17:09:06Z",
+  "spec_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "architecture_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "model_version": "QCFP-MTF-2.5.0",
+  "rule_version": "GOV-2.5.0",
+  "schema_version": "DECISION-1.1",
+  "engine_version": "canonical-2.8",
+  "production_manifest_hash": "6f2c774ac29da8dff9711e4b6443174a83ada232d5386daa6323931226d69e2d",
+  "golden_corpus_hash": "c7eb25240501cb5ecdbecd92721abf32a898dde10cccd6cec489c896cc63b24b",
+  "constitution_hash": "c7f01a2fe8b4a1ba15a4088e0c977119e2dbfac929e6e80255c3843d7f474fd0",
+  "commit_hash": "",
+  "immutable": true,
+  "create_only": true,
+  "rule": "Create Only / Immutable / No Overwrite；任一 Hash 漂移 → BASELINE_CHANGED → Change Review Required",
+  "supersedes": "GOV-BASELINE-1"
+}

@@ -1,0 +1,60 @@
+{
+  "generated_at": "20260824",
+  "factor": 0.25,
+  "models": [
+    {
+      "model": "A_raw",
+      "n": 295,
+      "total_return": -0.013738,
+      "annualized_return": -0.002435,
+      "sharpe": 0.0198,
+      "max_drawdown": -0.247729,
+      "win_rate": 0.5017,
+      "profit_factor": 1.0075,
+      "sortino": 0.0323,
+      "calmar": -0.0098,
+      "annual_turnover": 1.3909,
+      "regime": {
+        "neutral": {
+          "annualized_return": 0.15354397853007695,
+          "sharpe": 2.2219149962476195
+        },
+        "risk_off": {
+          "annualized_return": -0.09372542594902722,
+          "sharpe": -0.9951650704850452
+        },
+        "risk_on": {
+          "annualized_return": 0.17535171116452553,
+          "sharpe": 1.7369065698717965
+        }
+      }
+    },
+    {
+      "model": "B_risk_off_gate",
+      "n": 295,
+      "total_return": -0.023666,
+      "annualized_return": -0.004213,
+      "sharpe": -0.0301,
+      "max_drawdown": -0.215095,
+      "win_rate": 0.4847,
+      "profit_factor": 0.9853,
+      "sortino": -0.0412,
+      "calmar": -0.0196,
+      "annual_turnover": 2.7433,
+      "regime": {
+        "neutral": {
+          "annualized_return": 0.02873233701172362,
+          "sharpe": 0.5995179374267344
+        },
+        "risk_off": {
+          "annualized_return": -0.06971352578109857,
+          "sharpe": -1.2825728975170763
+        },
+        "risk_on": {
+          "annualized_return": 0.16876838205204203,
+          "sharpe": 1.717424762109321
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "schema": "RELEASE-OOS-2",
+  "release_id": "MTR-CLOSURE-1",
+  "code_hash": "95f286407edcf9c4",
+  "dependency_hash": "3bbf1d41df0b",
+  "settings_hash": "e8f1e2d6a720",
+  "contract_hash": "c40cca163d190237",
+  "dataset_hash": "1076906b50de98d0",
+  "universe_hash": "86f225dfc84b2070",
+  "oos_period": {
+    "oos_start": "2026-07-01",
+    "oos_end": "2026-08-21"
+  },
+  "cost_model_hash": "9705a0a5d3e9f53b",
+  "execution_model_hash": "5a7c80108a3f5ac2",
+  "metric_contract_hash": "b7ddd765f8c8cb19",
+  "pit": {
+    "pit_grade": "A",
+    "pit_violation_count": 0,
+    "future_leakage_count": 0,
+    "universe_leakage_count": 0
+  },
+  "metrics": {
+    "return": 0.0,
+    "mdd": 0.0,
+    "sharpe": null,
+    "wave_capture": null,
+    "mae": null,
+    "turnover": 0.0,
+    "cost": 0.0,
+    "capital_efficiency": 0.0,
+    "n_weeks": 8
+  },
+  "train_backtest_metrics": {
+    "return": 0.0,
+    "mdd": 0.0,
+    "sharpe": null,
+    "wave_capture": null,
+    "mae": null,
+    "turnover": 0.0,
+    "cost": 0.0,
+    "capital_efficiency": 0.0,
+    "n_weeks": 855
+  }
+}

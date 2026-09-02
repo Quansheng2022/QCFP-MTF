@@ -1,0 +1,8 @@
+{
+  "qualified_days_with_replay": 1,
+  "total_eligible": 16,
+  "total_exact": 16,
+  "critical_replay_mismatch": 0,
+  "eligible_rate": 1.0,
+  "exact_rate": 1.0
+}

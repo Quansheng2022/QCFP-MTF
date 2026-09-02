@@ -1,0 +1,376 @@
+{
+  "qcfp_decision_ledger": {
+    "id": {
+      "type": "INTEGER"
+    },
+    "decision_id": {
+      "type": "TEXT"
+    },
+    "run_id": {
+      "type": "TEXT"
+    },
+    "stock_code": {
+      "type": "TEXT"
+    },
+    "decision_date": {
+      "type": "TEXT"
+    },
+    "input_fingerprint": {
+      "type": "TEXT"
+    },
+    "data_snapshot_id": {
+      "type": "TEXT"
+    },
+    "data_version": {
+      "type": "TEXT"
+    },
+    "settings_hash": {
+      "type": "TEXT"
+    },
+    "model_version": {
+      "type": "TEXT"
+    },
+    "rule_version": {
+      "type": "TEXT"
+    },
+    "schema_version": {
+      "type": "TEXT"
+    },
+    "institutional_state": {
+      "type": "TEXT"
+    },
+    "institutional_pressure": {
+      "type": "INTEGER"
+    },
+    "institutional_persistence": {
+      "type": "INTEGER"
+    },
+    "institutional_permission": {
+      "type": "TEXT"
+    },
+    "permission_cap": {
+      "type": "TEXT"
+    },
+    "institutional_reasons": {
+      "type": "TEXT"
+    },
+    "setup_type": {
+      "type": "TEXT"
+    },
+    "daily_trigger": {
+      "type": "TEXT"
+    },
+    "exit_event": {
+      "type": "TEXT"
+    },
+    "exit_reason": {
+      "type": "TEXT"
+    },
+    "previous_fsm_state": {
+      "type": "TEXT"
+    },
+    "next_fsm_state": {
+      "type": "TEXT"
+    },
+    "base_fsm_state": {
+      "type": "TEXT"
+    },
+    "previous_position": {
+      "type": "REAL"
+    },
+    "raw_target": {
+      "type": "REAL"
+    },
+    "final_target": {
+      "type": "REAL"
+    },
+    "permission_constraint_applied": {
+      "type": "INTEGER"
+    },
+    "override_rule_ids": {
+      "type": "TEXT"
+    },
+    "decision_path": {
+      "type": "TEXT"
+    },
+    "secondary_reasons": {
+      "type": "TEXT"
+    },
+    "participation_mode": {
+      "type": "TEXT"
+    },
+    "participation_cap": {
+      "type": "REAL"
+    },
+    "position_class": {
+      "type": "TEXT"
+    },
+    "exit_severity": {
+      "type": "INTEGER"
+    },
+    "feature_manifest_hash": {
+      "type": "TEXT"
+    },
+    "trade_quality": {
+      "type": "REAL"
+    },
+    "trade_quality_band": {
+      "type": "TEXT"
+    },
+    "pit_grade": {
+      "type": "TEXT"
+    },
+    "data_quality": {
+      "type": "TEXT"
+    },
+    "evidence_grade": {
+      "type": "TEXT"
+    },
+    "context": {
+      "type": "TEXT"
+    },
+    "status": {
+      "type": "TEXT"
+    },
+    "superseded_by": {
+      "type": "TEXT"
+    },
+    "created_at": {
+      "type": "TEXT"
+    }
+  },
+  "qcfp_model_registry": {
+    "id": {
+      "type": "INTEGER"
+    },
+    "model_version": {
+      "type": "TEXT"
+    },
+    "rule_version": {
+      "type": "TEXT"
+    },
+    "schema_version": {
+      "type": "TEXT"
+    },
+    "feature_manifest_hash": {
+      "type": "TEXT"
+    },
+    "settings_hash": {
+      "type": "TEXT"
+    },
+    "settings_blob": {
+      "type": "TEXT"
+    },
+    "code_commit": {
+      "type": "TEXT"
+    },
+    "python_version": {
+      "type": "TEXT"
+    },
+    "dependency_hash": {
+      "type": "TEXT"
+    },
+    "created_at": {
+      "type": "TEXT"
+    },
+    "status": {
+      "type": "TEXT"
+    }
+  },
+  "qcfp_runtime_event_ledger": {
+    "event_seq": {
+      "type": "INTEGER"
+    },
+    "event_id": {
+      "type": "TEXT"
+    },
+    "event_type": {
+      "type": "TEXT,"
+    },
+    "decision_id": {
+      "type": "TEXT,"
+    },
+    "execution_mode": {
+      "type": "TEXT,"
+    },
+    "order_intent_id": {
+      "type": "TEXT,"
+    },
+    "side": {
+      "type": "TEXT,"
+    },
+    "commission": {
+      "type": "REAL,"
+    },
+    "internal_position": {
+      "type": "REAL,"
+    },
+    "reconciliation_status": {
+      "type": "TEXT,"
+    },
+    "payload": {
+      "type": "TEXT,"
+    },
+    "previous_event_hash": {
+      "type": "TEXT,"
+    }
+  },
+  "qcfp_decision_certificate": {
+    "certificate_id": {
+      "type": "TEXT"
+    },
+    "decision_id": {
+      "type": "TEXT"
+    },
+    "release_id": {
+      "type": "TEXT"
+    },
+    "snapshot_hash": {
+      "type": "TEXT"
+    },
+    "evidence_pack_hash": {
+      "type": "TEXT"
+    },
+    "created_at": {
+      "type": "TEXT"
+    }
+  },
+  "qcfp_research_outcome": {
+    "outcome_id": {
+      "type": "TEXT"
+    },
+    "decision_id": {
+      "type": "TEXT,"
+    },
+    "evaluation_time": {
+      "type": "TEXT,"
+    },
+    "entry_reference_price": {
+      "type": "REAL,"
+    },
+    "future_return": {
+      "type": "REAL,"
+    },
+    "wave_peak_return": {
+      "type": "REAL,"
+    },
+    "missed_opportunity": {
+      "type": "INTEGER,"
+    },
+    "future_aware": {
+      "type": "INTEGER,"
+    },
+    "source_data_snapshot_id": {
+      "type": "TEXT,"
+    }
+  },
+  "qcfp_shadow_decision_fact": {
+    "fact_id": {
+      "type": "TEXT"
+    },
+    "stock_code": {
+      "type": "TEXT"
+    },
+    "decision_date": {
+      "type": "TEXT"
+    },
+    "terminal_state": {
+      "type": "TEXT"
+    },
+    "reason": {
+      "type": "TEXT"
+    },
+    "run_id": {
+      "type": "TEXT"
+    },
+    "release_id": {
+      "type": "TEXT"
+    },
+    "created_at": {
+      "type": "TEXT"
+    }
+  },
+  "qcfp_runtime_evidence_daily": {
+    "evidence_id": {
+      "type": "TEXT"
+    },
+    "release_id": {
+      "type": "TEXT"
+    },
+    "execution_mode": {
+      "type": "TEXT"
+    },
+    "trade_date": {
+      "type": "TEXT"
+    },
+    "run_id": {
+      "type": "TEXT"
+    },
+    "revision_no": {
+      "type": "INTEGER"
+    },
+    "supersedes_evidence_id": {
+      "type": "TEXT"
+    },
+    "universe_count": {
+      "type": "INTEGER"
+    },
+    "actual_decisions": {
+      "type": "INTEGER"
+    },
+    "coverage": {
+      "type": "REAL"
+    },
+    "certified_count": {
+      "type": "INTEGER"
+    },
+    "no_trade_count": {
+      "type": "INTEGER"
+    },
+    "abstain_count": {
+      "type": "INTEGER"
+    },
+    "safe_mode_count": {
+      "type": "INTEGER"
+    },
+    "halted_count": {
+      "type": "INTEGER"
+    },
+    "permission_violations": {
+      "type": "INTEGER"
+    },
+    "pit_violations": {
+      "type": "INTEGER"
+    },
+    "uncertified_executions": {
+      "type": "INTEGER"
+    },
+    "replay_eligible": {
+      "type": "INTEGER"
+    },
+    "replay_exact": {
+      "type": "INTEGER"
+    },
+    "critical_replay_mismatch": {
+      "type": "INTEGER"
+    },
+    "incident_count": {
+      "type": "INTEGER"
+    },
+    "unresolved_unknown": {
+      "type": "INTEGER"
+    },
+    "unresolved_mismatch": {
+      "type": "INTEGER"
+    },
+    "evidence_hash": {
+      "type": "TEXT"
+    },
+    "verdict": {
+      "type": "TEXT"
+    },
+    "created_at": {
+      "type": "TEXT"
+    }
+  }
+}

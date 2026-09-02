@@ -1,0 +1,583 @@
+# QCFP-MTF Requirement Traceability Matrix（流程治理 Sprint A #3）
+#
+# 连接：Specification → Architecture → Code → Test → Evidence → Release。
+# 每条 P0 需求必须全连通：
+#   spec_id + requirement + architecture_rule + authority + production_modules
+#   + tests + evidence + release_gate
+# 审计：traceability.py::audit_traceability（Orphan Requirement=ERROR /
+#   Orphan Test=REVIEW / Orphan Production Capability=RESEARCH_ONLY）。
+# tests 引用的是仓库内真实存在的 test_* 函数（scan_tests_index 校验）。
+
+- spec_id: QCFP-SPEC-INV-001
+  requirement: Permission cannot be upgraded by any signal
+  architecture_rule: [RULE-01, RULE-02, RULE-07]
+  authority: decision.institutional_permission
+  production_modules:
+    - decision.engine
+    - decision.institutional_permission
+    - decision.permission_policy
+    - decision.participation_budget
+  tests:
+    - test_permission_monotonicity
+    - test_permission_risk_increase_invariant
+    - test_i10_wave_cannot_upgrade_permission
+    - test_invariant_3_daily_cannot_upgrade_permission
+    - test_daily_signal_cannot_raise_permission
+    - test_block_cannot_be_upgraded_by_daily_breakout
+  failure_injection:
+    - test_inject_wave_outcome_into_production
+  evidence:
+    - golden_result.json
+    - authority_graph.json
+  release_gate: [CONSTITUTION_GATE, CHANGE_IMPACT_GATE, AUTHORITY_AUDIT]
+
+- spec_id: QCFP-SPEC-INV-002
+  requirement: Future-aware data cannot enter a past decision (PIT > Prediction)
+  architecture_rule: [RULE-09]
+  authority: data.pit_registry
+  production_modules:
+    - data.pit_registry
+    - data.asof_contract
+    - decision.decision_snapshot
+    - evidence.snapshot
+    - data.feature_contract
+  tests:
+    - test_pit_violation
+    - test_future_feature_blocked_in_decision
+    - test_invariant_5_pit_invalid_not_research_valid
+    - test_constitution_no_future_in_past
+    - test_constitution_pit_over_prediction
+    - test_pit_unknown_is_no_decision
+  failure_injection:
+    - test_inject_pit_timestamp_ahead
+  evidence:
+    - pit_result.json
+    - golden_result.json
+  release_gate: [PIT_GATE, CONSTITUTION_GATE]
+
+- spec_id: QCFP-SPEC-INV-003
+  requirement: Risk dominates return; performance cannot override constitution
+  architecture_rule: [RULE-06]
+  authority: decision.governance
+  production_modules:
+    - decision.governance
+    - decision.hard_exit
+    - decision.downside_risk
+    - market.regime
+  tests:
+    - test_constitution_risk_over_return
+    - test_constitution_fail_rejects_despite_performance
+    - test_g7_risk_gate_only_reduces_risk
+  failure_injection: []
+  evidence:
+    - invariant_result.json
+    - golden_result.json
+  release_gate: [CONSTITUTION_GATE, QUALIFICATION_GATE]
+
+- spec_id: QCFP-SPEC-INV-004
+  requirement: Proposal is not a decision; only Governance produces decisions
+  architecture_rule: [RULE-08]
+  authority: decision.governance
+  production_modules:
+    - decision.governance
+    - decision.action_gate
+    - wave.canonical
+    - decision.action_classifier
+    - governance.conflict
+    - decision.governance_proof
+  tests:
+    - test_matrix_all_cases
+    - test_add_requires_prev_positive
+    - test_invariant_pass
+    - test_canonical_action_not_rewritten
+  failure_injection:
+    - test_inject_report_recomputation
+  evidence:
+    - authority_graph.json
+  release_gate: [AUTHORITY_AUDIT, REPORT_GATE]
+
+- spec_id: QCFP-SPEC-INV-005
+  requirement: Final risk can only decrease downstream (monotonicity)
+  architecture_rule: [RULE-16]
+  authority: decision.governance
+  production_modules:
+    - decision.governance
+    - decision.governance_caps
+    - decision.canonical_action
+    - decision.retail_position_sizing
+  tests:
+    - test_i2_final_leq_permission_cap
+    - test_i3_final_leq_risk_cap
+    - test_constitution_target_only_downstream_reduction
+    - test_invariant_1_2_no_risk_increase
+    - test_progressive_target_monotonic
+  failure_injection:
+    - test_inject_implicit_release_conflict
+  evidence:
+    - invariant_result.json
+    - replay_result.json
+  release_gate: [CONSTITUTION_GATE, REPLAY_GATE]
+
+- spec_id: QCFP-SPEC-INV-006
+  requirement: UNKNOWN must degrade; missing evidence must fail closed
+  architecture_rule: [RULE-11]
+  authority: decision.certified_decision
+  production_modules:
+    - data.quality
+    - decision.certified_decision
+    - decision.confidence
+  tests:
+    - test_gate_empty_unknown_fail_closed
+    - test_constitution_unknown_must_degrade
+    - test_flat_unknown_caps_zero
+    - test_holding_unknown_caps_no_new_risk
+    - test_pit_unknown_not_hold
+    - test_production_missing_required_no_new_risk
+  failure_injection:
+    - test_inject_pit_timestamp_ahead
+  evidence:
+    - failure_injection_result.json
+  release_gate: [CONSTITUTION_GATE, FAILURE_INJECTION_GATE]
+
+- spec_id: QCFP-SPEC-INV-007
+  requirement: Production cannot self-modify
+  architecture_rule: [RULE-12]
+  authority: governance.rule_ownership
+  production_modules:
+    - governance.rule_ownership
+    - governance.research_production_leakage
+  tests:
+    - test_owner_violation
+    - test_unauthorized_escalation_detected
+    - test_violations_detected
+  failure_injection: []
+  evidence:
+    - architecture_conformance.json
+  release_gate: [CONSTITUTION_GATE, SCOPE_LOCK]
+
+- spec_id: QCFP-SPEC-INV-008
+  requirement: Every production decision is auditable and replayable
+  architecture_rule: [RULE-13]
+  authority: decision.decision_ledger
+  production_modules:
+    - decision.decision_ledger
+    - decision.replay_engine
+    - decision.decision_snapshot
+  tests:
+    - test_constitution_every_decision_replayable
+    - test_invariant_9_10_ledger_roundtrip_and_replay_determinism
+    - test_ledger_hash_deterministic
+    - test_ledger_immutable_append_only
+    - test_replay_deterministic
+    - test_replay_determinism_failure
+  failure_injection:
+    - test_inject_replay_mismatch
+  evidence:
+    - replay_result.json
+    - ledger_result.json
+  release_gate: [REPLAY_GATE, LEDGER_GATE]
+
+- spec_id: QCFP-SPEC-INV-009
+  requirement: Research may challenge Production, never silently change it
+  architecture_rule: [RULE-14]
+  authority: governance.research_guard
+  production_modules:
+    - governance.research_guard
+    - governance.research_production_drift
+  tests:
+    - test_leakage_detected
+    - test_clean_graph_passes
+    - test_research_validation_uses_evidence_timeline
+  failure_injection: []
+  evidence:
+    - architecture_conformance.json
+  release_gate: [ARCHITECTURE_CONFORMANCE, SCOPE_LOCK]
+
+- spec_id: QCFP-SPEC-INV-010
+  requirement: Complexity must prove incremental practical value
+  architecture_rule: [RULE-15]
+  authority: governance.complexity_budget
+  production_modules:
+    - governance.complexity_budget
+    - governance.module_retirement
+  tests:
+    - test_incomplete_proposal_research_only
+    - test_over_ceiling_without_evidence_rejected
+    - test_drop_no_independent_value
+  failure_injection: []
+  evidence:
+    - complexity_diff.json
+  release_gate: [COMPLEXITY_GATE, QUALIFICATION_GATE]
+
+- spec_id: QCFP-SPEC-AUTH-001
+  requirement: Institutional Permission is the single upper-bound authority
+  architecture_rule: [RULE-01, RULE-07]
+  authority: decision.institutional_permission
+  production_modules:
+    - institutional.permission
+    - decision.institutional_permission
+  tests:
+    - test_permission_matrix
+    - test_permission_cap_and_assert
+    - test_permission_gate_upper_bound
+    - test_policy_single_source
+  failure_injection: []
+  evidence:
+    - authority_graph.json
+  release_gate: [AUTHORITY_AUDIT, CONSTITUTION_GATE]
+
+- spec_id: QCFP-SPEC-AUTH-002
+  requirement: Wave produces opportunity proposals only
+  architecture_rule: [RULE-08]
+  authority: wave.canonical
+  production_modules:
+    - wave.canonical
+    - wave.opportunity
+    - setup.swing_setup
+    - decision.entry_quality
+    - decision.trade_quality
+  tests:
+    - test_monotonic_invariant
+    - test_hard_exit_excluded
+    - test_wave_discovery_blocks_entry
+    - test_wave_active_allows_proposal
+  failure_injection: []
+  evidence:
+    - authority_graph.json
+  release_gate: [AUTHORITY_AUDIT]
+
+- spec_id: QCFP-SPEC-AUTH-003
+  requirement: Retail FSM owns the position lifecycle proposal
+  architecture_rule: [RULE-04]
+  authority: decision.retail_position_fsm
+  production_modules:
+    - decision.retail_position_fsm
+    - decision.retail_fsm
+    - decision.exit_quality
+    - decision.time_in_trade
+    - portfolio.state_engine
+  tests:
+    - test_permission_fsm_matrix_exhaustive
+    - test_permission_downgrade_trims_holding
+  failure_injection: []
+  evidence:
+    - authority_graph.json
+  release_gate: [AUTHORITY_AUDIT]
+
+- spec_id: QCFP-SPEC-AUTH-004
+  requirement: Hard Exit is the kill switch that overrides all bullish signals
+  architecture_rule: [RULE-06]
+  authority: decision.hard_exit
+  production_modules:
+    - decision.hard_exit
+    - decision.downside_risk
+    - decision.stop_loss
+    - safety.incident_protocol
+  tests:
+    - test_block_progressive_derisk
+    - test_hard_exit_immediate_derisk
+    - test_00371_first_breakdown_derisk
+    - test_00371_late_downtrend_risk_not_relaxed
+  failure_injection: []
+  evidence:
+    - golden_result.json
+    - failure_injection_result.json
+  release_gate: [CONSTITUTION_GATE, AUTHORITY_AUDIT]
+
+- spec_id: QCFP-SPEC-AUTH-005
+  requirement: Final Target has a unique owner and can only decrease downstream
+  architecture_rule: [RULE-16]
+  authority: decision.governance
+  production_modules:
+    - decision.governance
+    - decision.canonical_action
+  tests:
+    - test_monotonic_fail_when_final_grows_back
+    - test_invariant_pass
+    - test_business_duplicate_blocks_release
+    - test_owner_violation
+  failure_injection:
+    - test_inject_implicit_release_conflict
+  evidence:
+    - authority_graph.json
+    - invariant_result.json
+  release_gate: [AUTHORITY_AUDIT, CHANGE_IMPACT_GATE]
+
+- spec_id: QCFP-SPEC-AUTH-006
+  requirement: Validation status is produced only by the validation authority
+  architecture_rule: [RULE-17]
+  authority: governance.validation_certificate
+  production_modules:
+    - governance.validation_certificate
+    - decision.certified_decision
+  tests:
+    - test_research_validated_string_only_in_certificate
+    - test_no_evidence_refused
+    - test_missing_pit_refused
+  failure_injection: []
+  evidence:
+    - validation_result.json
+  release_gate: [VALIDATION_GATE]
+
+- spec_id: QCFP-SPEC-AUTH-007
+  requirement: Ledger is append-only with a single fact writer
+  architecture_rule: [RULE-18]
+  authority: decision.decision_ledger
+  production_modules:
+    - decision.decision_ledger
+    - portfolio.portfolio_ledger
+  tests:
+    - test_ledger_immutable_append_only
+    - test_interleaved_global_and_run_pass
+    - test_commit_ok_production
+    - test_ledger_hash_deterministic
+  failure_injection:
+    - test_tamper_r2_b_fails_global_and_run
+  evidence:
+    - ledger_result.json
+  release_gate: [LEDGER_GATE, REPLAY_GATE]
+
+- spec_id: QCFP-SPEC-AUTH-008
+  requirement: Reports cannot create decisions
+  architecture_rule: [RULE-19]
+  authority: REPORT_NO_DECISION_AUTHORITY
+  production_modules:
+    - report.dss_output
+    - decision.dss_output
+  tests:
+    - test_canonical_action_not_rewritten
+    - test_position_advice_reads_fact_not_recompute
+    - test_plain_row_no_interpretation
+  failure_injection:
+    - test_inject_report_recomputation
+  evidence:
+    - architecture_conformance.json
+  release_gate: [REPORT_GATE]
+
+- spec_id: QCFP-SPEC-ID-001
+  requirement: Every decision carries complete identity or is not certified
+  architecture_rule: [RULE-20]
+  authority: decision.decision_snapshot
+  production_modules:
+    - decision.decision_snapshot
+    - decision.decision_ledger
+    - decision.path_hash
+    - decision.constraint_trace
+  tests:
+    - test_production_release_identity
+    - test_release_missing_not_certified
+    - test_release_required_certified
+    - test_missing_release_identity_rejected_production
+  failure_injection: []
+  evidence:
+    - release_identity.json
+  release_gate: [RELEASE_IDENTITY_GATE]
+
+- spec_id: QCFP-SPEC-ID-002
+  requirement: Production release has unique Release Identity and manifest chain
+  architecture_rule: [RULE-20]
+  authority: decision.release_identity
+  production_modules:
+    - decision.release_identity
+    - governance.release_manifest
+  tests:
+    - test_production_release_identity
+    - test_release_required_certified
+    - test_release_in_context
+    - test_hash_change_release_failure
+  failure_injection: []
+  evidence:
+    - release_identity.json
+    - release_manifest.json
+  release_gate: [RELEASE_IDENTITY_GATE, RELEASE_JUDGE]
+
+- spec_id: QCFP-SPEC-ID-003
+  requirement: Same input and release identity must produce the same decision
+  architecture_rule: [RULE-21]
+  authority: decision.replay_engine
+  production_modules:
+    - decision.replay_engine
+    - decision.replay_contract
+  tests:
+    - test_replay_deterministic
+    - test_replay_determinism_failure
+    - test_production_no_seed_deterministic
+    - test_certificate_replay_hash_identical
+  failure_injection:
+    - test_inject_replay_mismatch
+  evidence:
+    - replay_result.json
+  release_gate: [REPLAY_GATE, RELEASE_JUDGE]
+
+- spec_id: QCFP-SPEC-BND-001
+  requirement: Research and Production are isolated; research cannot write facts
+  architecture_rule: [RULE-30]
+  authority: governance.research_guard
+  production_modules:
+    - governance.research_guard
+    - governance.research_production_leakage
+  tests:
+    - test_leakage_detected
+    - test_clean_graph_passes
+    - test_forbidden_edges_fail
+    - test_clean_edges_pass
+  failure_injection: []
+  evidence:
+    - architecture_conformance.json
+    - authority_graph.json
+  release_gate: [ARCHITECTURE_CONFORMANCE]
+
+- spec_id: QCFP-SPEC-BND-002
+  requirement: Evidence hierarchy ladder is enforced for promotion
+  architecture_rule: [RULE-29]
+  authority: governance.promotion_gate
+  production_modules:
+    - governance.promotion_gate
+    - governance.evidence_provider
+  tests:
+    - test_promotion_gate_all_pass
+    - test_promotion_gate_fails_on_missing
+    - test_production_requires_ablation_stress
+    - test_theory_only_hypothesis
+  failure_injection: []
+  evidence:
+    - oos_result.json
+    - shadow_result.json
+  release_gate: [PROMOTION_GATE]
+
+- spec_id: QCFP-SPEC-RLS-001
+  requirement: Release verdict has exactly three states, fail closed
+  architecture_rule: [RULE-26]
+  authority: governance.minimal_trusted_release
+  production_modules:
+    - governance.minimal_trusted_release
+  tests:
+    - test_evaluate_mtr_not_proven_without_evidence
+    - test_regression_evidence_defaults
+    - test_judge_requires_manifest_not_proven
+    - test_judge_qualified_when_all_pass
+    - test_judge_rejected_on_explicit_failure
+    - test_judge_not_proven_on_indeterminate
+  failure_injection: []
+  evidence:
+    - release_verdict.json
+  release_gate: [RELEASE_JUDGE]
+
+- spec_id: QCFP-SPEC-RLS-002
+  requirement: Software qualification and strategy promotion are separate gates
+  architecture_rule: [RULE-27]
+  authority: governance.promotion_gate
+  production_modules:
+    - governance.promotion_gate
+  tests:
+    - test_promotion_gate_all_pass
+    - test_release_ladder_no_regress
+    - test_gate_a_requires_pure_judge_artifact_with_release
+    - test_per_stage_strategy_evidence
+    - test_promotion_non_adjacent_jumps_blocked
+  failure_injection: []
+  evidence:
+    - release_verdict.json
+    - promotion_verdict.json
+  release_gate: [QUALIFICATION_GATE, PROMOTION_GATE]
+
+- spec_id: QCFP-SPEC-RLS-003
+  requirement: Missing evidence is NOT_PROVEN, never PASS
+  architecture_rule: [RULE-26]
+  authority: governance.minimal_trusted_release
+  production_modules:
+    - governance.minimal_trusted_release
+    - governance.validation_certificate
+  tests:
+    - test_evaluate_mtr_not_proven_without_evidence
+    - test_missing_pit_refused
+    - test_qualification_not_certified_without_pack
+    - test_judge_not_proven_on_indeterminate
+  failure_injection: []
+  evidence:
+    - test_summary.json
+  release_gate: [RELEASE_JUDGE, VALIDATION_GATE]
+
+- spec_id: QCFP-SPEC-RLS-004
+  requirement: No AI may execute HUMAN_APPROVED
+  architecture_rule: [RULE-28]
+  authority: governance.human_override
+  production_modules:
+    - governance.human_override
+  tests:
+    - test_unauthorized_escalation_detected
+    - test_transition_blocked_without_certificate
+    - test_human_approval_artifact_required_and_bound
+    - test_bypass_ai_human_approval_blocked
+  failure_injection: []
+  evidence:
+    - promotion_verdict.json
+  release_gate: [HUMAN_APPROVAL]
+
+- spec_id: QCFP-SPEC-CHG-001
+  requirement: No change impact, no implementation contract
+  architecture_rule: [RULE-22]
+  authority: governance.change_impact
+  production_modules:
+    - governance.change_impact
+  tests:
+    - test_critical_change_requires_full_validation
+    - test_release_gate_blocks_without_evidence
+    - test_change_impact_requires_observed_diff
+  failure_injection: []
+  evidence:
+    - change_impact.json
+    - implementation_contract.yaml
+  release_gate: [CHANGE_IMPACT_GATE, SCOPE_LOCK]
+
+- spec_id: QCFP-SPEC-CHG-002
+  requirement: Patch must stay within the locked change surface
+  architecture_rule: [RULE-23]
+  authority: governance.patch_scope_lock
+  production_modules:
+    - governance.rule_ownership
+    - governance.dead_authority
+  tests:
+    - test_patch_scope_file_and_function_violation
+    - test_patch_scope_authority_writer_delta_rejected
+    - test_violations_detected
+  failure_injection: []
+  evidence:
+    - scope_audit.json
+  release_gate: [SCOPE_LOCK]
+
+- spec_id: QCFP-SPEC-CHG-003
+  requirement: Baseline is create-only and immutable
+  architecture_rule: [RULE-24]
+  authority: governance.governance_baseline
+  production_modules:
+    - governance.minimal_trusted_release
+  tests:
+    - test_freeze_mtr_baseline_immutable
+    - test_baseline_create_only_immutable
+    - test_baseline_verify_detects_drift
+    - test_baseline_candidate_requires_human_approval
+  failure_injection: []
+  evidence:
+    - governance_baseline.json
+  release_gate: [BASELINE_GATE]
+
+- spec_id: QCFP-SPEC-CHG-004
+  requirement: Builder cannot change frozen golden results or delete failing tests
+  architecture_rule: [RULE-25]
+  authority: governance.acceptance_contract
+  production_modules:
+    - governance.golden_decision_corpus
+  tests:
+    - test_corpus_coverage
+    - test_change_requires_review
+    - test_00371_breakdown_golden_canonical
+    - test_01951_recovery_golden_canonical
+    - test_golden_case_003_pit_invalid_no_certified
+    - test_acceptance_oracle_change_requires_full_audit_fields
+    - test_bypass_builder_modifies_frozen_expected_rejected
+  failure_injection: []
+  evidence:
+    - golden_result.json
+    - acceptance_contract.yaml
+  release_gate: [REVIEW_GATE, HUMAN_APPROVAL]

@@ -1,0 +1,1267 @@
+{
+  "metadata": {
+    "table_name": "hk_weekly_moneyflow_analysis",
+    "generated_time": "2026-07-12 16:08:23",
+    "database_path": "C:\\Users\\Quansheng\\Documents\\projects\\TA_Workflow2\\SQLiteDB\\HK_Stock.db",
+    "project_dir": "C:\\Users\\Quansheng\\Documents\\projects\\TA_Workflow2"
+  },
+  "basic_info": {
+    "total_records": "4154",
+    "columns": [
+      {
+        "cid": 0,
+        "name": "id",
+        "type": "INTEGER",
+        "notnull": 0,
+        "dflt_value": null,
+        "pk": 1
+      },
+      {
+        "cid": 1,
+        "name": "stock_code",
+        "type": "TEXT",
+        "notnull": 0,
+        "dflt_value": null,
+        "pk": 0
+      },
+      {
+        "cid": 2,
+        "name": "stock_name",
+        "type": "TEXT",
+        "notnull": 0,
+        "dflt_value": null,
+        "pk": 0
+      },
+      {
+        "cid": 3,
+        "name": "date",
+        "type": "TEXT",
+        "notnull": 0,
+        "dflt_value": null,
+        "pk": 0
+      },
+      {
+        "cid": 4,
+        "name": "Price_ChgPct",
+        "type": "REAL",
+        "notnull": 0,
+        "dflt_value": null,
+        "pk": 0
+      },
+      {
+        "cid": 5,
+        "name": "Capital_Trend",
+        "type": "REAL",
+        "notnull": 0,
+        "dflt_value": null,
+        "pk": 0
+      },
+      {
+        "cid": 6,
+        "name": "Extra_Large",
+        "type": "REAL",
+        "notnull": 0,
+        "dflt_value": null,
+        "pk": 0
+      },
+      {
+        "cid": 7,
+        "name": "Large",
+        "type": "REAL",
+        "notnull": 0,
+        "dflt_value": null,
+        "pk": 0
+      },
+      {
+        "cid": 8,
+        "name": "Medium",
+        "type": "REAL",
+        "notnull": 0,
+        "dflt_value": null,
+        "pk": 0
+      },
+      {
+        "cid": 9,
+        "name": "Small",
+        "type": "REAL",
+        "notnull": 0,
+        "dflt_value": null,
+        "pk": 0
+      },
+      {
+        "cid": 10,
+        "name": "Institutional_Flow",
+        "type": "REAL",
+        "notnull": 0,
+        "dflt_value": null,
+        "pk": 0
+      },
+      {
+        "cid": 11,
+        "name": "Individual_Flow",
+        "type": "REAL",
+        "notnull": 0,
+        "dflt_value": null,
+        "pk": 0
+      },
+      {
+        "cid": 12,
+        "name": "Inst_5MA",
+        "type": "REAL",
+        "notnull": 0,
+        "dflt_value": null,
+        "pk": 0
+      },
+      {
+        "cid": 13,
+        "name": "Ind_5MA",
+        "type": "REAL",
+        "notnull": 0,
+        "dflt_value": null,
+        "pk": 0
+      },
+      {
+        "cid": 14,
+        "name": "IDR",
+        "type": "REAL",
+        "notnull": 0,
+        "dflt_value": null,
+        "pk": 0
+      },
+      {
+        "cid": 15,
+        "name": "FBI",
+        "type": "REAL",
+        "notnull": 0,
+        "dflt_value": null,
+        "pk": 0
+      }
+    ]
+  },
+  "stock_statistics": [
+    {
+      "stock_code": "00020",
+      "stock_name": "商汤科技",
+      "record_count": 236,
+      "first_date": "2021-12-31",
+      "last_date": "2026-07-10",
+      "trading_weeks": 236,
+      "min_value": -0.4547,
+      "max_value": 1.0518,
+      "avg_value": 0.0021381355932203394,
+      "avg_Capital_Trend": 139493776.31355932,
+      "avg_Institutional_Flow": 22371616.65254237,
+      "avg_Individual_Flow": 117125723.94067797
+    },
+    {
+      "stock_code": "00268",
+      "stock_name": "金蝶国际",
+      "record_count": 283,
+      "first_date": "2021-02-05",
+      "last_date": "2026-07-10",
+      "trading_weeks": 283,
+      "min_value": -0.2307,
+      "max_value": 0.344,
+      "avg_value": -0.0023530035335689045,
+      "avg_Capital_Trend": 83227393.03886926,
+      "avg_Institutional_Flow": 47273138.86925795,
+      "avg_Individual_Flow": 35953753.038869254
+    },
+    {
+      "stock_code": "00354",
+      "stock_name": "中软国际",
+      "record_count": 283,
+      "first_date": "2021-02-05",
+      "last_date": "2026-07-10",
+      "trading_weeks": 283,
+      "min_value": -0.1797,
+      "max_value": 0.3563,
+      "avg_value": -0.0011968197879858658,
+      "avg_Capital_Trend": 23718989.081272084,
+      "avg_Institutional_Flow": 12770060.282685513,
+      "avg_Individual_Flow": 10948518.51590106
+    },
+    {
+      "stock_code": "00357",
+      "stock_name": "美兰空港",
+      "record_count": 281,
+      "first_date": "2021-02-05",
+      "last_date": "2026-07-10",
+      "trading_weeks": 281,
+      "min_value": -0.1922,
+      "max_value": 0.2721,
+      "avg_value": -0.006669395017793594,
+      "avg_Capital_Trend": 3935589.644128114,
+      "avg_Institutional_Flow": 3146245.0177935944,
+      "avg_Individual_Flow": 789689.6441281139
+    },
+    {
+      "stock_code": "00371",
+      "stock_name": "北控水务",
+      "record_count": 284,
+      "first_date": "2021-02-05",
+      "last_date": "2026-07-10",
+      "trading_weeks": 284,
+      "min_value": -0.1527,
+      "max_value": 0.1383,
+      "avg_value": 0.0008577464788732392,
+      "avg_Capital_Trend": 14947679.225352112,
+      "avg_Institutional_Flow": 4864287.112676056,
+      "avg_Individual_Flow": 10083037.394366197
+    },
+    {
+      "stock_code": "00700",
+      "stock_name": "腾讯控股",
+      "record_count": 284,
+      "first_date": "2021-02-05",
+      "last_date": "2026-07-10",
+      "trading_weeks": 284,
+      "min_value": -0.1478,
+      "max_value": 0.2049,
+      "avg_value": 0.00012570422535211257,
+      "avg_Capital_Trend": 1291207864.084507,
+      "avg_Institutional_Flow": 635433890.2464789,
+      "avg_Individual_Flow": 655916064.5422535
+    },
+    {
+      "stock_code": "00788",
+      "stock_name": "中国铁塔",
+      "record_count": 282,
+      "first_date": "2021-02-05",
+      "last_date": "2026-07-10",
+      "trading_weeks": 282,
+      "min_value": -0.1126,
+      "max_value": 0.1314,
+      "avg_value": 0.0008539007092198581,
+      "avg_Capital_Trend": 41097109.680851065,
+      "avg_Institutional_Flow": 20555917.269503545,
+      "avg_Individual_Flow": 20541218.865248226
+    },
+    {
+      "stock_code": "01093",
+      "stock_name": "石药集团",
+      "record_count": 283,
+      "first_date": "2021-02-05",
+      "last_date": "2026-07-10",
+      "trading_weeks": 283,
+      "min_value": -0.2324,
+      "max_value": 0.2269,
+      "avg_value": 0.002214487632508834,
+      "avg_Capital_Trend": 121930639.6466431,
+      "avg_Institutional_Flow": 50346197.03180212,
+      "avg_Individual_Flow": 71584956.1130742
+    },
+    {
+      "stock_code": "01177",
+      "stock_name": "中生制药",
+      "record_count": 283,
+      "first_date": "2021-02-05",
+      "last_date": "2026-07-10",
+      "trading_weeks": 283,
+      "min_value": -0.1512,
+      "max_value": 0.2198,
+      "avg_value": 0.0004498233215547703,
+      "avg_Capital_Trend": 83409783.8869258,
+      "avg_Institutional_Flow": 34097291.41342756,
+      "avg_Individual_Flow": 49313900.53003534
+    },
+    {
+      "stock_code": "01951",
+      "stock_name": "锦鑫生殖",
+      "record_count": 283,
+      "first_date": "2021-02-05",
+      "last_date": "2026-07-10",
+      "trading_weeks": 283,
+      "min_value": -0.2379,
+      "max_value": 0.3522,
+      "avg_value": -0.004248056537102474,
+      "avg_Capital_Trend": 6842124.982332155,
+      "avg_Institutional_Flow": 1924039.6113074205,
+      "avg_Individual_Flow": 4916832.084805653
+    },
+    {
+      "stock_code": "02202",
+      "stock_name": "港股万科企业",
+      "record_count": 283,
+      "first_date": "2021-02-05",
+      "last_date": "2026-07-10",
+      "trading_weeks": 283,
+      "min_value": -0.3355,
+      "max_value": 0.649,
+      "avg_value": -0.0044901060070671375,
+      "avg_Capital_Trend": 60936540.29681979,
+      "avg_Institutional_Flow": 25803913.268551238,
+      "avg_Individual_Flow": 35131861.27915195
+    },
+    {
+      "stock_code": "02611",
+      "stock_name": "国泰海通",
+      "record_count": 280,
+      "first_date": "2021-02-05",
+      "last_date": "2026-07-10",
+      "trading_weeks": 280,
+      "min_value": -0.1121,
+      "max_value": 0.5855,
+      "avg_value": 0.0034307142857142856,
+      "avg_Capital_Trend": 25209939.85,
+      "avg_Institutional_Flow": 7539602.25,
+      "avg_Individual_Flow": 17669944.6
+    },
+    {
+      "stock_code": "03033",
+      "stock_name": "南方恒生科技",
+      "record_count": 273,
+      "first_date": "2021-04-23",
+      "last_date": "2026-07-10",
+      "trading_weeks": 273,
+      "min_value": -0.106,
+      "max_value": 0.2067,
+      "avg_value": -0.0008934065934065934,
+      "avg_Capital_Trend": 181974091.83150184,
+      "avg_Institutional_Flow": 145310004.3956044,
+      "avg_Individual_Flow": 36623687.875457875
+    },
+    {
+      "stock_code": "03800",
+      "stock_name": "协鑫科技",
+      "record_count": 253,
+      "first_date": "2021-02-05",
+      "last_date": "2026-07-10",
+      "trading_weeks": 253,
+      "min_value": -0.2484,
+      "max_value": 0.4999,
+      "avg_value": -0.0030798418972332016,
+      "avg_Capital_Trend": 81955749.16996047,
+      "avg_Institutional_Flow": 15170150.276679842,
+      "avg_Individual_Flow": 66795805.05928854
+    },
+    {
+      "stock_code": "06060",
+      "stock_name": "众安在线",
+      "record_count": 283,
+      "first_date": "2021-02-05",
+      "last_date": "2026-07-10",
+      "trading_weeks": 283,
+      "min_value": -0.2253,
+      "max_value": 0.5483,
+      "avg_value": -0.002612720848056537,
+      "avg_Capital_Trend": 24690159.25795053,
+      "avg_Institutional_Flow": 16988582.261484098,
+      "avg_Individual_Flow": 7700100.176678445
+    }
+  ],
+  "sample_data": [
+    {
+      "id": 236,
+      "stock_code": "00020",
+      "stock_name": "商汤科技",
+      "date": "2026-07-10",
+      "Price_ChgPct": 0.0216,
+      "Capital_Trend": 192810000.0,
+      "Extra_Large": 28510950.0,
+      "Large": -3720000.0,
+      "Medium": 20719310.0,
+      "Small": 147318940.0,
+      "Institutional_Flow": 24790950.0,
+      "Individual_Flow": 168038250.0,
+      "Inst_5MA": -8547810.0,
+      "Ind_5MA": -231085094.0,
+      "IDR": 0.1286,
+      "FBI": -0.7429
+    },
+    {
+      "id": 519,
+      "stock_code": "00268",
+      "stock_name": "金蝶国际",
+      "date": "2026-07-10",
+      "Price_ChgPct": 0.0991,
+      "Capital_Trend": 286430000.0,
+      "Extra_Large": 124115180.0,
+      "Large": 63640000.0,
+      "Medium": 43190000.0,
+      "Small": 55456310.0,
+      "Institutional_Flow": 187755180.0,
+      "Individual_Flow": 98646310.0,
+      "Inst_5MA": 20786986.0,
+      "Ind_5MA": -38529954.0,
+      "IDR": 0.6556,
+      "FBI": 0.3111
+    },
+    {
+      "id": 802,
+      "stock_code": "00354",
+      "stock_name": "中软国际",
+      "date": "2026-07-10",
+      "Price_ChgPct": 0.026,
+      "Capital_Trend": -7465600.0,
+      "Extra_Large": -12705480.0,
+      "Large": -5650000.0,
+      "Medium": 130000.0,
+      "Small": 10750000.0,
+      "Institutional_Flow": -18355480.0,
+      "Individual_Flow": 10880000.0,
+      "Inst_5MA": -56744656.0,
+      "Ind_5MA": 6217312.0,
+      "IDR": 0.6278,
+      "FBI": -1.0
+    },
+    {
+      "id": 1083,
+      "stock_code": "00357",
+      "stock_name": "美兰空港",
+      "date": "2026-07-10",
+      "Price_ChgPct": -0.0502,
+      "Capital_Trend": 116760.0,
+      "Extra_Large": 415000.0,
+      "Large": -134230.0,
+      "Medium": 111790.0,
+      "Small": -275800.0,
+      "Institutional_Flow": 280770.0,
+      "Individual_Flow": -164010.0,
+      "Inst_5MA": 66500.0,
+      "Ind_5MA": -889346.0,
+      "IDR": 0.6313,
+      "FBI": 1.0
+    },
+    {
+      "id": 1367,
+      "stock_code": "00371",
+      "stock_name": "北控水务",
+      "date": "2026-07-10",
+      "Price_ChgPct": 0.0044,
+      "Capital_Trend": 10880000.0,
+      "Extra_Large": 3580000.0,
+      "Large": 7904180.0,
+      "Medium": 4137740.0,
+      "Small": -4724480.0,
+      "Institutional_Flow": 11484180.0,
+      "Individual_Flow": -586740.0,
+      "Inst_5MA": 752172.0,
+      "Ind_5MA": 6465004.0,
+      "IDR": 0.9514,
+      "FBI": 1.0
+    },
+    {
+      "id": 1651,
+      "stock_code": "00700",
+      "stock_name": "腾讯控股",
+      "date": "2026-07-10",
+      "Price_ChgPct": 0.0673,
+      "Capital_Trend": 5230350000.0,
+      "Extra_Large": 3289400000.0,
+      "Large": 180830000.0,
+      "Medium": 345400000.0,
+      "Small": 1414700000.0,
+      "Institutional_Flow": 3470230000.0,
+      "Individual_Flow": 1760100000.0,
+      "Inst_5MA": 208144000.0,
+      "Ind_5MA": -268486000.0,
+      "IDR": 0.6635,
+      "FBI": 0.327
+    },
+    {
+      "id": 1933,
+      "stock_code": "00788",
+      "stock_name": "中国铁塔",
+      "date": "2026-07-10",
+      "Price_ChgPct": 0.0145,
+      "Capital_Trend": 62490000.0,
+      "Extra_Large": 14862540.0,
+      "Large": 21710000.0,
+      "Medium": 1070990.0,
+      "Small": 24853620.0,
+      "Institutional_Flow": 36572540.0,
+      "Individual_Flow": 25924610.0,
+      "Inst_5MA": 19818644.0,
+      "Ind_5MA": 6365336.0,
+      "IDR": 0.5852,
+      "FBI": 0.1704
+    },
+    {
+      "id": 2216,
+      "stock_code": "01093",
+      "stock_name": "石药集团",
+      "date": "2026-07-10",
+      "Price_ChgPct": 0.0138,
+      "Capital_Trend": 473740000.0,
+      "Extra_Large": 117500000.0,
+      "Large": 75990000.0,
+      "Medium": 150460000.0,
+      "Small": 129770000.0,
+      "Institutional_Flow": 193490000.0,
+      "Individual_Flow": 280230000.0,
+      "Inst_5MA": 104850000.0,
+      "Ind_5MA": 270680232.0,
+      "IDR": 0.4084,
+      "FBI": -0.1831
+    },
+    {
+      "id": 2499,
+      "stock_code": "01177",
+      "stock_name": "中生制药",
+      "date": "2026-07-10",
+      "Price_ChgPct": 0.0949,
+      "Capital_Trend": 602060000.0,
+      "Extra_Large": -12910000.0,
+      "Large": 84910000.0,
+      "Medium": 117410000.0,
+      "Small": 412680000.0,
+      "Institutional_Flow": 72000000.0,
+      "Individual_Flow": 530090000.0,
+      "Inst_5MA": 80694336.0,
+      "Ind_5MA": 179669974.0,
+      "IDR": 0.1196,
+      "FBI": -0.7608
+    },
+    {
+      "id": 2782,
+      "stock_code": "01951",
+      "stock_name": "锦鑫生殖",
+      "date": "2026-07-10",
+      "Price_ChgPct": -0.0001,
+      "Capital_Trend": 1320420.0,
+      "Extra_Large": 1150000.0,
+      "Large": -2370260.0,
+      "Medium": -6397110.0,
+      "Small": 8932260.0,
+      "Institutional_Flow": -1220260.0,
+      "Individual_Flow": 2535150.0,
+      "Inst_5MA": -1601564.0,
+      "Ind_5MA": -8126926.0,
+      "IDR": 0.3249,
+      "FBI": -1.0
+    }
+  ],
+  "quality_checks": {
+    "null_values": {
+      "stock_code": "0",
+      "stock_name": "0",
+      "date": "0",
+      "Price_ChgPct": "0",
+      "Capital_Trend": "0",
+      "Extra_Large": "0",
+      "Large": "0",
+      "Medium": "0",
+      "Small": "0",
+      "Institutional_Flow": "0",
+      "Individual_Flow": "0",
+      "Inst_5MA": "0",
+      "Ind_5MA": "0",
+      "IDR": "0",
+      "FBI": "0"
+    },
+    "duplicates": [],
+    "moneyflow_errors": [
+      {
+        "stock_code": "00020",
+        "date": "2021-12-31",
+        "Capital_Trend": 14510000.0,
+        "Institutional_Flow": -122380000.0,
+        "Individual_Flow": 136890000.0
+      },
+      {
+        "stock_code": "00020",
+        "date": "2022-01-07",
+        "Capital_Trend": 124390000.0,
+        "Institutional_Flow": -116660000.0,
+        "Individual_Flow": 241050000.0
+      },
+      {
+        "stock_code": "00020",
+        "date": "2022-01-14",
+        "Capital_Trend": -43810000.0,
+        "Institutional_Flow": 8485580.0,
+        "Individual_Flow": -52291440.0
+      },
+      {
+        "stock_code": "00020",
+        "date": "2022-01-28",
+        "Capital_Trend": -132870000.0,
+        "Institutional_Flow": -66380000.0,
+        "Individual_Flow": -66485580.0
+      },
+      {
+        "stock_code": "00020",
+        "date": "2022-02-11",
+        "Capital_Trend": -3170000.0,
+        "Institutional_Flow": -3263350.0,
+        "Individual_Flow": 105940.0
+      },
+      {
+        "stock_code": "00020",
+        "date": "2022-02-18",
+        "Capital_Trend": -43167920.0,
+        "Institutional_Flow": -50208130.0,
+        "Individual_Flow": 7043260.0
+      },
+      {
+        "stock_code": "00020",
+        "date": "2022-03-04",
+        "Capital_Trend": -41140000.0,
+        "Institutional_Flow": -15799100.0,
+        "Individual_Flow": -25355090.0
+      },
+      {
+        "stock_code": "00020",
+        "date": "2022-03-11",
+        "Capital_Trend": -23130000.0,
+        "Institutional_Flow": -12660000.0,
+        "Individual_Flow": -10472280.0
+      },
+      {
+        "stock_code": "00020",
+        "date": "2022-03-18",
+        "Capital_Trend": -59060000.0,
+        "Institutional_Flow": -36780000.0,
+        "Individual_Flow": -22268760.0
+      },
+      {
+        "stock_code": "00020",
+        "date": "2022-03-25",
+        "Capital_Trend": 13826870.0,
+        "Institutional_Flow": -6540000.0,
+        "Individual_Flow": 20373420.0
+      },
+      {
+        "stock_code": "00020",
+        "date": "2022-04-01",
+        "Capital_Trend": -16830500.0,
+        "Institutional_Flow": -5440190.0,
+        "Individual_Flow": -11399290.0
+      },
+      {
+        "stock_code": "00020",
+        "date": "2022-04-08",
+        "Capital_Trend": -46820000.0,
+        "Institutional_Flow": -32122580.0,
+        "Individual_Flow": -14716370.0
+      },
+      {
+        "stock_code": "00020",
+        "date": "2022-04-14",
+        "Capital_Trend": -46270000.0,
+        "Institutional_Flow": -36382640.0,
+        "Individual_Flow": -9912520.0
+      },
+      {
+        "stock_code": "00020",
+        "date": "2022-04-22",
+        "Capital_Trend": -12651370.0,
+        "Institutional_Flow": -13736950.0,
+        "Individual_Flow": 1083840.0
+      },
+      {
+        "stock_code": "00020",
+        "date": "2022-05-06",
+        "Capital_Trend": -21523050.0,
+        "Institutional_Flow": -13006840.0,
+        "Individual_Flow": -8511390.0
+      },
+      {
+        "stock_code": "00020",
+        "date": "2022-05-13",
+        "Capital_Trend": 2340000.0,
+        "Institutional_Flow": -3386990.0,
+        "Individual_Flow": 5728350.0
+      },
+      {
+        "stock_code": "00020",
+        "date": "2022-05-27",
+        "Capital_Trend": 655500.0,
+        "Institutional_Flow": 1289770.0,
+        "Individual_Flow": -630780.0
+      },
+      {
+        "stock_code": "00020",
+        "date": "2022-06-10",
+        "Capital_Trend": -46360000.0,
+        "Institutional_Flow": -9085000.0,
+        "Individual_Flow": -37280000.0
+      },
+      {
+        "stock_code": "00020",
+        "date": "2022-06-24",
+        "Capital_Trend": 8180000.0,
+        "Institutional_Flow": -3088520.0,
+        "Individual_Flow": 11270750.0
+      },
+      {
+        "stock_code": "00020",
+        "date": "2022-06-30",
+        "Capital_Trend": -157170000.0,
+        "Institutional_Flow": -654950000.0,
+        "Individual_Flow": 497765250.0
+      },
+      {
+        "stock_code": "00020",
+        "date": "2022-07-15",
+        "Capital_Trend": -83480000.0,
+        "Institutional_Flow": -121270000.0,
+        "Individual_Flow": 37785410.0
+      },
+      {
+        "stock_code": "00020",
+        "date": "2022-07-29",
+        "Capital_Trend": 34012650.0,
+        "Institutional_Flow": 52515400.0,
+        "Individual_Flow": -18488430.0
+      },
+      {
+        "stock_code": "00020",
+        "date": "2022-08-05",
+        "Capital_Trend": -10990000.0,
+        "Institutional_Flow": -17390000.0,
+        "Individual_Flow": 6406560.0
+      },
+      {
+        "stock_code": "00020",
+        "date": "2022-08-19",
+        "Capital_Trend": -25510000.0,
+        "Institutional_Flow": -51642620.0,
+        "Individual_Flow": 26150000.0
+      },
+      {
+        "stock_code": "00020",
+        "date": "2022-09-16",
+        "Capital_Trend": -5290000.0,
+        "Institutional_Flow": -36549700.0,
+        "Individual_Flow": 31270000.0
+      },
+      {
+        "stock_code": "00020",
+        "date": "2022-09-30",
+        "Capital_Trend": -58240980.0,
+        "Institutional_Flow": -47260000.0,
+        "Individual_Flow": -10958780.0
+      },
+      {
+        "stock_code": "00020",
+        "date": "2022-10-07",
+        "Capital_Trend": -13860000.0,
+        "Institutional_Flow": -5920090.0,
+        "Individual_Flow": -7956100.0
+      },
+      {
+        "stock_code": "00020",
+        "date": "2022-10-28",
+        "Capital_Trend": -46790000.0,
+        "Institutional_Flow": -27396650.0,
+        "Individual_Flow": -19386490.0
+      },
+      {
+        "stock_code": "00020",
+        "date": "2022-11-11",
+        "Capital_Trend": 184390000.0,
+        "Institutional_Flow": -78330000.0,
+        "Individual_Flow": 262720000.0
+      },
+      {
+        "stock_code": "00020",
+        "date": "2022-11-25",
+        "Capital_Trend": -143720000.0,
+        "Institutional_Flow": -142536850.0,
+        "Individual_Flow": -1178800.0
+      },
+      {
+        "stock_code": "00020",
+        "date": "2022-12-09",
+        "Capital_Trend": 460100000.0,
+        "Institutional_Flow": 474020000.0,
+        "Individual_Flow": -13920000.0
+      },
+      {
+        "stock_code": "00020",
+        "date": "2022-12-16",
+        "Capital_Trend": -58990000.0,
+        "Institutional_Flow": -82079750.0,
+        "Individual_Flow": 23090000.0
+      },
+      {
+        "stock_code": "00020",
+        "date": "2022-12-23",
+        "Capital_Trend": -43160000.0,
+        "Institutional_Flow": -39873420.0,
+        "Individual_Flow": -3286250.0
+      },
+      {
+        "stock_code": "00020",
+        "date": "2023-01-06",
+        "Capital_Trend": -23490000.0,
+        "Institutional_Flow": -115030000.0,
+        "Individual_Flow": 91551060.0
+      },
+      {
+        "stock_code": "00020",
+        "date": "2023-01-20",
+        "Capital_Trend": -17897800.0,
+        "Institutional_Flow": -44647330.0,
+        "Individual_Flow": 26762300.0
+      },
+      {
+        "stock_code": "00020",
+        "date": "2023-02-03",
+        "Capital_Trend": 403610000.0,
+        "Institutional_Flow": -204760000.0,
+        "Individual_Flow": 608384520.0
+      },
+      {
+        "stock_code": "00020",
+        "date": "2023-02-10",
+        "Capital_Trend": 347560000.0,
+        "Institutional_Flow": -36640000.0,
+        "Individual_Flow": 384200000.0
+      },
+      {
+        "stock_code": "00020",
+        "date": "2023-02-17",
+        "Capital_Trend": -477740000.0,
+        "Institutional_Flow": -160800000.0,
+        "Individual_Flow": -316950000.0
+      },
+      {
+        "stock_code": "00020",
+        "date": "2023-02-24",
+        "Capital_Trend": -169210000.0,
+        "Institutional_Flow": -9892230.0,
+        "Individual_Flow": -159290000.0
+      },
+      {
+        "stock_code": "00020",
+        "date": "2023-03-10",
+        "Capital_Trend": -80270000.0,
+        "Institutional_Flow": -7100000.0,
+        "Individual_Flow": -73162190.0
+      },
+      {
+        "stock_code": "00020",
+        "date": "2023-03-31",
+        "Capital_Trend": 6130000.0,
+        "Institutional_Flow": 127390000.0,
+        "Individual_Flow": -121280000.0
+      },
+      {
+        "stock_code": "00020",
+        "date": "2023-04-14",
+        "Capital_Trend": -535010000.0,
+        "Institutional_Flow": -385890000.0,
+        "Individual_Flow": -149100000.0
+      },
+      {
+        "stock_code": "00020",
+        "date": "2023-04-21",
+        "Capital_Trend": -536250000.0,
+        "Institutional_Flow": -829660000.0,
+        "Individual_Flow": 293420000.0
+      },
+      {
+        "stock_code": "00020",
+        "date": "2023-05-12",
+        "Capital_Trend": -196520000.0,
+        "Institutional_Flow": -194240000.0,
+        "Individual_Flow": -2260000.0
+      },
+      {
+        "stock_code": "00020",
+        "date": "2023-05-19",
+        "Capital_Trend": -82730000.0,
+        "Institutional_Flow": -28550000.0,
+        "Individual_Flow": -54190000.0
+      },
+      {
+        "stock_code": "00020",
+        "date": "2023-05-25",
+        "Capital_Trend": -113820000.0,
+        "Institutional_Flow": -81810000.0,
+        "Individual_Flow": -32010000.0
+      },
+      {
+        "stock_code": "00020",
+        "date": "2023-06-09",
+        "Capital_Trend": -43310000.0,
+        "Institutional_Flow": -36600000.0,
+        "Individual_Flow": -6720000.0
+      },
+      {
+        "stock_code": "00020",
+        "date": "2023-06-23",
+        "Capital_Trend": 5500000.0,
+        "Institutional_Flow": -36679820.0,
+        "Individual_Flow": 42170000.0
+      },
+      {
+        "stock_code": "00020",
+        "date": "2023-06-30",
+        "Capital_Trend": 53280000.0,
+        "Institutional_Flow": 71340000.0,
+        "Individual_Flow": -18040400.0
+      },
+      {
+        "stock_code": "00020",
+        "date": "2023-07-07",
+        "Capital_Trend": 170700000.0,
+        "Institutional_Flow": -72340000.0,
+        "Individual_Flow": 243055250.0
+      },
+      {
+        "stock_code": "00020",
+        "date": "2023-07-14",
+        "Capital_Trend": 87660000.0,
+        "Institutional_Flow": 148199040.0,
+        "Individual_Flow": -60510000.0
+      },
+      {
+        "stock_code": "00020",
+        "date": "2023-07-21",
+        "Capital_Trend": 8110000.0,
+        "Institutional_Flow": -94450000.0,
+        "Individual_Flow": 102540000.0
+      },
+      {
+        "stock_code": "00020",
+        "date": "2023-07-28",
+        "Capital_Trend": -70000.0,
+        "Institutional_Flow": 42281990.0,
+        "Individual_Flow": -42350000.0
+      },
+      {
+        "stock_code": "00020",
+        "date": "2023-08-04",
+        "Capital_Trend": -171250000.0,
+        "Institutional_Flow": -40386920.0,
+        "Individual_Flow": -130880000.0
+      },
+      {
+        "stock_code": "00020",
+        "date": "2023-08-11",
+        "Capital_Trend": -82120000.0,
+        "Institutional_Flow": -67989860.0,
+        "Individual_Flow": -14120000.0
+      },
+      {
+        "stock_code": "00020",
+        "date": "2023-08-18",
+        "Capital_Trend": -14700000.0,
+        "Institutional_Flow": -38644430.0,
+        "Individual_Flow": 23945660.0
+      },
+      {
+        "stock_code": "00020",
+        "date": "2023-09-07",
+        "Capital_Trend": 189680000.0,
+        "Institutional_Flow": -2971560.0,
+        "Individual_Flow": 192644880.0
+      },
+      {
+        "stock_code": "00020",
+        "date": "2023-09-22",
+        "Capital_Trend": 59070000.0,
+        "Institutional_Flow": -5423970.0,
+        "Individual_Flow": 64500000.0
+      },
+      {
+        "stock_code": "00020",
+        "date": "2023-10-13",
+        "Capital_Trend": 21830000.0,
+        "Institutional_Flow": -12840230.0,
+        "Individual_Flow": 34657380.0
+      },
+      {
+        "stock_code": "00020",
+        "date": "2023-10-20",
+        "Capital_Trend": 600000.0,
+        "Institutional_Flow": -12932460.0,
+        "Individual_Flow": 13536980.0
+      },
+      {
+        "stock_code": "00020",
+        "date": "2023-10-27",
+        "Capital_Trend": 8496830.0,
+        "Institutional_Flow": -9193420.0,
+        "Individual_Flow": 17670000.0
+      },
+      {
+        "stock_code": "00020",
+        "date": "2023-11-03",
+        "Capital_Trend": -51700000.0,
+        "Institutional_Flow": -108370000.0,
+        "Individual_Flow": 56690000.0
+      },
+      {
+        "stock_code": "00020",
+        "date": "2023-11-10",
+        "Capital_Trend": 24260000.0,
+        "Institutional_Flow": 33135240.0,
+        "Individual_Flow": -8860000.0
+      },
+      {
+        "stock_code": "00020",
+        "date": "2023-11-17",
+        "Capital_Trend": 30620000.0,
+        "Institutional_Flow": -11980000.0,
+        "Individual_Flow": 42623150.0
+      },
+      {
+        "stock_code": "00020",
+        "date": "2023-11-24",
+        "Capital_Trend": -4110000.0,
+        "Institutional_Flow": 20350000.0,
+        "Individual_Flow": -24460000.0
+      },
+      {
+        "stock_code": "00020",
+        "date": "2023-12-01",
+        "Capital_Trend": -67220000.0,
+        "Institutional_Flow": -78815760.0,
+        "Individual_Flow": 11603670.0
+      },
+      {
+        "stock_code": "00020",
+        "date": "2023-12-08",
+        "Capital_Trend": 28220000.0,
+        "Institutional_Flow": -764710.0,
+        "Individual_Flow": 29000000.0
+      },
+      {
+        "stock_code": "00020",
+        "date": "2023-12-22",
+        "Capital_Trend": 105960000.0,
+        "Institutional_Flow": -988190.0,
+        "Individual_Flow": 106940000.0
+      },
+      {
+        "stock_code": "00020",
+        "date": "2023-12-29",
+        "Capital_Trend": -45920000.0,
+        "Institutional_Flow": 7510000.0,
+        "Individual_Flow": -53431330.0
+      },
+      {
+        "stock_code": "00020",
+        "date": "2024-01-05",
+        "Capital_Trend": -34380000.0,
+        "Institutional_Flow": -6010000.0,
+        "Individual_Flow": -28373700.0
+      },
+      {
+        "stock_code": "00020",
+        "date": "2024-01-12",
+        "Capital_Trend": -43490000.0,
+        "Institutional_Flow": -4627770.0,
+        "Individual_Flow": -38865450.0
+      },
+      {
+        "stock_code": "00020",
+        "date": "2024-01-19",
+        "Capital_Trend": -89860000.0,
+        "Institutional_Flow": -57738460.0,
+        "Individual_Flow": -32140000.0
+      },
+      {
+        "stock_code": "00020",
+        "date": "2024-01-26",
+        "Capital_Trend": -44370000.0,
+        "Institutional_Flow": -12134140.0,
+        "Individual_Flow": -32229420.0
+      },
+      {
+        "stock_code": "00020",
+        "date": "2024-02-02",
+        "Capital_Trend": -66000000.0,
+        "Institutional_Flow": -56769080.0,
+        "Individual_Flow": -9240000.0
+      },
+      {
+        "stock_code": "00020",
+        "date": "2024-02-16",
+        "Capital_Trend": -7500000.0,
+        "Institutional_Flow": 15078200.0,
+        "Individual_Flow": -22567070.0
+      },
+      {
+        "stock_code": "00020",
+        "date": "2024-03-01",
+        "Capital_Trend": -81730000.0,
+        "Institutional_Flow": -19134050.0,
+        "Individual_Flow": -62594850.0
+      },
+      {
+        "stock_code": "00020",
+        "date": "2024-03-08",
+        "Capital_Trend": -35870000.0,
+        "Institutional_Flow": 33394780.0,
+        "Individual_Flow": -69270000.0
+      },
+      {
+        "stock_code": "00020",
+        "date": "2024-03-15",
+        "Capital_Trend": -148260000.0,
+        "Institutional_Flow": -42980000.0,
+        "Individual_Flow": -105278900.0
+      },
+      {
+        "stock_code": "00020",
+        "date": "2024-03-22",
+        "Capital_Trend": -70970000.0,
+        "Institutional_Flow": -29179390.0,
+        "Individual_Flow": -41799490.0
+      },
+      {
+        "stock_code": "00020",
+        "date": "2024-03-28",
+        "Capital_Trend": -162690000.0,
+        "Institutional_Flow": -84830000.0,
+        "Individual_Flow": -77860000.0
+      },
+      {
+        "stock_code": "00020",
+        "date": "2024-04-05",
+        "Capital_Trend": -76530000.0,
+        "Institutional_Flow": -34755780.0,
+        "Individual_Flow": -41780000.0
+      },
+      {
+        "stock_code": "00020",
+        "date": "2024-04-12",
+        "Capital_Trend": -27940000.0,
+        "Institutional_Flow": 2385900.0,
+        "Individual_Flow": -30317010.0
+      },
+      {
+        "stock_code": "00020",
+        "date": "2024-04-19",
+        "Capital_Trend": -163580000.0,
+        "Institutional_Flow": -82646850.0,
+        "Individual_Flow": -80930000.0
+      },
+      {
+        "stock_code": "00020",
+        "date": "2024-05-10",
+        "Capital_Trend": -12470000.0,
+        "Institutional_Flow": -84662450.0,
+        "Individual_Flow": 72170000.0
+      },
+      {
+        "stock_code": "00020",
+        "date": "2024-05-17",
+        "Capital_Trend": -377640000.0,
+        "Institutional_Flow": -160420000.0,
+        "Individual_Flow": -217210000.0
+      },
+      {
+        "stock_code": "00020",
+        "date": "2024-05-31",
+        "Capital_Trend": -26630000.0,
+        "Institutional_Flow": 16661990.0,
+        "Individual_Flow": -43280000.0
+      },
+      {
+        "stock_code": "00020",
+        "date": "2024-06-14",
+        "Capital_Trend": -201350000.0,
+        "Institutional_Flow": -55163440.0,
+        "Individual_Flow": -146180000.0
+      },
+      {
+        "stock_code": "00020",
+        "date": "2024-06-28",
+        "Capital_Trend": 103330000.0,
+        "Institutional_Flow": -26152190.0,
+        "Individual_Flow": 129493500.0
+      },
+      {
+        "stock_code": "00020",
+        "date": "2024-07-05",
+        "Capital_Trend": 339900000.0,
+        "Institutional_Flow": -118310000.0,
+        "Individual_Flow": 458200000.0
+      },
+      {
+        "stock_code": "00020",
+        "date": "2024-07-12",
+        "Capital_Trend": 118240000.0,
+        "Institutional_Flow": -46820000.0,
+        "Individual_Flow": 165060000.0
+      },
+      {
+        "stock_code": "00020",
+        "date": "2024-07-19",
+        "Capital_Trend": 38590000.0,
+        "Institutional_Flow": -89060000.0,
+        "Individual_Flow": 127629070.0
+      },
+      {
+        "stock_code": "00020",
+        "date": "2024-07-26",
+        "Capital_Trend": -344090000.0,
+        "Institutional_Flow": -322532040.0,
+        "Individual_Flow": -21539750.0
+      },
+      {
+        "stock_code": "00020",
+        "date": "2024-08-02",
+        "Capital_Trend": 47740000.0,
+        "Institutional_Flow": -54467420.0,
+        "Individual_Flow": 102200000.0
+      },
+      {
+        "stock_code": "00020",
+        "date": "2024-08-09",
+        "Capital_Trend": -85470000.0,
+        "Institutional_Flow": -77262450.0,
+        "Individual_Flow": -8200000.0
+      },
+      {
+        "stock_code": "00020",
+        "date": "2024-08-16",
+        "Capital_Trend": -9140000.0,
+        "Institutional_Flow": -18334070.0,
+        "Individual_Flow": 9186440.0
+      },
+      {
+        "stock_code": "00020",
+        "date": "2024-08-23",
+        "Capital_Trend": -34900000.0,
+        "Institutional_Flow": -7034090.0,
+        "Individual_Flow": -27880000.0
+      },
+      {
+        "stock_code": "00020",
+        "date": "2024-09-05",
+        "Capital_Trend": 5250000.0,
+        "Institutional_Flow": -55490860.0,
+        "Individual_Flow": 60760000.0
+      },
+      {
+        "stock_code": "00020",
+        "date": "2024-09-13",
+        "Capital_Trend": -97589630.0,
+        "Institutional_Flow": -79738060.0,
+        "Individual_Flow": -17850000.0
+      },
+      {
+        "stock_code": "00020",
+        "date": "2024-10-10",
+        "Capital_Trend": 22400000.0,
+        "Institutional_Flow": -221193780.0,
+        "Individual_Flow": 243610000.0
+      },
+      {
+        "stock_code": "00020",
+        "date": "2024-10-18",
+        "Capital_Trend": 186800000.0,
+        "Institutional_Flow": -3410000.0,
+        "Individual_Flow": 190210000.0
+      }
+    ],
+    "missing_stocks": [
+      "00579",
+      "02602"
+    ],
+    "extra_stocks": []
+  },
+  "data_dictionary_check": {
+    "exists": true,
+    "version": "1.0",
+    "created_date": "2026-07-12 16:01:53"
+  }
+}

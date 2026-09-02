@@ -1,0 +1,8 @@
+{
+  "event_insert": true,
+  "event_hash_verification": true,
+  "decision_release_identity": true,
+  "certificate_identity": true,
+  "evidence_store_insert": true,
+  "missing_table_fail_closed": true
+}

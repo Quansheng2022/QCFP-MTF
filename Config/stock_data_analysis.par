@@ -1,0 +1,84 @@
+#####################################################
+#													#
+# 			Stock data/Money flow analysis			#
+#           Name:   stock_data_analysis.par         #
+# 			Author: Quansheng						#
+# 			Date:   2025-08-11						#
+# 			Version 1.0								#
+#													#
+#####################################################
+[FOLDERS]
+# Stock data analysis parameters
+# subfolders
+converted_scripts_dir = converted_scripts
+report_dir = Report
+data_dir = Data
+log_dir = log
+temp_dir = Temp
+utl_dir = Utl
+sqlite_dir = SQLiteDB
+
+[DATABASE]
+# SQLite database configuration
+db_name = HK_Stock.db
+
+[DATA_DOWNLOAD]
+# 数据下载配置
+# 数据下载起始日期（注意：与 [ANALYSIS_PERIOD] 的 start_date 是两个独立用途，
+# 不要使用同名键，否则扁平化读取时会被后者覆盖）
+download_start_date = 2010-01-01
+# 资金流增量下载往前查询的天数（仅影响增量更新，不影响数据库已有历史）
+moneyflow_lookback_days = 3650
+
+[ANALYSIS_PERIOD]
+# Analysis period
+#start_date = 2024-07-01
+start_date = 2025-01-01
+end_date = 
+
+# Weekly analysis period
+#start_date_week = 2024-01-01
+start_date_week = 
+end_date_week = 
+
+[TICKERS]
+# Holding
+tickers = 00788,00371,02202,00354,00357,03800,00020,00268,01093,06060,01951,01177,03033,02611,00700,02602
+
+[PROCESS_SWITCHES]
+download_trading_data = Yes
+calculate_ta_indicators = Yes
+display_last_day_ta_indicators = No
+convert_money_flow = Yes
+auto_open_pdf = No
+
+[MULTI_PROCESSING]
+# 启用/禁用多进程
+use_multiprocessing = Yes  
+# 自定义最大进程数（可选）
+max_workers = 8             
+
+[FUTU_MOOMOO]
+futu_account = 31457220
+futu_pwd_md5 = 029f94dc345e3d4dacc5887907197353
+#opend_exec_path = C:\Users\Quansheng\Documents\Futu_OpenD_10.4.6408_Windows\Futu_OpenD_10.4.6408_Windows\FutuOpenD.exe
+opend_exec_path = C:\Users\Quansheng\Documents\Futu_OpenD_10.10.7008_Windows\Futu_OpenD_10.10.7008_Windows\FutuOpenD.exe
+api_host = 127.0.0.1
+api_port = 11111
+
+[FREDAPI]
+FRED_API_KEY = f5c85117a899af8b5e2b2dbcf3bbc01a
+
+[HK_MACRO_DATA]
+# macro_data_download_start_date: > 10 years
+macro_data_download_start_date= 2015-01-01
+# macro_data_download_days < 30
+macro_data_download_days = 30
+
+[QCFP_MTF]
+# QCFP-MTF 多时间框架系统（季度筹码-资金-价格）
+model_version = QCFP-MTF-2.5.0
+enabled = Yes
+settings_file = qcfp_settings.yaml
+report_dir = Report/QCFP_MTF
+disclosure_lag_days = 45

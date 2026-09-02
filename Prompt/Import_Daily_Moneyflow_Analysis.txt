@@ -1,0 +1,1581 @@
+写一个python程序，将日资金流分析数据转换成sqlite数据库中的表。参考日交易数据转换程序--Import_Daily_Kline_Data.py.新的python 程序名--Import_Daily_Moneyflow_Analysis.py
+1. 根据01951_monthly_moneyflow_analysis.csv 文件列名 创建sqlite数据库中的表 hk_monthly_moneyflow_analysis. 从文件名解析股票代码，使用股票列表获取股票名称，将代码和名称添加到表字段。
+2. 创建数据字典：hk_daily_moneyflow_analysis_dictionary.json，如果数据字典文件已经存在，则添加新的数据字典。如果表已经存在，则先删除，创建该表的数据字典。
+3. 路径设置等赋值处理参考Import_Daily_Moneyflow.py。 
+4. 如果hk_daily_moneyflow_analysis表已经存在，则先删除，再导入。
+5. stock_code, stock_name等字段应放在表字段结构的最前面。并使用2个字段stock_code, date创建索引。
+6. 将csv文件中含有%符号的列名改成 ...Pct, 如change%=>changePct
+
+csv 文件路径：C:\Users\Quansheng\Documents\projects\TA_Workflow2\Data
+文件名：01951_daily_moneyflow_analysis.csv
+
+===============================================
+路径结构：
+$PROJECT_DIR
+	.venv
+	Config
+		stock_data_analysis.par
+		hk_data_dictionary.json
+		stock_list.json
+	Code_utl
+		Import_HK_Macro_Data_All_CSV_to_SQLiteDB.ps1
+		Verify_HK_Macro_Data.py		
+		Import_Daily_Kline_Data.py
+		Verify_Daily_Kline_Data.py
+
+		
+	Core
+		Daily
+		Weekly
+		Monthly
+		HK_Macro
+			HK_Macro_History.py
+			HK_Macro_Dashboard.py
+		Utl
+			path_utils.py
+			stock_analysis_utl.py
+			stock_list_loader.py
+	Report
+	Log
+	Temp
+	Data
+	Doc
+	SQLiteDB
+		HK_Stock.db
+	run_Daily_TA_workflow.py
+	run_HK_macro_dashboard_workflow.py
+	run_Monthly_TA_workflow.py
+	run_Weekly_TA_workflow.py
+
+
+# 股票列表：stock_list.json
+{
+  "stocks": [
+    {"code": "00371", "name": "北控水务", "sector": "公用事业", "market": "HKEX"},
+    {"code": "00788", "name": "中国铁塔", "sector": "电信服务", "market": "HKEX"},
+    {"code": "02202", "name": "港股万科企业", "sector": "房地产", "market": "HKEX"},
+    {"code": "01951", "name": "锦鑫生殖", "sector": "医疗保健", "market": "HKEX"},
+    {"code": "00268", "name": "金蝶国际", "sector": "信息技术", "market": "HKEX"},
+    {"code": "00354", "name": "中软国际", "sector": "信息技术", "market": "HKEX"},
+	{"code": "03033", "name": "南方恒生科技", "sector": "ETF", "market": "HKEX"},
+    {"code": "00700", "name": "腾讯控股", "sector": "信息技术", "market": "HKEX"},
+    {"code": "06060", "name": "众安在线", "sector": "金融", "market": "HKEX"},
+    {"code": "00357", "name": "美兰空港", "sector": "交通运输", "market": "HKEX"},
+    {"code": "01177", "name": "中生制药", "sector": "医疗保健", "market": "HKEX"},
+    {"code": "01093", "name": "石药集团", "sector": "医疗保健", "market": "HKEX"},
+    {"code": "03800", "name": "协鑫科技", "sector": "新能源", "market": "HKEX"},
+    {"code": "00020", "name": "商汤科技", "sector": "信息技术", "market": "HKEX"},
+    {"code": "02611", "name": "国泰海通", "sector": "金融", "market": "HKEX"},
+    {"code": "00579", "name": "京能清洁能源", "sector": "公用事业", "market": "HKEX"},
+    {"code": "02602", "name": "港股万物云", "sector": "信息技术", "market": "HKEX"}
+  ],
+  "metadata": {
+    "version": "1.0",
+    "last_updated": "2026-07-10",
+    "description": "港股股票列表，用于数据导入和验证"
+  }
+}
+
+==============
+stock_list_loader.py
+#!/usr/bin/env python
+# coding: utf-8
+
+"""
+stock_list_loader.py
+股票列表加载工具 - 从配置文件加载股票列表
+
+功能:
+  1. 从 Config/stock_list.json 加载股票列表
+  2. 提供股票列表的各种映射和查询功能
+  3. 如果配置文件不存在，创建示例配置文件
+  4. 支持保存股票列表到配置文件
+
+路径: TA_Workflow2/Core/Utl/stock_list_loader.py
+"""
+
+import json
+import os
+from pathlib import Path
+from typing import List, Dict, Optional, Set, Tuple
+from datetime import datetime
+
+# =====================================================
+# 1. 路径设置
+# =====================================================
+
+def get_project_dir() -> Path:
+    """
+    获取项目根目录 (TA_Workflow2)
+    脚本位于 TA_Workflow2/Core/Utl/ 目录下
+    """
+    try:
+        # 尝试从环境变量获取
+        env_dir = os.environ.get('PROJECT_ROOT')
+        if env_dir and Path(env_dir).exists():
+            return Path(env_dir)
+
+        # 从当前脚本路径推断项目根目录
+        script_path = Path(__file__).resolve()
+        
+        # Core/Utl 目录的父目录的父目录就是项目根目录
+        # 路径: .../TA_Workflow2/Core/Utl/stock_list_loader.py
+        # 项目根目录: .../TA_Workflow2
+        project_dir = script_path.parent.parent.parent
+        
+        # 验证是否真的是项目根目录（检查是否存在 Config 目录）
+        if (project_dir / 'Config').exists():
+            return project_dir
+        
+        # 如果找不到 Config，尝试其他方式
+        # 检查是否在 Core/Utl 目录中
+        if script_path.parent.parent.name == 'Core' and script_path.parent.name == 'Utl':
+            return script_path.parent.parent.parent
+        
+        # 尝试从当前工作目录向上查找
+        cwd = Path(os.getcwd()).resolve()
+        for parent in [cwd] + list(cwd.parents):
+            if (parent / 'Config').exists() and (parent / 'Core').exists():
+                return parent
+        
+        return cwd.parent.parent if cwd.name == 'Utl' else cwd
+        
+    except Exception as e:
+        print(f"[ERROR] 获取项目目录错误: {str(e)}")
+        return Path(__file__).resolve().parent.parent.parent
+
+# =====================================================
+# 2. 核心功能函数
+# =====================================================
+
+def get_sample_stock_list() -> List[Dict[str, str]]:
+    """
+    获取示例股票列表（仅用于创建示例配置文件）
+    
+    Returns:
+        示例股票列表
+    """
+    return [
+        {'code': '00020', 'name': '商汤科技', 'sector': '信息技术', 'market': 'HKEX'},
+        {'code': '00268', 'name': '金蝶国际', 'sector': '信息技术', 'market': 'HKEX'},
+        {'code': '00354', 'name': '中软国际', 'sector': '信息技术', 'market': 'HKEX'},
+        {'code': '00357', 'name': '美兰空港', 'sector': '交通运输', 'market': 'HKEX'},
+        {'code': '00371', 'name': '北控水务', 'sector': '公用事业', 'market': 'HKEX'},
+        {'code': '00579', 'name': '京能清洁能源', 'sector': '公用事业', 'market': 'HKEX'},
+        {'code': '00788', 'name': '中国铁塔', 'sector': '电信服务', 'market': 'HKEX'},
+        {'code': '01093', 'name': '石药集团', 'sector': '医疗保健', 'market': 'HKEX'},
+        {'code': '01177', 'name': '中生制药', 'sector': '医疗保健', 'market': 'HKEX'},
+        {'code': '01951', 'name': '锦鑫生殖', 'sector': '医疗保健', 'market': 'HKEX'},
+        {'code': '02202', 'name': '港股万科企业', 'sector': '房地产', 'market': 'HKEX'},
+        {'code': '02602', 'name': '港股万物云', 'sector': '信息技术', 'market': 'HKEX'},
+        {'code': '02611', 'name': '国泰海通', 'sector': '金融', 'market': 'HKEX'},
+        {'code': '03800', 'name': '协鑫科技', 'sector': '新能源', 'market': 'HKEX'},
+        {'code': '06060', 'name': '众安在线', 'sector': '金融', 'market': 'HKEX'},
+        {'code': '00700', 'name': '腾讯控股', 'sector': '信息技术', 'market': 'HKEX'},
+    ]
+
+def create_sample_config(config_dir: Path) -> bool:
+    """
+    创建示例配置文件
+    
+    Args:
+        config_dir: 配置目录路径
+        
+    Returns:
+        是否创建成功
+    """
+    config_dir.mkdir(parents=True, exist_ok=True)
+    stock_list_path = config_dir / 'stock_list.json'
+    
+    # 如果文件已存在，不覆盖
+    if stock_list_path.exists():
+        print(f"[INFO] 配置文件已存在: {stock_list_path}")
+        return True
+    
+    sample_list = get_sample_stock_list()
+    
+    data = {
+        'stocks': sample_list,
+        'metadata': {
+            'version': '1.0',
+            'created_date': datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
+            'description': '港股股票列表，用于数据导入和验证',
+            'total_stocks': len(sample_list),
+            'note': '请根据实际需要修改此文件'
+        }
+    }
+    
+    try:
+        with open(stock_list_path, 'w', encoding='utf-8') as f:
+            json.dump(data, f, ensure_ascii=False, indent=2)
+        print(f"[INFO] 已创建示例配置文件: {stock_list_path}")
+        print(f"[INFO] 共包含 {len(sample_list)} 只示例股票")
+        print(f"[INFO] 请根据实际需要修改此文件")
+        return True
+    except Exception as e:
+        print(f"[ERROR] 创建示例配置文件失败: {e}")
+        return False
+
+def load_stock_list(config_dir: Optional[Path] = None) -> List[Dict[str, str]]:
+    """
+    从配置文件加载股票列表
+    
+    Args:
+        config_dir: 配置目录路径，如果为None则自动查找
+        
+    Returns:
+        股票列表，每个元素包含 code, name, sector, market 字段
+        
+    Raises:
+        FileNotFoundError: 如果配置文件不存在且无法创建
+        ValueError: 如果配置文件格式不正确
+        
+    Examples:
+        >>> stocks = load_stock_list()
+        >>> print(f"加载了 {len(stocks)} 只股票")
+    """
+    if config_dir is None:
+        project_dir = get_project_dir()
+        config_dir = project_dir / 'Config'
+    
+    stock_list_path = config_dir / 'stock_list.json'
+    
+    # 如果配置文件不存在，创建示例文件
+    if not stock_list_path.exists():
+        print(f"[WARN] 股票列表文件不存在: {stock_list_path}")
+        print("[INFO] 正在创建示例配置文件...")
+        if not create_sample_config(config_dir):
+            raise FileNotFoundError(f"无法创建配置文件: {stock_list_path}")
+        # 重新加载
+        return load_stock_list(config_dir)
+    
+    try:
+        with open(stock_list_path, 'r', encoding='utf-8') as f:
+            data = json.load(f)
+        
+        # 支持两种格式：直接数组或包含stocks键的对象
+        if isinstance(data, list):
+            stocks = data
+        elif isinstance(data, dict) and 'stocks' in data:
+            stocks = data['stocks']
+        else:
+            raise ValueError(f"股票列表文件格式不正确: {stock_list_path}")
+        
+        if not stocks:
+            raise ValueError(f"股票列表为空: {stock_list_path}")
+        
+        # 验证每个股票记录的必填字段
+        required_fields = ['code', 'name']
+        valid_stocks = []
+        invalid_count = 0
+        
+        for stock in stocks:
+            if all(field in stock for field in required_fields):
+                # 确保有 sector 和 market 字段（如果没有，设置默认值）
+                if 'sector' not in stock:
+                    stock['sector'] = 'N/A'
+                if 'market' not in stock:
+                    stock['market'] = 'HKEX'
+                valid_stocks.append(stock)
+            else:
+                invalid_count += 1
+                print(f"[WARN] 跳过无效的股票记录: {stock}")
+        
+        if invalid_count > 0:
+            print(f"[WARN] 跳过了 {invalid_count} 条无效记录")
+        
+        if not valid_stocks:
+            raise ValueError("没有有效的股票记录")
+        
+        print(f"[INFO] 成功加载 {len(valid_stocks)} 只股票")
+        return valid_stocks
+        
+    except json.JSONDecodeError as e:
+        raise ValueError(f"JSON解析失败: {e}")
+    except Exception as e:
+        raise ValueError(f"加载股票列表失败: {e}")
+
+def save_stock_list(stock_list: List[Dict[str, str]], config_dir: Optional[Path] = None) -> bool:
+    """
+    保存股票列表到配置文件
+    
+    Args:
+        stock_list: 股票列表
+        config_dir: 配置目录路径
+        
+    Returns:
+        是否保存成功
+        
+    Examples:
+        >>> stocks = load_stock_list()
+        >>> # 修改 stocks...
+        >>> save_stock_list(stocks)
+    """
+    if config_dir is None:
+        project_dir = get_project_dir()
+        config_dir = project_dir / 'Config'
+    
+    config_dir.mkdir(parents=True, exist_ok=True)
+    stock_list_path = config_dir / 'stock_list.json'
+    
+    # 构建数据对象
+    data = {
+        'stocks': stock_list,
+        'metadata': {
+            'version': '1.0',
+            'last_updated': datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
+            'description': '港股股票列表，用于数据导入和验证',
+            'total_stocks': len(stock_list)
+        }
+    }
+    
+    try:
+        with open(stock_list_path, 'w', encoding='utf-8') as f:
+            json.dump(data, f, ensure_ascii=False, indent=2)
+        print(f"[INFO] 股票列表已保存: {stock_list_path}")
+        print(f"[INFO] 共保存 {len(stock_list)} 只股票")
+        return True
+    except Exception as e:
+        print(f"[ERROR] 保存股票列表失败: {e}")
+        return False
+
+def get_stock_map(stock_list: Optional[List[Dict[str, str]]] = None) -> Dict[str, Dict[str, str]]:
+    """
+    将股票列表转换为以代码为键的字典
+    
+    Args:
+        stock_list: 股票列表，如果为None则自动加载
+        
+    Returns:
+        代码到股票信息的映射字典
+        
+    Examples:
+        >>> stock_map = get_stock_map()
+        >>> print(stock_map['01951']['name'])
+        锦鑫生殖
+    """
+    if stock_list is None:
+        stock_list = load_stock_list()
+    
+    return {item['code']: item for item in stock_list}
+
+def get_stock_name_map(stock_list: Optional[List[Dict[str, str]]] = None) -> Dict[str, str]:
+    """
+    获取股票代码到名称的映射
+    
+    Args:
+        stock_list: 股票列表，如果为None则自动加载
+        
+    Returns:
+        代码到名称的映射字典
+        
+    Examples:
+        >>> name_map = get_stock_name_map()
+        >>> print(name_map['01951'])
+        锦鑫生殖
+    """
+    if stock_list is None:
+        stock_list = load_stock_list()
+    
+    return {item['code']: item['name'] for item in stock_list}
+
+def get_stock_by_code(code: str, stock_list: Optional[List[Dict[str, str]]] = None) -> Optional[Dict[str, str]]:
+    """
+    根据股票代码获取股票信息
+    
+    Args:
+        code: 股票代码
+        stock_list: 股票列表，如果为None则自动加载
+        
+    Returns:
+        股票信息字典，如果不存在则返回None
+        
+    Examples:
+        >>> stock = get_stock_by_code('01951')
+        >>> print(stock['name'])
+        锦鑫生殖
+    """
+    if stock_list is None:
+        stock_list = load_stock_list()
+    
+    stock_map = get_stock_map(stock_list)
+    return stock_map.get(code)
+
+def get_stocks_by_sector(sector: str, stock_list: Optional[List[Dict[str, str]]] = None) -> List[Dict[str, str]]:
+    """
+    根据行业获取股票列表
+    
+    Args:
+        sector: 行业名称
+        stock_list: 股票列表，如果为None则自动加载
+        
+    Returns:
+        指定行业的股票列表
+        
+    Examples:
+        >>> tech_stocks = get_stocks_by_sector('信息技术')
+        >>> print(f"信息技术行业有 {len(tech_stocks)} 只股票")
+    """
+    if stock_list is None:
+        stock_list = load_stock_list()
+    
+    return [stock for stock in stock_list if stock.get('sector') == sector]
+
+def get_all_sectors(stock_list: Optional[List[Dict[str, str]]] = None) -> List[str]:
+    """
+    获取所有行业列表
+    
+    Args:
+        stock_list: 股票列表，如果为None则自动加载
+        
+    Returns:
+        行业列表（去重并排序）
+        
+    Examples:
+        >>> sectors = get_all_sectors()
+        >>> print(sectors)
+        ['公用事业', '医疗保健', '新能源', ...]
+    """
+    if stock_list is None:
+        stock_list = load_stock_list()
+    
+    sectors = set()
+    for stock in stock_list:
+        sector = stock.get('sector', 'N/A')
+        if sector != 'N/A':
+            sectors.add(sector)
+    
+    return sorted(sectors)
+
+def get_stock_codes(stock_list: Optional[List[Dict[str, str]]] = None) -> List[str]:
+    """
+    获取所有股票代码列表
+    
+    Args:
+        stock_list: 股票列表，如果为None则自动加载
+        
+    Returns:
+        股票代码列表（排序）
+        
+    Examples:
+        >>> codes = get_stock_codes()
+        >>> print(codes[:5])
+        ['00020', '00268', '00354', '00357', '00371']
+    """
+    if stock_list is None:
+        stock_list = load_stock_list()
+    
+    return sorted([stock['code'] for stock in stock_list])
+
+def validate_stock_list(stock_list: List[Dict[str, str]]) -> Tuple[bool, List[str]]:
+    """
+    验证股票列表的有效性
+    
+    Args:
+        stock_list: 股票列表
+        
+    Returns:
+        (是否有效, 错误信息列表)
+        
+    Examples:
+        >>> stocks = load_stock_list()
+        >>> valid, errors = validate_stock_list(stocks)
+        >>> if valid:
+        ...     print("股票列表有效")
+        ... else:
+        ...     print("错误:", errors)
+    """
+    errors = []
+    required_fields = ['code', 'name']
+    
+    # 检查每个股票记录
+    for i, stock in enumerate(stock_list):
+        # 检查必填字段
+        for field in required_fields:
+            if field not in stock or not stock[field]:
+                errors.append(f"记录 {i+1}: 缺少必填字段 '{field}'")
+        
+        # 检查代码格式（5位数字）
+        if 'code' in stock and stock['code']:
+            code = stock['code']
+            if not code.isdigit() or len(code) != 5:
+                errors.append(f"记录 {i+1}: 代码 '{code}' 格式不正确（应为5位数字）")
+    
+    # 检查重复代码
+    codes = [stock.get('code') for stock in stock_list if stock.get('code')]
+    if len(codes) != len(set(codes)):
+        duplicate_codes = [code for code in set(codes) if codes.count(code) > 1]
+        errors.append(f"发现重复的股票代码: {duplicate_codes}")
+    
+    return len(errors) == 0, errors
+
+def print_stock_list_summary(stock_list: Optional[List[Dict[str, str]]] = None):
+    """
+    打印股票列表摘要信息
+    
+    Args:
+        stock_list: 股票列表，如果为None则自动加载
+        
+    Examples:
+        >>> print_stock_list_summary()
+    """
+    if stock_list is None:
+        stock_list = load_stock_list()
+    
+    print("\n" + "=" * 60)
+    print("股票列表摘要")
+    print("=" * 60)
+    print(f"总股票数: {len(stock_list)}")
+    
+    # 按行业统计
+    sectors = {}
+    for stock in stock_list:
+        sector = stock.get('sector', 'N/A')
+        sectors[sector] = sectors.get(sector, 0) + 1
+    
+    print("\n按行业统计:")
+    for sector, count in sorted(sectors.items()):
+        print(f"  {sector}: {count} 只")
+    
+    # 按市场统计
+    markets = {}
+    for stock in stock_list:
+        market = stock.get('market', 'N/A')
+        markets[market] = markets.get(market, 0) + 1
+    
+    print("\n按市场统计:")
+    for market, count in sorted(markets.items()):
+        print(f"  {market}: {count} 只")
+    
+    # 前10只股票
+    print("\n前10只股票:")
+    for i, stock in enumerate(stock_list[:10], 1):
+        print(f"  {i:2d}. {stock['code']} - {stock['name']} ({stock.get('sector', 'N/A')})")
+    
+    if len(stock_list) > 10:
+        print(f"  ... 还有 {len(stock_list) - 10} 只股票")
+    
+    print("=" * 60)
+
+# =====================================================
+# 3. 主函数（测试用）
+# =====================================================
+
+def main():
+    """测试函数"""
+    print("=" * 60)
+    print("股票列表加载工具 - 测试")
+    print("=" * 60)
+    
+    try:
+        # 1. 加载股票列表
+        print("\n1. 加载股票列表...")
+        stock_list = load_stock_list()
+        print(f"   加载了 {len(stock_list)} 只股票")
+        
+        # 2. 验证股票列表
+        print("\n2. 验证股票列表...")
+        valid, errors = validate_stock_list(stock_list)
+        if valid:
+            print("   ✅ 股票列表有效")
+        else:
+            print("   ❌ 发现错误:")
+            for error in errors:
+                print(f"      - {error}")
+        
+        # 3. 测试各种映射
+        print("\n3. 测试映射功能...")
+        name_map = get_stock_name_map(stock_list)
+        print(f"   股票名称映射: {len(name_map)} 条")
+        
+        stock_map = get_stock_map(stock_list)
+        print(f"   股票信息映射: {len(stock_map)} 条")
+        
+        # 4. 测试查询功能
+        print("\n4. 测试查询功能...")
+        test_code = '01951'
+        stock = get_stock_by_code(test_code, stock_list)
+        if stock:
+            print(f"   查询 {test_code}: {stock['name']} ({stock.get('sector', 'N/A')})")
+        
+        # 5. 获取所有行业
+        print("\n5. 获取所有行业...")
+        sectors = get_all_sectors(stock_list)
+        print(f"   行业列表: {sectors}")
+        
+        # 6. 获取行业股票
+        if sectors:
+            test_sector = sectors[0]
+            sector_stocks = get_stocks_by_sector(test_sector, stock_list)
+            print(f"\n6. 查询行业 '{test_sector}' 的股票...")
+            print(f"   {len(sector_stocks)} 只股票:")
+            for stock in sector_stocks[:5]:
+                print(f"      - {stock['code']} {stock['name']}")
+            if len(sector_stocks) > 5:
+                print(f"      ... 还有 {len(sector_stocks) - 5} 只")
+        
+        # 7. 打印摘要
+        print_stock_list_summary(stock_list)
+        
+        print("\n✅ 测试完成")
+        
+    except Exception as e:
+        print(f"\n❌ 测试失败: {e}")
+        import traceback
+        traceback.print_exc()
+
+if __name__ == "__main__":
+    main()
+
+
+
+
+=============================
+#!/usr/bin/env python
+# coding: utf-8
+
+"""
+Import_Daily_Kline_Data.py
+将日交易数据CSV文件导入SQLite数据库
+从CSV文件解析股票代码，匹配股票名称，创建hk_hist_data_daily表
+
+脚本位置: TA_Workflow2/Code_utl/Import_Daily_Kline_Data.py
+"""
+
+import os
+import sys
+import pandas as pd
+import sqlite3
+import json
+from pathlib import Path
+from datetime import datetime
+import warnings
+import re
+import configparser
+
+warnings.filterwarnings('ignore')
+
+# =====================================================
+# 1. 路径设置（参考HK_Macro_History.py）
+# =====================================================
+
+def get_project_dir():
+    """
+    获取项目根目录 (TA_Workflow2)
+    脚本位于 TA_Workflow2/Code_utl/ 目录下
+    """
+    try:
+        # 尝试从环境变量获取
+        env_dir = os.environ.get('PROJECT_ROOT')
+        if env_dir and Path(env_dir).exists():
+            return Path(env_dir)
+
+        # 从当前脚本路径推断项目根目录
+        script_path = Path(__file__).resolve()
+        
+        # 向上两级到达项目根目录
+        project_dir = script_path.parent.parent
+        
+        # 验证是否真的是项目根目录（检查是否存在config目录）
+        if (project_dir / 'Config').exists():
+            return project_dir
+        
+        # 如果找不到config，尝试其他方式
+        if script_path.parent.name == 'Code_utl':
+            return script_path.parent.parent
+        
+        # 尝试从当前工作目录向上查找
+        cwd = Path(os.getcwd()).resolve()
+        for parent in [cwd] + list(cwd.parents):
+            if (parent / 'Config').exists() and (parent / 'Code_utl').exists():
+                return parent
+        
+        return cwd.parent if cwd.name == 'Code_utl' else cwd
+        
+    except Exception as e:
+        print(f"获取项目目录错误: {str(e)}")
+        return Path(__file__).resolve().parent.parent
+
+def setup_windows_encoding():
+    """解决Windows环境的中文编码问题"""
+    if sys.platform == "win32":
+        try:
+            os.system("chcp 65001 > nul")
+        except Exception as e:
+            print(f"设置控制台代码页失败: {e}")
+
+# =====================================================
+# 2. 配置加载和路径初始化
+# =====================================================
+
+# 获取项目根目录
+project_dir = get_project_dir()
+print(f"[INFO] 项目目录: {project_dir}")
+
+# 添加必要的路径到 sys.path
+# 1. 项目根目录
+if str(project_dir) not in sys.path:
+    sys.path.insert(0, str(project_dir))
+    print(f"[INFO] 已添加项目根目录到 sys.path: {project_dir}")
+
+# 2. Core 目录（包含 Utl 子目录）
+core_dir = project_dir / 'Core'
+if str(core_dir) not in sys.path:
+    sys.path.insert(0, str(core_dir))
+    print(f"[INFO] 已添加 Core 目录到 sys.path: {core_dir}")
+
+# 3. 直接添加 Utl 目录
+utl_dir = project_dir / 'Core' / 'Utl'
+if str(utl_dir) not in sys.path:
+    sys.path.insert(0, str(utl_dir))
+    print(f"[INFO] 已添加 Utl 目录到 sys.path: {utl_dir}")
+
+# 导入股票列表加载工具
+try:
+    from stock_list_loader import load_stock_list, get_stock_name_map
+    print("[INFO] 成功导入 stock_list_loader")
+    
+    # 从配置文件加载股票列表
+    STOCK_LIST = load_stock_list(project_dir / 'Config')
+    STOCK_MAP = {item['code']: item for item in STOCK_LIST}
+    print(f"[INFO] 从配置文件加载了 {len(STOCK_LIST)} 只股票")
+    
+except ImportError as e:
+    print(f"[ERROR] 无法导入 stock_list_loader: {e}")
+    print(f"[ERROR] 请确保文件存在: {utl_dir / 'stock_list_loader.py'}")
+    print("[ERROR] 程序退出")
+    sys.exit(1)
+    
+except Exception as e:
+    print(f"[ERROR] 加载股票列表失败: {e}")
+    print("[ERROR] 请检查 Config/stock_list.json 文件是否存在且格式正确")
+    print("[ERROR] 程序退出")
+    sys.exit(1)
+
+# 配置文件路径
+config_path = project_dir / 'Config' / 'stock_data_analysis.par'
+print(f"[INFO] 配置文件路径: {config_path}")
+
+# 验证配置文件存在
+if not config_path.exists():
+    alt_path = project_dir.parent / 'Config' / 'stock_data_analysis.par'
+    if alt_path.exists():
+        config_path = alt_path
+        print(f"[INFO] 使用备用配置文件路径: {config_path}")
+    else:
+        print(f"[ERROR] 配置文件不存在: {config_path}")
+        print("[ERROR] 程序退出")
+        sys.exit(1)
+
+# 加载配置
+def load_config(config_path, project_dir):
+    """加载配置文件"""
+    config = {}
+    cp = configparser.ConfigParser()
+    cp.read(config_path, encoding='utf-8')
+    
+    # 读取 FOLDERS 段
+    if cp.has_section('FOLDERS'):
+        for key in cp.options('FOLDERS'):
+            value = cp.get('FOLDERS', key).strip().strip("'").strip('"')
+            config[key] = value
+    
+    # 读取 DATABASE 段
+    if cp.has_section('DATABASE'):
+        config['db_name'] = cp.get('DATABASE', 'db_name', fallback='HK_Stock.db').strip()
+    else:
+        config['db_name'] = 'HK_Stock.db'
+    
+    # 构建完整路径
+    data_rel = config.get('data_dir', 'Data')
+    config['full_data_dir'] = os.path.join(str(project_dir), data_rel)
+    
+    sqlite_rel = config.get('sqlite_dir', 'SQLiteDB')
+    config['full_sqlite_dir'] = os.path.join(str(project_dir), sqlite_rel)
+    
+    db_name = config.get('db_name', 'HK_Stock.db')
+    config['full_db_path'] = os.path.join(config['full_sqlite_dir'], db_name)
+    
+    # 确保目录存在
+    for path_key in ['full_data_dir', 'full_sqlite_dir']:
+        path = config.get(path_key)
+        if path and not os.path.exists(path):
+            os.makedirs(path, exist_ok=True)
+    
+    return config
+
+# 加载配置
+CONFIG = load_config(str(config_path), str(project_dir))
+
+# 强制 UTF-8 输出
+setup_windows_encoding()
+
+# 路径设置
+DATA_DIR = Path(CONFIG.get('full_data_dir'))
+DB_DIR = Path(CONFIG.get('full_sqlite_dir'))
+DB_PATH = Path(CONFIG.get('full_db_path'))
+
+print(f"[INFO] 数据目录: {DATA_DIR}")
+print(f"[INFO] 数据库目录: {DB_DIR}")
+print(f"[INFO] 数据库路径: {DB_PATH}")
+
+# 显示股票列表摘要
+print(f"\n[INFO] 股票列表摘要:")
+print(f"  总股票数: {len(STOCK_LIST)}")
+if STOCK_LIST:
+    print(f"  股票代码范围: {STOCK_LIST[0]['code']} ~ {STOCK_LIST[-1]['code']}")
+    sectors = set(s.get('sector', 'N/A') for s in STOCK_LIST)
+    print(f"  涉及行业: {', '.join(sectors)}")
+print()
+
+# =====================================================
+# 3. 数据库操作函数
+# =====================================================
+
+def get_db_connection():
+    """获取数据库连接"""
+    DB_DIR.mkdir(parents=True, exist_ok=True)
+    conn = sqlite3.connect(str(DB_PATH))
+    conn.text_factory = str
+    return conn
+
+def table_exists(conn, table_name):
+    """检查表是否存在"""
+    cursor = conn.cursor()
+    cursor.execute(f"SELECT name FROM sqlite_master WHERE type='table' AND name='{table_name}'")
+    return cursor.fetchone() is not None
+
+def get_table_schema(conn, table_name):
+    """获取表结构"""
+    cursor = conn.cursor()
+    cursor.execute(f"PRAGMA table_info({table_name})")
+    return cursor.fetchall()
+
+def create_table_if_not_exists(conn):
+    """
+    创建 hk_hist_daily_kline 表（如果不存在）
+    将 stock_code 和 stock_name 放在最前面
+    创建复合索引 (stock_code, stock_name, date)
+    """
+    # 先读取一个CSV文件样例来获取列结构
+    csv_files = list(DATA_DIR.glob("*_daily_historical_data.csv"))
+    if not csv_files:
+        print(f"[ERROR] 未找到任何 *_daily_historical_data.csv 文件")
+        return False
+    
+    # 读取第一个CSV文件获取列结构
+    sample_file = csv_files[0]
+    try:
+        df_sample = pd.read_csv(sample_file)
+        
+        # 构建CREATE TABLE语句 - 将 stock_code 和 stock_name 放在最前面
+        # 注意：这里暂时不加 NOT NULL 约束，由程序确保数据完整性
+        columns = [
+            'stock_code TEXT',
+            'stock_name TEXT',
+            'date TEXT'
+        ]
+        
+        # 添加其他列（排除可能的date列，因为我们已经添加了date）
+        for col in df_sample.columns:
+            col_clean = col.strip().replace(' ', '_').replace('/', '_').replace('(', '').replace(')', '')
+            
+            # 如果是date列，跳过（我们已经添加了date字段）
+            if 'date' in col.lower() or 'Date' in col.lower():
+                continue
+            
+            # 根据列名和数据类型选择合适的SQLite类型
+            if col.lower() in ['open', 'high', 'low', 'close', 'adj_close', 'adjclose']:
+                col_type = 'REAL'
+            elif 'volume' in col.lower() or 'amount' in col.lower() or 'turnover' in col.lower():
+                col_type = 'REAL'
+            elif 'amplitude' in col.lower() or 'change' in col.lower():
+                col_type = 'REAL'
+            else:
+                # 检查数据类型
+                try:
+                    if pd.api.types.is_integer_dtype(df_sample[col]):
+                        col_type = 'INTEGER'
+                    elif pd.api.types.is_float_dtype(df_sample[col]):
+                        col_type = 'REAL'
+                    elif pd.api.types.is_datetime64_any_dtype(df_sample[col]):
+                        col_type = 'TEXT'
+                    else:
+                        col_type = 'TEXT'
+                except:
+                    col_type = 'TEXT'
+            
+            columns.append(f'"{col_clean}" {col_type}')
+        
+        # 创建表
+        create_sql = f"""
+        CREATE TABLE IF NOT EXISTS hk_hist_daily_kline (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            {', '.join(columns)}
+        )
+        """
+        
+        conn.execute(create_sql)
+        print(f"[INFO] 表 hk_hist_daily_kline 已创建或已存在")
+        
+        # 创建复合索引 (stock_code, stock_name, date)
+        try:
+            # 检查索引是否已存在
+            cursor = conn.cursor()
+            cursor.execute("""
+                SELECT name FROM sqlite_master 
+                WHERE type='index' AND name='idx_stock_code_name_date'
+            """)
+            if not cursor.fetchone():
+                create_index_sql = """
+                CREATE INDEX idx_stock_code_name_date 
+                ON hk_hist_daily_kline (stock_code, stock_name, date)
+                """
+                conn.execute(create_index_sql)
+                print(f"[INFO] 已创建复合索引 idx_stock_code_name_date")
+            else:
+                print(f"[INFO] 复合索引 idx_stock_code_name_date 已存在")
+        except Exception as e:
+            print(f"[WARN] 创建索引失败: {e}")
+        
+        return True
+        
+    except Exception as e:
+        print(f"[ERROR] 创建表失败: {e}")
+        import traceback
+        traceback.print_exc()
+        return False
+    
+def recreate_table(conn):
+    """
+    重新创建表（删除旧表并创建新表）
+    """
+    try:
+        # 删除旧表
+        if table_exists(conn, 'hk_hist_daily_kline'):
+            conn.execute("DROP TABLE hk_hist_daily_kline")
+            print("[INFO] 已删除旧表 hk_hist_daily_kline")
+        
+        # 创建新表
+        if create_table_if_not_exists(conn):
+            print("[INFO] 已重新创建表 hk_hist_daily_kline")
+            return True
+        else:
+            print("[ERROR] 重新创建表失败")
+            return False
+    except Exception as e:
+        print(f"[ERROR] 重新创建表失败: {e}")
+        return False
+
+def import_csv_to_db(csv_path, conn, stock_code, stock_name):
+    """
+    将CSV文件导入数据库
+    确保字段顺序与表结构匹配
+    """
+    try:
+        # 读取CSV文件
+        df = pd.read_csv(csv_path)
+        
+        # 清理列名
+        df.columns = [col.strip().replace(' ', '_').replace('/', '_').replace('(', '').replace(')', '') for col in df.columns]
+        
+        # 确保有date列，并提取date数据
+        date_col = None
+        for col in df.columns:
+            if 'date' in col.lower():
+                date_col = col
+                break
+        
+        if date_col is None:
+            print(f"   ⚠️ 未找到日期列")
+            return 0
+        
+        # 获取所有列（除了date列）
+        other_cols = [col for col in df.columns if col != date_col]
+        
+        # 创建新的DataFrame，按正确顺序排列
+        df_new = pd.DataFrame()
+        
+        # 确保 stock_code 和 stock_name 不是空值，且为字符串类型
+        df_new['stock_code'] = str(stock_code).strip()
+        df_new['stock_name'] = str(stock_name).strip()
+        df_new['date'] = pd.to_datetime(df[date_col]).dt.strftime('%Y-%m-%d')
+        
+        # 添加其他列
+        for col in other_cols:
+            df_new[col] = df[col]
+        
+        # 数值列四舍五入
+        for col in df_new.select_dtypes(include=['float64', 'float32']).columns:
+            if col not in ['stock_code', 'stock_name']:
+                df_new[col] = df_new[col].round(4)
+        
+        # 检查是否有空值在 stock_code 或 stock_name 中
+        if df_new['stock_code'].isna().any() or df_new['stock_code'].eq('').any():
+            print(f"   ⚠️ 发现空的 stock_code，填充为 {stock_code}")
+            df_new['stock_code'] = df_new['stock_code'].fillna(stock_code).replace('', stock_code)
+        
+        if df_new['stock_name'].isna().any() or df_new['stock_name'].eq('').any():
+            print(f"   ⚠️ 发现空的 stock_name，填充为 {stock_name}")
+            df_new['stock_name'] = df_new['stock_name'].fillna(stock_name).replace('', stock_name)
+        
+        # 确保数据类型正确
+        df_new['stock_code'] = df_new['stock_code'].astype(str)
+        df_new['stock_name'] = df_new['stock_name'].astype(str)
+        df_new['date'] = df_new['date'].astype(str)
+        
+        # 导入数据
+        df_new.to_sql('hk_hist_daily_kline', conn, if_exists='append', index=False)
+        
+        print(f"   ✅ 已导入 {len(df_new)} 条记录")
+        return len(df_new)
+        
+    except Exception as e:
+        print(f"   ❌ 导入失败: {e}")
+        import traceback
+        traceback.print_exc()
+        return 0
+
+def clear_table(conn, table_name):
+    """清空表数据"""
+    if table_exists(conn, table_name):
+        conn.execute(f"DELETE FROM {table_name}")
+        conn.execute(f"DELETE FROM sqlite_sequence WHERE name='{table_name}'")
+        print(f"[INFO] 已清空表 {table_name}")
+        return True
+    return False
+
+def drop_table(conn, table_name):
+    """删除表"""
+    if table_exists(conn, table_name):
+        conn.execute(f"DROP TABLE {table_name}")
+        print(f"[INFO] 已删除表 {table_name}")
+        return True
+    return False
+
+# =====================================================
+# 4. 创建数据字典（完整JSON格式）
+# =====================================================
+
+def create_data_dictionary(conn):
+    """
+    创建完整的数据字典 hk_stock_data_dictionary.json
+    包含表结构、字段说明、数据类型、约束、统计信息等
+    """
+    print("\n" + "-"*60)
+    print("创建数据字典...")
+    
+    # 获取CSV文件列表
+    csv_files = list(DATA_DIR.glob("*_daily_historical_data.csv"))
+    if not csv_files:
+        print(f"[WARN] 未找到CSV文件，无法创建数据字典")
+        return
+    
+    # 读取所有CSV文件获取完整信息
+    all_columns = set()
+    sample_df = None
+    file_info = []
+    
+    for csv_file in csv_files:
+        try:
+            df = pd.read_csv(csv_file)
+            filename = csv_file.stem
+            code = filename.split('_')[0] if filename.split('_') else filename
+            
+            # 获取日期范围
+            date_col = None
+            for col in df.columns:
+                if 'date' in col.lower():
+                    date_col = col
+                    break
+            
+            file_info.append({
+                'filename': csv_file.name,
+                'code': code,
+                'rows': len(df),
+                'columns': list(df.columns),
+                'date_range': {
+                    'start': df[date_col].iloc[0] if date_col else None,
+                    'end': df[date_col].iloc[-1] if date_col else None
+                }
+            })
+            
+            all_columns.update(df.columns)
+            if sample_df is None:
+                sample_df = df
+        except Exception as e:
+            print(f"   ⚠️ 读取 {csv_file.name} 失败: {e}")
+    
+    # 构建数据字典
+    data_dict = {
+        'metadata': {
+            'table_name': 'hk_hist_daily_kline',
+            'description': '港股日交易历史数据表',
+            'created_date': datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
+            'version': '1.0',
+            'database': str(DB_PATH.name),
+            'data_source': 'CSV files from Data directory',
+            'total_files': len(csv_files),
+            'total_stocks': len(STOCK_LIST),
+        },
+        'table_schema': {
+            'primary_key': 'id',
+            'columns_order': ['stock_code', 'stock_name', 'date', 'Open', 'High', 'Low', 'Close', 'Volume', '...'],
+            'columns': [],
+            'indexes': [
+                {
+                    'name': 'idx_stock_code_name_date',
+                    'fields': ['stock_code', 'stock_name', 'date'],
+                    'type': '复合索引',
+                    'description': '用于快速查询特定股票的日交易数据'
+                }
+            ],
+            'constraints': [
+                'PRIMARY KEY (id)',
+                'UNIQUE (stock_code, date)'
+            ]
+        },
+        'stock_list': STOCK_LIST,
+        'data_statistics': {
+            'total_records': 0,
+            'stocks_loaded': [],
+            'date_range': {
+                'earliest': None,
+                'latest': None
+            },
+            'file_details': file_info
+        },
+        'field_definitions': [],
+        'usage_examples': {
+            'query_all': "SELECT * FROM hk_hist_daily_kline LIMIT 10;",
+            'query_by_stock': "SELECT * FROM hk_hist_daily_kline WHERE stock_code = '01951';",
+            'query_date_range': "SELECT * FROM hk_hist_daily_kline WHERE date BETWEEN '2024-01-01' AND '2024-12-31';",
+            'query_closing_prices': "SELECT date, stock_code, stock_name, close FROM hk_hist_daily_kline;",
+            'query_with_index': "SELECT * FROM hk_hist_daily_kline WHERE stock_code = '01951' AND date = '2024-01-01';"
+        },
+        'data_dictionary': {
+            'column_definitions': [],
+            'relationships': [],
+            'business_rules': []
+        }
+    }
+    
+    # 添加字段定义（按照表的实际顺序）
+    # 基础字段（放在最前面）
+    base_fields = [
+        {'name': 'id', 'type': 'INTEGER', 'description': '自增主键', 'constraint': 'PRIMARY KEY AUTOINCREMENT', 'example': '1', 'is_key': True, 'is_required': True},
+        {'name': 'stock_code', 'type': 'TEXT', 'description': '股票代码（5位数字）', 'constraint': 'NOT NULL', 'example': '01951', 'is_key': True, 'is_required': True},
+        {'name': 'stock_name', 'type': 'TEXT', 'description': '股票名称', 'constraint': 'NOT NULL', 'example': '锦鑫生殖', 'is_key': True, 'is_required': True},
+        {'name': 'date', 'type': 'TEXT', 'description': '交易日期（YYYY-MM-DD格式）', 'constraint': 'NOT NULL', 'example': '2024-01-01', 'is_key': True, 'is_required': True},
+    ]
+    
+    # 从CSV文件提取其他字段
+    if sample_df is not None:
+        for col in sample_df.columns:
+            col_clean = col.strip().replace(' ', '_').replace('/', '_').replace('(', '').replace(')', '')
+            
+            # 如果是date列，跳过（已经添加）
+            if 'date' in col.lower():
+                continue
+            
+            # 确定字段类型和描述
+            col_lower = col.lower()
+            if 'open' in col_lower:
+                field_type = 'REAL'
+                description = '开盘价'
+                constraint = ''
+                example = '10.50'
+            elif 'high' in col_lower:
+                field_type = 'REAL'
+                description = '最高价'
+                constraint = ''
+                example = '11.00'
+            elif 'low' in col_lower:
+                field_type = 'REAL'
+                description = '最低价'
+                constraint = ''
+                example = '10.20'
+            elif 'close' in col_lower:
+                field_type = 'REAL'
+                description = '收盘价'
+                constraint = ''
+                example = '10.80'
+            elif 'adj_close' in col_lower or 'adjclose' in col_lower:
+                field_type = 'REAL'
+                description = '调整后收盘价（考虑分红、拆股等）'
+                constraint = ''
+                example = '10.75'
+            elif 'volume' in col_lower:
+                field_type = 'REAL'
+                description = '成交量（股数）'
+                constraint = ''
+                example = '1000000'
+            elif 'amount' in col_lower:
+                field_type = 'REAL'
+                description = '成交金额'
+                constraint = ''
+                example = '10000000'
+            elif 'amplitude' in col_lower:
+                field_type = 'REAL'
+                description = '振幅（%）'
+                constraint = ''
+                example = '3.5'
+            elif 'change' in col_lower and 'percent' in col_lower:
+                field_type = 'REAL'
+                description = '涨跌幅（%）'
+                constraint = ''
+                example = '2.5'
+            elif 'change' in col_lower and 'amount' in col_lower:
+                field_type = 'REAL'
+                description = '涨跌额'
+                constraint = ''
+                example = '0.25'
+            elif 'turnover' in col_lower:
+                field_type = 'REAL'
+                description = '换手率（%）'
+                constraint = ''
+                example = '1.5'
+            elif 'previous' in col_lower and 'close' in col_lower:
+                field_type = 'REAL'
+                description = '前收盘价'
+                constraint = ''
+                example = '10.55'
+            else:
+                try:
+                    if pd.api.types.is_integer_dtype(sample_df[col]):
+                        field_type = 'INTEGER'
+                    elif pd.api.types.is_float_dtype(sample_df[col]):
+                        field_type = 'REAL'
+                    else:
+                        field_type = 'TEXT'
+                except:
+                    field_type = 'TEXT'
+                description = f'原始字段: {col}'
+                constraint = ''
+                example = ''
+            
+            # 检查是否包含空值
+            null_count = sample_df[col].isnull().sum() if col in sample_df.columns else 0
+            
+            field_def = {
+                'name': col_clean,
+                'original_name': col,
+                'type': field_type,
+                'description': description,
+                'constraint': constraint,
+                'null_count': int(null_count),
+                'sample_value': str(sample_df[col].iloc[0]) if len(sample_df) > 0 and not pd.isna(sample_df[col].iloc[0]) else '',
+                'example': example,
+                'is_key': False,
+                'is_required': False
+            }
+            
+            data_dict['data_dictionary']['column_definitions'].append(field_def)
+    
+    # 添加基础字段到字段定义（放在最前面）
+    base_field_defs = []
+    for field in base_fields:
+        field_def = {
+            'name': field['name'],
+            'original_name': field['name'],
+            'type': field['type'],
+            'description': field['description'],
+            'constraint': field['constraint'],
+            'null_count': 0,
+            'sample_value': '',
+            'example': field['example'],
+            'is_key': field['is_key'],
+            'is_required': field['is_required']
+        }
+        base_field_defs.append(field_def)
+    
+    # 合并字段定义（基础字段在前）
+    data_dict['data_dictionary']['column_definitions'] = base_field_defs + data_dict['data_dictionary']['column_definitions']
+    
+    # 更新table_schema的columns
+    for field in base_field_defs + data_dict['data_dictionary']['column_definitions'][len(base_field_defs):]:
+        data_dict['table_schema']['columns'].append({
+            'name': field['name'],
+            'type': field['type'],
+            'description': field['description'],
+            'is_key': field['is_key']
+        })
+    
+    # 获取数据库统计信息
+    if table_exists(conn, 'hk_hist_daily_kline'):
+        try:
+            cursor = conn.cursor()
+            
+            # 总记录数
+            cursor.execute("SELECT COUNT(*) FROM hk_hist_daily_kline")
+            total_records = cursor.fetchone()[0]
+            data_dict['data_statistics']['total_records'] = total_records
+            
+            # 获取每个股票的记录数
+            cursor.execute("""
+                SELECT stock_code, stock_name, COUNT(*) as count
+                FROM hk_hist_daily_kline
+                GROUP BY stock_code, stock_name
+                ORDER BY stock_code
+            """)
+            stocks_loaded = []
+            for code, name, count in cursor.fetchall():
+                stock_info = {
+                    'code': code,
+                    'name': name,
+                    'record_count': count,
+                    'details': next((s for s in STOCK_LIST if s['code'] == code), {})
+                }
+                stocks_loaded.append(stock_info)
+            data_dict['data_statistics']['stocks_loaded'] = stocks_loaded
+            
+            # 日期范围
+            cursor.execute("""
+                SELECT MIN(date), MAX(date)
+                FROM hk_hist_daily_kline
+                WHERE date IS NOT NULL AND date != ''
+            """)
+            min_date, max_date = cursor.fetchone()
+            data_dict['data_statistics']['date_range'] = {
+                'earliest': min_date if min_date else None,
+                'latest': max_date if max_date else None
+            }
+            
+        except Exception as e:
+            print(f"   ⚠️ 获取统计信息失败: {e}")
+    
+    # 添加业务规则
+    data_dict['data_dictionary']['business_rules'] = [
+        {
+            'rule': '每个股票每天只有一条记录',
+            'description': '数据按日期去重，同一股票在同一天只有一条交易数据'
+        },
+        {
+            'rule': '价格精度',
+            'description': '价格数据保留4位小数'
+        },
+        {
+            'rule': '数据完整性',
+            'description': '所有交易数据应包含完整的OHLC（开高低收）和成交量信息'
+        },
+        {
+            'rule': '索引优化',
+            'description': '使用复合索引 (stock_code, stock_name, date) 优化查询性能'
+        }
+    ]
+    
+    # 添加关系说明
+    data_dict['data_dictionary']['relationships'] = [
+        {
+            'type': '外键关联',
+            'table': 'hk_idx_hist',
+            'field': 'date',
+            'description': '可通过日期字段与港股指数数据关联'
+        },
+        {
+            'type': '外键关联',
+            'table': 'macro_data_hist',
+            'field': 'date',
+            'description': '可通过日期字段与宏观数据关联'
+        }
+    ]
+    
+    # 保存数据字典
+    dict_path = project_dir / 'Config' / 'hk_stock_data_dictionary.json'
+    try:
+        with open(dict_path, 'w', encoding='utf-8') as f:
+            json.dump(data_dict, f, ensure_ascii=False, indent=2)
+        print(f"[INFO] 数据字典已创建: {dict_path}")
+        print(f"[INFO] 数据字典大小: {len(json.dumps(data_dict))} 字节")
+        
+        # 显示数据字典摘要
+        print("\n数据字典摘要:")
+        print(f"   - 表名: {data_dict['metadata']['table_name']}")
+        print(f"   - 字段数: {len(data_dict['data_dictionary']['column_definitions'])}")
+        print(f"   - 股票数: {len(data_dict['data_statistics']['stocks_loaded'])}")
+        print(f"   - 总记录数: {data_dict['data_statistics']['total_records']}")
+        print(f"   - 数据范围: {data_dict['data_statistics']['date_range']['earliest']} 至 {data_dict['data_statistics']['date_range']['latest']}")
+        print(f"   - 索引: {[idx['name'] for idx in data_dict['table_schema']['indexes']]}")
+        
+    except Exception as e:
+        print(f"[ERROR] 保存数据字典失败: {e}")
+        import traceback
+        traceback.print_exc()
+
+# =====================================================
+# 5. 主函数
+# =====================================================
+
+def main():
+    print("\n" + "="*60)
+    print("导入日交易数据到 SQLite 数据库")
+    print("="*60 + "\n")
+    
+    # 获取所有CSV文件
+    csv_files = list(DATA_DIR.glob("*_daily_historical_data.csv"))
+    
+    if not csv_files:
+        print(f"[ERROR] 在 {DATA_DIR} 中未找到 *_daily_historical_data.csv 文件")
+        print(f"[INFO] 请确认数据文件路径是否正确")
+        return
+    
+    print(f"[INFO] 找到 {len(csv_files)} 个CSV文件:")
+    for f in csv_files:
+        print(f"   - {f.name}")
+    
+    # 连接数据库
+    conn = get_db_connection()
+    
+    try:
+        # 检查表是否存在
+        if table_exists(conn, 'hk_hist_daily_kline'):
+            existing_count = conn.execute("SELECT COUNT(*) FROM hk_hist_daily_kline").fetchone()[0]
+            if existing_count > 0:
+                print(f"\n[WARN] 表 hk_hist_daily_kline 中已有 {existing_count} 条记录")
+                print("选项:")
+                print("  1. 清空现有数据并重新导入 (y)")
+                print("  2. 保留现有数据，追加新数据 (n)")
+                print("  3. 删除表并重新创建 (d) - 将创建新表结构（stock_code在前）")
+                response = input("请选择 (y/n/d): ").strip().lower()
+                
+                if response == 'd':
+                    if not recreate_table(conn):
+                        print("[ERROR] 重新创建表失败")
+                        return
+                elif response == 'y' or response == 'yes':
+                    clear_table(conn, 'hk_hist_daily_kline')
+                    print("[INFO] 已清空旧数据")
+                else:
+                    print("[INFO] 保留现有数据，将追加新数据")
+            else:
+                # 表存在但没有数据，检查表结构是否正确
+                print("[INFO] 表存在但没有数据，检查表结构...")
+                # 获取表结构
+                cursor = conn.cursor()
+                cursor.execute("PRAGMA table_info(hk_hist_daily_kline)")
+                columns = cursor.fetchall()
+                # 检查是否包含stock_code、stock_name、date字段
+                col_names = [col[1] for col in columns]
+                if 'stock_code' not in col_names or 'stock_name' not in col_names or 'date' not in col_names:
+                    print("[WARN] 表结构不完整，重新创建表")
+                    if not recreate_table(conn):
+                        print("[ERROR] 重新创建表失败")
+                        return
+        else:
+            # 表不存在，创建新表
+            print("[INFO] 创建新表...")
+            if not create_table_if_not_exists(conn):
+                print("[ERROR] 创建表失败")
+                return
+        
+        # 处理每个CSV文件
+        total_records = 0
+        processed_files = 0
+        skipped_files = []
+        
+        print("\n开始导入数据...")
+        print("-" * 60)
+        
+        for csv_file in csv_files:
+            # 从文件名解析股票代码
+            filename = csv_file.stem
+            parts = filename.split('_')
+            code = parts[0] if parts else filename
+            
+            # 验证代码格式
+            if not re.match(r'^\d{5}$', code):
+                print(f"\n[WARN] 无法从文件名解析股票代码: {csv_file.name}")
+                numbers = re.findall(r'\d+', filename)
+                if numbers:
+                    code = numbers[0]
+                    if len(code) < 5:
+                        code = code.zfill(5)
+                    print(f"   使用提取的代码: {code}")
+                else:
+                    print(f"   ⚠️ 跳过此文件")
+                    skipped_files.append(csv_file.name)
+                    continue
+            
+            # 获取股票信息
+            stock_info = STOCK_MAP.get(code, {})
+            if not stock_info:
+                print(f"\n[WARN] 股票 {code} 不在配置文件中")
+                stock_name = f"股票_{code}"
+                print(f"   使用默认名称: {stock_name}")
+            else:
+                stock_name = stock_info.get('name', f"股票_{code}")
+            
+            print(f"\n📊 处理: {csv_file.name}")
+            print(f"   股票代码: {code}")
+            print(f"   股票名称: {stock_name}")
+            if stock_info:
+                print(f"   行业: {stock_info.get('sector', 'N/A')}")
+                print(f"   市场: {stock_info.get('market', 'N/A')}")
+            
+            # 导入数据
+            count = import_csv_to_db(csv_file, conn, code, stock_name)
+            if count > 0:
+                total_records += count
+                processed_files += 1
+            else:
+                skipped_files.append(csv_file.name)
+            
+            conn.commit()
+        
+        # 显示结果
+        print("\n" + "="*60)
+        print("导入完成!")
+        print("="*60)
+        print(f"✅ 成功处理 {processed_files}/{len(csv_files)} 个文件")
+        if skipped_files:
+            print(f"⚠️ 跳过的文件: {', '.join(skipped_files)}")
+        print(f"📊 共导入 {total_records} 条记录")
+        
+        # 显示表信息
+        if table_exists(conn, 'hk_hist_daily_kline'):
+            count = conn.execute("SELECT COUNT(*) FROM hk_hist_daily_kline").fetchone()[0]
+            print(f"\n📋 表 hk_hist_daily_kline 当前共有 {count} 条记录")
+            
+            # 显示表结构
+            cursor = conn.cursor()
+            cursor.execute("PRAGMA table_info(hk_hist_daily_kline)")
+            columns = cursor.fetchall()
+            print(f"📋 表结构（字段顺序）:")
+            for i, col in enumerate(columns, 1):
+                print(f"   {i}. {col[1]} ({col[2]}) {'NOT NULL' if col[3] else ''}")
+            
+            # 显示索引
+            cursor.execute("SELECT name, sql FROM sqlite_master WHERE type='index' AND tbl_name='hk_hist_daily_kline'")
+            indexes = cursor.fetchall()
+            if indexes:
+                print(f"\n📋 索引:")
+                for idx_name, idx_sql in indexes:
+                    print(f"   - {idx_name}")
+            
+            # 显示股票统计
+            stocks = conn.execute(
+                "SELECT DISTINCT stock_code, stock_name FROM hk_hist_daily_kline ORDER BY stock_code"
+            ).fetchall()
+            print(f"\n📈 包含 {len(stocks)} 只股票的数据:")
+            for code, name in stocks:
+                cnt = conn.execute(
+                    f"SELECT COUNT(*) FROM hk_hist_daily_kline WHERE stock_code='{code}'"
+                ).fetchone()[0]
+                # 检查是否在配置文件中
+                in_config = "✓" if code in STOCK_MAP else "⚠️"
+                print(f"   {in_config} {code} {name}: {cnt} 条记录")
+        
+        # 创建数据字典
+        create_data_dictionary(conn)
+        
+    except Exception as e:
+        print(f"\n[ERROR] 程序执行失败: {e}")
+        import traceback
+        traceback.print_exc()
+    finally:
+        conn.close()
+        print("\n✅ 数据库连接已关闭")
+
+if __name__ == "__main__":
+    main()
+	

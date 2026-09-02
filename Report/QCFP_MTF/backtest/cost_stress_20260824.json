@@ -1,0 +1,50 @@
+{
+  "generated_at": "20260824",
+  "models": [
+    {
+      "cost_factor": 0.5,
+      "annualized_return": -0.014035,
+      "sharpe": -0.2235,
+      "max_drawdown": -0.204088,
+      "profit_factor": 0.912,
+      "annual_turnover": 2.9174,
+      "annual_cost": 0.006158
+    },
+    {
+      "cost_factor": 1.0,
+      "annualized_return": -0.019769,
+      "sharpe": -0.3264,
+      "max_drawdown": -0.22108,
+      "profit_factor": 0.874,
+      "annual_turnover": 2.9174,
+      "annual_cost": 0.011932
+    },
+    {
+      "cost_factor": 2.0,
+      "annualized_return": -0.031139,
+      "sharpe": -0.5309,
+      "max_drawdown": -0.253994,
+      "profit_factor": 0.8032,
+      "annual_turnover": 2.9174,
+      "annual_cost": 0.02348
+    },
+    {
+      "cost_factor": 3.0,
+      "annualized_return": -0.042381,
+      "sharpe": -0.7331,
+      "max_drawdown": -0.293221,
+      "profit_factor": 0.7389,
+      "annual_turnover": 2.9174,
+      "annual_cost": 0.035028
+    },
+    {
+      "cost_factor": 4.0,
+      "annualized_return": -0.053497,
+      "sharpe": -0.933,
+      "max_drawdown": -0.337145,
+      "profit_factor": 0.6807,
+      "annual_turnover": 2.9174,
+      "annual_cost": 0.046576
+    }
+  ]
+}

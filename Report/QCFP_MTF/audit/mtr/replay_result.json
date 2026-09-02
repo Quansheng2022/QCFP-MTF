@@ -1,0 +1,41 @@
+{
+  "schema": "REPLAY-2",
+  "scope": "current_release_only",
+  "release_tag": "MTR-CLOSURE-1",
+  "n_historical_skipped": 82192,
+  "n_current_release": 16,
+  "n_eligible": 16,
+  "n_ineligible": 0,
+  "n_exact": 16,
+  "n_mismatch": 0,
+  "n_replay_exception": 0,
+  "eligible_rate": 1.0,
+  "exact_rate": 1.0,
+  "critical_mismatch": 0,
+  "critical_mismatches": [],
+  "ineligible": [],
+  "exceptions": [],
+  "mismatches": [],
+  "decision_fields": [
+    "institutional_permission",
+    "wave_stage",
+    "prev_fsm_state",
+    "next_fsm_state",
+    "fsm_proposal_target",
+    "wave_proposal_target",
+    "target_position",
+    "canonical_action",
+    "binding_constraint",
+    "decision_path",
+    "decision_path_hash"
+  ],
+  "ledger_chain_tail": "9655f1b2e0fc6bb6",
+  "settings_registry_hash": "f30265f7504fde5c",
+  "rule": "Current Release Decision 必须 eligible=100% + exact=100% + critical mismatch=0；replay exception=0；Historical 由原 Release 重放（facts immutable）",
+  "historical_replay": {
+    "scope": "historical_replay",
+    "status": "REQUIRES_ARCHIVED_RELEASE_ENV",
+    "facts_immutable": true,
+    "rule": "REL-V9 decision → REL-V9 replay environment；不能用当前引擎要求旧决策 EXACT_MATCH"
+  }
+}

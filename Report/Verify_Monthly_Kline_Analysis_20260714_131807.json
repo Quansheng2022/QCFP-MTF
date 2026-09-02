@@ -1,0 +1,1321 @@
+{
+  "metadata": {
+    "table_name": "hk_monthly_kline_analysis",
+    "generated_time": "2026-07-14 13:18:07",
+    "database_path": "C:\\Users\\Quansheng\\Documents\\projects\\TA_Workflow2\\SQLiteDB\\HK_Stock.db",
+    "project_dir": "C:\\Users\\Quansheng\\Documents\\projects\\TA_Workflow2"
+  },
+  "basic_info": {
+    "total_records": "2040",
+    "columns": [
+      {
+        "cid": 0,
+        "name": "id",
+        "type": "INTEGER",
+        "notnull": 0,
+        "dflt_value": null,
+        "pk": 1
+      },
+      {
+        "cid": 1,
+        "name": "stock_code",
+        "type": "TEXT",
+        "notnull": 1,
+        "dflt_value": null,
+        "pk": 0
+      },
+      {
+        "cid": 2,
+        "name": "stock_name",
+        "type": "TEXT",
+        "notnull": 1,
+        "dflt_value": null,
+        "pk": 0
+      },
+      {
+        "cid": 3,
+        "name": "date",
+        "type": "TEXT",
+        "notnull": 1,
+        "dflt_value": null,
+        "pk": 0
+      },
+      {
+        "cid": 4,
+        "name": "Open",
+        "type": "REAL",
+        "notnull": 0,
+        "dflt_value": null,
+        "pk": 0
+      },
+      {
+        "cid": 5,
+        "name": "High",
+        "type": "REAL",
+        "notnull": 0,
+        "dflt_value": null,
+        "pk": 0
+      },
+      {
+        "cid": 6,
+        "name": "Low",
+        "type": "REAL",
+        "notnull": 0,
+        "dflt_value": null,
+        "pk": 0
+      },
+      {
+        "cid": 7,
+        "name": "Close",
+        "type": "REAL",
+        "notnull": 0,
+        "dflt_value": null,
+        "pk": 0
+      },
+      {
+        "cid": 8,
+        "name": "Volume",
+        "type": "REAL",
+        "notnull": 0,
+        "dflt_value": null,
+        "pk": 0
+      },
+      {
+        "cid": 9,
+        "name": "Amount",
+        "type": "REAL",
+        "notnull": 0,
+        "dflt_value": null,
+        "pk": 0
+      },
+      {
+        "cid": 10,
+        "name": "Turnover_Rate",
+        "type": "REAL",
+        "notnull": 0,
+        "dflt_value": null,
+        "pk": 0
+      },
+      {
+        "cid": 11,
+        "name": "Amplitude",
+        "type": "REAL",
+        "notnull": 0,
+        "dflt_value": null,
+        "pk": 0
+      },
+      {
+        "cid": 12,
+        "name": "Change_Amount",
+        "type": "REAL",
+        "notnull": 0,
+        "dflt_value": null,
+        "pk": 0
+      },
+      {
+        "cid": 13,
+        "name": "Change_Percent",
+        "type": "REAL",
+        "notnull": 0,
+        "dflt_value": null,
+        "pk": 0
+      },
+      {
+        "cid": 14,
+        "name": "EMA5",
+        "type": "REAL",
+        "notnull": 0,
+        "dflt_value": null,
+        "pk": 0
+      },
+      {
+        "cid": 15,
+        "name": "EMA10",
+        "type": "REAL",
+        "notnull": 0,
+        "dflt_value": null,
+        "pk": 0
+      },
+      {
+        "cid": 16,
+        "name": "EMA20",
+        "type": "REAL",
+        "notnull": 0,
+        "dflt_value": null,
+        "pk": 0
+      },
+      {
+        "cid": 17,
+        "name": "EMA50",
+        "type": "REAL",
+        "notnull": 0,
+        "dflt_value": null,
+        "pk": 0
+      },
+      {
+        "cid": 18,
+        "name": "EMA100",
+        "type": "REAL",
+        "notnull": 0,
+        "dflt_value": null,
+        "pk": 0
+      },
+      {
+        "cid": 19,
+        "name": "EMA200",
+        "type": "REAL",
+        "notnull": 0,
+        "dflt_value": null,
+        "pk": 0
+      },
+      {
+        "cid": 20,
+        "name": "MACD_DIF",
+        "type": "REAL",
+        "notnull": 0,
+        "dflt_value": null,
+        "pk": 0
+      },
+      {
+        "cid": 21,
+        "name": "MACD_Signal",
+        "type": "REAL",
+        "notnull": 0,
+        "dflt_value": null,
+        "pk": 0
+      },
+      {
+        "cid": 22,
+        "name": "MACD_Histogram",
+        "type": "REAL",
+        "notnull": 0,
+        "dflt_value": null,
+        "pk": 0
+      },
+      {
+        "cid": 23,
+        "name": "EMA5_10_Status",
+        "type": "REAL",
+        "notnull": 0,
+        "dflt_value": null,
+        "pk": 0
+      },
+      {
+        "cid": 24,
+        "name": "EMA5_10_Streak",
+        "type": "REAL",
+        "notnull": 0,
+        "dflt_value": null,
+        "pk": 0
+      },
+      {
+        "cid": 25,
+        "name": "EMA5_20_Status",
+        "type": "REAL",
+        "notnull": 0,
+        "dflt_value": null,
+        "pk": 0
+      },
+      {
+        "cid": 26,
+        "name": "EMA5_20_Streak",
+        "type": "REAL",
+        "notnull": 0,
+        "dflt_value": null,
+        "pk": 0
+      },
+      {
+        "cid": 27,
+        "name": "EMA10_50_Status",
+        "type": "REAL",
+        "notnull": 0,
+        "dflt_value": null,
+        "pk": 0
+      },
+      {
+        "cid": 28,
+        "name": "EMA10_50_Streak",
+        "type": "REAL",
+        "notnull": 0,
+        "dflt_value": null,
+        "pk": 0
+      },
+      {
+        "cid": 29,
+        "name": "EMA20_50_Status",
+        "type": "REAL",
+        "notnull": 0,
+        "dflt_value": null,
+        "pk": 0
+      },
+      {
+        "cid": 30,
+        "name": "EMA20_50_Streak",
+        "type": "REAL",
+        "notnull": 0,
+        "dflt_value": null,
+        "pk": 0
+      },
+      {
+        "cid": 31,
+        "name": "Golden_Triangle",
+        "type": "INTEGER",
+        "notnull": 0,
+        "dflt_value": null,
+        "pk": 0
+      },
+      {
+        "cid": 32,
+        "name": "Death_Triangle",
+        "type": "INTEGER",
+        "notnull": 0,
+        "dflt_value": null,
+        "pk": 0
+      },
+      {
+        "cid": 33,
+        "name": "MACD_Cross",
+        "type": "REAL",
+        "notnull": 0,
+        "dflt_value": null,
+        "pk": 0
+      },
+      {
+        "cid": 34,
+        "name": "MACD_Status",
+        "type": "REAL",
+        "notnull": 0,
+        "dflt_value": null,
+        "pk": 0
+      },
+      {
+        "cid": 35,
+        "name": "MACD_Golden_Streak",
+        "type": "REAL",
+        "notnull": 0,
+        "dflt_value": null,
+        "pk": 0
+      },
+      {
+        "cid": 36,
+        "name": "MACD_Death_Streak",
+        "type": "REAL",
+        "notnull": 0,
+        "dflt_value": null,
+        "pk": 0
+      },
+      {
+        "cid": 37,
+        "name": "VOL_EMA5",
+        "type": "REAL",
+        "notnull": 0,
+        "dflt_value": null,
+        "pk": 0
+      },
+      {
+        "cid": 38,
+        "name": "Volume_Ratio5",
+        "type": "REAL",
+        "notnull": 0,
+        "dflt_value": null,
+        "pk": 0
+      },
+      {
+        "cid": 39,
+        "name": "Gain",
+        "type": "REAL",
+        "notnull": 0,
+        "dflt_value": null,
+        "pk": 0
+      },
+      {
+        "cid": 40,
+        "name": "Loss",
+        "type": "REAL",
+        "notnull": 0,
+        "dflt_value": null,
+        "pk": 0
+      },
+      {
+        "cid": 41,
+        "name": "AvgGain",
+        "type": "REAL",
+        "notnull": 0,
+        "dflt_value": null,
+        "pk": 0
+      },
+      {
+        "cid": 42,
+        "name": "AvgLoss",
+        "type": "REAL",
+        "notnull": 0,
+        "dflt_value": null,
+        "pk": 0
+      },
+      {
+        "cid": 43,
+        "name": "RS",
+        "type": "REAL",
+        "notnull": 0,
+        "dflt_value": null,
+        "pk": 0
+      },
+      {
+        "cid": 44,
+        "name": "RSI14",
+        "type": "REAL",
+        "notnull": 0,
+        "dflt_value": null,
+        "pk": 0
+      },
+      {
+        "cid": 45,
+        "name": "KDJ_K",
+        "type": "REAL",
+        "notnull": 0,
+        "dflt_value": null,
+        "pk": 0
+      },
+      {
+        "cid": 46,
+        "name": "KDJ_D",
+        "type": "REAL",
+        "notnull": 0,
+        "dflt_value": null,
+        "pk": 0
+      },
+      {
+        "cid": 47,
+        "name": "KDJ_J",
+        "type": "REAL",
+        "notnull": 0,
+        "dflt_value": null,
+        "pk": 0
+      }
+    ]
+  },
+  "stock_statistics": [
+    {
+      "stock_code": "00020",
+      "stock_name": "商汤科技",
+      "record_count": 54,
+      "first_date": "2021-12-31",
+      "last_date": "2026-05-31",
+      "trading_months": 54,
+      "min_close": 0.71,
+      "max_close": 6.73,
+      "avg_close": 2.2487037037037036
+    },
+    {
+      "stock_code": "00268",
+      "stock_name": "金蝶国际",
+      "record_count": 197,
+      "first_date": "2010-01-31",
+      "last_date": "2026-05-31",
+      "trading_months": 197,
+      "min_close": 0.846,
+      "max_close": 31.6,
+      "avg_close": 8.231
+    },
+    {
+      "stock_code": "00354",
+      "stock_name": "中软国际",
+      "record_count": 197,
+      "first_date": "2010-01-31",
+      "last_date": "2026-05-31",
+      "trading_months": 197,
+      "min_close": 0.724,
+      "max_close": 13.937,
+      "avg_close": 4.103954314720812
+    },
+    {
+      "stock_code": "00357",
+      "stock_name": "美兰空港",
+      "record_count": 197,
+      "first_date": "2010-01-31",
+      "last_date": "2026-05-31",
+      "trading_months": 197,
+      "min_close": 2.565,
+      "max_close": 47.0,
+      "avg_close": 10.3398730964467
+    },
+    {
+      "stock_code": "00371",
+      "stock_name": "北控水务",
+      "record_count": 197,
+      "first_date": "2010-01-31",
+      "last_date": "2026-05-31",
+      "trading_months": 197,
+      "min_close": -0.38,
+      "max_close": 5.265,
+      "avg_close": 2.3054111675126903
+    },
+    {
+      "stock_code": "00788",
+      "stock_name": "中国铁塔",
+      "record_count": 94,
+      "first_date": "2018-08-31",
+      "last_date": "2026-05-31",
+      "trading_months": 94,
+      "min_close": 5.723,
+      "max_close": 19.086,
+      "avg_close": 10.415255319148937
+    },
+    {
+      "stock_code": "01093",
+      "stock_name": "石药集团",
+      "record_count": 197,
+      "first_date": "2010-01-31",
+      "last_date": "2026-05-31",
+      "trading_months": 197,
+      "min_close": -0.896,
+      "max_close": 11.531,
+      "avg_close": 4.547649746192894
+    },
+    {
+      "stock_code": "01177",
+      "stock_name": "中生制药",
+      "record_count": 197,
+      "first_date": "2010-01-31",
+      "last_date": "2026-05-31",
+      "trading_months": 197,
+      "min_close": -0.057,
+      "max_close": 9.67,
+      "avg_close": 3.278527918781726
+    },
+    {
+      "stock_code": "01951",
+      "stock_name": "锦鑫生殖",
+      "record_count": 84,
+      "first_date": "2019-06-30",
+      "last_date": "2026-05-31",
+      "trading_months": 84,
+      "min_close": 2.111,
+      "max_close": 22.217,
+      "avg_close": 7.006690476190476
+    },
+    {
+      "stock_code": "02202",
+      "stock_name": "港股万科企业",
+      "record_count": 144,
+      "first_date": "2014-06-30",
+      "last_date": "2026-05-31",
+      "trading_months": 144,
+      "min_close": 2.91,
+      "max_close": 31.549,
+      "avg_close": 14.107576388888889
+    },
+    {
+      "stock_code": "02611",
+      "stock_name": "国泰海通",
+      "record_count": 110,
+      "first_date": "2017-04-30",
+      "last_date": "2026-05-31",
+      "trading_months": 110,
+      "min_close": 6.268,
+      "max_close": 16.756,
+      "avg_close": 10.136145454545456
+    },
+    {
+      "stock_code": "03033",
+      "stock_name": "南方恒生科技",
+      "record_count": 70,
+      "first_date": "2020-08-31",
+      "last_date": "2026-05-31",
+      "trading_months": 70,
+      "min_close": 2.81,
+      "max_close": 9.365,
+      "avg_close": 5.135657142857142
+    },
+    {
+      "stock_code": "03800",
+      "stock_name": "协鑫科技",
+      "record_count": 197,
+      "first_date": "2010-01-31",
+      "last_date": "2026-05-31",
+      "trading_months": 197,
+      "min_close": 0.159,
+      "max_close": 4.591,
+      "avg_close": 1.4515999999999998
+    },
+    {
+      "stock_code": "06060",
+      "stock_name": "众安在线",
+      "record_count": 105,
+      "first_date": "2017-09-30",
+      "last_date": "2026-05-31",
+      "trading_months": 105,
+      "min_close": 10.14,
+      "max_close": 78.7,
+      "avg_close": 28.296285714285716
+    }
+  ],
+  "sample_data": [
+    {
+      "id": 54,
+      "stock_code": "00020",
+      "stock_name": "商汤科技",
+      "date": "2026-05-31",
+      "Open": 2.01,
+      "High": 2.1,
+      "Low": 1.66,
+      "Close": 1.72,
+      "Volume": 6961258387.0,
+      "Amount": 12993918811.0,
+      "Turnover_Rate": 16.59,
+      "Amplitude": 21.8905,
+      "Change_Amount": -0.29,
+      "Change_Percent": -14.4279,
+      "EMA5": 1.9888,
+      "...": "... 还有 33 个列未显示"
+    },
+    {
+      "id": 251,
+      "stock_code": "00268",
+      "stock_name": "金蝶国际",
+      "date": "2026-05-31",
+      "Open": 8.73,
+      "High": 9.62,
+      "Low": 7.18,
+      "Close": 7.46,
+      "Volume": 905487840.0,
+      "Amount": 7303850446.0,
+      "Turnover_Rate": 25.52,
+      "Amplitude": 27.9496,
+      "Change_Amount": -1.27,
+      "Change_Percent": -14.5475,
+      "EMA5": 9.4131,
+      "...": "... 还有 33 个列未显示"
+    },
+    {
+      "id": 448,
+      "stock_code": "00354",
+      "stock_name": "中软国际",
+      "date": "2026-05-31",
+      "Open": 3.5,
+      "High": 3.64,
+      "Low": 3.1,
+      "Close": 3.83,
+      "Volume": 571559024.0,
+      "Amount": 1969160370.0,
+      "Turnover_Rate": 20.91,
+      "Amplitude": 15.4286,
+      "Change_Amount": 0.33,
+      "Change_Percent": 9.4286,
+      "EMA5": 3.9957,
+      "...": "... 还有 33 个列未显示"
+    },
+    {
+      "id": 645,
+      "stock_code": "00357",
+      "stock_name": "美兰空港",
+      "date": "2026-05-31",
+      "Open": 6.13,
+      "High": 6.41,
+      "Low": 4.71,
+      "Close": 4.92,
+      "Volume": 15671113.0,
+      "Amount": 84143549.0,
+      "Turnover_Rate": 6.9,
+      "Amplitude": 27.7325,
+      "Change_Amount": -1.21,
+      "Change_Percent": -19.739,
+      "EMA5": 6.8586,
+      "...": "... 还有 33 个列未显示"
+    },
+    {
+      "id": 842,
+      "stock_code": "00371",
+      "stock_name": "北控水务",
+      "date": "2026-05-31",
+      "Open": 2.76,
+      "High": 2.98,
+      "Low": 2.608,
+      "Close": 2.628,
+      "Volume": 388675856.0,
+      "Amount": 1110626229.0,
+      "Turnover_Rate": 3.88,
+      "Amplitude": 13.4783,
+      "Change_Amount": -0.132,
+      "Change_Percent": -4.7826,
+      "EMA5": 2.6725,
+      "...": "... 还有 33 个列未显示"
+    },
+    {
+      "id": 936,
+      "stock_code": "00788",
+      "stock_name": "中国铁塔",
+      "date": "2026-05-31",
+      "Open": 11.19,
+      "High": 11.27,
+      "Low": 9.87,
+      "Close": 10.05,
+      "Volume": 341075878.0,
+      "Amount": 3616689226.0,
+      "Turnover_Rate": 7.33,
+      "Amplitude": 12.5112,
+      "Change_Amount": -1.14,
+      "Change_Percent": -10.1877,
+      "EMA5": 10.7628,
+      "...": "... 还有 33 个列未显示"
+    },
+    {
+      "id": 1133,
+      "stock_code": "01093",
+      "stock_name": "石药集团",
+      "date": "2026-05-31",
+      "Open": 8.47,
+      "High": 8.58,
+      "Low": 6.96,
+      "Close": 7.52,
+      "Volume": 1817336790.0,
+      "Amount": 13848049738.0,
+      "Turnover_Rate": 15.76,
+      "Amplitude": 19.1263,
+      "Change_Amount": -0.95,
+      "Change_Percent": -11.2161,
+      "EMA5": 8.4279,
+      "...": "... 还有 33 个列未显示"
+    },
+    {
+      "id": 1330,
+      "stock_code": "01177",
+      "stock_name": "中生制药",
+      "date": "2026-05-31",
+      "Open": 5.42,
+      "High": 5.83,
+      "Low": 4.81,
+      "Close": 5.03,
+      "Volume": 1465791310.0,
+      "Amount": 7756158974.0,
+      "Turnover_Rate": 7.84,
+      "Amplitude": 18.8192,
+      "Change_Amount": -0.39,
+      "Change_Percent": -7.1956,
+      "EMA5": 5.6723,
+      "...": "... 还有 33 个列未显示"
+    },
+    {
+      "id": 1414,
+      "stock_code": "01951",
+      "stock_name": "锦鑫生殖",
+      "date": "2026-05-31",
+      "Open": 2.39,
+      "High": 2.44,
+      "Low": 2.16,
+      "Close": 2.28,
+      "Volume": 273819000.0,
+      "Amount": 634627988.0,
+      "Turnover_Rate": 10.11,
+      "Amplitude": 11.7155,
+      "Change_Amount": -0.11,
+      "Change_Percent": -4.6025,
+      "EMA5": 2.3887,
+      "...": "... 还有 33 个列未显示"
+    },
+    {
+      "id": 1558,
+      "stock_code": "02202",
+      "stock_name": "港股万科企业",
+      "date": "2026-05-31",
+      "Open": 3.01,
+      "High": 3.37,
+      "Low": 2.54,
+      "Close": 2.94,
+      "Volume": 584023083.0,
+      "Amount": 1700994090.0,
+      "Turnover_Rate": 26.46,
+      "Amplitude": 27.5748,
+      "Change_Amount": -0.07,
+      "Change_Percent": -2.3256,
+      "EMA5": 3.2423,
+      "...": "... 还有 33 个列未显示"
+    }
+  ],
+  "quality_checks": {
+    "null_values": {
+      "stock_code": "0",
+      "stock_name": "0",
+      "date": "0",
+      "Open": "7",
+      "High": "7",
+      "Low": "7",
+      "Close": "7",
+      "Volume": "0",
+      "Amount": "0",
+      "Turnover_Rate": "0",
+      "Amplitude": "7",
+      "Change_Amount": "7",
+      "Change_Percent": "7",
+      "EMA5": "0",
+      "EMA10": "0",
+      "EMA20": "0",
+      "EMA50": "0",
+      "EMA100": "0",
+      "EMA200": "0",
+      "MACD_DIF": "0",
+      "MACD_Signal": "0",
+      "MACD_Histogram": "0",
+      "EMA5_10_Status": "14",
+      "EMA5_10_Streak": "0",
+      "EMA5_20_Status": "14",
+      "EMA5_20_Streak": "0",
+      "EMA10_50_Status": "14",
+      "EMA10_50_Streak": "0",
+      "EMA20_50_Status": "14",
+      "EMA20_50_Streak": "0",
+      "Golden_Triangle": "0",
+      "Death_Triangle": "0",
+      "MACD_Cross": "1873",
+      "MACD_Status": "14",
+      "MACD_Golden_Streak": "0",
+      "MACD_Death_Streak": "0",
+      "VOL_EMA5": "0",
+      "Volume_Ratio5": "0",
+      "Gain": "22",
+      "Loss": "22",
+      "AvgGain": "244",
+      "AvgLoss": "244",
+      "RS": "244",
+      "RSI14": "244",
+      "KDJ_K": "127",
+      "KDJ_D": "127",
+      "KDJ_J": "127"
+    },
+    "duplicates": [],
+    "ohlc_errors": [
+      {
+        "stock_code": "00354",
+        "date": "2011-08-31",
+        "Open": 2.494,
+        "High": 2.864,
+        "Low": 2.044,
+        "Close": 2.034,
+        "error_type": "Low > Close"
+      },
+      {
+        "stock_code": "00354",
+        "date": "2026-05-31",
+        "Open": 3.5,
+        "High": 3.64,
+        "Low": 3.1,
+        "Close": 3.83,
+        "error_type": "High < Close"
+      },
+      {
+        "stock_code": "00371",
+        "date": "2011-04-30",
+        "Open": 0.941,
+        "High": 0.921,
+        "Low": 0.571,
+        "Close": 0.651,
+        "error_type": "High < Open"
+      },
+      {
+        "stock_code": "00371",
+        "date": "2011-08-31",
+        "Open": 0.311,
+        "High": 0.351,
+        "Low": -0.07,
+        "Close": 0.181,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "date": "2011-09-30",
+        "Open": 0.191,
+        "High": 0.251,
+        "Low": -0.63,
+        "Close": -0.38,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "date": "2011-10-31",
+        "Open": -0.39,
+        "High": 0.291,
+        "Low": -0.46,
+        "Close": 0.131,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "date": "2012-03-31",
+        "Open": 0.281,
+        "High": 0.331,
+        "Low": -0.13,
+        "Close": -0.03,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "date": "2012-04-30",
+        "Open": 0.001,
+        "High": 0.071,
+        "Low": -0.17,
+        "Close": -0.03,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "date": "2012-05-31",
+        "Open": -0.03,
+        "High": 0.041,
+        "Low": -0.3,
+        "Close": -0.19,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "date": "2012-06-30",
+        "Open": -0.2,
+        "High": -0.15,
+        "Low": -0.37,
+        "Close": -0.32,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "date": "2012-07-31",
+        "Open": -0.33,
+        "High": -0.17,
+        "Low": -0.43,
+        "Close": -0.32,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "date": "2012-08-31",
+        "Open": -0.31,
+        "High": -0.1,
+        "Low": -0.32,
+        "Close": -0.28,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "date": "2012-09-30",
+        "Open": -0.19,
+        "High": 0.111,
+        "Low": -0.25,
+        "Close": 0.101,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "date": "2012-10-31",
+        "Open": 0.141,
+        "High": 0.141,
+        "Low": -0.04,
+        "Close": 0.031,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "date": "2012-11-30",
+        "Open": 0.031,
+        "High": 0.121,
+        "Low": -0.04,
+        "Close": 0.071,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "date": "2011-08-31",
+        "Open": 0.245,
+        "High": 0.26,
+        "Low": -0.151,
+        "Close": -0.141,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "date": "2011-09-30",
+        "Open": -0.188,
+        "High": -0.146,
+        "Low": -0.729,
+        "Close": -0.61,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "date": "2011-10-31",
+        "Open": -0.63,
+        "High": -0.386,
+        "Low": -0.719,
+        "Close": -0.479,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "date": "2011-11-30",
+        "Open": -0.552,
+        "High": -0.433,
+        "Low": -0.651,
+        "Close": -0.63,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "date": "2011-12-31",
+        "Open": -0.615,
+        "High": -0.578,
+        "Low": -0.766,
+        "Close": -0.709,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "date": "2012-01-31",
+        "Open": -0.703,
+        "High": -0.589,
+        "Low": -0.724,
+        "Close": -0.625,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "date": "2012-02-29",
+        "Open": -0.615,
+        "High": -0.406,
+        "Low": -0.63,
+        "Close": -0.453,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "date": "2012-03-31",
+        "Open": -0.459,
+        "High": -0.453,
+        "Low": -0.672,
+        "Close": -0.672,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "date": "2012-04-30",
+        "Open": -0.677,
+        "High": -0.677,
+        "Low": -0.776,
+        "Close": -0.766,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "date": "2012-05-31",
+        "Open": -0.766,
+        "High": -0.724,
+        "Low": -0.922,
+        "Close": -0.896,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "date": "2012-06-30",
+        "Open": -0.906,
+        "High": -0.479,
+        "Low": -0.933,
+        "Close": -0.589,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "date": "2012-07-31",
+        "Open": -0.594,
+        "High": -0.443,
+        "Low": -0.651,
+        "Close": -0.589,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "date": "2012-08-31",
+        "Open": -0.589,
+        "High": -0.297,
+        "Low": -0.646,
+        "Close": -0.433,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "date": "2012-09-30",
+        "Open": -0.479,
+        "High": -0.406,
+        "Low": -0.521,
+        "Close": -0.443,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "date": "2012-10-31",
+        "Open": -0.443,
+        "High": -0.281,
+        "Low": -0.495,
+        "Close": -0.422,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "date": "2012-11-30",
+        "Open": -0.422,
+        "High": -0.401,
+        "Low": -0.552,
+        "Close": -0.474,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "date": "2012-12-31",
+        "Open": -0.479,
+        "High": -0.38,
+        "Low": -0.531,
+        "Close": -0.438,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "date": "2013-01-31",
+        "Open": -0.438,
+        "High": -0.063,
+        "Low": -0.453,
+        "Close": -0.084,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "date": "2013-02-28",
+        "Open": -0.078,
+        "High": 0.146,
+        "Low": -0.141,
+        "Close": 0.026,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "date": "2013-03-31",
+        "Open": 0.026,
+        "High": 0.193,
+        "Low": -0.078,
+        "Close": 0.125,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "date": "2010-01-31",
+        "Open": 0.005,
+        "High": 0.07,
+        "Low": -0.093,
+        "Close": -0.045,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "date": "2010-02-28",
+        "Open": -0.054,
+        "High": 0.065,
+        "Low": -0.149,
+        "Close": 0.029,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "date": "2011-02-28",
+        "Open": 0.047,
+        "High": 0.127,
+        "Low": -0.013,
+        "Close": 0.106,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "date": "2011-08-31",
+        "Open": 0.127,
+        "High": 0.127,
+        "Low": -0.033,
+        "Close": -0.021,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "date": "2011-09-30",
+        "Open": -0.018,
+        "High": 0.026,
+        "Low": -0.101,
+        "Close": -0.018,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "date": "2011-10-31",
+        "Open": -0.021,
+        "High": 0.073,
+        "Low": -0.078,
+        "Close": 0.032,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "date": "2011-11-30",
+        "Open": 0.014,
+        "High": 0.053,
+        "Low": -0.039,
+        "Close": 0.032,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "date": "2011-12-31",
+        "Open": 0.038,
+        "High": 0.067,
+        "Low": -0.015,
+        "Close": 0.011,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "date": "2012-01-31",
+        "Open": 0.02,
+        "High": 0.02,
+        "Low": -0.09,
+        "Close": -0.03,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "date": "2012-02-29",
+        "Open": -0.036,
+        "High": 0.044,
+        "Low": -0.048,
+        "Close": -0.036,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "date": "2012-03-31",
+        "Open": -0.042,
+        "High": -0.001,
+        "Low": -0.078,
+        "Close": -0.057,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "date": "2012-04-30",
+        "Open": -0.051,
+        "High": -0.036,
+        "Low": -0.128,
+        "Close": -0.051,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "date": "2012-05-31",
+        "Open": -0.042,
+        "High": 0.065,
+        "Low": -0.093,
+        "Close": 0.032,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "date": "2012-06-30",
+        "Open": 0.023,
+        "High": 0.18,
+        "Low": -0.018,
+        "Close": 0.159,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "date": "2013-10-31",
+        "Open": 0.9,
+        "High": 1.01,
+        "Low": -0.314,
+        "Close": 0.969,
+        "error_type": "Negative price"
+      }
+    ],
+    "missing_stocks": [
+      "00700",
+      "00579",
+      "02602"
+    ],
+    "extra_stocks": []
+  },
+  "data_dictionary_validation": {
+    "exists": true,
+    "valid": true,
+    "table_name_match": true
+  },
+  "sample_data_columns": {
+    "displayed": [
+      "id",
+      "stock_code",
+      "stock_name",
+      "date",
+      "Open",
+      "High",
+      "Low",
+      "Close",
+      "Volume",
+      "Amount",
+      "Turnover_Rate",
+      "Amplitude",
+      "Change_Amount",
+      "Change_Percent",
+      "EMA5"
+    ],
+    "all_columns": [
+      "id",
+      "stock_code",
+      "stock_name",
+      "date",
+      "Open",
+      "High",
+      "Low",
+      "Close",
+      "Volume",
+      "Amount",
+      "Turnover_Rate",
+      "Amplitude",
+      "Change_Amount",
+      "Change_Percent",
+      "EMA5",
+      "EMA10",
+      "EMA20",
+      "EMA50",
+      "EMA100",
+      "EMA200",
+      "MACD_DIF",
+      "MACD_Signal",
+      "MACD_Histogram",
+      "EMA5_10_Status",
+      "EMA5_10_Streak",
+      "EMA5_20_Status",
+      "EMA5_20_Streak",
+      "EMA10_50_Status",
+      "EMA10_50_Streak",
+      "EMA20_50_Status",
+      "EMA20_50_Streak",
+      "Golden_Triangle",
+      "Death_Triangle",
+      "MACD_Cross",
+      "MACD_Status",
+      "MACD_Golden_Streak",
+      "MACD_Death_Streak",
+      "VOL_EMA5",
+      "Volume_Ratio5",
+      "Gain",
+      "Loss",
+      "AvgGain",
+      "AvgLoss",
+      "RS",
+      "RSI14",
+      "KDJ_K",
+      "KDJ_D",
+      "KDJ_J"
+    ],
+    "displayed_count": 15,
+    "total_count": 48
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "release_id": "MTR-CLOSURE-1",
+  "execution_mode": "SHADOW",
+  "generated_at": "2026-08-29 16:29:19",
+  "qualification": {
+    "state": "SHADOW_ACCUMULATING",
+    "qualified_days": 1,
+    "required_days": 20,
+    "remaining_days": 19,
+    "hard_reset_count": 0,
+    "blocking_reasons": [],
+    "evidence_window_hash": "7f3a6cdf1a57bf98"
+  },
+  "decision_support_qualification": {
+    "state": "SHADOW_ACCUMULATING",
+    "shadow_state": "SHADOW_ACCUMULATING",
+    "outcome_days": 1,
+    "required_outcome_days": 20,
+    "remaining_outcome_days": 19,
+    "observation_60d": {
+      "qualified_days_60": 1,
+      "window_days": 1,
+      "blocking": false
+    },
+    "evidence_window_hash": "7f3a6cdf1a57bf98"
+  },
+  "rolling_summary": {
+    "window_days": 1,
+    "qualified_days": 1,
+    "failed_days": 0,
+    "not_proven_days": 0,
+    "suspended_days": 0,
+    "not_applicable_days": 0,
+    "consecutive_qualified_days": 1,
+    "required_days": 20,
+    "remaining_days": 19,
+    "blocking_reasons": [],
+    "evidence_window_hash": "7f3a6cdf1a57bf98",
+    "rule": "只读 Evidence projection；连续合格天数被任何 FAIL/SUSPEND/NOT_PROVEN 中断；NOT_APPLICABLE （休市/维护）不计入也不中断"
+  },
+  "replay_summary": {
+    "qualified_days_with_replay": 1,
+    "total_eligible": 16,
+    "total_exact": 16,
+    "critical_replay_mismatch": 0,
+    "eligible_rate": 1.0,
+    "exact_rate": 1.0
+  },
+  "terminal_state_distribution": {
+    "certified": 1,
+    "no_trade": 15,
+    "abstain": 1,
+    "safe_mode": 0,
+    "halted": 0,
+    "total": 17,
+    "certified_pct": 5.88,
+    "no_trade_pct": 88.24,
+    "abstain_pct": 5.88,
+    "safe_mode_pct": 0.0,
+    "halted_pct": 0.0,
+    "note": "ABSTAIN/SAFE_MODE/HALTED 占比用于 Research/Operational Review，不改变 Hard Gate"
+  },
+  "evidence_window": [
+    {
+      "trade_date": "2026-08-21",
+      "verdict": "DECISION_SUPPORT_EVIDENCE_READY",
+      "coverage": 1.0,
+      "replay_eligible": 16,
+      "replay_exact": 16,
+      "critical_replay_mismatch": 0,
+      "evidence_hash": "78fd2f9582b9c779",
+      "revision_no": 8
+    }
+  ],
+  "rule": "任一阶段 NOT_PROVEN 不能被下游 PASS 抵消；20 日窗口内 Release 冻结"
+}

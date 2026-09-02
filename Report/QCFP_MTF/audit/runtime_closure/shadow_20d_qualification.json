@@ -1,0 +1,9 @@
+{
+  "state": "SHADOW_ACCUMULATING",
+  "qualified_days": 1,
+  "required_days": 20,
+  "remaining_days": 19,
+  "hard_reset_count": 0,
+  "blocking_reasons": [],
+  "evidence_window_hash": "7f3a6cdf1a57bf98"
+}

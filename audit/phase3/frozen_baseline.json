@@ -1,0 +1,7 @@
+{
+  "verdict": "BASELINE_PASS",
+  "pass": true,
+  "gate": "BASELINE_GATE",
+  "baseline_id": "GOV-BASELINE-4",
+  "rule": "Baseline 重算 == Frozen Baseline"
+}

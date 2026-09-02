@@ -1,0 +1,89 @@
+{
+  "stock_code": "00700",
+  "decision_date": "2026-08-28",
+  "model_version": "QCFP-MTF-2.5.0",
+  "structural": {
+    "regime": "STRUCTURAL_DECLINE",
+    "core_score": 20.0,
+    "evidence_level": "A-",
+    "data_quality": "B",
+    "key_drivers": [
+      "c_state: C→",
+      "f_state: F→",
+      "p_state: P↓"
+    ]
+  },
+  "stage": {
+    "monthly_state": "Stable",
+    "turnover_regime": "T5",
+    "vp_regime": "VP_EXPANSION",
+    "cbi_score": 37.888561320566446
+  },
+  "cost_position": {
+    "status": "COST_ADVANTAGE",
+    "vs_weekly_vwap": 0.027836434940538002,
+    "vs_monthly_vwap": 0.02951014248627537,
+    "vs_quarterly_vwap": 0.03038160190604189
+  },
+  "trigger": {
+    "signal": "Consolidation",
+    "breakout": false,
+    "breakdown": false,
+    "volume_spike": false
+  },
+  "confidence": {
+    "chip_stability_confidence": "Low",
+    "structure_behavior_alignment": "Aligned",
+    "evidence_summary": "结构:STRUCTURAL_DECLINE(A/A-); 阶段:Stable(B); 触发:Consolidation(C); 置信度:Low"
+  },
+  "risk": {
+    "risk_level": "Medium",
+    "divergence_detected": false,
+    "key_risks": [
+      "Medium"
+    ],
+    "anti_inference_check": "PASSED"
+  },
+  "decision": {
+    "mtf_regime": "BULLISH_WARNING",
+    "action": "NO_TRADE",
+    "source": "legacy_mtf",
+    "action_detail": "等待明确信号（数据不足或结构未定）",
+    "position_advice": "0%（Canonical FinalTarget）",
+    "stop_loss_trigger": "移动止损：收盘跌破建仓周最低价×(1-2%)（周线收盘确认 → 次周离场；不做盘中触发）"
+  },
+  "decision_2_2": {
+    "run_id": "shadow_universe_2026-08-28_003857",
+    "institutional_state": "NEUTRAL",
+    "institutional_permission": "WATCH",
+    "permission_cap": "TESTING",
+    "exit_event": "NONE",
+    "exit_reason": "",
+    "setup_type": "ACCUMULATION",
+    "base_fsm_state": "COOLDOWN",
+    "prev_fsm_state": "COOLDOWN",
+    "next_fsm_state": "FLAT",
+    "raw_target_position": 0.0,
+    "target_position": 0.0,
+    "permission_constraint_applied": false,
+    "action": "WAIT",
+    "primary_reason": "NONE",
+    "secondary_reasons": [
+      "PRICE_DECLINE"
+    ],
+    "participation_mode": "STAND",
+    "participation_cap": 0.0,
+    "position_class": "NONE",
+    "exit_severity": 0,
+    "trade_quality": 61.0,
+    "trade_quality_band": "High",
+    "feature_manifest_hash": "7c5c34c8d07ac76b",
+    "opportunity_level": "High",
+    "opportunity_cell": "OBS",
+    "override_rule_ids": [
+      "cooldown_expired"
+    ],
+    "input_fingerprint": "a1fdb00eac6ca899",
+    "settings_hash": "e8f1e2d6a720"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "release_id": "MTR-CLOSURE-1",
+  "execution_mode": "SHADOW",
+  "evidence_window": [
+    {
+      "trade_date": "2026-08-21",
+      "verdict": "DECISION_SUPPORT_EVIDENCE_READY",
+      "coverage": 1.0,
+      "replay_eligible": 16,
+      "replay_exact": 16,
+      "critical_replay_mismatch": 0,
+      "evidence_hash": "78fd2f9582b9c779",
+      "revision_no": 8
+    }
+  ],
+  "rolling_summary": {
+    "window_days": 1,
+    "qualified_days": 1,
+    "failed_days": 0,
+    "not_proven_days": 0,
+    "suspended_days": 0,
+    "not_applicable_days": 0,
+    "consecutive_qualified_days": 1,
+    "required_days": 20,
+    "remaining_days": 19,
+    "blocking_reasons": [],
+    "evidence_window_hash": "7f3a6cdf1a57bf98",
+    "rule": "只读 Evidence projection；连续合格天数被任何 FAIL/SUSPEND/NOT_PROVEN 中断；NOT_APPLICABLE （休市/维护）不计入也不中断"
+  }
+}

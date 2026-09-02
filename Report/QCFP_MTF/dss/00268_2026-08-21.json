@@ -1,0 +1,89 @@
+{
+  "stock_code": "00268",
+  "decision_date": "2026-08-21",
+  "model_version": "QCFP-MTF-2.5.0",
+  "structural": {
+    "regime": "STRUCTURAL_BULLISH",
+    "core_score": 85.0,
+    "evidence_level": "A-",
+    "data_quality": "C",
+    "key_drivers": [
+      "c_state: C→",
+      "f_state: F↑",
+      "p_state: P↓"
+    ]
+  },
+  "stage": {
+    "monthly_state": "Stable",
+    "turnover_regime": "T4",
+    "vp_regime": "VP_STABLE_ASCENT",
+    "cbi_score": 30.9171937137317
+  },
+  "cost_position": {
+    "status": "COST_ADVANTAGE",
+    "vs_weekly_vwap": 0.05733420701505709,
+    "vs_monthly_vwap": 0.17351487861550208,
+    "vs_quarterly_vwap": 0.048885296071355944
+  },
+  "trigger": {
+    "signal": "Consolidation",
+    "breakout": false,
+    "breakdown": false,
+    "volume_spike": false
+  },
+  "confidence": {
+    "chip_stability_confidence": "Low",
+    "structure_behavior_alignment": "Aligned",
+    "evidence_summary": "结构:STRUCTURAL_BULLISH(A/A-); 阶段:Stable(B); 触发:Consolidation(C); 置信度:Low"
+  },
+  "risk": {
+    "risk_level": "Medium",
+    "divergence_detected": false,
+    "key_risks": [
+      "Medium"
+    ],
+    "anti_inference_check": "PASSED"
+  },
+  "decision": {
+    "mtf_regime": "BULLISH_STABLE",
+    "action": "HOLD",
+    "source": "legacy_mtf",
+    "action_detail": "结构健康，持仓等待触发信号",
+    "position_advice": "75%（Risk 上限约束）",
+    "stop_loss_trigger": "移动止损：收盘跌破建仓周最低价×(1-2%)（周线收盘确认 → 次周离场；不做盘中触发）"
+  },
+  "decision_2_2": {
+    "run_id": "shadow_20260825_235949",
+    "institutional_state": "RECOVERY",
+    "institutional_permission": "WATCH",
+    "permission_cap": "TESTING",
+    "exit_event": "NONE",
+    "exit_reason": "",
+    "setup_type": "NONE",
+    "base_fsm_state": "FLAT",
+    "prev_fsm_state": "FLAT",
+    "next_fsm_state": "FLAT",
+    "raw_target_position": 0.0,
+    "target_position": 0.0,
+    "permission_constraint_applied": false,
+    "action": "WAIT",
+    "primary_reason": "SETUP_ABSENT",
+    "secondary_reasons": [
+      "PRICE_DECLINE"
+    ],
+    "participation_mode": "STAND",
+    "participation_cap": 0.0,
+    "position_class": "NONE",
+    "exit_severity": 0,
+    "trade_quality": 36.0,
+    "trade_quality_band": "Weak",
+    "feature_manifest_hash": "ed8b6eceb02a5815",
+    "opportunity_level": "Low",
+    "opportunity_cell": "—",
+    "override_rule_ids": [
+      "permission_base"
+    ],
+    "input_fingerprint": "dcfdc36c8c349f46",
+    "settings_hash": "b32234659953"
+  }
+}

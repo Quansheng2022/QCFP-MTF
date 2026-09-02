@@ -1,0 +1,73 @@
+{
+  "production_legacy_imports": [],
+  "production_legacy_calls": [],
+  "legacy_cli_entrypoints": [
+    {
+      "file": "scripts/backtest_runner.py",
+      "term": "build_signal_timeline",
+      "research_allowed": true
+    },
+    {
+      "file": "scripts/benchmark_report.py",
+      "term": "build_signal_timeline",
+      "research_allowed": true
+    },
+    {
+      "file": "scripts/cross_sectional_backtest.py",
+      "term": "build_signal_timeline",
+      "research_allowed": true
+    },
+    {
+      "file": "scripts/daily_alpha_test.py",
+      "term": "build_signal_timeline",
+      "research_allowed": true
+    },
+    {
+      "file": "scripts/incremental_alpha_test.py",
+      "term": "build_signal_timeline",
+      "research_allowed": true
+    },
+    {
+      "file": "scripts/layer_ablation_test.py",
+      "term": "build_signal_timeline",
+      "research_allowed": true
+    },
+    {
+      "file": "scripts/legacy_replace_check.py",
+      "term": "build_signal_timeline",
+      "research_allowed": true
+    },
+    {
+      "file": "scripts/permission_fsm_ablation.py",
+      "term": "build_signal_timeline",
+      "research_allowed": true
+    },
+    {
+      "file": "scripts/regime_gate_test.py",
+      "term": "build_signal_timeline",
+      "research_allowed": true
+    },
+    {
+      "file": "scripts/retail_swing_report.py",
+      "term": "build_signal_timeline",
+      "research_allowed": true
+    },
+    {
+      "file": "scripts/sensitivity_backtest.py",
+      "term": "build_signal_timeline",
+      "research_allowed": true
+    },
+    {
+      "file": "scripts/trigger_sensitivity.py",
+      "term": "build_signal_timeline",
+      "research_allowed": true
+    },
+    {
+      "file": "scripts/wave_capture_report.py",
+      "term": "build_signal_timeline",
+      "research_allowed": true
+    }
+  ],
+  "production_legacy_paths": false,
+  "rule": "Research/Shadow/Archive 可引用 Legacy；Production/Execution/Certification/Report 禁止"
+}

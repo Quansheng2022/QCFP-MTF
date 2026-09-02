@@ -1,0 +1,14 @@
+{
+  "regression": {
+    "canonical_equivalence": "IDENTICAL",
+    "replay": "PASS",
+    "oos": "PASS",
+    "ablation_minimal_core": "PASS",
+    "safety_failure_injection": "PASS"
+  },
+  "deletion_invariant": {
+    "regressed": [],
+    "verdict": "TRUST_PRESERVED",
+    "rule": "Complexity ↓ 但 Trust Evidence 不得 ↓"
+  }
+}

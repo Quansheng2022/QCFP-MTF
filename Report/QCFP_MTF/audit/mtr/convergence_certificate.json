@@ -1,0 +1,114 @@
+{
+  "certificate": {
+    "verdict": "CONVERGED",
+    "reason": "Shrinkage PASS + Trust Preservation PASS",
+    "certificate": "MTR-CONVERGED"
+  },
+  "shrinkage": {
+    "rows": {
+      "executable_decision_paths": {
+        "before": 3.0,
+        "after": 1.0,
+        "change": -0.6667
+      },
+      "active_features": {
+        "before": 17.0,
+        "after": 8.0,
+        "change": -0.5294
+      },
+      "production_critical_loc": {
+        "before": 2455.0,
+        "after": 1885.0,
+        "change": -0.2322
+      },
+      "production_modules": {
+        "before": 17.0,
+        "after": 8.0,
+        "change": -0.5294
+      },
+      "duplicate_authorities": {
+        "before": 2.0,
+        "after": 0.0,
+        "change": -1.0
+      },
+      "legacy_production_imports": {
+        "before": 2.0,
+        "after": 0.0,
+        "change": -1.0
+      }
+    },
+    "hard_down": true,
+    "zero": true,
+    "targets_met": [
+      "executable_decision_paths",
+      "active_features",
+      "production_critical_loc",
+      "production_modules"
+    ],
+    "verdict": "SHRINKAGE_PASS"
+  },
+  "trust": {
+    "rows": {
+      "canonical_golden_pass": {
+        "before": 1.0,
+        "after": 1.0,
+        "not_down": true
+      },
+      "replay_coverage": {
+        "before": 0.96,
+        "after": 0.96,
+        "not_down": true
+      },
+      "invariant_coverage": {
+        "before": 0.92,
+        "after": 0.92,
+        "not_down": true
+      },
+      "pit_compliance": {
+        "before": 1.0,
+        "after": 1.0,
+        "not_down": true
+      },
+      "oos_evidence_grade": {
+        "before": "A",
+        "after": "A",
+        "not_down": true
+      }
+    },
+    "safety": "PASS",
+    "trust_preserved": true,
+    "verdict": "TRUST_PASS"
+  },
+  "gates": {
+    "gate_a_authority": true,
+    "gate_b_shrinkage": true,
+    "gate_c_trust": true,
+    "gate_d_physical_retirement": true,
+    "verdict": "ALL_GATES_PASS"
+  },
+  "definition_of_done": {
+    "results": {
+      "one_production_decision_path": true,
+      "single_canonical_authority": true,
+      "active_features_down": true,
+      "decision_critical_loc_down": true,
+      "legacy_production_path_zero": true,
+      "duplicate_authority_zero": true,
+      "unwired_active_feature_zero": true,
+      "golden_replay_oos_not_regressed": true,
+      "failure_injection_zero_escaped": true,
+      "retired_code_physically_deleted": true
+    },
+    "failures": [],
+    "verdict": "MTR_SUCCESS"
+  },
+  "authority_gate": {
+    "canonical_decision_authority": 1,
+    "permission_authority": 1,
+    "final_target_authority": 1,
+    "validation_authority": 1,
+    "production_wave_taxonomy": 1,
+    "report_decision_authority": 0,
+    "legacy_production_paths": 0
+  }
+}

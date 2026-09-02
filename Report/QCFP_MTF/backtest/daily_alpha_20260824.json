@@ -1,0 +1,53 @@
+{
+  "generated_at": "20260824",
+  "focus": "01951",
+  "wave": {
+    "start": "2024-02-02",
+    "end": "2024-10-31"
+  },
+  "models": [
+    {
+      "model": "A_QMW",
+      "annualized_return": -0.002435,
+      "sharpe": 0.0198,
+      "max_drawdown": -0.247729,
+      "annual_turnover": 1.3909,
+      "avg_weekly_cost": 0.000109,
+      "wave_return": 0.073132,
+      "wave_pos_weeks": 19,
+      "mfe_n_entries": 173,
+      "mfe_mean_mfe": 0.2196,
+      "mfe_mean_mae": -0.1592,
+      "mfe_mean_realized": -0.0224,
+      "mfe_mean_capture": -0.7309,
+      "mfe_win_rate": 0.3815,
+      "mfe_avg_hold_weeks": 13.65,
+      "mfe_n_mfe_ge_10pct": 84
+    },
+    {
+      "model": "B_QMWD",
+      "annualized_return": -0.004741,
+      "sharpe": -0.0042,
+      "max_drawdown": -0.255479,
+      "annual_turnover": 1.6723,
+      "avg_weekly_cost": 0.000131,
+      "wave_return": 0.071463,
+      "wave_pos_weeks": 19,
+      "mfe_n_entries": 173,
+      "mfe_mean_mfe": 0.2196,
+      "mfe_mean_mae": -0.1592,
+      "mfe_mean_realized": -0.0224,
+      "mfe_mean_capture": -0.7309,
+      "mfe_win_rate": 0.3815,
+      "mfe_avg_hold_weeks": 13.65,
+      "mfe_n_mfe_ge_10pct": 84
+    }
+  ],
+  "acceptance": {
+    "波段捕捉提升": false,
+    "Sharpe 不显著下降": false,
+    "回撤不恶化": true,
+    "换手可控(<=1.4x)": true,
+    "MFE 捕捉率不降": true
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "generated_at": "20260820_192424",
+  "start": "2021-01-01",
+  "end": "2026-08-14",
+  "summary": {
+    "top3": {
+      "perf": {
+        "n": 294,
+        "total_return": 0.240696,
+        "annualized_return": 0.038883,
+        "sharpe": 0.2831,
+        "max_drawdown": -0.687678,
+        "win_rate": 0.4864,
+        "profit_factor": 1.1204,
+        "sortino": 0.5682,
+        "calmar": 0.0565,
+        "annual_turnover": 0.1446
+      },
+      "excess_buy_hold": {
+        "n": 294,
+        "excess_annualized": 0.090973,
+        "information_ratio": 0.4823,
+        "correlation": 0.7959
+      },
+      "excess_hsi": {
+        "n": 294,
+        "excess_annualized": 0.050984,
+        "information_ratio": 0.3101,
+        "correlation": 0.2998
+      },
+      "n_weeks": 294
+    },
+    "top5": {
+      "perf": {
+        "n": 294,
+        "total_return": 0.592737,
+        "annualized_return": 0.085809,
+        "sharpe": 0.4045,
+        "max_drawdown": -0.550143,
+        "win_rate": 0.5068,
+        "profit_factor": 1.1688,
+        "sortino": 0.7889,
+        "calmar": 0.156,
+        "annual_turnover": 0.0718
+      },
+      "excess_buy_hold": {
+        "n": 294,
+        "excess_annualized": 0.13773,
+        "information_ratio": 0.8089,
+        "correlation": 0.8606
+      },
+      "excess_hsi": {
+        "n": 294,
+        "excess_annualized": 0.100902,
+        "information_ratio": 0.4542,
+        "correlation": 0.3931
+      },
+      "n_weeks": 294
+    },
+    "top10": {
+      "perf": {
+        "n": 294,
+        "total_return": -0.06139,
+        "annualized_return": -0.011143,
+        "sharpe": 0.1275,
+        "max_drawdown": -0.644598,
+        "win_rate": 0.4898,
+        "profit_factor": 1.0496,
+        "sortino": 0.2373,
+        "calmar": -0.0173,
+        "annual_turnover": 0.0652
+      },
+      "excess_buy_hold": {
+        "n": 294,
+        "excess_annualized": 0.035148,
+        "information_ratio": 0.3017,
+        "correlation": 0.8922
+      },
+      "excess_hsi": {
+        "n": 294,
+        "excess_annualized": 0.002315,
+        "information_ratio": 0.1555,
+        "correlation": 0.4037
+      },
+      "n_weeks": 294
+    }
+  }
+}

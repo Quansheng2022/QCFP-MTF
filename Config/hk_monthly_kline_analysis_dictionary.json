@@ -1,0 +1,1313 @@
+{
+  "table_name": "hk_monthly_kline_analysis",
+  "generated_at": "2026-07-15 17:21:56",
+  "database_path": "C:\\Users\\Quansheng\\Documents\\projects\\TA_Workflow\\SQLiteDB\\HK_Stock.db",
+  "statistics": {
+    "total_records": 2040,
+    "stock_count": 14,
+    "min_date": "2010-01-31",
+    "max_date": "2026-05-31"
+  },
+  "field_count": 48,
+  "fields": [
+    {
+      "field_name": "id",
+      "data_type": "INTEGER",
+      "nullable": true,
+      "primary_key": true,
+      "default_value": null,
+      "description": "主键，自增ID",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 2040,
+        "null_percentage": 0.0,
+        "min": 1,
+        "max": 2040,
+        "avg": 1020.5,
+        "distinct_count": 2040
+      },
+      "samples": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "field_name": "stock_code",
+      "data_type": "TEXT",
+      "nullable": false,
+      "primary_key": false,
+      "default_value": null,
+      "description": "股票代码（如：00700）",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 2040,
+        "null_percentage": 0.0,
+        "distinct_count": 14
+      },
+      "samples": [
+        "00020",
+        "00020",
+        "00020"
+      ]
+    },
+    {
+      "field_name": "stock_name",
+      "data_type": "TEXT",
+      "nullable": false,
+      "primary_key": false,
+      "default_value": null,
+      "description": "股票名称（如：腾讯控股）",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 2040,
+        "null_percentage": 0.0,
+        "distinct_count": 14
+      },
+      "samples": [
+        "商汤科技",
+        "商汤科技",
+        "商汤科技"
+      ]
+    },
+    {
+      "field_name": "date",
+      "data_type": "TEXT",
+      "nullable": false,
+      "primary_key": false,
+      "default_value": null,
+      "description": "交易日期（格式：YYYY-MM-DD）",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 2040,
+        "null_percentage": 0.0,
+        "distinct_count": 197
+      },
+      "samples": [
+        "2021-12-31",
+        "2022-01-31",
+        "2022-02-28"
+      ]
+    },
+    {
+      "field_name": "open",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "开盘价（港元）",
+      "statistics": {
+        "null_count": 7,
+        "non_null_count": 2033,
+        "null_percentage": 0.3431372549019608,
+        "min": -0.906,
+        "max": 79.15,
+        "avg": 7.384301524840137,
+        "distinct_count": 1736
+      },
+      "samples": [
+        3.91,
+        5.99,
+        6.82
+      ]
+    },
+    {
+      "field_name": "high",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "最高价（港元）",
+      "statistics": {
+        "null_count": 7,
+        "non_null_count": 2033,
+        "null_percentage": 0.3431372549019608,
+        "min": -0.724,
+        "max": 97.8,
+        "avg": 8.273560747663552,
+        "distinct_count": 1753
+      },
+      "samples": [
+        5.5,
+        9.7,
+        7.6
+      ]
+    },
+    {
+      "field_name": "low",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "最低价（港元）",
+      "statistics": {
+        "null_count": 7,
+        "non_null_count": 2033,
+        "null_percentage": 0.3431372549019608,
+        "min": -0.933,
+        "max": 68.5,
+        "avg": 6.588563207083129,
+        "distinct_count": 1735
+      },
+      "samples": [
+        3.9,
+        5.8,
+        6.06
+      ]
+    },
+    {
+      "field_name": "close",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "收盘价（港元）",
+      "statistics": {
+        "null_count": 7,
+        "non_null_count": 2033,
+        "null_percentage": 0.3431372549019608,
+        "min": -0.896,
+        "max": 78.7,
+        "avg": 7.331415150024594,
+        "distinct_count": 1719
+      },
+      "samples": [
+        5.5,
+        6.73,
+        6.46
+      ]
+    },
+    {
+      "field_name": "volume",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "成交量（股）",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 2040,
+        "null_percentage": 0.0,
+        "min": 0.0,
+        "max": 49475015088.0,
+        "avg": 1579442188.447059,
+        "distinct_count": 2034
+      },
+      "samples": [
+        584046484.0,
+        1915100861.0,
+        448736587.0
+      ]
+    },
+    {
+      "field_name": "amount",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "成交金额（港元）",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 2040,
+        "null_percentage": 0.0,
+        "min": 0.0,
+        "max": 432649237598.0,
+        "avg": 6211813689.741667,
+        "distinct_count": 1854
+      },
+      "samples": [
+        2642750896.0,
+        14148281631.0,
+        3038291169.0
+      ]
+    },
+    {
+      "field_name": "turnover_rate",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "换手率（%）",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 2040,
+        "null_percentage": 0.0,
+        "min": 0.0,
+        "max": 163.49,
+        "avg": 11.801995098039216,
+        "distinct_count": 1363
+      },
+      "samples": [
+        1.75,
+        5.75,
+        1.32
+      ]
+    },
+    {
+      "field_name": "amplitude",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "振幅（%）",
+      "statistics": {
+        "null_count": 7,
+        "non_null_count": 2033,
+        "null_percentage": 0.3431372549019608,
+        "min": -1136.6667,
+        "max": 24100.0,
+        "avg": 38.081487702902116,
+        "distinct_count": 2002
+      },
+      "samples": [
+        40.9207,
+        65.1085,
+        22.5806
+      ]
+    },
+    {
+      "field_name": "change_amount",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "涨跌额（港元）",
+      "statistics": {
+        "null_count": 7,
+        "non_null_count": 2033,
+        "null_percentage": 0.3431372549019608,
+        "min": -13.25,
+        "max": 36.1,
+        "avg": -0.052886374815543535,
+        "distinct_count": 787
+      },
+      "samples": [
+        1.59,
+        0.74,
+        -0.36
+      ]
+    },
+    {
+      "field_name": "change_percent",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "涨跌幅（%）",
+      "statistics": {
+        "null_count": 7,
+        "non_null_count": 2033,
+        "null_percentage": 0.3431372549019608,
+        "min": -3100.0,
+        "max": 591.3043,
+        "avg": -0.2686026069847516,
+        "distinct_count": 1974
+      },
+      "samples": [
+        40.665,
+        12.3539,
+        -5.2786
+      ]
+    },
+    {
+      "field_name": "ema5",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "5期指数移动平均线",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 2040,
+        "null_percentage": 0.0,
+        "min": -0.7151,
+        "max": 69.6284,
+        "avg": 7.345337843137255,
+        "distinct_count": 2027
+      },
+      "samples": [
+        5.5,
+        5.91,
+        6.0933
+      ]
+    },
+    {
+      "field_name": "ema10",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "10期指数移动平均线",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 2040,
+        "null_percentage": 0.0,
+        "min": -0.5424,
+        "max": 68.1433,
+        "avg": 7.371973872549019,
+        "distinct_count": 2017
+      },
+      "samples": [
+        5.5,
+        5.7236,
+        5.8575
+      ]
+    },
+    {
+      "field_name": "ema20",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "20期指数移动平均线",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 2040,
+        "null_percentage": 0.0,
+        "min": -0.3526,
+        "max": 66.512,
+        "avg": 7.429800049019608,
+        "distinct_count": 2020
+      },
+      "samples": [
+        5.5,
+        5.6171,
+        5.6974
+      ]
+    },
+    {
+      "field_name": "ema50",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "50期指数移动平均线",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 2040,
+        "null_percentage": 0.0,
+        "min": -0.0742,
+        "max": 64.903,
+        "avg": 7.511145539215686,
+        "distinct_count": 2015
+      },
+      "samples": [
+        5.5,
+        5.5482,
+        5.584
+      ]
+    },
+    {
+      "field_name": "ema100",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "100期指数移动平均线",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 2040,
+        "null_percentage": 0.0,
+        "min": -0.045,
+        "max": 64.2205,
+        "avg": 7.408062058823529,
+        "distinct_count": 2014
+      },
+      "samples": [
+        5.5,
+        5.5244,
+        5.5429
+      ]
+    },
+    {
+      "field_name": "ema200",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "200期指数移动平均线",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 2040,
+        "null_percentage": 0.0,
+        "min": -0.045,
+        "max": 63.8469,
+        "avg": 7.147591323529412,
+        "distinct_count": 2007
+      },
+      "samples": [
+        5.5,
+        5.5122,
+        5.5217
+      ]
+    },
+    {
+      "field_name": "macd_dif",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "MACD DIF线（差离值）",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 2040,
+        "null_percentage": 0.0,
+        "min": -10.7535,
+        "max": 9.2474,
+        "avg": -0.07831544117647059,
+        "distinct_count": 1932
+      },
+      "samples": [
+        0.0,
+        0.0981,
+        0.1523
+      ]
+    },
+    {
+      "field_name": "macd_signal",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "MACD Signal线（信号线）",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 2040,
+        "null_percentage": 0.0,
+        "min": -9.8072,
+        "max": 7.2947,
+        "avg": -0.07856480392156863,
+        "distinct_count": 1947
+      },
+      "samples": [
+        0.0,
+        0.0196,
+        0.0462
+      ]
+    },
+    {
+      "field_name": "macd_histogram",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "MACD Histogram（柱状线）",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 2040,
+        "null_percentage": 0.0,
+        "min": -8.6654,
+        "max": 9.2145,
+        "avg": 0.0004990686274509783,
+        "distinct_count": 1873
+      },
+      "samples": [
+        0.0,
+        0.157,
+        0.2123
+      ]
+    },
+    {
+      "field_name": "ema5_10_status",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "EMA5与EMA10状态（1:金叉, -1:死叉, 0:粘合）",
+      "statistics": {
+        "null_count": 14,
+        "non_null_count": 2026,
+        "null_percentage": 0.6862745098039216,
+        "min": "死叉",
+        "max": "金叉延续",
+        "avg": 0.0,
+        "distinct_count": 4
+      },
+      "samples": [
+        "金叉",
+        "金叉延续",
+        "金叉延续"
+      ]
+    },
+    {
+      "field_name": "ema5_10_streak",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "EMA5与EMA10连续状态天数（正:金叉持续, 负:死叉持续）",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 2040,
+        "null_percentage": 0.0,
+        "min": 1.0,
+        "max": 59.0,
+        "avg": 10.202450980392157,
+        "distinct_count": 59
+      },
+      "samples": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "field_name": "ema5_20_status",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "EMA5与EMA20状态（1:金叉, -1:死叉, 0:粘合）",
+      "statistics": {
+        "null_count": 14,
+        "non_null_count": 2026,
+        "null_percentage": 0.6862745098039216,
+        "min": "死叉",
+        "max": "金叉延续",
+        "avg": 0.0,
+        "distinct_count": 4
+      },
+      "samples": [
+        "金叉",
+        "金叉延续",
+        "金叉延续"
+      ]
+    },
+    {
+      "field_name": "ema5_20_streak",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "EMA5与EMA20连续状态天数（正:金叉持续, 负:死叉持续）",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 2040,
+        "null_percentage": 0.0,
+        "min": 1.0,
+        "max": 73.0,
+        "avg": 15.945098039215686,
+        "distinct_count": 73
+      },
+      "samples": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "field_name": "ema10_50_status",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "EMA10与EMA50状态（1:金叉, -1:死叉, 0:粘合）",
+      "statistics": {
+        "null_count": 14,
+        "non_null_count": 2026,
+        "null_percentage": 0.6862745098039216,
+        "min": "死叉",
+        "max": "金叉延续",
+        "avg": 0.0,
+        "distinct_count": 4
+      },
+      "samples": [
+        "金叉",
+        "金叉延续",
+        "金叉延续"
+      ]
+    },
+    {
+      "field_name": "ema10_50_streak",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "EMA10与EMA50连续状态天数（正:金叉持续, 负:死叉持续）",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 2040,
+        "null_percentage": 0.0,
+        "min": 1.0,
+        "max": 119.0,
+        "avg": 28.32107843137255,
+        "distinct_count": 119
+      },
+      "samples": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "field_name": "ema20_50_status",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "EMA20与EMA50状态（1:金叉, -1:死叉, 0:粘合）",
+      "statistics": {
+        "null_count": 14,
+        "non_null_count": 2026,
+        "null_percentage": 0.6862745098039216,
+        "min": "死叉",
+        "max": "金叉延续",
+        "avg": 0.0,
+        "distinct_count": 4
+      },
+      "samples": [
+        "金叉",
+        "金叉延续",
+        "金叉延续"
+      ]
+    },
+    {
+      "field_name": "ema20_50_streak",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "EMA20与EMA50连续状态天数（正:金叉持续, 负:死叉持续）",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 2040,
+        "null_percentage": 0.0,
+        "min": 1.0,
+        "max": 158.0,
+        "avg": 35.2828431372549,
+        "distinct_count": 158
+      },
+      "samples": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "field_name": "golden_triangle",
+      "data_type": "INTEGER",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "黄金三角形态（1:形成, 0:未形成）",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 2040,
+        "null_percentage": 0.0,
+        "min": 0,
+        "max": 1,
+        "avg": 0.4308823529411765,
+        "distinct_count": 2
+      },
+      "samples": [
+        0,
+        1,
+        1
+      ]
+    },
+    {
+      "field_name": "death_triangle",
+      "data_type": "INTEGER",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "死亡三角形态（1:形成, 0:未形成）",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 2040,
+        "null_percentage": 0.0,
+        "min": 0,
+        "max": 1,
+        "avg": 0.40588235294117647,
+        "distinct_count": 2
+      },
+      "samples": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "field_name": "macd_cross",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "MACD交叉状态（1:金叉, -1:死叉, 0:无交叉）",
+      "statistics": {
+        "null_count": 1873,
+        "non_null_count": 167,
+        "null_percentage": 91.81372549019608,
+        "min": "死叉",
+        "max": "金叉",
+        "avg": 0.0,
+        "distinct_count": 2
+      },
+      "samples": [
+        "金叉",
+        "死叉",
+        "金叉"
+      ]
+    },
+    {
+      "field_name": "macd_status",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "MACD状态（1:DIF>Signal, -1:DIF<Signal）",
+      "statistics": {
+        "null_count": 14,
+        "non_null_count": 2026,
+        "null_percentage": 0.6862745098039216,
+        "min": "死叉",
+        "max": "金叉延续",
+        "avg": 0.0,
+        "distinct_count": 4
+      },
+      "samples": [
+        "金叉",
+        "金叉延续",
+        "金叉延续"
+      ]
+    },
+    {
+      "field_name": "macd_golden_streak",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "MACD金叉持续天数",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 2040,
+        "null_percentage": 0.0,
+        "min": 0.0,
+        "max": 45.0,
+        "avg": 5.682352941176471,
+        "distinct_count": 46
+      },
+      "samples": [
+        0.0,
+        1.0,
+        2.0
+      ]
+    },
+    {
+      "field_name": "macd_death_streak",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "MACD死叉持续天数",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 2040,
+        "null_percentage": 0.0,
+        "min": 0.0,
+        "max": 39.0,
+        "avg": 4.627450980392157,
+        "distinct_count": 40
+      },
+      "samples": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "field_name": "vol_ema5",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "成交量5期指数移动平均线",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 2040,
+        "null_percentage": 0.0,
+        "min": 1004843.1149,
+        "max": 34479354083.9799,
+        "avg": 1549126226.7772548,
+        "distinct_count": 2040
+      },
+      "samples": [
+        584046484.0,
+        1027731276.3333,
+        834733046.5556
+      ]
+    },
+    {
+      "field_name": "volume_ratio5",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "成交量与5期均量比",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 2040,
+        "null_percentage": 0.0,
+        "min": 0.0,
+        "max": 2.5542,
+        "avg": 0.9812338725490196,
+        "distinct_count": 1830
+      },
+      "samples": [
+        1.0,
+        1.8634,
+        0.5376
+      ]
+    },
+    {
+      "field_name": "gain",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "当日上涨幅度（用于RSI计算）",
+      "statistics": {
+        "null_count": 22,
+        "non_null_count": 2018,
+        "null_percentage": 1.0784313725490196,
+        "min": 0.0,
+        "max": 36.14,
+        "avg": 0.38004311199207136,
+        "distinct_count": 420
+      },
+      "samples": [
+        1.23,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "field_name": "loss",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "当日下跌幅度（用于RSI计算）",
+      "statistics": {
+        "null_count": 22,
+        "non_null_count": 2018,
+        "null_percentage": 1.0784313725490196,
+        "min": 0.0,
+        "max": 13.6,
+        "avg": 0.40162140733399404,
+        "distinct_count": 386
+      },
+      "samples": [
+        0.0,
+        0.27,
+        0.31
+      ]
+    },
+    {
+      "field_name": "avg_gain",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "平均上涨幅度（14期）",
+      "statistics": {
+        "null_count": 244,
+        "non_null_count": 1796,
+        "null_percentage": 11.96078431372549,
+        "min": 0.0203,
+        "max": 3.0028,
+        "avg": 0.4003469376391982,
+        "distinct_count": 1592
+      },
+      "samples": [
+        0.2323,
+        0.2157,
+        0.2103
+      ]
+    },
+    {
+      "field_name": "avg_loss",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "平均下跌幅度（14期）",
+      "statistics": {
+        "null_count": 244,
+        "non_null_count": 1796,
+        "null_percentage": 11.96078431372549,
+        "min": 0.0126,
+        "max": 4.1115,
+        "avg": 0.41501141425389754,
+        "distinct_count": 1570
+      },
+      "samples": [
+        0.4369,
+        0.4286,
+        0.398
+      ]
+    },
+    {
+      "field_name": "rs",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "RS值（相对强度）",
+      "statistics": {
+        "null_count": 244,
+        "non_null_count": 1796,
+        "null_percentage": 11.96078431372549,
+        "min": 0.3003,
+        "max": 21.6649,
+        "avg": 1.3285940423162583,
+        "distinct_count": 1660
+      },
+      "samples": [
+        0.5317,
+        0.5033,
+        0.5285
+      ]
+    },
+    {
+      "field_name": "rsi14",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "14期相对强弱指标",
+      "statistics": {
+        "null_count": 244,
+        "non_null_count": 1796,
+        "null_percentage": 11.96078431372549,
+        "min": 23.0935,
+        "max": 95.5879,
+        "avg": 51.47296041202673,
+        "distinct_count": 1758
+      },
+      "samples": [
+        34.7126,
+        33.4812,
+        34.5747
+      ]
+    },
+    {
+      "field_name": "kdj_k",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "KDJ指标K值",
+      "statistics": {
+        "null_count": 127,
+        "non_null_count": 1913,
+        "null_percentage": 6.2254901960784315,
+        "min": 4.5761,
+        "max": 95.6412,
+        "avg": 44.15053533716676,
+        "distinct_count": 1911
+      },
+      "samples": [
+        35.2045,
+        23.5927,
+        16.1393
+      ]
+    },
+    {
+      "field_name": "kdj_d",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "KDJ指标D值",
+      "statistics": {
+        "null_count": 127,
+        "non_null_count": 1913,
+        "null_percentage": 6.2254901960784315,
+        "min": 7.4863,
+        "max": 93.0693,
+        "avg": 44.379194040773655,
+        "distinct_count": 1911
+      },
+      "samples": [
+        45.0682,
+        37.9097,
+        30.6529
+      ]
+    },
+    {
+      "field_name": "kdj_j",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "KDJ指标J值",
+      "statistics": {
+        "null_count": 127,
+        "non_null_count": 1913,
+        "null_percentage": 6.2254901960784315,
+        "min": -17.3162,
+        "max": 114.9073,
+        "avg": 43.693217093570304,
+        "distinct_count": 1911
+      },
+      "samples": [
+        15.4772,
+        -5.0413,
+        -12.8878
+      ]
+    }
+  ],
+  "sample_data": [
+    {
+      "id": 1,
+      "stock_code": "00020",
+      "stock_name": "商汤科技",
+      "date": "2021-12-31",
+      "open": 3.91,
+      "high": 5.5,
+      "low": 3.9,
+      "close": 5.5,
+      "volume": 584046484.0,
+      "amount": 2642750896.0,
+      "turnover_rate": 1.75,
+      "amplitude": 40.9207,
+      "change_amount": 1.59,
+      "change_percent": 40.665,
+      "ema5": 5.5,
+      "ema10": 5.5,
+      "ema20": 5.5,
+      "ema50": 5.5,
+      "ema100": 5.5,
+      "ema200": 5.5,
+      "macd_dif": 0.0,
+      "macd_signal": 0.0,
+      "macd_histogram": 0.0,
+      "ema5_10_status": null,
+      "ema5_10_streak": 1.0,
+      "ema5_20_status": null,
+      "ema5_20_streak": 1.0,
+      "ema10_50_status": null,
+      "ema10_50_streak": 1.0,
+      "ema20_50_status": null,
+      "ema20_50_streak": 1.0,
+      "golden_triangle": 0,
+      "death_triangle": 0,
+      "macd_cross": null,
+      "macd_status": null,
+      "macd_golden_streak": 0.0,
+      "macd_death_streak": 0.0,
+      "vol_ema5": 584046484.0,
+      "volume_ratio5": 1.0,
+      "gain": null,
+      "loss": null,
+      "avg_gain": null,
+      "avg_loss": null,
+      "rs": null,
+      "rsi14": null,
+      "kdj_k": null,
+      "kdj_d": null,
+      "kdj_j": null
+    },
+    {
+      "id": 2,
+      "stock_code": "00020",
+      "stock_name": "商汤科技",
+      "date": "2022-01-31",
+      "open": 5.99,
+      "high": 9.7,
+      "low": 5.8,
+      "close": 6.73,
+      "volume": 1915100861.0,
+      "amount": 14148281631.0,
+      "turnover_rate": 5.75,
+      "amplitude": 65.1085,
+      "change_amount": 0.74,
+      "change_percent": 12.3539,
+      "ema5": 5.91,
+      "ema10": 5.7236,
+      "ema20": 5.6171,
+      "ema50": 5.5482,
+      "ema100": 5.5244,
+      "ema200": 5.5122,
+      "macd_dif": 0.0981,
+      "macd_signal": 0.0196,
+      "macd_histogram": 0.157,
+      "ema5_10_status": "金叉",
+      "ema5_10_streak": 1.0,
+      "ema5_20_status": "金叉",
+      "ema5_20_streak": 1.0,
+      "ema10_50_status": "金叉",
+      "ema10_50_streak": 1.0,
+      "ema20_50_status": "金叉",
+      "ema20_50_streak": 1.0,
+      "golden_triangle": 1,
+      "death_triangle": 0,
+      "macd_cross": "金叉",
+      "macd_status": "金叉",
+      "macd_golden_streak": 1.0,
+      "macd_death_streak": 0.0,
+      "vol_ema5": 1027731276.3333,
+      "volume_ratio5": 1.8634,
+      "gain": 1.23,
+      "loss": 0.0,
+      "avg_gain": null,
+      "avg_loss": null,
+      "rs": null,
+      "rsi14": null,
+      "kdj_k": null,
+      "kdj_d": null,
+      "kdj_j": null
+    },
+    {
+      "id": 3,
+      "stock_code": "00020",
+      "stock_name": "商汤科技",
+      "date": "2022-02-28",
+      "open": 6.82,
+      "high": 7.6,
+      "low": 6.06,
+      "close": 6.46,
+      "volume": 448736587.0,
+      "amount": 3038291169.0,
+      "turnover_rate": 1.32,
+      "amplitude": 22.5806,
+      "change_amount": -0.36,
+      "change_percent": -5.2786,
+      "ema5": 6.0933,
+      "ema10": 5.8575,
+      "ema20": 5.6974,
+      "ema50": 5.584,
+      "ema100": 5.5429,
+      "ema200": 5.5217,
+      "macd_dif": 0.1523,
+      "macd_signal": 0.0462,
+      "macd_histogram": 0.2123,
+      "ema5_10_status": "金叉延续",
+      "ema5_10_streak": 1.0,
+      "ema5_20_status": "金叉延续",
+      "ema5_20_streak": 1.0,
+      "ema10_50_status": "金叉延续",
+      "ema10_50_streak": 1.0,
+      "ema20_50_status": "金叉延续",
+      "ema20_50_streak": 1.0,
+      "golden_triangle": 1,
+      "death_triangle": 0,
+      "macd_cross": null,
+      "macd_status": "金叉延续",
+      "macd_golden_streak": 2.0,
+      "macd_death_streak": 0.0,
+      "vol_ema5": 834733046.5556,
+      "volume_ratio5": 0.5376,
+      "gain": 0.0,
+      "loss": 0.27,
+      "avg_gain": null,
+      "avg_loss": null,
+      "rs": null,
+      "rsi14": null,
+      "kdj_k": null,
+      "kdj_d": null,
+      "kdj_j": null
+    },
+    {
+      "id": 4,
+      "stock_code": "00020",
+      "stock_name": "商汤科技",
+      "date": "2022-03-31",
+      "open": 6.46,
+      "high": 6.86,
+      "low": 5.79,
+      "close": 6.15,
+      "volume": 395506074.0,
+      "amount": 2536633814.0,
+      "turnover_rate": 1.2,
+      "amplitude": 16.5635,
+      "change_amount": -0.31,
+      "change_percent": -4.7988,
+      "ema5": 6.1122,
+      "ema10": 5.9107,
+      "ema20": 5.7405,
+      "ema50": 5.6062,
+      "ema100": 5.5549,
+      "ema200": 5.5279,
+      "macd_dif": 0.1684,
+      "macd_signal": 0.0706,
+      "macd_histogram": 0.1955,
+      "ema5_10_status": "金叉延续",
+      "ema5_10_streak": 2.0,
+      "ema5_20_status": "金叉延续",
+      "ema5_20_streak": 2.0,
+      "ema10_50_status": "金叉延续",
+      "ema10_50_streak": 2.0,
+      "ema20_50_status": "金叉延续",
+      "ema20_50_streak": 2.0,
+      "golden_triangle": 1,
+      "death_triangle": 0,
+      "macd_cross": null,
+      "macd_status": "金叉延续",
+      "macd_golden_streak": 3.0,
+      "macd_death_streak": 0.0,
+      "vol_ema5": 688324055.7037,
+      "volume_ratio5": 0.5746,
+      "gain": 0.0,
+      "loss": 0.31,
+      "avg_gain": null,
+      "avg_loss": null,
+      "rs": null,
+      "rsi14": null,
+      "kdj_k": null,
+      "kdj_d": null,
+      "kdj_j": null
+    },
+    {
+      "id": 5,
+      "stock_code": "00020",
+      "stock_name": "商汤科技",
+      "date": "2022-04-30",
+      "open": 6.1,
+      "high": 6.29,
+      "low": 4.4,
+      "close": 5.18,
+      "volume": 177118955.0,
+      "amount": 925245688.0,
+      "turnover_rate": 0.51,
+      "amplitude": 30.9836,
+      "change_amount": -0.92,
+      "change_percent": -15.082,
+      "ema5": 5.8015,
+      "ema10": 5.7778,
+      "ema20": 5.6871,
+      "ema50": 5.5895,
+      "ema100": 5.5475,
+      "ema200": 5.5245,
+      "macd_dif": 0.1016,
+      "macd_signal": 0.0768,
+      "macd_histogram": 0.0496,
+      "ema5_10_status": "金叉延续",
+      "ema5_10_streak": 3.0,
+      "ema5_20_status": "金叉延续",
+      "ema5_20_streak": 3.0,
+      "ema10_50_status": "金叉延续",
+      "ema10_50_streak": 3.0,
+      "ema20_50_status": "金叉延续",
+      "ema20_50_streak": 3.0,
+      "golden_triangle": 1,
+      "death_triangle": 0,
+      "macd_cross": null,
+      "macd_status": "金叉延续",
+      "macd_golden_streak": 4.0,
+      "macd_death_streak": 0.0,
+      "vol_ema5": 517922355.4691,
+      "volume_ratio5": 0.342,
+      "gain": 0.0,
+      "loss": 0.97,
+      "avg_gain": null,
+      "avg_loss": null,
+      "rs": null,
+      "rsi14": null,
+      "kdj_k": null,
+      "kdj_d": null,
+      "kdj_j": null
+    }
+  ]
+}

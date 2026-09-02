@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="zh"><head><meta charset="utf-8">
+<title>QCFP-MTF 触发器×缓冲敏感性</title>
+<style>
+body{font-family:-apple-system,"Microsoft YaHei",sans-serif;margin:24px;color:#1f2937}
+h1{font-size:19px} h2{font-size:15px}
+table{border-collapse:collapse;margin:10px 0;width:100%;font-size:13px}
+td,th{border:1px solid #d1d5db;padding:5px 9px;text-align:right}
+th{background:#f3f4f6;text-align:center}
+td:first-child,th:first-child{text-align:left}
+.best{background:#ecfdf5;font-weight:600}
+</style></head><body>
+<h1>QCFP-MTF 方案 B 敏感性（触发器 × 移动止损缓冲）</h1>
+<p>重点股票：01951，波段 2024-02-02 ~ 2024-10-31，买入持有 61.61%；按组合 Sharpe 降序。</p>
+<table>
+<tr><th>触发器变体</th><th>buffer_pct</th><th>Sharpe</th><th>组合年化</th>
+<th>最大回撤</th><th>年化换手</th><th>01951 波段收益</th><th>波段持仓周</th></tr>
+<tr><td>ANY(全部触发)</td><td>2%</td><td>0.0632</td><td>0.16%</td><td>-23.17%</td><td>1.32</td><td>7.31%</td><td>19/39</td></tr><tr><td>ANY(全部触发)</td><td>5%</td><td>0.0626</td><td>0.15%</td><td>-23.34%</td><td>1.31</td><td>6.17%</td><td>20/39</td></tr><tr><td>ANY(全部触发)</td><td>8%</td><td>0.0513</td><td>0.05%</td><td>-23.58%</td><td>1.30</td><td>5.97%</td><td>23/39</td></tr><tr><td>ANY(全部触发)</td><td>12%</td><td>0.0388</td><td>-0.07%</td><td>-24.04%</td><td>1.30</td><td>5.97%</td><td>23/39</td></tr><tr><td>Breakout+Pullback+Consolidation</td><td>2%</td><td>0.0198</td><td>-0.24%</td><td>-24.77%</td><td>1.39</td><td>7.31%</td><td>19/39</td></tr><tr><td>Breakout+Pullback+Consolidation</td><td>5%</td><td>0.0193</td><td>-0.25%</td><td>-24.95%</td><td>1.37</td><td>6.17%</td><td>20/39</td></tr><tr><td>Breakout+Pullback+Consolidation</td><td>8%</td><td>0.0133</td><td>-0.31%</td><td>-24.98%</td><td>1.36</td><td>5.97%</td><td>23/39</td></tr><tr><td>Breakout+Pullback+Consolidation</td><td>12%</td><td>0.0116</td><td>-0.32%</td><td>-25.02%</td><td>1.35</td><td>5.97%</td><td>23/39</td></tr><tr><td>OFF(禁用方案B)</td><td>12%</td><td>-0.0224</td><td>-0.58%</td><td>-23.97%</td><td>1.05</td><td>0.00%</td><td>0/39</td></tr><tr><td>OFF(禁用方案B)</td><td>8%</td><td>-0.0224</td><td>-0.58%</td><td>-23.97%</td><td>1.05</td><td>0.00%</td><td>0/39</td></tr><tr><td>OFF(禁用方案B)</td><td>5%</td><td>-0.0224</td><td>-0.58%</td><td>-23.97%</td><td>1.05</td><td>0.00%</td><td>0/39</td></tr><tr><td>OFF(禁用方案B)</td><td>2%</td><td>-0.0224</td><td>-0.58%</td><td>-23.97%</td><td>1.05</td><td>0.00%</td><td>0/39</td></tr><tr><td>Breakout</td><td>12%</td><td>-0.0298</td><td>-0.65%</td><td>-23.98%</td><td>1.13</td><td>0.00%</td><td>0/39</td></tr><tr><td>Breakout</td><td>8%</td><td>-0.0298</td><td>-0.65%</td><td>-23.98%</td><td>1.13</td><td>0.00%</td><td>0/39</td></tr><tr><td>Breakout</td><td>5%</td><td>-0.0298</td><td>-0.65%</td><td>-23.98%</td><td>1.13</td><td>0.00%</td><td>0/39</td></tr><tr><td>Breakout</td><td>2%</td><td>-0.0298</td><td>-0.65%</td><td>-23.98%</td><td>1.13</td><td>0.00%</td><td>0/39</td></tr><tr><td>Breakout+Pullback</td><td>12%</td><td>-0.0361</td><td>-0.71%</td><td>-24.00%</td><td>1.18</td><td>-3.28%</td><td>3/39</td></tr><tr><td>Breakout+Pullback</td><td>8%</td><td>-0.0361</td><td>-0.71%</td><td>-24.00%</td><td>1.18</td><td>-3.28%</td><td>3/39</td></tr><tr><td>Breakout+Pullback</td><td>5%</td><td>-0.0361</td><td>-0.71%</td><td>-24.00%</td><td>1.18</td><td>-3.28%</td><td>3/39</td></tr><tr><td>Breakout+Pullback</td><td>2%</td><td>-0.0361</td><td>-0.71%</td><td>-24.00%</td><td>1.18</td><td>-3.28%</td><td>3/39</td></tr>
+</table>
+<p>说明：移动止损为收盘跌破建仓周 K 线最低价×(1-buffer)；时间止损仅纯脉冲（CQS&lt;0）保留 2 周。</p>
+</body></html>

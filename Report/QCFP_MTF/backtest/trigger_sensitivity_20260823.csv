@@ -1,0 +1,6 @@
+﻿variant,min_trigger,annualized_return,sharpe,sortino,calmar,max_drawdown,annual_turnover,avg_exposure,n_override_rows,n_override_stocks,n_time_stopped_rows,avg_override_target,01951_wave_return,01951_wave_pos_weeks,01951_wave_weeks,01951_wave_override_weeks,01951_wave_time_stopped_weeks,01951_wave_avg_override_target
+OFF(禁用方案B),DISABLED,-0.005836,-0.0224,-0.0354,-0.0243,-0.239691,1.0521,0.2686,0,0,0,,0.0,0,39,0,0,
+Breakout,"[""Breakout""]",-0.006255,-0.0273,-0.0431,-0.0261,-0.239816,1.0631,0.2687,7,5,0,0.1143,0.0,0,39,0,0,
+Breakout+Pullback,"[""Breakout"", ""Pullback""]",-0.006838,-0.0337,-0.0535,-0.0285,-0.240049,1.119,0.2695,63,11,1,0.1063,-0.03276,3,39,3,0,0.2
+Breakout+Pullback+Consolidation,"[""Breakout"", ""Pullback"", ""Consolidation""]",-0.007757,-0.0421,-0.0671,-0.0312,-0.248321,1.2994,0.2768,1058,12,696,0.0543,0.024706,9,39,27,18,0.0667
+ANY(全部触发),[],-0.008127,-0.0467,-0.0741,-0.0326,-0.249417,1.2319,0.2749,1129,12,849,0.0406,0.011097,8,39,28,20,0.0571

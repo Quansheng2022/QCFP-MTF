@@ -1,0 +1,16 @@
+{
+  "tables_to_create": [
+    "qcfp_decision_certificate"
+  ],
+  "tables_missing_columns": {},
+  "verify_only": [
+    "qcfp_decision_ledger",
+    "qcfp_model_registry",
+    "qcfp_shadow_decision_fact",
+    "qcfp_runtime_event_ledger",
+    "qcfp_research_outcome",
+    "qcfp_runtime_evidence_daily"
+  ],
+  "backup": null,
+  "applied_at": null
+}

@@ -1,0 +1,26 @@
+{
+  "stocks": [
+    {"stock_code": "00371", "stock_name": "北控水务", "sector": "公用事业", "market": "HKEX"},
+    {"stock_code": "00788", "stock_name": "中国铁塔", "sector": "电信服务", "market": "HKEX"},
+    {"stock_code": "02202", "stock_name": "港股万科企业", "sector": "房地产", "market": "HKEX"},
+    {"stock_code": "01951", "stock_name": "锦鑫生殖", "sector": "医疗保健", "market": "HKEX"},
+    {"stock_code": "00268", "stock_name": "金蝶国际", "sector": "信息技术", "market": "HKEX"},
+    {"stock_code": "00354", "stock_name": "中软国际", "sector": "信息技术", "market": "HKEX"},
+	{"stock_code": "03033", "stock_name": "南方恒生科技", "sector": "ETF", "market": "HKEX"},
+    {"stock_code": "00700", "stock_name": "腾讯控股", "sector": "信息技术", "market": "HKEX"},
+    {"stock_code": "06060", "stock_name": "众安在线", "sector": "金融", "market": "HKEX"},
+    {"stock_code": "00357", "stock_name": "美兰空港", "sector": "交通运输", "market": "HKEX"},
+    {"stock_code": "01177", "stock_name": "中生制药", "sector": "医疗保健", "market": "HKEX"},
+    {"stock_code": "01093", "stock_name": "石药集团", "sector": "医疗保健", "market": "HKEX"},
+    {"stock_code": "03800", "stock_name": "协鑫科技", "sector": "新能源", "market": "HKEX"},
+    {"stock_code": "00020", "stock_name": "商汤科技", "sector": "信息技术", "market": "HKEX"},
+    {"stock_code": "02611", "stock_name": "国泰海通", "sector": "金融", "market": "HKEX"},
+    {"stock_code": "00579", "stock_name": "京能清洁能源", "sector": "公用事业", "market": "HKEX"},
+    {"stock_code": "02602", "stock_name": "港股万物云", "sector": "信息技术", "market": "HKEX"}
+  ],
+  "metadata": {
+    "version": "1.0",
+    "last_updated": "2026-07-10",
+    "description": "港股股票列表，用于数据导入和验证"
+  }
+}

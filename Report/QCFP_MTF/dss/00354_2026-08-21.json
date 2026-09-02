@@ -1,0 +1,54 @@
+{
+  "stock_code": "00354",
+  "decision_date": "2026-08-21",
+  "model_version": "QCFP-MTF-2.1.1",
+  "structural": {
+    "regime": "STRUCTURAL_DECLINE",
+    "core_score": 20.0,
+    "evidence_level": "A-",
+    "data_quality": "C",
+    "key_drivers": [
+      "c_state: C→",
+      "f_state: F→",
+      "p_state: P↓"
+    ]
+  },
+  "stage": {
+    "monthly_state": "Deteriorating",
+    "turnover_regime": "T5",
+    "vp_regime": "VP_OVERHEAT",
+    "cbi_score": 17.833128844932645
+  },
+  "cost_position": {
+    "status": "COST_ADVANTAGE",
+    "vs_weekly_vwap": 0.06988556674043434,
+    "vs_monthly_vwap": 0.10966347128725196,
+    "vs_quarterly_vwap": 0.04975722886851908
+  },
+  "trigger": {
+    "signal": "Consolidation",
+    "breakout": false,
+    "breakdown": false,
+    "volume_spike": false
+  },
+  "confidence": {
+    "chip_stability_confidence": "Low",
+    "structure_behavior_alignment": "Aligned",
+    "evidence_summary": "结构:STRUCTURAL_DECLINE(A/A-); 阶段:Deteriorating(B); 触发:Consolidation(C); 置信度:Low"
+  },
+  "risk": {
+    "risk_level": "Extreme",
+    "divergence_detected": false,
+    "key_risks": [
+      "Extreme"
+    ],
+    "anti_inference_check": "PASSED"
+  },
+  "decision": {
+    "mtf_regime": "BULLISH_WARNING",
+    "action": "REDUCE",
+    "action_detail": "结构性强势下的战术预警，减仓观察，严禁清仓",
+    "position_advice": "5%（CQS 观察仓 × Risk 上限）",
+    "stop_loss_trigger": "移动止损：收盘跌破建仓周最低价×(1-2%)（周线收盘确认 → 次周离场；不做盘中触发）"
+  }
+}

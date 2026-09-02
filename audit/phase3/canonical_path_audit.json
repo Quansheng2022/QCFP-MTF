@@ -1,0 +1,41 @@
+{
+  "canonical_root": "decision.engine.evaluate",
+  "canonical_roots": 1,
+  "second_canonical_roots": [],
+  "recursive_findings": [
+    {
+      "module": "decision.engine",
+      "function": "evaluate",
+      "file": "decision/engine.py",
+      "classification": "CANONICAL",
+      "tokens": [
+        "DecisionSnapshot",
+        "final_target",
+        "canonical_action"
+      ]
+    }
+  ],
+  "research_only_roots": [],
+  "report_recompute": [],
+  "script_recompute": [],
+  "recompute_scan": {
+    "report_scan": "rglob(*.py) AST",
+    "scripts_scan": "rglob(*.py) AST",
+    "orchestrator_allowlist": [
+      "scripts/canonical_audit.py",
+      "scripts/counterfactual_replay.py",
+      "scripts/permission_fsm_ablation.py",
+      "scripts/replay_certify.py",
+      "scripts/shadow_live.py",
+      "scripts/shadow_mode.py",
+      "scripts/shadow_universe.py"
+    ]
+  },
+  "final_target_writer": [
+    "decision/engine.py"
+  ],
+  "final_target_authority": [
+    "decision.governance"
+  ],
+  "final_target_writers": 1
+}

@@ -1,0 +1,320 @@
+{
+  "run_id": "bt_20260824",
+  "model_version": "QCFP-MTF-2.1.1",
+  "stock": "01093",
+  "start": "2021-01-01",
+  "end": "2026-08-21",
+  "overall": {
+    "n": 295,
+    "total_return": 0.374006,
+    "annualized_return": 0.057605,
+    "sharpe": 0.39,
+    "max_drawdown": -0.313326,
+    "win_rate": 0.2339,
+    "profit_factor": 1.2564,
+    "sortino": 0.436,
+    "calmar": 0.1838,
+    "annual_turnover": 1.2251
+  },
+  "by_year": [
+    {
+      "year": 2021,
+      "n": 53,
+      "total_return": 0.065394,
+      "annualized_return": 0.064121,
+      "sharpe": 0.8382,
+      "max_drawdown": -0.046639,
+      "win_rate": 0.1132,
+      "profit_factor": 2.0945,
+      "sortino": 0.4747,
+      "calmar": 1.3748,
+      "annual_turnover": null
+    },
+    {
+      "year": 2022,
+      "n": 52,
+      "total_return": 0.0,
+      "annualized_return": 0.0,
+      "sharpe": NaN,
+      "max_drawdown": 0.0,
+      "win_rate": 0.0,
+      "profit_factor": NaN,
+      "sortino": NaN,
+      "calmar": NaN,
+      "annual_turnover": null
+    },
+    {
+      "year": 2023,
+      "n": 52,
+      "total_return": 0.069207,
+      "annualized_return": 0.069207,
+      "sharpe": 1.2481,
+      "max_drawdown": -0.016383,
+      "win_rate": 0.1731,
+      "profit_factor": 2.4895,
+      "sortino": 2.1558,
+      "calmar": 4.2242,
+      "annual_turnover": null
+    },
+    {
+      "year": 2024,
+      "n": 52,
+      "total_return": -0.114307,
+      "annualized_return": -0.114307,
+      "sharpe": -0.4543,
+      "max_drawdown": -0.168709,
+      "win_rate": 0.1923,
+      "profit_factor": 0.7456,
+      "sortino": -0.4401,
+      "calmar": -0.6775,
+      "annual_turnover": null
+    },
+    {
+      "year": 2025,
+      "n": 52,
+      "total_return": 0.314391,
+      "annualized_return": 0.314391,
+      "sharpe": 1.0535,
+      "max_drawdown": -0.262202,
+      "win_rate": 0.5577,
+      "profit_factor": 1.4688,
+      "sortino": 2.0066,
+      "calmar": 1.199,
+      "annual_turnover": null
+    },
+    {
+      "year": 2026,
+      "n": 34,
+      "total_return": 0.036118,
+      "annualized_return": 0.055764,
+      "sharpe": 0.3287,
+      "max_drawdown": -0.277037,
+      "win_rate": 0.4412,
+      "profit_factor": 1.1338,
+      "sortino": 0.7513,
+      "calmar": 0.2013,
+      "annual_turnover": null
+    }
+  ],
+  "by_market_regime": [
+    {
+      "market_regime": "risk_on",
+      "n": 69,
+      "total_return": 0.360588,
+      "annualized_return": 0.261187,
+      "sharpe": 1.2425,
+      "max_drawdown": -0.158682,
+      "win_rate": 0.3333,
+      "profit_factor": 1.7722,
+      "sortino": 2.0067,
+      "calmar": 1.646,
+      "annual_turnover": 1.658
+    },
+    {
+      "market_regime": "neutral",
+      "n": 43,
+      "total_return": 0.418004,
+      "annualized_return": 0.525541,
+      "sharpe": 1.9545,
+      "max_drawdown": -0.122439,
+      "win_rate": 0.3256,
+      "profit_factor": 2.8002,
+      "sortino": 2.5804,
+      "calmar": 4.2923,
+      "annual_turnover": 0.907
+    },
+    {
+      "market_regime": "risk_off",
+      "n": 183,
+      "total_return": -0.287828,
+      "annualized_return": -0.091946,
+      "sharpe": -0.4934,
+      "max_drawdown": -0.422252,
+      "win_rate": 0.1749,
+      "profit_factor": 0.7058,
+      "sortino": -0.4544,
+      "calmar": -0.2178,
+      "annual_turnover": 1.1366
+    },
+    {
+      "market_regime": "ALL",
+      "n": 295,
+      "total_return": 0.374006,
+      "annualized_return": 0.057605,
+      "sharpe": 0.39,
+      "max_drawdown": -0.313326,
+      "win_rate": 0.2339,
+      "profit_factor": 1.2564,
+      "sortino": 0.436,
+      "calmar": 0.1838,
+      "annual_turnover": 1.2251
+    }
+  ],
+  "expanding_windows": [
+    {
+      "window": "20210101-20230101",
+      "window_start": "2021-01-01",
+      "window_end": "2023-01-01",
+      "n": 105,
+      "total_return": 0.067214,
+      "annualized_return": 0.03274,
+      "sharpe": 0.6049,
+      "max_drawdown": -0.046639,
+      "win_rate": 0.0571,
+      "profit_factor": 2.1233,
+      "sortino": 0.2459,
+      "calmar": 0.702,
+      "annual_turnover": 0.5448
+    },
+    {
+      "window": "20210101-20240101",
+      "window_start": "2021-01-01",
+      "window_end": "2024-01-01",
+      "n": 157,
+      "total_return": 0.139126,
+      "annualized_return": 0.044088,
+      "sharpe": 0.8079,
+      "max_drawdown": -0.046639,
+      "win_rate": 0.0955,
+      "profit_factor": 2.2646,
+      "sortino": 0.5089,
+      "calmar": 0.9453,
+      "annual_turnover": 0.7287
+    },
+    {
+      "window": "20210101-20241231",
+      "window_start": "2021-01-01",
+      "window_end": "2024-12-31",
+      "n": 209,
+      "total_return": 0.008916,
+      "annualized_return": 0.002211,
+      "sharpe": 0.0782,
+      "max_drawdown": -0.170987,
+      "win_rate": 0.1196,
+      "profit_factor": 1.0754,
+      "sortino": 0.0496,
+      "calmar": 0.0129,
+      "annual_turnover": 0.9703
+    },
+    {
+      "window": "20210101-20251231",
+      "window_start": "2021-01-01",
+      "window_end": "2025-12-31",
+      "n": 261,
+      "total_return": 0.32611,
+      "annualized_return": 0.057845,
+      "sharpe": 0.4118,
+      "max_drawdown": -0.262202,
+      "win_rate": 0.2069,
+      "profit_factor": 1.304,
+      "sortino": 0.3938,
+      "calmar": 0.2206,
+      "annual_turnover": 1.1854
+    }
+  ],
+  "rolling_oos_evaluation": [
+    {
+      "window": "20210101-20230101",
+      "window_start": "2021-01-01",
+      "window_end": "2023-01-01",
+      "n": 105,
+      "total_return": 0.067214,
+      "annualized_return": 0.03274,
+      "sharpe": 0.6049,
+      "max_drawdown": -0.046639,
+      "win_rate": 0.0571,
+      "profit_factor": 2.1233,
+      "sortino": 0.2459,
+      "calmar": 0.702,
+      "annual_turnover": 0.5448
+    },
+    {
+      "window": "20210101-20240101",
+      "window_start": "2021-01-01",
+      "window_end": "2024-01-01",
+      "n": 157,
+      "total_return": 0.139126,
+      "annualized_return": 0.044088,
+      "sharpe": 0.8079,
+      "max_drawdown": -0.046639,
+      "win_rate": 0.0955,
+      "profit_factor": 2.2646,
+      "sortino": 0.5089,
+      "calmar": 0.9453,
+      "annual_turnover": 0.7287
+    },
+    {
+      "window": "20210101-20241231",
+      "window_start": "2021-01-01",
+      "window_end": "2024-12-31",
+      "n": 209,
+      "total_return": 0.008916,
+      "annualized_return": 0.002211,
+      "sharpe": 0.0782,
+      "max_drawdown": -0.170987,
+      "win_rate": 0.1196,
+      "profit_factor": 1.0754,
+      "sortino": 0.0496,
+      "calmar": 0.0129,
+      "annual_turnover": 0.9703
+    },
+    {
+      "window": "20210101-20251231",
+      "window_start": "2021-01-01",
+      "window_end": "2025-12-31",
+      "n": 261,
+      "total_return": 0.32611,
+      "annualized_return": 0.057845,
+      "sharpe": 0.4118,
+      "max_drawdown": -0.262202,
+      "win_rate": 0.2069,
+      "profit_factor": 1.304,
+      "sortino": 0.3938,
+      "calmar": 0.2206,
+      "annual_turnover": 1.1854
+    }
+  ],
+  "benchmark": {
+    "buy_hold": {
+      "n": 295,
+      "excess_annualized": 0.027361,
+      "information_ratio": 0.2445,
+      "correlation": 0.3561
+    },
+    "hsi": {
+      "n": 295,
+      "excess_annualized": 0.057666,
+      "information_ratio": 0.3701,
+      "correlation": 0.0779
+    }
+  },
+  "portfolio_risk": {
+    "n": 295,
+    "var95": -0.03582,
+    "annualized_vol": 0.188667,
+    "max_drawdown": -0.313326,
+    "avg_exposure": 0.2239,
+    "cash_ratio": 0.7761
+  },
+  "run_status": {
+    "status": "PASS_WITH_WARNING",
+    "checks": [
+      "PIT disclosure = ESTIMATED (PIT-C)",
+      "披露日为推算值（period_end + lag），非真实披露日历（PIT-C）",
+      "PIT universe 缺失（研究模式，存在幸存者偏差风险）"
+    ],
+    "pit_grade": "C",
+    "pit_disclosure_mode": "ESTIMATED"
+  },
+  "pit_disclosure_mode": "ESTIMATED",
+  "pit_grade": "C",
+  "config_hash": "53c3c136ebb3",
+  "cost_model_version": "directional_v2",
+  "cost_metrics": {
+    "annual_gross_turnover": 1.2251,
+    "annual_transaction_cost": 0.004982,
+    "cost_per_turnover": 0.004066,
+    "avg_position": 0.2239,
+    "avg_trade_size": 0.2896
+  }
+}

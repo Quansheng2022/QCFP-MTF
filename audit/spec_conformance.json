@@ -1,0 +1,18 @@
+{
+  "schema": "SPEC-CONFORMANCE-2",
+  "spec_path": "C:\\Users\\Quansheng\\Documents\\projects\\TA_Workflow\\Core\\QCFP_MTF\\CANONICAL_SPEC.md",
+  "n_entries": 38,
+  "missing_spec_ids": [],
+  "missing_chapters": [],
+  "implementation_detail_found": [],
+  "conformant": true,
+  "pass": true,
+  "verdict": "SPEC_CONFORMANT",
+  "acceptance": {
+    "core_authorities_covered": true,
+    "invariants_covered": true,
+    "release_gates_traceable": true,
+    "no_implementation_detail": true,
+    "architecture_change_without_spec_change": "见 governance_baseline.json：Spec Hash 与 Architecture Hash 分别冻结"
+  }
+}

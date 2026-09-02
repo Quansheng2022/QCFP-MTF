@@ -1,0 +1,97 @@
+{
+  "gate": "CHAIN_CONFORMANCE",
+  "runtime_source": "OBSERVED_CALL_TRACE",
+  "observed_runtime_path": [
+    "evidence",
+    "institutional",
+    "exit_events",
+    "setup",
+    "participation_budget",
+    "wave",
+    "fsm",
+    "sizing",
+    "trade_quality",
+    "final_target"
+  ],
+  "snapshot_declared_path": [
+    "evidence",
+    "institutional",
+    "exit_events",
+    "setup",
+    "participation_budget",
+    "wave",
+    "fsm",
+    "sizing",
+    "permission_cap",
+    "trade_quality",
+    "governance",
+    "final_target"
+  ],
+  "runtime_snapshot_match": true,
+  "wave_sub_gate_observed": true,
+  "normalized_runtime_path": [
+    "evidence",
+    "institutional",
+    "exit_events",
+    "setup",
+    "participation_budget",
+    "wave",
+    "fsm",
+    "sizing",
+    "trade_quality",
+    "governance",
+    "final_target"
+  ],
+  "normalized_snapshot_path": [
+    "evidence",
+    "institutional",
+    "exit_events",
+    "setup",
+    "participation_budget",
+    "wave",
+    "fsm",
+    "sizing",
+    "trade_quality",
+    "governance",
+    "final_target"
+  ],
+  "observed_canonical_stage_path": [
+    "INPUT",
+    "PERMISSION",
+    "OPPORTUNITY",
+    "LIFECYCLE",
+    "GOVERNANCE"
+  ],
+  "snapshot_canonical_stage_path": [
+    "INPUT",
+    "PERMISSION",
+    "OPPORTUNITY",
+    "LIFECYCLE",
+    "GOVERNANCE"
+  ],
+  "canonical_stage_path": [
+    "INPUT",
+    "PERMISSION",
+    "OPPORTUNITY",
+    "LIFECYCLE",
+    "GOVERNANCE",
+    "OUTPUT",
+    "FACT",
+    "VALIDATION"
+  ],
+  "expected_canonical_stage_path": [
+    "INPUT",
+    "PERMISSION",
+    "OPPORTUNITY",
+    "LIFECYCLE",
+    "GOVERNANCE",
+    "OUTPUT",
+    "FACT",
+    "VALIDATION"
+  ],
+  "missing_stages": [],
+  "reverse_edges": [],
+  "status": "PASS",
+  "verdict": "CHAIN_CONFORMANT",
+  "problems": []
+}

@@ -1,0 +1,270 @@
+{
+  "metadata": {
+    "table_name": "hk_hist_quarterly_moneyflow",
+    "description": "港股季度资金流历史数据表（由日线资金流按季度聚合，所有列名均为小写）",
+    "created_date": "2026-08-15 19:32:36",
+    "version": "1.0",
+    "database": "HK_Stock.db",
+    "data_source": "Core/Quarterly 数据处理程序（由日线/月度数据按季度聚合计算）",
+    "total_records": 0,
+    "total_stocks": 0,
+    "last_updated": "2026-08-15 19:32:36",
+    "column_naming": "all lowercase"
+  },
+  "table_schema": {
+    "primary_key": "id",
+    "columns_order": [
+      "id",
+      "stock_code",
+      "stock_name",
+      "date",
+      "price_chgpct",
+      "capital_trend",
+      "extra_large",
+      "large",
+      "medium",
+      "small"
+    ],
+    "columns": [
+      {
+        "name": "id",
+        "type": "INTEGER",
+        "description": "自增主键",
+        "is_key": true
+      },
+      {
+        "name": "stock_code",
+        "type": "TEXT",
+        "description": "股票代码（5位数字）",
+        "is_key": true
+      },
+      {
+        "name": "stock_name",
+        "type": "TEXT",
+        "description": "股票名称",
+        "is_key": true
+      },
+      {
+        "name": "date",
+        "type": "TEXT",
+        "description": "交易日期（YYYY-MM-DD格式，每季度最后一天）",
+        "is_key": true
+      },
+      {
+        "name": "price_chgpct",
+        "type": "REAL",
+        "description": "价格变化百分比（已乘以100）",
+        "is_key": false
+      },
+      {
+        "name": "capital_trend",
+        "type": "REAL",
+        "description": "原始字段: capital_trend",
+        "is_key": false
+      },
+      {
+        "name": "extra_large",
+        "type": "REAL",
+        "description": "原始字段: extra_large",
+        "is_key": false
+      },
+      {
+        "name": "large",
+        "type": "REAL",
+        "description": "原始字段: large",
+        "is_key": false
+      },
+      {
+        "name": "medium",
+        "type": "REAL",
+        "description": "原始字段: medium",
+        "is_key": false
+      },
+      {
+        "name": "small",
+        "type": "REAL",
+        "description": "原始字段: small",
+        "is_key": false
+      }
+    ],
+    "indexes": [
+      {
+        "name": "idx_stock_code_date",
+        "fields": [
+          "stock_code",
+          "date"
+        ],
+        "type": "复合索引",
+        "description": "用于快速查询特定股票的季度资金流数据"
+      }
+    ],
+    "constraints": [
+      "PRIMARY KEY (id)",
+      "UNIQUE (stock_code, date)"
+    ]
+  },
+  "data_dictionary": {
+    "column_definitions": [
+      {
+        "name": "id",
+        "original_name": "id",
+        "type": "INTEGER",
+        "description": "自增主键",
+        "constraint": "NOT NULL",
+        "null_count": 0,
+        "sample_value": "",
+        "example": "",
+        "is_key": true,
+        "is_required": true
+      },
+      {
+        "name": "stock_code",
+        "original_name": "stock_code",
+        "type": "TEXT",
+        "description": "股票代码（5位数字）",
+        "constraint": "NOT NULL",
+        "null_count": 0,
+        "sample_value": "",
+        "example": "",
+        "is_key": true,
+        "is_required": true
+      },
+      {
+        "name": "stock_name",
+        "original_name": "stock_name",
+        "type": "TEXT",
+        "description": "股票名称",
+        "constraint": "NOT NULL",
+        "null_count": 0,
+        "sample_value": "",
+        "example": "",
+        "is_key": true,
+        "is_required": true
+      },
+      {
+        "name": "date",
+        "original_name": "date",
+        "type": "TEXT",
+        "description": "交易日期（YYYY-MM-DD格式，每季度最后一天）",
+        "constraint": "NOT NULL",
+        "null_count": 0,
+        "sample_value": "",
+        "example": "",
+        "is_key": true,
+        "is_required": true
+      },
+      {
+        "name": "price_chgpct",
+        "original_name": "price_chgpct",
+        "type": "REAL",
+        "description": "价格变化百分比（已乘以100）",
+        "constraint": "",
+        "null_count": 0,
+        "sample_value": "",
+        "example": "",
+        "is_key": false,
+        "is_required": false
+      },
+      {
+        "name": "capital_trend",
+        "original_name": "capital_trend",
+        "type": "REAL",
+        "description": "原始字段: capital_trend",
+        "constraint": "",
+        "null_count": 0,
+        "sample_value": "",
+        "example": "",
+        "is_key": false,
+        "is_required": false
+      },
+      {
+        "name": "extra_large",
+        "original_name": "extra_large",
+        "type": "REAL",
+        "description": "原始字段: extra_large",
+        "constraint": "",
+        "null_count": 0,
+        "sample_value": "",
+        "example": "",
+        "is_key": false,
+        "is_required": false
+      },
+      {
+        "name": "large",
+        "original_name": "large",
+        "type": "REAL",
+        "description": "原始字段: large",
+        "constraint": "",
+        "null_count": 0,
+        "sample_value": "",
+        "example": "",
+        "is_key": false,
+        "is_required": false
+      },
+      {
+        "name": "medium",
+        "original_name": "medium",
+        "type": "REAL",
+        "description": "原始字段: medium",
+        "constraint": "",
+        "null_count": 0,
+        "sample_value": "",
+        "example": "",
+        "is_key": false,
+        "is_required": false
+      },
+      {
+        "name": "small",
+        "original_name": "small",
+        "type": "REAL",
+        "description": "原始字段: small",
+        "constraint": "",
+        "null_count": 0,
+        "sample_value": "",
+        "example": "",
+        "is_key": false,
+        "is_required": false
+      }
+    ],
+    "relationships": [
+      {
+        "type": "外键关联",
+        "table": "hk_hist_daily_moneyflow",
+        "field": "date",
+        "description": "由每日资金流按季度聚合而来（日期为该季度最后一个交易日）"
+      }
+    ],
+    "business_rules": [
+      {
+        "rule": "每季度一条记录",
+        "description": "数据按季度汇总，每个股票每个季度只有一条记录"
+      },
+      {
+        "rule": "日期表示",
+        "description": "季度数据日期为该季度最后一个交易日"
+      },
+      {
+        "rule": "价格变化百分比",
+        "description": "price_chgpct 按季度复利合成：(1+p1)*(1+p2)*...-1"
+      },
+      {
+        "rule": "资金流聚合",
+        "description": "capital_trend / extra_large / large / medium / small 按季度求和"
+      }
+    ]
+  },
+  "data_statistics": {
+    "total_records": 0,
+    "stocks_loaded": [],
+    "date_range": {
+      "earliest": null,
+      "latest": null
+    }
+  },
+  "field_definitions": [],
+  "usage_examples": {
+    "query_all": "SELECT * FROM hk_hist_quarterly_moneyflow LIMIT 10;",
+    "query_by_stock": "SELECT * FROM hk_hist_quarterly_moneyflow WHERE stock_code = '00700';",
+    "query_date_range": "SELECT * FROM hk_hist_quarterly_moneyflow WHERE date BETWEEN '2024-01-01' AND '2024-12-31';"
+  }
+}

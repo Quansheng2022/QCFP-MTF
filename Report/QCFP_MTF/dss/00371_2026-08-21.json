@@ -1,0 +1,81 @@
+{
+  "stock_code": "00371",
+  "decision_date": "2026-08-21",
+  "model_version": "QCFP-MTF-2.1.1",
+  "structural": {
+    "regime": "STRUCTURAL_BULLISH",
+    "core_score": 85.0,
+    "evidence_level": "A-",
+    "data_quality": "C",
+    "key_drivers": [
+      "c_state: C↑",
+      "f_state: F↓",
+      "p_state: P↓"
+    ]
+  },
+  "stage": {
+    "monthly_state": "Improving",
+    "turnover_regime": "T2",
+    "vp_regime": "VP_LOCKED_CANDIDATE",
+    "cbi_score": 74.8163718587157
+  },
+  "cost_position": {
+    "status": "COST_NEUTRAL",
+    "vs_weekly_vwap": -0.018995984829851986,
+    "vs_monthly_vwap": -0.016923704030869957,
+    "vs_quarterly_vwap": -0.1395454690810356
+  },
+  "trigger": {
+    "signal": "Breakdown",
+    "breakout": false,
+    "breakdown": true,
+    "volume_spike": false
+  },
+  "confidence": {
+    "chip_stability_confidence": "Medium",
+    "structure_behavior_alignment": "Aligned",
+    "evidence_summary": "结构:STRUCTURAL_BULLISH(A/A-); 阶段:Improving(B); 触发:Breakdown(C); 置信度:Medium"
+  },
+  "risk": {
+    "risk_level": "Extreme",
+    "divergence_detected": false,
+    "key_risks": [
+      "Extreme"
+    ],
+    "anti_inference_check": "PASSED"
+  },
+  "decision": {
+    "mtf_regime": "BULLISH_WARNING",
+    "action": "EXIT",
+    "source": "legacy_mtf",
+    "action_detail": "多周期退潮，坚决回避/离场",
+    "position_advice": "0%（已退出）",
+    "stop_loss_trigger": "移动止损：收盘跌破建仓周最低价×(1-2%)（周线收盘确认 → 次周离场；不做盘中触发）"
+  },
+  "decision_2_2": {
+    "run_id": "shadow_20260825_180736",
+    "institutional_state": "NEUTRAL",
+    "institutional_permission": "WATCH",
+    "permission_cap": "TESTING",
+    "exit_event": "HARD_EXIT",
+    "exit_reason": "des_ge_threshold",
+    "setup_type": "NONE",
+    "base_fsm_state": "EXITING",
+    "prev_fsm_state": "EXITING",
+    "next_fsm_state": "EXITING",
+    "raw_target_position": 0.0,
+    "target_position": 0.0,
+    "permission_constraint_applied": false,
+    "action": "EXIT",
+    "primary_reason": "HARD_EXIT",
+    "secondary_reasons": [
+      "FUND_FLOW_NEGATIVE",
+      "PRICE_DECLINE"
+    ],
+    "override_rule_ids": [
+      "hard_exit"
+    ],
+    "input_fingerprint": "9076bf2f012201ce",
+    "settings_hash": "df6615ed987f"
+  }
+}

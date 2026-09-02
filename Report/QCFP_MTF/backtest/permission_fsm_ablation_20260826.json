@@ -1,0 +1,854 @@
+{
+  "generated_at": "20260826",
+  "schema_version": "1.1",
+  "effects": {
+    "permission_effect_A5_A2": -0.009091,
+    "fsm_effect_A2_A0": 0.02747,
+    "soft_exit_effect_A3_A2": -0.00872,
+    "hard_exit_effect_A4_A2": -0.007456,
+    "daily_effect_A8_A9": -2e-06,
+    "interaction_perm_fsm_A5_A1_A2_A0": -0.019953,
+    "interaction_perm_softexit_(A6-A5)-(A3-A2)": 0.008808,
+    "interaction_perm_hardexit_(A7-A5)-(A4-A2)": 0.007608
+  },
+  "wave_replay": {
+    "year": null,
+    "min_gain": 0.5,
+    "window_weeks": 26,
+    "focus_stock": null,
+    "n_waves": 1961,
+    "contributions": {
+      "institutional_filter_A5-A2": {
+        "overall_annualized_delta": -0.009091,
+        "wave_capture_ratio_delta": -0.0347,
+        "wave_missed_rate_delta": 0.1372,
+        "wave_entry_delay_delta": 4.26
+      },
+      "retail_fsm_A2-A0": {
+        "overall_annualized_delta": 0.02747,
+        "wave_capture_ratio_delta": -0.0677,
+        "wave_missed_rate_delta": 0.0362,
+        "wave_entry_delay_delta": -0.36
+      },
+      "soft_exit_A3-A2": {
+        "overall_annualized_delta": -0.00872,
+        "wave_capture_ratio_delta": -0.0262
+      },
+      "hard_exit_A4-A2": {
+        "overall_annualized_delta": -0.007456,
+        "wave_capture_ratio_delta": -0.025
+      },
+      "daily_A8-A9": {
+        "overall_annualized_delta": -2e-06,
+        "wave_capture_ratio_delta": NaN
+      },
+      "participation_budget_A8-A10": {
+        "overall_annualized_delta": -2e-06,
+        "wave_capture_ratio_delta": NaN,
+        "wave_missed_rate_delta": -0.0515,
+        "wave_entry_delay_delta": NaN
+      },
+      "market_scale_A8-A11": {
+        "overall_annualized_delta": -7.4e-05,
+        "wave_capture_ratio_delta": -0.0025,
+        "wave_missed_rate_delta": 0.0
+      },
+      "stop_effect_A8-A12": {
+        "overall_annualized_delta": 0.0,
+        "wave_capture_ratio_delta": 0.0,
+        "wave_missed_rate_delta": 0.0
+      },
+      "observation_effect_A8-A13": {
+        "overall_annualized_delta": -2e-06,
+        "wave_capture_ratio_delta": NaN,
+        "wave_missed_rate_delta": -0.0515
+      }
+    }
+  },
+  "experiment": {
+    "shared_input_hash": "c75e3e842a493157",
+    "shared_settings_hash": "b32234659953",
+    "modules": {
+      "A0": {
+        "permission": false,
+        "fsm": false,
+        "soft_exit": false,
+        "hard_exit": false
+      },
+      "A1": {
+        "permission": "cap_only",
+        "fsm": false,
+        "soft_exit": false,
+        "hard_exit": false
+      },
+      "A2": {
+        "permission": false,
+        "fsm": true,
+        "soft_exit": false,
+        "hard_exit": false
+      },
+      "A3": {
+        "permission": false,
+        "fsm": true,
+        "soft_exit": true,
+        "hard_exit": false
+      },
+      "A4": {
+        "permission": false,
+        "fsm": true,
+        "soft_exit": false,
+        "hard_exit": true
+      },
+      "A5": {
+        "permission": true,
+        "fsm": true,
+        "soft_exit": false,
+        "hard_exit": false
+      },
+      "A6": {
+        "permission": true,
+        "fsm": true,
+        "soft_exit": true,
+        "hard_exit": false
+      },
+      "A7": {
+        "permission": true,
+        "fsm": true,
+        "soft_exit": false,
+        "hard_exit": true
+      },
+      "A8": {
+        "permission": true,
+        "fsm": true,
+        "soft_exit": true,
+        "hard_exit": true,
+        "daily": true
+      },
+      "A9": {
+        "permission": true,
+        "fsm": true,
+        "soft_exit": true,
+        "hard_exit": true,
+        "daily": false
+      },
+      "A10": {
+        "permission": true,
+        "fsm": true,
+        "soft_exit": true,
+        "hard_exit": true,
+        "daily": true,
+        "budget": false
+      },
+      "A11": {
+        "permission": true,
+        "fsm": true,
+        "soft_exit": true,
+        "hard_exit": true,
+        "daily": true,
+        "budget": true,
+        "market_scale": false
+      },
+      "A12": {
+        "permission": true,
+        "fsm": true,
+        "soft_exit": true,
+        "hard_exit": true,
+        "daily": true,
+        "budget": true,
+        "market_scale": true,
+        "stop": false
+      },
+      "A13": {
+        "permission": true,
+        "fsm": true,
+        "soft_exit": true,
+        "hard_exit": true,
+        "daily": true,
+        "budget": true,
+        "market_scale": true,
+        "observation": false
+      }
+    }
+  },
+  "models": [
+    {
+      "model": "A0_Legacy",
+      "annualized_return": -0.018533,
+      "sharpe": -0.3119,
+      "max_drawdown": -0.214653,
+      "profit_factor": 0.8777,
+      "annual_turnover": 2.8682,
+      "churn": 0.0546,
+      "avg_exposure": 0.14,
+      "exposure_efficiency": -0.1324,
+      "bad_exposure_ratio": 0.6414,
+      "upside_capture": 0.1212,
+      "downside_capture": 0.1409,
+      "wave_n": 1961,
+      "wave_participated": 515,
+      "wave_missed_rate": 0.7374,
+      "wave_capture_ratio": 0.1018,
+      "wave_entry_delay": 5.39,
+      "wave_mfe": 0.2172,
+      "wave_mae": -0.1123,
+      "wave_false_entry_rate": 0.58,
+      "mechanism": null,
+      "perm_violations": NaN,
+      "risk_increase_violations": NaN,
+      "illegal_jumps": NaN
+    },
+    {
+      "model": "A1_PermCap",
+      "annualized_return": -0.007671,
+      "sharpe": -0.2527,
+      "max_drawdown": -0.104716,
+      "profit_factor": 0.904,
+      "annual_turnover": 1.537,
+      "churn": 0.0293,
+      "avg_exposure": 0.0795,
+      "exposure_efficiency": -0.0965,
+      "bad_exposure_ratio": 0.7973,
+      "upside_capture": 0.071,
+      "downside_capture": 0.0793,
+      "wave_n": 1961,
+      "wave_participated": 508,
+      "wave_missed_rate": 0.7409,
+      "wave_capture_ratio": 0.062,
+      "wave_entry_delay": 5.86,
+      "wave_mfe": 0.0969,
+      "wave_mae": -0.0497,
+      "wave_false_entry_rate": 0.577,
+      "mechanism": null,
+      "perm_violations": NaN,
+      "risk_increase_violations": NaN,
+      "illegal_jumps": NaN
+    },
+    {
+      "model": "A2_FSM",
+      "annualized_return": 0.008937,
+      "sharpe": 0.2372,
+      "max_drawdown": -0.094498,
+      "profit_factor": 1.2487,
+      "annual_turnover": 0.9385,
+      "churn": 0.0179,
+      "avg_exposure": 0.0427,
+      "exposure_efficiency": 0.2094,
+      "bad_exposure_ratio": 0.9916,
+      "upside_capture": 0.0531,
+      "downside_capture": 0.0416,
+      "wave_n": 1961,
+      "wave_participated": 444,
+      "wave_missed_rate": 0.7736,
+      "wave_capture_ratio": 0.0341,
+      "wave_entry_delay": 5.03,
+      "wave_mfe": 0.0649,
+      "wave_mae": -0.0438,
+      "wave_false_entry_rate": 0.3915,
+      "mechanism": {
+        "permission_dist": {
+          "STRONG_ALLOW": 10046
+        },
+        "transition_dist": {
+          "FLAT→FLAT": 7649,
+          "TESTING→TESTING": 1284,
+          "HOLDING→HOLDING": 654,
+          "BUILDING→BUILDING": 304,
+          "TRIMMING→HOLDING": 24,
+          "FLAT→TESTING": 20,
+          "HOLDING→TRIMMING": 18,
+          "TRIMMING→TRIMMING": 18,
+          "TESTING→BUILDING": 17,
+          "EXITING→COOLDOWN": 14,
+          "COOLDOWN→FLAT": 14,
+          "BUILDING→TRIMMING": 13,
+          "TRIMMING→EXITING": 7,
+          "HOLDING→EXITING": 7,
+          "BUILDING→HOLDING": 3
+        },
+        "target_positive_rate": 0.2344,
+        "exit_dist": {
+          "NONE": 10046
+        },
+        "mean_target": 0.0573
+      },
+      "perm_violations": 0.0,
+      "risk_increase_violations": 0.0,
+      "illegal_jumps": 0.0
+    },
+    {
+      "model": "A3_FSM_SoftExit",
+      "annualized_return": 0.000217,
+      "sharpe": 0.0209,
+      "max_drawdown": -0.053048,
+      "profit_factor": 1.0191,
+      "annual_turnover": 0.9211,
+      "churn": 0.0176,
+      "avg_exposure": 0.027,
+      "exposure_efficiency": 0.008,
+      "bad_exposure_ratio": 0.9617,
+      "upside_capture": 0.0281,
+      "downside_capture": 0.0275,
+      "wave_n": 1961,
+      "wave_participated": 390,
+      "wave_missed_rate": 0.8011,
+      "wave_capture_ratio": 0.0079,
+      "wave_entry_delay": 5.5,
+      "wave_mfe": 0.0406,
+      "wave_mae": -0.0315,
+      "wave_false_entry_rate": 0.4228,
+      "mechanism": {
+        "permission_dist": {
+          "STRONG_ALLOW": 10046
+        },
+        "transition_dist": {
+          "FLAT→FLAT": 7962,
+          "TESTING→TESTING": 1301,
+          "HOLDING→HOLDING": 342,
+          "BUILDING→BUILDING": 282,
+          "FLAT→TESTING": 23,
+          "EXITING→COOLDOWN": 19,
+          "COOLDOWN→FLAT": 19,
+          "TESTING→BUILDING": 18,
+          "TRIMMING→HOLDING": 18,
+          "HOLDING→TRIMMING": 14,
+          "TRIMMING→TRIMMING": 13,
+          "BUILDING→TRIMMING": 11,
+          "HOLDING→EXITING": 8,
+          "TRIMMING→EXITING": 7,
+          "BUILDING→HOLDING": 5,
+          "TESTING→EXITING": 3,
+          "BUILDING→EXITING": 1
+        },
+        "target_positive_rate": 0.2018,
+        "exit_dist": {
+          "NONE": 10026,
+          "RISK_EXIT": 20
+        },
+        "mean_target": 0.0445
+      },
+      "perm_violations": 0.0,
+      "risk_increase_violations": 0.0,
+      "illegal_jumps": 0.0
+    },
+    {
+      "model": "A4_FSM_HardExit",
+      "annualized_return": 0.001481,
+      "sharpe": 0.3259,
+      "max_drawdown": -0.005069,
+      "profit_factor": 1.8282,
+      "annual_turnover": 0.2546,
+      "churn": 0.0048,
+      "avg_exposure": 0.003,
+      "exposure_efficiency": 0.4926,
+      "bad_exposure_ratio": 1.01,
+      "upside_capture": 0.0036,
+      "downside_capture": 0.0019,
+      "wave_n": 1961,
+      "wave_participated": 201,
+      "wave_missed_rate": 0.8975,
+      "wave_capture_ratio": 0.0091,
+      "wave_entry_delay": 9.16,
+      "wave_mfe": 0.009,
+      "wave_mae": -0.0046,
+      "wave_false_entry_rate": 0.5333,
+      "mechanism": {
+        "permission_dist": {
+          "STRONG_ALLOW": 10046
+        },
+        "transition_dist": {
+          "EXITING→EXITING": 6347,
+          "FLAT→FLAT": 2200,
+          "EXITING→COOLDOWN": 369,
+          "COOLDOWN→EXITING": 355,
+          "COOLDOWN→FLAT": 304,
+          "FLAT→COOLDOWN": 298,
+          "TESTING→TESTING": 102,
+          "TESTING→EXITING": 21,
+          "FLAT→TESTING": 19,
+          "BUILDING→BUILDING": 10,
+          "COOLDOWN→TESTING": 7,
+          "TESTING→BUILDING": 4,
+          "BUILDING→EXITING": 2,
+          "HOLDING→EXITING": 2,
+          "HOLDING→HOLDING": 2,
+          "BUILDING→TRIMMING": 1,
+          "TRIMMING→TRIMMING": 1,
+          "TRIMMING→HOLDING": 1,
+          "BUILDING→HOLDING": 1
+        },
+        "target_positive_rate": 0.0147,
+        "exit_dist": {
+          "FORCED_DELEVERAGE": 5271,
+          "NONE": 3021,
+          "HARD_EXIT": 1754
+        },
+        "mean_target": 0.002
+      },
+      "perm_violations": 0.0,
+      "risk_increase_violations": 0.0,
+      "illegal_jumps": 0.0
+    },
+    {
+      "model": "A5_PermFSM",
+      "annualized_return": -0.000154,
+      "sharpe": -0.3905,
+      "max_drawdown": -0.001206,
+      "profit_factor": 0.5856,
+      "annual_turnover": 0.0548,
+      "churn": 0.0011,
+      "avg_exposure": 0.0007,
+      "exposure_efficiency": -0.2358,
+      "bad_exposure_ratio": 0.8996,
+      "upside_capture": 0.0001,
+      "downside_capture": 0.0003,
+      "wave_n": 1961,
+      "wave_participated": 175,
+      "wave_missed_rate": 0.9108,
+      "wave_capture_ratio": -0.0006,
+      "wave_entry_delay": 9.29,
+      "wave_mfe": 0.0026,
+      "wave_mae": -0.0034,
+      "wave_false_entry_rate": 0.186,
+      "mechanism": {
+        "permission_dist": {
+          "WATCH": 9640,
+          "BLOCK": 258,
+          "STRONG_ALLOW": 83,
+          "TEST": 65
+        },
+        "transition_dist": {
+          "FLAT→FLAT": 5965,
+          "TESTING→TESTING": 4044,
+          "FLAT→TESTING": 14,
+          "TESTING→EXITING": 6,
+          "EXITING→COOLDOWN": 6,
+          "COOLDOWN→FLAT": 6,
+          "BUILDING→BUILDING": 3,
+          "TESTING→BUILDING": 1,
+          "BUILDING→FLAT": 1
+        },
+        "target_positive_rate": 0.0118,
+        "exit_dist": {
+          "NONE": 10046
+        },
+        "mean_target": 0.0008
+      },
+      "perm_violations": 3943.0,
+      "risk_increase_violations": 30.0,
+      "illegal_jumps": 1.0
+    },
+    {
+      "model": "A6_PermFSM_SoftExit",
+      "annualized_return": -6.6e-05,
+      "sharpe": -0.2271,
+      "max_drawdown": -0.001073,
+      "profit_factor": 0.7343,
+      "annual_turnover": 0.0281,
+      "churn": 0.0005,
+      "avg_exposure": 0.0003,
+      "exposure_efficiency": -0.2195,
+      "bad_exposure_ratio": 1.0471,
+      "upside_capture": 0.0001,
+      "downside_capture": 0.0002,
+      "wave_n": 1961,
+      "wave_participated": 163,
+      "wave_missed_rate": 0.9169,
+      "wave_capture_ratio": 0.0014,
+      "wave_entry_delay": 9.92,
+      "wave_mfe": 0.0015,
+      "wave_mae": -0.0009,
+      "wave_false_entry_rate": 0.2121,
+      "mechanism": {
+        "permission_dist": {
+          "WATCH": 9640,
+          "BLOCK": 258,
+          "STRONG_ALLOW": 83,
+          "TEST": 65
+        },
+        "transition_dist": {
+          "FLAT→FLAT": 6414,
+          "TESTING→TESTING": 3574,
+          "FLAT→TESTING": 19,
+          "TESTING→EXITING": 13,
+          "EXITING→COOLDOWN": 13,
+          "COOLDOWN→FLAT": 13
+        },
+        "target_positive_rate": 0.0099,
+        "exit_dist": {
+          "NONE": 10026,
+          "RISK_EXIT": 20
+        },
+        "mean_target": 0.0006
+      },
+      "perm_violations": 3494.0,
+      "risk_increase_violations": 30.0,
+      "illegal_jumps": 0.0
+    },
+    {
+      "model": "A7_PermFSM_HardExit",
+      "annualized_return": -2e-06,
+      "sharpe": -0.0045,
+      "max_drawdown": -0.001054,
+      "profit_factor": 0.9925,
+      "annual_turnover": 0.0186,
+      "churn": 0.0004,
+      "avg_exposure": 0.0002,
+      "exposure_efficiency": -0.0113,
+      "bad_exposure_ratio": 1.0346,
+      "upside_capture": 0.0001,
+      "downside_capture": 0.0001,
+      "wave_n": 1961,
+      "wave_participated": 101,
+      "wave_missed_rate": 0.9485,
+      "wave_capture_ratio": 0.0022,
+      "wave_entry_delay": 11.2,
+      "wave_mfe": 0.0019,
+      "wave_mae": -0.0008,
+      "wave_false_entry_rate": 0.3158,
+      "mechanism": {
+        "permission_dist": {
+          "WATCH": 9640,
+          "BLOCK": 258,
+          "STRONG_ALLOW": 83,
+          "TEST": 65
+        },
+        "transition_dist": {
+          "EXITING→EXITING": 6347,
+          "FLAT→FLAT": 2200,
+          "EXITING→COOLDOWN": 369,
+          "COOLDOWN→EXITING": 355,
+          "COOLDOWN→FLAT": 304,
+          "FLAT→COOLDOWN": 298,
+          "TESTING→TESTING": 122,
+          "TESTING→EXITING": 25,
+          "FLAT→TESTING": 19,
+          "COOLDOWN→TESTING": 7
+        },
+        "target_positive_rate": 0.0055,
+        "exit_dist": {
+          "FORCED_DELEVERAGE": 5271,
+          "NONE": 3021,
+          "HARD_EXIT": 1754
+        },
+        "mean_target": 0.0003
+      },
+      "perm_violations": 93.0,
+      "risk_increase_violations": 23.0,
+      "illegal_jumps": 0.0
+    },
+    {
+      "model": "A8_PermFSM_FullExit",
+      "annualized_return": -2e-06,
+      "sharpe": -0.0045,
+      "max_drawdown": -0.001054,
+      "profit_factor": 0.9925,
+      "annual_turnover": 0.0186,
+      "churn": 0.0004,
+      "avg_exposure": 0.0002,
+      "exposure_efficiency": -0.0113,
+      "bad_exposure_ratio": 1.0346,
+      "upside_capture": 0.0001,
+      "downside_capture": 0.0001,
+      "wave_n": 1961,
+      "wave_participated": 101,
+      "wave_missed_rate": 0.9485,
+      "wave_capture_ratio": 0.0022,
+      "wave_entry_delay": 11.2,
+      "wave_mfe": 0.0019,
+      "wave_mae": -0.0008,
+      "wave_false_entry_rate": 0.3158,
+      "mechanism": {
+        "permission_dist": {
+          "WATCH": 9640,
+          "BLOCK": 258,
+          "STRONG_ALLOW": 83,
+          "TEST": 65
+        },
+        "transition_dist": {
+          "EXITING→EXITING": 6347,
+          "FLAT→FLAT": 2200,
+          "EXITING→COOLDOWN": 369,
+          "COOLDOWN→EXITING": 355,
+          "COOLDOWN→FLAT": 304,
+          "FLAT→COOLDOWN": 298,
+          "TESTING→TESTING": 122,
+          "TESTING→EXITING": 25,
+          "FLAT→TESTING": 19,
+          "COOLDOWN→TESTING": 7
+        },
+        "target_positive_rate": 0.0055,
+        "exit_dist": {
+          "FORCED_DELEVERAGE": 5271,
+          "NONE": 3001,
+          "HARD_EXIT": 1754,
+          "RISK_EXIT": 20
+        },
+        "mean_target": 0.0003
+      },
+      "perm_violations": 93.0,
+      "risk_increase_violations": 23.0,
+      "illegal_jumps": 0.0
+    },
+    {
+      "model": "A9_FullNoDaily",
+      "annualized_return": 0.0,
+      "sharpe": NaN,
+      "max_drawdown": 0.0,
+      "profit_factor": NaN,
+      "annual_turnover": 0.0,
+      "churn": 0.0,
+      "avg_exposure": 0.0,
+      "exposure_efficiency": NaN,
+      "bad_exposure_ratio": NaN,
+      "upside_capture": 0.0,
+      "downside_capture": -0.0,
+      "wave_n": 1961,
+      "wave_participated": 0,
+      "wave_missed_rate": 1.0,
+      "wave_capture_ratio": NaN,
+      "wave_entry_delay": NaN,
+      "wave_mfe": NaN,
+      "wave_mae": NaN,
+      "wave_false_entry_rate": NaN,
+      "mechanism": {
+        "permission_dist": {
+          "WATCH": 9640,
+          "BLOCK": 258,
+          "STRONG_ALLOW": 83,
+          "TEST": 65
+        },
+        "transition_dist": {
+          "EXITING→EXITING": 6323,
+          "FLAT→FLAT": 2342,
+          "COOLDOWN→EXITING": 379,
+          "EXITING→COOLDOWN": 368,
+          "FLAT→COOLDOWN": 323,
+          "COOLDOWN→FLAT": 311
+        },
+        "target_positive_rate": 0.0,
+        "exit_dist": {
+          "FORCED_DELEVERAGE": 5271,
+          "NONE": 3001,
+          "HARD_EXIT": 1754,
+          "RISK_EXIT": 20
+        },
+        "mean_target": 0.0
+      },
+      "perm_violations": 0.0,
+      "risk_increase_violations": 0.0,
+      "illegal_jumps": 0.0
+    },
+    {
+      "model": "A10_FullNoBudget",
+      "annualized_return": 0.0,
+      "sharpe": NaN,
+      "max_drawdown": 0.0,
+      "profit_factor": NaN,
+      "annual_turnover": 0.0,
+      "churn": 0.0,
+      "avg_exposure": 0.0,
+      "exposure_efficiency": NaN,
+      "bad_exposure_ratio": NaN,
+      "upside_capture": 0.0,
+      "downside_capture": -0.0,
+      "wave_n": 1961,
+      "wave_participated": 0,
+      "wave_missed_rate": 1.0,
+      "wave_capture_ratio": NaN,
+      "wave_entry_delay": NaN,
+      "wave_mfe": NaN,
+      "wave_mae": NaN,
+      "wave_false_entry_rate": NaN,
+      "mechanism": {
+        "permission_dist": {
+          "WATCH": 9640,
+          "BLOCK": 258,
+          "STRONG_ALLOW": 83,
+          "TEST": 65
+        },
+        "transition_dist": {
+          "EXITING→EXITING": 6325,
+          "FLAT→FLAT": 2337,
+          "COOLDOWN→EXITING": 377,
+          "EXITING→COOLDOWN": 368,
+          "FLAT→COOLDOWN": 321,
+          "COOLDOWN→FLAT": 310,
+          "TESTING→TESTING": 4,
+          "TESTING→EXITING": 2,
+          "COOLDOWN→TESTING": 1,
+          "FLAT→TESTING": 1
+        },
+        "target_positive_rate": 0.0006,
+        "exit_dist": {
+          "FORCED_DELEVERAGE": 5271,
+          "NONE": 3001,
+          "HARD_EXIT": 1754,
+          "RISK_EXIT": 20
+        },
+        "mean_target": 0.0001
+      },
+      "perm_violations": 0.0,
+      "risk_increase_violations": 0.0,
+      "illegal_jumps": 0.0
+    },
+    {
+      "model": "A11_FullNoMarketScale",
+      "annualized_return": 7.2e-05,
+      "sharpe": 0.1653,
+      "max_drawdown": -0.001228,
+      "profit_factor": 1.2927,
+      "annual_turnover": 0.0221,
+      "churn": 0.0004,
+      "avg_exposure": 0.0002,
+      "exposure_efficiency": 0.3441,
+      "bad_exposure_ratio": 1.007,
+      "upside_capture": 0.0002,
+      "downside_capture": 0.0001,
+      "wave_n": 1961,
+      "wave_participated": 101,
+      "wave_missed_rate": 0.9485,
+      "wave_capture_ratio": 0.0047,
+      "wave_entry_delay": 11.2,
+      "wave_mfe": 0.0034,
+      "wave_mae": -0.0008,
+      "wave_false_entry_rate": 0.3158,
+      "mechanism": {
+        "permission_dist": {
+          "WATCH": 9640,
+          "BLOCK": 258,
+          "STRONG_ALLOW": 83,
+          "TEST": 65
+        },
+        "transition_dist": {
+          "EXITING→EXITING": 6347,
+          "FLAT→FLAT": 2200,
+          "EXITING→COOLDOWN": 369,
+          "COOLDOWN→EXITING": 355,
+          "COOLDOWN→FLAT": 304,
+          "FLAT→COOLDOWN": 298,
+          "TESTING→TESTING": 122,
+          "TESTING→EXITING": 25,
+          "FLAT→TESTING": 19,
+          "COOLDOWN→TESTING": 7
+        },
+        "target_positive_rate": 0.0055,
+        "exit_dist": {
+          "FORCED_DELEVERAGE": 5271,
+          "NONE": 3001,
+          "HARD_EXIT": 1754,
+          "RISK_EXIT": 20
+        },
+        "mean_target": 0.0003
+      },
+      "perm_violations": 93.0,
+      "risk_increase_violations": 23.0,
+      "illegal_jumps": 0.0
+    },
+    {
+      "model": "A12_FullNoStop",
+      "annualized_return": -2e-06,
+      "sharpe": -0.0045,
+      "max_drawdown": -0.001054,
+      "profit_factor": 0.9925,
+      "annual_turnover": 0.0186,
+      "churn": 0.0004,
+      "avg_exposure": 0.0002,
+      "exposure_efficiency": -0.0113,
+      "bad_exposure_ratio": 1.0346,
+      "upside_capture": 0.0001,
+      "downside_capture": 0.0001,
+      "wave_n": 1961,
+      "wave_participated": 101,
+      "wave_missed_rate": 0.9485,
+      "wave_capture_ratio": 0.0022,
+      "wave_entry_delay": 11.2,
+      "wave_mfe": 0.0019,
+      "wave_mae": -0.0008,
+      "wave_false_entry_rate": 0.3158,
+      "mechanism": {
+        "permission_dist": {
+          "WATCH": 9640,
+          "BLOCK": 258,
+          "STRONG_ALLOW": 83,
+          "TEST": 65
+        },
+        "transition_dist": {
+          "EXITING→EXITING": 6347,
+          "FLAT→FLAT": 2200,
+          "EXITING→COOLDOWN": 369,
+          "COOLDOWN→EXITING": 355,
+          "COOLDOWN→FLAT": 304,
+          "FLAT→COOLDOWN": 298,
+          "TESTING→TESTING": 122,
+          "TESTING→EXITING": 25,
+          "FLAT→TESTING": 19,
+          "COOLDOWN→TESTING": 7
+        },
+        "target_positive_rate": 0.0055,
+        "exit_dist": {
+          "FORCED_DELEVERAGE": 5271,
+          "NONE": 3001,
+          "HARD_EXIT": 1754,
+          "RISK_EXIT": 20
+        },
+        "mean_target": 0.0003
+      },
+      "perm_violations": 93.0,
+      "risk_increase_violations": 23.0,
+      "illegal_jumps": 0.0
+    },
+    {
+      "model": "A13_FullNoObservation",
+      "annualized_return": 0.0,
+      "sharpe": NaN,
+      "max_drawdown": 0.0,
+      "profit_factor": NaN,
+      "annual_turnover": 0.0,
+      "churn": 0.0,
+      "avg_exposure": 0.0,
+      "exposure_efficiency": NaN,
+      "bad_exposure_ratio": NaN,
+      "upside_capture": 0.0,
+      "downside_capture": -0.0,
+      "wave_n": 1961,
+      "wave_participated": 0,
+      "wave_missed_rate": 1.0,
+      "wave_capture_ratio": NaN,
+      "wave_entry_delay": NaN,
+      "wave_mfe": NaN,
+      "wave_mae": NaN,
+      "wave_false_entry_rate": NaN,
+      "mechanism": {
+        "permission_dist": {
+          "WATCH": 9640,
+          "BLOCK": 258,
+          "STRONG_ALLOW": 83,
+          "TEST": 65
+        },
+        "transition_dist": {
+          "EXITING→EXITING": 6325,
+          "FLAT→FLAT": 2337,
+          "COOLDOWN→EXITING": 377,
+          "EXITING→COOLDOWN": 368,
+          "FLAT→COOLDOWN": 321,
+          "COOLDOWN→FLAT": 310,
+          "TESTING→TESTING": 4,
+          "TESTING→EXITING": 2,
+          "COOLDOWN→TESTING": 1,
+          "FLAT→TESTING": 1
+        },
+        "target_positive_rate": 0.0006,
+        "exit_dist": {
+          "FORCED_DELEVERAGE": 5271,
+          "NONE": 3001,
+          "HARD_EXIT": 1754,
+          "RISK_EXIT": 20
+        },
+        "mean_target": 0.0001
+      },
+      "perm_violations": 0.0,
+      "risk_increase_violations": 0.0,
+      "illegal_jumps": 0.0
+    }
+  ]
+}

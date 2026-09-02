@@ -1,0 +1,470 @@
+{
+  "metadata": {
+    "table_name": "hk_daily_moneyflow_analysis",
+    "generated_time": "2026-07-12 16:24:15",
+    "database_path": "C:\\Users\\Quansheng\\Documents\\projects\\TA_Workflow2\\SQLiteDB\\HK_Stock.db",
+    "project_dir": "C:\\Users\\Quansheng\\Documents\\projects\\TA_Workflow2"
+  },
+  "basic_info": {
+    "total_records": "19456",
+    "columns": [
+      {
+        "cid": 0,
+        "name": "id",
+        "type": "INTEGER",
+        "notnull": 0,
+        "dflt_value": null,
+        "pk": 1
+      },
+      {
+        "cid": 1,
+        "name": "stock_code",
+        "type": "TEXT",
+        "notnull": 1,
+        "dflt_value": null,
+        "pk": 0
+      },
+      {
+        "cid": 2,
+        "name": "stock_name",
+        "type": "TEXT",
+        "notnull": 1,
+        "dflt_value": null,
+        "pk": 0
+      },
+      {
+        "cid": 3,
+        "name": "Date",
+        "type": "TEXT",
+        "notnull": 0,
+        "dflt_value": null,
+        "pk": 0
+      },
+      {
+        "cid": 4,
+        "name": "Price_ChgPct",
+        "type": "REAL",
+        "notnull": 0,
+        "dflt_value": null,
+        "pk": 0
+      },
+      {
+        "cid": 5,
+        "name": "Capital_Trend",
+        "type": "REAL",
+        "notnull": 0,
+        "dflt_value": null,
+        "pk": 0
+      },
+      {
+        "cid": 6,
+        "name": "Extra_Large",
+        "type": "REAL",
+        "notnull": 0,
+        "dflt_value": null,
+        "pk": 0
+      },
+      {
+        "cid": 7,
+        "name": "Large",
+        "type": "REAL",
+        "notnull": 0,
+        "dflt_value": null,
+        "pk": 0
+      },
+      {
+        "cid": 8,
+        "name": "Medium",
+        "type": "REAL",
+        "notnull": 0,
+        "dflt_value": null,
+        "pk": 0
+      },
+      {
+        "cid": 9,
+        "name": "Small",
+        "type": "REAL",
+        "notnull": 0,
+        "dflt_value": null,
+        "pk": 0
+      },
+      {
+        "cid": 10,
+        "name": "Institutional_Flow",
+        "type": "REAL",
+        "notnull": 0,
+        "dflt_value": null,
+        "pk": 0
+      },
+      {
+        "cid": 11,
+        "name": "Individual_Flow",
+        "type": "REAL",
+        "notnull": 0,
+        "dflt_value": null,
+        "pk": 0
+      },
+      {
+        "cid": 12,
+        "name": "Inst_5MA",
+        "type": "REAL",
+        "notnull": 0,
+        "dflt_value": null,
+        "pk": 0
+      },
+      {
+        "cid": 13,
+        "name": "Ind_5MA",
+        "type": "REAL",
+        "notnull": 0,
+        "dflt_value": null,
+        "pk": 0
+      },
+      {
+        "cid": 14,
+        "name": "IDR",
+        "type": "REAL",
+        "notnull": 0,
+        "dflt_value": null,
+        "pk": 0
+      },
+      {
+        "cid": 15,
+        "name": "FBI",
+        "type": "REAL",
+        "notnull": 0,
+        "dflt_value": null,
+        "pk": 0
+      }
+    ]
+  },
+  "stock_statistics": [
+    {
+      "stock_code": "00020",
+      "stock_name": "商汤科技",
+      "record_count": 1104,
+      "first_date": "2021-12-30",
+      "last_date": "2026-07-10",
+      "trading_days": 1104
+    },
+    {
+      "stock_code": "00268",
+      "stock_name": "金蝶国际",
+      "record_count": 1327,
+      "first_date": "2021-02-03",
+      "last_date": "2026-07-10",
+      "trading_days": 1327
+    },
+    {
+      "stock_code": "00354",
+      "stock_name": "中软国际",
+      "record_count": 1327,
+      "first_date": "2021-02-03",
+      "last_date": "2026-07-10",
+      "trading_days": 1327
+    },
+    {
+      "stock_code": "00357",
+      "stock_name": "美兰空港",
+      "record_count": 1314,
+      "first_date": "2021-02-03",
+      "last_date": "2026-07-10",
+      "trading_days": 1314
+    },
+    {
+      "stock_code": "00371",
+      "stock_name": "北控水务",
+      "record_count": 1328,
+      "first_date": "2021-02-03",
+      "last_date": "2026-07-10",
+      "trading_days": 1328
+    },
+    {
+      "stock_code": "00700",
+      "stock_name": "腾讯控股",
+      "record_count": 1332,
+      "first_date": "2021-02-03",
+      "last_date": "2026-07-10",
+      "trading_days": 1332
+    },
+    {
+      "stock_code": "00788",
+      "stock_name": "中国铁塔",
+      "record_count": 1314,
+      "first_date": "2021-02-03",
+      "last_date": "2026-07-10",
+      "trading_days": 1314
+    },
+    {
+      "stock_code": "01093",
+      "stock_name": "石药集团",
+      "record_count": 1327,
+      "first_date": "2021-02-03",
+      "last_date": "2026-07-10",
+      "trading_days": 1327
+    },
+    {
+      "stock_code": "01177",
+      "stock_name": "中生制药",
+      "record_count": 1327,
+      "first_date": "2021-02-03",
+      "last_date": "2026-07-10",
+      "trading_days": 1327
+    },
+    {
+      "stock_code": "01951",
+      "stock_name": "锦鑫生殖",
+      "record_count": 1327,
+      "first_date": "2021-02-03",
+      "last_date": "2026-07-10",
+      "trading_days": 1327
+    },
+    {
+      "stock_code": "02202",
+      "stock_name": "港股万科企业",
+      "record_count": 1326,
+      "first_date": "2021-02-03",
+      "last_date": "2026-07-10",
+      "trading_days": 1326
+    },
+    {
+      "stock_code": "02611",
+      "stock_name": "国泰海通",
+      "record_count": 1309,
+      "first_date": "2021-02-03",
+      "last_date": "2026-07-10",
+      "trading_days": 1309
+    },
+    {
+      "stock_code": "03033",
+      "stock_name": "南方恒生科技",
+      "record_count": 1283,
+      "first_date": "2021-04-19",
+      "last_date": "2026-07-10",
+      "trading_days": 1283
+    },
+    {
+      "stock_code": "03800",
+      "stock_name": "协鑫科技",
+      "record_count": 1184,
+      "first_date": "2021-02-03",
+      "last_date": "2026-07-10",
+      "trading_days": 1184
+    },
+    {
+      "stock_code": "06060",
+      "stock_name": "众安在线",
+      "record_count": 1327,
+      "first_date": "2021-02-03",
+      "last_date": "2026-07-10",
+      "trading_days": 1327
+    }
+  ],
+  "sample_data": [
+    {
+      "id": 1104,
+      "stock_code": "00020",
+      "stock_name": "商汤科技",
+      "Date": "2026-07-10",
+      "Price_ChgPct": 0.0217,
+      "Capital_Trend": 28290000.0,
+      "Extra_Large": 710950.0,
+      "Large": 4450000.0,
+      "Medium": -686360.0,
+      "Small": 23820000.0,
+      "Institutional_Flow": 5160950.0,
+      "Individual_Flow": 23133640.0,
+      "Inst_5MA": 4958190.0,
+      "Ind_5MA": 33607650.0,
+      "IDR": 0.1824,
+      "FBI": -0.6352
+    },
+    {
+      "id": 2431,
+      "stock_code": "00268",
+      "stock_name": "金蝶国际",
+      "Date": "2026-07-10",
+      "Price_ChgPct": 0.0014,
+      "Capital_Trend": 66910000.0,
+      "Extra_Large": 21200000.0,
+      "Large": 23960000.0,
+      "Medium": 16950000.0,
+      "Small": 4790000.0,
+      "Institutional_Flow": 45160000.0,
+      "Individual_Flow": 21740000.0,
+      "Inst_5MA": 37551036.0,
+      "Ind_5MA": 19729262.0,
+      "IDR": 0.675,
+      "FBI": 0.3501
+    },
+    {
+      "id": 3758,
+      "stock_code": "00354",
+      "stock_name": "中软国际",
+      "Date": "2026-07-10",
+      "Price_ChgPct": 0.0161,
+      "Capital_Trend": 5930000.0,
+      "Extra_Large": 433520.0,
+      "Large": 4700000.0,
+      "Medium": 2030000.0,
+      "Small": -1230000.0,
+      "Institutional_Flow": 5133520.0,
+      "Individual_Flow": 800000.0,
+      "Inst_5MA": -3671096.0,
+      "Ind_5MA": 2176000.0,
+      "IDR": 0.8652,
+      "FBI": 0.7303
+    },
+    {
+      "id": 5072,
+      "stock_code": "00357",
+      "stock_name": "美兰空港",
+      "Date": "2026-07-10",
+      "Price_ChgPct": -0.0048,
+      "Capital_Trend": 181420.0,
+      "Extra_Large": 0.0,
+      "Large": 0.0,
+      "Medium": 330640.0,
+      "Small": -149220.0,
+      "Institutional_Flow": 0.0,
+      "Individual_Flow": 181420.0,
+      "Inst_5MA": 56154.0,
+      "Ind_5MA": -32802.0,
+      "IDR": 0.0,
+      "FBI": -1.0
+    },
+    {
+      "id": 6400,
+      "stock_code": "00371",
+      "stock_name": "北控水务",
+      "Date": "2026-07-10",
+      "Price_ChgPct": 0.0044,
+      "Capital_Trend": 1010000.0,
+      "Extra_Large": 0.0,
+      "Large": 529000.0,
+      "Medium": 437680.0,
+      "Small": 46580.0,
+      "Institutional_Flow": 529000.0,
+      "Individual_Flow": 484260.0,
+      "Inst_5MA": 2296836.0,
+      "Ind_5MA": -117348.0,
+      "IDR": 0.5221,
+      "FBI": 0.0442
+    },
+    {
+      "id": 7732,
+      "stock_code": "00700",
+      "stock_name": "腾讯控股",
+      "Date": "2026-07-10",
+      "Price_ChgPct": -0.02,
+      "Capital_Trend": -743290000.0,
+      "Extra_Large": 202600000.0,
+      "Large": -36410000.0,
+      "Medium": -340400000.0,
+      "Small": -569080000.0,
+      "Institutional_Flow": 166190000.0,
+      "Individual_Flow": -909480000.0,
+      "Inst_5MA": 694046000.0,
+      "Ind_5MA": 352020000.0,
+      "IDR": 0.1545,
+      "FBI": 1.0
+    },
+    {
+      "id": 9046,
+      "stock_code": "00788",
+      "stock_name": "中国铁塔",
+      "Date": "2026-07-10",
+      "Price_ChgPct": 0.0178,
+      "Capital_Trend": 10960000.0,
+      "Extra_Large": 4770000.0,
+      "Large": 1220000.0,
+      "Medium": 4190000.0,
+      "Small": 783620.0,
+      "Institutional_Flow": 5990000.0,
+      "Individual_Flow": 4973620.0,
+      "Inst_5MA": 7314508.0,
+      "Ind_5MA": 5184922.0,
+      "IDR": 0.5464,
+      "FBI": 0.0927
+    },
+    {
+      "id": 10373,
+      "stock_code": "01093",
+      "stock_name": "石药集团",
+      "Date": "2026-07-10",
+      "Price_ChgPct": 0.0344,
+      "Capital_Trend": 235920000.0,
+      "Extra_Large": 28430000.0,
+      "Large": -14700000.0,
+      "Medium": 55570000.0,
+      "Small": 166620000.0,
+      "Institutional_Flow": 13730000.0,
+      "Individual_Flow": 222190000.0,
+      "Inst_5MA": 38698000.0,
+      "Ind_5MA": 56046000.0,
+      "IDR": 0.0582,
+      "FBI": -0.8836
+    },
+    {
+      "id": 11700,
+      "stock_code": "01177",
+      "stock_name": "中生制药",
+      "Date": "2026-07-10",
+      "Price_ChgPct": 0.038,
+      "Capital_Trend": 99920000.0,
+      "Extra_Large": -32740000.0,
+      "Large": 50350000.0,
+      "Medium": 11230000.0,
+      "Small": 71080000.0,
+      "Institutional_Flow": 17610000.0,
+      "Individual_Flow": 82310000.0,
+      "Inst_5MA": 14400000.0,
+      "Ind_5MA": 106018000.0,
+      "IDR": 0.1762,
+      "FBI": -0.6475
+    },
+    {
+      "id": 13027,
+      "stock_code": "01951",
+      "stock_name": "锦鑫生殖",
+      "Date": "2026-07-10",
+      "Price_ChgPct": 0.0392,
+      "Capital_Trend": 6670000.0,
+      "Extra_Large": 1140000.0,
+      "Large": 2100000.0,
+      "Medium": -714630.0,
+      "Small": 4140000.0,
+      "Institutional_Flow": 3240000.0,
+      "Individual_Flow": 3425370.0,
+      "Inst_5MA": -244052.0,
+      "Ind_5MA": 507030.0,
+      "IDR": 0.4861,
+      "FBI": -0.0278
+    }
+  ],
+  "quality_checks": {
+    "null_values": {
+      "stock_code": "0",
+      "stock_name": "0",
+      "Date": "0",
+      "Price_ChgPct": "0",
+      "Capital_Trend": "0",
+      "Extra_Large": "0",
+      "Large": "0",
+      "Medium": "0",
+      "Small": "0",
+      "Institutional_Flow": "0",
+      "Individual_Flow": "0",
+      "Inst_5MA": "60",
+      "Ind_5MA": "60",
+      "IDR": "0",
+      "FBI": "0"
+    },
+    "duplicates": [],
+    "missing_stocks": [
+      "00579",
+      "02602"
+    ],
+    "extra_stocks": []
+  }
+}

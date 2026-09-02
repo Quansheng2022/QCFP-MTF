@@ -1,0 +1,19 @@
+{
+  "answers": {
+    "one_production_decision_path": true,
+    "single_canonical_authority": true,
+    "active_features_down": true,
+    "decision_critical_loc_down": true,
+    "legacy_production_path_zero": true,
+    "duplicate_authority_zero": true,
+    "unwired_active_feature_zero": true,
+    "golden_replay_oos_not_regressed": false,
+    "failure_injection_zero_escaped": true,
+    "retired_code_physically_deleted": true
+  },
+  "failures": [
+    "golden_replay_oos_not_regressed"
+  ],
+  "verdict": "MTR_INCOMPLETE",
+  "certificate": "MTR-NOT-CONVERGED"
+}

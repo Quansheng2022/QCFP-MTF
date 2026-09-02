@@ -1,0 +1,435 @@
+{
+  "metadata": {
+    "table_name": "hk_hist_Monthly_moneyflow",
+    "generated_time": "2026-07-11 18:27:30",
+    "database_path": "C:\\Users\\Quansheng\\Documents\\projects\\TA_Workflow2\\SQLiteDB\\HK_Stock.db",
+    "project_dir": "C:\\Users\\Quansheng\\Documents\\projects\\TA_Workflow2"
+  },
+  "basic_info": {
+    "total_records": "877",
+    "columns": [
+      {
+        "cid": 0,
+        "name": "id",
+        "type": "INTEGER",
+        "notnull": 0,
+        "dflt_value": null,
+        "pk": 1
+      },
+      {
+        "cid": 1,
+        "name": "stock_code",
+        "type": "TEXT",
+        "notnull": 0,
+        "dflt_value": null,
+        "pk": 0
+      },
+      {
+        "cid": 2,
+        "name": "stock_name",
+        "type": "TEXT",
+        "notnull": 0,
+        "dflt_value": null,
+        "pk": 0
+      },
+      {
+        "cid": 3,
+        "name": "date",
+        "type": "TEXT",
+        "notnull": 0,
+        "dflt_value": null,
+        "pk": 0
+      },
+      {
+        "cid": 4,
+        "name": "Price_ChgPct",
+        "type": "REAL",
+        "notnull": 0,
+        "dflt_value": null,
+        "pk": 0
+      },
+      {
+        "cid": 5,
+        "name": "Capital_Trend",
+        "type": "REAL",
+        "notnull": 0,
+        "dflt_value": null,
+        "pk": 0
+      },
+      {
+        "cid": 6,
+        "name": "Extra_Large",
+        "type": "REAL",
+        "notnull": 0,
+        "dflt_value": null,
+        "pk": 0
+      },
+      {
+        "cid": 7,
+        "name": "Large",
+        "type": "REAL",
+        "notnull": 0,
+        "dflt_value": null,
+        "pk": 0
+      },
+      {
+        "cid": 8,
+        "name": "Medium",
+        "type": "REAL",
+        "notnull": 0,
+        "dflt_value": null,
+        "pk": 0
+      },
+      {
+        "cid": 9,
+        "name": "Small",
+        "type": "REAL",
+        "notnull": 0,
+        "dflt_value": null,
+        "pk": 0
+      }
+    ]
+  },
+  "stock_statistics": [
+    {
+      "stock_code": "00020",
+      "stock_name": "商汤科技",
+      "record_count": 54,
+      "first_date": "2021-12-01",
+      "last_date": "2026-05-01",
+      "month_count": 54
+    },
+    {
+      "stock_code": "00268",
+      "stock_name": "金蝶国际",
+      "record_count": 64,
+      "first_date": "2021-02-01",
+      "last_date": "2026-05-01",
+      "month_count": 64
+    },
+    {
+      "stock_code": "00354",
+      "stock_name": "中软国际",
+      "record_count": 64,
+      "first_date": "2021-02-01",
+      "last_date": "2026-05-01",
+      "month_count": 64
+    },
+    {
+      "stock_code": "00357",
+      "stock_name": "美兰空港",
+      "record_count": 64,
+      "first_date": "2021-02-01",
+      "last_date": "2026-05-01",
+      "month_count": 64
+    },
+    {
+      "stock_code": "00371",
+      "stock_name": "北控水务",
+      "record_count": 64,
+      "first_date": "2021-02-01",
+      "last_date": "2026-05-01",
+      "month_count": 64
+    },
+    {
+      "stock_code": "00788",
+      "stock_name": "中国铁塔",
+      "record_count": 64,
+      "first_date": "2021-02-01",
+      "last_date": "2026-05-01",
+      "month_count": 64
+    },
+    {
+      "stock_code": "01093",
+      "stock_name": "石药集团",
+      "record_count": 64,
+      "first_date": "2021-02-01",
+      "last_date": "2026-05-01",
+      "month_count": 64
+    },
+    {
+      "stock_code": "01177",
+      "stock_name": "中生制药",
+      "record_count": 64,
+      "first_date": "2021-02-01",
+      "last_date": "2026-05-01",
+      "month_count": 64
+    },
+    {
+      "stock_code": "01951",
+      "stock_name": "锦鑫生殖",
+      "record_count": 64,
+      "first_date": "2021-02-01",
+      "last_date": "2026-05-01",
+      "month_count": 64
+    },
+    {
+      "stock_code": "02202",
+      "stock_name": "港股万科企业",
+      "record_count": 64,
+      "first_date": "2021-02-01",
+      "last_date": "2026-05-01",
+      "month_count": 64
+    },
+    {
+      "stock_code": "02611",
+      "stock_name": "国泰海通",
+      "record_count": 64,
+      "first_date": "2021-02-01",
+      "last_date": "2026-05-01",
+      "month_count": 64
+    },
+    {
+      "stock_code": "03033",
+      "stock_name": "南方恒生科技",
+      "record_count": 62,
+      "first_date": "2021-04-01",
+      "last_date": "2026-05-01",
+      "month_count": 62
+    },
+    {
+      "stock_code": "03800",
+      "stock_name": "协鑫科技",
+      "record_count": 57,
+      "first_date": "2021-02-01",
+      "last_date": "2026-05-01",
+      "month_count": 57
+    },
+    {
+      "stock_code": "06060",
+      "stock_name": "众安在线",
+      "record_count": 64,
+      "first_date": "2021-02-01",
+      "last_date": "2026-05-01",
+      "month_count": 64
+    }
+  ],
+  "sample_data": [
+    {
+      "id": 54,
+      "stock_code": "00020",
+      "stock_name": "商汤科技",
+      "date": "2026-05-01",
+      "Price_ChgPct": -16.17,
+      "Capital_Trend": -960850000.0,
+      "Extra_Large": 166781860.0,
+      "Large": -236920000.0,
+      "Medium": -270302760.0,
+      "Small": -620420000.0
+    },
+    {
+      "id": 118,
+      "stock_code": "00268",
+      "stock_name": "金蝶国际",
+      "date": "2026-05-01",
+      "Price_ChgPct": -14.98,
+      "Capital_Trend": 567370000.0,
+      "Extra_Large": 609260000.0,
+      "Large": 4301000.0,
+      "Medium": 59590760.0,
+      "Small": -105782840.0
+    },
+    {
+      "id": 182,
+      "stock_code": "00354",
+      "stock_name": "中软国际",
+      "date": "2026-05-01",
+      "Price_ChgPct": 7.7,
+      "Capital_Trend": 145505740.0,
+      "Extra_Large": 37556480.0,
+      "Large": 62060380.0,
+      "Medium": -1066560.0,
+      "Small": 46976700.0
+    },
+    {
+      "id": 246,
+      "stock_code": "00357",
+      "stock_name": "美兰空港",
+      "date": "2026-05-01",
+      "Price_ChgPct": -23.17,
+      "Capital_Trend": -2776450.0,
+      "Extra_Large": 4786810.0,
+      "Large": -99240.0,
+      "Medium": -668430.0,
+      "Small": -6811140.0
+    },
+    {
+      "id": 310,
+      "stock_code": "00371",
+      "stock_name": "北控水务",
+      "date": "2026-05-01",
+      "Price_ChgPct": -1.69,
+      "Capital_Trend": 261567940.0,
+      "Extra_Large": -5934440.0,
+      "Large": 9424940.0,
+      "Medium": -2331640.0,
+      "Small": 260415960.0
+    },
+    {
+      "id": 374,
+      "stock_code": "00788",
+      "stock_name": "中国铁塔",
+      "date": "2026-05-01",
+      "Price_ChgPct": -7.37,
+      "Capital_Trend": -3029640.0,
+      "Extra_Large": 24830000.0,
+      "Large": -87768960.0,
+      "Medium": -30518810.0,
+      "Small": 90446830.0
+    },
+    {
+      "id": 438,
+      "stock_code": "01093",
+      "stock_name": "石药集团",
+      "date": "2026-05-01",
+      "Price_ChgPct": -10.84,
+      "Capital_Trend": -671000000.0,
+      "Extra_Large": 59239660.0,
+      "Large": 307028700.0,
+      "Medium": -129090840.0,
+      "Small": -908174760.0
+    },
+    {
+      "id": 502,
+      "stock_code": "01177",
+      "stock_name": "中生制药",
+      "date": "2026-05-01",
+      "Price_ChgPct": -7.94,
+      "Capital_Trend": 150080000.0,
+      "Extra_Large": 290962810.0,
+      "Large": 116645510.0,
+      "Medium": -292730000.0,
+      "Small": 35237240.0
+    },
+    {
+      "id": 566,
+      "stock_code": "01951",
+      "stock_name": "锦鑫生殖",
+      "date": "2026-05-01",
+      "Price_ChgPct": -6.28,
+      "Capital_Trend": -25391640.0,
+      "Extra_Large": -2021480.0,
+      "Large": -18348820.0,
+      "Medium": -18277280.0,
+      "Small": 13243150.0
+    },
+    {
+      "id": 630,
+      "stock_code": "02202",
+      "stock_name": "港股万科企业",
+      "date": "2026-05-01",
+      "Price_ChgPct": -9.35,
+      "Capital_Trend": 54891560.0,
+      "Extra_Large": 17340115.0,
+      "Large": 7338130.0,
+      "Medium": 3115710.0,
+      "Small": 27086890.0
+    }
+  ],
+  "quality_checks": {
+    "null_values": {
+      "stock_code": "0",
+      "stock_name": "0",
+      "date": "0",
+      "Price_ChgPct": "0",
+      "Capital_Trend": "0",
+      "Extra_Large": "0",
+      "Large": "0",
+      "Medium": "0",
+      "Small": "0"
+    },
+    "duplicates": [],
+    "moneyflow_issues": [
+      {
+        "field": "Price_ChgPct",
+        "type": "negative_values",
+        "count": "506",
+        "description": "字段 Price_ChgPct 有 506 个负值 (57.7%)"
+      },
+      {
+        "field": "Price_ChgPct",
+        "type": "zero_values",
+        "count": "3",
+        "description": "字段 Price_ChgPct 有 3 个零值 (0.3%)"
+      },
+      {
+        "field": "Price_ChgPct",
+        "type": "outliers_iqr",
+        "count": 52,
+        "description": "字段 Price_ChgPct 有 52 个异常值 (5.9%)，正常范围: [-29.0650, 26.1750]"
+      },
+      {
+        "field": "Price_ChgPct",
+        "type": "extreme_outliers",
+        "count": 10,
+        "description": "字段 Price_ChgPct 有 10 个极端异常值 (1.1%)"
+      },
+      {
+        "field": "Capital_Trend",
+        "type": "negative_values",
+        "count": "247",
+        "description": "字段 Capital_Trend 有 247 个负值 (28.2%)"
+      },
+      {
+        "field": "Capital_Trend",
+        "type": "extreme_outliers",
+        "count": 48,
+        "description": "字段 Capital_Trend 有 48 个极端异常值 (5.5%)"
+      },
+      {
+        "field": "Extra_Large",
+        "type": "negative_values",
+        "count": "262",
+        "description": "字段 Extra_Large 有 262 个负值 (29.9%)"
+      },
+      {
+        "field": "Extra_Large",
+        "type": "extreme_outliers",
+        "count": 55,
+        "description": "字段 Extra_Large 有 55 个极端异常值 (6.3%)"
+      },
+      {
+        "field": "Large",
+        "type": "negative_values",
+        "count": "315",
+        "description": "字段 Large 有 315 个负值 (35.9%)"
+      },
+      {
+        "field": "Large",
+        "type": "extreme_outliers",
+        "count": 70,
+        "description": "字段 Large 有 70 个极端异常值 (8.0%)"
+      },
+      {
+        "field": "Medium",
+        "type": "negative_values",
+        "count": "316",
+        "description": "字段 Medium 有 316 个负值 (36.0%)"
+      },
+      {
+        "field": "Medium",
+        "type": "extreme_outliers",
+        "count": 70,
+        "description": "字段 Medium 有 70 个极端异常值 (8.0%)"
+      },
+      {
+        "field": "Small",
+        "type": "negative_values",
+        "count": "295",
+        "description": "字段 Small 有 295 个负值 (33.6%)"
+      },
+      {
+        "field": "Small",
+        "type": "extreme_outliers",
+        "count": 68,
+        "description": "字段 Small 有 68 个极端异常值 (7.8%)"
+      }
+    ],
+    "missing_stocks": [
+      "02602",
+      "00700",
+      "00579"
+    ],
+    "extra_stocks": []
+  }
+}

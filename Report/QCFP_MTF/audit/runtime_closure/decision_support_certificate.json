@@ -1,0 +1,37 @@
+{
+  "certificate_id": "c1b74d216e13d1a4",
+  "schema": "DECISION-SUPPORT-CERTIFICATE-1",
+  "release_id": "MTR-CLOSURE-1",
+  "evidence_freeze_id": "0dc64006740e8e14",
+  "qualification_date": "2026-08-29",
+  "shadow_window": {
+    "state": "SHADOW_ACCUMULATING",
+    "qualified_days": 1,
+    "required_days": null
+  },
+  "outcome_window": {
+    "qualified_days": 1,
+    "required_days": 20
+  },
+  "replay": {
+    "state": "REPLAY_ACCUMULATION_OK",
+    "window_exact_rate": 1.0,
+    "replay_gap_days": []
+  },
+  "violations": {
+    "pit": 0,
+    "permission": 0,
+    "duplicate": 0,
+    "incident_escaped": 0
+  },
+  "maturity": {
+    "5d": 16,
+    "20d": 0,
+    "60d": 0
+  },
+  "evidence_window_hash": "",
+  "runtime_evidence_chain_hash": "",
+  "oos_status": "OOS_NOT_COMPARABLE",
+  "certificate_status": "NOT_QUALIFIED",
+  "rule": "OOS 默认是硬门（OOS_PASS 才 QUALIFIED）；QUALIFIED_WITH_OOS_PENDING 仅显式 opt-in 且区别于完全证据闭合"
+}

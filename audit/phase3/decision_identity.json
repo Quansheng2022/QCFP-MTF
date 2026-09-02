@@ -1,0 +1,26 @@
+{
+  "checks": {
+    "full_identity_commit": {
+      "expected": "COMMIT_OK",
+      "actual": "COMMIT_OK",
+      "pass": true
+    },
+    "missing_release_rejected": {
+      "expected": "LedgerCommitRejected",
+      "actual": "LedgerCommitRejected: LedgerCommitGate: ['I6_RELEASE_ID', 'I6_RELEASE_MANIFEST_HASH']",
+      "pass": true
+    },
+    "full_evidence_certified": {
+      "expected": "CERTIFIED",
+      "actual": "CERTIFIED",
+      "pass": true
+    },
+    "missing_evidence_not_certified": {
+      "expected": "NOT_CERTIFIED",
+      "actual": "NOT_CERTIFIED",
+      "pass": true
+    }
+  },
+  "pass": true,
+  "verdict": "IDENTITY_PASS"
+}

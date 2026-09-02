@@ -1,0 +1,276 @@
+# QCFP-MTF 2.5.0 系统配置
+# 优先级：内置默认值 < 本文件 < stock_data_analysis.par [QCFP_MTF] 节
+
+model:
+  version: QCFP-MTF-2.5.0
+
+enabled: true
+
+data_quality:
+  missing_threshold_b: 0.05
+  missing_threshold_c: 0.20
+  anomaly_checks: [negative_price, non_positive_volume, turnover_out_of_range]
+
+institutional:
+  disclosure_lag_days: 45
+  available_date_mode: estimated
+  permission:
+    enabled: true
+    persistence_min_quarters: 2
+    downgrade:
+      divergence: true
+      low_confidence: true
+      poor_data_quality: true
+
+cbi_weights:
+  turnover_stability: 0.30
+  turnover_pctl_inverse: 0.30
+  volume_stability: 0.25
+  amplitude_stability: 0.15
+
+chip_confidence_weights:
+  quarterly_chip: 0.60
+  cbi: 0.40
+
+thresholds:
+  turnover_z:
+    t1: -1.5
+    t2: -0.5
+    t3: 0.5
+    t4: 1.5
+  turnover_pctl:
+    t1: 0.10
+    t2: 0.30
+    t3: 0.70
+    t4: 0.90
+  weekly_volume_breakout: 1.8
+  weekly_volume_shrink: 0.5
+  weekly_turnover_spike: 2.0
+  cbi:
+    locked: 70
+    stable: 50
+    active: 30
+  quarterly_return_window: 1
+  trend_score_window: end_of_quarter
+
+structural:
+  direction_thresholds:
+    c_pp_threshold: 0.5
+    f_z_threshold: 0.5
+    p_return_threshold: 2.0
+    p_flat_return: 1.0
+  trend_score_weights:
+    return_pctl: 0.30
+    ma_alignment: 0.25
+    macd_state: 0.15
+    position_52w: 0.20
+    vwap_deviation: 0.10
+  divergence:
+    z_threshold: 1.0
+  score_mapping:
+    STRUCTURAL_BULLISH: 85
+    STRUCTURAL_ACCUMULATION: 70
+    STRUCTURAL_DIVERGENCE: 55
+    STRUCTURAL_DISTRIBUTION: 35
+    STRUCTURAL_DECLINE: 20
+    STRUCTURAL_BOTTOM_CANDIDATE: 45
+  fallback:
+    allow_f_missing_with_cp: true
+
+behavioral:
+  turnover:
+    window: 12
+    min_history: 5
+    pctl_min_history: 6
+    z_bands: [-1.5, -0.5, 0.5, 1.5]
+    pctl_bands: [0.10, 0.30, 0.70, 0.90]
+  volume:
+    ma_window: 6
+    accel_lag: 3
+    up_ratio: 1.10
+    down_ratio: 0.90
+    strong_ratio: 1.50
+  price_direction:
+    up_threshold: 1.5
+    down_threshold: 1.5
+  cost_position:
+    neutral_pct: 2.0
+
+tactical:
+  volume:
+    ma_window: 20
+    breakout_ratio: 1.8
+    shrink_ratio: 0.5
+  turnover:
+    quarter_window: 13
+    spike_ma_window: 8
+    spike_ratio: 2.0
+  ma:
+    slope_lag: 2
+    slope_threshold_pct: 0.5
+  breakout:
+    lookback: 20
+
+daily:
+  # L4 日线战术层（V14）：Q/M/W 定方向，Daily 定时机；F+P 为主、C 不使用
+  tactical:
+    breakout_lookback: 20
+    breakout_volume_ratio: 1.5
+    stall_volume_ratio: 1.2
+    near_high_ratio: 0.98
+    accum_flow_z: 0.2
+    flow_z_window: 60
+  timing:
+    # Model B（日线时机门）默认关闭：daily_alpha_test 实测未过验收
+    # （01951 波段 7.31%→7.15%、Sharpe 0.020→-0.004），保持诊断层
+    enabled: false
+    distribution_reduce: 0.5
+    breakout_add_ratio: 1.25
+
+fusion:
+  chip_confidence:
+    quarterly_chip_weight: 0.60
+    cbi_weight: 0.40
+    high_threshold: 70
+    medium_threshold: 50
+  anti_inference:
+    mode: warn
+  market_context:
+    hsi_return_window: 60
+    vhsi_risk_off: 25
+  score_mapping:
+    BULLISH_CONFIRMED: 85
+    BULLISH_STABLE: 75
+    BULLISH_WARNING: 55
+    BEARISH_RECOVERY_CANDIDATE: 40
+    BEARISH_CONFIRMED: 20
+
+decision:
+  action_mapping:
+    BULLISH_CONFIRMED: BUY
+    BULLISH_STABLE: HOLD
+    BULLISH_WARNING: REDUCE
+    BEARISH_RECOVERY_CANDIDATE: WAIT
+    BEARISH_CONFIRMED: EXIT
+    DATA_INSUFFICIENT: WAIT
+  risk:
+    base:
+      BULLISH_CONFIRMED: 1
+      BULLISH_STABLE: 1
+      BULLISH_WARNING: 2
+      BEARISH_RECOVERY_CANDIDATE: 3
+      BEARISH_CONFIRMED: 3
+      DATA_INSUFFICIENT: 4
+    add_divergence: 1
+    add_risk_off: 1
+    add_dq_c: 1
+    add_dq_d: 2
+    add_low_confidence: 1
+  position_advice:
+    BULLISH_CONFIRMED: "80%~100%"
+    BULLISH_STABLE: "50%~80%"
+    BULLISH_WARNING: "20%~50%"
+    BEARISH_RECOVERY_CANDIDATE: "0%~20%"
+    BEARISH_CONFIRMED: "0%"
+    DATA_INSUFFICIENT: "0%"
+  base_position:
+    BULLISH_CONFIRMED: 1.0
+    BULLISH_STABLE: 0.75
+    BULLISH_WARNING: 0.5
+    BEARISH_RECOVERY_CANDIDATE: 0.2
+    BEARISH_CONFIRMED: 0.0
+    DATA_INSUFFICIENT: 0.0
+  position_cap:
+    Low: 1.0
+    Medium: 0.8
+    High: 0.5
+    Extreme: 0.2
+  tactical_override:
+    enabled: true
+    max_52w_position: 0.15
+    min_trigger: [Breakout, Pullback, Consolidation]
+  catalyst_quality:
+    # CQS 评分规则（decision/catalyst_quality.py）：
+    #   F 持续性 F↑且上季F↑→+2 / 仅当季F↑→+1
+    #   趋势质量 trend>60且52w<0.6→+1 / trend<40且52w>0.5→-1（V11 起由±2降为±1）
+    #   CBI 稳定/锁仓→+1，动荡→-1；总分 -3~+3
+    position_high: 0.35
+    position_mid: 0.20
+    position_low: 0.05
+    time_stop_high: null
+    time_stop_mid: null
+    time_stop_low: 2
+  trailing_stop:
+    enabled: true
+  stop_loss_policy:
+    # P0-3 统一止损来源：Backtest / DSS / All-in-One 均从本策略读取
+    # V13 实测：0.02 在 Sharpe/01951 波段/回撤上全部最优；放宽缓冲单调变差
+    type: entry_week_low
+    buffer_pct: 0.02
+  downside_risk:
+    # V18 下行风险层（00371 金标准）：DES 累计负面证据 → 风险下限 → 滞后解除 → 仓位单调性
+    enabled: true
+    breakdown_risk_floor: Extreme   # 周线破位 + close<MA20 → 风险至少 Extreme
+    release_weeks: 2                # 站回 MA20 且连续 N 周无破位才解除
+    exit_at_score: 7                # DES≥7 → 清仓（DE-RISK/EXIT）
+    weights:
+      breakdown: 2
+      breakdown_streak: 1
+      below_ma20: 1
+      ma5_lt_ma10: 1
+      ma20_slope_neg: 1
+      flow_neg: 1
+      flow_neg2: 1
+      daily_decline: 2
+      cqs_neg: 1
+      ret5w_neg: 1
+      ret13w_neg: 1
+      dd52_neg: 1
+  retail:
+    # 散户执行层：红黄绿灯 + 六态阶梯 + 仓位建议（100% 仅限极强+risk_on 特例）
+    position_bands:
+      Extreme: "0%"
+      High: "0%~20%"
+      Low_recovery: "30%~50%"
+      BULLISH_STABLE: "50%~70%"
+      BULLISH_CONFIRMED: "60%~80%"
+      strong_risk_on: "80%~100%"
+      REDUCE: "20%~40%"
+      Zero: "0%"
+    fsm:
+      cooldown_weeks: 2    # EXIT → COOLDOWN 1~3 周 → 重新满足权限+日线触发才允许 TEST
+      chase_52w: 0.6       # 追高过滤：日线突破但 52W 位置>0.6 → 不 BUILD，等回踩
+      position:
+        test: 0.10         # TEST 首仓 10%
+        build_step: 0.10   # 每次加仓 +10%
+        trim_step: 0.15    # TRIMMING 每次减仓 -15%
+        max_position: 0.70 # 散户仓位上限 70%（100% 仅限极强特例）
+  hard_exit:
+    enabled: true
+    des_threshold: 7
+  stop_loss:
+    BULLISH_WARNING: "移动止损：收盘跌破建仓周最低价×(1-2%)"
+    BEARISH_RECOVERY_CANDIDATE: "跌破建仓成本-5%"
+    BEARISH_CONFIRMED: "空仓观望"
+
+backtest:
+  mode: research
+  cost:
+    commission_rate: 0.0025
+    stamp_rate: 0.001
+    slippage_rate: 0.001
+  liquidity:
+    min_weekly_amount: 0.0
+  position_target:
+    BUY: 1.0
+    ADD: 1.0
+    HOLD: 1.0
+    REDUCE: 0.5
+    EXIT: 0.0
+    WAIT: 0.0
+  risk_free: 0.0
+  annual_periods: 52
+
+output:
+  report_dir: Report/QCFP_MTF
+  audit_subdir: audit

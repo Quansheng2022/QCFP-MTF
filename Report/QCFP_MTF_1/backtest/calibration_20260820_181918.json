@@ -1,0 +1,203 @@
+{
+  "generated_at": "20260820_181918",
+  "records": [
+    {
+      "fusion": {
+        "chip_confidence": {
+          "quarterly_chip_weight": 0.5
+        }
+      },
+      "backtest": {
+        "position_target": {
+          "REDUCE": 0.7
+        }
+      },
+      "n": 4321,
+      "total_return": -0.992284,
+      "annualized_return": -0.05686,
+      "sharpe": -0.0309,
+      "max_drawdown": -0.997083,
+      "win_rate": 0.455,
+      "profit_factor": 0.9829,
+      "sortino": -0.0378,
+      "calmar": -0.057,
+      "annual_turnover": null
+    },
+    {
+      "fusion": {
+        "chip_confidence": {
+          "quarterly_chip_weight": 0.7
+        }
+      },
+      "backtest": {
+        "position_target": {
+          "REDUCE": 0.7
+        }
+      },
+      "n": 4321,
+      "total_return": -0.992284,
+      "annualized_return": -0.05686,
+      "sharpe": -0.0309,
+      "max_drawdown": -0.997083,
+      "win_rate": 0.455,
+      "profit_factor": 0.9829,
+      "sortino": -0.0378,
+      "calmar": -0.057,
+      "annual_turnover": null
+    },
+    {
+      "fusion": {
+        "chip_confidence": {
+          "quarterly_chip_weight": 0.6
+        }
+      },
+      "backtest": {
+        "position_target": {
+          "REDUCE": 0.7
+        }
+      },
+      "n": 4321,
+      "total_return": -0.992284,
+      "annualized_return": -0.05686,
+      "sharpe": -0.0309,
+      "max_drawdown": -0.997083,
+      "win_rate": 0.455,
+      "profit_factor": 0.9829,
+      "sortino": -0.0378,
+      "calmar": -0.057,
+      "annual_turnover": null
+    },
+    {
+      "fusion": {
+        "chip_confidence": {
+          "quarterly_chip_weight": 0.7
+        }
+      },
+      "backtest": {
+        "position_target": {
+          "REDUCE": 0.5
+        }
+      },
+      "n": 4321,
+      "total_return": -0.990912,
+      "annualized_return": -0.055001,
+      "sharpe": -0.0453,
+      "max_drawdown": -0.997359,
+      "win_rate": 0.4545,
+      "profit_factor": 0.974,
+      "sortino": -0.0524,
+      "calmar": -0.0551,
+      "annual_turnover": null
+    },
+    {
+      "fusion": {
+        "chip_confidence": {
+          "quarterly_chip_weight": 0.5
+        }
+      },
+      "backtest": {
+        "position_target": {
+          "REDUCE": 0.5
+        }
+      },
+      "n": 4321,
+      "total_return": -0.990912,
+      "annualized_return": -0.055001,
+      "sharpe": -0.0453,
+      "max_drawdown": -0.997359,
+      "win_rate": 0.4545,
+      "profit_factor": 0.974,
+      "sortino": -0.0524,
+      "calmar": -0.0551,
+      "annual_turnover": null
+    },
+    {
+      "fusion": {
+        "chip_confidence": {
+          "quarterly_chip_weight": 0.6
+        }
+      },
+      "backtest": {
+        "position_target": {
+          "REDUCE": 0.5
+        }
+      },
+      "n": 4321,
+      "total_return": -0.990912,
+      "annualized_return": -0.055001,
+      "sharpe": -0.0453,
+      "max_drawdown": -0.997359,
+      "win_rate": 0.4545,
+      "profit_factor": 0.974,
+      "sortino": -0.0524,
+      "calmar": -0.0551,
+      "annual_turnover": null
+    },
+    {
+      "fusion": {
+        "chip_confidence": {
+          "quarterly_chip_weight": 0.5
+        }
+      },
+      "backtest": {
+        "position_target": {
+          "REDUCE": 0.3
+        }
+      },
+      "n": 4321,
+      "total_return": -0.990752,
+      "annualized_return": -0.054802,
+      "sharpe": -0.0604,
+      "max_drawdown": -0.997857,
+      "win_rate": 0.4535,
+      "profit_factor": 0.9635,
+      "sortino": -0.0654,
+      "calmar": -0.0549,
+      "annual_turnover": null
+    },
+    {
+      "fusion": {
+        "chip_confidence": {
+          "quarterly_chip_weight": 0.6
+        }
+      },
+      "backtest": {
+        "position_target": {
+          "REDUCE": 0.3
+        }
+      },
+      "n": 4321,
+      "total_return": -0.990752,
+      "annualized_return": -0.054802,
+      "sharpe": -0.0604,
+      "max_drawdown": -0.997857,
+      "win_rate": 0.4535,
+      "profit_factor": 0.9635,
+      "sortino": -0.0654,
+      "calmar": -0.0549,
+      "annual_turnover": null
+    },
+    {
+      "fusion": {
+        "chip_confidence": {
+          "quarterly_chip_weight": 0.7
+        }
+      },
+      "backtest": {
+        "position_target": {
+          "REDUCE": 0.3
+        }
+      },
+      "n": 4321,
+      "total_return": -0.990752,
+      "annualized_return": -0.054802,
+      "sharpe": -0.0604,
+      "max_drawdown": -0.997857,
+      "win_rate": 0.4535,
+      "profit_factor": 0.9635,
+      "sortino": -0.0654,
+      "calmar": -0.0549,
+      "annual_turnover": null
+    }
+  ]
+}

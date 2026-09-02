@@ -1,0 +1,263 @@
+{
+  "generated_at": "2026-08-26 19:09:01",
+  "stock": "01951",
+  "decision_date": "2026-08-21",
+  "source": "NON_CANONICAL|point-in-time 推算（无 Ledger/Shadow 匹配，按 FLAT/0 起算）",
+  "run_id": "counterfactual",
+  "baseline": {
+    "prev_fsm_state": "FLAT",
+    "previous_position": 0.0
+  },
+  "results": [
+    {
+      "variant": "full",
+      "config": {
+        "use_permission": true,
+        "use_soft_exit": true,
+        "use_hard_exit": true,
+        "use_daily": true,
+        "use_budget": true,
+        "use_market_scale": true,
+        "use_stop": true,
+        "use_observation": true,
+        "use_data_quality_gate": true,
+        "use_regime_params": true
+      },
+      "target_position": 0.0,
+      "previous_position": 0.0,
+      "next_fsm_state": "COOLDOWN",
+      "primary_reason": "FORCED_DELEVERAGE",
+      "secondary_reasons": [
+        "INST_ACCUMULATION_WEAK",
+        "PRICE_DECLINE"
+      ],
+      "action": "WAIT",
+      "permission": "WATCH",
+      "exit_event": "FORCED_DELEVERAGE",
+      "input_fingerprint": "19927e5d2ac3c52d",
+      "label": "全模块开启（Actual）"
+    },
+    {
+      "variant": "no_permission",
+      "config": {
+        "use_permission": false,
+        "use_soft_exit": true,
+        "use_hard_exit": true,
+        "use_daily": true,
+        "use_budget": true,
+        "use_market_scale": true,
+        "use_stop": true,
+        "use_observation": true,
+        "use_data_quality_gate": true,
+        "use_regime_params": true
+      },
+      "target_position": 0.0,
+      "previous_position": 0.0,
+      "next_fsm_state": "COOLDOWN",
+      "primary_reason": "FORCED_DELEVERAGE",
+      "secondary_reasons": [
+        "INST_ACCUMULATION_WEAK",
+        "PRICE_DECLINE"
+      ],
+      "action": "WAIT",
+      "permission": "STRONG_ALLOW",
+      "exit_event": "FORCED_DELEVERAGE",
+      "input_fingerprint": "19927e5d2ac3c52d",
+      "label": "关闭 Institutional Permission"
+    },
+    {
+      "variant": "no_wave",
+      "config": {
+        "use_permission": true,
+        "use_soft_exit": true,
+        "use_hard_exit": true,
+        "use_daily": true,
+        "use_budget": true,
+        "use_market_scale": true,
+        "use_stop": true,
+        "use_observation": true,
+        "use_data_quality_gate": true,
+        "use_regime_params": true
+      },
+      "target_position": 0.0,
+      "previous_position": 0.0,
+      "next_fsm_state": "COOLDOWN",
+      "primary_reason": "FORCED_DELEVERAGE",
+      "secondary_reasons": [
+        "INST_ACCUMULATION_WEAK",
+        "PRICE_DECLINE"
+      ],
+      "action": "WAIT",
+      "permission": "WATCH",
+      "exit_event": "FORCED_DELEVERAGE",
+      "input_fingerprint": "0e3cb1e5bd17416e",
+      "label": "关闭 Wave/Setup 信号"
+    },
+    {
+      "variant": "no_risk",
+      "config": {
+        "use_permission": true,
+        "use_soft_exit": true,
+        "use_hard_exit": true,
+        "use_daily": true,
+        "use_budget": true,
+        "use_market_scale": true,
+        "use_stop": true,
+        "use_observation": true,
+        "use_data_quality_gate": true,
+        "use_regime_params": true
+      },
+      "target_position": 0.025,
+      "previous_position": 0.0,
+      "next_fsm_state": "TESTING",
+      "primary_reason": "POSITION_CAP",
+      "secondary_reasons": [
+        "POSITION_CAP",
+        "INST_ACCUMULATION_WEAK",
+        "PRICE_DECLINE"
+      ],
+      "action": "HOLD",
+      "permission": "WATCH",
+      "exit_event": "NONE",
+      "input_fingerprint": "6d37eff8b1f7838e",
+      "label": "关闭 Risk 约束"
+    },
+    {
+      "variant": "no_portfolio",
+      "config": {
+        "use_permission": true,
+        "use_soft_exit": true,
+        "use_hard_exit": true,
+        "use_daily": true,
+        "use_budget": true,
+        "use_market_scale": true,
+        "use_stop": true,
+        "use_observation": true,
+        "use_data_quality_gate": true,
+        "use_regime_params": true
+      },
+      "target_position": 0.0,
+      "previous_position": 0.0,
+      "next_fsm_state": "COOLDOWN",
+      "primary_reason": "FORCED_DELEVERAGE",
+      "secondary_reasons": [
+        "INST_ACCUMULATION_WEAK",
+        "PRICE_DECLINE"
+      ],
+      "action": "WAIT",
+      "permission": "WATCH",
+      "exit_event": "FORCED_DELEVERAGE",
+      "input_fingerprint": "19927e5d2ac3c52d",
+      "label": "关闭 Portfolio 约束"
+    },
+    {
+      "variant": "no_daily",
+      "config": {
+        "use_permission": true,
+        "use_soft_exit": true,
+        "use_hard_exit": true,
+        "use_daily": false,
+        "use_budget": true,
+        "use_market_scale": true,
+        "use_stop": true,
+        "use_observation": true,
+        "use_data_quality_gate": true,
+        "use_regime_params": true
+      },
+      "target_position": 0.0,
+      "previous_position": 0.0,
+      "next_fsm_state": "COOLDOWN",
+      "primary_reason": "FORCED_DELEVERAGE",
+      "secondary_reasons": [
+        "INST_ACCUMULATION_WEAK",
+        "PRICE_DECLINE"
+      ],
+      "action": "WAIT",
+      "permission": "WATCH",
+      "exit_event": "FORCED_DELEVERAGE",
+      "input_fingerprint": "19927e5d2ac3c52d",
+      "label": "关闭日线战术层"
+    },
+    {
+      "variant": "no_hard_exit",
+      "config": {
+        "use_permission": true,
+        "use_soft_exit": true,
+        "use_hard_exit": false,
+        "use_daily": true,
+        "use_budget": true,
+        "use_market_scale": true,
+        "use_stop": true,
+        "use_observation": true,
+        "use_data_quality_gate": true,
+        "use_regime_params": true
+      },
+      "target_position": 0.0,
+      "previous_position": 0.0,
+      "next_fsm_state": "FLAT",
+      "primary_reason": "DAILY_TRIGGER_ABSENT",
+      "secondary_reasons": [
+        "INST_ACCUMULATION_WEAK",
+        "PRICE_DECLINE"
+      ],
+      "action": "REDUCE",
+      "permission": "WATCH",
+      "exit_event": "NONE",
+      "input_fingerprint": "19927e5d2ac3c52d",
+      "label": "关闭 Hard Exit"
+    }
+  ],
+  "deltas": [
+    {
+      "variant": "no_permission",
+      "target_delta": 0.0,
+      "fsm_changed": false,
+      "reason_changed": false,
+      "action_changed": false
+    },
+    {
+      "variant": "no_wave",
+      "target_delta": 0.0,
+      "fsm_changed": false,
+      "reason_changed": false,
+      "action_changed": false
+    },
+    {
+      "variant": "no_risk",
+      "target_delta": 0.025,
+      "fsm_changed": true,
+      "reason_changed": true,
+      "action_changed": true
+    },
+    {
+      "variant": "no_portfolio",
+      "target_delta": 0.0,
+      "fsm_changed": false,
+      "reason_changed": false,
+      "action_changed": false
+    },
+    {
+      "variant": "no_daily",
+      "target_delta": 0.0,
+      "fsm_changed": false,
+      "reason_changed": false,
+      "action_changed": false
+    },
+    {
+      "variant": "no_hard_exit",
+      "target_delta": 0.0,
+      "fsm_changed": true,
+      "reason_changed": true,
+      "action_changed": true
+    }
+  ],
+  "unified_decision": {
+    "decision_id": "01951_2026-08-21",
+    "version_hash": "574715db01280db3",
+    "decision_hash": "5a3d12b7c9cdec0f",
+    "consumers": [
+      "REPLAY"
+    ],
+    "violations": []
+  }
+}

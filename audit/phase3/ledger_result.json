@@ -1,0 +1,11 @@
+{
+  "checks": {
+    "append_only": true,
+    "no_update": true,
+    "no_delete": true,
+    "strict_identity_lookup": true,
+    "chain_tamper_detected": true
+  },
+  "pass": true,
+  "verdict": "LEDGER_PASS"
+}

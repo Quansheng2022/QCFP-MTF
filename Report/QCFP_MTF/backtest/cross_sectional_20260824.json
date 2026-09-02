@@ -1,0 +1,40 @@
+{
+  "generated_at": "20260824",
+  "start": "2021-01-01",
+  "end": "2026-08-21",
+  "summary": {
+    "top5": {
+      "perf": {
+        "n": 294,
+        "total_return": -0.272403,
+        "annualized_return": -0.054694,
+        "sharpe": -0.3619,
+        "max_drawdown": -0.420321,
+        "win_rate": 0.4592,
+        "profit_factor": 0.8579,
+        "sortino": -0.4898,
+        "calmar": -0.1301,
+        "annual_turnover": 6.6256
+      },
+      "excess_buy_hold": {
+        "n": 294,
+        "excess_annualized": -0.080772,
+        "information_ratio": -0.2051,
+        "correlation": 0.6903
+      },
+      "excess_hsi": {
+        "n": 294,
+        "excess_annualized": -0.050797,
+        "information_ratio": -0.2818,
+        "correlation": 0.2829
+      },
+      "excess_momentum": {
+        "n": 294,
+        "excess_annualized": -0.00846,
+        "information_ratio": 0.1036,
+        "correlation": 0.7677
+      },
+      "n_weeks": 294
+    }
+  }
+}

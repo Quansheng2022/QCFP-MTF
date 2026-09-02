@@ -1,0 +1,299 @@
+{
+  "table_name": "qcfp_mtf_decision",
+  "generated_at": "2026-08-24 22:03:30",
+  "database_path": "C:\\Users\\Quansheng\\Documents\\projects\\TA_Workflow\\SQLiteDB\\HK_Stock.db",
+  "statistics": {
+    "total_records": 10046,
+    "stock_count": 16
+  },
+  "field_count": 31,
+  "fields": [
+    {
+      "field_name": "id",
+      "data_type": "INTEGER",
+      "description": "主键，自增ID",
+      "sample": null
+    },
+    {
+      "field_name": "stock_code",
+      "data_type": "TEXT",
+      "description": "股票代码（5位数字）",
+      "sample": null
+    },
+    {
+      "field_name": "stock_name",
+      "data_type": "TEXT",
+      "description": "股票名称",
+      "sample": null
+    },
+    {
+      "field_name": "decision_date",
+      "data_type": "TEXT",
+      "description": "决策日期（YYYY-MM-DD）",
+      "sample": null
+    },
+    {
+      "field_name": "structural_regime",
+      "data_type": "TEXT",
+      "description": "季度结构状态（继承 FSM-1）",
+      "sample": null
+    },
+    {
+      "field_name": "monthly_behavior_state",
+      "data_type": "TEXT",
+      "description": "月线阶段（继承）",
+      "sample": null
+    },
+    {
+      "field_name": "tactical_signal",
+      "data_type": "TEXT",
+      "description": "周线信号（继承）",
+      "sample": null
+    },
+    {
+      "field_name": "cbi_score",
+      "data_type": "REAL",
+      "description": "CBI 筹码行为指数（0~100）",
+      "sample": null
+    },
+    {
+      "field_name": "cost_position",
+      "data_type": "TEXT",
+      "description": "成本位置（COST_ADVANTAGE/NEUTRAL/DISADVANTAGE）",
+      "sample": null
+    },
+    {
+      "field_name": "chip_stability_confidence",
+      "data_type": "TEXT",
+      "description": "筹码稳定置信度（High/Medium/Low）",
+      "sample": null
+    },
+    {
+      "field_name": "mtf_regime",
+      "data_type": "TEXT",
+      "description": "MTF 状态（5 种：BULLISH_CONFIRMED 等）",
+      "sample": null
+    },
+    {
+      "field_name": "qcfp_score",
+      "data_type": "REAL",
+      "description": "QCFP 综合评分（0~100，辅助参考）",
+      "sample": null
+    },
+    {
+      "field_name": "action_signal",
+      "data_type": "TEXT",
+      "description": "行动信号（BUY/ADD/HOLD/REDUCE/EXIT/WAIT）",
+      "sample": null
+    },
+    {
+      "field_name": "risk_level",
+      "data_type": "TEXT",
+      "description": "风险等级（Low/Medium/High/Extreme）",
+      "sample": null
+    },
+    {
+      "field_name": "market_context",
+      "data_type": "TEXT",
+      "description": "大盘环境上下文（来自 hk_idx_hist 派生）",
+      "sample": null
+    },
+    {
+      "field_name": "evidence_summary",
+      "data_type": "TEXT",
+      "description": "证据等级摘要",
+      "sample": null
+    },
+    {
+      "field_name": "model_version",
+      "data_type": "TEXT",
+      "description": "模型版本号",
+      "sample": null
+    },
+    {
+      "field_name": "data_quality",
+      "data_type": "TEXT",
+      "description": "数据质量等级（A/B/C/D）",
+      "sample": null
+    },
+    {
+      "field_name": "update_time",
+      "data_type": "TEXT",
+      "description": "更新时间",
+      "sample": null
+    },
+    {
+      "field_name": "structure_behavior_alignment",
+      "data_type": "TEXT",
+      "description": "",
+      "sample": null
+    },
+    {
+      "field_name": "catalyst_score",
+      "data_type": "REAL",
+      "description": "",
+      "sample": null
+    },
+    {
+      "field_name": "catalyst_type",
+      "data_type": "TEXT",
+      "description": "",
+      "sample": null
+    },
+    {
+      "field_name": "align_method",
+      "data_type": "TEXT",
+      "description": "对齐方法（matrix/fallback/tactical_override/data_insufficient）",
+      "sample": null
+    },
+    {
+      "field_name": "des_score",
+      "data_type": "INTEGER",
+      "description": "下行证据评分（0~12+）",
+      "sample": null
+    },
+    {
+      "field_name": "des_band",
+      "data_type": "TEXT",
+      "description": "下行证据档位（NORMAL/WATCH/REDUCE/DE-RISK）",
+      "sample": null
+    },
+    {
+      "field_name": "alignment_override",
+      "data_type": "INTEGER",
+      "description": "对齐层覆盖标记（1=战术覆盖 TEST_BUY，0=否）",
+      "sample": null
+    },
+    {
+      "field_name": "base_action",
+      "data_type": "TEXT",
+      "description": "风险层干预前的基础动作（如 REDUCE）",
+      "sample": null
+    },
+    {
+      "field_name": "final_action",
+      "data_type": "TEXT",
+      "description": "风险层干预后的最终动作（如 EXIT）",
+      "sample": null
+    },
+    {
+      "field_name": "base_target",
+      "data_type": "REAL",
+      "description": "风险层干预前的基础目标仓位",
+      "sample": null
+    },
+    {
+      "field_name": "final_target",
+      "data_type": "REAL",
+      "description": "风险层干预后的最终目标仓位（EXIT=0）",
+      "sample": null
+    },
+    {
+      "field_name": "risk_override_active",
+      "data_type": "INTEGER",
+      "description": "下行风险覆盖是否激活（DES≥5 或风险下限）",
+      "sample": null
+    }
+  ],
+  "sample_data": [
+    {
+      "id": 84548,
+      "stock_code": "01177",
+      "stock_name": "中生制药",
+      "decision_date": "2010-01-08",
+      "structural_regime": "STATE_UNDETERMINED",
+      "monthly_behavior_state": null,
+      "tactical_signal": "Consolidation",
+      "cbi_score": null,
+      "cost_position": null,
+      "chip_stability_confidence": "Low",
+      "mtf_regime": "DATA_INSUFFICIENT",
+      "qcfp_score": null,
+      "action_signal": "WAIT",
+      "risk_level": "Extreme",
+      "market_context": "neutral",
+      "evidence_summary": "结构:STATE_UNDETERMINED(A/A-); 阶段:nan(B); 触发:Consolidation(C); 置信度:Low",
+      "model_version": "QCFP-MTF-2.1.1",
+      "data_quality": null,
+      "update_time": "2026-08-24 00:06:05",
+      "structure_behavior_alignment": "Unknown",
+      "catalyst_score": 0.0,
+      "catalyst_type": "中性偏强",
+      "align_method": "data_insufficient",
+      "des_score": null,
+      "des_band": null,
+      "alignment_override": 0,
+      "base_action": null,
+      "final_action": null,
+      "base_target": null,
+      "final_target": null,
+      "risk_override_active": 0
+    },
+    {
+      "id": 84549,
+      "stock_code": "00268",
+      "stock_name": "金蝶国际",
+      "decision_date": "2010-01-08",
+      "structural_regime": "STATE_UNDETERMINED",
+      "monthly_behavior_state": null,
+      "tactical_signal": "Consolidation",
+      "cbi_score": null,
+      "cost_position": null,
+      "chip_stability_confidence": "Low",
+      "mtf_regime": "DATA_INSUFFICIENT",
+      "qcfp_score": null,
+      "action_signal": "WAIT",
+      "risk_level": "Extreme",
+      "market_context": "neutral",
+      "evidence_summary": "结构:STATE_UNDETERMINED(A/A-); 阶段:nan(B); 触发:Consolidation(C); 置信度:Low",
+      "model_version": "QCFP-MTF-2.1.1",
+      "data_quality": null,
+      "update_time": "2026-08-24 00:06:05",
+      "structure_behavior_alignment": "Unknown",
+      "catalyst_score": 0.0,
+      "catalyst_type": "中性偏强",
+      "align_method": "data_insufficient",
+      "des_score": null,
+      "des_band": null,
+      "alignment_override": 0,
+      "base_action": null,
+      "final_action": null,
+      "base_target": null,
+      "final_target": null,
+      "risk_override_active": 0
+    },
+    {
+      "id": 84550,
+      "stock_code": "00354",
+      "stock_name": "中软国际",
+      "decision_date": "2010-01-08",
+      "structural_regime": "STATE_UNDETERMINED",
+      "monthly_behavior_state": null,
+      "tactical_signal": "Consolidation",
+      "cbi_score": null,
+      "cost_position": null,
+      "chip_stability_confidence": "Low",
+      "mtf_regime": "DATA_INSUFFICIENT",
+      "qcfp_score": null,
+      "action_signal": "WAIT",
+      "risk_level": "Extreme",
+      "market_context": "neutral",
+      "evidence_summary": "结构:STATE_UNDETERMINED(A/A-); 阶段:nan(B); 触发:Consolidation(C); 置信度:Low",
+      "model_version": "QCFP-MTF-2.1.1",
+      "data_quality": null,
+      "update_time": "2026-08-24 00:06:05",
+      "structure_behavior_alignment": "Unknown",
+      "catalyst_score": 0.0,
+      "catalyst_type": "中性偏强",
+      "align_method": "data_insufficient",
+      "des_score": null,
+      "des_band": null,
+      "alignment_override": 0,
+      "base_action": null,
+      "final_action": null,
+      "base_target": null,
+      "final_target": null,
+      "risk_override_active": 0
+    }
+  ]
+}

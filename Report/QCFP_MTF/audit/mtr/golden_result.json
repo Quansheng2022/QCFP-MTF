@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "schema": "GOLDEN-2",
+  "release_id": "MTR-CLOSURE-1",
+  "golden_corpus_version": "GOLDEN-CONSTITUTION-1",
+  "golden_corpus_hash": "4999e192fb300534",
+  "n_total": 3,
+  "n_passed": 3,
+  "n_failed": 0,
+  "critical_failures": [],
+  "generated_at": "2026-08-29 15:56:30",
+  "results": {
+    "test_golden_case_001_block_strong": "PASS",
+    "test_golden_case_002_liquidity_binding": "PASS",
+    "test_golden_case_003_pit_invalid_no_certified": "PASS"
+  },
+  "source": "golden_constitution(canonical-only)"
+}

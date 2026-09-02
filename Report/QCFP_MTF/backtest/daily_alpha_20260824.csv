@@ -1,0 +1,3 @@
+﻿model,annualized_return,sharpe,max_drawdown,annual_turnover,avg_weekly_cost,wave_return,wave_pos_weeks,mfe_n_entries,mfe_mean_mfe,mfe_mean_mae,mfe_mean_realized,mfe_mean_capture,mfe_win_rate,mfe_avg_hold_weeks,mfe_n_mfe_ge_10pct
+A_QMW,-0.002435,0.0198,-0.247729,1.3909,0.000109,0.073132,19,173,0.2196,-0.1592,-0.0224,-0.7309,0.3815,13.65,84
+B_QMWD,-0.004741,-0.0042,-0.255479,1.6723,0.000131,0.071463,19,173,0.2196,-0.1592,-0.0224,-0.7309,0.3815,13.65,84

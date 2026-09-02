@@ -1,0 +1,14 @@
+{
+  "certified": 1,
+  "no_trade": 15,
+  "abstain": 1,
+  "safe_mode": 0,
+  "halted": 0,
+  "total": 17,
+  "certified_pct": 5.88,
+  "no_trade_pct": 88.24,
+  "abstain_pct": 5.88,
+  "safe_mode_pct": 0.0,
+  "halted_pct": 0.0,
+  "note": "ABSTAIN/SAFE_MODE/HALTED 占比用于 Research/Operational Review，不改变 Hard Gate"
+}

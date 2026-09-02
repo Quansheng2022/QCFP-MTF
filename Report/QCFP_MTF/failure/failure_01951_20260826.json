@@ -1,0 +1,841 @@
+{
+  "generated_at": "20260826",
+  "summary": {
+    "n_failures": 102,
+    "failure_rate": 1.0,
+    "by_code": {
+      "F06": 58,
+      "F02": 17,
+      "F07": 7,
+      "F05": 8,
+      "NONE": 2,
+      "F01": 10
+    },
+    "by_regime": {
+      "Sideway": 102
+    },
+    "by_module": {
+      "retail_swing": 38,
+      "counterfactual": 64
+    },
+    "mean_cost": 0.4656
+  },
+  "records": [
+    {
+      "code": "F06",
+      "stock": "01951",
+      "date": "2019-11-22",
+      "regime": "Sideway",
+      "module": "retail_swing",
+      "cost": -0.174172
+    },
+    {
+      "code": "F02",
+      "stock": "01951",
+      "date": "2020-03-13",
+      "regime": "Sideway",
+      "module": "retail_swing",
+      "cost": -0.191117
+    },
+    {
+      "code": "F02",
+      "stock": "01951",
+      "date": "2020-04-10",
+      "regime": "Sideway",
+      "module": "retail_swing",
+      "cost": -0.11733
+    },
+    {
+      "code": "F07",
+      "stock": "01951",
+      "date": "2020-04-10",
+      "regime": "Sideway",
+      "module": "retail_swing",
+      "cost": -0.11733
+    },
+    {
+      "code": "F07",
+      "stock": "01951",
+      "date": "2020-11-06",
+      "regime": "Sideway",
+      "module": "retail_swing",
+      "cost": 0.368603
+    },
+    {
+      "code": "F06",
+      "stock": "01951",
+      "date": "2021-02-26",
+      "regime": "Sideway",
+      "module": "retail_swing",
+      "cost": -0.367432
+    },
+    {
+      "code": "F05",
+      "stock": "01951",
+      "date": "2021-02-26",
+      "regime": "Sideway",
+      "module": "retail_swing",
+      "cost": -0.367432
+    },
+    {
+      "code": "F02",
+      "stock": "01951",
+      "date": "2021-08-13",
+      "regime": "Sideway",
+      "module": "retail_swing",
+      "cost": -0.20061
+    },
+    {
+      "code": "F07",
+      "stock": "01951",
+      "date": "2021-08-13",
+      "regime": "Sideway",
+      "module": "retail_swing",
+      "cost": -0.20061
+    },
+    {
+      "code": "F02",
+      "stock": "01951",
+      "date": "2021-10-01",
+      "regime": "Sideway",
+      "module": "retail_swing",
+      "cost": -0.041526
+    },
+    {
+      "code": "F02",
+      "stock": "01951",
+      "date": "2021-11-26",
+      "regime": "Sideway",
+      "module": "retail_swing",
+      "cost": -0.066518
+    },
+    {
+      "code": "F02",
+      "stock": "01951",
+      "date": "2022-01-28",
+      "regime": "Sideway",
+      "module": "retail_swing",
+      "cost": -0.143008
+    },
+    {
+      "code": "F07",
+      "stock": "01951",
+      "date": "2022-01-28",
+      "regime": "Sideway",
+      "module": "retail_swing",
+      "cost": -0.143008
+    },
+    {
+      "code": "F02",
+      "stock": "01951",
+      "date": "2022-02-18",
+      "regime": "Sideway",
+      "module": "retail_swing",
+      "cost": -0.025722
+    },
+    {
+      "code": "F06",
+      "stock": "01951",
+      "date": "2022-03-04",
+      "regime": "Sideway",
+      "module": "retail_swing",
+      "cost": -0.338742
+    },
+    {
+      "code": "F05",
+      "stock": "01951",
+      "date": "2022-03-04",
+      "regime": "Sideway",
+      "module": "retail_swing",
+      "cost": -0.338742
+    },
+    {
+      "code": "F02",
+      "stock": "01951",
+      "date": "2022-06-03",
+      "regime": "Sideway",
+      "module": "retail_swing",
+      "cost": -0.20623
+    },
+    {
+      "code": "F05",
+      "stock": "01951",
+      "date": "2022-06-03",
+      "regime": "Sideway",
+      "module": "retail_swing",
+      "cost": -0.20623
+    },
+    {
+      "code": "F02",
+      "stock": "01951",
+      "date": "2022-08-19",
+      "regime": "Sideway",
+      "module": "retail_swing",
+      "cost": -0.014409
+    },
+    {
+      "code": "F02",
+      "stock": "01951",
+      "date": "2022-09-02",
+      "regime": "Sideway",
+      "module": "retail_swing",
+      "cost": -0.088606
+    },
+    {
+      "code": "F07",
+      "stock": "01951",
+      "date": "2022-10-14",
+      "regime": "Sideway",
+      "module": "retail_swing",
+      "cost": 0.19741
+    },
+    {
+      "code": "F05",
+      "stock": "01951",
+      "date": "2022-11-18",
+      "regime": "Sideway",
+      "module": "retail_swing",
+      "cost": 0.130622
+    },
+    {
+      "code": "F07",
+      "stock": "01951",
+      "date": "2022-11-18",
+      "regime": "Sideway",
+      "module": "retail_swing",
+      "cost": 0.130622
+    },
+    {
+      "code": "NONE",
+      "stock": "01951",
+      "date": "2023-03-24",
+      "regime": "Sideway",
+      "module": "retail_swing",
+      "cost": 0.00606
+    },
+    {
+      "code": "F06",
+      "stock": "01951",
+      "date": "2023-04-07",
+      "regime": "Sideway",
+      "module": "retail_swing",
+      "cost": -0.017963
+    },
+    {
+      "code": "F05",
+      "stock": "01951",
+      "date": "2023-04-07",
+      "regime": "Sideway",
+      "module": "retail_swing",
+      "cost": -0.017963
+    },
+    {
+      "code": "F02",
+      "stock": "01951",
+      "date": "2023-05-12",
+      "regime": "Sideway",
+      "module": "retail_swing",
+      "cost": -0.08848
+    },
+    {
+      "code": "F02",
+      "stock": "01951",
+      "date": "2023-09-08",
+      "regime": "Sideway",
+      "module": "retail_swing",
+      "cost": -0.016589
+    },
+    {
+      "code": "F02",
+      "stock": "01951",
+      "date": "2023-11-17",
+      "regime": "Sideway",
+      "module": "retail_swing",
+      "cost": -0.071346
+    },
+    {
+      "code": "F05",
+      "stock": "01951",
+      "date": "2023-11-17",
+      "regime": "Sideway",
+      "module": "retail_swing",
+      "cost": -0.071346
+    },
+    {
+      "code": "F02",
+      "stock": "01951",
+      "date": "2024-03-01",
+      "regime": "Sideway",
+      "module": "retail_swing",
+      "cost": -0.036973
+    },
+    {
+      "code": "F05",
+      "stock": "01951",
+      "date": "2024-03-01",
+      "regime": "Sideway",
+      "module": "retail_swing",
+      "cost": -0.036973
+    },
+    {
+      "code": "F05",
+      "stock": "01951",
+      "date": "2024-05-17",
+      "regime": "Sideway",
+      "module": "retail_swing",
+      "cost": 0.035174
+    },
+    {
+      "code": "F02",
+      "stock": "01951",
+      "date": "2025-11-21",
+      "regime": "Sideway",
+      "module": "retail_swing",
+      "cost": -0.054342
+    },
+    {
+      "code": "F02",
+      "stock": "01951",
+      "date": "2025-12-12",
+      "regime": "Sideway",
+      "module": "retail_swing",
+      "cost": -0.159834
+    },
+    {
+      "code": "F07",
+      "stock": "01951",
+      "date": "2025-12-12",
+      "regime": "Sideway",
+      "module": "retail_swing",
+      "cost": -0.159834
+    },
+    {
+      "code": "NONE",
+      "stock": "01951",
+      "date": "2026-04-03",
+      "regime": "Sideway",
+      "module": "retail_swing",
+      "cost": 0.072207
+    },
+    {
+      "code": "F02",
+      "stock": "01951",
+      "date": "2026-05-08",
+      "regime": "Sideway",
+      "module": "retail_swing",
+      "cost": -0.007648
+    },
+    {
+      "code": "F06",
+      "stock": "01951",
+      "date": "2019-06-28",
+      "regime": "Sideway",
+      "module": "counterfactual",
+      "cost": 0.6659
+    },
+    {
+      "code": "F06",
+      "stock": "01951",
+      "date": "2019-06-28",
+      "regime": "Sideway",
+      "module": "counterfactual",
+      "cost": 0.5629
+    },
+    {
+      "code": "F06",
+      "stock": "01951",
+      "date": "2019-06-28",
+      "regime": "Sideway",
+      "module": "counterfactual",
+      "cost": 0.6999
+    },
+    {
+      "code": "F06",
+      "stock": "01951",
+      "date": "2019-06-28",
+      "regime": "Sideway",
+      "module": "counterfactual",
+      "cost": 0.5892
+    },
+    {
+      "code": "F06",
+      "stock": "01951",
+      "date": "2019-06-28",
+      "regime": "Sideway",
+      "module": "counterfactual",
+      "cost": 0.6164
+    },
+    {
+      "code": "F06",
+      "stock": "01951",
+      "date": "2019-07-05",
+      "regime": "Sideway",
+      "module": "counterfactual",
+      "cost": 0.5892
+    },
+    {
+      "code": "F06",
+      "stock": "01951",
+      "date": "2019-07-12",
+      "regime": "Sideway",
+      "module": "counterfactual",
+      "cost": 0.5698
+    },
+    {
+      "code": "F06",
+      "stock": "01951",
+      "date": "2019-07-19",
+      "regime": "Sideway",
+      "module": "counterfactual",
+      "cost": 0.6146
+    },
+    {
+      "code": "F06",
+      "stock": "01951",
+      "date": "2019-07-26",
+      "regime": "Sideway",
+      "module": "counterfactual",
+      "cost": 0.5733
+    },
+    {
+      "code": "F06",
+      "stock": "01951",
+      "date": "2019-08-02",
+      "regime": "Sideway",
+      "module": "counterfactual",
+      "cost": 0.5242
+    },
+    {
+      "code": "F06",
+      "stock": "01951",
+      "date": "2020-02-21",
+      "regime": "Sideway",
+      "module": "counterfactual",
+      "cost": 0.527
+    },
+    {
+      "code": "F01",
+      "stock": "01951",
+      "date": "2020-07-03",
+      "regime": "Sideway",
+      "module": "counterfactual",
+      "cost": 0.6015
+    },
+    {
+      "code": "F01",
+      "stock": "01951",
+      "date": "2020-07-10",
+      "regime": "Sideway",
+      "module": "counterfactual",
+      "cost": 0.7317
+    },
+    {
+      "code": "F01",
+      "stock": "01951",
+      "date": "2020-07-17",
+      "regime": "Sideway",
+      "module": "counterfactual",
+      "cost": 0.8552
+    },
+    {
+      "code": "F01",
+      "stock": "01951",
+      "date": "2020-07-24",
+      "regime": "Sideway",
+      "module": "counterfactual",
+      "cost": 0.9519
+    },
+    {
+      "code": "F01",
+      "stock": "01951",
+      "date": "2020-07-31",
+      "regime": "Sideway",
+      "module": "counterfactual",
+      "cost": 1.1481
+    },
+    {
+      "code": "F06",
+      "stock": "01951",
+      "date": "2020-08-07",
+      "regime": "Sideway",
+      "module": "counterfactual",
+      "cost": 1.2193
+    },
+    {
+      "code": "F06",
+      "stock": "01951",
+      "date": "2020-08-14",
+      "regime": "Sideway",
+      "module": "counterfactual",
+      "cost": 1.3211
+    },
+    {
+      "code": "F01",
+      "stock": "01951",
+      "date": "2020-08-21",
+      "regime": "Sideway",
+      "module": "counterfactual",
+      "cost": 1.2679
+    },
+    {
+      "code": "F01",
+      "stock": "01951",
+      "date": "2020-08-28",
+      "regime": "Sideway",
+      "module": "counterfactual",
+      "cost": 1.3719
+    },
+    {
+      "code": "F01",
+      "stock": "01951",
+      "date": "2020-09-04",
+      "regime": "Sideway",
+      "module": "counterfactual",
+      "cost": 1.3768
+    },
+    {
+      "code": "F01",
+      "stock": "01951",
+      "date": "2020-09-11",
+      "regime": "Sideway",
+      "module": "counterfactual",
+      "cost": 1.3187
+    },
+    {
+      "code": "F01",
+      "stock": "01951",
+      "date": "2020-09-18",
+      "regime": "Sideway",
+      "module": "counterfactual",
+      "cost": 1.3547
+    },
+    {
+      "code": "F06",
+      "stock": "01951",
+      "date": "2020-09-25",
+      "regime": "Sideway",
+      "module": "counterfactual",
+      "cost": 1.4723
+    },
+    {
+      "code": "F06",
+      "stock": "01951",
+      "date": "2020-10-02",
+      "regime": "Sideway",
+      "module": "counterfactual",
+      "cost": 1.4696
+    },
+    {
+      "code": "F06",
+      "stock": "01951",
+      "date": "2020-10-09",
+      "regime": "Sideway",
+      "module": "counterfactual",
+      "cost": 1.3843
+    },
+    {
+      "code": "F06",
+      "stock": "01951",
+      "date": "2020-10-16",
+      "regime": "Sideway",
+      "module": "counterfactual",
+      "cost": 1.1044
+    },
+    {
+      "code": "F06",
+      "stock": "01951",
+      "date": "2020-10-23",
+      "regime": "Sideway",
+      "module": "counterfactual",
+      "cost": 0.7488
+    },
+    {
+      "code": "F06",
+      "stock": "01951",
+      "date": "2020-10-30",
+      "regime": "Sideway",
+      "module": "counterfactual",
+      "cost": 0.6967
+    },
+    {
+      "code": "F06",
+      "stock": "01951",
+      "date": "2020-11-06",
+      "regime": "Sideway",
+      "module": "counterfactual",
+      "cost": 0.6288
+    },
+    {
+      "code": "F06",
+      "stock": "01951",
+      "date": "2020-11-13",
+      "regime": "Sideway",
+      "module": "counterfactual",
+      "cost": 0.6452
+    },
+    {
+      "code": "F06",
+      "stock": "01951",
+      "date": "2020-11-20",
+      "regime": "Sideway",
+      "module": "counterfactual",
+      "cost": 0.5427
+    },
+    {
+      "code": "F06",
+      "stock": "01951",
+      "date": "2020-11-27",
+      "regime": "Sideway",
+      "module": "counterfactual",
+      "cost": 0.5511
+    },
+    {
+      "code": "F06",
+      "stock": "01951",
+      "date": "2020-12-11",
+      "regime": "Sideway",
+      "module": "counterfactual",
+      "cost": 0.518
+    },
+    {
+      "code": "F06",
+      "stock": "01951",
+      "date": "2020-12-18",
+      "regime": "Sideway",
+      "module": "counterfactual",
+      "cost": 0.6917
+    },
+    {
+      "code": "F06",
+      "stock": "01951",
+      "date": "2022-04-08",
+      "regime": "Sideway",
+      "module": "counterfactual",
+      "cost": 0.6467
+    },
+    {
+      "code": "F06",
+      "stock": "01951",
+      "date": "2022-04-15",
+      "regime": "Sideway",
+      "module": "counterfactual",
+      "cost": 0.5138
+    },
+    {
+      "code": "F06",
+      "stock": "01951",
+      "date": "2022-08-05",
+      "regime": "Sideway",
+      "module": "counterfactual",
+      "cost": 0.6089
+    },
+    {
+      "code": "F06",
+      "stock": "01951",
+      "date": "2022-08-12",
+      "regime": "Sideway",
+      "module": "counterfactual",
+      "cost": 0.6157
+    },
+    {
+      "code": "F06",
+      "stock": "01951",
+      "date": "2022-08-19",
+      "regime": "Sideway",
+      "module": "counterfactual",
+      "cost": 0.6911
+    },
+    {
+      "code": "F06",
+      "stock": "01951",
+      "date": "2022-08-26",
+      "regime": "Sideway",
+      "module": "counterfactual",
+      "cost": 0.8561
+    },
+    {
+      "code": "F06",
+      "stock": "01951",
+      "date": "2022-09-02",
+      "regime": "Sideway",
+      "module": "counterfactual",
+      "cost": 1.0293
+    },
+    {
+      "code": "F06",
+      "stock": "01951",
+      "date": "2022-09-09",
+      "regime": "Sideway",
+      "module": "counterfactual",
+      "cost": 1.0792
+    },
+    {
+      "code": "F06",
+      "stock": "01951",
+      "date": "2022-09-16",
+      "regime": "Sideway",
+      "module": "counterfactual",
+      "cost": 0.9025
+    },
+    {
+      "code": "F06",
+      "stock": "01951",
+      "date": "2022-09-23",
+      "regime": "Sideway",
+      "module": "counterfactual",
+      "cost": 0.7657
+    },
+    {
+      "code": "F06",
+      "stock": "01951",
+      "date": "2022-09-30",
+      "regime": "Sideway",
+      "module": "counterfactual",
+      "cost": 0.9513
+    },
+    {
+      "code": "F06",
+      "stock": "01951",
+      "date": "2022-10-07",
+      "regime": "Sideway",
+      "module": "counterfactual",
+      "cost": 0.7335
+    },
+    {
+      "code": "F06",
+      "stock": "01951",
+      "date": "2022-10-14",
+      "regime": "Sideway",
+      "module": "counterfactual",
+      "cost": 0.6652
+    },
+    {
+      "code": "F06",
+      "stock": "01951",
+      "date": "2022-10-28",
+      "regime": "Sideway",
+      "module": "counterfactual",
+      "cost": 0.5159
+    },
+    {
+      "code": "F06",
+      "stock": "01951",
+      "date": "2024-01-05",
+      "regime": "Sideway",
+      "module": "counterfactual",
+      "cost": 0.5343
+    },
+    {
+      "code": "F06",
+      "stock": "01951",
+      "date": "2024-01-12",
+      "regime": "Sideway",
+      "module": "counterfactual",
+      "cost": 0.5048
+    },
+    {
+      "code": "F06",
+      "stock": "01951",
+      "date": "2024-03-15",
+      "regime": "Sideway",
+      "module": "counterfactual",
+      "cost": 0.681
+    },
+    {
+      "code": "F06",
+      "stock": "01951",
+      "date": "2024-03-22",
+      "regime": "Sideway",
+      "module": "counterfactual",
+      "cost": 0.7972
+    },
+    {
+      "code": "F06",
+      "stock": "01951",
+      "date": "2024-03-29",
+      "regime": "Sideway",
+      "module": "counterfactual",
+      "cost": 0.56
+    },
+    {
+      "code": "F06",
+      "stock": "01951",
+      "date": "2024-06-21",
+      "regime": "Sideway",
+      "module": "counterfactual",
+      "cost": 0.56
+    },
+    {
+      "code": "F06",
+      "stock": "01951",
+      "date": "2024-06-28",
+      "regime": "Sideway",
+      "module": "counterfactual",
+      "cost": 0.6525
+    },
+    {
+      "code": "F06",
+      "stock": "01951",
+      "date": "2024-07-05",
+      "regime": "Sideway",
+      "module": "counterfactual",
+      "cost": 0.5918
+    },
+    {
+      "code": "F06",
+      "stock": "01951",
+      "date": "2024-07-12",
+      "regime": "Sideway",
+      "module": "counterfactual",
+      "cost": 0.5175
+    },
+    {
+      "code": "F06",
+      "stock": "01951",
+      "date": "2024-07-19",
+      "regime": "Sideway",
+      "module": "counterfactual",
+      "cost": 0.5538
+    },
+    {
+      "code": "F06",
+      "stock": "01951",
+      "date": "2024-07-26",
+      "regime": "Sideway",
+      "module": "counterfactual",
+      "cost": 0.6318
+    },
+    {
+      "code": "F06",
+      "stock": "01951",
+      "date": "2024-08-02",
+      "regime": "Sideway",
+      "module": "counterfactual",
+      "cost": 0.6738
+    },
+    {
+      "code": "F06",
+      "stock": "01951",
+      "date": "2024-08-09",
+      "regime": "Sideway",
+      "module": "counterfactual",
+      "cost": 0.7808
+    },
+    {
+      "code": "F06",
+      "stock": "01951",
+      "date": "2024-08-16",
+      "regime": "Sideway",
+      "module": "counterfactual",
+      "cost": 0.8056
+    },
+    {
+      "code": "F06",
+      "stock": "01951",
+      "date": "2024-08-23",
+      "regime": "Sideway",
+      "module": "counterfactual",
+      "cost": 0.7105
+    }
+  ]
+}

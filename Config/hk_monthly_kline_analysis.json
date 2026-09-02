@@ -1,0 +1,1608 @@
+{
+  "metadata": {
+    "table_name": "hk_monthly_kline_analysis",
+    "description": "港股月K线技术分析数据表",
+    "created_date": "2026-07-14 13:18:00",
+    "version": "2.1",
+    "database": "HK_Stock.db",
+    "data_source": "CSV files from Data directory",
+    "total_files": 14,
+    "total_stocks": 14,
+    "previous_version": "2.0",
+    "last_updated": "2026-07-14 13:18:00"
+  },
+  "table_schema": {
+    "primary_key": "id",
+    "columns": [
+      {
+        "name": "id",
+        "type": "INTEGER",
+        "logical_type": "INTEGER",
+        "description": "自增主键",
+        "is_boolean": false,
+        "is_key": true,
+        "storage_hint": null
+      },
+      {
+        "name": "stock_code",
+        "type": "TEXT",
+        "logical_type": "TEXT",
+        "description": "股票代码（5位数字）",
+        "is_boolean": false,
+        "is_key": false,
+        "storage_hint": null
+      },
+      {
+        "name": "stock_name",
+        "type": "TEXT",
+        "logical_type": "TEXT",
+        "description": "股票名称",
+        "is_boolean": false,
+        "is_key": false,
+        "storage_hint": null
+      },
+      {
+        "name": "date",
+        "type": "TEXT",
+        "logical_type": "TEXT",
+        "description": "交易日期（YYYY-MM-DD格式）",
+        "is_boolean": false,
+        "is_key": false,
+        "storage_hint": null
+      },
+      {
+        "name": "Open",
+        "type": "REAL",
+        "logical_type": "REAL",
+        "description": "月开盘价",
+        "is_boolean": false,
+        "is_key": false,
+        "storage_hint": null
+      },
+      {
+        "name": "High",
+        "type": "REAL",
+        "logical_type": "REAL",
+        "description": "月最高价",
+        "is_boolean": false,
+        "is_key": false,
+        "storage_hint": null
+      },
+      {
+        "name": "Low",
+        "type": "REAL",
+        "logical_type": "REAL",
+        "description": "月最低价",
+        "is_boolean": false,
+        "is_key": false,
+        "storage_hint": null
+      },
+      {
+        "name": "Close",
+        "type": "REAL",
+        "logical_type": "REAL",
+        "description": "月收盘价",
+        "is_boolean": false,
+        "is_key": false,
+        "storage_hint": null
+      },
+      {
+        "name": "Volume",
+        "type": "REAL",
+        "logical_type": "REAL",
+        "description": "月成交量",
+        "is_boolean": false,
+        "is_key": false,
+        "storage_hint": null
+      },
+      {
+        "name": "Amount",
+        "type": "REAL",
+        "logical_type": "REAL",
+        "description": "月成交金额",
+        "is_boolean": false,
+        "is_key": false,
+        "storage_hint": null
+      },
+      {
+        "name": "Turnover_Rate",
+        "type": "REAL",
+        "logical_type": "REAL",
+        "description": "月换手率",
+        "is_boolean": false,
+        "is_key": false,
+        "storage_hint": null
+      },
+      {
+        "name": "Amplitude",
+        "type": "REAL",
+        "logical_type": "REAL",
+        "description": "月振幅",
+        "is_boolean": false,
+        "is_key": false,
+        "storage_hint": null
+      },
+      {
+        "name": "Change_Amount",
+        "type": "REAL",
+        "logical_type": "REAL",
+        "description": "月成交金额",
+        "is_boolean": false,
+        "is_key": false,
+        "storage_hint": null
+      },
+      {
+        "name": "Change_Percent",
+        "type": "REAL",
+        "logical_type": "REAL",
+        "description": "月涨跌幅",
+        "is_boolean": false,
+        "is_key": false,
+        "storage_hint": null
+      },
+      {
+        "name": "EMA5",
+        "type": "REAL",
+        "logical_type": "REAL",
+        "description": "5月移动平均线",
+        "is_boolean": false,
+        "is_key": false,
+        "storage_hint": null
+      },
+      {
+        "name": "EMA10",
+        "type": "REAL",
+        "logical_type": "REAL",
+        "description": "10月移动平均线",
+        "is_boolean": false,
+        "is_key": false,
+        "storage_hint": null
+      },
+      {
+        "name": "EMA20",
+        "type": "REAL",
+        "logical_type": "REAL",
+        "description": "20月移动平均线",
+        "is_boolean": false,
+        "is_key": false,
+        "storage_hint": null
+      },
+      {
+        "name": "EMA50",
+        "type": "REAL",
+        "logical_type": "REAL",
+        "description": "5月移动平均线",
+        "is_boolean": false,
+        "is_key": false,
+        "storage_hint": null
+      },
+      {
+        "name": "EMA100",
+        "type": "REAL",
+        "logical_type": "REAL",
+        "description": "10月移动平均线",
+        "is_boolean": false,
+        "is_key": false,
+        "storage_hint": null
+      },
+      {
+        "name": "EMA200",
+        "type": "REAL",
+        "logical_type": "REAL",
+        "description": "20月移动平均线",
+        "is_boolean": false,
+        "is_key": false,
+        "storage_hint": null
+      },
+      {
+        "name": "MACD_DIF",
+        "type": "REAL",
+        "logical_type": "REAL",
+        "description": "MACD指标 - 月线",
+        "is_boolean": false,
+        "is_key": false,
+        "storage_hint": null
+      },
+      {
+        "name": "MACD_Signal",
+        "type": "REAL",
+        "logical_type": "REAL",
+        "description": "MACD指标 - 月线",
+        "is_boolean": false,
+        "is_key": false,
+        "storage_hint": null
+      },
+      {
+        "name": "MACD_Histogram",
+        "type": "REAL",
+        "logical_type": "REAL",
+        "description": "MACD指标 - 月线",
+        "is_boolean": false,
+        "is_key": false,
+        "storage_hint": null
+      },
+      {
+        "name": "EMA5_10_Status",
+        "type": "REAL",
+        "logical_type": "REAL",
+        "description": "5月移动平均线",
+        "is_boolean": false,
+        "is_key": false,
+        "storage_hint": null
+      },
+      {
+        "name": "EMA5_10_Streak",
+        "type": "REAL",
+        "logical_type": "REAL",
+        "description": "5月移动平均线",
+        "is_boolean": false,
+        "is_key": false,
+        "storage_hint": null
+      },
+      {
+        "name": "EMA5_20_Status",
+        "type": "REAL",
+        "logical_type": "REAL",
+        "description": "5月移动平均线",
+        "is_boolean": false,
+        "is_key": false,
+        "storage_hint": null
+      },
+      {
+        "name": "EMA5_20_Streak",
+        "type": "REAL",
+        "logical_type": "REAL",
+        "description": "5月移动平均线",
+        "is_boolean": false,
+        "is_key": false,
+        "storage_hint": null
+      },
+      {
+        "name": "EMA10_50_Status",
+        "type": "REAL",
+        "logical_type": "REAL",
+        "description": "10月移动平均线",
+        "is_boolean": false,
+        "is_key": false,
+        "storage_hint": null
+      },
+      {
+        "name": "EMA10_50_Streak",
+        "type": "REAL",
+        "logical_type": "REAL",
+        "description": "10月移动平均线",
+        "is_boolean": false,
+        "is_key": false,
+        "storage_hint": null
+      },
+      {
+        "name": "EMA20_50_Status",
+        "type": "REAL",
+        "logical_type": "REAL",
+        "description": "20月移动平均线",
+        "is_boolean": false,
+        "is_key": false,
+        "storage_hint": null
+      },
+      {
+        "name": "EMA20_50_Streak",
+        "type": "REAL",
+        "logical_type": "REAL",
+        "description": "20月移动平均线",
+        "is_boolean": false,
+        "is_key": false,
+        "storage_hint": null
+      },
+      {
+        "name": "Golden_Triangle",
+        "type": "INTEGER",
+        "logical_type": "BOOLEAN",
+        "description": "黄金三角形信号",
+        "is_boolean": true,
+        "is_key": false,
+        "storage_hint": "存储为0/1"
+      },
+      {
+        "name": "Death_Triangle",
+        "type": "INTEGER",
+        "logical_type": "BOOLEAN",
+        "description": "死亡三角形信号",
+        "is_boolean": true,
+        "is_key": false,
+        "storage_hint": "存储为0/1"
+      },
+      {
+        "name": "MACD_Cross",
+        "type": "REAL",
+        "logical_type": "REAL",
+        "description": "MACD指标 - 月线",
+        "is_boolean": false,
+        "is_key": false,
+        "storage_hint": null
+      },
+      {
+        "name": "MACD_Status",
+        "type": "REAL",
+        "logical_type": "REAL",
+        "description": "MACD指标 - 月线",
+        "is_boolean": false,
+        "is_key": false,
+        "storage_hint": null
+      },
+      {
+        "name": "MACD_Golden_Streak",
+        "type": "REAL",
+        "logical_type": "REAL",
+        "description": "MACD指标 - 月线",
+        "is_boolean": false,
+        "is_key": false,
+        "storage_hint": null
+      },
+      {
+        "name": "MACD_Death_Streak",
+        "type": "REAL",
+        "logical_type": "REAL",
+        "description": "MACD指标 - 月线",
+        "is_boolean": false,
+        "is_key": false,
+        "storage_hint": null
+      },
+      {
+        "name": "VOL_EMA5",
+        "type": "REAL",
+        "logical_type": "REAL",
+        "description": "5月移动平均线",
+        "is_boolean": false,
+        "is_key": false,
+        "storage_hint": null
+      },
+      {
+        "name": "Volume_Ratio5",
+        "type": "REAL",
+        "logical_type": "REAL",
+        "description": "月成交量",
+        "is_boolean": false,
+        "is_key": false,
+        "storage_hint": null
+      },
+      {
+        "name": "Gain",
+        "type": "REAL",
+        "logical_type": "REAL",
+        "description": "技术指标: Gain",
+        "is_boolean": false,
+        "is_key": false,
+        "storage_hint": null
+      },
+      {
+        "name": "Loss",
+        "type": "REAL",
+        "logical_type": "REAL",
+        "description": "技术指标: Loss",
+        "is_boolean": false,
+        "is_key": false,
+        "storage_hint": null
+      },
+      {
+        "name": "AvgGain",
+        "type": "REAL",
+        "logical_type": "REAL",
+        "description": "技术指标: AvgGain",
+        "is_boolean": false,
+        "is_key": false,
+        "storage_hint": null
+      },
+      {
+        "name": "AvgLoss",
+        "type": "REAL",
+        "logical_type": "REAL",
+        "description": "技术指标: AvgLoss",
+        "is_boolean": false,
+        "is_key": false,
+        "storage_hint": null
+      },
+      {
+        "name": "RS",
+        "type": "REAL",
+        "logical_type": "REAL",
+        "description": "相对强弱指标 (RSI) - 月线",
+        "is_boolean": false,
+        "is_key": false,
+        "storage_hint": null
+      },
+      {
+        "name": "RSI14",
+        "type": "REAL",
+        "logical_type": "REAL",
+        "description": "相对强弱指标 (RSI) - 月线",
+        "is_boolean": false,
+        "is_key": false,
+        "storage_hint": null
+      },
+      {
+        "name": "KDJ_K",
+        "type": "REAL",
+        "logical_type": "REAL",
+        "description": "KDJ指标K值 - 月线",
+        "is_boolean": false,
+        "is_key": false,
+        "storage_hint": null
+      },
+      {
+        "name": "KDJ_D",
+        "type": "REAL",
+        "logical_type": "REAL",
+        "description": "KDJ指标D值 - 月线",
+        "is_boolean": false,
+        "is_key": false,
+        "storage_hint": null
+      },
+      {
+        "name": "KDJ_J",
+        "type": "REAL",
+        "logical_type": "REAL",
+        "description": "KDJ指标J值 - 月线",
+        "is_boolean": false,
+        "is_key": false,
+        "storage_hint": null
+      }
+    ],
+    "indexes": [
+      {
+        "name": "idx_monthly_kline_analysis",
+        "fields": [
+          "stock_code",
+          "date"
+        ],
+        "type": "复合索引",
+        "description": "用于快速查询特定股票的月K线技术分析数据"
+      }
+    ],
+    "constraints": [
+      "PRIMARY KEY (id)",
+      "UNIQUE (stock_code, date)"
+    ]
+  },
+  "stock_list": {
+    "00020": {
+      "code": "00020",
+      "name": "商汤科技",
+      "sector": "信息技术",
+      "market": "HKEX"
+    },
+    "00268": {
+      "code": "00268",
+      "name": "金蝶国际",
+      "sector": "信息技术",
+      "market": "HKEX"
+    },
+    "00354": {
+      "code": "00354",
+      "name": "中软国际",
+      "sector": "信息技术",
+      "market": "HKEX"
+    },
+    "00357": {
+      "code": "00357",
+      "name": "美兰空港",
+      "sector": "交通运输",
+      "market": "HKEX"
+    },
+    "00371": {
+      "code": "00371",
+      "name": "北控水务",
+      "sector": "公用事业",
+      "market": "HKEX"
+    },
+    "00788": {
+      "code": "00788",
+      "name": "中国铁塔",
+      "sector": "电信服务",
+      "market": "HKEX"
+    },
+    "01093": {
+      "code": "01093",
+      "name": "石药集团",
+      "sector": "医疗保健",
+      "market": "HKEX"
+    },
+    "01177": {
+      "code": "01177",
+      "name": "中生制药",
+      "sector": "医疗保健",
+      "market": "HKEX"
+    },
+    "01951": {
+      "code": "01951",
+      "name": "锦鑫生殖",
+      "sector": "医疗保健",
+      "market": "HKEX"
+    },
+    "02202": {
+      "code": "02202",
+      "name": "港股万科企业",
+      "sector": "房地产",
+      "market": "HKEX"
+    },
+    "02611": {
+      "code": "02611",
+      "name": "国泰海通",
+      "sector": "金融",
+      "market": "HKEX"
+    },
+    "03033": {
+      "code": "03033",
+      "name": "南方恒生科技",
+      "sector": "ETF",
+      "market": "HKEX"
+    },
+    "03800": {
+      "code": "03800",
+      "name": "协鑫科技",
+      "sector": "新能源",
+      "market": "HKEX"
+    },
+    "06060": {
+      "code": "06060",
+      "name": "众安在线",
+      "sector": "金融",
+      "market": "HKEX"
+    }
+  },
+  "data_statistics": {
+    "total_records": 2040,
+    "stocks_loaded": [
+      {
+        "code": "00020",
+        "name": "商汤科技",
+        "record_count": 54,
+        "details": {
+          "code": "00020",
+          "name": "商汤科技",
+          "sector": "信息技术",
+          "market": "HKEX"
+        }
+      },
+      {
+        "code": "00268",
+        "name": "金蝶国际",
+        "record_count": 197,
+        "details": {
+          "code": "00268",
+          "name": "金蝶国际",
+          "sector": "信息技术",
+          "market": "HKEX"
+        }
+      },
+      {
+        "code": "00354",
+        "name": "中软国际",
+        "record_count": 197,
+        "details": {
+          "code": "00354",
+          "name": "中软国际",
+          "sector": "信息技术",
+          "market": "HKEX"
+        }
+      },
+      {
+        "code": "00357",
+        "name": "美兰空港",
+        "record_count": 197,
+        "details": {
+          "code": "00357",
+          "name": "美兰空港",
+          "sector": "交通运输",
+          "market": "HKEX"
+        }
+      },
+      {
+        "code": "00371",
+        "name": "北控水务",
+        "record_count": 197,
+        "details": {
+          "code": "00371",
+          "name": "北控水务",
+          "sector": "公用事业",
+          "market": "HKEX"
+        }
+      },
+      {
+        "code": "00788",
+        "name": "中国铁塔",
+        "record_count": 94,
+        "details": {
+          "code": "00788",
+          "name": "中国铁塔",
+          "sector": "电信服务",
+          "market": "HKEX"
+        }
+      },
+      {
+        "code": "01093",
+        "name": "石药集团",
+        "record_count": 197,
+        "details": {
+          "code": "01093",
+          "name": "石药集团",
+          "sector": "医疗保健",
+          "market": "HKEX"
+        }
+      },
+      {
+        "code": "01177",
+        "name": "中生制药",
+        "record_count": 197,
+        "details": {
+          "code": "01177",
+          "name": "中生制药",
+          "sector": "医疗保健",
+          "market": "HKEX"
+        }
+      },
+      {
+        "code": "01951",
+        "name": "锦鑫生殖",
+        "record_count": 84,
+        "details": {
+          "code": "01951",
+          "name": "锦鑫生殖",
+          "sector": "医疗保健",
+          "market": "HKEX"
+        }
+      },
+      {
+        "code": "02202",
+        "name": "港股万科企业",
+        "record_count": 144,
+        "details": {
+          "code": "02202",
+          "name": "港股万科企业",
+          "sector": "房地产",
+          "market": "HKEX"
+        }
+      },
+      {
+        "code": "02611",
+        "name": "国泰海通",
+        "record_count": 110,
+        "details": {
+          "code": "02611",
+          "name": "国泰海通",
+          "sector": "金融",
+          "market": "HKEX"
+        }
+      },
+      {
+        "code": "03033",
+        "name": "南方恒生科技",
+        "record_count": 70,
+        "details": {
+          "code": "03033",
+          "name": "南方恒生科技",
+          "sector": "ETF",
+          "market": "HKEX"
+        }
+      },
+      {
+        "code": "03800",
+        "name": "协鑫科技",
+        "record_count": 197,
+        "details": {
+          "code": "03800",
+          "name": "协鑫科技",
+          "sector": "新能源",
+          "market": "HKEX"
+        }
+      },
+      {
+        "code": "06060",
+        "name": "众安在线",
+        "record_count": 105,
+        "details": {
+          "code": "06060",
+          "name": "众安在线",
+          "sector": "金融",
+          "market": "HKEX"
+        }
+      }
+    ],
+    "date_range": {
+      "earliest": "2010-01-31",
+      "latest": "2026-05-31"
+    },
+    "boolean_columns": {
+      "count": 2,
+      "columns": [
+        "Golden_Triangle",
+        "Death_Triangle"
+      ],
+      "storage_info": "布尔值存储为INTEGER类型 (0=False, 1=True)"
+    }
+  },
+  "field_definitions": [],
+  "usage_examples": {
+    "query_all": "SELECT * FROM hk_monthly_kline_analysis LIMIT 10;",
+    "query_by_stock": "SELECT * FROM hk_monthly_kline_analysis WHERE stock_code = '01951' ORDER BY date;",
+    "query_date_range": "SELECT * FROM hk_monthly_kline_analysis WHERE date BETWEEN '2024-01-01' AND '2024-12-31';",
+    "query_ta_indicators": "SELECT stock_code, stock_name, date, Close, RSI, MACD FROM hk_monthly_kline_analysis WHERE stock_code = '01951';",
+    "query_boolean_signal": "SELECT stock_code, stock_name, date, Golden_Triangle, Death_Triangle FROM hk_monthly_kline_analysis WHERE Golden_Triangle = 1;",
+    "query_with_index": "SELECT * FROM hk_monthly_kline_analysis WHERE stock_code = '01951' AND date = '2024-01-01';"
+  },
+  "data_dictionary": {
+    "column_definitions": [
+      {
+        "name": "id",
+        "type": "INTEGER",
+        "logical_type": "INTEGER",
+        "sqlite_type": "INTEGER",
+        "description": "自增主键",
+        "is_boolean": false,
+        "is_key": true,
+        "is_required": false,
+        "null_count": 0,
+        "sample_value": "1",
+        "default_value": null,
+        "constraints": [],
+        "storage_hint": null,
+        "notes": null
+      },
+      {
+        "name": "stock_code",
+        "type": "TEXT",
+        "logical_type": "TEXT",
+        "sqlite_type": "TEXT",
+        "description": "股票代码（5位数字）",
+        "is_boolean": false,
+        "is_key": false,
+        "is_required": true,
+        "null_count": 0,
+        "sample_value": "00020",
+        "default_value": null,
+        "constraints": [],
+        "storage_hint": null,
+        "notes": null
+      },
+      {
+        "name": "stock_name",
+        "type": "TEXT",
+        "logical_type": "TEXT",
+        "sqlite_type": "TEXT",
+        "description": "股票名称",
+        "is_boolean": false,
+        "is_key": false,
+        "is_required": true,
+        "null_count": 0,
+        "sample_value": "商汤科技",
+        "default_value": null,
+        "constraints": [],
+        "storage_hint": null,
+        "notes": null
+      },
+      {
+        "name": "date",
+        "type": "TEXT",
+        "logical_type": "TEXT",
+        "sqlite_type": "TEXT",
+        "description": "交易日期（YYYY-MM-DD格式）",
+        "is_boolean": false,
+        "is_key": false,
+        "is_required": true,
+        "null_count": 0,
+        "sample_value": "2021-12-31",
+        "default_value": null,
+        "constraints": [],
+        "storage_hint": null,
+        "notes": null
+      },
+      {
+        "name": "Open",
+        "type": "REAL",
+        "logical_type": "REAL",
+        "sqlite_type": "REAL",
+        "description": "月开盘价",
+        "is_boolean": false,
+        "is_key": false,
+        "is_required": false,
+        "null_count": 7,
+        "sample_value": "3.91",
+        "default_value": null,
+        "constraints": [],
+        "storage_hint": null,
+        "notes": null
+      },
+      {
+        "name": "High",
+        "type": "REAL",
+        "logical_type": "REAL",
+        "sqlite_type": "REAL",
+        "description": "月最高价",
+        "is_boolean": false,
+        "is_key": false,
+        "is_required": false,
+        "null_count": 7,
+        "sample_value": "5.5",
+        "default_value": null,
+        "constraints": [],
+        "storage_hint": null,
+        "notes": null
+      },
+      {
+        "name": "Low",
+        "type": "REAL",
+        "logical_type": "REAL",
+        "sqlite_type": "REAL",
+        "description": "月最低价",
+        "is_boolean": false,
+        "is_key": false,
+        "is_required": false,
+        "null_count": 7,
+        "sample_value": "3.9",
+        "default_value": null,
+        "constraints": [],
+        "storage_hint": null,
+        "notes": null
+      },
+      {
+        "name": "Close",
+        "type": "REAL",
+        "logical_type": "REAL",
+        "sqlite_type": "REAL",
+        "description": "月收盘价",
+        "is_boolean": false,
+        "is_key": false,
+        "is_required": false,
+        "null_count": 7,
+        "sample_value": "5.5",
+        "default_value": null,
+        "constraints": [],
+        "storage_hint": null,
+        "notes": null
+      },
+      {
+        "name": "Volume",
+        "type": "REAL",
+        "logical_type": "REAL",
+        "sqlite_type": "REAL",
+        "description": "月成交量",
+        "is_boolean": false,
+        "is_key": false,
+        "is_required": false,
+        "null_count": 0,
+        "sample_value": "584046484.0",
+        "default_value": null,
+        "constraints": [],
+        "storage_hint": null,
+        "notes": null
+      },
+      {
+        "name": "Amount",
+        "type": "REAL",
+        "logical_type": "REAL",
+        "sqlite_type": "REAL",
+        "description": "月成交金额",
+        "is_boolean": false,
+        "is_key": false,
+        "is_required": false,
+        "null_count": 0,
+        "sample_value": "2642750896.0",
+        "default_value": null,
+        "constraints": [],
+        "storage_hint": null,
+        "notes": null
+      },
+      {
+        "name": "Turnover_Rate",
+        "type": "REAL",
+        "logical_type": "REAL",
+        "sqlite_type": "REAL",
+        "description": "月换手率",
+        "is_boolean": false,
+        "is_key": false,
+        "is_required": false,
+        "null_count": 0,
+        "sample_value": "1.75",
+        "default_value": null,
+        "constraints": [],
+        "storage_hint": null,
+        "notes": null
+      },
+      {
+        "name": "Amplitude",
+        "type": "REAL",
+        "logical_type": "REAL",
+        "sqlite_type": "REAL",
+        "description": "月振幅",
+        "is_boolean": false,
+        "is_key": false,
+        "is_required": false,
+        "null_count": 7,
+        "sample_value": "40.9207",
+        "default_value": null,
+        "constraints": [],
+        "storage_hint": null,
+        "notes": null
+      },
+      {
+        "name": "Change_Amount",
+        "type": "REAL",
+        "logical_type": "REAL",
+        "sqlite_type": "REAL",
+        "description": "月成交金额",
+        "is_boolean": false,
+        "is_key": false,
+        "is_required": false,
+        "null_count": 7,
+        "sample_value": "1.59",
+        "default_value": null,
+        "constraints": [],
+        "storage_hint": null,
+        "notes": null
+      },
+      {
+        "name": "Change_Percent",
+        "type": "REAL",
+        "logical_type": "REAL",
+        "sqlite_type": "REAL",
+        "description": "月涨跌幅",
+        "is_boolean": false,
+        "is_key": false,
+        "is_required": false,
+        "null_count": 7,
+        "sample_value": "40.665",
+        "default_value": null,
+        "constraints": [],
+        "storage_hint": null,
+        "notes": null
+      },
+      {
+        "name": "EMA5",
+        "type": "REAL",
+        "logical_type": "REAL",
+        "sqlite_type": "REAL",
+        "description": "5月移动平均线",
+        "is_boolean": false,
+        "is_key": false,
+        "is_required": false,
+        "null_count": 0,
+        "sample_value": "5.5",
+        "default_value": null,
+        "constraints": [],
+        "storage_hint": null,
+        "notes": null
+      },
+      {
+        "name": "EMA10",
+        "type": "REAL",
+        "logical_type": "REAL",
+        "sqlite_type": "REAL",
+        "description": "10月移动平均线",
+        "is_boolean": false,
+        "is_key": false,
+        "is_required": false,
+        "null_count": 0,
+        "sample_value": "5.5",
+        "default_value": null,
+        "constraints": [],
+        "storage_hint": null,
+        "notes": null
+      },
+      {
+        "name": "EMA20",
+        "type": "REAL",
+        "logical_type": "REAL",
+        "sqlite_type": "REAL",
+        "description": "20月移动平均线",
+        "is_boolean": false,
+        "is_key": false,
+        "is_required": false,
+        "null_count": 0,
+        "sample_value": "5.5",
+        "default_value": null,
+        "constraints": [],
+        "storage_hint": null,
+        "notes": null
+      },
+      {
+        "name": "EMA50",
+        "type": "REAL",
+        "logical_type": "REAL",
+        "sqlite_type": "REAL",
+        "description": "5月移动平均线",
+        "is_boolean": false,
+        "is_key": false,
+        "is_required": false,
+        "null_count": 0,
+        "sample_value": "5.5",
+        "default_value": null,
+        "constraints": [],
+        "storage_hint": null,
+        "notes": null
+      },
+      {
+        "name": "EMA100",
+        "type": "REAL",
+        "logical_type": "REAL",
+        "sqlite_type": "REAL",
+        "description": "10月移动平均线",
+        "is_boolean": false,
+        "is_key": false,
+        "is_required": false,
+        "null_count": 0,
+        "sample_value": "5.5",
+        "default_value": null,
+        "constraints": [],
+        "storage_hint": null,
+        "notes": null
+      },
+      {
+        "name": "EMA200",
+        "type": "REAL",
+        "logical_type": "REAL",
+        "sqlite_type": "REAL",
+        "description": "20月移动平均线",
+        "is_boolean": false,
+        "is_key": false,
+        "is_required": false,
+        "null_count": 0,
+        "sample_value": "5.5",
+        "default_value": null,
+        "constraints": [],
+        "storage_hint": null,
+        "notes": null
+      },
+      {
+        "name": "MACD_DIF",
+        "type": "REAL",
+        "logical_type": "REAL",
+        "sqlite_type": "REAL",
+        "description": "MACD指标 - 月线",
+        "is_boolean": false,
+        "is_key": false,
+        "is_required": false,
+        "null_count": 0,
+        "sample_value": "0.0",
+        "default_value": null,
+        "constraints": [],
+        "storage_hint": null,
+        "notes": null
+      },
+      {
+        "name": "MACD_Signal",
+        "type": "REAL",
+        "logical_type": "REAL",
+        "sqlite_type": "REAL",
+        "description": "MACD指标 - 月线",
+        "is_boolean": false,
+        "is_key": false,
+        "is_required": false,
+        "null_count": 0,
+        "sample_value": "0.0",
+        "default_value": null,
+        "constraints": [],
+        "storage_hint": null,
+        "notes": null
+      },
+      {
+        "name": "MACD_Histogram",
+        "type": "REAL",
+        "logical_type": "REAL",
+        "sqlite_type": "REAL",
+        "description": "MACD指标 - 月线",
+        "is_boolean": false,
+        "is_key": false,
+        "is_required": false,
+        "null_count": 0,
+        "sample_value": "0.0",
+        "default_value": null,
+        "constraints": [],
+        "storage_hint": null,
+        "notes": null
+      },
+      {
+        "name": "EMA5_10_Status",
+        "type": "REAL",
+        "logical_type": "REAL",
+        "sqlite_type": "REAL",
+        "description": "5月移动平均线",
+        "is_boolean": false,
+        "is_key": false,
+        "is_required": false,
+        "null_count": 14,
+        "sample_value": "金叉",
+        "default_value": null,
+        "constraints": [],
+        "storage_hint": null,
+        "notes": null
+      },
+      {
+        "name": "EMA5_10_Streak",
+        "type": "REAL",
+        "logical_type": "REAL",
+        "sqlite_type": "REAL",
+        "description": "5月移动平均线",
+        "is_boolean": false,
+        "is_key": false,
+        "is_required": false,
+        "null_count": 0,
+        "sample_value": "1.0",
+        "default_value": null,
+        "constraints": [],
+        "storage_hint": null,
+        "notes": null
+      },
+      {
+        "name": "EMA5_20_Status",
+        "type": "REAL",
+        "logical_type": "REAL",
+        "sqlite_type": "REAL",
+        "description": "5月移动平均线",
+        "is_boolean": false,
+        "is_key": false,
+        "is_required": false,
+        "null_count": 14,
+        "sample_value": "金叉",
+        "default_value": null,
+        "constraints": [],
+        "storage_hint": null,
+        "notes": null
+      },
+      {
+        "name": "EMA5_20_Streak",
+        "type": "REAL",
+        "logical_type": "REAL",
+        "sqlite_type": "REAL",
+        "description": "5月移动平均线",
+        "is_boolean": false,
+        "is_key": false,
+        "is_required": false,
+        "null_count": 0,
+        "sample_value": "1.0",
+        "default_value": null,
+        "constraints": [],
+        "storage_hint": null,
+        "notes": null
+      },
+      {
+        "name": "EMA10_50_Status",
+        "type": "REAL",
+        "logical_type": "REAL",
+        "sqlite_type": "REAL",
+        "description": "10月移动平均线",
+        "is_boolean": false,
+        "is_key": false,
+        "is_required": false,
+        "null_count": 14,
+        "sample_value": "金叉",
+        "default_value": null,
+        "constraints": [],
+        "storage_hint": null,
+        "notes": null
+      },
+      {
+        "name": "EMA10_50_Streak",
+        "type": "REAL",
+        "logical_type": "REAL",
+        "sqlite_type": "REAL",
+        "description": "10月移动平均线",
+        "is_boolean": false,
+        "is_key": false,
+        "is_required": false,
+        "null_count": 0,
+        "sample_value": "1.0",
+        "default_value": null,
+        "constraints": [],
+        "storage_hint": null,
+        "notes": null
+      },
+      {
+        "name": "EMA20_50_Status",
+        "type": "REAL",
+        "logical_type": "REAL",
+        "sqlite_type": "REAL",
+        "description": "20月移动平均线",
+        "is_boolean": false,
+        "is_key": false,
+        "is_required": false,
+        "null_count": 14,
+        "sample_value": "金叉",
+        "default_value": null,
+        "constraints": [],
+        "storage_hint": null,
+        "notes": null
+      },
+      {
+        "name": "EMA20_50_Streak",
+        "type": "REAL",
+        "logical_type": "REAL",
+        "sqlite_type": "REAL",
+        "description": "20月移动平均线",
+        "is_boolean": false,
+        "is_key": false,
+        "is_required": false,
+        "null_count": 0,
+        "sample_value": "1.0",
+        "default_value": null,
+        "constraints": [],
+        "storage_hint": null,
+        "notes": null
+      },
+      {
+        "name": "Golden_Triangle",
+        "type": "INTEGER",
+        "logical_type": "BOOLEAN",
+        "sqlite_type": "INTEGER",
+        "description": "黄金三角形信号",
+        "is_boolean": true,
+        "is_key": false,
+        "is_required": false,
+        "null_count": 0,
+        "sample_value": "0",
+        "default_value": null,
+        "constraints": [],
+        "storage_hint": "存储为0/1（False/True）",
+        "notes": "布尔列使用INTEGER类型存储",
+        "boolean_stats": {
+          "true_count": 879,
+          "false_count": 1161,
+          "null_count": 0,
+          "true_percentage": "43.09%",
+          "false_percentage": "56.91%",
+          "null_percentage": "0.00%",
+          "true_ratio": "879/2040"
+        }
+      },
+      {
+        "name": "Death_Triangle",
+        "type": "INTEGER",
+        "logical_type": "BOOLEAN",
+        "sqlite_type": "INTEGER",
+        "description": "死亡三角形信号",
+        "is_boolean": true,
+        "is_key": false,
+        "is_required": false,
+        "null_count": 0,
+        "sample_value": "0",
+        "default_value": null,
+        "constraints": [],
+        "storage_hint": "存储为0/1（False/True）",
+        "notes": "布尔列使用INTEGER类型存储",
+        "boolean_stats": {
+          "true_count": 828,
+          "false_count": 1212,
+          "null_count": 0,
+          "true_percentage": "40.59%",
+          "false_percentage": "59.41%",
+          "null_percentage": "0.00%",
+          "true_ratio": "828/2040"
+        }
+      },
+      {
+        "name": "MACD_Cross",
+        "type": "REAL",
+        "logical_type": "REAL",
+        "sqlite_type": "REAL",
+        "description": "MACD指标 - 月线",
+        "is_boolean": false,
+        "is_key": false,
+        "is_required": false,
+        "null_count": 1873,
+        "sample_value": "金叉",
+        "default_value": null,
+        "constraints": [],
+        "storage_hint": null,
+        "notes": null
+      },
+      {
+        "name": "MACD_Status",
+        "type": "REAL",
+        "logical_type": "REAL",
+        "sqlite_type": "REAL",
+        "description": "MACD指标 - 月线",
+        "is_boolean": false,
+        "is_key": false,
+        "is_required": false,
+        "null_count": 14,
+        "sample_value": "金叉",
+        "default_value": null,
+        "constraints": [],
+        "storage_hint": null,
+        "notes": null
+      },
+      {
+        "name": "MACD_Golden_Streak",
+        "type": "REAL",
+        "logical_type": "REAL",
+        "sqlite_type": "REAL",
+        "description": "MACD指标 - 月线",
+        "is_boolean": false,
+        "is_key": false,
+        "is_required": false,
+        "null_count": 0,
+        "sample_value": "0.0",
+        "default_value": null,
+        "constraints": [],
+        "storage_hint": null,
+        "notes": null
+      },
+      {
+        "name": "MACD_Death_Streak",
+        "type": "REAL",
+        "logical_type": "REAL",
+        "sqlite_type": "REAL",
+        "description": "MACD指标 - 月线",
+        "is_boolean": false,
+        "is_key": false,
+        "is_required": false,
+        "null_count": 0,
+        "sample_value": "0.0",
+        "default_value": null,
+        "constraints": [],
+        "storage_hint": null,
+        "notes": null
+      },
+      {
+        "name": "VOL_EMA5",
+        "type": "REAL",
+        "logical_type": "REAL",
+        "sqlite_type": "REAL",
+        "description": "5月移动平均线",
+        "is_boolean": false,
+        "is_key": false,
+        "is_required": false,
+        "null_count": 0,
+        "sample_value": "584046484.0",
+        "default_value": null,
+        "constraints": [],
+        "storage_hint": null,
+        "notes": null
+      },
+      {
+        "name": "Volume_Ratio5",
+        "type": "REAL",
+        "logical_type": "REAL",
+        "sqlite_type": "REAL",
+        "description": "月成交量",
+        "is_boolean": false,
+        "is_key": false,
+        "is_required": false,
+        "null_count": 0,
+        "sample_value": "1.0",
+        "default_value": null,
+        "constraints": [],
+        "storage_hint": null,
+        "notes": null
+      },
+      {
+        "name": "Gain",
+        "type": "REAL",
+        "logical_type": "REAL",
+        "sqlite_type": "REAL",
+        "description": "技术指标: Gain",
+        "is_boolean": false,
+        "is_key": false,
+        "is_required": false,
+        "null_count": 22,
+        "sample_value": "1.23",
+        "default_value": null,
+        "constraints": [],
+        "storage_hint": null,
+        "notes": null
+      },
+      {
+        "name": "Loss",
+        "type": "REAL",
+        "logical_type": "REAL",
+        "sqlite_type": "REAL",
+        "description": "技术指标: Loss",
+        "is_boolean": false,
+        "is_key": false,
+        "is_required": false,
+        "null_count": 22,
+        "sample_value": "0.0",
+        "default_value": null,
+        "constraints": [],
+        "storage_hint": null,
+        "notes": null
+      },
+      {
+        "name": "AvgGain",
+        "type": "REAL",
+        "logical_type": "REAL",
+        "sqlite_type": "REAL",
+        "description": "技术指标: AvgGain",
+        "is_boolean": false,
+        "is_key": false,
+        "is_required": false,
+        "null_count": 244,
+        "sample_value": "0.2323",
+        "default_value": null,
+        "constraints": [],
+        "storage_hint": null,
+        "notes": null
+      },
+      {
+        "name": "AvgLoss",
+        "type": "REAL",
+        "logical_type": "REAL",
+        "sqlite_type": "REAL",
+        "description": "技术指标: AvgLoss",
+        "is_boolean": false,
+        "is_key": false,
+        "is_required": false,
+        "null_count": 244,
+        "sample_value": "0.4369",
+        "default_value": null,
+        "constraints": [],
+        "storage_hint": null,
+        "notes": null
+      },
+      {
+        "name": "RS",
+        "type": "REAL",
+        "logical_type": "REAL",
+        "sqlite_type": "REAL",
+        "description": "相对强弱指标 (RSI) - 月线",
+        "is_boolean": false,
+        "is_key": false,
+        "is_required": false,
+        "null_count": 244,
+        "sample_value": "0.5317",
+        "default_value": null,
+        "constraints": [],
+        "storage_hint": null,
+        "notes": null
+      },
+      {
+        "name": "RSI14",
+        "type": "REAL",
+        "logical_type": "REAL",
+        "sqlite_type": "REAL",
+        "description": "相对强弱指标 (RSI) - 月线",
+        "is_boolean": false,
+        "is_key": false,
+        "is_required": false,
+        "null_count": 244,
+        "sample_value": "34.7126",
+        "default_value": null,
+        "constraints": [],
+        "storage_hint": null,
+        "notes": null
+      },
+      {
+        "name": "KDJ_K",
+        "type": "REAL",
+        "logical_type": "REAL",
+        "sqlite_type": "REAL",
+        "description": "KDJ指标K值 - 月线",
+        "is_boolean": false,
+        "is_key": false,
+        "is_required": false,
+        "null_count": 127,
+        "sample_value": "35.2045",
+        "default_value": null,
+        "constraints": [],
+        "storage_hint": null,
+        "notes": null
+      },
+      {
+        "name": "KDJ_D",
+        "type": "REAL",
+        "logical_type": "REAL",
+        "sqlite_type": "REAL",
+        "description": "KDJ指标D值 - 月线",
+        "is_boolean": false,
+        "is_key": false,
+        "is_required": false,
+        "null_count": 127,
+        "sample_value": "45.0682",
+        "default_value": null,
+        "constraints": [],
+        "storage_hint": null,
+        "notes": null
+      },
+      {
+        "name": "KDJ_J",
+        "type": "REAL",
+        "logical_type": "REAL",
+        "sqlite_type": "REAL",
+        "description": "KDJ指标J值 - 月线",
+        "is_boolean": false,
+        "is_key": false,
+        "is_required": false,
+        "null_count": 127,
+        "sample_value": "15.4772",
+        "default_value": null,
+        "constraints": [],
+        "storage_hint": null,
+        "notes": null
+      }
+    ],
+    "relationships": [
+      {
+        "type": "外键关联",
+        "table": "hk_hist_monthly_kline",
+        "field": "stock_code, date",
+        "description": "可通过股票代码和日期与月K线历史数据关联"
+      },
+      {
+        "type": "外键关联",
+        "table": "hk_hist_weekly_kline",
+        "field": "stock_code, date",
+        "description": "可通过股票代码和日期与周K线历史数据关联"
+      },
+      {
+        "type": "外键关联",
+        "table": "hk_hist_daily_kline",
+        "field": "stock_code, date",
+        "description": "可通过股票代码和日期与日K线历史数据关联"
+      },
+      {
+        "type": "外键关联",
+        "table": "macro_data_hist",
+        "field": "date",
+        "description": "可通过日期字段与宏观数据关联"
+      }
+    ],
+    "business_rules": [
+      {
+        "rule": "数据唯一性",
+        "description": "每个股票每月只有一条记录，通过 (stock_code, date) 唯一标识"
+      },
+      {
+        "rule": "数据精度",
+        "description": "所有数值数据保留4位小数"
+      },
+      {
+        "rule": "技术指标完整性",
+        "description": "包含月K线的基本技术指标：RSI, MACD, KDJ, 布林带, 移动平均线等"
+      },
+      {
+        "rule": "索引优化",
+        "description": "使用复合索引 (stock_code, date) 优化查询性能"
+      },
+      {
+        "rule": "数据来源",
+        "description": "数据从月K线技术分析CSV文件导入，文件命名格式：{stock_code}_monthly_TA_indicators.csv"
+      },
+      {
+        "rule": "时间粒度",
+        "description": "月线数据反映的是整月的交易情况，适合长期趋势分析"
+      },
+      {
+        "rule": "布尔信号存储",
+        "description": "布尔信号列使用INTEGER类型存储 (0=False, 1=True)，共 2 个布尔信号列",
+        "storage_details": "SQLite没有原生BOOLEAN类型，因此使用INTEGER存储布尔值"
+      },
+      {
+        "rule": "布尔信号列列表",
+        "description": "以下列存储布尔信号值: Golden_Triangle, Death_Triangle",
+        "values": "0表示False/无信号，1表示True/有信号，NULL表示缺失",
+        "query_example": "SELECT * FROM hk_monthly_kline_analysis WHERE Golden_Triangle = 1;"
+      },
+      {
+        "rule": "布尔列 - Golden_Triangle",
+        "description": "黄金三角形信号",
+        "type": "INTEGER (逻辑布尔)",
+        "values": "0=False, 1=True, NULL=缺失",
+        "storage": "SQLite INTEGER类型"
+      },
+      {
+        "rule": "布尔列 - Death_Triangle",
+        "description": "死亡三角形信号",
+        "type": "INTEGER (逻辑布尔)",
+        "values": "0=False, 1=True, NULL=缺失",
+        "storage": "SQLite INTEGER类型"
+      }
+    ],
+    "boolean_column_mapping": {
+      "Golden_Triangle": "黄金三角形信号",
+      "Death_Triangle": "死亡三角形信号"
+    },
+    "type_mapping_notes": {
+      "boolean": "布尔列在SQLite中存储为INTEGER类型 (0=False, 1=True)",
+      "numeric": "数值列存储为REAL类型，保留4位小数",
+      "text": "文本列存储为TEXT类型"
+    }
+  }
+}

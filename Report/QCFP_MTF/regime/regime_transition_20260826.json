@@ -1,0 +1,90 @@
+{
+  "generated_at": "20260826",
+  "n_transitions": 12,
+  "transitions": [
+    {
+      "from": "Crisis",
+      "to": "Bull",
+      "date": "2025-09-19 00:00:00",
+      "confidence": 0.33,
+      "risk_adjustment": 1.0
+    },
+    {
+      "from": "Bull",
+      "to": "Crisis",
+      "date": "2025-09-26 00:00:00",
+      "confidence": 0.33,
+      "risk_adjustment": 1.0
+    },
+    {
+      "from": "Crisis",
+      "to": "Bull",
+      "date": "2025-10-03 00:00:00",
+      "confidence": 0.33,
+      "risk_adjustment": 1.0
+    },
+    {
+      "from": "Bull",
+      "to": "Crisis",
+      "date": "2025-10-10 00:00:00",
+      "confidence": 1.0,
+      "risk_adjustment": 1.0
+    },
+    {
+      "from": "Crisis",
+      "to": "Bull",
+      "date": "2025-11-14 00:00:00",
+      "confidence": 0.33,
+      "risk_adjustment": 1.0
+    },
+    {
+      "from": "Bull",
+      "to": "Crisis",
+      "date": "2025-11-21 00:00:00",
+      "confidence": 1.0,
+      "risk_adjustment": 1.0
+    },
+    {
+      "from": "Crisis",
+      "to": "Sideway",
+      "date": "2026-01-16 00:00:00",
+      "confidence": 0.67,
+      "risk_adjustment": 1.0
+    },
+    {
+      "from": "Sideway",
+      "to": "Bull",
+      "date": "2026-01-30 00:00:00",
+      "confidence": 0.33,
+      "risk_adjustment": 1.0
+    },
+    {
+      "from": "Bull",
+      "to": "Sideway",
+      "date": "2026-02-06 00:00:00",
+      "confidence": 0.67,
+      "risk_adjustment": 0.7
+    },
+    {
+      "from": "Sideway",
+      "to": "Crisis",
+      "date": "2026-02-20 00:00:00",
+      "confidence": 0.33,
+      "risk_adjustment": 1.0
+    },
+    {
+      "from": "Crisis",
+      "to": "Sideway",
+      "date": "2026-02-27 00:00:00",
+      "confidence": 0.33,
+      "risk_adjustment": 1.0
+    },
+    {
+      "from": "Sideway",
+      "to": "Crisis",
+      "date": "2026-03-06 00:00:00",
+      "confidence": 1.0,
+      "risk_adjustment": 1.0
+    }
+  ]
+}

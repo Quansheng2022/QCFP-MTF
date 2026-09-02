@@ -1,0 +1,116 @@
+{
+  "generated_at": "20260822",
+  "model_version": "QCFP-MTF-2.1.1",
+  "records": [
+    {
+      "stock_code": "01951",
+      "data_type": "daily_kline",
+      "rows": 1763,
+      "first_date": "2019-06-25",
+      "last_date": "2026-08-21",
+      "core_missing_rate": 0.0,
+      "anomalies": 0,
+      "grade": "A",
+      "reasons": ""
+    },
+    {
+      "stock_code": "01951",
+      "data_type": "daily_moneyflow",
+      "rows": 1357,
+      "first_date": "2021-02-03",
+      "last_date": "2026-08-21",
+      "core_missing_rate": 0.0,
+      "anomalies": 0,
+      "grade": "B",
+      "reasons": "轻微缺失（核心 0.0% / 辅助 89.1%）"
+    },
+    {
+      "stock_code": "01951",
+      "data_type": "weekly_kline",
+      "rows": 374,
+      "first_date": "2019-06-28",
+      "last_date": "2026-08-21",
+      "core_missing_rate": 0.0,
+      "anomalies": 0,
+      "grade": "A",
+      "reasons": ""
+    },
+    {
+      "stock_code": "01951",
+      "data_type": "weekly_moneyflow",
+      "rows": 289,
+      "first_date": "2021-02-05",
+      "last_date": "2026-08-21",
+      "core_missing_rate": 0.0,
+      "anomalies": 0,
+      "grade": "A",
+      "reasons": ""
+    },
+    {
+      "stock_code": "01951",
+      "data_type": "monthly_kline",
+      "rows": 86,
+      "first_date": "2019-06-30",
+      "last_date": "2026-07-31",
+      "core_missing_rate": 0.0,
+      "anomalies": 1,
+      "grade": "C",
+      "reasons": "异常值 1 条（换手率越界 1）；核心缺失率 0.0% 或异常"
+    },
+    {
+      "stock_code": "01951",
+      "data_type": "monthly_moneyflow",
+      "rows": 69,
+      "first_date": "2021-02-01",
+      "last_date": "2026-08-21",
+      "core_missing_rate": 0.0,
+      "anomalies": 0,
+      "grade": "A",
+      "reasons": ""
+    },
+    {
+      "stock_code": "01951",
+      "data_type": "quarterly_kline",
+      "rows": 29,
+      "first_date": "2019-06-30",
+      "last_date": "2026-06-30",
+      "core_missing_rate": 0.0,
+      "anomalies": 3,
+      "grade": "C",
+      "reasons": "异常值 3 条（换手率越界 3）；核心缺失率 0.0% 或异常"
+    },
+    {
+      "stock_code": "01951",
+      "data_type": "quarterly_moneyflow",
+      "rows": 23,
+      "first_date": "2021-03-31",
+      "last_date": "2026-08-21",
+      "core_missing_rate": 0.0,
+      "anomalies": 0,
+      "grade": "A",
+      "reasons": ""
+    },
+    {
+      "stock_code": "IDX",
+      "data_type": "idx_hist",
+      "rows": 2860,
+      "first_date": "2015-01-02",
+      "last_date": "2026-08-19",
+      "core_missing_rate": 0.0,
+      "anomalies": 0,
+      "grade": "B",
+      "reasons": "轻微缺失（核心 0.0% / 辅助 13.7%）"
+    },
+    {
+      "stock_code": "01951",
+      "data_type": "institutional_holdings",
+      "rows": 32,
+      "first_date": "2015/Q4",
+      "last_date": "2026/Q2",
+      "core_missing_rate": 0.0,
+      "anomalies": 0,
+      "grade": "A",
+      "reasons": ""
+    }
+  ]
+}

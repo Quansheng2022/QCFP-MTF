@@ -1,0 +1,22 @@
+{
+  "checks": {
+    "exact_replay": {
+      "verdict": "EXACT_MATCH",
+      "pass": true
+    },
+    "tamper_detected": {
+      "verdict": "REPLAY_MISMATCH",
+      "pass": true
+    },
+    "deterministic": {
+      "verdict": "DETERMINISTIC",
+      "pass": true
+    },
+    "mismatch_fail_closed": {
+      "verdict": "DETERMINISM_FAILURE",
+      "pass": true
+    }
+  },
+  "pass": true,
+  "verdict": "REPLAY_PASS"
+}

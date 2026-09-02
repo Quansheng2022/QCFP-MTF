@@ -1,0 +1,57 @@
+#####################################################
+#													#
+# 			Stock data/Money flow analysis			#
+# 			Author: Quansheng						#
+# 			Date:   2025-08-11						#
+# 			Version 1.0								#
+#													#
+#####################################################
+[FOLDERS]
+# Stock data analysis parameters
+# subfolders
+converted_scripts_dir = converted_scripts
+report_dir = report
+data_dir = data
+log_dir = log
+temp_dir = temp
+
+[ANALYSIS_PERIOD]
+# Analysis period
+#start_date = 2024-07-01
+start_date = 2025-01-01
+end_date = 
+
+# Weekly analysis period
+#start_date_week = 2024-01-01
+start_date_week = 
+end_date_week = 
+
+[TICKERS]
+# Holding
+tickers = 00788,00371,02202,00354,00357,03800,00020,00268,01093,06060,01951,01177,03033,02611
+#tickers = 00371
+
+[PROCESS_SWITCHES]
+# download_trading_data Yes/No
+# download_trading_data = "Yes"
+download_trading_data = Yes
+
+# calculate_ta_indicators Yes/No
+# calculate_ta_indicators = "Yes"
+calculate_ta_indicators = Yes
+
+# display_last_day_ta_indicators Yes/No
+# display_last_day_ta_indicators = "Yes"
+display_last_day_ta_indicators = No
+
+# convert_money_flow Yes/No
+# convert_money_flow = "Yes"
+convert_money_flow = Yes
+
+# auto-open pdf report Yes/No
+# auto_open_pdf = "Yes"
+auto_open_pdf = Yes
+
+[MULTI_PROCESSING]
+use_multiprocessing = true  # 启用/禁用多进程
+max_workers = 10             # 自定义最大进程数（可选）

@@ -1,0 +1,354 @@
+{
+  "table_name": "hk_hist_quarterly_kline",
+  "generated_at": "2026-08-15 19:31:54",
+  "database_path": "C:\\Users\\Quansheng\\Documents\\projects\\TA_Workflow\\SQLiteDB\\HK_Stock.db",
+  "statistics": {
+    "total_records": 0,
+    "stock_count": 0,
+    "min_date": null,
+    "max_date": null
+  },
+  "field_count": 24,
+  "fields": [
+    {
+      "field_name": "id",
+      "data_type": "INTEGER",
+      "nullable": true,
+      "primary_key": true,
+      "default_value": null,
+      "description": "主键，自增ID",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 0,
+        "null_percentage": 0.0
+      },
+      "samples": []
+    },
+    {
+      "field_name": "stock_code",
+      "data_type": "TEXT",
+      "nullable": false,
+      "primary_key": false,
+      "default_value": null,
+      "description": "股票代码（如：00700）",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 0,
+        "null_percentage": 0.0,
+        "distinct_count": 0
+      },
+      "samples": []
+    },
+    {
+      "field_name": "stock_name",
+      "data_type": "TEXT",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "股票名称（如：腾讯控股）",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 0,
+        "null_percentage": 0.0,
+        "distinct_count": 0
+      },
+      "samples": []
+    },
+    {
+      "field_name": "date",
+      "data_type": "TEXT",
+      "nullable": false,
+      "primary_key": false,
+      "default_value": null,
+      "description": "交易日期（格式：YYYY-MM-DD，每季度最后一个交易日）",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 0,
+        "null_percentage": 0.0,
+        "distinct_count": 0
+      },
+      "samples": []
+    },
+    {
+      "field_name": "open",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "开盘价（元）",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 0,
+        "null_percentage": 0.0
+      },
+      "samples": []
+    },
+    {
+      "field_name": "high",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "最高价（元）",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 0,
+        "null_percentage": 0.0
+      },
+      "samples": []
+    },
+    {
+      "field_name": "low",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "最低价（元）",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 0,
+        "null_percentage": 0.0
+      },
+      "samples": []
+    },
+    {
+      "field_name": "close",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "收盘价（元）",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 0,
+        "null_percentage": 0.0
+      },
+      "samples": []
+    },
+    {
+      "field_name": "volume",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "成交量（股）",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 0,
+        "null_percentage": 0.0
+      },
+      "samples": []
+    },
+    {
+      "field_name": "amount",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "成交金额（元）",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 0,
+        "null_percentage": 0.0
+      },
+      "samples": []
+    },
+    {
+      "field_name": "turnover_rate",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "换手率（%）",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 0,
+        "null_percentage": 0.0
+      },
+      "samples": []
+    },
+    {
+      "field_name": "amplitude",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "振幅（%）",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 0,
+        "null_percentage": 0.0
+      },
+      "samples": []
+    },
+    {
+      "field_name": "change_percent",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "涨跌幅（%）",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 0,
+        "null_percentage": 0.0
+      },
+      "samples": []
+    },
+    {
+      "field_name": "change_amount",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "涨跌额（元）",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 0,
+        "null_percentage": 0.0
+      },
+      "samples": []
+    },
+    {
+      "field_name": "ema5",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "5季度指数移动平均线",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 0,
+        "null_percentage": 0.0
+      },
+      "samples": []
+    },
+    {
+      "field_name": "ema10",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "10季度指数移动平均线",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 0,
+        "null_percentage": 0.0
+      },
+      "samples": []
+    },
+    {
+      "field_name": "ema20",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "20季度指数移动平均线",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 0,
+        "null_percentage": 0.0
+      },
+      "samples": []
+    },
+    {
+      "field_name": "ema50",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "50季度指数移动平均线",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 0,
+        "null_percentage": 0.0
+      },
+      "samples": []
+    },
+    {
+      "field_name": "ema100",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "100季度指数移动平均线",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 0,
+        "null_percentage": 0.0
+      },
+      "samples": []
+    },
+    {
+      "field_name": "ema200",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "200季度指数移动平均线",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 0,
+        "null_percentage": 0.0
+      },
+      "samples": []
+    },
+    {
+      "field_name": "macd_dif",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "MACD指标-DIF线",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 0,
+        "null_percentage": 0.0
+      },
+      "samples": []
+    },
+    {
+      "field_name": "macd_signal",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "MACD指标-信号线（DEA）",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 0,
+        "null_percentage": 0.0
+      },
+      "samples": []
+    },
+    {
+      "field_name": "macd_histogram",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "MACD指标-柱状线（MACD）",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 0,
+        "null_percentage": 0.0
+      },
+      "samples": []
+    },
+    {
+      "field_name": "created_at",
+      "data_type": "TIMESTAMP",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": "CURRENT_TIMESTAMP",
+      "description": "",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 0,
+        "null_percentage": 0.0
+      },
+      "samples": []
+    }
+  ],
+  "sample_data": []
+}

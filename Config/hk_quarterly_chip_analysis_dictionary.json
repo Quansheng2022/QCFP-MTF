@@ -1,0 +1,335 @@
+{
+  "table_name": "hk_quarterly_chip_analysis",
+  "generated_at": "2026-08-16 05:33:23",
+  "database_path": "C:\\Users\\Quansheng\\Documents\\projects\\TA_Workflow\\SQLiteDB\\HK_Stock.db",
+  "statistics": {
+    "total_records": 944,
+    "stock_count": 14
+  },
+  "field_count": 35,
+  "fields": [
+    {
+      "field_name": "id",
+      "data_type": "INTEGER",
+      "description": "主键，自增ID",
+      "sample": null
+    },
+    {
+      "field_name": "stock_code",
+      "data_type": "TEXT",
+      "description": "股票代码（5位数字，如 00700）",
+      "sample": null
+    },
+    {
+      "field_name": "stock_name",
+      "data_type": "TEXT",
+      "description": "股票名称",
+      "sample": null
+    },
+    {
+      "field_name": "quarter",
+      "data_type": "TEXT",
+      "description": "季度标识（如 2026/Q2）",
+      "sample": null
+    },
+    {
+      "field_name": "quarter_end_date",
+      "data_type": "TEXT",
+      "description": "季度结束日期（自然日，如 2026-06-30）",
+      "sample": null
+    },
+    {
+      "field_name": "chip_structure_score",
+      "data_type": "REAL",
+      "description": "筹码结构评分（0-100，来自TA4C）",
+      "sample": null
+    },
+    {
+      "field_name": "chip_regime",
+      "data_type": "TEXT",
+      "description": "筹码状态（极弱/弱/中性/强/极强）",
+      "sample": null
+    },
+    {
+      "field_name": "chip_migration_status",
+      "data_type": "TEXT",
+      "description": "筹码迁移状态（ACCUMULATION/DISTRIBUTION/DISPERSION/CONCENTRATION/NEUTRAL）",
+      "sample": null
+    },
+    {
+      "field_name": "chip_migration_score",
+      "data_type": "REAL",
+      "description": "筹码迁移评分（-1~+1）",
+      "sample": null
+    },
+    {
+      "field_name": "institution_participation_score",
+      "data_type": "REAL",
+      "description": "机构参与度评分（0-100）",
+      "sample": null
+    },
+    {
+      "field_name": "institutional_concentration_score",
+      "data_type": "REAL",
+      "description": "集中度代理评分（0-100）",
+      "sample": null
+    },
+    {
+      "field_name": "holder_pct",
+      "data_type": "REAL",
+      "description": "持股比例（%）",
+      "sample": null
+    },
+    {
+      "field_name": "holder_pct_qoq_pp",
+      "data_type": "REAL",
+      "description": "持股比例环比变化（百分点）",
+      "sample": null
+    },
+    {
+      "field_name": "institution_quantity_qoq",
+      "data_type": "INTEGER",
+      "description": "机构数量环比变化",
+      "sample": null
+    },
+    {
+      "field_name": "institutional_flow",
+      "data_type": "REAL",
+      "description": "机构资金流（季度净额）",
+      "sample": null
+    },
+    {
+      "field_name": "individual_flow",
+      "data_type": "REAL",
+      "description": "散户资金流（季度净额）",
+      "sample": null
+    },
+    {
+      "field_name": "idr",
+      "data_type": "REAL",
+      "description": "机构主导比率 IDR",
+      "sample": null
+    },
+    {
+      "field_name": "fbi",
+      "data_type": "REAL",
+      "description": "资金流平衡指标 FBI",
+      "sample": null
+    },
+    {
+      "field_name": "flow_bias",
+      "data_type": "TEXT",
+      "description": "资金流偏向（机构净流入/机构净流出/均衡）",
+      "sample": null
+    },
+    {
+      "field_name": "close",
+      "data_type": "REAL",
+      "description": "季末收盘价",
+      "sample": null
+    },
+    {
+      "field_name": "change_percent",
+      "data_type": "REAL",
+      "description": "季度涨跌幅（%）",
+      "sample": null
+    },
+    {
+      "field_name": "macd_status",
+      "data_type": "TEXT",
+      "description": "MACD 状态（金叉/死叉/延续等）",
+      "sample": null
+    },
+    {
+      "field_name": "ema5_10_status",
+      "data_type": "TEXT",
+      "description": "EMA5/10 状态（金叉/死叉/延续等）",
+      "sample": null
+    },
+    {
+      "field_name": "rsi14",
+      "data_type": "REAL",
+      "description": "RSI14",
+      "sample": null
+    },
+    {
+      "field_name": "price_trend",
+      "data_type": "TEXT",
+      "description": "价格趋势（上行/下行/震荡）",
+      "sample": null
+    },
+    {
+      "field_name": "chip_direction",
+      "data_type": "INTEGER",
+      "description": "筹码方向（+1偏多/-1偏空/0中性）",
+      "sample": null
+    },
+    {
+      "field_name": "flow_direction",
+      "data_type": "INTEGER",
+      "description": "资金流方向（+1净流入/-1净流出/0均衡）",
+      "sample": null
+    },
+    {
+      "field_name": "price_direction",
+      "data_type": "INTEGER",
+      "description": "价格方向（+1上行/-1下行/0震荡）",
+      "sample": null
+    },
+    {
+      "field_name": "chip_flow_alignment",
+      "data_type": "TEXT",
+      "description": "筹码与资金流对齐（共振/背离/中性）",
+      "sample": null
+    },
+    {
+      "field_name": "chip_price_alignment",
+      "data_type": "TEXT",
+      "description": "筹码与价格对齐（共振/背离/中性）",
+      "sample": null
+    },
+    {
+      "field_name": "flow_price_alignment",
+      "data_type": "TEXT",
+      "description": "资金流与价格对齐（共振/背离/中性）",
+      "sample": null
+    },
+    {
+      "field_name": "chip_flow_price_regime",
+      "data_type": "TEXT",
+      "description": "QCFP 状态（多头共振/空头共振/吸筹蓄势等）",
+      "sample": null
+    },
+    {
+      "field_name": "integrated_score",
+      "data_type": "REAL",
+      "description": "综合评分（0-100，筹码40%+资金流30%+价格30%）",
+      "sample": null
+    },
+    {
+      "field_name": "signal_summary",
+      "data_type": "TEXT",
+      "description": "信号摘要文本",
+      "sample": null
+    },
+    {
+      "field_name": "update_time",
+      "data_type": "TEXT",
+      "description": "更新时间",
+      "sample": null
+    }
+  ],
+  "sample_data": [
+    {
+      "id": 945,
+      "stock_code": "00020",
+      "stock_name": "商汤科技",
+      "quarter": "2021/Q4",
+      "quarter_end_date": "2021-12-31",
+      "chip_structure_score": 51.32549998915995,
+      "chip_regime": "中性",
+      "chip_migration_status": "NEUTRAL",
+      "chip_migration_score": 0.0,
+      "institution_participation_score": 55.30199995663981,
+      "institutional_concentration_score": 22.917,
+      "holder_pct": 22.917,
+      "holder_pct_qoq_pp": null,
+      "institution_quantity_qoq": null,
+      "institutional_flow": -122380000.0,
+      "individual_flow": 136890000.0,
+      "idr": 0.47201758784278935,
+      "fbi": -1.0,
+      "flow_bias": "机构净流出",
+      "close": 5.5,
+      "change_percent": 0.0,
+      "macd_status": null,
+      "ema5_10_status": null,
+      "rsi14": null,
+      "price_trend": "震荡",
+      "chip_direction": 0,
+      "flow_direction": -1,
+      "price_direction": 0,
+      "chip_flow_alignment": "中性",
+      "chip_price_alignment": "中性",
+      "flow_price_alignment": "中性",
+      "chip_flow_price_regime": "资金流出",
+      "integrated_score": 35.56833048355642,
+      "signal_summary": "资金流出；筹码评分 51；FBI -1.00；季度涨跌 0.0%",
+      "update_time": "2026-08-16 05:32:13"
+    },
+    {
+      "id": 946,
+      "stock_code": "00020",
+      "stock_name": "商汤科技",
+      "quarter": "2022/Q1",
+      "quarter_end_date": "2022-03-31",
+      "chip_structure_score": 37.289990998790685,
+      "chip_regime": "弱",
+      "chip_migration_status": "DISPERSION",
+      "chip_migration_score": 0.002101905139972271,
+      "institution_participation_score": 71.09690684096358,
+      "institutional_concentration_score": 18.88,
+      "holder_pct": 18.88,
+      "holder_pct_qoq_pp": -4.037000000000003,
+      "institution_quantity_qoq": 3,
+      "institutional_flow": -202761100.0,
+      "individual_flow": 273233340.0,
+      "idr": 0.4259736731378627,
+      "fbi": -1.0,
+      "flow_bias": "机构净流出",
+      "close": 6.15,
+      "change_percent": 11.818181818181817,
+      "macd_status": "金叉",
+      "ema5_10_status": "金叉",
+      "rsi14": null,
+      "price_trend": "上行",
+      "chip_direction": -1,
+      "flow_direction": -1,
+      "price_direction": 1,
+      "chip_flow_alignment": "共振",
+      "chip_price_alignment": "背离",
+      "flow_price_alignment": "背离",
+      "chip_flow_price_regime": "派发反弹",
+      "integrated_score": 39.812212322808406,
+      "signal_summary": "派发反弹；筹码评分 37；FBI -1.00；季度涨跌 11.8%",
+      "update_time": "2026-08-16 05:32:13"
+    },
+    {
+      "id": 947,
+      "stock_code": "00020",
+      "stock_name": "商汤科技",
+      "quarter": "2022/Q2",
+      "quarter_end_date": "2022-06-30",
+      "chip_structure_score": 65.50386176407628,
+      "chip_regime": "强",
+      "chip_migration_status": "ACCUMULATION",
+      "chip_migration_score": 0.6126977889004271,
+      "institution_participation_score": 73.6345133892923,
+      "institutional_concentration_score": 19.224,
+      "holder_pct": 19.224,
+      "holder_pct_qoq_pp": 0.3440000000000012,
+      "institution_quantity_qoq": 15,
+      "institutional_flow": -680915690.0,
+      "individual_flow": 489805050.0,
+      "idr": 0.5816209337847726,
+      "fbi": -1.0,
+      "flow_bias": "机构净流出",
+      "close": 3.13,
+      "change_percent": -49.10569105691057,
+      "macd_status": "死叉",
+      "ema5_10_status": "死叉",
+      "rsi14": null,
+      "price_trend": "下行",
+      "chip_direction": 1,
+      "flow_direction": -1,
+      "price_direction": -1,
+      "chip_flow_alignment": "背离",
+      "chip_price_alignment": "背离",
+      "flow_price_alignment": "共振",
+      "chip_flow_price_regime": "派发确认",
+      "integrated_score": 26.282627674500887,
+      "signal_summary": "派发确认；筹码评分 66；FBI -1.00；季度涨跌 -49.1%",
+      "update_time": "2026-08-16 05:32:13"
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+# QCFP-MTF Acceptance / Test Contract 模板（流程治理 Sprint B #5）
+#
+# 关键原则：Acceptance Contract 在编码之前冻结 ——
+#   Change Request → Acceptance Contract → Tests / Expected Behaviour Frozen
+#   → Implementation
+#
+# Builder 默认禁止：
+#   * 修改 Frozen Golden Expected Result
+#   * 修改本 Acceptance Contract
+#   * 删除失败测试
+# 如确实需要 → 独立 ADR + Human Approval（QCFP-SPEC-CHG-004）。
+
+change_id: ""
+spec_ids: []
+
+# Spec 需求（引用 CANONICAL_SPEC.md ID）
+spec_requirements: []
+
+# Positive Cases：应该允许的行为（每个 case: {name, input, expected}）
+# C3 固定结构：case_id / spec_ids / input_fixture{fixture_id, input_hash}
+#             / expected{...result_hash}
+positive_cases: []
+
+# Boundary Cases：边界行为（WATCH×position increase / BLOCK×existing
+# position / HardExit×strong Wave / UNKNOWN liquidity ...）
+boundary_cases: []
+
+# Negative Cases：应该拒绝的行为
+negative_cases: []
+
+# Adversarial Cases：故意绕过系统（对应 Failure Injection）
+adversarial_cases: []
+
+# Golden Cases：冻结期望结果（frozen_golden_expected=true 时不可修改）
+golden_cases: []
+frozen_golden_expected: true
+
+# Expected Invariant Results（CS-30 宪法不变量期望结果）
+expected_invariant_results: []
+
+# Expected Decision Deltas（关键变更对历史决策的期望变化，如 flip_rate<=10%）
+expected_decision_deltas:
+  max_changed_decisions: 12
+  allowed_fields: []
+  forbidden_fields: []
+  expected_direction: {}
+
+# Expected Unchanged Cases（本次修改后必须保持不变的决策样本）
+expected_unchanged_cases: []
+
+# Test Oracle 变更记录（默认禁止；出现时必须附 ADR + human_approval）
+test_oracle_change:
+  required: false
+  oracle_change_adr_hash: ""
+  human_approval_id: ""
+  previous_oracle_hash: ""
+  new_oracle_hash: ""
+  reason: ""
+  adr_id: ""
+  human_approval: false

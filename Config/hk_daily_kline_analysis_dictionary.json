@@ -1,0 +1,6732 @@
+{
+  "table_name": "hk_daily_kline_analysis",
+  "generated_at": "2026-07-15 17:20:21",
+  "database_path": "C:\\Users\\Quansheng\\Documents\\projects\\TA_Workflow\\SQLiteDB\\HK_Stock.db",
+  "statistics": {
+    "total_records": 45922,
+    "stock_count": 15,
+    "min_date": "2010-01-04",
+    "max_date": "2026-07-14"
+  },
+  "field_count": 250,
+  "fields": [
+    {
+      "field_name": "id",
+      "data_type": "INTEGER",
+      "nullable": true,
+      "primary_key": true,
+      "default_value": null,
+      "description": "主键，自增ID",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 45922,
+        "null_percentage": 0.0,
+        "min": 45908,
+        "max": 91843,
+        "avg": 68876.63126605983,
+        "distinct_count": 45922
+      },
+      "samples": [
+        45908,
+        45909,
+        45910
+      ]
+    },
+    {
+      "field_name": "stock_code",
+      "data_type": "TEXT",
+      "nullable": false,
+      "primary_key": false,
+      "default_value": null,
+      "description": "股票代码（如：00700）",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 45922,
+        "null_percentage": 0.0,
+        "distinct_count": 15
+      },
+      "samples": [
+        "00020",
+        "00020",
+        "00020"
+      ]
+    },
+    {
+      "field_name": "stock_name",
+      "data_type": "TEXT",
+      "nullable": false,
+      "primary_key": false,
+      "default_value": null,
+      "description": "股票名称",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 45922,
+        "null_percentage": 0.0,
+        "distinct_count": 15
+      },
+      "samples": [
+        "商汤科技",
+        "商汤科技",
+        "商汤科技"
+      ]
+    },
+    {
+      "field_name": "date",
+      "data_type": "TEXT",
+      "nullable": false,
+      "primary_key": false,
+      "default_value": null,
+      "description": "交易日期（格式：YYYY-MM-DD）",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 45922,
+        "null_percentage": 0.0,
+        "distinct_count": 4065
+      },
+      "samples": [
+        "2021-12-30",
+        "2021-12-31",
+        "2022-01-03"
+      ]
+    },
+    {
+      "field_name": "open",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "开盘价",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 45922,
+        "null_percentage": 0.0,
+        "min": -1.06,
+        "max": 688.47,
+        "avg": 27.96881124515483,
+        "distinct_count": 5367
+      },
+      "samples": [
+        3.91,
+        4.23,
+        5.99
+      ]
+    },
+    {
+      "field_name": "high",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "最高价",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 45922,
+        "null_percentage": 0.0,
+        "min": -1.05,
+        "max": 696.3,
+        "avg": 28.397861591394104,
+        "distinct_count": 5525
+      },
+      "samples": [
+        4.74,
+        5.5,
+        7.75
+      ]
+    },
+    {
+      "field_name": "low",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "最低价",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 45922,
+        "null_percentage": 0.0,
+        "min": -1.21,
+        "max": 674.18,
+        "avg": 27.496058098514872,
+        "distinct_count": 5463
+      },
+      "samples": [
+        3.9,
+        4.21,
+        5.8
+      ]
+    },
+    {
+      "field_name": "close",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "收盘价",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 45922,
+        "null_percentage": 0.0,
+        "min": -1.07,
+        "max": 688.01,
+        "avg": 27.931891903662734,
+        "distinct_count": 5491
+      },
+      "samples": [
+        4.13,
+        5.5,
+        7.75
+      ]
+    },
+    {
+      "field_name": "volume",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "成交量（股）",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 45922,
+        "null_percentage": 0.0,
+        "min": 0.0,
+        "max": 6053681711.0,
+        "avg": 68607312.9525282,
+        "distinct_count": 42825
+      },
+      "samples": [
+        329966696.0,
+        254079780.0,
+        465580254.0
+      ]
+    },
+    {
+      "field_name": "amount",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "成交金额（元）",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 45922,
+        "null_percentage": 0.0,
+        "min": 0.0,
+        "max": 148682130954.0,
+        "avg": 832522011.1316326,
+        "distinct_count": 45838
+      },
+      "samples": [
+        1406160926.0,
+        1236589974.0,
+        3164819936.0
+      ]
+    },
+    {
+      "field_name": "amplitude",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "振幅（%）",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 45922,
+        "null_percentage": 0.0,
+        "min": -5500.0,
+        "max": 1375.0,
+        "avg": 4.492154522886634,
+        "distinct_count": 3184
+      },
+      "samples": [
+        21.82,
+        31.23,
+        35.45
+      ]
+    },
+    {
+      "field_name": "change_percent",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "涨跌幅（%）",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 45922,
+        "null_percentage": 0.0,
+        "min": -5000.0,
+        "max": 4000.0,
+        "avg": 0.018716083794259836,
+        "distinct_count": 3357
+      },
+      "samples": [
+        7.27,
+        33.17,
+        40.91
+      ]
+    },
+    {
+      "field_name": "change_amount",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "涨跌额",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 45922,
+        "null_percentage": 0.0,
+        "min": -62.4,
+        "max": 69.6,
+        "avg": 0.008444536387787988,
+        "distinct_count": 997
+      },
+      "samples": [
+        0.28,
+        1.37,
+        2.25
+      ]
+    },
+    {
+      "field_name": "turnover_rate",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "换手率（%）",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 45922,
+        "null_percentage": 0.0,
+        "min": 0.0,
+        "max": 337.3,
+        "avg": 0.8154760245633901,
+        "distinct_count": 1257
+      },
+      "samples": [
+        0.99,
+        0.76,
+        1.4
+      ]
+    },
+    {
+      "field_name": "previous_close",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "前日收盘价",
+      "statistics": {
+        "null_count": 15,
+        "non_null_count": 45907,
+        "null_percentage": 0.03266408257480075,
+        "min": -1.07,
+        "max": 688.01,
+        "avg": 27.929464351841766,
+        "distinct_count": 5490
+      },
+      "samples": [
+        4.13,
+        5.5,
+        7.75
+      ]
+    },
+    {
+      "field_name": "avg_price",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "均价（成交金额/成交量）",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 45922,
+        "null_percentage": 0.0,
+        "min": -1.0625,
+        "max": 682.8225,
+        "avg": 27.939425874308608,
+        "distinct_count": 14476
+      },
+      "samples": [
+        4.225,
+        5.1775,
+        7.2625
+      ]
+    },
+    {
+      "field_name": "close_chgpct",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "收盘价变动百分比",
+      "statistics": {
+        "null_count": 45922,
+        "non_null_count": 0,
+        "null_percentage": 100.0
+      },
+      "samples": []
+    },
+    {
+      "field_name": "avg_volume_5d",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "5日均量",
+      "statistics": {
+        "null_count": 75,
+        "non_null_count": 45847,
+        "null_percentage": 0.16332041287400373,
+        "min": 0.0,
+        "max": 3937290612.8,
+        "avg": 68384070.31509587,
+        "distinct_count": 45226
+      },
+      "samples": [
+        316269563.2,
+        294385679.8,
+        276173724.0
+      ]
+    },
+    {
+      "field_name": "volume_ratio5",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "量比（5日）",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 45922,
+        "null_percentage": 0.0,
+        "min": 0.0,
+        "max": 149.44372027076471,
+        "avg": 1.1161587594247961,
+        "distinct_count": 45761
+      },
+      "samples": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "field_name": "avg_volume_20d",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "20日均量",
+      "statistics": {
+        "null_count": 285,
+        "non_null_count": 45637,
+        "null_percentage": 0.6206175689212142,
+        "min": 9750.0,
+        "max": 2942340685.65,
+        "avg": 68015582.30628218,
+        "distinct_count": 45583
+      },
+      "samples": [
+        122285289.85,
+        106629706.05,
+        94916230.85
+      ]
+    },
+    {
+      "field_name": "volume_ratio20",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "量比（20日）",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 45922,
+        "null_percentage": 0.0,
+        "min": 0.0,
+        "max": 17.251053488861064,
+        "avg": 1.02056500506202,
+        "distinct_count": 45582
+      },
+      "samples": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "field_name": "ema5",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "5日指数移动平均线",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 45922,
+        "null_percentage": 0.0,
+        "min": -1.045946077478364,
+        "max": 673.0041914595465,
+        "avg": 27.914379265438992,
+        "distinct_count": 45918
+      },
+      "samples": [
+        4.13,
+        4.586666666666667,
+        5.641111111111112
+      ]
+    },
+    {
+      "field_name": "ema8",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "8日指数移动平均线",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 45922,
+        "null_percentage": 0.0,
+        "min": -1.0344759503179974,
+        "max": 668.1771648573427,
+        "avg": 27.901477165115175,
+        "distinct_count": 45918
+      },
+      "samples": [
+        4.13,
+        4.434444444444444,
+        5.171234567901234
+      ]
+    },
+    {
+      "field_name": "ema10",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "10日指数移动平均线",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 45922,
+        "null_percentage": 0.0,
+        "min": -1.0273145935192354,
+        "max": 664.5928462760164,
+        "avg": 27.892981699387157,
+        "distinct_count": 45918
+      },
+      "samples": [
+        4.13,
+        4.379090909090909,
+        4.99198347107438
+      ]
+    },
+    {
+      "field_name": "ema12",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "12日指数移动平均线",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 45922,
+        "null_percentage": 0.0,
+        "min": -1.0203470441273657,
+        "max": 661.1442186957679,
+        "avg": 27.884521736898105,
+        "distinct_count": 45918
+      },
+      "samples": [
+        4.13,
+        4.340769230769231,
+        4.865266272189349
+      ]
+    },
+    {
+      "field_name": "ema13",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "13日指数移动平均线",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 45922,
+        "null_percentage": 0.0,
+        "min": -1.0173653809224759,
+        "max": 659.2560549346018,
+        "avg": 27.880295945930566,
+        "distinct_count": 45918
+      },
+      "samples": [
+        4.13,
+        4.325714285714286,
+        4.814897959183673
+      ]
+    },
+    {
+      "field_name": "ema20",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "20日指数移动平均线",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 45922,
+        "null_percentage": 0.0,
+        "min": -0.9963691849852931,
+        "max": 646.5644299044129,
+        "avg": 27.850606202668846,
+        "distinct_count": 45918
+      },
+      "samples": [
+        4.13,
+        4.26047619047619,
+        4.59281179138322
+      ]
+    },
+    {
+      "field_name": "ema21",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "21日指数移动平均线",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 45922,
+        "null_percentage": 0.0,
+        "min": -0.9933574956843847,
+        "max": 645.329382064344,
+        "avg": 27.84633442970315,
+        "distinct_count": 45918
+      },
+      "samples": [
+        4.13,
+        4.254545454545454,
+        4.572314049586776
+      ]
+    },
+    {
+      "field_name": "ema26",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "26日指数移动平均线",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 45922,
+        "null_percentage": 0.0,
+        "min": -0.9784487844210188,
+        "max": 639.3095180683906,
+        "avg": 27.824811394761923,
+        "distinct_count": 45918
+      },
+      "samples": [
+        4.13,
+        4.231481481481481,
+        4.492112482853223
+      ]
+    },
+    {
+      "field_name": "ema30",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "30日指数移动平均线",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 45922,
+        "null_percentage": 0.0,
+        "min": -0.967060095601518,
+        "max": 634.5439533316945,
+        "avg": 27.80736591883033,
+        "distinct_count": 45918
+      },
+      "samples": [
+        4.13,
+        4.218387096774194,
+        4.446233090530698
+      ]
+    },
+    {
+      "field_name": "ema34",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "34日指数移动平均线",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 45922,
+        "null_percentage": 0.0,
+        "min": -0.9567280497678686,
+        "max": 632.9340812864422,
+        "avg": 27.789692317483915,
+        "distinct_count": 45918
+      },
+      "samples": [
+        4.13,
+        4.208285714285714,
+        4.410669387755102
+      ]
+    },
+    {
+      "field_name": "ema50",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "50日指数移动平均线",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 45922,
+        "null_percentage": 0.0,
+        "min": -0.9203238376839843,
+        "max": 625.4242215847734,
+        "avg": 27.716451359943104,
+        "distinct_count": 45918
+      },
+      "samples": [
+        4.13,
+        4.183725490196078,
+        4.32357939254133
+      ]
+    },
+    {
+      "field_name": "ema60",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "60日指数移动平均线",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 45922,
+        "null_percentage": 0.0,
+        "min": -0.9005174501049493,
+        "max": 619.77570294804,
+        "avg": 27.668536503495716,
+        "distinct_count": 45918
+      },
+      "samples": [
+        4.13,
+        4.174918032786885,
+        4.292133834990594
+      ]
+    },
+    {
+      "field_name": "ema63",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "63日指数移动平均线",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 45922,
+        "null_percentage": 0.0,
+        "min": -0.8949123928875454,
+        "max": 618.0146192351061,
+        "avg": 27.653853057536356,
+        "distinct_count": 45918
+      },
+      "samples": [
+        4.13,
+        4.1728125,
+        4.284599609375
+      ]
+    },
+    {
+      "field_name": "ema100",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "100日指数移动平均线",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 45922,
+        "null_percentage": 0.0,
+        "min": -0.8300003617517105,
+        "max": 603.0674389282887,
+        "avg": 27.4633428775861,
+        "distinct_count": 45918
+      },
+      "samples": [
+        4.13,
+        4.1571287128712875,
+        4.228274678953044
+      ]
+    },
+    {
+      "field_name": "ema120",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "120日指数移动平均线",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 45922,
+        "null_percentage": 0.0,
+        "min": -0.7945186921726342,
+        "max": 597.1170268792779,
+        "avg": 27.35559523611073,
+        "distinct_count": 45918
+      },
+      "samples": [
+        4.13,
+        4.152644628099174,
+        4.212105047469436
+      ]
+    },
+    {
+      "field_name": "ema200",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "200日指数移动平均线",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 45922,
+        "null_percentage": 0.0,
+        "min": -0.6712545981194669,
+        "max": 569.9346641521031,
+        "avg": 26.92097441583834,
+        "distinct_count": 45918
+      },
+      "samples": [
+        4.13,
+        4.14363184079602,
+        4.179516101086607
+      ]
+    },
+    {
+      "field_name": "ema250",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "250日指数移动平均线",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 45922,
+        "null_percentage": 0.0,
+        "min": -0.6059457115253566,
+        "max": 552.8111756373155,
+        "avg": 26.659119052853896,
+        "distinct_count": 45918
+      },
+      "samples": [
+        4.13,
+        4.1409163346613544,
+        4.169673973428994
+      ]
+    },
+    {
+      "field_name": "bias5",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "5日乖离率（%）",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 45922,
+        "null_percentage": 0.0,
+        "min": -22624.271848194738,
+        "max": 3720.5237725544507,
+        "avg": -0.5160693357106587,
+        "distinct_count": 45893
+      },
+      "samples": [
+        0.0,
+        19.912790697674414,
+        37.38428205633247
+      ]
+    },
+    {
+      "field_name": "bias10",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "10日乖离率（%）",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 45922,
+        "null_percentage": 0.0,
+        "min": -4974.892017129064,
+        "max": 3458.719566166109,
+        "avg": 0.09638957409412062,
+        "distinct_count": 45893
+      },
+      "samples": [
+        0.0,
+        25.596844509030518,
+        55.24891147790674
+      ]
+    },
+    {
+      "field_name": "bias20",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "20日乖离率（%）",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 45922,
+        "null_percentage": 0.0,
+        "min": -13175.55738012322,
+        "max": 63411.844367444246,
+        "avg": 0.8286290225858994,
+        "distinct_count": 45893
+      },
+      "samples": [
+        0.0,
+        29.093550910919873,
+        68.74194615464371
+      ]
+    },
+    {
+      "field_name": "bias50",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "50日乖离率（%）",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 45922,
+        "null_percentage": 0.0,
+        "min": -351134.16241698375,
+        "max": 733757.7698675481,
+        "avg": 8.751009234005302,
+        "distinct_count": 45893
+      },
+      "samples": [
+        0.0,
+        31.461780006561373,
+        79.24962852236827
+      ]
+    },
+    {
+      "field_name": "bias60",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "60日乖离率（%）",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 45922,
+        "null_percentage": 0.0,
+        "min": -78717.02063664957,
+        "max": 285228.4264223946,
+        "avg": 12.803925199207937,
+        "distinct_count": 45893
+      },
+      "samples": [
+        0.0,
+        31.739113362390547,
+        80.56286914494557
+      ]
+    },
+    {
+      "field_name": "bias100",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "100日乖离率（%）",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 45922,
+        "null_percentage": 0.0,
+        "min": -329065.1950152163,
+        "max": 29600.19599417178,
+        "avg": -6.398589441661196,
+        "distinct_count": 45893
+      },
+      "samples": [
+        0.0,
+        32.30285564579511,
+        83.28988981195906
+      ]
+    },
+    {
+      "field_name": "bias120",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "120日乖离率（%）",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 45922,
+        "null_percentage": 0.0,
+        "min": -37027.136819795065,
+        "max": 12616.66579374766,
+        "avg": -0.48063719925015735,
+        "distinct_count": 45893
+      },
+      "samples": [
+        0.0,
+        32.44571815232749,
+        83.99351185830643
+      ]
+    },
+    {
+      "field_name": "bias200",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "200日乖离率（%）",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 45922,
+        "null_percentage": 0.0,
+        "min": -104393.7469201265,
+        "max": 79172.0067001986,
+        "avg": 1.469009662228634,
+        "distinct_count": 45893
+      },
+      "samples": [
+        0.0,
+        32.73379999279597,
+        85.42816470990803
+      ]
+    },
+    {
+      "field_name": "bias250",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "250日乖离率（%）",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 45922,
+        "null_percentage": 0.0,
+        "min": -248979.51064063,
+        "max": 142431.1704562832,
+        "avg": 2.5100456411238246,
+        "distinct_count": 45893
+      },
+      "samples": [
+        0.0,
+        32.820843395518445,
+        85.86585064890988
+      ]
+    },
+    {
+      "field_name": "vol_ema5",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "5日成交量指数移动平均",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 45922,
+        "null_percentage": 0.0,
+        "min": 2990.509474871193,
+        "max": 4173245435.9127483,
+        "avg": 68501517.84947383,
+        "distinct_count": 45922
+      },
+      "samples": [
+        329966696.0,
+        304671057.3333334,
+        358307456.22222227
+      ]
+    },
+    {
+      "field_name": "vol_ema10",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "10日成交量指数移动平均",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 45922,
+        "null_percentage": 0.0,
+        "min": 7647.498355206208,
+        "max": 3165779872.067174,
+        "avg": 68371983.81592098,
+        "distinct_count": 45922
+      },
+      "samples": [
+        329966696.0,
+        316169074.9090909,
+        343334743.8347107
+      ]
+    },
+    {
+      "field_name": "vol_ema20",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "20日成交量指数移动平均",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 45922,
+        "null_percentage": 0.0,
+        "min": 11777.07893007185,
+        "max": 2874366969.913435,
+        "avg": 68133033.31909576,
+        "distinct_count": 45922
+      },
+      "samples": [
+        329966696.0,
+        322739370.6666666,
+        336343264.3174603
+      ]
+    },
+    {
+      "field_name": "volume_oscillator",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "成交量震荡指标（%）",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 45922,
+        "null_percentage": 0.0,
+        "min": -100.0,
+        "max": 271.38379796261864,
+        "avg": 0.9051460907748985,
+        "distinct_count": 45636
+      },
+      "samples": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "field_name": "obv",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "能量潮（On-Balance Volume）",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 45922,
+        "null_percentage": 0.0,
+        "min": -57169743429.0,
+        "max": 37007250830.0,
+        "avg": 2011858844.4203868,
+        "distinct_count": 42630
+      },
+      "samples": [
+        0.0,
+        254079780.0,
+        719660034.0
+      ]
+    },
+    {
+      "field_name": "bollinger_middle",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "布林带中轨（20日均线）",
+      "statistics": {
+        "null_count": 285,
+        "non_null_count": 45637,
+        "null_percentage": 0.6206175689212142,
+        "min": -0.9949999999999999,
+        "max": 654.1995,
+        "avg": 27.96654784495037,
+        "distinct_count": 30136
+      },
+      "samples": [
+        6.9345,
+        7.054,
+        7.095000000000001
+      ]
+    },
+    {
+      "field_name": "bollinger_upper",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "布林带上轨",
+      "statistics": {
+        "null_count": 285,
+        "non_null_count": 45637,
+        "null_percentage": 0.6206175689212142,
+        "min": -0.8892694586771501,
+        "max": 705.3204499446441,
+        "avg": 30.291480942505462,
+        "distinct_count": 45149
+      },
+      "samples": [
+        8.655912822440671,
+        8.186903117518975,
+        8.033834663993503
+      ]
+    },
+    {
+      "field_name": "bollinger_lower",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "布林带下轨",
+      "statistics": {
+        "null_count": 285,
+        "non_null_count": 45637,
+        "null_percentage": 0.6206175689212142,
+        "min": -2.1585440703458803,
+        "max": 620.185362276263,
+        "avg": 25.641614747395277,
+        "distinct_count": 45157
+      },
+      "samples": [
+        5.213087177559329,
+        5.9210968824810255,
+        6.1561653360065
+      ]
+    },
+    {
+      "field_name": "vwap",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "成交量加权平均价",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 45922,
+        "null_percentage": 0.0,
+        "min": -0.032962374710775774,
+        "max": 239.06762085310692,
+        "avg": 15.828155764039499,
+        "distinct_count": 45866
+      },
+      "samples": [
+        4.256666666666667,
+        4.610493909689019,
+        5.714757782486478
+      ]
+    },
+    {
+      "field_name": "parabolic_sar",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "抛物线转向指标",
+      "statistics": {
+        "null_count": 45922,
+        "non_null_count": 0,
+        "null_percentage": 100.0
+      },
+      "samples": []
+    },
+    {
+      "field_name": "vol_ema5_20_cross_status",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "成交量5日与20日EMA交叉状态（1:金叉, -1:死叉）",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 45922,
+        "null_percentage": 0.0,
+        "min": "death",
+        "max": "golden",
+        "avg": 0.0,
+        "distinct_count": 2
+      },
+      "samples": [
+        "golden",
+        "death",
+        "golden"
+      ]
+    },
+    {
+      "field_name": "vol_ema5_20_cross_streak",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "成交量5日与20日EMA交叉持续天数",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 45922,
+        "null_percentage": 0.0,
+        "min": 1.0,
+        "max": 63.0,
+        "avg": 7.060385000653282,
+        "distinct_count": 63
+      },
+      "samples": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "field_name": "vol_ema5_10_cross_status",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "成交量5日与10日EMA交叉状态（1:金叉, -1:死叉）",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 45922,
+        "null_percentage": 0.0,
+        "min": "death",
+        "max": "golden",
+        "avg": 0.0,
+        "distinct_count": 2
+      },
+      "samples": [
+        "golden",
+        "death",
+        "golden"
+      ]
+    },
+    {
+      "field_name": "vol_ema5_10_cross_streak",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "成交量5日与10日EMA交叉持续天数",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 45922,
+        "null_percentage": 0.0,
+        "min": 1.0,
+        "max": 44.0,
+        "avg": 5.208897696093376,
+        "distinct_count": 44
+      },
+      "samples": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "field_name": "tr",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "真实波幅（True Range）",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 45922,
+        "null_percentage": 0.0,
+        "min": 0.0,
+        "max": 70.51999999999998,
+        "avg": 0.9898800139366754,
+        "distinct_count": 2198
+      },
+      "samples": [
+        0.8400000000000003,
+        1.37,
+        2.25
+      ]
+    },
+    {
+      "field_name": "atr14",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "14日平均真实波幅",
+      "statistics": {
+        "null_count": 195,
+        "non_null_count": 45727,
+        "null_percentage": 0.4246330734724097,
+        "min": 0.0064285714285714345,
+        "max": 33.02142857142855,
+        "avg": 0.9889497452271088,
+        "distinct_count": 15265
+      },
+      "samples": [
+        1.0550000000000002,
+        1.0157142857142858,
+        0.9314285714285715
+      ]
+    },
+    {
+      "field_name": "kdj_k",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "KDJ指标K值",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 45922,
+        "null_percentage": 0.0,
+        "min": 1.729035939723559,
+        "max": 97.88003532965456,
+        "avg": 48.087433588513,
+        "distinct_count": 45802
+      },
+      "samples": [
+        50.0,
+        50.0,
+        50.0
+      ]
+    },
+    {
+      "field_name": "kdj_d",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "KDJ指标D值",
+      "statistics": {
+        "null_count": 30,
+        "non_null_count": 45892,
+        "null_percentage": 0.0653281651496015,
+        "min": 2.7376402378956253,
+        "max": 96.64338927195303,
+        "avg": 48.08377990756699,
+        "distinct_count": 45803
+      },
+      "samples": [
+        50.0,
+        50.0,
+        50.0
+      ]
+    },
+    {
+      "field_name": "kdj_j",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "KDJ指标J值",
+      "statistics": {
+        "null_count": 30,
+        "non_null_count": 45892,
+        "null_percentage": 0.0653281651496015,
+        "min": -4.923700000228379,
+        "max": 105.14102218805962,
+        "avg": 48.09099016645502,
+        "distinct_count": 45803
+      },
+      "samples": [
+        50.0,
+        50.0,
+        50.0
+      ]
+    },
+    {
+      "field_name": "macd_dif",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "MACD指标DIF线",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 45922,
+        "null_percentage": 0.0,
+        "min": -29.934053730473977,
+        "max": 35.02650555080311,
+        "avg": 0.05971034213618253,
+        "distinct_count": 45905
+      },
+      "samples": [
+        0.0,
+        0.1092877492877502,
+        0.37315378933612653
+      ]
+    },
+    {
+      "field_name": "macd_signal",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "MACD指标信号线（DEA）",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 45922,
+        "null_percentage": 0.0,
+        "min": -26.355533378284996,
+        "max": 32.40138679404373,
+        "avg": 0.059916926293403575,
+        "distinct_count": 45905
+      },
+      "samples": [
+        0.0,
+        0.021857549857550042,
+        0.09211679775326534
+      ]
+    },
+    {
+      "field_name": "macd_histogram",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "MACD指标柱状图",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 45922,
+        "null_percentage": 0.0,
+        "min": -24.773797209713308,
+        "max": 28.532332285409765,
+        "avg": -0.0004131683144420921,
+        "distinct_count": 45905
+      },
+      "samples": [
+        0.0,
+        0.17486039886040033,
+        0.5620739831657224
+      ]
+    },
+    {
+      "field_name": "rsi6",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "6日相对强弱指标",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 45922,
+        "null_percentage": 0.0,
+        "min": 0.0,
+        "max": 99.76940814757877,
+        "avg": 48.32468927553846,
+        "distinct_count": 18980
+      },
+      "samples": [
+        50.0,
+        50.0,
+        50.0
+      ]
+    },
+    {
+      "field_name": "rsi14",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "14日相对强弱指标",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 45922,
+        "null_percentage": 0.0,
+        "min": 0.0,
+        "max": 99.41520467836258,
+        "avg": 49.54330248772596,
+        "distinct_count": 25757
+      },
+      "samples": [
+        50.0,
+        50.0,
+        50.0
+      ]
+    },
+    {
+      "field_name": "cci14",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "14日商品通道指标",
+      "statistics": {
+        "null_count": 195,
+        "non_null_count": 45727,
+        "null_percentage": 0.4246330734724097,
+        "min": -429.4791666666659,
+        "max": 466.66666666666646,
+        "avg": -1.5798136886525538,
+        "distinct_count": 45638
+      },
+      "samples": [
+        1.4766472197501164,
+        -25.846153846153758,
+        -70.20838103961535
+      ]
+    },
+    {
+      "field_name": "williams_r",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "威廉指标（%R）",
+      "statistics": {
+        "null_count": 45922,
+        "non_null_count": 0,
+        "null_percentage": 100.0
+      },
+      "samples": []
+    },
+    {
+      "field_name": "pdi14",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "14日上升方向指标（+DI）",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 45922,
+        "null_percentage": 0.0,
+        "min": 0.0,
+        "max": 85.8995137763371,
+        "avg": 22.207406384472524,
+        "distinct_count": 37705
+      },
+      "samples": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "field_name": "mdi14",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "14日下降方向指标（-DI）",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 45922,
+        "null_percentage": 0.0,
+        "min": 0.0,
+        "max": 73.05389221556881,
+        "avg": 21.397246949453184,
+        "distinct_count": 37453
+      },
+      "samples": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "field_name": "adx14",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "14日平均趋向指标",
+      "statistics": {
+        "null_count": 195,
+        "non_null_count": 45727,
+        "null_percentage": 0.4246330734724097,
+        "min": 0.0,
+        "max": 100.0,
+        "avg": 34.28806662537655,
+        "distinct_count": 45663
+      },
+      "samples": [
+        2.4537815126050404,
+        4.907563025210081,
+        6.900918506937653
+      ]
+    },
+    {
+      "field_name": "atr30",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "30日平均真实波幅",
+      "statistics": {
+        "null_count": 435,
+        "non_null_count": 45487,
+        "null_percentage": 0.9472583946692217,
+        "min": 0.007666666666666673,
+        "max": 30.282999999999994,
+        "avg": 0.9889913968093449,
+        "distinct_count": 19414
+      },
+      "samples": [
+        0.6353333333333334,
+        0.6150000000000001,
+        0.5743333333333334
+      ]
+    },
+    {
+      "field_name": "pdi30",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "30日上升方向指标（+DI）",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 45922,
+        "null_percentage": 0.0,
+        "min": 0.0,
+        "max": 74.55268389662028,
+        "avg": 22.324441362163494,
+        "distinct_count": 40306
+      },
+      "samples": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "field_name": "mdi30",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "30日下降方向指标（-DI）",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 45922,
+        "null_percentage": 0.0,
+        "min": 0.0,
+        "max": 59.347553324968636,
+        "avg": 21.292983888536305,
+        "distinct_count": 40207
+      },
+      "samples": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "field_name": "adx30",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "30日平均趋向指标",
+      "statistics": {
+        "null_count": 435,
+        "non_null_count": 45487,
+        "null_percentage": 0.9472583946692217,
+        "min": 0.06060606060606038,
+        "max": 78.01388570151634,
+        "avg": 24.399910507209494,
+        "distinct_count": 45465
+      },
+      "samples": [
+        0.8486608583413998,
+        1.649298816874094,
+        2.2512940009126208
+      ]
+    },
+    {
+      "field_name": "atr60",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "60日平均真实波幅",
+      "statistics": {
+        "null_count": 885,
+        "non_null_count": 45037,
+        "null_percentage": 1.9271808719132442,
+        "min": 0.011500000000000002,
+        "max": 26.42566666666666,
+        "avg": 0.9903188119398125,
+        "distinct_count": 22342
+      },
+      "samples": [
+        0.506,
+        0.4946666666666667,
+        0.47400000000000003
+      ]
+    },
+    {
+      "field_name": "pdi60",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "60日上升方向指标（+DI）",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 45922,
+        "null_percentage": 0.0,
+        "min": 0.0,
+        "max": 60.14527845036321,
+        "avg": 22.271493870769888,
+        "distinct_count": 41503
+      },
+      "samples": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "field_name": "mdi60",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "60日下降方向指标（-DI）",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 45922,
+        "null_percentage": 0.0,
+        "min": 0.0,
+        "max": 51.32905591200733,
+        "avg": 21.037542764977616,
+        "distinct_count": 41611
+      },
+      "samples": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "field_name": "adx60",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "60日平均趋向指标",
+      "statistics": {
+        "null_count": 885,
+        "non_null_count": 45037,
+        "null_percentage": 1.9271808719132442,
+        "min": 0.019404915912030744,
+        "max": 60.07623679959229,
+        "avg": 17.777769573305992,
+        "distinct_count": 45028
+      },
+      "samples": [
+        0.2399150743099784,
+        0.4825512260370389,
+        0.6548883396683484
+      ]
+    },
+    {
+      "field_name": "atr100",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "100日平均真实波幅",
+      "statistics": {
+        "null_count": 1485,
+        "non_null_count": 44437,
+        "null_percentage": 3.2337441749052744,
+        "min": 0.013800000000000002,
+        "max": 22.2577,
+        "avg": 0.9926682314287643,
+        "distinct_count": 23839
+      },
+      "samples": [
+        0.3954000000000001,
+        0.3899,
+        0.3819000000000001
+      ]
+    },
+    {
+      "field_name": "pdi100",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "100日上升方向指标（+DI）",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 45922,
+        "null_percentage": 0.0,
+        "min": 0.0,
+        "max": 50.7305470608223,
+        "avg": 22.067662650904598,
+        "distinct_count": 41798
+      },
+      "samples": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "field_name": "mdi100",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "100日下降方向指标（-DI）",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 45922,
+        "null_percentage": 0.0,
+        "min": 0.0,
+        "max": 41.891117478510026,
+        "avg": 20.719638567720853,
+        "distinct_count": 41950
+      },
+      "samples": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "field_name": "adx100",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "100日平均趋向指标",
+      "statistics": {
+        "null_count": 1485,
+        "non_null_count": 44437,
+        "null_percentage": 3.2337441749052744,
+        "min": 5.343473411493181e-16,
+        "max": 48.1598252863481,
+        "avg": 13.712309347213438,
+        "distinct_count": 44433
+      },
+      "samples": [
+        0.04995004995005003,
+        0.11069079069079081,
+        0.15778497906754424
+      ]
+    },
+    {
+      "field_name": "mfi",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "资金流量指标（Money Flow Index）",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 45922,
+        "null_percentage": 0.0,
+        "min": -878.8720567919826,
+        "max": 631.6334458083496,
+        "avg": 50.38744912688778,
+        "distinct_count": 45382
+      },
+      "samples": [
+        50.0,
+        50.0,
+        50.0
+      ]
+    },
+    {
+      "field_name": "ema_golden_cross",
+      "data_type": "INTEGER",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": "0",
+      "description": "EMA金叉信号（1:出现, 0:无）",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 45922,
+        "null_percentage": 0.0,
+        "min": 0,
+        "max": 1,
+        "avg": 0.030007403858716954,
+        "distinct_count": 2
+      },
+      "samples": [
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "field_name": "ema_death_cross",
+      "data_type": "INTEGER",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": "0",
+      "description": "EMA死叉信号（1:出现, 0:无）",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 45922,
+        "null_percentage": 0.0,
+        "min": 0,
+        "max": 1,
+        "avg": 0.02998562780366709,
+        "distinct_count": 2
+      },
+      "samples": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "field_name": "golden_triangle",
+      "data_type": "INTEGER",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": "0",
+      "description": "黄金三角信号（1:出现, 0:无）",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 45922,
+        "null_percentage": 0.0,
+        "min": 0,
+        "max": 1,
+        "avg": 0.03381821349244371,
+        "distinct_count": 2
+      },
+      "samples": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "field_name": "death_triangle",
+      "data_type": "INTEGER",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": "0",
+      "description": "死亡三角信号（1:出现, 0:无）",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 45922,
+        "null_percentage": 0.0,
+        "min": 0,
+        "max": 1,
+        "avg": 0.03211968119855407,
+        "distinct_count": 2
+      },
+      "samples": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "field_name": "macd_golden_cross",
+      "data_type": "INTEGER",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": "0",
+      "description": "MACD金叉信号（1:出现, 0:无）",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 45922,
+        "null_percentage": 0.0,
+        "min": 0,
+        "max": 1,
+        "avg": 0.03943643569530944,
+        "distinct_count": 2
+      },
+      "samples": [
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "field_name": "macd_death_cross",
+      "data_type": "INTEGER",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": "0",
+      "description": "MACD死叉信号（1:出现, 0:无）",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 45922,
+        "null_percentage": 0.0,
+        "min": 0,
+        "max": 1,
+        "avg": 0.0392622272549105,
+        "distinct_count": 2
+      },
+      "samples": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "field_name": "open_close_change_pct",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "开盘收盘变动百分比",
+      "statistics": {
+        "null_count": 45922,
+        "non_null_count": 0,
+        "null_percentage": 100.0
+      },
+      "samples": []
+    },
+    {
+      "field_name": "high_30d",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "30日最高价",
+      "statistics": {
+        "null_count": 435,
+        "non_null_count": 45487,
+        "null_percentage": 0.9472583946692217,
+        "min": -0.86,
+        "max": 696.3,
+        "avg": 31.023360960274367,
+        "distinct_count": 2934
+      },
+      "samples": [
+        9.7,
+        9.7,
+        9.7
+      ]
+    },
+    {
+      "field_name": "low_30d",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "30日最低价",
+      "statistics": {
+        "null_count": 435,
+        "non_null_count": 45487,
+        "null_percentage": 0.9472583946692217,
+        "min": -1.21,
+        "max": 600.7,
+        "avg": 25.094305186097124,
+        "distinct_count": 2684
+      },
+      "samples": [
+        3.9,
+        4.21,
+        5.8
+      ]
+    },
+    {
+      "field_name": "close_3d_ago",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "3日前收盘价",
+      "statistics": {
+        "null_count": 45,
+        "non_null_count": 45877,
+        "null_percentage": 0.09799224772440225,
+        "min": -1.07,
+        "max": 688.01,
+        "avg": 27.92446999585849,
+        "distinct_count": 5489
+      },
+      "samples": [
+        4.13,
+        5.5,
+        7.75
+      ]
+    },
+    {
+      "field_name": "high_125d",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "125日最高价",
+      "statistics": {
+        "null_count": 1860,
+        "non_null_count": 44062,
+        "null_percentage": 4.050346239275293,
+        "min": -0.55,
+        "max": 696.3,
+        "avg": 34.95631405746448,
+        "distinct_count": 2120
+      },
+      "samples": [
+        9.7,
+        9.7,
+        9.7
+      ]
+    },
+    {
+      "field_name": "low_125d",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "125日最低价",
+      "statistics": {
+        "null_count": 1860,
+        "non_null_count": 44062,
+        "null_percentage": 4.050346239275293,
+        "min": -1.21,
+        "max": 548.2,
+        "avg": 22.083649176160865,
+        "distinct_count": 1863
+      },
+      "samples": [
+        2.38,
+        2.38,
+        2.38
+      ]
+    },
+    {
+      "field_name": "high_250d",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "250日最高价",
+      "statistics": {
+        "null_count": 3735,
+        "non_null_count": 42187,
+        "null_percentage": 8.133356561125387,
+        "min": -0.44,
+        "max": 696.3,
+        "avg": 38.62465475146372,
+        "distinct_count": 1759
+      },
+      "samples": [
+        9.7,
+        9.7,
+        9.7
+      ]
+    },
+    {
+      "field_name": "low_250d",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "250日最低价",
+      "statistics": {
+        "null_count": 3735,
+        "non_null_count": 42187,
+        "null_percentage": 8.133356561125387,
+        "min": -1.21,
+        "max": 457.9,
+        "avg": 19.515871951074974,
+        "distinct_count": 1490
+      },
+      "samples": [
+        1.11,
+        1.11,
+        1.11
+      ]
+    },
+    {
+      "field_name": "volume_min_500d",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "500日最小成交量",
+      "statistics": {
+        "null_count": 7485,
+        "non_null_count": 38437,
+        "null_percentage": 16.299377204825575,
+        "min": 0.0,
+        "max": 93563880.0,
+        "avg": 5949168.837942608,
+        "distinct_count": 226
+      },
+      "samples": [
+        3317000.0,
+        3317000.0,
+        3317000.0
+      ]
+    },
+    {
+      "field_name": "volume_max_500d",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "500日最大成交量",
+      "statistics": {
+        "null_count": 7485,
+        "non_null_count": 38437,
+        "null_percentage": 16.299377204825575,
+        "min": 2201687.0,
+        "max": 6053681711.0,
+        "avg": 550769481.496865,
+        "distinct_count": 256
+      },
+      "samples": [
+        1974669090.0,
+        1974669090.0,
+        1974669090.0
+      ]
+    },
+    {
+      "field_name": "volume_10th_percentile_500d",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "500日成交量第10百分位数",
+      "statistics": {
+        "null_count": 7485,
+        "non_null_count": 38437,
+        "null_percentage": 16.299377204825575,
+        "min": 4000.0,
+        "max": 476127815.40000004,
+        "avg": 18981556.6678721,
+        "distinct_count": 6057
+      },
+      "samples": [
+        11315045.0,
+        11315045.0,
+        11315045.0
+      ]
+    },
+    {
+      "field_name": "volume_25th_percentile_500d",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "500日成交量第25百分位数",
+      "statistics": {
+        "null_count": 7485,
+        "non_null_count": 38437,
+        "null_percentage": 16.299377204825575,
+        "min": 24750.0,
+        "max": 806961380.25,
+        "avg": 27974091.263561152,
+        "distinct_count": 10382
+      },
+      "samples": [
+        55448506.5,
+        55448506.5,
+        55448506.5
+      ]
+    },
+    {
+      "field_name": "volume_50th_percentile_500d",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "500日成交量第50百分位数（中位数）",
+      "statistics": {
+        "null_count": 7485,
+        "non_null_count": 38437,
+        "null_percentage": 16.299377204825575,
+        "min": 68000.0,
+        "max": 1143891773.0,
+        "avg": 43558108.209537685,
+        "distinct_count": 12501
+      },
+      "samples": [
+        109819862.5,
+        109318418.0,
+        108812033.5
+      ]
+    },
+    {
+      "field_name": "volume_75th_percentile_500d",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "500日成交量第75百分位数",
+      "statistics": {
+        "null_count": 7485,
+        "non_null_count": 38437,
+        "null_percentage": 16.299377204825575,
+        "min": 139000.0,
+        "max": 1690862179.5,
+        "avg": 70477223.51093999,
+        "distinct_count": 10179
+      },
+      "samples": [
+        194557336.75,
+        193232503.25,
+        191429534.25
+      ]
+    },
+    {
+      "field_name": "volume_90th_percentile_500d",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "500日成交量第90百分位数",
+      "statistics": {
+        "null_count": 7485,
+        "non_null_count": 38437,
+        "null_percentage": 16.299377204825575,
+        "min": 254100.00000000003,
+        "max": 2396350189.1000004,
+        "avg": 113246983.07123087,
+        "distinct_count": 5816
+      },
+      "samples": [
+        359191352.50000006,
+        359191352.50000006,
+        359191352.50000006
+      ]
+    },
+    {
+      "field_name": "amount_min_500d",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "500日最小成交金额",
+      "statistics": {
+        "null_count": 7485,
+        "non_null_count": 38437,
+        "null_percentage": 16.299377204825575,
+        "min": 0.0,
+        "max": 2888661599.0,
+        "avg": 151241626.9897461,
+        "distinct_count": 266
+      },
+      "samples": [
+        15185570.0,
+        15185570.0,
+        15185570.0
+      ]
+    },
+    {
+      "field_name": "amount_max_500d",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "500日最大成交金额",
+      "statistics": {
+        "null_count": 7485,
+        "non_null_count": 38437,
+        "null_percentage": 16.299377204825575,
+        "min": 16515093.11,
+        "max": 148682130954.0,
+        "avg": 7396011661.393573,
+        "distinct_count": 294
+      },
+      "samples": [
+        6315488283.0,
+        6315488283.0,
+        6315488283.0
+      ]
+    },
+    {
+      "field_name": "amount_10th_percentile_500d",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "500日成交金额第10百分位数",
+      "statistics": {
+        "null_count": 7485,
+        "non_null_count": 38437,
+        "null_percentage": 16.299377204825575,
+        "min": 32826.000000000015,
+        "max": 6278066855.1,
+        "avg": 343230720.1837683,
+        "distinct_count": 7688
+      },
+      "samples": [
+        62900394.6,
+        62900394.6,
+        62900394.6
+      ]
+    },
+    {
+      "field_name": "amount_25th_percentile_500d",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "500日成交金额第25百分位数",
+      "statistics": {
+        "null_count": 7485,
+        "non_null_count": 38437,
+        "null_percentage": 16.299377204825575,
+        "min": 204962.5,
+        "max": 7933452312.0,
+        "avg": 456363931.6458212,
+        "distinct_count": 12791
+      },
+      "samples": [
+        118467516.0,
+        118065464.25,
+        118012623.0
+      ]
+    },
+    {
+      "field_name": "amount_50th_percentile_500d",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "500日成交金额第50百分位数（中位数）",
+      "statistics": {
+        "null_count": 7485,
+        "non_null_count": 38437,
+        "null_percentage": 16.299377204825575,
+        "min": 547930.0,
+        "max": 10646540586.5,
+        "avg": 649207016.5991093,
+        "distinct_count": 15284
+      },
+      "samples": [
+        207672567.0,
+        206120353.0,
+        204435669.0
+      ]
+    },
+    {
+      "field_name": "amount_75th_percentile_500d",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "500日成交金额第75百分位数",
+      "statistics": {
+        "null_count": 7485,
+        "non_null_count": 38437,
+        "null_percentage": 16.299377204825575,
+        "min": 1149602.5,
+        "max": 14492918225.25,
+        "avg": 956983074.5257614,
+        "distinct_count": 12153
+      },
+      "samples": [
+        424837587.0,
+        424205487.5,
+        423425329.75
+      ]
+    },
+    {
+      "field_name": "amount_90th_percentile_500d",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "500日成交金额第90百分位数",
+      "statistics": {
+        "null_count": 7485,
+        "non_null_count": 38437,
+        "null_percentage": 16.299377204825575,
+        "min": 2122190.0,
+        "max": 20311346277.800003,
+        "avg": 1388268840.3948343,
+        "distinct_count": 7120
+      },
+      "samples": [
+        925625074.8000005,
+        918784890.9000001,
+        914055913.5000001
+      ]
+    },
+    {
+      "field_name": "amplitude_min_500d",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "500日最小振幅",
+      "statistics": {
+        "null_count": 7485,
+        "non_null_count": 38437,
+        "null_percentage": 16.299377204825575,
+        "min": -5500.0,
+        "max": 2.43,
+        "avg": -160.46610713635297,
+        "distinct_count": 126
+      },
+      "samples": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "field_name": "amplitude_max_500d",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "500日最大振幅",
+      "statistics": {
+        "null_count": 7485,
+        "non_null_count": 38437,
+        "null_percentage": 16.299377204825575,
+        "min": 6.1,
+        "max": 1375.0,
+        "avg": 80.25798605510316,
+        "distinct_count": 231
+      },
+      "samples": [
+        35.54,
+        35.54,
+        35.54
+      ]
+    },
+    {
+      "field_name": "amplitude_10th_percentile_500d",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "500日振幅第10百分位数",
+      "statistics": {
+        "null_count": 7485,
+        "non_null_count": 38437,
+        "null_percentage": 16.299377204825575,
+        "min": -80.65,
+        "max": 5.4,
+        "avg": 0.22501225381793613,
+        "distinct_count": 1541
+      },
+      "samples": [
+        2.69,
+        2.69,
+        2.69
+      ]
+    },
+    {
+      "field_name": "amplitude_25th_percentile_500d",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "500日振幅第25百分位数",
+      "statistics": {
+        "null_count": 7485,
+        "non_null_count": 38437,
+        "null_percentage": 16.299377204825575,
+        "min": -24.21,
+        "max": 10.7625,
+        "avg": 2.531569906600411,
+        "distinct_count": 1887
+      },
+      "samples": [
+        3.4400000000000004,
+        3.4075,
+        3.4075
+      ]
+    },
+    {
+      "field_name": "amplitude_50th_percentile_500d",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "500日振幅第50百分位数（中位数）",
+      "statistics": {
+        "null_count": 7485,
+        "non_null_count": 38437,
+        "null_percentage": 16.299377204825575,
+        "min": -5.359999999999999,
+        "max": 19.51,
+        "avg": 4.103190675651065,
+        "distinct_count": 2013
+      },
+      "samples": [
+        4.65,
+        4.65,
+        4.635
+      ]
+    },
+    {
+      "field_name": "amplitude_75th_percentile_500d",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "500日振幅第75百分位数",
+      "statistics": {
+        "null_count": 7485,
+        "non_null_count": 38437,
+        "null_percentage": 16.299377204825575,
+        "min": -2.1550000000000002,
+        "max": 37.222500000000004,
+        "avg": 6.123787236256732,
+        "distinct_count": 3044
+      },
+      "samples": [
+        6.532500000000001,
+        6.5225,
+        6.512499999999999
+      ]
+    },
+    {
+      "field_name": "amplitude_90th_percentile_500d",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "500日振幅第90百分位数",
+      "statistics": {
+        "null_count": 7485,
+        "non_null_count": 38437,
+        "null_percentage": 16.299377204825575,
+        "min": 3.13,
+        "max": 101.894,
+        "avg": 9.512263027811745,
+        "distinct_count": 3370
+      },
+      "samples": [
+        9.382000000000001,
+        9.254000000000003,
+        9.177000000000001
+      ]
+    },
+    {
+      "field_name": "change_percent_min_500d",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "500日最小涨跌幅",
+      "statistics": {
+        "null_count": 7485,
+        "non_null_count": 38437,
+        "null_percentage": 16.299377204825575,
+        "min": -5000.0,
+        "max": -4.99,
+        "avg": -110.97216744282854,
+        "distinct_count": 191
+      },
+      "samples": [
+        -46.77,
+        -46.77,
+        -46.77
+      ]
+    },
+    {
+      "field_name": "change_percent_max_500d",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "500日最大涨跌幅",
+      "statistics": {
+        "null_count": 7485,
+        "non_null_count": 38437,
+        "null_percentage": 16.299377204825575,
+        "min": 4.72,
+        "max": 4000.0,
+        "avg": 111.52437573171683,
+        "distinct_count": 215
+      },
+      "samples": [
+        40.91,
+        40.91,
+        40.91
+      ]
+    },
+    {
+      "field_name": "change_percent_10th_percentile_500d",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "500日涨跌幅第10百分位数",
+      "statistics": {
+        "null_count": 7485,
+        "non_null_count": 38437,
+        "null_percentage": 16.299377204825575,
+        "min": -37.74,
+        "max": -1.551,
+        "avg": -4.385150558056039,
+        "distinct_count": 2141
+      },
+      "samples": [
+        -4.642999999999999,
+        -4.642999999999999,
+        -4.642999999999999
+      ]
+    },
+    {
+      "field_name": "change_percent_25th_percentile_500d",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "500日涨跌幅第25百分位数",
+      "statistics": {
+        "null_count": 7485,
+        "non_null_count": 38437,
+        "null_percentage": 16.299377204825575,
+        "min": -12.1325,
+        "max": -0.8150000000000001,
+        "avg": -2.0250744074719673,
+        "distinct_count": 1234
+      },
+      "samples": [
+        -2.5524999999999998,
+        -2.5524999999999998,
+        -2.56
+      ]
+    },
+    {
+      "field_name": "change_percent_50th_percentile_500d",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "500日涨跌幅第50百分位数（中位数）",
+      "statistics": {
+        "null_count": 7485,
+        "non_null_count": 38437,
+        "null_percentage": 16.299377204825575,
+        "min": -1.3900000000000001,
+        "max": 0.515,
+        "avg": -0.09193784634596873,
+        "distinct_count": 262
+      },
+      "samples": [
+        -0.595,
+        -0.595,
+        -0.63
+      ]
+    },
+    {
+      "field_name": "change_percent_75th_percentile_500d",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "500日涨跌幅第75百分位数",
+      "statistics": {
+        "null_count": 7485,
+        "non_null_count": 38437,
+        "null_percentage": 16.299377204825575,
+        "min": 0.6725000000000001,
+        "max": 13.467500000000001,
+        "avg": 2.01221752478081,
+        "distinct_count": 1221
+      },
+      "samples": [
+        1.5875,
+        1.57,
+        1.5625
+      ]
+    },
+    {
+      "field_name": "change_percent_90th_percentile_500d",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "500日涨跌幅第90百分位数",
+      "statistics": {
+        "null_count": 7485,
+        "non_null_count": 38437,
+        "null_percentage": 16.299377204825575,
+        "min": 1.719000000000002,
+        "max": 41.32700000000002,
+        "avg": 4.826222650050735,
+        "distinct_count": 2183
+      },
+      "samples": [
+        5.378000000000002,
+        5.361000000000001,
+        5.315
+      ]
+    },
+    {
+      "field_name": "change_amount_min_500d",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "500日最小涨跌额",
+      "statistics": {
+        "null_count": 7485,
+        "non_null_count": 38437,
+        "null_percentage": 16.299377204825575,
+        "min": -62.4,
+        "max": -0.06,
+        "avg": -3.5881192600879364,
+        "distinct_count": 147
+      },
+      "samples": [
+        -2.75,
+        -2.75,
+        -2.75
+      ]
+    },
+    {
+      "field_name": "change_amount_max_500d",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "500日最大涨跌额",
+      "statistics": {
+        "null_count": 7485,
+        "non_null_count": 38437,
+        "null_percentage": 16.299377204825575,
+        "min": 0.07,
+        "max": 69.6,
+        "avg": 4.157650701147332,
+        "distinct_count": 162
+      },
+      "samples": [
+        2.25,
+        2.25,
+        2.25
+      ]
+    },
+    {
+      "field_name": "change_amount_10th_percentile_500d",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "500日涨跌额第10百分位数",
+      "statistics": {
+        "null_count": 7485,
+        "non_null_count": 38437,
+        "null_percentage": 16.299377204825575,
+        "min": -14.849999999999998,
+        "max": -0.02,
+        "avg": -0.8138754845591487,
+        "distinct_count": 506
+      },
+      "samples": [
+        -0.13,
+        -0.13,
+        -0.13
+      ]
+    },
+    {
+      "field_name": "change_amount_25th_percentile_500d",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "500日涨跌额第25百分位数",
+      "statistics": {
+        "null_count": 7485,
+        "non_null_count": 38437,
+        "null_percentage": 16.299377204825575,
+        "min": -7.37,
+        "max": -0.01,
+        "avg": -0.3925978874521945,
+        "distinct_count": 318
+      },
+      "samples": [
+        -0.06,
+        -0.06,
+        -0.06
+      ]
+    },
+    {
+      "field_name": "change_amount_50th_percentile_500d",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "500日涨跌额第50百分位数（中位数）",
+      "statistics": {
+        "null_count": 7485,
+        "non_null_count": 38437,
+        "null_percentage": 16.299377204825575,
+        "min": -1.47,
+        "max": 0.645,
+        "avg": -0.012940526055623488,
+        "distinct_count": 97
+      },
+      "samples": [
+        -0.01,
+        -0.01,
+        -0.01
+      ]
+    },
+    {
+      "field_name": "change_amount_75th_percentile_500d",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "500日涨跌额第75百分位数",
+      "statistics": {
+        "null_count": 7485,
+        "non_null_count": 38437,
+        "null_percentage": 16.299377204825575,
+        "min": 0.0,
+        "max": 7.37,
+        "avg": 0.40017196971667923,
+        "distinct_count": 322
+      },
+      "samples": [
+        0.04,
+        0.04,
+        0.04
+      ]
+    },
+    {
+      "field_name": "change_amount_90th_percentile_500d",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "500日涨跌额第90百分位数",
+      "statistics": {
+        "null_count": 7485,
+        "non_null_count": 38437,
+        "null_percentage": 16.299377204825575,
+        "min": 0.02,
+        "max": 14.29,
+        "avg": 0.8752386762754639,
+        "distinct_count": 543
+      },
+      "samples": [
+        0.11,
+        0.11,
+        0.11
+      ]
+    },
+    {
+      "field_name": "turnover_rate_min_500d",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "500日最小换手率",
+      "statistics": {
+        "null_count": 7485,
+        "non_null_count": 38437,
+        "null_percentage": 16.299377204825575,
+        "min": 0.0,
+        "max": 1.18,
+        "avg": 0.06886489580352265,
+        "distinct_count": 27
+      },
+      "samples": [
+        0.01,
+        0.01,
+        0.01
+      ]
+    },
+    {
+      "field_name": "turnover_rate_max_500d",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "500日最大换手率",
+      "statistics": {
+        "null_count": 7485,
+        "non_null_count": 38437,
+        "null_percentage": 16.299377204825575,
+        "min": 0.67,
+        "max": 337.3,
+        "avg": 7.139674272185654,
+        "distinct_count": 211
+      },
+      "samples": [
+        5.9,
+        5.9,
+        5.9
+      ]
+    },
+    {
+      "field_name": "turnover_rate_10th_percentile_500d",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "500日换手率第10百分位数",
+      "statistics": {
+        "null_count": 7485,
+        "non_null_count": 38437,
+        "null_percentage": 16.299377204825575,
+        "min": 0.0,
+        "max": 5.2589999999999995,
+        "avg": 0.23813299685199157,
+        "distinct_count": 330
+      },
+      "samples": [
+        0.03,
+        0.03,
+        0.03
+      ]
+    },
+    {
+      "field_name": "turnover_rate_25th_percentile_500d",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "500日换手率第25百分位数",
+      "statistics": {
+        "null_count": 7485,
+        "non_null_count": 38437,
+        "null_percentage": 16.299377204825575,
+        "min": 0.01,
+        "max": 7.485,
+        "avg": 0.34786494783671984,
+        "distinct_count": 512
+      },
+      "samples": [
+        0.1675,
+        0.1675,
+        0.1675
+      ]
+    },
+    {
+      "field_name": "turnover_rate_50th_percentile_500d",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "500日换手率第50百分位数（中位数）",
+      "statistics": {
+        "null_count": 7485,
+        "non_null_count": 38437,
+        "null_percentage": 16.299377204825575,
+        "min": 0.03,
+        "max": 10.774999999999999,
+        "avg": 0.5462809272315737,
+        "distinct_count": 641
+      },
+      "samples": [
+        0.33,
+        0.325,
+        0.32
+      ]
+    },
+    {
+      "field_name": "turnover_rate_75th_percentile_500d",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "500日换手率第75百分位数",
+      "statistics": {
+        "null_count": 7485,
+        "non_null_count": 38437,
+        "null_percentage": 16.299377204825575,
+        "min": 0.06,
+        "max": 14.99,
+        "avg": 0.8728746390196946,
+        "distinct_count": 829
+      },
+      "samples": [
+        0.58,
+        0.58,
+        0.5725
+      ]
+    },
+    {
+      "field_name": "turnover_rate_90th_percentile_500d",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "500日换手率第90百分位数",
+      "statistics": {
+        "null_count": 7485,
+        "non_null_count": 38437,
+        "null_percentage": 16.299377204825575,
+        "min": 0.11,
+        "max": 19.686,
+        "avg": 1.3710475843588212,
+        "distinct_count": 1258
+      },
+      "samples": [
+        1.08,
+        1.08,
+        1.08
+      ]
+    },
+    {
+      "field_name": "volume_ratio5_min_500d",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "500日5日量比最小值",
+      "statistics": {
+        "null_count": 7485,
+        "non_null_count": 38437,
+        "null_percentage": 16.299377204825575,
+        "min": 0.0,
+        "max": 0.41150272911201896,
+        "avg": 0.1496173675168369,
+        "distinct_count": 168
+      },
+      "samples": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "field_name": "volume_ratio5_max_500d",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "500日5日量比最大值",
+      "statistics": {
+        "null_count": 7485,
+        "non_null_count": 38437,
+        "null_percentage": 16.299377204825575,
+        "min": 2.992712444791967,
+        "max": 149.44372027076471,
+        "avg": 16.121964827671935,
+        "distinct_count": 173
+      },
+      "samples": [
+        61.503568319701216,
+        61.503568319701216,
+        61.503568319701216
+      ]
+    },
+    {
+      "field_name": "volume_ratio5_10th_percentile_500d",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "500日5日量比第10百分位数",
+      "statistics": {
+        "null_count": 7485,
+        "non_null_count": 38437,
+        "null_percentage": 16.299377204825575,
+        "min": 0.07802681946216632,
+        "max": 0.6342977756809841,
+        "avg": 0.46407147263872595,
+        "distinct_count": 2505
+      },
+      "samples": [
+        0.43082506079391253,
+        0.4354837967608157,
+        0.4367103981134484
+      ]
+    },
+    {
+      "field_name": "volume_ratio5_25th_percentile_500d",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "500日5日量比第25百分位数",
+      "statistics": {
+        "null_count": 7485,
+        "non_null_count": 38437,
+        "null_percentage": 16.299377204825575,
+        "min": 0.295637987291774,
+        "max": 0.7678100834465427,
+        "avg": 0.6307495206090562,
+        "distinct_count": 3289
+      },
+      "samples": [
+        0.5678978833818766,
+        0.5684992934010439,
+        0.5696549578729316
+      ]
+    },
+    {
+      "field_name": "volume_ratio5_50th_percentile_500d",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "500日5日量比第50百分位数（中位数）",
+      "statistics": {
+        "null_count": 7485,
+        "non_null_count": 38437,
+        "null_percentage": 16.299377204825575,
+        "min": 0.7099454270378429,
+        "max": 0.9988620938815687,
+        "avg": 0.8911705277938026,
+        "distinct_count": 2944
+      },
+      "samples": [
+        0.8275808341699068,
+        0.8275808341699068,
+        0.8275808341699068
+      ]
+    },
+    {
+      "field_name": "volume_ratio5_75th_percentile_500d",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "500日5日量比第75百分位数",
+      "statistics": {
+        "null_count": 7485,
+        "non_null_count": 38437,
+        "null_percentage": 16.299377204825575,
+        "min": 1.1714862427969461,
+        "max": 1.568627726873635,
+        "avg": 1.2958654763432533,
+        "distinct_count": 2390
+      },
+      "samples": [
+        1.252000781764905,
+        1.252000781764905,
+        1.252000781764905
+      ]
+    },
+    {
+      "field_name": "volume_ratio5_90th_percentile_500d",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "500日5日量比第90百分位数",
+      "statistics": {
+        "null_count": 7485,
+        "non_null_count": 38437,
+        "null_percentage": 16.299377204825575,
+        "min": 1.5093911867469394,
+        "max": 3.0713694226327215,
+        "avg": 1.8773324225955772,
+        "distinct_count": 1811
+      },
+      "samples": [
+        1.9923263066156702,
+        1.9923263066156702,
+        1.9923263066156702
+      ]
+    },
+    {
+      "field_name": "volume_ratio20_min_500d",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "500日20日量比最小值",
+      "statistics": {
+        "null_count": 7485,
+        "non_null_count": 38437,
+        "null_percentage": 16.299377204825575,
+        "min": 0.0,
+        "max": 0.36652768282925435,
+        "avg": 0.1402904865192694,
+        "distinct_count": 181
+      },
+      "samples": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "field_name": "volume_ratio20_max_500d",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "500日20日量比最大值",
+      "statistics": {
+        "null_count": 7485,
+        "non_null_count": 38437,
+        "null_percentage": 16.299377204825575,
+        "min": 2.702578831410435,
+        "max": 17.251053488861064,
+        "avg": 7.005176527679783,
+        "distinct_count": 184
+      },
+      "samples": [
+        16.546197962901964,
+        16.546197962901964,
+        16.546197962901964
+      ]
+    },
+    {
+      "field_name": "volume_ratio20_10th_percentile_500d",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "500日20日量比第10百分位数",
+      "statistics": {
+        "null_count": 7485,
+        "non_null_count": 38437,
+        "null_percentage": 16.299377204825575,
+        "min": 0.05197286728651586,
+        "max": 0.6254959653786344,
+        "avg": 0.4336472437080348,
+        "distinct_count": 3138
+      },
+      "samples": [
+        0.3243078038512766,
+        0.3277997136385682,
+        0.32887826950408294
+      ]
+    },
+    {
+      "field_name": "volume_ratio20_25th_percentile_500d",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "500日20日量比第25百分位数",
+      "statistics": {
+        "null_count": 7485,
+        "non_null_count": 38437,
+        "null_percentage": 16.299377204825575,
+        "min": 0.27914466844241104,
+        "max": 0.7665492770897298,
+        "avg": 0.5973816953403632,
+        "distinct_count": 4249
+      },
+      "samples": [
+        0.46832881765805945,
+        0.46832881765805945,
+        0.4707292632944799
+      ]
+    },
+    {
+      "field_name": "volume_ratio20_50th_percentile_500d",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "500日20日量比第50百分位数（中位数）",
+      "statistics": {
+        "null_count": 7485,
+        "non_null_count": 38437,
+        "null_percentage": 16.299377204825575,
+        "min": 0.5917699004502278,
+        "max": 0.9845823520225712,
+        "avg": 0.8510386981799264,
+        "distinct_count": 4293
+      },
+      "samples": [
+        0.7352230058189392,
+        0.7352230058189392,
+        0.7352230058189392
+      ]
+    },
+    {
+      "field_name": "volume_ratio20_75th_percentile_500d",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "500日20日量比第75百分位数",
+      "statistics": {
+        "null_count": 7485,
+        "non_null_count": 38437,
+        "null_percentage": 16.299377204825575,
+        "min": 1.0621006933764534,
+        "max": 1.4651148567755528,
+        "avg": 1.2302693938110163,
+        "distinct_count": 3345
+      },
+      "samples": [
+        1.1542908608142721,
+        1.1542908608142721,
+        1.1542908608142721
+      ]
+    },
+    {
+      "field_name": "volume_ratio20_90th_percentile_500d",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "500日20日量比第90百分位数",
+      "statistics": {
+        "null_count": 7485,
+        "non_null_count": 38437,
+        "null_percentage": 16.299377204825575,
+        "min": 1.425595829886102,
+        "max": 2.5480722883857054,
+        "avg": 1.778913681802093,
+        "distinct_count": 2254
+      },
+      "samples": [
+        1.9029577344760922,
+        1.9029577344760922,
+        1.9029577344760922
+      ]
+    },
+    {
+      "field_name": "price_amp_market_chip_concentration_20_70",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "20日价格振幅市场筹码集中度（70%区间）",
+      "statistics": {
+        "null_count": 225,
+        "non_null_count": 45697,
+        "null_percentage": 0.48996123862201124,
+        "min": 1.9999999999999574,
+        "max": 88.0,
+        "avg": 52.392454646913365,
+        "distinct_count": 1259
+      },
+      "samples": [
+        57.99999999999999,
+        57.99999999999999,
+        44.0
+      ]
+    },
+    {
+      "field_name": "price_amp_chip_price_range_20_70",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "20日价格振幅筹码价格范围（70%区间）",
+      "statistics": {
+        "null_count": 225,
+        "non_null_count": 45697,
+        "null_percentage": 0.48996123862201124,
+        "min": 0.006800000000000028,
+        "max": 146.93579999999992,
+        "avg": 2.685223091231372,
+        "distinct_count": 14462
+      },
+      "samples": [
+        3.363999999999999,
+        3.363999999999999,
+        2.5519999999999996
+      ]
+    },
+    {
+      "field_name": "price_amp_chip_min_20_70",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "20日价格振幅筹码最低价（70%区间）",
+      "statistics": {
+        "null_count": 225,
+        "non_null_count": 45697,
+        "null_percentage": 0.48996123862201124,
+        "min": -1.0544,
+        "max": 636.4000000000001,
+        "avg": 26.597636124909734,
+        "distinct_count": 21925
+      },
+      "samples": [
+        5.176,
+        5.176,
+        5.176
+      ]
+    },
+    {
+      "field_name": "price_amp_chip_max_20_70",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "20日价格振幅筹码最高价（70%区间）",
+      "statistics": {
+        "null_count": 225,
+        "non_null_count": 45697,
+        "null_percentage": 0.48996123862201124,
+        "min": -0.944,
+        "max": 675.4856,
+        "avg": 29.2828592161411,
+        "distinct_count": 21862
+      },
+      "samples": [
+        8.54,
+        8.54,
+        7.728
+      ]
+    },
+    {
+      "field_name": "price_amp_market_chip_concentration_20_90",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "20日价格振幅市场筹码集中度（90%区间）",
+      "statistics": {
+        "null_count": 225,
+        "non_null_count": 45697,
+        "null_percentage": 0.48996123862201124,
+        "min": 7.999999999999982,
+        "max": 96.00000000000003,
+        "avg": 71.54434645600368,
+        "distinct_count": 881
+      },
+      "samples": [
+        76.0,
+        76.0,
+        76.0
+      ]
+    },
+    {
+      "field_name": "price_amp_chip_price_range_20_90",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "20日价格振幅筹码价格范围（90%区间）",
+      "statistics": {
+        "null_count": 225,
+        "non_null_count": 45697,
+        "null_percentage": 0.48996123862201124,
+        "min": 0.015600000000000003,
+        "max": 210.7535999999999,
+        "avg": 3.648139129483336,
+        "distinct_count": 13555
+      },
+      "samples": [
+        4.4079999999999995,
+        4.4079999999999995,
+        4.4079999999999995
+      ]
+    },
+    {
+      "field_name": "price_amp_chip_min_20_90",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "20日价格振幅筹码最低价（90%区间）",
+      "statistics": {
+        "null_count": 225,
+        "non_null_count": 45697,
+        "null_percentage": 0.48996123862201124,
+        "min": -1.07,
+        "max": 631.72,
+        "avg": 26.128434991356105,
+        "distinct_count": 19486
+      },
+      "samples": [
+        4.132,
+        4.132,
+        4.132
+      ]
+    },
+    {
+      "field_name": "price_amp_chip_max_20_90",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "20日价格振幅筹码最高价（90%区间）",
+      "statistics": {
+        "null_count": 225,
+        "non_null_count": 45697,
+        "null_percentage": 0.48996123862201124,
+        "min": -0.8936,
+        "max": 681.3199999999999,
+        "avg": 29.77657412083944,
+        "distinct_count": 19571
+      },
+      "samples": [
+        8.54,
+        8.54,
+        8.54
+      ]
+    },
+    {
+      "field_name": "price_amp_market_chip_concentration_60_70",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "60日价格振幅市场筹码集中度（70%区间）",
+      "statistics": {
+        "null_count": 705,
+        "non_null_count": 45217,
+        "null_percentage": 1.5352118810156352,
+        "min": 4.0,
+        "max": 88.00000000000003,
+        "avg": 52.8000530773824,
+        "distinct_count": 669
+      },
+      "samples": [
+        44.0,
+        44.0,
+        44.0
+      ]
+    },
+    {
+      "field_name": "price_amp_chip_price_range_60_70",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "60日价格振幅筹码价格范围（70%区间）",
+      "statistics": {
+        "null_count": 705,
+        "non_null_count": 45217,
+        "null_percentage": 1.5352118810156352,
+        "min": 0.0252,
+        "max": 157.33840000000004,
+        "avg": 4.765767330871133,
+        "distinct_count": 13895
+      },
+      "samples": [
+        2.5519999999999996,
+        2.5519999999999996,
+        2.5519999999999996
+      ]
+    },
+    {
+      "field_name": "price_amp_chip_min_60_70",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "60日价格振幅筹码最低价（70%区间）",
+      "statistics": {
+        "null_count": 705,
+        "non_null_count": 45217,
+        "null_percentage": 1.5352118810156352,
+        "min": -1.0418,
+        "max": 616.45,
+        "avg": 25.595326231284695,
+        "distinct_count": 15668
+      },
+      "samples": [
+        5.176,
+        5.176,
+        5.176
+      ]
+    },
+    {
+      "field_name": "price_amp_chip_max_60_70",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "60日价格振幅筹码最高价（70%区间）",
+      "statistics": {
+        "null_count": 705,
+        "non_null_count": 45217,
+        "null_percentage": 1.5352118810156352,
+        "min": -0.7974,
+        "max": 659.5,
+        "avg": 30.361093562155826,
+        "distinct_count": 15834
+      },
+      "samples": [
+        7.728,
+        7.728,
+        7.728
+      ]
+    },
+    {
+      "field_name": "price_amp_market_chip_concentration_60_90",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "60日价格振幅市场筹码集中度（90%区间）",
+      "statistics": {
+        "null_count": 705,
+        "non_null_count": 45217,
+        "null_percentage": 1.5352118810156352,
+        "min": 25.99999999999996,
+        "max": 96.00000000000001,
+        "avg": 73.86027379083089,
+        "distinct_count": 461
+      },
+      "samples": [
+        76.0,
+        76.0,
+        76.0
+      ]
+    },
+    {
+      "field_name": "price_amp_chip_price_range_60_90",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "60日价格振幅筹码价格范围（90%区间）",
+      "statistics": {
+        "null_count": 705,
+        "non_null_count": 45217,
+        "null_percentage": 1.5352118810156352,
+        "min": 0.03639999999999999,
+        "max": 208.24200000000002,
+        "avg": 6.658730636707434,
+        "distinct_count": 12537
+      },
+      "samples": [
+        4.4079999999999995,
+        4.4079999999999995,
+        4.4079999999999995
+      ]
+    },
+    {
+      "field_name": "price_amp_chip_min_60_90",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "60日价格振幅筹码最低价（90%区间）",
+      "statistics": {
+        "null_count": 705,
+        "non_null_count": 45217,
+        "null_percentage": 1.5352118810156352,
+        "min": -1.0612000000000001,
+        "max": 605.25,
+        "avg": 24.712124563770264,
+        "distinct_count": 13627
+      },
+      "samples": [
+        4.132,
+        4.132,
+        4.132
+      ]
+    },
+    {
+      "field_name": "price_amp_chip_max_60_90",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "60日价格振幅筹码最高价（90%区间）",
+      "statistics": {
+        "null_count": 705,
+        "non_null_count": 45217,
+        "null_percentage": 1.5352118810156352,
+        "min": -0.7268000000000001,
+        "max": 677.9,
+        "avg": 31.370855200477695,
+        "distinct_count": 13572
+      },
+      "samples": [
+        8.54,
+        8.54,
+        8.54
+      ]
+    },
+    {
+      "field_name": "price_amp_market_chip_concentration_250_70",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "250日价格振幅市场筹码集中度（70%区间）",
+      "statistics": {
+        "null_count": 2985,
+        "non_null_count": 42937,
+        "null_percentage": 6.500152432385349,
+        "min": 9.999999999999993,
+        "max": 82.0,
+        "avg": 51.06882176211659,
+        "distinct_count": 314
+      },
+      "samples": [
+        54.0,
+        53.99999999999999,
+        54.0
+      ]
+    },
+    {
+      "field_name": "price_amp_chip_price_range_250_70",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "250日价格振幅筹码价格范围（70%区间）",
+      "statistics": {
+        "null_count": 2985,
+        "non_null_count": 42937,
+        "null_percentage": 6.500152432385349,
+        "min": 0.12160000000000001,
+        "max": 258.0502,
+        "avg": 10.350676940633951,
+        "distinct_count": 8913
+      },
+      "samples": [
+        4.590000000000001,
+        4.6278,
+        4.6386
+      ]
+    },
+    {
+      "field_name": "price_amp_chip_min_250_70",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "250日价格振幅筹码最低价（70%区间）",
+      "statistics": {
+        "null_count": 2985,
+        "non_null_count": 42937,
+        "null_percentage": 6.500152432385349,
+        "min": -0.8698,
+        "max": 497.464,
+        "avg": 22.772365936138996,
+        "distinct_count": 7491
+      },
+      "samples": [
+        1.88,
+        1.8155999999999999,
+        1.7972000000000001
+      ]
+    },
+    {
+      "field_name": "price_amp_chip_max_250_70",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "250日价格振幅筹码最高价（70%区间）",
+      "statistics": {
+        "null_count": 2985,
+        "non_null_count": 42937,
+        "null_percentage": 6.500152432385349,
+        "min": -0.5916000000000001,
+        "max": 626.6,
+        "avg": 33.12304287677294,
+        "distinct_count": 8091
+      },
+      "samples": [
+        6.470000000000001,
+        6.4434,
+        6.4358
+      ]
+    },
+    {
+      "field_name": "price_amp_market_chip_concentration_250_90",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "250日价格振幅市场筹码集中度（90%区间）",
+      "statistics": {
+        "null_count": 2985,
+        "non_null_count": 42937,
+        "null_percentage": 6.500152432385349,
+        "min": 27.999999999999993,
+        "max": 94.00000000000001,
+        "avg": 72.72986002748212,
+        "distinct_count": 218
+      },
+      "samples": [
+        74.0,
+        74.0,
+        74.0
+      ]
+    },
+    {
+      "field_name": "price_amp_chip_price_range_250_90",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "250日价格振幅筹码价格范围（90%区间）",
+      "statistics": {
+        "null_count": 2985,
+        "non_null_count": 42937,
+        "null_percentage": 6.500152432385349,
+        "min": 0.18239999999999998,
+        "max": 349.6164,
+        "avg": 14.642058602138015,
+        "distinct_count": 8507
+      },
+      "samples": [
+        6.29,
+        6.3418,
+        6.3566
+      ]
+    },
+    {
+      "field_name": "price_amp_chip_min_250_90",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "250日价格振幅筹码最低价（90%区间）",
+      "statistics": {
+        "null_count": 2985,
+        "non_null_count": 42937,
+        "null_percentage": 6.500152432385349,
+        "min": -1.0106000000000002,
+        "max": 482.786,
+        "avg": 20.907959270559193,
+        "distinct_count": 7006
+      },
+      "samples": [
+        1.2,
+        1.13,
+        1.11
+      ]
+    },
+    {
+      "field_name": "price_amp_chip_max_250_90",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "250日价格振幅筹码最高价（90%区间）",
+      "statistics": {
+        "null_count": 2985,
+        "non_null_count": 42937,
+        "null_percentage": 6.500152432385349,
+        "min": -0.5408,
+        "max": 658.7719999999999,
+        "avg": 35.55001787269721,
+        "distinct_count": 7533
+      },
+      "samples": [
+        7.49,
+        7.4718,
+        7.466600000000001
+      ]
+    },
+    {
+      "field_name": "price_amp_market_chip_concentration",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "全历史价格振幅市场筹码集中度",
+      "statistics": {
+        "null_count": 705,
+        "non_null_count": 45217,
+        "null_percentage": 1.5352118810156352,
+        "min": 4.0,
+        "max": 88.00000000000003,
+        "avg": 52.8000530773824,
+        "distinct_count": 669
+      },
+      "samples": [
+        44.0,
+        44.0,
+        44.0
+      ]
+    },
+    {
+      "field_name": "price_amp_chip_price_range",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "全历史价格振幅筹码价格范围",
+      "statistics": {
+        "null_count": 705,
+        "non_null_count": 45217,
+        "null_percentage": 1.5352118810156352,
+        "min": 0.0252,
+        "max": 157.33840000000004,
+        "avg": 4.765767330871133,
+        "distinct_count": 13895
+      },
+      "samples": [
+        2.5519999999999996,
+        2.5519999999999996,
+        2.5519999999999996
+      ]
+    },
+    {
+      "field_name": "price_amp_chip_min",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "全历史价格振幅筹码最低价",
+      "statistics": {
+        "null_count": 705,
+        "non_null_count": 45217,
+        "null_percentage": 1.5352118810156352,
+        "min": -1.0418,
+        "max": 616.45,
+        "avg": 25.595326231284695,
+        "distinct_count": 15668
+      },
+      "samples": [
+        5.176,
+        5.176,
+        5.176
+      ]
+    },
+    {
+      "field_name": "price_amp_chip_max",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "全历史价格振幅筹码最高价",
+      "statistics": {
+        "null_count": 705,
+        "non_null_count": 45217,
+        "null_percentage": 1.5352118810156352,
+        "min": -0.7974,
+        "max": 659.5,
+        "avg": 30.361093562155826,
+        "distinct_count": 15834
+      },
+      "samples": [
+        7.728,
+        7.728,
+        7.728
+      ]
+    },
+    {
+      "field_name": "cost_spread_chip_min_20_70",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "20日成本分布筹码最低价（70%区间）",
+      "statistics": {
+        "null_count": 135,
+        "non_null_count": 45787,
+        "null_percentage": 0.29397674317320677,
+        "min": -1.050375,
+        "max": 636.8062500000001,
+        "avg": 26.752077109769147,
+        "distinct_count": 20997
+      },
+      "samples": [
+        5.895875,
+        6.192500000000001,
+        6.293875
+      ]
+    },
+    {
+      "field_name": "cost_spread_chip_max_20_70",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "20日成本分布筹码最高价（70%区间）",
+      "statistics": {
+        "null_count": 135,
+        "non_null_count": 45787,
+        "null_percentage": 0.29397674317320677,
+        "min": -0.9442499999999999,
+        "max": 674.996875,
+        "avg": 29.090424738462886,
+        "distinct_count": 21279
+      },
+      "samples": [
+        7.571000000000001,
+        7.550000000000001,
+        7.529000000000001
+      ]
+    },
+    {
+      "field_name": "cost_spread_chip_price_range_20_70",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "20日成本分布筹码价格范围（70%区间）",
+      "statistics": {
+        "null_count": 135,
+        "non_null_count": 45787,
+        "null_percentage": 0.29397674317320677,
+        "min": 0.010374999999999995,
+        "max": 124.61824999999999,
+        "avg": 2.338347628693734,
+        "distinct_count": 25924
+      },
+      "samples": [
+        1.6751250000000004,
+        1.3575,
+        1.235125000000001
+      ]
+    },
+    {
+      "field_name": "cost_spread_chip_concentration_20_70",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "20日成本分布筹码集中度（70%区间）",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 45922,
+        "null_percentage": 0.0,
+        "min": -2.9255383179398743e+18,
+        "max": 32200.000000000364,
+        "avg": -63706683461941.09,
+        "distinct_count": 35737
+      },
+      "samples": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "field_name": "cost_spread_chip_min_20_90",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "20日成本分布筹码最低价（90%区间）",
+      "statistics": {
+        "null_count": 135,
+        "non_null_count": 45787,
+        "null_percentage": 0.29397674317320677,
+        "min": -1.0530000000000002,
+        "max": 631.85625,
+        "avg": 26.31963046006508,
+        "distinct_count": 16253
+      },
+      "samples": [
+        4.653625,
+        4.70125,
+        4.748875
+      ]
+    },
+    {
+      "field_name": "cost_spread_chip_max_20_90",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "20日成本分布筹码最高价（90%区间）",
+      "statistics": {
+        "null_count": 135,
+        "non_null_count": 45787,
+        "null_percentage": 0.29397674317320677,
+        "min": -0.894625,
+        "max": 678.991625,
+        "avg": 29.546926168999935,
+        "distinct_count": 16539
+      },
+      "samples": [
+        8.0655,
+        8.025,
+        7.9845
+      ]
+    },
+    {
+      "field_name": "cost_spread_chip_price_range_20_90",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "20日成本分布筹码价格范围（90%区间）",
+      "statistics": {
+        "null_count": 135,
+        "non_null_count": 45787,
+        "null_percentage": 0.29397674317320677,
+        "min": 0.015125,
+        "max": 159.09675,
+        "avg": 3.2272957089348506,
+        "distinct_count": 24184
+      },
+      "samples": [
+        3.411875,
+        3.3237500000000004,
+        3.2356249999999998
+      ]
+    },
+    {
+      "field_name": "cost_spread_chip_concentration_20_90",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "20日成本分布筹码集中度（90%区间）",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 45922,
+        "null_percentage": 0.0,
+        "min": -113400.00000000623,
+        "max": 181199.9999999898,
+        "avg": 14.698758741733522,
+        "distinct_count": 29273
+      },
+      "samples": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "field_name": "cost_spread_chip_min_60_70",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "60日成本分布筹码最低价（70%区间）",
+      "statistics": {
+        "null_count": 435,
+        "non_null_count": 45487,
+        "null_percentage": 0.9472583946692217,
+        "min": -0.998625,
+        "max": 616.35625,
+        "avg": 25.73694709477433,
+        "distinct_count": 18823
+      },
+      "samples": [
+        6.60225,
+        6.57125,
+        6.542
+      ]
+    },
+    {
+      "field_name": "cost_spread_chip_max_60_70",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "60日成本分布筹码最高价（70%区间）",
+      "statistics": {
+        "null_count": 435,
+        "non_null_count": 45487,
+        "null_percentage": 0.9472583946692217,
+        "min": -0.7717499999999999,
+        "max": 662.5403749999999,
+        "avg": 30.019646860641505,
+        "distinct_count": 18962
+      },
+      "samples": [
+        7.3161249999999995,
+        7.311249999999999,
+        7.306375
+      ]
+    },
+    {
+      "field_name": "cost_spread_chip_price_range_60_70",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "60日成本分布筹码价格范围（70%区间）",
+      "statistics": {
+        "null_count": 435,
+        "non_null_count": 45487,
+        "null_percentage": 0.9472583946692217,
+        "min": 0.020374999999999976,
+        "max": 154.49487499999987,
+        "avg": 4.282699765867171,
+        "distinct_count": 26338
+      },
+      "samples": [
+        0.7138749999999998,
+        0.7399999999999993,
+        0.7643750000000002
+      ]
+    },
+    {
+      "field_name": "cost_spread_chip_concentration_60_70",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "60日成本分布筹码集中度（70%区间）",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 45922,
+        "null_percentage": 0.0,
+        "min": -84399.9999999968,
+        "max": 92600.000000002,
+        "avg": 20.672107216426152,
+        "distinct_count": 32818
+      },
+      "samples": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "field_name": "cost_spread_chip_min_60_90",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "60日成本分布筹码最低价（90%区间）",
+      "statistics": {
+        "null_count": 435,
+        "non_null_count": 45487,
+        "null_percentage": 0.9472583946692217,
+        "min": -1.050125,
+        "max": 606.8000000000001,
+        "avg": 24.918202203376786,
+        "distinct_count": 13555
+      },
+      "samples": [
+        5.691625,
+        5.74875,
+        5.805875
+      ]
+    },
+    {
+      "field_name": "cost_spread_chip_max_60_90",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "60日成本分布筹码最高价（90%区间）",
+      "statistics": {
+        "null_count": 435,
+        "non_null_count": 45487,
+        "null_percentage": 0.9472583946692217,
+        "min": -0.7198749999999999,
+        "max": 674.835625,
+        "avg": 30.991601875261065,
+        "distinct_count": 13658
+      },
+      "samples": [
+        7.557,
+        7.550000000000001,
+        7.543
+      ]
+    },
+    {
+      "field_name": "cost_spread_chip_price_range_60_90",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "60日成本分布筹码价格范围（90%区间）",
+      "statistics": {
+        "null_count": 435,
+        "non_null_count": 45487,
+        "null_percentage": 0.9472583946692217,
+        "min": 0.03262499999999999,
+        "max": 177.5165,
+        "avg": 6.073399671884275,
+        "distinct_count": 22610
+      },
+      "samples": [
+        1.8653750000000002,
+        1.8012500000000005,
+        1.7371249999999998
+      ]
+    },
+    {
+      "field_name": "cost_spread_chip_concentration_60_90",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "60日成本分布筹码集中度（90%区间）",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 45922,
+        "null_percentage": 0.0,
+        "min": -2.457163956693342e+18,
+        "max": 159200.00000001752,
+        "avg": -53507337587469.54,
+        "distinct_count": 24688
+      },
+      "samples": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "field_name": "cost_spread_chip_min_250_70",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "250日成本分布筹码最低价（70%区间）",
+      "statistics": {
+        "null_count": 1860,
+        "non_null_count": 44062,
+        "null_percentage": 4.050346239275293,
+        "min": -0.85325,
+        "max": 497.95625,
+        "avg": 22.746149110911897,
+        "distinct_count": 17116
+      },
+      "samples": [
+        4.764,
+        4.74,
+        4.717249999999999
+      ]
+    },
+    {
+      "field_name": "cost_spread_chip_max_250_70",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "250日成本分布筹码最高价（70%区间）",
+      "statistics": {
+        "null_count": 1860,
+        "non_null_count": 44062,
+        "null_percentage": 4.050346239275293,
+        "min": -0.6174999999999999,
+        "max": 625.2687500000001,
+        "avg": 32.06303294221778,
+        "distinct_count": 17755
+      },
+      "samples": [
+        6.8055,
+        6.804375,
+        6.80325
+      ]
+    },
+    {
+      "field_name": "cost_spread_chip_price_range_250_70",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "250日成本分布筹码价格范围（70%区间）",
+      "statistics": {
+        "null_count": 1860,
+        "non_null_count": 44062,
+        "null_percentage": 4.050346239275293,
+        "min": 0.10750000000000001,
+        "max": 222.89125000000007,
+        "avg": 9.316883831305889,
+        "distinct_count": 27084
+      },
+      "samples": [
+        2.0415,
+        2.064375,
+        2.086000000000001
+      ]
+    },
+    {
+      "field_name": "cost_spread_chip_concentration_250_70",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "250日成本分布筹码集中度（70%区间）",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 45922,
+        "null_percentage": 0.0,
+        "min": -52754.83870967794,
+        "max": 74661.53846153647,
+        "avg": 35.99610004166545,
+        "distinct_count": 31096
+      },
+      "samples": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "field_name": "cost_spread_chip_min_250_90",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "250日成本分布筹码最低价（90%区间）",
+      "statistics": {
+        "null_count": 1860,
+        "non_null_count": 44062,
+        "null_percentage": 4.050346239275293,
+        "min": -0.976375,
+        "max": 484.69624999999996,
+        "avg": 21.033013770369024,
+        "distinct_count": 12737
+      },
+      "samples": [
+        4.5305,
+        4.516249999999999,
+        4.311249999999999
+      ]
+    },
+    {
+      "field_name": "cost_spread_chip_max_250_90",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "250日成本分布筹码最高价（90%区间）",
+      "statistics": {
+        "null_count": 1860,
+        "non_null_count": 44062,
+        "null_percentage": 4.050346239275293,
+        "min": -0.57725,
+        "max": 652.5051249999999,
+        "avg": 34.46500234896282,
+        "distinct_count": 12950
+      },
+      "samples": [
+        7.2844999999999995,
+        7.283124999999999,
+        7.281749999999999
+      ]
+    },
+    {
+      "field_name": "cost_spread_chip_price_range_250_90",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "250日成本分布筹码价格范围（90%区间）",
+      "statistics": {
+        "null_count": 1860,
+        "non_null_count": 44062,
+        "null_percentage": 4.050346239275293,
+        "min": 0.16387499999999997,
+        "max": 323.97949999999986,
+        "avg": 13.431988578593797,
+        "distinct_count": 21866
+      },
+      "samples": [
+        2.7539999999999996,
+        2.7668749999999998,
+        2.9704999999999995
+      ]
+    },
+    {
+      "field_name": "cost_spread_chip_concentration_250_90",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "250日成本分布筹码集中度（90%区间）",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 45922,
+        "null_percentage": 0.0,
+        "min": -2.2977365298844265e+18,
+        "max": 131844.44444444595,
+        "avg": -50035637164818.52,
+        "distinct_count": 23086
+      },
+      "samples": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "field_name": "cost_spread_chip_concentration",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "全历史成本分布筹码集中度",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 45922,
+        "null_percentage": 0.0,
+        "min": -84399.9999999968,
+        "max": 92600.000000002,
+        "avg": 20.672107216426152,
+        "distinct_count": 32818
+      },
+      "samples": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "field_name": "intensive_trading_min",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "密集交易区间最低价",
+      "statistics": {
+        "null_count": 1890,
+        "non_null_count": 44032,
+        "null_percentage": 4.115674404424895,
+        "min": -0.7706896551724138,
+        "max": 633.5275862068966,
+        "avg": 27.748921693313953,
+        "distinct_count": 8121
+      },
+      "samples": [
+        2.8848275862068964,
+        2.8848275862068964,
+        2.8848275862068964
+      ]
+    },
+    {
+      "field_name": "intensive_trading_max",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "密集交易区间最高价",
+      "statistics": {
+        "null_count": 1890,
+        "non_null_count": 44032,
+        "null_percentage": 4.115674404424895,
+        "min": -0.7493103448275862,
+        "max": 639.8379310344828,
+        "avg": 28.194725638407178,
+        "distinct_count": 8098
+      },
+      "samples": [
+        3.1372413793103444,
+        3.1372413793103444,
+        3.1372413793103444
+      ]
+    },
+    {
+      "field_name": "ema5_10_status",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "EMA5与EMA10交叉状态（1:金叉, -1:死叉, 0:无）",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 45922,
+        "null_percentage": 0.0,
+        "min": "Death",
+        "max": "Golden",
+        "avg": 0.0,
+        "distinct_count": 2
+      },
+      "samples": [
+        "Death",
+        "Golden",
+        "Golden"
+      ]
+    },
+    {
+      "field_name": "ema5_10_streak",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "EMA5与EMA10交叉持续天数",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 45922,
+        "null_percentage": 0.0,
+        "min": 1.0,
+        "max": 128.0,
+        "avg": 12.157593310395889,
+        "distinct_count": 128
+      },
+      "samples": [
+        1.0,
+        1.0,
+        2.0
+      ]
+    },
+    {
+      "field_name": "ema5_20_status",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "EMA5与EMA20交叉状态（1:金叉, -1:死叉, 0:无）",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 45922,
+        "null_percentage": 0.0,
+        "min": "Death",
+        "max": "Golden",
+        "avg": 0.0,
+        "distinct_count": 2
+      },
+      "samples": [
+        "Death",
+        "Golden",
+        "Golden"
+      ]
+    },
+    {
+      "field_name": "ema5_20_streak",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "EMA5与EMA20交叉持续天数",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 45922,
+        "null_percentage": 0.0,
+        "min": 1.0,
+        "max": 130.0,
+        "avg": 18.112386220112363,
+        "distinct_count": 130
+      },
+      "samples": [
+        1.0,
+        1.0,
+        2.0
+      ]
+    },
+    {
+      "field_name": "ema10_20_status",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "EMA10与EMA20交叉状态（1:金叉, -1:死叉, 0:无）",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 45922,
+        "null_percentage": 0.0,
+        "min": "Death",
+        "max": "Golden",
+        "avg": 0.0,
+        "distinct_count": 2
+      },
+      "samples": [
+        "Death",
+        "Golden",
+        "Golden"
+      ]
+    },
+    {
+      "field_name": "ema10_20_streak",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "EMA10与EMA20交叉持续天数",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 45922,
+        "null_percentage": 0.0,
+        "min": 1.0,
+        "max": 190.0,
+        "avg": 24.24783328252254,
+        "distinct_count": 190
+      },
+      "samples": [
+        1.0,
+        1.0,
+        2.0
+      ]
+    },
+    {
+      "field_name": "ema20_50_status",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "EMA20与EMA50交叉状态（1:金叉, -1:死叉, 0:无）",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 45922,
+        "null_percentage": 0.0,
+        "min": "Death",
+        "max": "Golden",
+        "avg": 0.0,
+        "distinct_count": 2
+      },
+      "samples": [
+        "Death",
+        "Golden",
+        "Golden"
+      ]
+    },
+    {
+      "field_name": "ema20_50_streak",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "EMA20与EMA50交叉持续天数",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 45922,
+        "null_percentage": 0.0,
+        "min": 1.0,
+        "max": 504.0,
+        "avg": 54.477635991463785,
+        "distinct_count": 504
+      },
+      "samples": [
+        1.0,
+        1.0,
+        2.0
+      ]
+    },
+    {
+      "field_name": "ema50_200_status",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "EMA50与EMA200交叉状态（1:金叉, -1:死叉, 0:无）",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 45922,
+        "null_percentage": 0.0,
+        "min": "Death",
+        "max": "Golden",
+        "avg": 0.0,
+        "distinct_count": 2
+      },
+      "samples": [
+        "Death",
+        "Golden",
+        "Golden"
+      ]
+    },
+    {
+      "field_name": "ema50_200_streak",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "EMA50与EMA200交叉持续天数",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 45922,
+        "null_percentage": 0.0,
+        "min": 1.0,
+        "max": 892.0,
+        "avg": 172.4741953747659,
+        "distinct_count": 892
+      },
+      "samples": [
+        1.0,
+        1.0,
+        2.0
+      ]
+    },
+    {
+      "field_name": "ema20_200_status",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "EMA20与EMA200交叉状态（1:金叉, -1:死叉, 0:无）",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 45922,
+        "null_percentage": 0.0,
+        "min": "Death",
+        "max": "Golden",
+        "avg": 0.0,
+        "distinct_count": 2
+      },
+      "samples": [
+        "Death",
+        "Golden",
+        "Golden"
+      ]
+    },
+    {
+      "field_name": "ema20_200_streak",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "EMA20与EMA200交叉持续天数",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 45922,
+        "null_percentage": 0.0,
+        "min": 1.0,
+        "max": 894.0,
+        "avg": 134.01339227385566,
+        "distinct_count": 894
+      },
+      "samples": [
+        1.0,
+        1.0,
+        2.0
+      ]
+    },
+    {
+      "field_name": "ema12_26_status",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "EMA12与EMA26交叉状态（1:金叉, -1:死叉, 0:无）",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 45922,
+        "null_percentage": 0.0,
+        "min": "Death",
+        "max": "Golden",
+        "avg": 0.0,
+        "distinct_count": 2
+      },
+      "samples": [
+        "Death",
+        "Golden",
+        "Golden"
+      ]
+    },
+    {
+      "field_name": "ema12_26_streak",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "EMA12与EMA26交叉持续天数",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 45922,
+        "null_percentage": 0.0,
+        "min": 1.0,
+        "max": 269.0,
+        "avg": 30.855232786028484,
+        "distinct_count": 269
+      },
+      "samples": [
+        1.0,
+        1.0,
+        2.0
+      ]
+    },
+    {
+      "field_name": "ema5_13_status",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "EMA5与EMA13交叉状态（1:金叉, -1:死叉, 0:无）",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 45922,
+        "null_percentage": 0.0,
+        "min": "Death",
+        "max": "Golden",
+        "avg": 0.0,
+        "distinct_count": 2
+      },
+      "samples": [
+        "Death",
+        "Golden",
+        "Golden"
+      ]
+    },
+    {
+      "field_name": "ema5_13_streak",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "EMA5与EMA13交叉持续天数",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 45922,
+        "null_percentage": 0.0,
+        "min": 1.0,
+        "max": 126.0,
+        "avg": 14.029963851748617,
+        "distinct_count": 126
+      },
+      "samples": [
+        1.0,
+        1.0,
+        2.0
+      ]
+    },
+    {
+      "field_name": "ema5_34_status",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "EMA5与EMA34交叉状态（1:金叉, -1:死叉, 0:无）",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 45922,
+        "null_percentage": 0.0,
+        "min": "Death",
+        "max": "Golden",
+        "avg": 0.0,
+        "distinct_count": 2
+      },
+      "samples": [
+        "Death",
+        "Golden",
+        "Golden"
+      ]
+    },
+    {
+      "field_name": "ema5_34_streak",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "EMA5与EMA34交叉持续天数",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 45922,
+        "null_percentage": 0.0,
+        "min": 1.0,
+        "max": 227.0,
+        "avg": 26.369713862636644,
+        "distinct_count": 227
+      },
+      "samples": [
+        1.0,
+        1.0,
+        2.0
+      ]
+    },
+    {
+      "field_name": "ema13_34_status",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "EMA13与EMA34交叉状态（1:金叉, -1:死叉, 0:无）",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 45922,
+        "null_percentage": 0.0,
+        "min": "Death",
+        "max": "Golden",
+        "avg": 0.0,
+        "distinct_count": 2
+      },
+      "samples": [
+        "Death",
+        "Golden",
+        "Golden"
+      ]
+    },
+    {
+      "field_name": "ema13_34_streak",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "EMA13与EMA34交叉持续天数",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 45922,
+        "null_percentage": 0.0,
+        "min": 1.0,
+        "max": 297.0,
+        "avg": 37.101868385523275,
+        "distinct_count": 297
+      },
+      "samples": [
+        1.0,
+        1.0,
+        2.0
+      ]
+    },
+    {
+      "field_name": "ema5_13_34_status",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "EMA5、EMA13、EMA34三线状态（2:多头排列, -2:空头排列, 0:震荡）",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 45922,
+        "null_percentage": 0.0,
+        "min": "Death_Triangle",
+        "max": "Mixed",
+        "avg": 0.0,
+        "distinct_count": 3
+      },
+      "samples": [
+        "Mixed",
+        "Golden_Triangle",
+        "Golden_Triangle"
+      ]
+    },
+    {
+      "field_name": "ema5_13_34_streak",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "EMA5、EMA13、EMA34三线状态持续天数",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 45922,
+        "null_percentage": 0.0,
+        "min": 1.0,
+        "max": 110.0,
+        "avg": 11.825530246940465,
+        "distinct_count": 110
+      },
+      "samples": [
+        1.0,
+        1.0,
+        2.0
+      ]
+    },
+    {
+      "field_name": "macd_status",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "MACD状态（1:金叉, -1:死叉, 0:无）",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 45922,
+        "null_percentage": 0.0,
+        "min": "Death",
+        "max": "Golden",
+        "avg": 0.0,
+        "distinct_count": 2
+      },
+      "samples": [
+        "Death",
+        "Golden",
+        "Golden"
+      ]
+    },
+    {
+      "field_name": "macd_golden_streak",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "MACD金叉持续天数",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 45922,
+        "null_percentage": 0.0,
+        "min": 0.0,
+        "max": 54.0,
+        "avg": 5.266778450415923,
+        "distinct_count": 55
+      },
+      "samples": [
+        0.0,
+        1.0,
+        2.0
+      ]
+    },
+    {
+      "field_name": "macd_death_streak",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "MACD死叉持续天数",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 45922,
+        "null_percentage": 0.0,
+        "min": 0.0,
+        "max": 58.0,
+        "avg": 5.387156482731588,
+        "distinct_count": 59
+      },
+      "samples": [
+        1.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "field_name": "bottom_signal_cond",
+      "data_type": "INTEGER",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": "0",
+      "description": "底部信号（1:出现, 0:无）",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 45922,
+        "null_percentage": 0.0,
+        "min": 0,
+        "max": 1,
+        "avg": 0.0008492661469448195,
+        "distinct_count": 2
+      },
+      "samples": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "field_name": "top_signal_cond",
+      "data_type": "INTEGER",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": "0",
+      "description": "顶部信号（1:出现, 0:无）",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 45922,
+        "null_percentage": 0.0,
+        "min": 0,
+        "max": 0,
+        "avg": 0.0,
+        "distinct_count": 1
+      },
+      "samples": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "field_name": "bottom_entry_signal_cond",
+      "data_type": "INTEGER",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": "0",
+      "description": "底部入场信号（1:出现, 0:无）",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 45922,
+        "null_percentage": 0.0,
+        "min": 0,
+        "max": 1,
+        "avg": 0.00047907321109707764,
+        "distinct_count": 2
+      },
+      "samples": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "field_name": "top_exit_signal_cond",
+      "data_type": "INTEGER",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": "0",
+      "description": "顶部出场信号（1:出现, 0:无）",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 45922,
+        "null_percentage": 0.0,
+        "min": 0,
+        "max": 1,
+        "avg": 0.02671921954618701,
+        "distinct_count": 2
+      },
+      "samples": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "field_name": "continuation_signal_cond",
+      "data_type": "INTEGER",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": "0",
+      "description": "上涨延续信号（1:出现, 0:无）",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 45922,
+        "null_percentage": 0.0,
+        "min": 0,
+        "max": 1,
+        "avg": 0.0001959844954488045,
+        "distinct_count": 2
+      },
+      "samples": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "field_name": "decline_continuation_cond",
+      "data_type": "INTEGER",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": "0",
+      "description": "下跌延续信号（1:出现, 0:无）",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 45922,
+        "null_percentage": 0.0,
+        "min": 0,
+        "max": 1,
+        "avg": 0.057967858542746394,
+        "distinct_count": 2
+      },
+      "samples": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "field_name": "accumulation_cond",
+      "data_type": "INTEGER",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": "0",
+      "description": "吸筹信号（1:出现, 0:无）",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 45922,
+        "null_percentage": 0.0,
+        "min": 0,
+        "max": 1,
+        "avg": 0.009777448717390358,
+        "distinct_count": 2
+      },
+      "samples": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "field_name": "distribution_cond",
+      "data_type": "INTEGER",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": "0",
+      "description": "派发信号（1:出现, 0:无）",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 45922,
+        "null_percentage": 0.0,
+        "min": 0,
+        "max": 1,
+        "avg": 0.002330037890335787,
+        "distinct_count": 2
+      },
+      "samples": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "field_name": "multi_timeframe_chip_confirm_bottom_cond",
+      "data_type": "INTEGER",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": "0",
+      "description": "多周期筹码确认底部信号（1:出现, 0:无）",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 45922,
+        "null_percentage": 0.0,
+        "min": 0,
+        "max": 1,
+        "avg": 4.3552110099734335e-05,
+        "distinct_count": 2
+      },
+      "samples": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "field_name": "multi_timeframe_chip_confirm_top_cond",
+      "data_type": "INTEGER",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": "0",
+      "description": "多周期筹码确认顶部信号（1:出现, 0:无）",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 45922,
+        "null_percentage": 0.0,
+        "min": 0,
+        "max": 0,
+        "avg": 0.0,
+        "distinct_count": 1
+      },
+      "samples": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "field_name": "signal_quality",
+      "data_type": "TEXT",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "信号质量评级（A/B/C/D）",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 45922,
+        "null_percentage": 0.0,
+        "distinct_count": 1269
+      },
+      "samples": [
+        "0.0",
+        "0.0",
+        "0.0"
+      ]
+    }
+  ],
+  "sample_data": [
+    {
+      "id": 45908,
+      "stock_code": "00020",
+      "stock_name": "商汤科技",
+      "date": "2021-12-30",
+      "open": 3.91,
+      "high": 4.74,
+      "low": 3.9,
+      "close": 4.13,
+      "volume": 329966696.0,
+      "amount": 1406160926.0,
+      "amplitude": 21.82,
+      "change_percent": 7.27,
+      "change_amount": 0.28,
+      "turnover_rate": 0.99,
+      "previous_close": null,
+      "avg_price": 4.225,
+      "close_chgpct": null,
+      "avg_volume_5d": null,
+      "volume_ratio5": 0.0,
+      "avg_volume_20d": null,
+      "volume_ratio20": 0.0,
+      "ema5": 4.13,
+      "ema8": 4.13,
+      "ema10": 4.13,
+      "ema12": 4.13,
+      "ema13": 4.13,
+      "ema20": 4.13,
+      "ema21": 4.13,
+      "ema26": 4.13,
+      "ema30": 4.13,
+      "ema34": 4.13,
+      "ema50": 4.13,
+      "ema60": 4.13,
+      "ema63": 4.13,
+      "ema100": 4.13,
+      "ema120": 4.13,
+      "ema200": 4.13,
+      "ema250": 4.13,
+      "bias5": 0.0,
+      "bias10": 0.0,
+      "bias20": 0.0,
+      "bias50": 0.0,
+      "bias60": 0.0,
+      "bias100": 0.0,
+      "bias120": 0.0,
+      "bias200": 0.0,
+      "bias250": 0.0,
+      "vol_ema5": 329966696.0,
+      "vol_ema10": 329966696.0,
+      "vol_ema20": 329966696.0,
+      "volume_oscillator": 0.0,
+      "obv": 0.0,
+      "bollinger_middle": null,
+      "bollinger_upper": null,
+      "bollinger_lower": null,
+      "vwap": 4.256666666666667,
+      "parabolic_sar": null,
+      "vol_ema5_20_cross_status": "golden",
+      "vol_ema5_20_cross_streak": 1.0,
+      "vol_ema5_10_cross_status": "golden",
+      "vol_ema5_10_cross_streak": 1.0,
+      "tr": 0.8400000000000003,
+      "atr14": null,
+      "kdj_k": 50.0,
+      "kdj_d": null,
+      "kdj_j": null,
+      "macd_dif": 0.0,
+      "macd_signal": 0.0,
+      "macd_histogram": 0.0,
+      "rsi6": 50.0,
+      "rsi14": 50.0,
+      "cci14": null,
+      "williams_r": null,
+      "pdi14": 0.0,
+      "mdi14": 0.0,
+      "adx14": null,
+      "atr30": null,
+      "pdi30": 0.0,
+      "mdi30": 0.0,
+      "adx30": null,
+      "atr60": null,
+      "pdi60": 0.0,
+      "mdi60": 0.0,
+      "adx60": null,
+      "atr100": null,
+      "pdi100": 0.0,
+      "mdi100": 0.0,
+      "adx100": null,
+      "mfi": 50.0,
+      "ema_golden_cross": 0,
+      "ema_death_cross": 0,
+      "golden_triangle": 0,
+      "death_triangle": 0,
+      "macd_golden_cross": 0,
+      "macd_death_cross": 0,
+      "open_close_change_pct": null,
+      "high_30d": null,
+      "low_30d": null,
+      "close_3d_ago": null,
+      "high_125d": null,
+      "low_125d": null,
+      "high_250d": null,
+      "low_250d": null,
+      "volume_min_500d": null,
+      "volume_max_500d": null,
+      "volume_10th_percentile_500d": null,
+      "volume_25th_percentile_500d": null,
+      "volume_50th_percentile_500d": null,
+      "volume_75th_percentile_500d": null,
+      "volume_90th_percentile_500d": null,
+      "amount_min_500d": null,
+      "amount_max_500d": null,
+      "amount_10th_percentile_500d": null,
+      "amount_25th_percentile_500d": null,
+      "amount_50th_percentile_500d": null,
+      "amount_75th_percentile_500d": null,
+      "amount_90th_percentile_500d": null,
+      "amplitude_min_500d": null,
+      "amplitude_max_500d": null,
+      "amplitude_10th_percentile_500d": null,
+      "amplitude_25th_percentile_500d": null,
+      "amplitude_50th_percentile_500d": null,
+      "amplitude_75th_percentile_500d": null,
+      "amplitude_90th_percentile_500d": null,
+      "change_percent_min_500d": null,
+      "change_percent_max_500d": null,
+      "change_percent_10th_percentile_500d": null,
+      "change_percent_25th_percentile_500d": null,
+      "change_percent_50th_percentile_500d": null,
+      "change_percent_75th_percentile_500d": null,
+      "change_percent_90th_percentile_500d": null,
+      "change_amount_min_500d": null,
+      "change_amount_max_500d": null,
+      "change_amount_10th_percentile_500d": null,
+      "change_amount_25th_percentile_500d": null,
+      "change_amount_50th_percentile_500d": null,
+      "change_amount_75th_percentile_500d": null,
+      "change_amount_90th_percentile_500d": null,
+      "turnover_rate_min_500d": null,
+      "turnover_rate_max_500d": null,
+      "turnover_rate_10th_percentile_500d": null,
+      "turnover_rate_25th_percentile_500d": null,
+      "turnover_rate_50th_percentile_500d": null,
+      "turnover_rate_75th_percentile_500d": null,
+      "turnover_rate_90th_percentile_500d": null,
+      "volume_ratio5_min_500d": null,
+      "volume_ratio5_max_500d": null,
+      "volume_ratio5_10th_percentile_500d": null,
+      "volume_ratio5_25th_percentile_500d": null,
+      "volume_ratio5_50th_percentile_500d": null,
+      "volume_ratio5_75th_percentile_500d": null,
+      "volume_ratio5_90th_percentile_500d": null,
+      "volume_ratio20_min_500d": null,
+      "volume_ratio20_max_500d": null,
+      "volume_ratio20_10th_percentile_500d": null,
+      "volume_ratio20_25th_percentile_500d": null,
+      "volume_ratio20_50th_percentile_500d": null,
+      "volume_ratio20_75th_percentile_500d": null,
+      "volume_ratio20_90th_percentile_500d": null,
+      "price_amp_market_chip_concentration_20_70": null,
+      "price_amp_chip_price_range_20_70": null,
+      "price_amp_chip_min_20_70": null,
+      "price_amp_chip_max_20_70": null,
+      "price_amp_market_chip_concentration_20_90": null,
+      "price_amp_chip_price_range_20_90": null,
+      "price_amp_chip_min_20_90": null,
+      "price_amp_chip_max_20_90": null,
+      "price_amp_market_chip_concentration_60_70": null,
+      "price_amp_chip_price_range_60_70": null,
+      "price_amp_chip_min_60_70": null,
+      "price_amp_chip_max_60_70": null,
+      "price_amp_market_chip_concentration_60_90": null,
+      "price_amp_chip_price_range_60_90": null,
+      "price_amp_chip_min_60_90": null,
+      "price_amp_chip_max_60_90": null,
+      "price_amp_market_chip_concentration_250_70": null,
+      "price_amp_chip_price_range_250_70": null,
+      "price_amp_chip_min_250_70": null,
+      "price_amp_chip_max_250_70": null,
+      "price_amp_market_chip_concentration_250_90": null,
+      "price_amp_chip_price_range_250_90": null,
+      "price_amp_chip_min_250_90": null,
+      "price_amp_chip_max_250_90": null,
+      "price_amp_market_chip_concentration": null,
+      "price_amp_chip_price_range": null,
+      "price_amp_chip_min": null,
+      "price_amp_chip_max": null,
+      "cost_spread_chip_min_20_70": null,
+      "cost_spread_chip_max_20_70": null,
+      "cost_spread_chip_price_range_20_70": null,
+      "cost_spread_chip_concentration_20_70": 0.0,
+      "cost_spread_chip_min_20_90": null,
+      "cost_spread_chip_max_20_90": null,
+      "cost_spread_chip_price_range_20_90": null,
+      "cost_spread_chip_concentration_20_90": 0.0,
+      "cost_spread_chip_min_60_70": null,
+      "cost_spread_chip_max_60_70": null,
+      "cost_spread_chip_price_range_60_70": null,
+      "cost_spread_chip_concentration_60_70": 0.0,
+      "cost_spread_chip_min_60_90": null,
+      "cost_spread_chip_max_60_90": null,
+      "cost_spread_chip_price_range_60_90": null,
+      "cost_spread_chip_concentration_60_90": 0.0,
+      "cost_spread_chip_min_250_70": null,
+      "cost_spread_chip_max_250_70": null,
+      "cost_spread_chip_price_range_250_70": null,
+      "cost_spread_chip_concentration_250_70": 0.0,
+      "cost_spread_chip_min_250_90": null,
+      "cost_spread_chip_max_250_90": null,
+      "cost_spread_chip_price_range_250_90": null,
+      "cost_spread_chip_concentration_250_90": 0.0,
+      "cost_spread_chip_concentration": 0.0,
+      "intensive_trading_min": null,
+      "intensive_trading_max": null,
+      "ema5_10_status": "Death",
+      "ema5_10_streak": 1.0,
+      "ema5_20_status": "Death",
+      "ema5_20_streak": 1.0,
+      "ema10_20_status": "Death",
+      "ema10_20_streak": 1.0,
+      "ema20_50_status": "Death",
+      "ema20_50_streak": 1.0,
+      "ema50_200_status": "Death",
+      "ema50_200_streak": 1.0,
+      "ema20_200_status": "Death",
+      "ema20_200_streak": 1.0,
+      "ema12_26_status": "Death",
+      "ema12_26_streak": 1.0,
+      "ema5_13_status": "Death",
+      "ema5_13_streak": 1.0,
+      "ema5_34_status": "Death",
+      "ema5_34_streak": 1.0,
+      "ema13_34_status": "Death",
+      "ema13_34_streak": 1.0,
+      "ema5_13_34_status": "Mixed",
+      "ema5_13_34_streak": 1.0,
+      "macd_status": "Death",
+      "macd_golden_streak": 0.0,
+      "macd_death_streak": 1.0,
+      "bottom_signal_cond": 0,
+      "top_signal_cond": 0,
+      "bottom_entry_signal_cond": 0,
+      "top_exit_signal_cond": 0,
+      "continuation_signal_cond": 0,
+      "decline_continuation_cond": 0,
+      "accumulation_cond": 0,
+      "distribution_cond": 0,
+      "multi_timeframe_chip_confirm_bottom_cond": 0,
+      "multi_timeframe_chip_confirm_top_cond": 0,
+      "signal_quality": "0.0"
+    },
+    {
+      "id": 45909,
+      "stock_code": "00020",
+      "stock_name": "商汤科技",
+      "date": "2021-12-31",
+      "open": 4.23,
+      "high": 5.5,
+      "low": 4.21,
+      "close": 5.5,
+      "volume": 254079780.0,
+      "amount": 1236589974.0,
+      "amplitude": 31.23,
+      "change_percent": 33.17,
+      "change_amount": 1.37,
+      "turnover_rate": 0.76,
+      "previous_close": 4.13,
+      "avg_price": 5.1775,
+      "close_chgpct": null,
+      "avg_volume_5d": null,
+      "volume_ratio5": 0.0,
+      "avg_volume_20d": null,
+      "volume_ratio20": 0.0,
+      "ema5": 4.586666666666667,
+      "ema8": 4.434444444444444,
+      "ema10": 4.379090909090909,
+      "ema12": 4.340769230769231,
+      "ema13": 4.325714285714286,
+      "ema20": 4.26047619047619,
+      "ema21": 4.254545454545454,
+      "ema26": 4.231481481481481,
+      "ema30": 4.218387096774194,
+      "ema34": 4.208285714285714,
+      "ema50": 4.183725490196078,
+      "ema60": 4.174918032786885,
+      "ema63": 4.1728125,
+      "ema100": 4.1571287128712875,
+      "ema120": 4.152644628099174,
+      "ema200": 4.14363184079602,
+      "ema250": 4.1409163346613544,
+      "bias5": 19.912790697674414,
+      "bias10": 25.596844509030518,
+      "bias20": 29.093550910919873,
+      "bias50": 31.461780006561373,
+      "bias60": 31.739113362390547,
+      "bias100": 32.30285564579511,
+      "bias120": 32.44571815232749,
+      "bias200": 32.73379999279597,
+      "bias250": 32.820843395518445,
+      "vol_ema5": 304671057.3333334,
+      "vol_ema10": 316169074.9090909,
+      "vol_ema20": 322739370.6666666,
+      "volume_oscillator": 0.0,
+      "obv": 254079780.0,
+      "bollinger_middle": null,
+      "bollinger_upper": null,
+      "bollinger_lower": null,
+      "vwap": 4.610493909689019,
+      "parabolic_sar": null,
+      "vol_ema5_20_cross_status": "death",
+      "vol_ema5_20_cross_streak": 1.0,
+      "vol_ema5_10_cross_status": "death",
+      "vol_ema5_10_cross_streak": 1.0,
+      "tr": 1.37,
+      "atr14": null,
+      "kdj_k": 50.0,
+      "kdj_d": null,
+      "kdj_j": null,
+      "macd_dif": 0.1092877492877502,
+      "macd_signal": 0.021857549857550042,
+      "macd_histogram": 0.17486039886040033,
+      "rsi6": 50.0,
+      "rsi14": 50.0,
+      "cci14": null,
+      "williams_r": null,
+      "pdi14": 0.0,
+      "mdi14": 0.0,
+      "adx14": null,
+      "atr30": null,
+      "pdi30": 0.0,
+      "mdi30": 0.0,
+      "adx30": null,
+      "atr60": null,
+      "pdi60": 0.0,
+      "mdi60": 0.0,
+      "adx60": null,
+      "atr100": null,
+      "pdi100": 0.0,
+      "mdi100": 0.0,
+      "adx100": null,
+      "mfi": 50.0,
+      "ema_golden_cross": 1,
+      "ema_death_cross": 0,
+      "golden_triangle": 0,
+      "death_triangle": 0,
+      "macd_golden_cross": 1,
+      "macd_death_cross": 0,
+      "open_close_change_pct": null,
+      "high_30d": null,
+      "low_30d": null,
+      "close_3d_ago": null,
+      "high_125d": null,
+      "low_125d": null,
+      "high_250d": null,
+      "low_250d": null,
+      "volume_min_500d": null,
+      "volume_max_500d": null,
+      "volume_10th_percentile_500d": null,
+      "volume_25th_percentile_500d": null,
+      "volume_50th_percentile_500d": null,
+      "volume_75th_percentile_500d": null,
+      "volume_90th_percentile_500d": null,
+      "amount_min_500d": null,
+      "amount_max_500d": null,
+      "amount_10th_percentile_500d": null,
+      "amount_25th_percentile_500d": null,
+      "amount_50th_percentile_500d": null,
+      "amount_75th_percentile_500d": null,
+      "amount_90th_percentile_500d": null,
+      "amplitude_min_500d": null,
+      "amplitude_max_500d": null,
+      "amplitude_10th_percentile_500d": null,
+      "amplitude_25th_percentile_500d": null,
+      "amplitude_50th_percentile_500d": null,
+      "amplitude_75th_percentile_500d": null,
+      "amplitude_90th_percentile_500d": null,
+      "change_percent_min_500d": null,
+      "change_percent_max_500d": null,
+      "change_percent_10th_percentile_500d": null,
+      "change_percent_25th_percentile_500d": null,
+      "change_percent_50th_percentile_500d": null,
+      "change_percent_75th_percentile_500d": null,
+      "change_percent_90th_percentile_500d": null,
+      "change_amount_min_500d": null,
+      "change_amount_max_500d": null,
+      "change_amount_10th_percentile_500d": null,
+      "change_amount_25th_percentile_500d": null,
+      "change_amount_50th_percentile_500d": null,
+      "change_amount_75th_percentile_500d": null,
+      "change_amount_90th_percentile_500d": null,
+      "turnover_rate_min_500d": null,
+      "turnover_rate_max_500d": null,
+      "turnover_rate_10th_percentile_500d": null,
+      "turnover_rate_25th_percentile_500d": null,
+      "turnover_rate_50th_percentile_500d": null,
+      "turnover_rate_75th_percentile_500d": null,
+      "turnover_rate_90th_percentile_500d": null,
+      "volume_ratio5_min_500d": null,
+      "volume_ratio5_max_500d": null,
+      "volume_ratio5_10th_percentile_500d": null,
+      "volume_ratio5_25th_percentile_500d": null,
+      "volume_ratio5_50th_percentile_500d": null,
+      "volume_ratio5_75th_percentile_500d": null,
+      "volume_ratio5_90th_percentile_500d": null,
+      "volume_ratio20_min_500d": null,
+      "volume_ratio20_max_500d": null,
+      "volume_ratio20_10th_percentile_500d": null,
+      "volume_ratio20_25th_percentile_500d": null,
+      "volume_ratio20_50th_percentile_500d": null,
+      "volume_ratio20_75th_percentile_500d": null,
+      "volume_ratio20_90th_percentile_500d": null,
+      "price_amp_market_chip_concentration_20_70": null,
+      "price_amp_chip_price_range_20_70": null,
+      "price_amp_chip_min_20_70": null,
+      "price_amp_chip_max_20_70": null,
+      "price_amp_market_chip_concentration_20_90": null,
+      "price_amp_chip_price_range_20_90": null,
+      "price_amp_chip_min_20_90": null,
+      "price_amp_chip_max_20_90": null,
+      "price_amp_market_chip_concentration_60_70": null,
+      "price_amp_chip_price_range_60_70": null,
+      "price_amp_chip_min_60_70": null,
+      "price_amp_chip_max_60_70": null,
+      "price_amp_market_chip_concentration_60_90": null,
+      "price_amp_chip_price_range_60_90": null,
+      "price_amp_chip_min_60_90": null,
+      "price_amp_chip_max_60_90": null,
+      "price_amp_market_chip_concentration_250_70": null,
+      "price_amp_chip_price_range_250_70": null,
+      "price_amp_chip_min_250_70": null,
+      "price_amp_chip_max_250_70": null,
+      "price_amp_market_chip_concentration_250_90": null,
+      "price_amp_chip_price_range_250_90": null,
+      "price_amp_chip_min_250_90": null,
+      "price_amp_chip_max_250_90": null,
+      "price_amp_market_chip_concentration": null,
+      "price_amp_chip_price_range": null,
+      "price_amp_chip_min": null,
+      "price_amp_chip_max": null,
+      "cost_spread_chip_min_20_70": null,
+      "cost_spread_chip_max_20_70": null,
+      "cost_spread_chip_price_range_20_70": null,
+      "cost_spread_chip_concentration_20_70": 0.0,
+      "cost_spread_chip_min_20_90": null,
+      "cost_spread_chip_max_20_90": null,
+      "cost_spread_chip_price_range_20_90": null,
+      "cost_spread_chip_concentration_20_90": 0.0,
+      "cost_spread_chip_min_60_70": null,
+      "cost_spread_chip_max_60_70": null,
+      "cost_spread_chip_price_range_60_70": null,
+      "cost_spread_chip_concentration_60_70": 0.0,
+      "cost_spread_chip_min_60_90": null,
+      "cost_spread_chip_max_60_90": null,
+      "cost_spread_chip_price_range_60_90": null,
+      "cost_spread_chip_concentration_60_90": 0.0,
+      "cost_spread_chip_min_250_70": null,
+      "cost_spread_chip_max_250_70": null,
+      "cost_spread_chip_price_range_250_70": null,
+      "cost_spread_chip_concentration_250_70": 0.0,
+      "cost_spread_chip_min_250_90": null,
+      "cost_spread_chip_max_250_90": null,
+      "cost_spread_chip_price_range_250_90": null,
+      "cost_spread_chip_concentration_250_90": 0.0,
+      "cost_spread_chip_concentration": 0.0,
+      "intensive_trading_min": null,
+      "intensive_trading_max": null,
+      "ema5_10_status": "Golden",
+      "ema5_10_streak": 1.0,
+      "ema5_20_status": "Golden",
+      "ema5_20_streak": 1.0,
+      "ema10_20_status": "Golden",
+      "ema10_20_streak": 1.0,
+      "ema20_50_status": "Golden",
+      "ema20_50_streak": 1.0,
+      "ema50_200_status": "Golden",
+      "ema50_200_streak": 1.0,
+      "ema20_200_status": "Golden",
+      "ema20_200_streak": 1.0,
+      "ema12_26_status": "Golden",
+      "ema12_26_streak": 1.0,
+      "ema5_13_status": "Golden",
+      "ema5_13_streak": 1.0,
+      "ema5_34_status": "Golden",
+      "ema5_34_streak": 1.0,
+      "ema13_34_status": "Golden",
+      "ema13_34_streak": 1.0,
+      "ema5_13_34_status": "Golden_Triangle",
+      "ema5_13_34_streak": 1.0,
+      "macd_status": "Golden",
+      "macd_golden_streak": 1.0,
+      "macd_death_streak": 0.0,
+      "bottom_signal_cond": 0,
+      "top_signal_cond": 0,
+      "bottom_entry_signal_cond": 0,
+      "top_exit_signal_cond": 0,
+      "continuation_signal_cond": 0,
+      "decline_continuation_cond": 0,
+      "accumulation_cond": 0,
+      "distribution_cond": 0,
+      "multi_timeframe_chip_confirm_bottom_cond": 0,
+      "multi_timeframe_chip_confirm_top_cond": 0,
+      "signal_quality": "0.0"
+    },
+    {
+      "id": 45910,
+      "stock_code": "00020",
+      "stock_name": "商汤科技",
+      "date": "2022-01-03",
+      "open": 5.99,
+      "high": 7.75,
+      "low": 5.8,
+      "close": 7.75,
+      "volume": 465580254.0,
+      "amount": 3164819936.0,
+      "amplitude": 35.45,
+      "change_percent": 40.91,
+      "change_amount": 2.25,
+      "turnover_rate": 1.4,
+      "previous_close": 5.5,
+      "avg_price": 7.2625,
+      "close_chgpct": null,
+      "avg_volume_5d": null,
+      "volume_ratio5": 0.0,
+      "avg_volume_20d": null,
+      "volume_ratio20": 0.0,
+      "ema5": 5.641111111111112,
+      "ema8": 5.171234567901234,
+      "ema10": 4.99198347107438,
+      "ema12": 4.865266272189349,
+      "ema13": 4.814897959183673,
+      "ema20": 4.59281179138322,
+      "ema21": 4.572314049586776,
+      "ema26": 4.492112482853223,
+      "ema30": 4.446233090530698,
+      "ema34": 4.410669387755102,
+      "ema50": 4.32357939254133,
+      "ema60": 4.292133834990594,
+      "ema63": 4.284599609375,
+      "ema100": 4.228274678953044,
+      "ema120": 4.212105047469436,
+      "ema200": 4.179516101086607,
+      "ema250": 4.169673973428994,
+      "bias5": 37.38428205633247,
+      "bias10": 55.24891147790674,
+      "bias20": 68.74194615464371,
+      "bias50": 79.24962852236827,
+      "bias60": 80.56286914494557,
+      "bias100": 83.28988981195906,
+      "bias120": 83.99351185830643,
+      "bias200": 85.42816470990803,
+      "bias250": 85.86585064890988,
+      "vol_ema5": 358307456.22222227,
+      "vol_ema10": 343334743.8347107,
+      "vol_ema20": 336343264.3174603,
+      "volume_oscillator": 0.0,
+      "obv": 719660034.0,
+      "bollinger_middle": null,
+      "bollinger_upper": null,
+      "bollinger_lower": null,
+      "vwap": 5.714757782486478,
+      "parabolic_sar": null,
+      "vol_ema5_20_cross_status": "golden",
+      "vol_ema5_20_cross_streak": 1.0,
+      "vol_ema5_10_cross_status": "golden",
+      "vol_ema5_10_cross_streak": 1.0,
+      "tr": 2.25,
+      "atr14": null,
+      "kdj_k": 50.0,
+      "kdj_d": 50.0,
+      "kdj_j": 50.0,
+      "macd_dif": 0.37315378933612653,
+      "macd_signal": 0.09211679775326534,
+      "macd_histogram": 0.5620739831657224,
+      "rsi6": 50.0,
+      "rsi14": 50.0,
+      "cci14": null,
+      "williams_r": null,
+      "pdi14": 0.0,
+      "mdi14": 0.0,
+      "adx14": null,
+      "atr30": null,
+      "pdi30": 0.0,
+      "mdi30": 0.0,
+      "adx30": null,
+      "atr60": null,
+      "pdi60": 0.0,
+      "mdi60": 0.0,
+      "adx60": null,
+      "atr100": null,
+      "pdi100": 0.0,
+      "mdi100": 0.0,
+      "adx100": null,
+      "mfi": 50.0,
+      "ema_golden_cross": 0,
+      "ema_death_cross": 0,
+      "golden_triangle": 0,
+      "death_triangle": 0,
+      "macd_golden_cross": 0,
+      "macd_death_cross": 0,
+      "open_close_change_pct": null,
+      "high_30d": null,
+      "low_30d": null,
+      "close_3d_ago": null,
+      "high_125d": null,
+      "low_125d": null,
+      "high_250d": null,
+      "low_250d": null,
+      "volume_min_500d": null,
+      "volume_max_500d": null,
+      "volume_10th_percentile_500d": null,
+      "volume_25th_percentile_500d": null,
+      "volume_50th_percentile_500d": null,
+      "volume_75th_percentile_500d": null,
+      "volume_90th_percentile_500d": null,
+      "amount_min_500d": null,
+      "amount_max_500d": null,
+      "amount_10th_percentile_500d": null,
+      "amount_25th_percentile_500d": null,
+      "amount_50th_percentile_500d": null,
+      "amount_75th_percentile_500d": null,
+      "amount_90th_percentile_500d": null,
+      "amplitude_min_500d": null,
+      "amplitude_max_500d": null,
+      "amplitude_10th_percentile_500d": null,
+      "amplitude_25th_percentile_500d": null,
+      "amplitude_50th_percentile_500d": null,
+      "amplitude_75th_percentile_500d": null,
+      "amplitude_90th_percentile_500d": null,
+      "change_percent_min_500d": null,
+      "change_percent_max_500d": null,
+      "change_percent_10th_percentile_500d": null,
+      "change_percent_25th_percentile_500d": null,
+      "change_percent_50th_percentile_500d": null,
+      "change_percent_75th_percentile_500d": null,
+      "change_percent_90th_percentile_500d": null,
+      "change_amount_min_500d": null,
+      "change_amount_max_500d": null,
+      "change_amount_10th_percentile_500d": null,
+      "change_amount_25th_percentile_500d": null,
+      "change_amount_50th_percentile_500d": null,
+      "change_amount_75th_percentile_500d": null,
+      "change_amount_90th_percentile_500d": null,
+      "turnover_rate_min_500d": null,
+      "turnover_rate_max_500d": null,
+      "turnover_rate_10th_percentile_500d": null,
+      "turnover_rate_25th_percentile_500d": null,
+      "turnover_rate_50th_percentile_500d": null,
+      "turnover_rate_75th_percentile_500d": null,
+      "turnover_rate_90th_percentile_500d": null,
+      "volume_ratio5_min_500d": null,
+      "volume_ratio5_max_500d": null,
+      "volume_ratio5_10th_percentile_500d": null,
+      "volume_ratio5_25th_percentile_500d": null,
+      "volume_ratio5_50th_percentile_500d": null,
+      "volume_ratio5_75th_percentile_500d": null,
+      "volume_ratio5_90th_percentile_500d": null,
+      "volume_ratio20_min_500d": null,
+      "volume_ratio20_max_500d": null,
+      "volume_ratio20_10th_percentile_500d": null,
+      "volume_ratio20_25th_percentile_500d": null,
+      "volume_ratio20_50th_percentile_500d": null,
+      "volume_ratio20_75th_percentile_500d": null,
+      "volume_ratio20_90th_percentile_500d": null,
+      "price_amp_market_chip_concentration_20_70": null,
+      "price_amp_chip_price_range_20_70": null,
+      "price_amp_chip_min_20_70": null,
+      "price_amp_chip_max_20_70": null,
+      "price_amp_market_chip_concentration_20_90": null,
+      "price_amp_chip_price_range_20_90": null,
+      "price_amp_chip_min_20_90": null,
+      "price_amp_chip_max_20_90": null,
+      "price_amp_market_chip_concentration_60_70": null,
+      "price_amp_chip_price_range_60_70": null,
+      "price_amp_chip_min_60_70": null,
+      "price_amp_chip_max_60_70": null,
+      "price_amp_market_chip_concentration_60_90": null,
+      "price_amp_chip_price_range_60_90": null,
+      "price_amp_chip_min_60_90": null,
+      "price_amp_chip_max_60_90": null,
+      "price_amp_market_chip_concentration_250_70": null,
+      "price_amp_chip_price_range_250_70": null,
+      "price_amp_chip_min_250_70": null,
+      "price_amp_chip_max_250_70": null,
+      "price_amp_market_chip_concentration_250_90": null,
+      "price_amp_chip_price_range_250_90": null,
+      "price_amp_chip_min_250_90": null,
+      "price_amp_chip_max_250_90": null,
+      "price_amp_market_chip_concentration": null,
+      "price_amp_chip_price_range": null,
+      "price_amp_chip_min": null,
+      "price_amp_chip_max": null,
+      "cost_spread_chip_min_20_70": null,
+      "cost_spread_chip_max_20_70": null,
+      "cost_spread_chip_price_range_20_70": null,
+      "cost_spread_chip_concentration_20_70": 0.0,
+      "cost_spread_chip_min_20_90": null,
+      "cost_spread_chip_max_20_90": null,
+      "cost_spread_chip_price_range_20_90": null,
+      "cost_spread_chip_concentration_20_90": 0.0,
+      "cost_spread_chip_min_60_70": null,
+      "cost_spread_chip_max_60_70": null,
+      "cost_spread_chip_price_range_60_70": null,
+      "cost_spread_chip_concentration_60_70": 0.0,
+      "cost_spread_chip_min_60_90": null,
+      "cost_spread_chip_max_60_90": null,
+      "cost_spread_chip_price_range_60_90": null,
+      "cost_spread_chip_concentration_60_90": 0.0,
+      "cost_spread_chip_min_250_70": null,
+      "cost_spread_chip_max_250_70": null,
+      "cost_spread_chip_price_range_250_70": null,
+      "cost_spread_chip_concentration_250_70": 0.0,
+      "cost_spread_chip_min_250_90": null,
+      "cost_spread_chip_max_250_90": null,
+      "cost_spread_chip_price_range_250_90": null,
+      "cost_spread_chip_concentration_250_90": 0.0,
+      "cost_spread_chip_concentration": 0.0,
+      "intensive_trading_min": null,
+      "intensive_trading_max": null,
+      "ema5_10_status": "Golden",
+      "ema5_10_streak": 2.0,
+      "ema5_20_status": "Golden",
+      "ema5_20_streak": 2.0,
+      "ema10_20_status": "Golden",
+      "ema10_20_streak": 2.0,
+      "ema20_50_status": "Golden",
+      "ema20_50_streak": 2.0,
+      "ema50_200_status": "Golden",
+      "ema50_200_streak": 2.0,
+      "ema20_200_status": "Golden",
+      "ema20_200_streak": 2.0,
+      "ema12_26_status": "Golden",
+      "ema12_26_streak": 2.0,
+      "ema5_13_status": "Golden",
+      "ema5_13_streak": 2.0,
+      "ema5_34_status": "Golden",
+      "ema5_34_streak": 2.0,
+      "ema13_34_status": "Golden",
+      "ema13_34_streak": 2.0,
+      "ema5_13_34_status": "Golden_Triangle",
+      "ema5_13_34_streak": 2.0,
+      "macd_status": "Golden",
+      "macd_golden_streak": 2.0,
+      "macd_death_streak": 0.0,
+      "bottom_signal_cond": 0,
+      "top_signal_cond": 0,
+      "bottom_entry_signal_cond": 0,
+      "top_exit_signal_cond": 0,
+      "continuation_signal_cond": 0,
+      "decline_continuation_cond": 0,
+      "accumulation_cond": 0,
+      "distribution_cond": 0,
+      "multi_timeframe_chip_confirm_bottom_cond": 0,
+      "multi_timeframe_chip_confirm_top_cond": 0,
+      "signal_quality": "0.0"
+    },
+    {
+      "id": 45911,
+      "stock_code": "00020",
+      "stock_name": "商汤科技",
+      "date": "2022-01-04",
+      "open": 8.39,
+      "high": 9.7,
+      "low": 7.62,
+      "close": 8.2,
+      "volume": 358971790.0,
+      "amount": 3132999153.0,
+      "amplitude": 26.84,
+      "change_percent": 5.81,
+      "change_amount": 0.45,
+      "turnover_rate": 1.08,
+      "previous_close": 7.75,
+      "avg_price": 8.43,
+      "close_chgpct": null,
+      "avg_volume_5d": null,
+      "volume_ratio5": 0.0,
+      "avg_volume_20d": null,
+      "volume_ratio20": 0.0,
+      "ema5": 6.494074074074074,
+      "ema8": 5.84429355281207,
+      "ema10": 5.5752592036063096,
+      "ema12": 5.378302230314064,
+      "ema13": 5.298483965014578,
+      "ema20": 4.936353525537198,
+      "ema21": 4.902103681442523,
+      "ema26": 4.766770817456688,
+      "ema30": 4.68841160081904,
+      "ema34": 4.627202565597668,
+      "ema50": 4.475595886951473,
+      "ema60": 4.420260594499099,
+      "ema63": 4.406955871582031,
+      "ema100": 4.30692270511239,
+      "ema120": 4.278020666519528,
+      "ema200": 4.219520916001168,
+      "ema250": 4.201788125035137,
+      "bias5": 26.268963157294383,
+      "bias10": 47.07836354399269,
+      "bias20": 66.11452072018353,
+      "bias50": 83.21582660997086,
+      "bias60": 85.5094247204495,
+      "bias100": 90.3911577114319,
+      "bias120": 91.6774283998791,
+      "bias200": 94.33485846471696,
+      "bias250": 95.15500915295263,
+      "vol_ema5": 358528900.81481487,
+      "vol_ema10": 346177843.1374906,
+      "vol_ema20": 338498362.0015117,
+      "volume_oscillator": 0.0,
+      "obv": 1078631824.0,
+      "bollinger_middle": null,
+      "bollinger_upper": null,
+      "bollinger_lower": null,
+      "vwap": 6.4262568472952815,
+      "parabolic_sar": null,
+      "vol_ema5_20_cross_status": "golden",
+      "vol_ema5_20_cross_streak": 2.0,
+      "vol_ema5_10_cross_status": "golden",
+      "vol_ema5_10_cross_streak": 2.0,
+      "tr": 2.079999999999999,
+      "atr14": null,
+      "kdj_k": 50.0,
+      "kdj_d": 50.0,
+      "kdj_j": 50.0,
+      "macd_dif": 0.6115314128573761,
+      "macd_signal": 0.1959997207740875,
+      "macd_histogram": 0.8310633841665772,
+      "rsi6": 50.0,
+      "rsi14": 50.0,
+      "cci14": null,
+      "williams_r": null,
+      "pdi14": 0.0,
+      "mdi14": 0.0,
+      "adx14": null,
+      "atr30": null,
+      "pdi30": 0.0,
+      "mdi30": 0.0,
+      "adx30": null,
+      "atr60": null,
+      "pdi60": 0.0,
+      "mdi60": 0.0,
+      "adx60": null,
+      "atr100": null,
+      "pdi100": 0.0,
+      "mdi100": 0.0,
+      "adx100": null,
+      "mfi": 50.0,
+      "ema_golden_cross": 0,
+      "ema_death_cross": 0,
+      "golden_triangle": 0,
+      "death_triangle": 0,
+      "macd_golden_cross": 0,
+      "macd_death_cross": 0,
+      "open_close_change_pct": null,
+      "high_30d": null,
+      "low_30d": null,
+      "close_3d_ago": 4.13,
+      "high_125d": null,
+      "low_125d": null,
+      "high_250d": null,
+      "low_250d": null,
+      "volume_min_500d": null,
+      "volume_max_500d": null,
+      "volume_10th_percentile_500d": null,
+      "volume_25th_percentile_500d": null,
+      "volume_50th_percentile_500d": null,
+      "volume_75th_percentile_500d": null,
+      "volume_90th_percentile_500d": null,
+      "amount_min_500d": null,
+      "amount_max_500d": null,
+      "amount_10th_percentile_500d": null,
+      "amount_25th_percentile_500d": null,
+      "amount_50th_percentile_500d": null,
+      "amount_75th_percentile_500d": null,
+      "amount_90th_percentile_500d": null,
+      "amplitude_min_500d": null,
+      "amplitude_max_500d": null,
+      "amplitude_10th_percentile_500d": null,
+      "amplitude_25th_percentile_500d": null,
+      "amplitude_50th_percentile_500d": null,
+      "amplitude_75th_percentile_500d": null,
+      "amplitude_90th_percentile_500d": null,
+      "change_percent_min_500d": null,
+      "change_percent_max_500d": null,
+      "change_percent_10th_percentile_500d": null,
+      "change_percent_25th_percentile_500d": null,
+      "change_percent_50th_percentile_500d": null,
+      "change_percent_75th_percentile_500d": null,
+      "change_percent_90th_percentile_500d": null,
+      "change_amount_min_500d": null,
+      "change_amount_max_500d": null,
+      "change_amount_10th_percentile_500d": null,
+      "change_amount_25th_percentile_500d": null,
+      "change_amount_50th_percentile_500d": null,
+      "change_amount_75th_percentile_500d": null,
+      "change_amount_90th_percentile_500d": null,
+      "turnover_rate_min_500d": null,
+      "turnover_rate_max_500d": null,
+      "turnover_rate_10th_percentile_500d": null,
+      "turnover_rate_25th_percentile_500d": null,
+      "turnover_rate_50th_percentile_500d": null,
+      "turnover_rate_75th_percentile_500d": null,
+      "turnover_rate_90th_percentile_500d": null,
+      "volume_ratio5_min_500d": null,
+      "volume_ratio5_max_500d": null,
+      "volume_ratio5_10th_percentile_500d": null,
+      "volume_ratio5_25th_percentile_500d": null,
+      "volume_ratio5_50th_percentile_500d": null,
+      "volume_ratio5_75th_percentile_500d": null,
+      "volume_ratio5_90th_percentile_500d": null,
+      "volume_ratio20_min_500d": null,
+      "volume_ratio20_max_500d": null,
+      "volume_ratio20_10th_percentile_500d": null,
+      "volume_ratio20_25th_percentile_500d": null,
+      "volume_ratio20_50th_percentile_500d": null,
+      "volume_ratio20_75th_percentile_500d": null,
+      "volume_ratio20_90th_percentile_500d": null,
+      "price_amp_market_chip_concentration_20_70": null,
+      "price_amp_chip_price_range_20_70": null,
+      "price_amp_chip_min_20_70": null,
+      "price_amp_chip_max_20_70": null,
+      "price_amp_market_chip_concentration_20_90": null,
+      "price_amp_chip_price_range_20_90": null,
+      "price_amp_chip_min_20_90": null,
+      "price_amp_chip_max_20_90": null,
+      "price_amp_market_chip_concentration_60_70": null,
+      "price_amp_chip_price_range_60_70": null,
+      "price_amp_chip_min_60_70": null,
+      "price_amp_chip_max_60_70": null,
+      "price_amp_market_chip_concentration_60_90": null,
+      "price_amp_chip_price_range_60_90": null,
+      "price_amp_chip_min_60_90": null,
+      "price_amp_chip_max_60_90": null,
+      "price_amp_market_chip_concentration_250_70": null,
+      "price_amp_chip_price_range_250_70": null,
+      "price_amp_chip_min_250_70": null,
+      "price_amp_chip_max_250_70": null,
+      "price_amp_market_chip_concentration_250_90": null,
+      "price_amp_chip_price_range_250_90": null,
+      "price_amp_chip_min_250_90": null,
+      "price_amp_chip_max_250_90": null,
+      "price_amp_market_chip_concentration": null,
+      "price_amp_chip_price_range": null,
+      "price_amp_chip_min": null,
+      "price_amp_chip_max": null,
+      "cost_spread_chip_min_20_70": null,
+      "cost_spread_chip_max_20_70": null,
+      "cost_spread_chip_price_range_20_70": null,
+      "cost_spread_chip_concentration_20_70": 0.0,
+      "cost_spread_chip_min_20_90": null,
+      "cost_spread_chip_max_20_90": null,
+      "cost_spread_chip_price_range_20_90": null,
+      "cost_spread_chip_concentration_20_90": 0.0,
+      "cost_spread_chip_min_60_70": null,
+      "cost_spread_chip_max_60_70": null,
+      "cost_spread_chip_price_range_60_70": null,
+      "cost_spread_chip_concentration_60_70": 0.0,
+      "cost_spread_chip_min_60_90": null,
+      "cost_spread_chip_max_60_90": null,
+      "cost_spread_chip_price_range_60_90": null,
+      "cost_spread_chip_concentration_60_90": 0.0,
+      "cost_spread_chip_min_250_70": null,
+      "cost_spread_chip_max_250_70": null,
+      "cost_spread_chip_price_range_250_70": null,
+      "cost_spread_chip_concentration_250_70": 0.0,
+      "cost_spread_chip_min_250_90": null,
+      "cost_spread_chip_max_250_90": null,
+      "cost_spread_chip_price_range_250_90": null,
+      "cost_spread_chip_concentration_250_90": 0.0,
+      "cost_spread_chip_concentration": 0.0,
+      "intensive_trading_min": null,
+      "intensive_trading_max": null,
+      "ema5_10_status": "Golden",
+      "ema5_10_streak": 3.0,
+      "ema5_20_status": "Golden",
+      "ema5_20_streak": 3.0,
+      "ema10_20_status": "Golden",
+      "ema10_20_streak": 3.0,
+      "ema20_50_status": "Golden",
+      "ema20_50_streak": 3.0,
+      "ema50_200_status": "Golden",
+      "ema50_200_streak": 3.0,
+      "ema20_200_status": "Golden",
+      "ema20_200_streak": 3.0,
+      "ema12_26_status": "Golden",
+      "ema12_26_streak": 3.0,
+      "ema5_13_status": "Golden",
+      "ema5_13_streak": 3.0,
+      "ema5_34_status": "Golden",
+      "ema5_34_streak": 3.0,
+      "ema13_34_status": "Golden",
+      "ema13_34_streak": 3.0,
+      "ema5_13_34_status": "Golden_Triangle",
+      "ema5_13_34_streak": 3.0,
+      "macd_status": "Golden",
+      "macd_golden_streak": 3.0,
+      "macd_death_streak": 0.0,
+      "bottom_signal_cond": 0,
+      "top_signal_cond": 0,
+      "bottom_entry_signal_cond": 0,
+      "top_exit_signal_cond": 0,
+      "continuation_signal_cond": 0,
+      "decline_continuation_cond": 0,
+      "accumulation_cond": 0,
+      "distribution_cond": 0,
+      "multi_timeframe_chip_confirm_bottom_cond": 0,
+      "multi_timeframe_chip_confirm_top_cond": 0,
+      "signal_quality": "0.0"
+    },
+    {
+      "id": 45912,
+      "stock_code": "00020",
+      "stock_name": "商汤科技",
+      "date": "2022-01-05",
+      "open": 7.9,
+      "high": 8.44,
+      "low": 6.8,
+      "close": 6.97,
+      "volume": 172749296.0,
+      "amount": 1288318508.0,
+      "amplitude": 20.0,
+      "change_percent": -15.0,
+      "change_amount": -1.23,
+      "turnover_rate": 0.52,
+      "previous_close": 8.2,
+      "avg_price": 7.295,
+      "close_chgpct": null,
+      "avg_volume_5d": null,
+      "volume_ratio5": 0.0,
+      "avg_volume_20d": null,
+      "volume_ratio20": 0.0,
+      "ema5": 6.652716049382716,
+      "ema8": 6.094450541076054,
+      "ema10": 5.828848439314253,
+      "ema12": 5.623178810265747,
+      "ema13": 5.537271970012496,
+      "ema20": 5.130034142152703,
+      "ema21": 5.090094255856839,
+      "ema26": 4.929972979126563,
+      "ema30": 4.835610852379102,
+      "ema34": 4.7610767047063725,
+      "ema50": 4.573415656090631,
+      "ema60": 4.503858607794211,
+      "ema63": 4.487051000595093,
+      "ema100": 4.35965690897155,
+      "ema120": 4.32251619269276,
+      "ema200": 4.246888867085734,
+      "ema250": 4.2238455901743,
+      "bias5": 4.769239334162219,
+      "bias10": 19.577650243724637,
+      "bias20": 35.86654214888318,
+      "bias50": 52.40250447644584,
+      "bias60": 54.75619034616176,
+      "bias100": 59.874965978555274,
+      "bias120": 61.248672978549564,
+      "bias200": 64.12014107595184,
+      "bias250": 65.01550189746347,
+      "vol_ema5": 296602365.8765433,
+      "vol_ema10": 314645380.0215832,
+      "vol_ema20": 322712736.6680344,
+      "volume_oscillator": 0.0,
+      "obv": 905882528.0,
+      "bollinger_middle": null,
+      "bollinger_upper": null,
+      "bollinger_lower": null,
+      "vwap": 6.5329944501132236,
+      "parabolic_sar": null,
+      "vol_ema5_20_cross_status": "death",
+      "vol_ema5_20_cross_streak": 1.0,
+      "vol_ema5_10_cross_status": "death",
+      "vol_ema5_10_cross_streak": 1.0,
+      "tr": 1.6399999999999997,
+      "atr14": null,
+      "kdj_k": 50.0,
+      "kdj_d": 50.0,
+      "kdj_j": 50.0,
+      "macd_dif": 0.693205831139184,
+      "macd_signal": 0.29544094284710687,
+      "macd_histogram": 0.7955297765841542,
+      "rsi6": 76.79245283018868,
+      "rsi14": 76.79245283018868,
+      "cci14": null,
+      "williams_r": null,
+      "pdi14": 0.0,
+      "mdi14": 0.0,
+      "adx14": null,
+      "atr30": null,
+      "pdi30": 0.0,
+      "mdi30": 0.0,
+      "adx30": null,
+      "atr60": null,
+      "pdi60": 0.0,
+      "mdi60": 0.0,
+      "adx60": null,
+      "atr100": null,
+      "pdi100": 0.0,
+      "mdi100": 0.0,
+      "adx100": null,
+      "mfi": 85.67256973934698,
+      "ema_golden_cross": 0,
+      "ema_death_cross": 0,
+      "golden_triangle": 0,
+      "death_triangle": 0,
+      "macd_golden_cross": 0,
+      "macd_death_cross": 0,
+      "open_close_change_pct": null,
+      "high_30d": null,
+      "low_30d": null,
+      "close_3d_ago": 5.5,
+      "high_125d": null,
+      "low_125d": null,
+      "high_250d": null,
+      "low_250d": null,
+      "volume_min_500d": null,
+      "volume_max_500d": null,
+      "volume_10th_percentile_500d": null,
+      "volume_25th_percentile_500d": null,
+      "volume_50th_percentile_500d": null,
+      "volume_75th_percentile_500d": null,
+      "volume_90th_percentile_500d": null,
+      "amount_min_500d": null,
+      "amount_max_500d": null,
+      "amount_10th_percentile_500d": null,
+      "amount_25th_percentile_500d": null,
+      "amount_50th_percentile_500d": null,
+      "amount_75th_percentile_500d": null,
+      "amount_90th_percentile_500d": null,
+      "amplitude_min_500d": null,
+      "amplitude_max_500d": null,
+      "amplitude_10th_percentile_500d": null,
+      "amplitude_25th_percentile_500d": null,
+      "amplitude_50th_percentile_500d": null,
+      "amplitude_75th_percentile_500d": null,
+      "amplitude_90th_percentile_500d": null,
+      "change_percent_min_500d": null,
+      "change_percent_max_500d": null,
+      "change_percent_10th_percentile_500d": null,
+      "change_percent_25th_percentile_500d": null,
+      "change_percent_50th_percentile_500d": null,
+      "change_percent_75th_percentile_500d": null,
+      "change_percent_90th_percentile_500d": null,
+      "change_amount_min_500d": null,
+      "change_amount_max_500d": null,
+      "change_amount_10th_percentile_500d": null,
+      "change_amount_25th_percentile_500d": null,
+      "change_amount_50th_percentile_500d": null,
+      "change_amount_75th_percentile_500d": null,
+      "change_amount_90th_percentile_500d": null,
+      "turnover_rate_min_500d": null,
+      "turnover_rate_max_500d": null,
+      "turnover_rate_10th_percentile_500d": null,
+      "turnover_rate_25th_percentile_500d": null,
+      "turnover_rate_50th_percentile_500d": null,
+      "turnover_rate_75th_percentile_500d": null,
+      "turnover_rate_90th_percentile_500d": null,
+      "volume_ratio5_min_500d": null,
+      "volume_ratio5_max_500d": null,
+      "volume_ratio5_10th_percentile_500d": null,
+      "volume_ratio5_25th_percentile_500d": null,
+      "volume_ratio5_50th_percentile_500d": null,
+      "volume_ratio5_75th_percentile_500d": null,
+      "volume_ratio5_90th_percentile_500d": null,
+      "volume_ratio20_min_500d": null,
+      "volume_ratio20_max_500d": null,
+      "volume_ratio20_10th_percentile_500d": null,
+      "volume_ratio20_25th_percentile_500d": null,
+      "volume_ratio20_50th_percentile_500d": null,
+      "volume_ratio20_75th_percentile_500d": null,
+      "volume_ratio20_90th_percentile_500d": null,
+      "price_amp_market_chip_concentration_20_70": null,
+      "price_amp_chip_price_range_20_70": null,
+      "price_amp_chip_min_20_70": null,
+      "price_amp_chip_max_20_70": null,
+      "price_amp_market_chip_concentration_20_90": null,
+      "price_amp_chip_price_range_20_90": null,
+      "price_amp_chip_min_20_90": null,
+      "price_amp_chip_max_20_90": null,
+      "price_amp_market_chip_concentration_60_70": null,
+      "price_amp_chip_price_range_60_70": null,
+      "price_amp_chip_min_60_70": null,
+      "price_amp_chip_max_60_70": null,
+      "price_amp_market_chip_concentration_60_90": null,
+      "price_amp_chip_price_range_60_90": null,
+      "price_amp_chip_min_60_90": null,
+      "price_amp_chip_max_60_90": null,
+      "price_amp_market_chip_concentration_250_70": null,
+      "price_amp_chip_price_range_250_70": null,
+      "price_amp_chip_min_250_70": null,
+      "price_amp_chip_max_250_70": null,
+      "price_amp_market_chip_concentration_250_90": null,
+      "price_amp_chip_price_range_250_90": null,
+      "price_amp_chip_min_250_90": null,
+      "price_amp_chip_max_250_90": null,
+      "price_amp_market_chip_concentration": null,
+      "price_amp_chip_price_range": null,
+      "price_amp_chip_min": null,
+      "price_amp_chip_max": null,
+      "cost_spread_chip_min_20_70": null,
+      "cost_spread_chip_max_20_70": null,
+      "cost_spread_chip_price_range_20_70": null,
+      "cost_spread_chip_concentration_20_70": 0.0,
+      "cost_spread_chip_min_20_90": null,
+      "cost_spread_chip_max_20_90": null,
+      "cost_spread_chip_price_range_20_90": null,
+      "cost_spread_chip_concentration_20_90": 0.0,
+      "cost_spread_chip_min_60_70": null,
+      "cost_spread_chip_max_60_70": null,
+      "cost_spread_chip_price_range_60_70": null,
+      "cost_spread_chip_concentration_60_70": 0.0,
+      "cost_spread_chip_min_60_90": null,
+      "cost_spread_chip_max_60_90": null,
+      "cost_spread_chip_price_range_60_90": null,
+      "cost_spread_chip_concentration_60_90": 0.0,
+      "cost_spread_chip_min_250_70": null,
+      "cost_spread_chip_max_250_70": null,
+      "cost_spread_chip_price_range_250_70": null,
+      "cost_spread_chip_concentration_250_70": 0.0,
+      "cost_spread_chip_min_250_90": null,
+      "cost_spread_chip_max_250_90": null,
+      "cost_spread_chip_price_range_250_90": null,
+      "cost_spread_chip_concentration_250_90": 0.0,
+      "cost_spread_chip_concentration": 0.0,
+      "intensive_trading_min": null,
+      "intensive_trading_max": null,
+      "ema5_10_status": "Golden",
+      "ema5_10_streak": 4.0,
+      "ema5_20_status": "Golden",
+      "ema5_20_streak": 4.0,
+      "ema10_20_status": "Golden",
+      "ema10_20_streak": 4.0,
+      "ema20_50_status": "Golden",
+      "ema20_50_streak": 4.0,
+      "ema50_200_status": "Golden",
+      "ema50_200_streak": 4.0,
+      "ema20_200_status": "Golden",
+      "ema20_200_streak": 4.0,
+      "ema12_26_status": "Golden",
+      "ema12_26_streak": 4.0,
+      "ema5_13_status": "Golden",
+      "ema5_13_streak": 4.0,
+      "ema5_34_status": "Golden",
+      "ema5_34_streak": 4.0,
+      "ema13_34_status": "Golden",
+      "ema13_34_streak": 4.0,
+      "ema5_13_34_status": "Golden_Triangle",
+      "ema5_13_34_streak": 4.0,
+      "macd_status": "Golden",
+      "macd_golden_streak": 4.0,
+      "macd_death_streak": 0.0,
+      "bottom_signal_cond": 0,
+      "top_signal_cond": 0,
+      "bottom_entry_signal_cond": 0,
+      "top_exit_signal_cond": 0,
+      "continuation_signal_cond": 0,
+      "decline_continuation_cond": 0,
+      "accumulation_cond": 0,
+      "distribution_cond": 0,
+      "multi_timeframe_chip_confirm_bottom_cond": 0,
+      "multi_timeframe_chip_confirm_top_cond": 0,
+      "signal_quality": "0.0"
+    }
+  ]
+}

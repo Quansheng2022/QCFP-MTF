@@ -1,0 +1,178 @@
+{
+  "generated_at": "2026-08-26 13:50:09",
+  "first_screen": [
+    "01951　2026-08-21",
+    "",
+    "Institutional　ACCUMULATION_WEAK",
+    "Permission　WATCH",
+    "Swing Setup　ACCUMULATION",
+    "Risk　Extreme",
+    "FSM　EXITING → EXITING",
+    "Previous Position　0%",
+    "Final Target　0%",
+    "ACTION　NONE",
+    "Why?",
+    "1. FORCED_DELEVERAGE",
+    "2. INST_ACCUMULATION_WEAK",
+    "3. PRICE_DECLINE"
+  ],
+  "certificate": {
+    "decision_id": "01951_2026-08-21",
+    "timestamp": "2026-08-26 13:50:09",
+    "symbol": "01951",
+    "institutional_state": "ACCUMULATION_WEAK",
+    "institutional_permission": "WATCH",
+    "setup": "ACCUMULATION",
+    "trigger": "DAILY_ACCUMULATION",
+    "trade_quality": 53.0,
+    "risk_level": "risk_on",
+    "hard_exit": false,
+    "previous_fsm": "EXITING",
+    "next_fsm": "EXITING",
+    "previous_position": 0.0,
+    "raw_target": 0.0,
+    "governed_target": 0.0,
+    "final_target": 0.0,
+    "reason_codes": [
+      "FORCED_DELEVERAGE",
+      "INST_ACCUMULATION_WEAK",
+      "PRICE_DECLINE"
+    ],
+    "decision_path": [
+      "evidence",
+      "institutional",
+      "exit_events",
+      "setup",
+      "participation_budget",
+      "fsm",
+      "sizing",
+      "permission_cap",
+      "trade_quality",
+      "governance",
+      "final_target"
+    ],
+    "model_version": "QCFP-MTF-2.5.0",
+    "rule_version": "GOV-2.5.0",
+    "schema_version": "DECISION-1.1",
+    "feature_manifest_hash": "ed8b6eceb02a5815",
+    "settings_hash": "530277372928",
+    "input_fingerprint": "e39b295009cef772",
+    "governance_passed": true,
+    "constraint_trace": {
+      "raw_target": 0.0,
+      "permission_cap": 0.0,
+      "risk_cap": 0.0,
+      "hard_exit": 0.0,
+      "final_target": 0.0,
+      "constraint_applied": false
+    },
+    "decision_graph": [
+      "STRUCTURAL_DECLINE（C:ACCUMULATION_WEAK）",
+      "Permission:WATCH",
+      "Setup:ACCUMULATION",
+      "Exit:FORCED_DELEVERAGE",
+      "FSM:EXITING→EXITING",
+      "Target:0.0"
+    ],
+    "authority_chain": [
+      "State:ACCUMULATION_WEAK",
+      "Permission:WATCH",
+      "Participation:STAND(cap 0.0)"
+    ],
+    "information_asof": "2026-08-21",
+    "data_quality_gate": "C",
+    "pit_gate": "C",
+    "ablation_mode": "perm=True,budget=True,daily=True,hard_exit=True",
+    "execution_assumption": "T+1 周收盘确认成交（Next Close，BASE 全额）",
+    "constraint_chain": [
+      "raw_target=0.0",
+      "permission_cap=0.0",
+      "risk_cap=0.0",
+      "hard_exit=0.0",
+      "final_target=0.0",
+      "constraint_applied=False"
+    ],
+    "certificate_hash": "747114f12bdb3eef"
+  },
+  "simulated_fill": {
+    "assumption": "T+1 周收盘确认成交（Next Close 口径，BASE 全额成交）",
+    "orders_submitted": false
+  },
+  "drift": {
+    "flag": "NORMAL",
+    "metrics": {
+      "permission_dist": {
+        "flag": "OK",
+        "worst": 0.0007
+      },
+      "setup_dist": {
+        "flag": "OK",
+        "worst": 0.0002
+      },
+      "fsm_transition_dist": {
+        "flag": "OK",
+        "worst": 0.0031
+      }
+    },
+    "drifted": [],
+    "baseline": {
+      "permission_dist": {
+        "BLOCK": 0.0264,
+        "STRONG_ALLOW": 0.0058,
+        "TEST": 0.004,
+        "WATCH": 0.9639
+      },
+      "setup_dist": {
+        "ACCUMULATION": 0.0367,
+        "BREAKOUT": 0.0017,
+        "NONE": 0.957,
+        "PULLBACK": 0.0046
+      },
+      "fsm_transition_dist": {
+        "BUILDING→BUILDING": 0.0001,
+        "BUILDING→EXITING": 0.0,
+        "COOLDOWN→EXITING": 0.0348,
+        "COOLDOWN→FLAT": 0.0296,
+        "COOLDOWN→TESTING": 0.0004,
+        "EXITING→COOLDOWN": 0.0354,
+        "EXITING→EXITING": 0.655,
+        "FLAT→COOLDOWN": 0.0295,
+        "FLAT→FLAT": 0.2038,
+        "FLAT→TESTING": 0.0013,
+        "TESTING→BUILDING": 0.0,
+        "TESTING→EXITING": 0.0017,
+        "TESTING→TESTING": 0.0084
+      }
+    },
+    "live": {
+      "permission_dist": {
+        "BLOCK": 0.0257,
+        "STRONG_ALLOW": 0.006,
+        "TEST": 0.0042,
+        "WATCH": 0.9642
+      },
+      "setup_dist": {
+        "ACCUMULATION": 0.0365,
+        "BREAKOUT": 0.0017,
+        "NONE": 0.9572,
+        "PULLBACK": 0.0046
+      },
+      "fsm_transition_dist": {
+        "BUILDING→BUILDING": 0.0002,
+        "BUILDING→EXITING": 0.0001,
+        "COOLDOWN→EXITING": 0.0341,
+        "COOLDOWN→FLAT": 0.0296,
+        "COOLDOWN→TESTING": 0.0006,
+        "EXITING→COOLDOWN": 0.0353,
+        "EXITING→EXITING": 0.6532,
+        "FLAT→COOLDOWN": 0.0291,
+        "FLAT→FLAT": 0.2022,
+        "FLAT→TESTING": 0.0018,
+        "TESTING→BUILDING": 0.0001,
+        "TESTING→EXITING": 0.0022,
+        "TESTING→TESTING": 0.0115
+      }
+    },
+    "threshold": 0.15
+  }
+}

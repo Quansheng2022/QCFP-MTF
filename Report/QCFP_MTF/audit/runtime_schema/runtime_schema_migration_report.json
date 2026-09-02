@@ -1,0 +1,42 @@
+{
+  "schema_version": "RUNTIME-SCHEMA-1",
+  "status": "RUNTIME_SCHEMA_READY",
+  "backup_path": "C:\\Users\\Quansheng\\Documents\\projects\\TA_Workflow\\SQLiteDB\\HK_Stock.db.bak-20260829-144854",
+  "sql_statements_executed": 47,
+  "migration_plan": {
+    "tables_to_create": [
+      "qcfp_decision_certificate"
+    ],
+    "tables_missing_columns": {},
+    "verify_only": [
+      "qcfp_decision_ledger",
+      "qcfp_model_registry",
+      "qcfp_shadow_decision_fact",
+      "qcfp_runtime_event_ledger",
+      "qcfp_research_outcome",
+      "qcfp_runtime_evidence_daily"
+    ],
+    "backup": "C:\\Users\\Quansheng\\Documents\\projects\\TA_Workflow\\SQLiteDB\\HK_Stock.db.bak-20260829-144854",
+    "applied_at": "2026-08-29 14:48:54"
+  },
+  "gates": {
+    "required_runtime_tables_100%": true,
+    "required_columns_100%": true,
+    "runtime_insert_test": true,
+    "event_hash_verification": true,
+    "decision_release_identity": true,
+    "certificate_identity": true,
+    "evidence_store_insert": true,
+    "missing_table_fail_closed": true
+  },
+  "smoke": {
+    "event_insert": true,
+    "event_hash_verification": true,
+    "decision_release_identity": true,
+    "certificate_identity": true,
+    "evidence_store_insert": true,
+    "missing_table_fail_closed": true
+  },
+  "generated_at": "2026-08-29 14:48:54",
+  "rule": "任一 Gate 失败 → RUNTIME_SCHEMA_INCOMPLETE；迁移后缺表仍必须 NOT_PROVEN（fail-closed 不被破坏）"
+}

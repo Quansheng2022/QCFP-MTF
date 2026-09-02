@@ -1,0 +1,10 @@
+{
+  "schema": "OOS-2",
+  "status": "OOS_NOT_COMPARABLE",
+  "comparable": false,
+  "evidence_not_down": false,
+  "reason": "previous release OOS artifact 缺失（MERGED_CODE_9 未归档/未运行）",
+  "future_leakage_count": null,
+  "pit_grade": null,
+  "rule": "不具备比较资格 → OOS_NOT_COMPARABLE，不是 PASS 也不是 FAIL"
+}

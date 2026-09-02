@@ -1,0 +1,96 @@
+{
+  "release_id": "MTR-CLOSURE-1",
+  "evidence_freeze_id": "0dc64006740e8e14",
+  "generated_at": "2026-08-29 16:29:01",
+  "answers": {
+    "1_daily_evidence_complete": {
+      "daily_evidence_state": "DAILY_EVIDENCE_READY",
+      "latest_trade_date": "2026-08-21",
+      "latest_verdict": "DECISION_SUPPORT_EVIDENCE_READY"
+    },
+    "2_consecutive_qualified_days": {
+      "qualified_days": 1,
+      "required_days": 20,
+      "remaining_days": 19
+    },
+    "3_why_not_qualified": {
+      "state": "SHADOW_ACCUMULATING",
+      "blocking_reasons": []
+    },
+    "4_outcome_matured": {
+      "outcome_qualified_days": 1,
+      "required_outcome_days": 20,
+      "remaining_outcome_days": 19,
+      "latest_outcome": {
+        "maturity_5d": 16,
+        "maturity_20d": 0,
+        "maturity_60d": 0,
+        "coverage": 1.0
+      }
+    },
+    "5_hard_reset": {
+      "hard_reset_count": 0,
+      "invalidated_days": 0
+    },
+    "6_distance_to_qualified": {
+      "state": "SHADOW_ACCUMULATING",
+      "remaining_shadow_days": 19,
+      "remaining_outcome_days": 19,
+      "replay": {
+        "state": "REPLAY_ACCUMULATION_OK",
+        "window_exact_rate": 1.0,
+        "replay_gap_days": []
+      }
+    }
+  },
+  "shadow": {
+    "state": "SHADOW_ACCUMULATING",
+    "qualified_days": 1,
+    "required_days": 20,
+    "remaining_days": 19
+  },
+  "replay": {
+    "state": "REPLAY_ACCUMULATION_OK",
+    "reasons": [],
+    "stats": {
+      "daily": [
+        {
+          "trade_date": "2026-08-21",
+          "replay_eligible": 16,
+          "replay_exact": 16,
+          "replay_ineligible": 0,
+          "replay_exception": 0,
+          "critical_replay_mismatch": 0
+        }
+      ],
+      "window_replay_eligible": 16,
+      "window_replay_exact": 16,
+      "window_replay_ineligible": 0,
+      "window_replay_exception": 0,
+      "window_critical_mismatch": 0,
+      "window_exact_rate": 1.0,
+      "window_eligible_rate": 1.0,
+      "replay_gap_days": [],
+      "rule": "REPLAY_GAP：有决策但无 Replay → 不是 0 mismatch 可自证"
+    },
+    "ok": true,
+    "rule": "长期连续 100%；任何 gap/drift/exception → 不通过"
+  },
+  "outcome": {
+    "outcome_qualified_days": 1,
+    "required_days": 20,
+    "remaining_days": 19
+  },
+  "windows": {
+    "5d": 1,
+    "20d": 1,
+    "60d": 1,
+    "120d": 1
+  },
+  "observation_60d": {
+    "qualified_days_60": 1,
+    "window_days": 1,
+    "blocking": false
+  },
+  "rule": "健康报告只读 Verified Evidence；20D blocking、60D observation、120D health"
+}

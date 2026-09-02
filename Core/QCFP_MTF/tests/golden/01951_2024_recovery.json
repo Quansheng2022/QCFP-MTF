@@ -1,0 +1,18 @@
+{
+  "case": "01951_2024_recovery",
+  "description": "锦欣生殖 2024-02~10 波段（+61.6%）：空头结构 + 52W 极低位 + 周线盘整 → Canonical 空仓 NO_TRADE；战术试多仅解释层",
+  "change_reason": "MTR Closure：Golden 迁移 Canonical-only。legacy tactical_override sizing（effective_position_cqs）已退役；决策层禁止未经治理的试多仓位，解释层保留 TEST_BUY 语义",
+  "inputs": {
+    "structural_regime": "STRUCTURAL_DECLINE",
+    "monthly_behavior_state": "Improving",
+    "tactical_signal": "Consolidation",
+    "position_52w": 0.09,
+    "catalyst_score": 1
+  },
+  "expected": {
+    "mtf_regime": "BEARISH_CONFIRMED",
+    "canonical_action": "NO_TRADE",
+    "trade_intent": "NO_TRADE",
+    "target": 0.0
+  }
+}

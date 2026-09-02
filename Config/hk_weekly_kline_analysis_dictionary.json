@@ -1,0 +1,694 @@
+{
+  "table_name": "hk_weekly_kline_analysis",
+  "generated_at": "2026-07-15 17:26:18",
+  "database_path": "C:\\Users\\Quansheng\\Documents\\projects\\TA_Workflow\\SQLiteDB\\HK_Stock.db",
+  "statistics": {
+    "total_records": 0,
+    "stock_count": 0,
+    "min_date": null,
+    "max_date": null
+  },
+  "field_count": 48,
+  "fields": [
+    {
+      "field_name": "id",
+      "data_type": "INTEGER",
+      "nullable": true,
+      "primary_key": true,
+      "default_value": null,
+      "description": "主键，自增ID",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 0,
+        "null_percentage": 0.0
+      },
+      "samples": []
+    },
+    {
+      "field_name": "stock_code",
+      "data_type": "TEXT",
+      "nullable": false,
+      "primary_key": false,
+      "default_value": null,
+      "description": "股票代码（如：00700）",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 0,
+        "null_percentage": 0.0,
+        "distinct_count": 0
+      },
+      "samples": []
+    },
+    {
+      "field_name": "stock_name",
+      "data_type": "TEXT",
+      "nullable": false,
+      "primary_key": false,
+      "default_value": null,
+      "description": "股票名称（如：腾讯控股）",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 0,
+        "null_percentage": 0.0,
+        "distinct_count": 0
+      },
+      "samples": []
+    },
+    {
+      "field_name": "date",
+      "data_type": "TEXT",
+      "nullable": false,
+      "primary_key": false,
+      "default_value": null,
+      "description": "周K线日期（格式：YYYY-MM-DD，每周最后一个交易日）",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 0,
+        "null_percentage": 0.0,
+        "distinct_count": 0
+      },
+      "samples": []
+    },
+    {
+      "field_name": "open",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "周开盘价",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 0,
+        "null_percentage": 0.0
+      },
+      "samples": []
+    },
+    {
+      "field_name": "high",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "周最高价",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 0,
+        "null_percentage": 0.0
+      },
+      "samples": []
+    },
+    {
+      "field_name": "low",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "周最低价",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 0,
+        "null_percentage": 0.0
+      },
+      "samples": []
+    },
+    {
+      "field_name": "close",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "周收盘价",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 0,
+        "null_percentage": 0.0
+      },
+      "samples": []
+    },
+    {
+      "field_name": "volume",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "周成交量（股）",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 0,
+        "null_percentage": 0.0
+      },
+      "samples": []
+    },
+    {
+      "field_name": "amount",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "周成交额（元）",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 0,
+        "null_percentage": 0.0
+      },
+      "samples": []
+    },
+    {
+      "field_name": "turnover_rate",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "周换手率（%）",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 0,
+        "null_percentage": 0.0
+      },
+      "samples": []
+    },
+    {
+      "field_name": "amplitude",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "周振幅（%）",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 0,
+        "null_percentage": 0.0
+      },
+      "samples": []
+    },
+    {
+      "field_name": "change_percent",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "周涨跌幅（%）",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 0,
+        "null_percentage": 0.0
+      },
+      "samples": []
+    },
+    {
+      "field_name": "change_amount",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "周涨跌额（元）",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 0,
+        "null_percentage": 0.0
+      },
+      "samples": []
+    },
+    {
+      "field_name": "ema5",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "5周指数移动平均线",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 0,
+        "null_percentage": 0.0
+      },
+      "samples": []
+    },
+    {
+      "field_name": "ema10",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "10周指数移动平均线",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 0,
+        "null_percentage": 0.0
+      },
+      "samples": []
+    },
+    {
+      "field_name": "ema20",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "20周指数移动平均线",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 0,
+        "null_percentage": 0.0
+      },
+      "samples": []
+    },
+    {
+      "field_name": "ema50",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "50周指数移动平均线",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 0,
+        "null_percentage": 0.0
+      },
+      "samples": []
+    },
+    {
+      "field_name": "ema100",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "100周指数移动平均线",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 0,
+        "null_percentage": 0.0
+      },
+      "samples": []
+    },
+    {
+      "field_name": "ema200",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "200周指数移动平均线",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 0,
+        "null_percentage": 0.0
+      },
+      "samples": []
+    },
+    {
+      "field_name": "macd_dif",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "MACD DIF线（差离值）",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 0,
+        "null_percentage": 0.0
+      },
+      "samples": []
+    },
+    {
+      "field_name": "macd_signal",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "MACD Signal线（信号线）",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 0,
+        "null_percentage": 0.0
+      },
+      "samples": []
+    },
+    {
+      "field_name": "macd_histogram",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "MACD 柱状图（DIF - Signal）",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 0,
+        "null_percentage": 0.0
+      },
+      "samples": []
+    },
+    {
+      "field_name": "ema5_10_status",
+      "data_type": "TEXT",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "EMA5与EMA10交叉状态（金叉/死叉/平行）",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 0,
+        "null_percentage": 0.0,
+        "distinct_count": 0
+      },
+      "samples": []
+    },
+    {
+      "field_name": "ema5_10_streak",
+      "data_type": "INTEGER",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "EMA5与EMA10持续状态天数",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 0,
+        "null_percentage": 0.0
+      },
+      "samples": []
+    },
+    {
+      "field_name": "ema5_20_status",
+      "data_type": "TEXT",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "EMA5与EMA20交叉状态（金叉/死叉/平行）",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 0,
+        "null_percentage": 0.0,
+        "distinct_count": 0
+      },
+      "samples": []
+    },
+    {
+      "field_name": "ema5_20_streak",
+      "data_type": "INTEGER",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "EMA5与EMA20持续状态天数",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 0,
+        "null_percentage": 0.0
+      },
+      "samples": []
+    },
+    {
+      "field_name": "ema10_50_status",
+      "data_type": "TEXT",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "EMA10与EMA50交叉状态（金叉/死叉/平行）",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 0,
+        "null_percentage": 0.0,
+        "distinct_count": 0
+      },
+      "samples": []
+    },
+    {
+      "field_name": "ema10_50_streak",
+      "data_type": "INTEGER",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "EMA10与EMA50持续状态天数",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 0,
+        "null_percentage": 0.0
+      },
+      "samples": []
+    },
+    {
+      "field_name": "ema20_50_status",
+      "data_type": "TEXT",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "EMA20与EMA50交叉状态（金叉/死叉/平行）",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 0,
+        "null_percentage": 0.0,
+        "distinct_count": 0
+      },
+      "samples": []
+    },
+    {
+      "field_name": "ema20_50_streak",
+      "data_type": "INTEGER",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "EMA20与EMA50持续状态天数",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 0,
+        "null_percentage": 0.0
+      },
+      "samples": []
+    },
+    {
+      "field_name": "golden_triangle",
+      "data_type": "INTEGER",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "黄金三角形（1: 金叉形成, 0: 未形成）",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 0,
+        "null_percentage": 0.0
+      },
+      "samples": []
+    },
+    {
+      "field_name": "death_triangle",
+      "data_type": "INTEGER",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "死亡三角形（1: 死叉形成, 0: 未形成）",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 0,
+        "null_percentage": 0.0
+      },
+      "samples": []
+    },
+    {
+      "field_name": "macd_cross",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "MACD交叉信号（1: 金叉, -1: 死叉, 0: 无交叉）",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 0,
+        "null_percentage": 0.0
+      },
+      "samples": []
+    },
+    {
+      "field_name": "macd_status",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "MACD状态（1: 多头, -1: 空头, 0: 震荡）",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 0,
+        "null_percentage": 0.0
+      },
+      "samples": []
+    },
+    {
+      "field_name": "macd_golden_streak",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "MACD金叉持续周数",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 0,
+        "null_percentage": 0.0
+      },
+      "samples": []
+    },
+    {
+      "field_name": "macd_death_streak",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "MACD死叉持续周数",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 0,
+        "null_percentage": 0.0
+      },
+      "samples": []
+    },
+    {
+      "field_name": "kdj_k",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "KDJ指标K值",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 0,
+        "null_percentage": 0.0
+      },
+      "samples": []
+    },
+    {
+      "field_name": "kdj_d",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "KDJ指标D值",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 0,
+        "null_percentage": 0.0
+      },
+      "samples": []
+    },
+    {
+      "field_name": "kdj_j",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "KDJ指标J值",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 0,
+        "null_percentage": 0.0
+      },
+      "samples": []
+    },
+    {
+      "field_name": "vol_ema5",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "5周成交量指数移动平均线",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 0,
+        "null_percentage": 0.0
+      },
+      "samples": []
+    },
+    {
+      "field_name": "volume_ratio",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "量比（成交量/5周均量）",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 0,
+        "null_percentage": 0.0
+      },
+      "samples": []
+    },
+    {
+      "field_name": "gain",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "本周涨幅（正数）",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 0,
+        "null_percentage": 0.0
+      },
+      "samples": []
+    },
+    {
+      "field_name": "loss",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "本周跌幅（负数）",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 0,
+        "null_percentage": 0.0
+      },
+      "samples": []
+    },
+    {
+      "field_name": "avg_gain",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "14周平均涨幅",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 0,
+        "null_percentage": 0.0
+      },
+      "samples": []
+    },
+    {
+      "field_name": "avg_loss",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "14周平均跌幅",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 0,
+        "null_percentage": 0.0
+      },
+      "samples": []
+    },
+    {
+      "field_name": "rs",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "RS值（平均涨幅/平均跌幅）",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 0,
+        "null_percentage": 0.0
+      },
+      "samples": []
+    },
+    {
+      "field_name": "rsi14",
+      "data_type": "REAL",
+      "nullable": true,
+      "primary_key": false,
+      "default_value": null,
+      "description": "14周相对强弱指标",
+      "statistics": {
+        "null_count": 0,
+        "non_null_count": 0,
+        "null_percentage": 0.0
+      },
+      "samples": []
+    }
+  ],
+  "sample_data": []
+}

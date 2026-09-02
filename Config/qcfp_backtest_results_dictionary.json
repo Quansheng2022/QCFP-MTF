@@ -1,0 +1,79 @@
+{
+  "table_name": "qcfp_backtest_results",
+  "generated_at": "2026-08-24 22:03:30",
+  "database_path": "C:\\Users\\Quansheng\\Documents\\projects\\TA_Workflow\\SQLiteDB\\HK_Stock.db",
+  "statistics": {
+    "total_records": 0,
+    "stock_count": 0
+  },
+  "field_count": 11,
+  "fields": [
+    {
+      "field_name": "id",
+      "data_type": "INTEGER",
+      "description": "主键，自增ID",
+      "sample": null
+    },
+    {
+      "field_name": "stock_code",
+      "data_type": "TEXT",
+      "description": "股票代码（5位数字）",
+      "sample": null
+    },
+    {
+      "field_name": "signal_date",
+      "data_type": "TEXT",
+      "description": "信号日期",
+      "sample": null
+    },
+    {
+      "field_name": "action_signal",
+      "data_type": "TEXT",
+      "description": "行动信号",
+      "sample": null
+    },
+    {
+      "field_name": "position",
+      "data_type": "REAL",
+      "description": "仓位（0~1）",
+      "sample": null
+    },
+    {
+      "field_name": "pnl",
+      "data_type": "REAL",
+      "description": "收益（%）",
+      "sample": null
+    },
+    {
+      "field_name": "mtf_regime",
+      "data_type": "TEXT",
+      "description": "当时 MTF 状态",
+      "sample": null
+    },
+    {
+      "field_name": "market_regime",
+      "data_type": "TEXT",
+      "description": "市场环境（牛/熊/震荡）",
+      "sample": null
+    },
+    {
+      "field_name": "model_version",
+      "data_type": "TEXT",
+      "description": "模型版本号",
+      "sample": null
+    },
+    {
+      "field_name": "run_id",
+      "data_type": "TEXT",
+      "description": "回测运行标识",
+      "sample": null
+    },
+    {
+      "field_name": "update_time",
+      "data_type": "TEXT",
+      "description": "更新时间",
+      "sample": null
+    }
+  ],
+  "sample_data": []
+}

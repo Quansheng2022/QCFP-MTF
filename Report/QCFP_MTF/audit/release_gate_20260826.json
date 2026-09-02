@@ -1,0 +1,103 @@
+{
+  "generated_at": "2026-08-26 21:26:59",
+  "verdict": "FAIL",
+  "scores": {
+    "governance": 100.0,
+    "audit": 100.0,
+    "backtest_integrity": 33.3,
+    "ablation_integrity": 100.0,
+    "retail_practicality": 100.0
+  },
+  "gates": [
+    {
+      "gate": "Governance",
+      "status": "PASS",
+      "evidence": "不变量矩阵/10 条 Invariants 全部通过"
+    },
+    {
+      "gate": "Audit",
+      "status": "PASS",
+      "evidence": "最新 run shadow_20260826_134659：10046/10046 条身份完整"
+    },
+    {
+      "gate": "PIT",
+      "status": "WARN",
+      "evidence": "PIT-C 10046 条（估算披露日，探索模式）"
+    },
+    {
+      "gate": "Shadow",
+      "status": "PASS",
+      "evidence": "Shadow→Ledger 由 canonical_replay 单次 Evaluate 写入"
+    },
+    {
+      "gate": "Re-entry",
+      "status": "PASS",
+      "evidence": "COOLDOWN 行 647（再入场门已参与决策链）"
+    },
+    {
+      "gate": "Replay",
+      "status": "PASS",
+      "evidence": "同输入→同 DecisionSnapshot（治理矩阵重放覆盖）"
+    },
+    {
+      "gate": "FSM",
+      "status": "PASS",
+      "evidence": "7 状态全转移由矩阵+不变量测试覆盖"
+    },
+    {
+      "gate": "Backtest",
+      "status": "PASS",
+      "evidence": "cost_model=directional_v2，引擎源=bt"
+    },
+    {
+      "gate": "OOS",
+      "status": "WARN",
+      "evidence": "median_OOS_Sharpe=nan"
+    },
+    {
+      "gate": "Research",
+      "status": "WARN",
+      "evidence": "Research Gate=Not Validated"
+    },
+    {
+      "gate": "Ablation",
+      "status": "PASS",
+      "evidence": "最近实验 permission_fsm_ablation_20260826.json（含机制报告）"
+    },
+    {
+      "gate": "Report",
+      "status": "PASS",
+      "evidence": "Decision 1 份 / Audit 1 份"
+    },
+    {
+      "gate": "Stress",
+      "status": "FAIL",
+      "evidence": "压力报告缺失/不可存活 (1 份)"
+    },
+    {
+      "gate": "Execution",
+      "status": "FAIL",
+      "evidence": "执行仿真报告 0 份（成本/滑点/成交率显式化）"
+    },
+    {
+      "gate": "Statistical",
+      "status": "FAIL",
+      "evidence": "统计验证 0 份（Bootstrap CI/Permutation）"
+    },
+    {
+      "gate": "Capacity",
+      "status": "PASS",
+      "evidence": "容量报告 1 份（1%/3%/5%/10% ADV 档位）"
+    },
+    {
+      "gate": "Decision Consistency",
+      "status": "PASS",
+      "evidence": "最近 2 run 翻转率=0.0005"
+    },
+    {
+      "gate": "Ledger Integrity",
+      "status": "FAIL",
+      "evidence": "20092/82192 条身份完整"
+    }
+  ]
+}

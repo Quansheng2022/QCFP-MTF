@@ -1,0 +1,64 @@
+{
+  "invariants": {
+    "P3-INV-01": {
+      "name": "Signal cannot upgrade Permission",
+      "permission": "BLOCK",
+      "target": 0.0,
+      "pass": true
+    },
+    "P3-INV-02": {
+      "name": "Wave cannot upgrade Permission",
+      "permission": "BLOCK",
+      "target": 0.0,
+      "pass": true
+    },
+    "P3-INV-03": {
+      "name": "Proposal != Final Decision",
+      "raw_target": 0.1,
+      "final_target": 0.064,
+      "governance_proof": "PASS",
+      "pass": true
+    },
+    "P3-INV-04": {
+      "name": "FSM cannot directly own FinalTarget",
+      "decision_path": [
+        "evidence",
+        "institutional",
+        "exit_events",
+        "setup",
+        "participation_budget",
+        "wave",
+        "fsm",
+        "sizing",
+        "permission_cap",
+        "trade_quality",
+        "governance",
+        "final_target"
+      ],
+      "pass": true
+    },
+    "P3-INV-05": {
+      "name": "FinalTarget only from Governance",
+      "final_target_writer": [
+        "decision/engine.py"
+      ],
+      "pass": true
+    },
+    "P3-INV-06": {
+      "name": "Downstream risk cannot increase",
+      "raw_target": 0.1,
+      "final_target": 0.064,
+      "pass": true
+    },
+    "P3-INV-07": {
+      "name": "Hard Exit overrides bullish proposals",
+      "exit_event": "HARD_EXIT",
+      "primary_reason": "HARD_EXIT",
+      "target": 0.0,
+      "pass": true
+    }
+  },
+  "failed": [],
+  "pass": true,
+  "verdict": "RUNTIME_INVARIANTS_PASS"
+}

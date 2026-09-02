@@ -1,0 +1,818 @@
+{
+  "metadata": {
+    "table_name": "hk_daily_moneyflow_analysis",
+    "generated_time": "2026-07-15 10:44:45",
+    "database_path": "C:\\Users\\Quansheng\\Documents\\projects\\TA_Workflow2\\SQLiteDB\\HK_Stock.db",
+    "project_dir": "C:\\Users\\Quansheng\\Documents\\projects\\TA_Workflow2"
+  },
+  "basic_info": {
+    "total_records": "19486",
+    "columns": [
+      {
+        "cid": 0,
+        "name": "id",
+        "type": "INTEGER",
+        "notnull": 0,
+        "dflt_value": NaN,
+        "pk": 1
+      },
+      {
+        "cid": 1,
+        "name": "stock_code",
+        "type": "TEXT",
+        "notnull": 1,
+        "dflt_value": NaN,
+        "pk": 0
+      },
+      {
+        "cid": 2,
+        "name": "stock_name",
+        "type": "TEXT",
+        "notnull": 1,
+        "dflt_value": NaN,
+        "pk": 0
+      },
+      {
+        "cid": 3,
+        "name": "Date",
+        "type": "TEXT",
+        "notnull": 0,
+        "dflt_value": NaN,
+        "pk": 0
+      },
+      {
+        "cid": 4,
+        "name": "Price_ChgPct",
+        "type": "REAL",
+        "notnull": 0,
+        "dflt_value": NaN,
+        "pk": 0
+      },
+      {
+        "cid": 5,
+        "name": "Capital_Trend",
+        "type": "REAL",
+        "notnull": 0,
+        "dflt_value": NaN,
+        "pk": 0
+      },
+      {
+        "cid": 6,
+        "name": "Extra_Large",
+        "type": "REAL",
+        "notnull": 0,
+        "dflt_value": NaN,
+        "pk": 0
+      },
+      {
+        "cid": 7,
+        "name": "Large",
+        "type": "REAL",
+        "notnull": 0,
+        "dflt_value": NaN,
+        "pk": 0
+      },
+      {
+        "cid": 8,
+        "name": "Medium",
+        "type": "REAL",
+        "notnull": 0,
+        "dflt_value": NaN,
+        "pk": 0
+      },
+      {
+        "cid": 9,
+        "name": "Small",
+        "type": "REAL",
+        "notnull": 0,
+        "dflt_value": NaN,
+        "pk": 0
+      },
+      {
+        "cid": 10,
+        "name": "Institutional_Flow",
+        "type": "REAL",
+        "notnull": 0,
+        "dflt_value": NaN,
+        "pk": 0
+      },
+      {
+        "cid": 11,
+        "name": "Individual_Flow",
+        "type": "REAL",
+        "notnull": 0,
+        "dflt_value": NaN,
+        "pk": 0
+      },
+      {
+        "cid": 12,
+        "name": "Inst_5MA",
+        "type": "REAL",
+        "notnull": 0,
+        "dflt_value": NaN,
+        "pk": 0
+      },
+      {
+        "cid": 13,
+        "name": "Ind_5MA",
+        "type": "REAL",
+        "notnull": 0,
+        "dflt_value": NaN,
+        "pk": 0
+      },
+      {
+        "cid": 14,
+        "name": "IDR",
+        "type": "REAL",
+        "notnull": 0,
+        "dflt_value": NaN,
+        "pk": 0
+      },
+      {
+        "cid": 15,
+        "name": "FBI",
+        "type": "REAL",
+        "notnull": 0,
+        "dflt_value": NaN,
+        "pk": 0
+      },
+      {
+        "cid": 16,
+        "name": "capital_in_super",
+        "type": "REAL",
+        "notnull": 0,
+        "dflt_value": "0",
+        "pk": 0
+      },
+      {
+        "cid": 17,
+        "name": "capital_in_big",
+        "type": "REAL",
+        "notnull": 0,
+        "dflt_value": "0",
+        "pk": 0
+      },
+      {
+        "cid": 18,
+        "name": "capital_in_mid",
+        "type": "REAL",
+        "notnull": 0,
+        "dflt_value": "0",
+        "pk": 0
+      },
+      {
+        "cid": 19,
+        "name": "capital_in_small",
+        "type": "REAL",
+        "notnull": 0,
+        "dflt_value": "0",
+        "pk": 0
+      },
+      {
+        "cid": 20,
+        "name": "capital_out_super",
+        "type": "REAL",
+        "notnull": 0,
+        "dflt_value": "0",
+        "pk": 0
+      },
+      {
+        "cid": 21,
+        "name": "capital_out_big",
+        "type": "REAL",
+        "notnull": 0,
+        "dflt_value": "0",
+        "pk": 0
+      },
+      {
+        "cid": 22,
+        "name": "capital_out_mid",
+        "type": "REAL",
+        "notnull": 0,
+        "dflt_value": "0",
+        "pk": 0
+      },
+      {
+        "cid": 23,
+        "name": "capital_out_small",
+        "type": "REAL",
+        "notnull": 0,
+        "dflt_value": "0",
+        "pk": 0
+      }
+    ]
+  },
+  "stock_statistics": [
+    {
+      "stock_code": "00020",
+      "stock_name": "",
+      "record_count": 1,
+      "first_date": null,
+      "last_date": null,
+      "trading_days": 0
+    },
+    {
+      "stock_code": "00020",
+      "stock_name": "商汤科技",
+      "record_count": 1105,
+      "first_date": null,
+      "last_date": null,
+      "trading_days": 0
+    },
+    {
+      "stock_code": "00268",
+      "stock_name": "",
+      "record_count": 1,
+      "first_date": null,
+      "last_date": null,
+      "trading_days": 0
+    },
+    {
+      "stock_code": "00268",
+      "stock_name": "金蝶国际",
+      "record_count": 1328,
+      "first_date": null,
+      "last_date": null,
+      "trading_days": 0
+    },
+    {
+      "stock_code": "00354",
+      "stock_name": "",
+      "record_count": 1,
+      "first_date": null,
+      "last_date": null,
+      "trading_days": 0
+    },
+    {
+      "stock_code": "00354",
+      "stock_name": "中软国际",
+      "record_count": 1328,
+      "first_date": null,
+      "last_date": null,
+      "trading_days": 0
+    },
+    {
+      "stock_code": "00357",
+      "stock_name": "",
+      "record_count": 1,
+      "first_date": null,
+      "last_date": null,
+      "trading_days": 0
+    },
+    {
+      "stock_code": "00357",
+      "stock_name": "美兰空港",
+      "record_count": 1315,
+      "first_date": null,
+      "last_date": null,
+      "trading_days": 0
+    },
+    {
+      "stock_code": "00371",
+      "stock_name": "",
+      "record_count": 1,
+      "first_date": null,
+      "last_date": null,
+      "trading_days": 0
+    },
+    {
+      "stock_code": "00371",
+      "stock_name": "北控水务",
+      "record_count": 1329,
+      "first_date": null,
+      "last_date": null,
+      "trading_days": 0
+    },
+    {
+      "stock_code": "00700",
+      "stock_name": "",
+      "record_count": 1,
+      "first_date": null,
+      "last_date": null,
+      "trading_days": 0
+    },
+    {
+      "stock_code": "00700",
+      "stock_name": "腾讯控股",
+      "record_count": 1333,
+      "first_date": null,
+      "last_date": null,
+      "trading_days": 0
+    },
+    {
+      "stock_code": "00788",
+      "stock_name": "",
+      "record_count": 1,
+      "first_date": null,
+      "last_date": null,
+      "trading_days": 0
+    },
+    {
+      "stock_code": "00788",
+      "stock_name": "中国铁塔",
+      "record_count": 1315,
+      "first_date": null,
+      "last_date": null,
+      "trading_days": 0
+    },
+    {
+      "stock_code": "01093",
+      "stock_name": "",
+      "record_count": 1,
+      "first_date": null,
+      "last_date": null,
+      "trading_days": 0
+    },
+    {
+      "stock_code": "01093",
+      "stock_name": "石药集团",
+      "record_count": 1328,
+      "first_date": null,
+      "last_date": null,
+      "trading_days": 0
+    },
+    {
+      "stock_code": "01177",
+      "stock_name": "",
+      "record_count": 1,
+      "first_date": null,
+      "last_date": null,
+      "trading_days": 0
+    },
+    {
+      "stock_code": "01177",
+      "stock_name": "中生制药",
+      "record_count": 1328,
+      "first_date": null,
+      "last_date": null,
+      "trading_days": 0
+    },
+    {
+      "stock_code": "01951",
+      "stock_name": "",
+      "record_count": 1,
+      "first_date": null,
+      "last_date": null,
+      "trading_days": 0
+    },
+    {
+      "stock_code": "01951",
+      "stock_name": "锦鑫生殖",
+      "record_count": 1328,
+      "first_date": null,
+      "last_date": null,
+      "trading_days": 0
+    },
+    {
+      "stock_code": "02202",
+      "stock_name": "",
+      "record_count": 1,
+      "first_date": null,
+      "last_date": null,
+      "trading_days": 0
+    },
+    {
+      "stock_code": "02202",
+      "stock_name": "港股万科企业",
+      "record_count": 1327,
+      "first_date": null,
+      "last_date": null,
+      "trading_days": 0
+    },
+    {
+      "stock_code": "02611",
+      "stock_name": "",
+      "record_count": 1,
+      "first_date": null,
+      "last_date": null,
+      "trading_days": 0
+    },
+    {
+      "stock_code": "02611",
+      "stock_name": "国泰海通",
+      "record_count": 1310,
+      "first_date": null,
+      "last_date": null,
+      "trading_days": 0
+    },
+    {
+      "stock_code": "03033",
+      "stock_name": "",
+      "record_count": 1,
+      "first_date": null,
+      "last_date": null,
+      "trading_days": 0
+    },
+    {
+      "stock_code": "03033",
+      "stock_name": "南方恒生科技",
+      "record_count": 1284,
+      "first_date": null,
+      "last_date": null,
+      "trading_days": 0
+    },
+    {
+      "stock_code": "03800",
+      "stock_name": "",
+      "record_count": 1,
+      "first_date": null,
+      "last_date": null,
+      "trading_days": 0
+    },
+    {
+      "stock_code": "03800",
+      "stock_name": "协鑫科技",
+      "record_count": 1185,
+      "first_date": null,
+      "last_date": null,
+      "trading_days": 0
+    },
+    {
+      "stock_code": "06060",
+      "stock_name": "",
+      "record_count": 1,
+      "first_date": null,
+      "last_date": null,
+      "trading_days": 0
+    },
+    {
+      "stock_code": "06060",
+      "stock_name": "众安在线",
+      "record_count": 1328,
+      "first_date": null,
+      "last_date": null,
+      "trading_days": 0
+    }
+  ],
+  "sample_data": [
+    {
+      "id": 1,
+      "stock_code": "00020",
+      "stock_name": "商汤科技",
+      "Date": null,
+      "Price_ChgPct": null,
+      "Capital_Trend": null,
+      "Extra_Large": null,
+      "Large": null,
+      "Medium": null,
+      "Small": null,
+      "Institutional_Flow": -217440000.0,
+      "Individual_Flow": 47320000.0,
+      "Inst_5MA": NaN,
+      "Ind_5MA": NaN,
+      "IDR": 0.8212720954827013,
+      "FBI": -1.0,
+      "capital_in_super": 0.0,
+      "capital_in_big": 0.0,
+      "capital_in_mid": 17370000.0,
+      "capital_in_small": 29950000.0,
+      "capital_out_super": 134760000.0,
+      "capital_out_big": 82680000.0,
+      "capital_out_mid": 0.0,
+      "capital_out_small": 0.0
+    },
+    {
+      "id": 2,
+      "stock_code": "00020",
+      "stock_name": "商汤科技",
+      "Date": null,
+      "Price_ChgPct": null,
+      "Capital_Trend": null,
+      "Extra_Large": null,
+      "Large": null,
+      "Medium": null,
+      "Small": null,
+      "Institutional_Flow": 95060000.0,
+      "Individual_Flow": 89570000.0,
+      "Inst_5MA": NaN,
+      "Ind_5MA": NaN,
+      "IDR": 0.5148675729838055,
+      "FBI": 0.0297351459676109,
+      "capital_in_super": 59440000.0,
+      "capital_in_big": 35620000.0,
+      "capital_in_mid": 35550000.0,
+      "capital_in_small": 54020000.0,
+      "capital_out_super": 0.0,
+      "capital_out_big": 0.0,
+      "capital_out_mid": 0.0,
+      "capital_out_small": 0.0
+    },
+    {
+      "id": 3,
+      "stock_code": "00020",
+      "stock_name": "商汤科技",
+      "Date": null,
+      "Price_ChgPct": null,
+      "Capital_Trend": null,
+      "Extra_Large": null,
+      "Large": null,
+      "Medium": null,
+      "Small": null,
+      "Institutional_Flow": 80450000.0,
+      "Individual_Flow": 341270000.0,
+      "Inst_5MA": NaN,
+      "Ind_5MA": NaN,
+      "IDR": 0.19076638527933226,
+      "FBI": -0.6184672294413355,
+      "capital_in_super": 6580000.0,
+      "capital_in_big": 73870000.0,
+      "capital_in_mid": 80820000.0,
+      "capital_in_small": 260450000.0,
+      "capital_out_super": 0.0,
+      "capital_out_big": 0.0,
+      "capital_out_mid": 0.0,
+      "capital_out_small": 0.0
+    },
+    {
+      "id": 4,
+      "stock_code": "00020",
+      "stock_name": "商汤科技",
+      "Date": null,
+      "Price_ChgPct": null,
+      "Capital_Trend": null,
+      "Extra_Large": null,
+      "Large": null,
+      "Medium": null,
+      "Small": null,
+      "Institutional_Flow": -129190000.0,
+      "Individual_Flow": -118390000.0,
+      "Inst_5MA": NaN,
+      "Ind_5MA": NaN,
+      "IDR": 0.5218111317553922,
+      "FBI": -0.043622263510784395,
+      "capital_in_super": 0.0,
+      "capital_in_big": 0.0,
+      "capital_in_mid": 0.0,
+      "capital_in_small": 0.0,
+      "capital_out_super": 29950000.0,
+      "capital_out_big": 99240000.0,
+      "capital_out_mid": 82330000.0,
+      "capital_out_small": 36060000.0
+    },
+    {
+      "id": 5,
+      "stock_code": "00020",
+      "stock_name": "商汤科技",
+      "Date": null,
+      "Price_ChgPct": null,
+      "Capital_Trend": null,
+      "Extra_Large": null,
+      "Large": null,
+      "Medium": null,
+      "Small": null,
+      "Institutional_Flow": -107230000.0,
+      "Individual_Flow": -28730000.0,
+      "Inst_5MA": -55670000.0,
+      "Ind_5MA": 66208000.0,
+      "IDR": 0.7886878493674611,
+      "FBI": -0.577375698734922,
+      "capital_in_super": 0.0,
+      "capital_in_big": 0.0,
+      "capital_in_mid": 0.0,
+      "capital_in_small": 7890000.0,
+      "capital_out_super": 51190000.0,
+      "capital_out_big": 56040000.0,
+      "capital_out_mid": 36620000.0,
+      "capital_out_small": 0.0
+    },
+    {
+      "id": 6,
+      "stock_code": "00020",
+      "stock_name": "商汤科技",
+      "Date": null,
+      "Price_ChgPct": null,
+      "Capital_Trend": null,
+      "Extra_Large": null,
+      "Large": null,
+      "Medium": null,
+      "Small": null,
+      "Institutional_Flow": 82390000.0,
+      "Individual_Flow": 57080000.0,
+      "Inst_5MA": 4296000.0,
+      "Ind_5MA": 68160000.0,
+      "IDR": 0.5907363590736359,
+      "FBI": 0.1814727181472718,
+      "capital_in_super": 36980000.0,
+      "capital_in_big": 45410000.0,
+      "capital_in_mid": 1560000.0,
+      "capital_in_small": 55520000.0,
+      "capital_out_super": 0.0,
+      "capital_out_big": 0.0,
+      "capital_out_mid": 0.0,
+      "capital_out_small": 0.0
+    },
+    {
+      "id": 7,
+      "stock_code": "00020",
+      "stock_name": "商汤科技",
+      "Date": null,
+      "Price_ChgPct": null,
+      "Capital_Trend": null,
+      "Extra_Large": null,
+      "Large": null,
+      "Medium": null,
+      "Small": null,
+      "Institutional_Flow": -43080000.0,
+      "Individual_Flow": -10180000.0,
+      "Inst_5MA": -23332000.0,
+      "Ind_5MA": 48210000.0,
+      "IDR": 0.8088621855050695,
+      "FBI": -0.617724371010139,
+      "capital_in_super": 1110000.0,
+      "capital_in_big": 0.0,
+      "capital_in_mid": 0.0,
+      "capital_in_small": 13240000.0,
+      "capital_out_super": 0.0,
+      "capital_out_big": 44190000.0,
+      "capital_out_mid": 23420000.0,
+      "capital_out_small": 0.0
+    },
+    {
+      "id": 8,
+      "stock_code": "00020",
+      "stock_name": "商汤科技",
+      "Date": null,
+      "Price_ChgPct": null,
+      "Capital_Trend": null,
+      "Extra_Large": null,
+      "Large": null,
+      "Medium": null,
+      "Small": null,
+      "Institutional_Flow": -869070.0,
+      "Individual_Flow": -19841440.0,
+      "Inst_5MA": -39595814.0,
+      "Ind_5MA": -24012288.0,
+      "IDR": 0.04196275224511613,
+      "FBI": 0.9160744955097677,
+      "capital_in_super": 0.0,
+      "capital_in_big": 0.0,
+      "capital_in_mid": 0.0,
+      "capital_in_small": 0.0,
+      "capital_out_super": 0.0,
+      "capital_out_big": 869070.0,
+      "capital_out_mid": 19790000.0,
+      "capital_out_small": 51440.0
+    },
+    {
+      "id": 9,
+      "stock_code": "00020",
+      "stock_name": "商汤科技",
+      "Date": null,
+      "Price_ChgPct": null,
+      "Capital_Trend": null,
+      "Extra_Large": null,
+      "Large": null,
+      "Medium": null,
+      "Small": null,
+      "Institutional_Flow": 55300000.0,
+      "Individual_Flow": 19080000.0,
+      "Inst_5MA": -2697814.0,
+      "Ind_5MA": 3481712.0,
+      "IDR": 0.7434794299542888,
+      "FBI": 0.48695885990857757,
+      "capital_in_super": 28220000.0,
+      "capital_in_big": 27080000.0,
+      "capital_in_mid": 4840000.0,
+      "capital_in_small": 14240000.0,
+      "capital_out_super": 0.0,
+      "capital_out_big": 0.0,
+      "capital_out_mid": 0.0,
+      "capital_out_small": 0.0
+    },
+    {
+      "id": 10,
+      "stock_code": "00020",
+      "stock_name": "商汤科技",
+      "Date": null,
+      "Price_ChgPct": null,
+      "Capital_Trend": null,
+      "Extra_Large": null,
+      "Large": null,
+      "Medium": null,
+      "Small": null,
+      "Institutional_Flow": -17085350.0,
+      "Individual_Flow": 1160000.0,
+      "Inst_5MA": 15331116.0,
+      "Ind_5MA": 9459712.0,
+      "IDR": 0.9364221568783279,
+      "FBI": -1.0,
+      "capital_in_super": 0.0,
+      "capital_in_big": 0.0,
+      "capital_in_mid": 0.0,
+      "capital_in_small": 16170000.0,
+      "capital_out_super": 155350.0,
+      "capital_out_big": 16930000.0,
+      "capital_out_mid": 15010000.0,
+      "capital_out_small": 0.0
+    }
+  ],
+  "quality_checks": {
+    "null_values": {
+      "stock_code": "0",
+      "stock_name": "15",
+      "Date": "19486",
+      "Price_ChgPct": "19486",
+      "Capital_Trend": "19486",
+      "Extra_Large": "19486",
+      "Large": "19486",
+      "Medium": "19486",
+      "Small": "19486",
+      "Institutional_Flow": "0",
+      "Individual_Flow": "0",
+      "Inst_5MA": "60",
+      "Ind_5MA": "60",
+      "IDR": "0",
+      "FBI": "0",
+      "capital_in_super": "0",
+      "capital_in_big": "0",
+      "capital_in_mid": "0",
+      "capital_in_small": "0",
+      "capital_out_super": "0",
+      "capital_out_big": "0",
+      "capital_out_mid": "0",
+      "capital_out_small": "0"
+    },
+    "duplicates": [
+      {
+        "stock_code": "00700",
+        "date": null,
+        "count": 1334
+      },
+      {
+        "stock_code": "00371",
+        "date": null,
+        "count": 1330
+      },
+      {
+        "stock_code": "00268",
+        "date": null,
+        "count": 1329
+      },
+      {
+        "stock_code": "00354",
+        "date": null,
+        "count": 1329
+      },
+      {
+        "stock_code": "01093",
+        "date": null,
+        "count": 1329
+      },
+      {
+        "stock_code": "01177",
+        "date": null,
+        "count": 1329
+      },
+      {
+        "stock_code": "01951",
+        "date": null,
+        "count": 1329
+      },
+      {
+        "stock_code": "06060",
+        "date": null,
+        "count": 1329
+      },
+      {
+        "stock_code": "02202",
+        "date": null,
+        "count": 1328
+      },
+      {
+        "stock_code": "00357",
+        "date": null,
+        "count": 1316
+      },
+      {
+        "stock_code": "00788",
+        "date": null,
+        "count": 1316
+      },
+      {
+        "stock_code": "02611",
+        "date": null,
+        "count": 1311
+      },
+      {
+        "stock_code": "03033",
+        "date": null,
+        "count": 1285
+      },
+      {
+        "stock_code": "03800",
+        "date": null,
+        "count": 1186
+      },
+      {
+        "stock_code": "00020",
+        "date": null,
+        "count": 1106
+      }
+    ],
+    "missing_stocks": [
+      "00579",
+      "02602"
+    ],
+    "extra_stocks": []
+  }
+}

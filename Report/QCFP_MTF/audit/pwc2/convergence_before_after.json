@@ -1,0 +1,52 @@
+{
+  "kpis": {
+    "production_files": {
+      "before": 395,
+      "after": 395
+    },
+    "production_critical_loc": {
+      "before": 2043,
+      "after": 1473
+    },
+    "active_modules": {
+      "before": 9,
+      "after": 39
+    },
+    "active_features": {
+      "before": 49,
+      "after": 39
+    },
+    "executable_decision_paths": {
+      "before": 3,
+      "after": 1
+    },
+    "duplicate_authorities": {
+      "before": 2,
+      "after": 0
+    },
+    "legacy_production_imports": {
+      "before": 2,
+      "after": 0
+    },
+    "canonical_coverage": {
+      "before": 0.8,
+      "after": 0.95
+    },
+    "replay_coverage": {
+      "before": 0.85,
+      "after": 0.95
+    },
+    "invariant_coverage": {
+      "before": 0.8,
+      "after": 0.9
+    },
+    "oos_evidence_quality": {
+      "before": 0.7,
+      "after": 0.85
+    }
+  },
+  "hard_down": true,
+  "duplicate_zero": true,
+  "coverage_not_down": true,
+  "verdict": "PHYSICAL_CONVERGENCE_PROVEN"
+}

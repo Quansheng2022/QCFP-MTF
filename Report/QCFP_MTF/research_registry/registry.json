@@ -1,0 +1,16 @@
+[
+  {
+    "experiment_id": "EXP-00001",
+    "hypothesis": "Permission 降低错误交易",
+    "baseline": "Wave Only",
+    "treatment": "Wave+Permission",
+    "dataset": "HK 2020-2026",
+    "pit_grade": "B",
+    "oos_window": "2023-2026",
+    "metrics": {},
+    "statistical_test": "",
+    "selection_rule": "best_ci",
+    "result": null,
+    "created_at": "2026-08-26 21:26:42"
+  }
+]

@@ -1,0 +1,7760 @@
+{
+  "metadata": {
+    "table_name": "hk_hist_data_daily",
+    "generated_time": "2026-07-10 15:39:02",
+    "database_path": "C:\\Users\\Quansheng\\Documents\\projects\\TA_Workflow2\\SQLiteDB\\HK_Stock.db",
+    "project_dir": "C:\\Users\\Quansheng\\Documents\\projects\\TA_Workflow2"
+  },
+  "basic_info": {
+    "total_records": "45877",
+    "columns": [
+      {
+        "cid": 0,
+        "name": "id",
+        "type": "INTEGER",
+        "notnull": 0,
+        "dflt_value": null,
+        "pk": 1
+      },
+      {
+        "cid": 1,
+        "name": "stock_code",
+        "type": "TEXT",
+        "notnull": 0,
+        "dflt_value": null,
+        "pk": 0
+      },
+      {
+        "cid": 2,
+        "name": "stock_name",
+        "type": "TEXT",
+        "notnull": 0,
+        "dflt_value": null,
+        "pk": 0
+      },
+      {
+        "cid": 3,
+        "name": "Date",
+        "type": "TEXT",
+        "notnull": 0,
+        "dflt_value": null,
+        "pk": 0
+      },
+      {
+        "cid": 4,
+        "name": "Open",
+        "type": "REAL",
+        "notnull": 0,
+        "dflt_value": null,
+        "pk": 0
+      },
+      {
+        "cid": 5,
+        "name": "High",
+        "type": "REAL",
+        "notnull": 0,
+        "dflt_value": null,
+        "pk": 0
+      },
+      {
+        "cid": 6,
+        "name": "Low",
+        "type": "REAL",
+        "notnull": 0,
+        "dflt_value": null,
+        "pk": 0
+      },
+      {
+        "cid": 7,
+        "name": "Close",
+        "type": "REAL",
+        "notnull": 0,
+        "dflt_value": null,
+        "pk": 0
+      },
+      {
+        "cid": 8,
+        "name": "Volume",
+        "type": "REAL",
+        "notnull": 0,
+        "dflt_value": null,
+        "pk": 0
+      },
+      {
+        "cid": 9,
+        "name": "Amount",
+        "type": "REAL",
+        "notnull": 0,
+        "dflt_value": null,
+        "pk": 0
+      },
+      {
+        "cid": 10,
+        "name": "Amplitude",
+        "type": "REAL",
+        "notnull": 0,
+        "dflt_value": null,
+        "pk": 0
+      },
+      {
+        "cid": 11,
+        "name": "Change_Percent",
+        "type": "REAL",
+        "notnull": 0,
+        "dflt_value": null,
+        "pk": 0
+      },
+      {
+        "cid": 12,
+        "name": "Change_Amount",
+        "type": "REAL",
+        "notnull": 0,
+        "dflt_value": null,
+        "pk": 0
+      },
+      {
+        "cid": 13,
+        "name": "Turnover_Rate",
+        "type": "REAL",
+        "notnull": 0,
+        "dflt_value": null,
+        "pk": 0
+      },
+      {
+        "cid": 14,
+        "name": "Previous_Close",
+        "type": "REAL",
+        "notnull": 0,
+        "dflt_value": null,
+        "pk": 0
+      }
+    ]
+  },
+  "stock_statistics": [
+    {
+      "stock_code": "00020",
+      "stock_name": "商汤科技",
+      "record_count": 1108,
+      "first_date": "2021-12-30",
+      "last_date": "2026-07-09",
+      "trading_days": 1108,
+      "min_close": 0.58,
+      "max_close": 8.2,
+      "avg_close": 2.221525270758123
+    },
+    {
+      "stock_code": "00268",
+      "stock_name": "金蝶国际",
+      "record_count": 4061,
+      "first_date": "2010-01-04",
+      "last_date": "2026-07-09",
+      "trading_days": 4061,
+      "min_close": 0.8,
+      "max_close": 38.3,
+      "avg_close": 8.287557251908396
+    },
+    {
+      "stock_code": "00354",
+      "stock_name": "中软国际",
+      "record_count": 4049,
+      "first_date": "2010-01-04",
+      "last_date": "2026-07-09",
+      "trading_days": 4049,
+      "min_close": 0.53,
+      "max_close": 15.75,
+      "avg_close": 4.079693751543591
+    },
+    {
+      "stock_code": "00357",
+      "stock_name": "美兰空港",
+      "record_count": 4033,
+      "first_date": "2010-01-04",
+      "last_date": "2026-07-09",
+      "trading_days": 4033,
+      "min_close": 2.43,
+      "max_close": 60.0,
+      "avg_close": 10.270119018100669
+    },
+    {
+      "stock_code": "00371",
+      "stock_name": "北控水务",
+      "record_count": 4057,
+      "first_date": "2010-01-04",
+      "last_date": "2026-07-09",
+      "trading_days": 4057,
+      "min_close": -0.56,
+      "max_close": 5.38,
+      "avg_close": 2.213122997288637
+    },
+    {
+      "stock_code": "00700",
+      "stock_name": "腾讯控股",
+      "record_count": 4062,
+      "first_date": "2010-01-04",
+      "last_date": "2026-07-09",
+      "trading_days": 4062,
+      "min_close": -0.38,
+      "max_close": 688.01,
+      "avg_close": 240.5138281634663
+    },
+    {
+      "stock_code": "00788",
+      "stock_name": "中国铁塔",
+      "record_count": 1946,
+      "first_date": "2018-08-08",
+      "last_date": "2026-07-09",
+      "trading_days": 1946,
+      "min_close": 5.35,
+      "max_close": 20.29,
+      "avg_close": 10.143890030832477
+    },
+    {
+      "stock_code": "01093",
+      "stock_name": "石药集团",
+      "record_count": 4061,
+      "first_date": "2010-01-04",
+      "last_date": "2026-07-09",
+      "trading_days": 4061,
+      "min_close": -1.07,
+      "max_close": 12.15,
+      "avg_close": 4.423366165968973
+    },
+    {
+      "stock_code": "01177",
+      "stock_name": "中生制药",
+      "record_count": 4059,
+      "first_date": "2010-01-04",
+      "last_date": "2026-07-09",
+      "trading_days": 4059,
+      "min_close": -0.12,
+      "max_close": 10.45,
+      "avg_close": 3.292091648189209
+    },
+    {
+      "stock_code": "01951",
+      "stock_name": "锦鑫生殖",
+      "record_count": 1732,
+      "first_date": "2019-06-25",
+      "last_date": "2026-07-09",
+      "trading_days": 1732,
+      "min_close": 1.97,
+      "max_close": 22.82,
+      "avg_close": 6.962650115473441
+    },
+    {
+      "stock_code": "02202",
+      "stock_name": "港股万科企业",
+      "record_count": 2950,
+      "first_date": "2014-06-25",
+      "last_date": "2026-07-09",
+      "trading_days": 2950,
+      "min_close": 2.12,
+      "max_close": 35.45,
+      "avg_close": 14.141667796610168
+    },
+    {
+      "stock_code": "02611",
+      "stock_name": "国泰海通",
+      "record_count": 2251,
+      "first_date": "2017-04-11",
+      "last_date": "2026-07-09",
+      "trading_days": 2251,
+      "min_close": 5.72,
+      "max_close": 18.02,
+      "avg_close": 9.869933362949801
+    },
+    {
+      "stock_code": "03033",
+      "stock_name": "股票_03033",
+      "record_count": 1438,
+      "first_date": "2020-08-28",
+      "last_date": "2026-07-09",
+      "trading_days": 1438,
+      "min_close": 2.76,
+      "max_close": 10.92,
+      "avg_close": 5.13086230876217
+    },
+    {
+      "stock_code": "03800",
+      "stock_name": "协鑫科技",
+      "record_count": 3914,
+      "first_date": "2010-01-04",
+      "last_date": "2026-07-09",
+      "trading_days": 3914,
+      "min_close": 0.15,
+      "max_close": 4.62,
+      "avg_close": 1.4423658661216148
+    },
+    {
+      "stock_code": "06060",
+      "stock_name": "众安在线",
+      "record_count": 2156,
+      "first_date": "2017-09-28",
+      "last_date": "2026-07-09",
+      "trading_days": 2156,
+      "min_close": 9.0,
+      "max_close": 93.65,
+      "avg_close": 28.295853432282005
+    }
+  ],
+  "sample_data": [
+    {
+      "id": 1108,
+      "stock_code": "00020",
+      "stock_name": "商汤科技",
+      "Date": "2026-07-09",
+      "Open": 1.38,
+      "High": 1.44,
+      "Low": 1.35,
+      "Close": 1.38,
+      "Volume": 628693431.0,
+      "Amount": 876875545.0,
+      "Amplitude": 6.43,
+      "Change_Percent": -1.43,
+      "Change_Amount": -0.02,
+      "Turnover_Rate": 1.49,
+      "Previous_Close": 1.4
+    },
+    {
+      "id": 5169,
+      "stock_code": "00268",
+      "stock_name": "金蝶国际",
+      "Date": "2026-07-09",
+      "Open": 7.12,
+      "High": 7.32,
+      "Low": 6.9,
+      "Close": 6.97,
+      "Volume": 64497759.0,
+      "Amount": 453640440.0,
+      "Amplitude": 5.76,
+      "Change_Percent": -4.39,
+      "Change_Amount": -0.32,
+      "Turnover_Rate": 1.82,
+      "Previous_Close": 7.29
+    },
+    {
+      "id": 9218,
+      "stock_code": "00354",
+      "stock_name": "中软国际",
+      "Date": "2026-07-09",
+      "Open": 3.11,
+      "High": 3.24,
+      "Low": 3.07,
+      "Close": 3.11,
+      "Volume": 23660000.0,
+      "Amount": 74619660.0,
+      "Amplitude": 5.47,
+      "Change_Percent": 0.0,
+      "Change_Amount": 0.0,
+      "Turnover_Rate": 0.87,
+      "Previous_Close": 3.11
+    },
+    {
+      "id": 13251,
+      "stock_code": "00357",
+      "stock_name": "美兰空港",
+      "Date": "2026-07-09",
+      "Open": 4.19,
+      "High": 4.2,
+      "Low": 4.02,
+      "Close": 4.18,
+      "Volume": 365000.0,
+      "Amount": 1502910.0,
+      "Amplitude": 4.3,
+      "Change_Percent": -0.24,
+      "Change_Amount": -0.01,
+      "Turnover_Rate": 0.16,
+      "Previous_Close": 4.19
+    },
+    {
+      "id": 17308,
+      "stock_code": "00371",
+      "stock_name": "北控水务",
+      "Date": "2026-07-09",
+      "Open": 2.34,
+      "High": 2.34,
+      "Low": 2.26,
+      "Close": 2.29,
+      "Volume": 5479466.0,
+      "Amount": 12489661.0,
+      "Amplitude": 3.48,
+      "Change_Percent": -0.43,
+      "Change_Amount": -0.01,
+      "Turnover_Rate": 0.06,
+      "Previous_Close": 2.3
+    },
+    {
+      "id": 21370,
+      "stock_code": "00700",
+      "stock_name": "腾讯控股",
+      "Date": "2026-07-09",
+      "Open": 479.0,
+      "High": 485.0,
+      "Low": 467.2,
+      "Close": 469.6,
+      "Volume": 42402152.0,
+      "Amount": 20136358005.0,
+      "Amplitude": 3.72,
+      "Change_Percent": -1.92,
+      "Change_Amount": -9.2,
+      "Turnover_Rate": 0.47,
+      "Previous_Close": 478.8
+    },
+    {
+      "id": 23316,
+      "stock_code": "00788",
+      "stock_name": "中国铁塔",
+      "Date": "2026-07-09",
+      "Open": 9.02,
+      "High": 9.15,
+      "Low": 8.97,
+      "Close": 9.01,
+      "Volume": 8680949.0,
+      "Amount": 78283231.0,
+      "Amplitude": 1.98,
+      "Change_Percent": -0.77,
+      "Change_Amount": -0.07,
+      "Turnover_Rate": 0.19,
+      "Previous_Close": 9.08
+    },
+    {
+      "id": 27377,
+      "stock_code": "01093",
+      "stock_name": "石药集团",
+      "Date": "2026-07-09",
+      "Open": 7.66,
+      "High": 8.07,
+      "Low": 7.64,
+      "Close": 7.84,
+      "Volume": 110379063.0,
+      "Amount": 873760311.0,
+      "Amplitude": 5.48,
+      "Change_Percent": 0.0,
+      "Change_Amount": 0.0,
+      "Turnover_Rate": 0.96,
+      "Previous_Close": 7.84
+    },
+    {
+      "id": 31436,
+      "stock_code": "01177",
+      "stock_name": "中生制药",
+      "Date": "2026-07-09",
+      "Open": 4.86,
+      "High": 5.11,
+      "Low": 4.71,
+      "Close": 5.0,
+      "Volume": 146854294.0,
+      "Amount": 734870956.0,
+      "Amplitude": 8.3,
+      "Change_Percent": 3.73,
+      "Change_Amount": 0.18,
+      "Turnover_Rate": 0.78,
+      "Previous_Close": 4.82
+    },
+    {
+      "id": 33168,
+      "stock_code": "01951",
+      "stock_name": "锦鑫生殖",
+      "Date": "2026-07-09",
+      "Open": 2.09,
+      "High": 2.09,
+      "Low": 2.02,
+      "Close": 2.04,
+      "Volume": 11735000.0,
+      "Amount": 23918820.0,
+      "Amplitude": 3.37,
+      "Change_Percent": -1.92,
+      "Change_Amount": -0.04,
+      "Turnover_Rate": 0.43,
+      "Previous_Close": 2.08
+    }
+  ],
+  "quality_checks": {
+    "null_values": {
+      "stock_code": "0",
+      "stock_name": "0",
+      "Date": "0",
+      "Open": "0",
+      "High": "0",
+      "Low": "0",
+      "Close": "0",
+      "Volume": "0",
+      "Amount": "0",
+      "Amplitude": "0",
+      "Change_Percent": "0",
+      "Change_Amount": "0",
+      "Turnover_Rate": "0",
+      "Previous_Close": "15"
+    },
+    "duplicates": [],
+    "ohlc_errors": [
+      {
+        "stock_code": "00371",
+        "Date": "2011-08-05",
+        "Open": 0.05,
+        "High": 0.05,
+        "Low": -0.09,
+        "Close": 0.02,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2011-08-08",
+        "Open": -0.01,
+        "High": 0.01,
+        "Low": -0.13,
+        "Close": -0.08,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2011-08-09",
+        "Open": -0.17,
+        "High": -0.02,
+        "Low": -0.2,
+        "Close": -0.07,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2011-08-10",
+        "Open": -0.04,
+        "High": 0.04,
+        "Low": -0.1,
+        "Close": -0.09,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2011-08-11",
+        "Open": -0.11,
+        "High": -0.07,
+        "Low": -0.16,
+        "Close": -0.09,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2011-08-12",
+        "Open": -0.02,
+        "High": 0.0,
+        "Low": -0.09,
+        "Close": -0.08,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2011-08-15",
+        "Open": -0.05,
+        "High": -0.01,
+        "Low": -0.05,
+        "Close": -0.01,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2011-08-16",
+        "Open": -0.01,
+        "High": 0.03,
+        "Low": -0.01,
+        "Close": 0.03,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2011-08-17",
+        "Open": 0.03,
+        "High": 0.08,
+        "Low": -0.02,
+        "Close": -0.01,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2011-08-18",
+        "Open": 0.02,
+        "High": 0.02,
+        "Low": -0.07,
+        "Close": -0.02,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2011-08-19",
+        "Open": -0.08,
+        "High": -0.05,
+        "Low": -0.1,
+        "Close": -0.08,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2011-08-22",
+        "Open": -0.08,
+        "High": -0.03,
+        "Low": -0.14,
+        "Close": -0.13,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2011-08-23",
+        "Open": -0.09,
+        "High": -0.05,
+        "Low": -0.13,
+        "Close": -0.09,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2011-08-24",
+        "Open": -0.09,
+        "High": -0.04,
+        "Low": -0.09,
+        "Close": -0.06,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2011-08-25",
+        "Open": -0.04,
+        "High": 0.07,
+        "Low": -0.05,
+        "Close": 0.03,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2011-09-05",
+        "Open": 0.05,
+        "High": 0.05,
+        "Low": -0.06,
+        "Close": -0.02,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2011-09-06",
+        "Open": -0.02,
+        "High": -0.02,
+        "Low": -0.07,
+        "Close": -0.04,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2011-09-07",
+        "Open": -0.03,
+        "High": 0.04,
+        "Low": -0.03,
+        "Close": 0.03,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2011-09-08",
+        "Open": 0.04,
+        "High": 0.04,
+        "Low": -0.02,
+        "Close": 0.01,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2011-09-12",
+        "Open": 0.01,
+        "High": 0.02,
+        "Low": -0.09,
+        "Close": -0.07,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2011-09-14",
+        "Open": -0.07,
+        "High": -0.07,
+        "Low": -0.14,
+        "Close": -0.1,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2011-09-15",
+        "Open": -0.09,
+        "High": -0.06,
+        "Low": -0.13,
+        "Close": -0.12,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2011-09-16",
+        "Open": -0.09,
+        "High": -0.08,
+        "Low": -0.13,
+        "Close": -0.09,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2011-09-19",
+        "Open": -0.14,
+        "High": -0.09,
+        "Low": -0.15,
+        "Close": -0.14,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2011-09-20",
+        "Open": -0.16,
+        "High": -0.15,
+        "Low": -0.28,
+        "Close": -0.27,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2011-09-21",
+        "Open": -0.26,
+        "High": -0.22,
+        "Low": -0.31,
+        "Close": -0.27,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2011-09-22",
+        "Open": -0.3,
+        "High": -0.3,
+        "Low": -0.51,
+        "Close": -0.47,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2011-09-23",
+        "Open": -0.49,
+        "High": -0.49,
+        "Low": -0.72,
+        "Close": -0.56,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2011-09-26",
+        "Open": -0.58,
+        "High": -0.51,
+        "Low": -0.58,
+        "Close": -0.52,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2011-09-27",
+        "Open": -0.5,
+        "High": -0.43,
+        "Low": -0.52,
+        "Close": -0.49,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2011-09-28",
+        "Open": -0.47,
+        "High": -0.46,
+        "Low": -0.51,
+        "Close": -0.49,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2011-09-30",
+        "Open": -0.48,
+        "High": -0.41,
+        "Low": -0.5,
+        "Close": -0.47,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2011-10-03",
+        "Open": -0.48,
+        "High": -0.45,
+        "Low": -0.52,
+        "Close": -0.5,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2011-10-04",
+        "Open": -0.54,
+        "High": -0.49,
+        "Low": -0.55,
+        "Close": -0.52,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2011-10-06",
+        "Open": -0.47,
+        "High": -0.41,
+        "Low": -0.49,
+        "Close": -0.43,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2011-10-07",
+        "Open": -0.42,
+        "High": -0.29,
+        "Low": -0.43,
+        "Close": -0.31,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2011-10-10",
+        "Open": -0.33,
+        "High": -0.31,
+        "Low": -0.38,
+        "Close": -0.35,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2011-10-11",
+        "Open": -0.29,
+        "High": -0.24,
+        "Low": -0.34,
+        "Close": -0.33,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2011-10-12",
+        "Open": -0.33,
+        "High": -0.3,
+        "Low": -0.35,
+        "Close": -0.31,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2011-10-13",
+        "Open": -0.29,
+        "High": -0.25,
+        "Low": -0.31,
+        "Close": -0.29,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2011-10-14",
+        "Open": -0.29,
+        "High": -0.28,
+        "Low": -0.39,
+        "Close": -0.39,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2011-10-17",
+        "Open": -0.34,
+        "High": -0.29,
+        "Low": -0.35,
+        "Close": -0.31,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2011-10-18",
+        "Open": -0.34,
+        "High": -0.34,
+        "Low": -0.39,
+        "Close": -0.38,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2011-10-19",
+        "Open": -0.33,
+        "High": -0.26,
+        "Low": -0.34,
+        "Close": -0.26,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2011-10-20",
+        "Open": -0.28,
+        "High": -0.21,
+        "Low": -0.31,
+        "Close": -0.23,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2011-10-21",
+        "Open": -0.21,
+        "High": -0.08,
+        "Low": -0.23,
+        "Close": -0.11,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2011-10-24",
+        "Open": -0.05,
+        "High": 0.0,
+        "Low": -0.09,
+        "Close": -0.05,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2011-10-25",
+        "Open": -0.03,
+        "High": 0.02,
+        "Low": -0.06,
+        "Close": 0.0,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2011-10-26",
+        "Open": 0.0,
+        "High": 0.0,
+        "Low": -0.11,
+        "Close": -0.1,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2011-10-27",
+        "Open": -0.07,
+        "High": 0.14,
+        "Low": -0.07,
+        "Close": 0.08,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2011-11-01",
+        "Open": -0.01,
+        "High": 0.08,
+        "Low": -0.01,
+        "Close": 0.06,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2011-11-02",
+        "Open": 0.01,
+        "High": 0.11,
+        "Low": -0.04,
+        "Close": 0.1,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2011-11-10",
+        "Open": 0.06,
+        "High": 0.26,
+        "Low": -0.03,
+        "Close": 0.09,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-03-27",
+        "Open": 0.06,
+        "High": 0.06,
+        "Low": -0.02,
+        "Close": 0.05,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-03-28",
+        "Open": 0.04,
+        "High": 0.04,
+        "Low": -0.02,
+        "Close": -0.01,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-03-29",
+        "Open": -0.03,
+        "High": -0.01,
+        "Low": -0.03,
+        "Close": -0.03,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-03-30",
+        "Open": -0.11,
+        "High": -0.08,
+        "Low": -0.22,
+        "Close": -0.12,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-04-02",
+        "Open": -0.09,
+        "High": -0.09,
+        "Low": -0.18,
+        "Close": -0.18,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-04-03",
+        "Open": -0.15,
+        "High": -0.15,
+        "Low": -0.23,
+        "Close": -0.19,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-04-05",
+        "Open": -0.21,
+        "High": -0.17,
+        "Low": -0.24,
+        "Close": -0.19,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-04-10",
+        "Open": -0.19,
+        "High": -0.19,
+        "Low": -0.24,
+        "Close": -0.21,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-04-11",
+        "Open": -0.23,
+        "High": -0.16,
+        "Low": -0.26,
+        "Close": -0.18,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-04-12",
+        "Open": -0.16,
+        "High": -0.07,
+        "Low": -0.16,
+        "Close": -0.1,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-04-13",
+        "Open": -0.04,
+        "High": -0.04,
+        "Low": -0.13,
+        "Close": -0.06,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-04-16",
+        "Open": -0.07,
+        "High": -0.06,
+        "Low": -0.11,
+        "Close": -0.09,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-04-17",
+        "Open": -0.07,
+        "High": -0.06,
+        "Low": -0.11,
+        "Close": -0.06,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-04-18",
+        "Open": -0.05,
+        "High": -0.02,
+        "Low": -0.06,
+        "Close": -0.03,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-04-19",
+        "Open": -0.04,
+        "High": -0.03,
+        "Low": -0.08,
+        "Close": -0.06,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-04-20",
+        "Open": -0.08,
+        "High": -0.07,
+        "Low": -0.13,
+        "Close": -0.12,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-04-23",
+        "Open": -0.11,
+        "High": -0.1,
+        "Low": -0.19,
+        "Close": -0.16,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-04-24",
+        "Open": -0.21,
+        "High": -0.12,
+        "Low": -0.21,
+        "Close": -0.14,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-04-25",
+        "Open": -0.12,
+        "High": -0.12,
+        "Low": -0.17,
+        "Close": -0.16,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-04-26",
+        "Open": -0.12,
+        "High": -0.12,
+        "Low": -0.15,
+        "Close": -0.13,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-04-27",
+        "Open": -0.13,
+        "High": -0.12,
+        "Low": -0.14,
+        "Close": -0.13,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-04-30",
+        "Open": -0.11,
+        "High": -0.11,
+        "Low": -0.18,
+        "Close": -0.12,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-05-02",
+        "Open": -0.12,
+        "High": -0.05,
+        "Low": -0.12,
+        "Close": -0.11,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-05-03",
+        "Open": -0.11,
+        "High": -0.09,
+        "Low": -0.14,
+        "Close": -0.11,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-05-04",
+        "Open": -0.11,
+        "High": -0.08,
+        "Low": -0.12,
+        "Close": -0.09,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-05-07",
+        "Open": -0.14,
+        "High": -0.11,
+        "Low": -0.18,
+        "Close": -0.16,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-05-08",
+        "Open": -0.12,
+        "High": -0.12,
+        "Low": -0.15,
+        "Close": -0.13,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-05-09",
+        "Open": -0.15,
+        "High": -0.14,
+        "Low": -0.2,
+        "Close": -0.16,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-05-10",
+        "Open": -0.16,
+        "High": -0.15,
+        "Low": -0.19,
+        "Close": -0.17,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-05-11",
+        "Open": -0.16,
+        "High": -0.16,
+        "Low": -0.2,
+        "Close": -0.17,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-05-14",
+        "Open": -0.14,
+        "High": -0.14,
+        "Low": -0.2,
+        "Close": -0.2,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-05-15",
+        "Open": -0.19,
+        "High": -0.18,
+        "Low": -0.22,
+        "Close": -0.21,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-05-16",
+        "Open": -0.21,
+        "High": -0.19,
+        "Low": -0.3,
+        "Close": -0.29,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-05-17",
+        "Open": -0.3,
+        "High": -0.22,
+        "Low": -0.3,
+        "Close": -0.25,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-05-18",
+        "Open": -0.29,
+        "High": -0.25,
+        "Low": -0.32,
+        "Close": -0.29,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-05-21",
+        "Open": -0.31,
+        "High": -0.26,
+        "Low": -0.33,
+        "Close": -0.29,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-05-22",
+        "Open": -0.26,
+        "High": -0.24,
+        "Low": -0.28,
+        "Close": -0.26,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-05-23",
+        "Open": -0.29,
+        "High": -0.27,
+        "Low": -0.34,
+        "Close": -0.34,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-05-24",
+        "Open": -0.31,
+        "High": -0.29,
+        "Low": -0.37,
+        "Close": -0.34,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-05-25",
+        "Open": -0.33,
+        "High": -0.3,
+        "Low": -0.39,
+        "Close": -0.36,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-05-28",
+        "Open": -0.37,
+        "High": -0.33,
+        "Low": -0.37,
+        "Close": -0.34,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-05-29",
+        "Open": -0.36,
+        "High": -0.27,
+        "Low": -0.36,
+        "Close": -0.29,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-05-30",
+        "Open": -0.27,
+        "High": -0.26,
+        "Low": -0.3,
+        "Close": -0.3,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-05-31",
+        "Open": -0.3,
+        "High": -0.26,
+        "Low": -0.33,
+        "Close": -0.28,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-06-01",
+        "Open": -0.29,
+        "High": -0.26,
+        "Low": -0.33,
+        "Close": -0.31,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-06-04",
+        "Open": -0.31,
+        "High": -0.31,
+        "Low": -0.38,
+        "Close": -0.35,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-06-05",
+        "Open": -0.35,
+        "High": -0.33,
+        "Low": -0.4,
+        "Close": -0.39,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-06-06",
+        "Open": -0.38,
+        "High": -0.36,
+        "Low": -0.41,
+        "Close": -0.4,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-06-07",
+        "Open": -0.38,
+        "High": -0.37,
+        "Low": -0.4,
+        "Close": -0.39,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-06-11",
+        "Open": -0.37,
+        "High": -0.35,
+        "Low": -0.38,
+        "Close": -0.37,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-06-12",
+        "Open": -0.36,
+        "High": -0.34,
+        "Low": -0.37,
+        "Close": -0.37,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-06-13",
+        "Open": -0.35,
+        "High": -0.35,
+        "Low": -0.37,
+        "Close": -0.36,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-06-14",
+        "Open": -0.37,
+        "High": -0.37,
+        "Low": -0.43,
+        "Close": -0.42,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-06-15",
+        "Open": -0.42,
+        "High": -0.39,
+        "Low": -0.43,
+        "Close": -0.41,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-06-18",
+        "Open": -0.4,
+        "High": -0.36,
+        "Low": -0.4,
+        "Close": -0.36,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-06-19",
+        "Open": -0.34,
+        "High": -0.32,
+        "Low": -0.37,
+        "Close": -0.32,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-06-20",
+        "Open": -0.31,
+        "High": -0.24,
+        "Low": -0.31,
+        "Close": -0.3,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-06-21",
+        "Open": -0.29,
+        "High": -0.29,
+        "Low": -0.39,
+        "Close": -0.35,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-06-22",
+        "Open": -0.39,
+        "High": -0.34,
+        "Low": -0.4,
+        "Close": -0.35,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-06-25",
+        "Open": -0.36,
+        "High": -0.36,
+        "Low": -0.38,
+        "Close": -0.37,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-06-26",
+        "Open": -0.37,
+        "High": -0.36,
+        "Low": -0.39,
+        "Close": -0.37,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-06-27",
+        "Open": -0.38,
+        "High": -0.37,
+        "Low": -0.4,
+        "Close": -0.39,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-06-28",
+        "Open": -0.38,
+        "High": -0.38,
+        "Low": -0.45,
+        "Close": -0.43,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-06-29",
+        "Open": -0.41,
+        "High": -0.39,
+        "Low": -0.46,
+        "Close": -0.41,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-07-03",
+        "Open": -0.42,
+        "High": -0.32,
+        "Low": -0.42,
+        "Close": -0.34,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-07-04",
+        "Open": -0.33,
+        "High": -0.33,
+        "Low": -0.38,
+        "Close": -0.37,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-07-05",
+        "Open": -0.36,
+        "High": -0.34,
+        "Low": -0.39,
+        "Close": -0.35,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-07-06",
+        "Open": -0.33,
+        "High": -0.33,
+        "Low": -0.39,
+        "Close": -0.37,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-07-09",
+        "Open": -0.38,
+        "High": -0.38,
+        "Low": -0.48,
+        "Close": -0.46,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-07-10",
+        "Open": -0.44,
+        "High": -0.43,
+        "Low": -0.47,
+        "Close": -0.46,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-07-11",
+        "Open": -0.48,
+        "High": -0.42,
+        "Low": -0.48,
+        "Close": -0.46,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-07-12",
+        "Open": -0.46,
+        "High": -0.44,
+        "Low": -0.49,
+        "Close": -0.44,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-07-13",
+        "Open": -0.44,
+        "High": -0.43,
+        "Low": -0.46,
+        "Close": -0.44,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-07-16",
+        "Open": -0.44,
+        "High": -0.43,
+        "Low": -0.48,
+        "Close": -0.46,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-07-17",
+        "Open": -0.47,
+        "High": -0.46,
+        "Low": -0.51,
+        "Close": -0.5,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-07-18",
+        "Open": -0.48,
+        "High": -0.48,
+        "Low": -0.52,
+        "Close": -0.51,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-07-19",
+        "Open": -0.38,
+        "High": -0.27,
+        "Low": -0.39,
+        "Close": -0.29,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-07-20",
+        "Open": -0.27,
+        "High": -0.26,
+        "Low": -0.33,
+        "Close": -0.31,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-07-23",
+        "Open": -0.33,
+        "High": -0.32,
+        "Low": -0.38,
+        "Close": -0.35,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-07-24",
+        "Open": -0.35,
+        "High": -0.32,
+        "Low": -0.41,
+        "Close": -0.39,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-07-25",
+        "Open": -0.36,
+        "High": -0.34,
+        "Low": -0.39,
+        "Close": -0.36,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-07-26",
+        "Open": -0.36,
+        "High": -0.36,
+        "Low": -0.42,
+        "Close": -0.39,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-07-27",
+        "Open": -0.37,
+        "High": -0.36,
+        "Low": -0.42,
+        "Close": -0.41,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-07-30",
+        "Open": -0.39,
+        "High": -0.39,
+        "Low": -0.43,
+        "Close": -0.42,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-07-31",
+        "Open": -0.43,
+        "High": -0.4,
+        "Low": -0.43,
+        "Close": -0.41,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-08-01",
+        "Open": -0.4,
+        "High": -0.3,
+        "Low": -0.41,
+        "Close": -0.33,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-08-02",
+        "Open": -0.31,
+        "High": -0.3,
+        "Low": -0.35,
+        "Close": -0.33,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-08-03",
+        "Open": -0.34,
+        "High": -0.32,
+        "Low": -0.37,
+        "Close": -0.32,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-08-06",
+        "Open": -0.3,
+        "High": -0.3,
+        "Low": -0.35,
+        "Close": -0.34,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-08-07",
+        "Open": -0.33,
+        "High": -0.3,
+        "Low": -0.35,
+        "Close": -0.31,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-08-08",
+        "Open": -0.31,
+        "High": -0.31,
+        "Low": -0.35,
+        "Close": -0.33,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-08-09",
+        "Open": -0.32,
+        "High": -0.29,
+        "Low": -0.33,
+        "Close": -0.31,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-08-10",
+        "Open": -0.3,
+        "High": -0.3,
+        "Low": -0.33,
+        "Close": -0.33,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-08-13",
+        "Open": -0.33,
+        "High": -0.3,
+        "Low": -0.33,
+        "Close": -0.32,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-08-14",
+        "Open": -0.3,
+        "High": -0.22,
+        "Low": -0.32,
+        "Close": -0.22,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-08-15",
+        "Open": -0.24,
+        "High": -0.24,
+        "Low": -0.28,
+        "Close": -0.27,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-08-16",
+        "Open": -0.28,
+        "High": -0.25,
+        "Low": -0.31,
+        "Close": -0.3,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-08-17",
+        "Open": -0.28,
+        "High": -0.28,
+        "Low": -0.33,
+        "Close": -0.32,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-08-20",
+        "Open": -0.32,
+        "High": -0.31,
+        "Low": -0.34,
+        "Close": -0.32,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-08-21",
+        "Open": -0.31,
+        "High": -0.23,
+        "Low": -0.32,
+        "Close": -0.23,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-08-22",
+        "Open": -0.25,
+        "High": -0.19,
+        "Low": -0.26,
+        "Close": -0.21,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-08-23",
+        "Open": -0.22,
+        "High": -0.21,
+        "Low": -0.24,
+        "Close": -0.21,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-08-24",
+        "Open": -0.22,
+        "High": -0.2,
+        "Low": -0.26,
+        "Close": -0.25,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-08-27",
+        "Open": -0.23,
+        "High": -0.22,
+        "Low": -0.29,
+        "Close": -0.29,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-08-28",
+        "Open": -0.27,
+        "High": -0.27,
+        "Low": -0.3,
+        "Close": -0.28,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-08-29",
+        "Open": -0.27,
+        "High": -0.27,
+        "Low": -0.31,
+        "Close": -0.29,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-08-30",
+        "Open": -0.28,
+        "High": -0.28,
+        "Low": -0.4,
+        "Close": -0.37,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-08-31",
+        "Open": -0.34,
+        "High": -0.25,
+        "Low": -0.34,
+        "Close": -0.31,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-09-03",
+        "Open": -0.28,
+        "High": -0.25,
+        "Low": -0.31,
+        "Close": -0.28,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-09-04",
+        "Open": -0.28,
+        "High": -0.27,
+        "Low": -0.31,
+        "Close": -0.29,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-09-05",
+        "Open": -0.32,
+        "High": -0.28,
+        "Low": -0.34,
+        "Close": -0.3,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-09-06",
+        "Open": -0.29,
+        "High": -0.28,
+        "Low": -0.33,
+        "Close": -0.31,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-09-07",
+        "Open": -0.29,
+        "High": -0.25,
+        "Low": -0.29,
+        "Close": -0.26,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-09-10",
+        "Open": -0.25,
+        "High": -0.21,
+        "Low": -0.25,
+        "Close": -0.22,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-09-11",
+        "Open": -0.22,
+        "High": -0.15,
+        "Low": -0.24,
+        "Close": -0.16,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-09-12",
+        "Open": -0.15,
+        "High": -0.09,
+        "Low": -0.16,
+        "Close": -0.12,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-09-13",
+        "Open": -0.11,
+        "High": -0.11,
+        "Low": -0.16,
+        "Close": -0.14,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-09-14",
+        "Open": -0.1,
+        "High": -0.09,
+        "Low": -0.12,
+        "Close": -0.1,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-09-17",
+        "Open": -0.06,
+        "High": -0.06,
+        "Low": -0.11,
+        "Close": -0.09,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-09-18",
+        "Open": -0.1,
+        "High": -0.08,
+        "Low": -0.13,
+        "Close": -0.12,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-09-19",
+        "Open": -0.12,
+        "High": -0.08,
+        "Low": -0.13,
+        "Close": -0.1,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-09-20",
+        "Open": -0.09,
+        "High": -0.01,
+        "Low": -0.1,
+        "Close": -0.04,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-09-21",
+        "Open": -0.02,
+        "High": -0.01,
+        "Low": -0.07,
+        "Close": -0.04,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-09-24",
+        "Open": -0.04,
+        "High": -0.02,
+        "Low": -0.05,
+        "Close": -0.03,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-09-25",
+        "Open": -0.03,
+        "High": -0.01,
+        "Low": -0.08,
+        "Close": -0.06,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-09-26",
+        "Open": -0.07,
+        "High": -0.02,
+        "Low": -0.1,
+        "Close": -0.04,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-09-27",
+        "Open": -0.04,
+        "High": -0.03,
+        "Low": -0.08,
+        "Close": -0.05,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-09-28",
+        "Open": -0.03,
+        "High": 0.02,
+        "Low": -0.05,
+        "Close": 0.01,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-10-03",
+        "Open": 0.05,
+        "High": 0.05,
+        "Low": -0.03,
+        "Close": -0.03,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-10-04",
+        "Open": -0.01,
+        "High": 0.02,
+        "Low": -0.03,
+        "Close": 0.01,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-10-08",
+        "Open": 0.03,
+        "High": 0.04,
+        "Low": -0.01,
+        "Close": 0.0,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-10-09",
+        "Open": 0.0,
+        "High": 0.05,
+        "Low": -0.02,
+        "Close": 0.01,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-10-10",
+        "Open": 0.0,
+        "High": 0.0,
+        "Low": -0.05,
+        "Close": -0.02,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-10-11",
+        "Open": -0.05,
+        "High": -0.02,
+        "Low": -0.06,
+        "Close": -0.04,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-10-12",
+        "Open": -0.04,
+        "High": -0.03,
+        "Low": -0.07,
+        "Close": -0.05,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-10-15",
+        "Open": -0.04,
+        "High": -0.04,
+        "Low": -0.11,
+        "Close": -0.08,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-10-16",
+        "Open": -0.09,
+        "High": -0.05,
+        "Low": -0.09,
+        "Close": -0.07,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-10-17",
+        "Open": -0.05,
+        "High": -0.03,
+        "Low": -0.06,
+        "Close": -0.03,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-10-18",
+        "Open": -0.03,
+        "High": -0.02,
+        "Low": -0.06,
+        "Close": -0.05,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-10-19",
+        "Open": -0.04,
+        "High": -0.03,
+        "Low": -0.09,
+        "Close": -0.09,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-10-22",
+        "Open": -0.1,
+        "High": -0.07,
+        "Low": -0.1,
+        "Close": -0.08,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-10-24",
+        "Open": -0.1,
+        "High": -0.07,
+        "Low": -0.11,
+        "Close": -0.1,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-10-25",
+        "Open": -0.1,
+        "High": -0.01,
+        "Low": -0.1,
+        "Close": -0.08,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-10-26",
+        "Open": -0.07,
+        "High": -0.05,
+        "Low": -0.1,
+        "Close": -0.1,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-10-29",
+        "Open": -0.08,
+        "High": -0.08,
+        "Low": -0.13,
+        "Close": -0.11,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-11-01",
+        "Open": -0.06,
+        "High": -0.05,
+        "Low": -0.09,
+        "Close": -0.06,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-11-02",
+        "Open": -0.05,
+        "High": -0.01,
+        "Low": -0.06,
+        "Close": -0.02,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-11-05",
+        "Open": 0.0,
+        "High": 0.0,
+        "Low": -0.05,
+        "Close": -0.02,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-11-06",
+        "Open": -0.02,
+        "High": -0.01,
+        "Low": -0.05,
+        "Close": -0.02,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-11-07",
+        "Open": -0.01,
+        "High": -0.01,
+        "Low": -0.04,
+        "Close": -0.03,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-11-08",
+        "Open": -0.08,
+        "High": -0.02,
+        "Low": -0.08,
+        "Close": -0.03,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-11-09",
+        "Open": -0.05,
+        "High": -0.03,
+        "Low": -0.07,
+        "Close": -0.06,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-11-12",
+        "Open": -0.07,
+        "High": -0.05,
+        "Low": -0.1,
+        "Close": -0.07,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-11-13",
+        "Open": -0.07,
+        "High": -0.07,
+        "Low": -0.11,
+        "Close": -0.09,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-11-14",
+        "Open": -0.09,
+        "High": -0.08,
+        "Low": -0.11,
+        "Close": -0.1,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-11-15",
+        "Open": -0.13,
+        "High": -0.08,
+        "Low": -0.13,
+        "Close": -0.11,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-11-16",
+        "Open": -0.1,
+        "High": -0.06,
+        "Low": -0.11,
+        "Close": -0.08,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-11-19",
+        "Open": -0.06,
+        "High": -0.06,
+        "Low": -0.11,
+        "Close": -0.08,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-11-20",
+        "Open": -0.07,
+        "High": -0.05,
+        "Low": -0.09,
+        "Close": -0.07,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-11-21",
+        "Open": -0.07,
+        "High": -0.05,
+        "Low": -0.09,
+        "Close": -0.06,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-11-22",
+        "Open": -0.06,
+        "High": -0.03,
+        "Low": -0.08,
+        "Close": -0.04,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-11-23",
+        "Open": -0.03,
+        "High": -0.01,
+        "Low": -0.05,
+        "Close": -0.04,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-11-26",
+        "Open": -0.04,
+        "High": -0.02,
+        "Low": -0.05,
+        "Close": -0.02,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-11-27",
+        "Open": -0.02,
+        "High": 0.03,
+        "Low": -0.03,
+        "Close": -0.01,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-11-28",
+        "Open": -0.03,
+        "High": 0.0,
+        "Low": -0.05,
+        "Close": -0.03,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-11-29",
+        "Open": -0.02,
+        "High": -0.01,
+        "Low": -0.04,
+        "Close": -0.03,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-11-30",
+        "Open": -0.03,
+        "High": 0.01,
+        "Low": -0.05,
+        "Close": -0.02,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-12-03",
+        "Open": -0.04,
+        "High": 0.01,
+        "Low": -0.04,
+        "Close": 0.0,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00371",
+        "Date": "2012-12-04",
+        "Open": 0.0,
+        "High": 0.1,
+        "Low": -0.01,
+        "Close": 0.08,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00700",
+        "Date": "2010-06-10",
+        "Open": 1.32,
+        "High": 1.33,
+        "Low": -0.01,
+        "Close": 0.08,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00700",
+        "Date": "2010-06-15",
+        "Open": 0.61,
+        "High": 0.73,
+        "Low": -0.25,
+        "Close": 0.08,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00700",
+        "Date": "2010-06-17",
+        "Open": -0.03,
+        "High": 0.01,
+        "Low": -0.71,
+        "Close": -0.36,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00700",
+        "Date": "2010-06-18",
+        "Open": -0.55,
+        "High": 0.65,
+        "Low": -1.21,
+        "Close": 0.5,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00700",
+        "Date": "2010-06-22",
+        "Open": 0.97,
+        "High": 1.08,
+        "Low": -0.33,
+        "Close": -0.18,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00700",
+        "Date": "2010-06-23",
+        "Open": -0.55,
+        "High": 0.28,
+        "Low": -1.01,
+        "Close": -0.38,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00700",
+        "Date": "2010-06-24",
+        "Open": -0.18,
+        "High": 0.5,
+        "Low": -0.18,
+        "Close": -0.12,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00700",
+        "Date": "2010-06-25",
+        "Open": -0.2,
+        "High": 0.52,
+        "Low": -0.2,
+        "Close": 0.5,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "00700",
+        "Date": "2010-06-29",
+        "Open": 0.93,
+        "High": 0.93,
+        "Low": -0.1,
+        "Close": 0.17,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2011-06-17",
+        "Open": 0.11,
+        "High": 0.11,
+        "Low": -0.09,
+        "Close": -0.06,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2011-06-20",
+        "Open": -0.02,
+        "High": 0.08,
+        "Low": -0.05,
+        "Close": 0.05,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2011-08-05",
+        "Open": -0.05,
+        "High": 0.02,
+        "Low": -0.08,
+        "Close": 0.01,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2011-08-08",
+        "Open": -0.04,
+        "High": -0.02,
+        "Low": -0.08,
+        "Close": -0.04,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2011-08-09",
+        "Open": -0.11,
+        "High": -0.05,
+        "Low": -0.16,
+        "Close": -0.08,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2011-08-10",
+        "Open": -0.05,
+        "High": 0.06,
+        "Low": -0.06,
+        "Close": -0.02,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2011-08-11",
+        "Open": -0.02,
+        "High": 0.03,
+        "Low": -0.04,
+        "Close": -0.02,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2011-08-12",
+        "Open": -0.03,
+        "High": 0.01,
+        "Low": -0.1,
+        "Close": -0.07,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2011-08-15",
+        "Open": -0.05,
+        "High": -0.02,
+        "Low": -0.09,
+        "Close": -0.05,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2011-08-16",
+        "Open": -0.05,
+        "High": -0.05,
+        "Low": -0.08,
+        "Close": -0.05,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2011-08-17",
+        "Open": -0.06,
+        "High": -0.02,
+        "Low": -0.06,
+        "Close": -0.04,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2011-08-18",
+        "Open": -0.04,
+        "High": -0.03,
+        "Low": -0.09,
+        "Close": -0.05,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2011-08-19",
+        "Open": -0.07,
+        "High": -0.07,
+        "Low": -0.11,
+        "Close": -0.09,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2011-08-22",
+        "Open": -0.12,
+        "High": -0.11,
+        "Low": -0.18,
+        "Close": -0.17,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2011-08-23",
+        "Open": -0.17,
+        "High": -0.17,
+        "Low": -0.21,
+        "Close": -0.18,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2011-08-24",
+        "Open": -0.18,
+        "High": -0.16,
+        "Low": -0.21,
+        "Close": -0.18,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2011-08-25",
+        "Open": -0.18,
+        "High": -0.08,
+        "Low": -0.18,
+        "Close": -0.12,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2011-08-26",
+        "Open": -0.12,
+        "High": -0.1,
+        "Low": -0.16,
+        "Close": -0.12,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2011-08-29",
+        "Open": -0.12,
+        "High": -0.04,
+        "Low": -0.18,
+        "Close": -0.16,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2011-08-30",
+        "Open": -0.14,
+        "High": -0.14,
+        "Low": -0.29,
+        "Close": -0.28,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2011-08-31",
+        "Open": -0.28,
+        "High": -0.27,
+        "Low": -0.35,
+        "Close": -0.32,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2011-09-01",
+        "Open": -0.33,
+        "High": -0.29,
+        "Low": -0.39,
+        "Close": -0.39,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2011-09-02",
+        "Open": -0.39,
+        "High": -0.38,
+        "Low": -0.44,
+        "Close": -0.41,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2011-09-05",
+        "Open": -0.4,
+        "High": -0.4,
+        "Low": -0.46,
+        "Close": -0.45,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2011-09-06",
+        "Open": -0.46,
+        "High": -0.44,
+        "Low": -0.54,
+        "Close": -0.51,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2011-09-07",
+        "Open": -0.52,
+        "High": -0.52,
+        "Low": -0.58,
+        "Close": -0.55,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2011-09-08",
+        "Open": -0.55,
+        "High": -0.53,
+        "Low": -0.59,
+        "Close": -0.55,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2011-09-09",
+        "Open": -0.55,
+        "High": -0.52,
+        "Low": -0.57,
+        "Close": -0.54,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2011-09-12",
+        "Open": -0.54,
+        "High": -0.54,
+        "Low": -0.6,
+        "Close": -0.59,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2011-09-14",
+        "Open": -0.57,
+        "High": -0.57,
+        "Low": -0.64,
+        "Close": -0.61,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2011-09-15",
+        "Open": -0.6,
+        "High": -0.56,
+        "Low": -0.61,
+        "Close": -0.59,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2011-09-16",
+        "Open": -0.59,
+        "High": -0.57,
+        "Low": -0.61,
+        "Close": -0.58,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2011-09-19",
+        "Open": -0.59,
+        "High": -0.59,
+        "Low": -0.7,
+        "Close": -0.68,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2011-09-20",
+        "Open": -0.7,
+        "High": -0.67,
+        "Low": -0.73,
+        "Close": -0.69,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2011-09-21",
+        "Open": -0.71,
+        "High": -0.68,
+        "Low": -0.72,
+        "Close": -0.69,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2011-09-22",
+        "Open": -0.72,
+        "High": -0.72,
+        "Low": -0.76,
+        "Close": -0.75,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2011-09-23",
+        "Open": -0.78,
+        "High": -0.75,
+        "Low": -0.87,
+        "Close": -0.79,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2011-09-26",
+        "Open": -0.8,
+        "High": -0.78,
+        "Low": -0.87,
+        "Close": -0.85,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2011-09-27",
+        "Open": -0.82,
+        "High": -0.79,
+        "Low": -0.84,
+        "Close": -0.8,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2011-09-28",
+        "Open": -0.78,
+        "High": -0.72,
+        "Low": -0.83,
+        "Close": -0.75,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2011-09-30",
+        "Open": -0.75,
+        "High": -0.75,
+        "Low": -0.8,
+        "Close": -0.75,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2011-10-03",
+        "Open": -0.77,
+        "High": -0.77,
+        "Low": -0.85,
+        "Close": -0.82,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2011-10-04",
+        "Open": -0.8,
+        "High": -0.79,
+        "Low": -0.86,
+        "Close": -0.84,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2011-10-06",
+        "Open": -0.82,
+        "High": -0.79,
+        "Low": -0.82,
+        "Close": -0.81,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2011-10-07",
+        "Open": -0.79,
+        "High": -0.75,
+        "Low": -0.8,
+        "Close": -0.78,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2011-10-10",
+        "Open": -0.78,
+        "High": -0.78,
+        "Low": -0.84,
+        "Close": -0.83,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2011-10-11",
+        "Open": -0.81,
+        "High": -0.75,
+        "Low": -0.83,
+        "Close": -0.81,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2011-10-12",
+        "Open": -0.81,
+        "High": -0.74,
+        "Low": -0.82,
+        "Close": -0.77,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2011-10-13",
+        "Open": -0.74,
+        "High": -0.67,
+        "Low": -0.76,
+        "Close": -0.68,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2011-10-14",
+        "Open": -0.69,
+        "High": -0.57,
+        "Low": -0.72,
+        "Close": -0.61,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2011-10-17",
+        "Open": -0.59,
+        "High": -0.56,
+        "Low": -0.65,
+        "Close": -0.58,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2011-10-18",
+        "Open": -0.64,
+        "High": -0.64,
+        "Low": -0.74,
+        "Close": -0.73,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2011-10-19",
+        "Open": -0.71,
+        "High": -0.69,
+        "Low": -0.74,
+        "Close": -0.73,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2011-10-20",
+        "Open": -0.74,
+        "High": -0.74,
+        "Low": -0.78,
+        "Close": -0.77,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2011-10-21",
+        "Open": -0.77,
+        "High": -0.72,
+        "Low": -0.79,
+        "Close": -0.72,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2011-10-24",
+        "Open": -0.7,
+        "High": -0.68,
+        "Low": -0.71,
+        "Close": -0.68,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2011-10-25",
+        "Open": -0.67,
+        "High": -0.67,
+        "Low": -0.72,
+        "Close": -0.7,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2011-10-26",
+        "Open": -0.73,
+        "High": -0.66,
+        "Low": -0.73,
+        "Close": -0.67,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2011-10-27",
+        "Open": -0.67,
+        "High": -0.59,
+        "Low": -0.67,
+        "Close": -0.59,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2011-10-28",
+        "Open": -0.56,
+        "High": -0.53,
+        "Low": -0.62,
+        "Close": -0.6,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2011-10-31",
+        "Open": -0.61,
+        "High": -0.57,
+        "Low": -0.65,
+        "Close": -0.62,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2011-11-01",
+        "Open": -0.66,
+        "High": -0.64,
+        "Low": -0.68,
+        "Close": -0.66,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2011-11-02",
+        "Open": -0.69,
+        "High": -0.65,
+        "Low": -0.73,
+        "Close": -0.65,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2011-11-03",
+        "Open": -0.67,
+        "High": -0.62,
+        "Low": -0.69,
+        "Close": -0.66,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2011-11-04",
+        "Open": -0.62,
+        "High": -0.62,
+        "Low": -0.65,
+        "Close": -0.64,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2011-11-07",
+        "Open": -0.66,
+        "High": -0.6,
+        "Low": -0.66,
+        "Close": -0.61,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2011-11-08",
+        "Open": -0.6,
+        "High": -0.57,
+        "Low": -0.64,
+        "Close": -0.62,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2011-11-09",
+        "Open": -0.6,
+        "High": -0.59,
+        "Low": -0.62,
+        "Close": -0.61,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2011-11-10",
+        "Open": -0.67,
+        "High": -0.66,
+        "Low": -0.7,
+        "Close": -0.69,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2011-11-11",
+        "Open": -0.67,
+        "High": -0.67,
+        "Low": -0.69,
+        "Close": -0.68,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2011-11-14",
+        "Open": -0.67,
+        "High": -0.64,
+        "Low": -0.67,
+        "Close": -0.66,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2011-11-15",
+        "Open": -0.67,
+        "High": -0.66,
+        "Low": -0.68,
+        "Close": -0.66,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2011-11-16",
+        "Open": -0.65,
+        "High": -0.65,
+        "Low": -0.7,
+        "Close": -0.68,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2011-11-17",
+        "Open": -0.69,
+        "High": -0.67,
+        "Low": -0.7,
+        "Close": -0.69,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2011-11-18",
+        "Open": -0.69,
+        "High": -0.61,
+        "Low": -0.7,
+        "Close": -0.64,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2011-11-21",
+        "Open": -0.62,
+        "High": -0.58,
+        "Low": -0.64,
+        "Close": -0.62,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2011-11-22",
+        "Open": -0.62,
+        "High": -0.61,
+        "Low": -0.67,
+        "Close": -0.64,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2011-11-23",
+        "Open": -0.65,
+        "High": -0.63,
+        "Low": -0.67,
+        "Close": -0.66,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2011-11-24",
+        "Open": -0.67,
+        "High": -0.66,
+        "Low": -0.7,
+        "Close": -0.67,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2011-11-25",
+        "Open": -0.67,
+        "High": -0.65,
+        "Low": -0.69,
+        "Close": -0.68,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2011-11-28",
+        "Open": -0.68,
+        "High": -0.67,
+        "Low": -0.7,
+        "Close": -0.68,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2011-11-29",
+        "Open": -0.67,
+        "High": -0.66,
+        "Low": -0.68,
+        "Close": -0.67,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2011-11-30",
+        "Open": -0.66,
+        "High": -0.64,
+        "Low": -0.79,
+        "Close": -0.77,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2011-12-01",
+        "Open": -0.75,
+        "High": -0.72,
+        "Low": -0.75,
+        "Close": -0.75,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2011-12-02",
+        "Open": -0.78,
+        "High": -0.75,
+        "Low": -0.78,
+        "Close": -0.75,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2011-12-05",
+        "Open": -0.78,
+        "High": -0.75,
+        "Low": -0.78,
+        "Close": -0.75,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2011-12-06",
+        "Open": -0.76,
+        "High": -0.76,
+        "Low": -0.77,
+        "Close": -0.77,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2011-12-07",
+        "Open": -0.78,
+        "High": -0.75,
+        "Low": -0.78,
+        "Close": -0.77,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2011-12-08",
+        "Open": -0.78,
+        "High": -0.75,
+        "Low": -0.78,
+        "Close": -0.77,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2011-12-09",
+        "Open": -0.78,
+        "High": -0.77,
+        "Low": -0.79,
+        "Close": -0.77,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2011-12-12",
+        "Open": -0.77,
+        "High": -0.77,
+        "Low": -0.78,
+        "Close": -0.78,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2011-12-13",
+        "Open": -0.8,
+        "High": -0.79,
+        "Low": -0.8,
+        "Close": -0.79,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2011-12-14",
+        "Open": -0.8,
+        "High": -0.8,
+        "Low": -0.83,
+        "Close": -0.83,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2011-12-15",
+        "Open": -0.82,
+        "High": -0.82,
+        "Low": -0.85,
+        "Close": -0.85,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2011-12-16",
+        "Open": -0.8,
+        "High": -0.8,
+        "Low": -0.85,
+        "Close": -0.84,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2011-12-19",
+        "Open": -0.85,
+        "High": -0.82,
+        "Low": -0.86,
+        "Close": -0.85,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2011-12-20",
+        "Open": -0.84,
+        "High": -0.84,
+        "Low": -0.85,
+        "Close": -0.85,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2011-12-21",
+        "Open": -0.82,
+        "High": -0.82,
+        "Low": -0.85,
+        "Close": -0.85,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2011-12-22",
+        "Open": -0.86,
+        "High": -0.84,
+        "Low": -0.86,
+        "Close": -0.85,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2011-12-23",
+        "Open": -0.85,
+        "High": -0.82,
+        "Low": -0.86,
+        "Close": -0.84,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2011-12-28",
+        "Open": -0.85,
+        "High": -0.83,
+        "Low": -0.86,
+        "Close": -0.85,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2011-12-29",
+        "Open": -0.85,
+        "High": -0.84,
+        "Low": -0.91,
+        "Close": -0.85,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2011-12-30",
+        "Open": -0.85,
+        "High": -0.84,
+        "Low": -0.86,
+        "Close": -0.85,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-01-03",
+        "Open": -0.84,
+        "High": -0.82,
+        "Low": -0.84,
+        "Close": -0.83,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-01-04",
+        "Open": -0.84,
+        "High": -0.82,
+        "Low": -0.85,
+        "Close": -0.85,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-01-05",
+        "Open": -0.85,
+        "High": -0.84,
+        "Low": -0.85,
+        "Close": -0.85,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-01-06",
+        "Open": -0.85,
+        "High": -0.84,
+        "Low": -0.86,
+        "Close": -0.84,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-01-09",
+        "Open": -0.84,
+        "High": -0.77,
+        "Low": -0.85,
+        "Close": -0.78,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-01-10",
+        "Open": -0.77,
+        "High": -0.77,
+        "Low": -0.8,
+        "Close": -0.8,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-01-11",
+        "Open": -0.79,
+        "High": -0.78,
+        "Low": -0.81,
+        "Close": -0.81,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-01-12",
+        "Open": -0.8,
+        "High": -0.78,
+        "Low": -0.81,
+        "Close": -0.8,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-01-13",
+        "Open": -0.79,
+        "High": -0.77,
+        "Low": -0.8,
+        "Close": -0.79,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-01-16",
+        "Open": -0.79,
+        "High": -0.78,
+        "Low": -0.8,
+        "Close": -0.8,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-01-17",
+        "Open": -0.79,
+        "High": -0.79,
+        "Low": -0.8,
+        "Close": -0.79,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-01-18",
+        "Open": -0.8,
+        "High": -0.8,
+        "Low": -0.8,
+        "Close": -0.8,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-01-19",
+        "Open": -0.78,
+        "High": -0.78,
+        "Low": -0.8,
+        "Close": -0.79,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-01-20",
+        "Open": -0.79,
+        "High": -0.78,
+        "Low": -0.79,
+        "Close": -0.78,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-01-26",
+        "Open": -0.77,
+        "High": -0.74,
+        "Low": -0.78,
+        "Close": -0.75,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-01-27",
+        "Open": -0.75,
+        "High": -0.73,
+        "Low": -0.75,
+        "Close": -0.73,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-01-30",
+        "Open": -0.73,
+        "High": -0.73,
+        "Low": -0.77,
+        "Close": -0.75,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-01-31",
+        "Open": -0.76,
+        "High": -0.75,
+        "Low": -0.77,
+        "Close": -0.77,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-02-01",
+        "Open": -0.75,
+        "High": -0.75,
+        "Low": -0.77,
+        "Close": -0.76,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-02-02",
+        "Open": -0.75,
+        "High": -0.73,
+        "Low": -0.75,
+        "Close": -0.73,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-02-03",
+        "Open": -0.73,
+        "High": -0.66,
+        "Low": -0.73,
+        "Close": -0.67,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-02-06",
+        "Open": -0.65,
+        "High": -0.59,
+        "Low": -0.65,
+        "Close": -0.64,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-02-07",
+        "Open": -0.62,
+        "High": -0.62,
+        "Low": -0.68,
+        "Close": -0.65,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-02-08",
+        "Open": -0.64,
+        "High": -0.58,
+        "Low": -0.64,
+        "Close": -0.58,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-02-09",
+        "Open": -0.58,
+        "High": -0.55,
+        "Low": -0.61,
+        "Close": -0.57,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-02-10",
+        "Open": -0.55,
+        "High": -0.55,
+        "Low": -0.61,
+        "Close": -0.6,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-02-13",
+        "Open": -0.61,
+        "High": -0.58,
+        "Low": -0.65,
+        "Close": -0.62,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-02-14",
+        "Open": -0.62,
+        "High": -0.61,
+        "Low": -0.63,
+        "Close": -0.63,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-02-15",
+        "Open": -0.62,
+        "High": -0.6,
+        "Low": -0.63,
+        "Close": -0.62,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-02-16",
+        "Open": -0.62,
+        "High": -0.61,
+        "Low": -0.63,
+        "Close": -0.62,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-02-17",
+        "Open": -0.62,
+        "High": -0.6,
+        "Low": -0.65,
+        "Close": -0.65,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-02-20",
+        "Open": -0.65,
+        "High": -0.61,
+        "Low": -0.65,
+        "Close": -0.64,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-02-21",
+        "Open": -0.64,
+        "High": -0.64,
+        "Low": -0.66,
+        "Close": -0.65,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-02-22",
+        "Open": -0.65,
+        "High": -0.61,
+        "Low": -0.65,
+        "Close": -0.62,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-02-23",
+        "Open": -0.65,
+        "High": -0.62,
+        "Low": -0.65,
+        "Close": -0.64,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-02-24",
+        "Open": -0.64,
+        "High": -0.62,
+        "Low": -0.64,
+        "Close": -0.62,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-02-27",
+        "Open": -0.62,
+        "High": -0.57,
+        "Low": -0.62,
+        "Close": -0.59,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-02-28",
+        "Open": -0.59,
+        "High": -0.55,
+        "Low": -0.59,
+        "Close": -0.58,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-02-29",
+        "Open": -0.58,
+        "High": -0.57,
+        "Low": -0.62,
+        "Close": -0.59,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-03-01",
+        "Open": -0.6,
+        "High": -0.59,
+        "Low": -0.63,
+        "Close": -0.62,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-03-02",
+        "Open": -0.61,
+        "High": -0.6,
+        "Low": -0.62,
+        "Close": -0.61,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-03-05",
+        "Open": -0.6,
+        "High": -0.6,
+        "Low": -0.63,
+        "Close": -0.62,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-03-06",
+        "Open": -0.63,
+        "High": -0.63,
+        "Low": -0.67,
+        "Close": -0.67,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-03-07",
+        "Open": -0.67,
+        "High": -0.67,
+        "Low": -0.69,
+        "Close": -0.68,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-03-08",
+        "Open": -0.68,
+        "High": -0.63,
+        "Low": -0.68,
+        "Close": -0.64,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-03-09",
+        "Open": -0.62,
+        "High": -0.61,
+        "Low": -0.65,
+        "Close": -0.62,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-03-12",
+        "Open": -0.62,
+        "High": -0.62,
+        "Low": -0.64,
+        "Close": -0.62,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-03-13",
+        "Open": -0.62,
+        "High": -0.61,
+        "Low": -0.63,
+        "Close": -0.62,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-03-14",
+        "Open": -0.61,
+        "High": -0.6,
+        "Low": -0.64,
+        "Close": -0.64,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-03-15",
+        "Open": -0.64,
+        "High": -0.64,
+        "Low": -0.66,
+        "Close": -0.66,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-03-16",
+        "Open": -0.66,
+        "High": -0.63,
+        "Low": -0.68,
+        "Close": -0.68,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-03-19",
+        "Open": -0.68,
+        "High": -0.65,
+        "Low": -0.68,
+        "Close": -0.67,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-03-20",
+        "Open": -0.68,
+        "High": -0.67,
+        "Low": -0.7,
+        "Close": -0.69,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-03-21",
+        "Open": -0.69,
+        "High": -0.69,
+        "Low": -0.74,
+        "Close": -0.72,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-03-22",
+        "Open": -0.72,
+        "High": -0.71,
+        "Low": -0.73,
+        "Close": -0.72,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-03-23",
+        "Open": -0.74,
+        "High": -0.73,
+        "Low": -0.75,
+        "Close": -0.75,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-03-26",
+        "Open": -0.76,
+        "High": -0.75,
+        "Low": -0.79,
+        "Close": -0.78,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-03-27",
+        "Open": -0.75,
+        "High": -0.74,
+        "Low": -0.79,
+        "Close": -0.74,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-03-28",
+        "Open": -0.73,
+        "High": -0.73,
+        "Low": -0.78,
+        "Close": -0.78,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-03-29",
+        "Open": -0.78,
+        "High": -0.77,
+        "Low": -0.81,
+        "Close": -0.81,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-03-30",
+        "Open": -0.79,
+        "High": -0.79,
+        "Low": -0.81,
+        "Close": -0.81,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-04-02",
+        "Open": -0.82,
+        "High": -0.82,
+        "Low": -0.87,
+        "Close": -0.84,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-04-03",
+        "Open": -0.84,
+        "High": -0.84,
+        "Low": -0.86,
+        "Close": -0.85,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-04-05",
+        "Open": -0.85,
+        "High": -0.83,
+        "Low": -0.87,
+        "Close": -0.83,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-04-10",
+        "Open": -0.83,
+        "High": -0.83,
+        "Low": -0.87,
+        "Close": -0.86,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-04-11",
+        "Open": -0.88,
+        "High": -0.84,
+        "Low": -0.88,
+        "Close": -0.85,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-04-12",
+        "Open": -0.84,
+        "High": -0.83,
+        "Low": -0.86,
+        "Close": -0.84,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-04-13",
+        "Open": -0.82,
+        "High": -0.82,
+        "Low": -0.83,
+        "Close": -0.83,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-04-16",
+        "Open": -0.83,
+        "High": -0.83,
+        "Low": -0.86,
+        "Close": -0.85,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-04-17",
+        "Open": -0.86,
+        "High": -0.84,
+        "Low": -0.86,
+        "Close": -0.85,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-04-18",
+        "Open": -0.85,
+        "High": -0.84,
+        "Low": -0.86,
+        "Close": -0.85,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-04-19",
+        "Open": -0.85,
+        "High": -0.84,
+        "Low": -0.85,
+        "Close": -0.84,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-04-20",
+        "Open": -0.85,
+        "High": -0.84,
+        "Low": -0.86,
+        "Close": -0.86,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-04-23",
+        "Open": -0.85,
+        "High": -0.84,
+        "Low": -0.86,
+        "Close": -0.86,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-04-24",
+        "Open": -0.86,
+        "High": -0.86,
+        "Low": -0.92,
+        "Close": -0.9,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-04-25",
+        "Open": -0.89,
+        "High": -0.89,
+        "Low": -0.91,
+        "Close": -0.91,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-04-26",
+        "Open": -0.9,
+        "High": -0.89,
+        "Low": -0.91,
+        "Close": -0.9,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-04-27",
+        "Open": -0.91,
+        "High": -0.88,
+        "Low": -0.91,
+        "Close": -0.9,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-04-30",
+        "Open": -0.91,
+        "High": -0.9,
+        "Low": -0.91,
+        "Close": -0.91,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-05-02",
+        "Open": -0.91,
+        "High": -0.87,
+        "Low": -0.91,
+        "Close": -0.88,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-05-03",
+        "Open": -0.88,
+        "High": -0.86,
+        "Low": -0.9,
+        "Close": -0.87,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-05-04",
+        "Open": -0.87,
+        "High": -0.87,
+        "Low": -0.91,
+        "Close": -0.9,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-05-07",
+        "Open": -0.91,
+        "High": -0.91,
+        "Low": -0.97,
+        "Close": -0.94,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-05-08",
+        "Open": -0.93,
+        "High": -0.93,
+        "Low": -0.94,
+        "Close": -0.94,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-05-09",
+        "Open": -0.95,
+        "High": -0.94,
+        "Low": -0.96,
+        "Close": -0.96,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-05-10",
+        "Open": -0.96,
+        "High": -0.94,
+        "Low": -0.96,
+        "Close": -0.95,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-05-11",
+        "Open": -0.95,
+        "High": -0.88,
+        "Low": -0.95,
+        "Close": -0.92,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-05-14",
+        "Open": -0.92,
+        "High": -0.86,
+        "Low": -0.92,
+        "Close": -0.9,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-05-15",
+        "Open": -0.88,
+        "High": -0.88,
+        "Low": -0.91,
+        "Close": -0.88,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-05-16",
+        "Open": -0.9,
+        "High": -0.9,
+        "Low": -0.96,
+        "Close": -0.95,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-05-17",
+        "Open": -0.96,
+        "High": -0.9,
+        "Low": -0.98,
+        "Close": -0.95,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-05-18",
+        "Open": -0.95,
+        "High": -0.95,
+        "Low": -0.98,
+        "Close": -0.98,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-05-21",
+        "Open": -0.98,
+        "High": -0.98,
+        "Low": -1.01,
+        "Close": -1.0,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-05-22",
+        "Open": -0.99,
+        "High": -0.96,
+        "Low": -0.99,
+        "Close": -0.98,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-05-23",
+        "Open": -0.97,
+        "High": -0.97,
+        "Low": -1.01,
+        "Close": -1.0,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-05-24",
+        "Open": -1.0,
+        "High": -1.0,
+        "Low": -1.04,
+        "Close": -1.03,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-05-25",
+        "Open": -1.02,
+        "High": -1.02,
+        "Low": -1.06,
+        "Close": -1.06,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-05-28",
+        "Open": -1.06,
+        "High": -1.05,
+        "Low": -1.06,
+        "Close": -1.05,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-05-29",
+        "Open": -1.05,
+        "High": -0.95,
+        "Low": -1.05,
+        "Close": -0.95,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-05-30",
+        "Open": -0.96,
+        "High": -0.95,
+        "Low": -1.03,
+        "Close": -1.02,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-05-31",
+        "Open": -1.03,
+        "High": -1.01,
+        "Low": -1.05,
+        "Close": -1.04,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-06-01",
+        "Open": -1.05,
+        "High": -1.03,
+        "Low": -1.05,
+        "Close": -1.04,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-06-04",
+        "Open": -1.06,
+        "High": -1.04,
+        "Low": -1.07,
+        "Close": -1.05,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-06-05",
+        "Open": -1.05,
+        "High": -1.04,
+        "Low": -1.07,
+        "Close": -1.07,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-06-06",
+        "Open": -1.06,
+        "High": -1.02,
+        "Low": -1.06,
+        "Close": -1.02,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-06-07",
+        "Open": -1.01,
+        "High": -0.96,
+        "Low": -1.02,
+        "Close": -0.97,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-06-08",
+        "Open": -0.98,
+        "High": -0.95,
+        "Low": -0.99,
+        "Close": -0.96,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-06-11",
+        "Open": -0.94,
+        "High": -0.81,
+        "Low": -0.94,
+        "Close": -0.82,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-06-12",
+        "Open": -0.85,
+        "High": -0.7,
+        "Low": -0.87,
+        "Close": -0.76,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-06-13",
+        "Open": -0.78,
+        "High": -0.69,
+        "Low": -0.78,
+        "Close": -0.73,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-06-14",
+        "Open": -0.73,
+        "High": -0.73,
+        "Low": -0.77,
+        "Close": -0.75,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-06-15",
+        "Open": -0.77,
+        "High": -0.62,
+        "Low": -0.77,
+        "Close": -0.67,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-06-18",
+        "Open": -0.67,
+        "High": -0.67,
+        "Low": -0.67,
+        "Close": -0.67,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-06-19",
+        "Open": -0.67,
+        "High": -0.67,
+        "Low": -0.67,
+        "Close": -0.67,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-06-20",
+        "Open": -0.67,
+        "High": -0.67,
+        "Low": -0.67,
+        "Close": -0.67,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-06-21",
+        "Open": -0.67,
+        "High": -0.67,
+        "Low": -0.67,
+        "Close": -0.67,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-06-22",
+        "Open": -0.67,
+        "High": -0.67,
+        "Low": -0.67,
+        "Close": -0.67,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-06-25",
+        "Open": -0.67,
+        "High": -0.67,
+        "Low": -0.67,
+        "Close": -0.67,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-06-26",
+        "Open": -0.67,
+        "High": -0.67,
+        "Low": -0.67,
+        "Close": -0.67,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-06-27",
+        "Open": -0.73,
+        "High": -0.67,
+        "Low": -0.76,
+        "Close": -0.75,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-06-28",
+        "Open": -0.75,
+        "High": -0.74,
+        "Low": -0.81,
+        "Close": -0.78,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-06-29",
+        "Open": -0.78,
+        "High": -0.69,
+        "Low": -0.79,
+        "Close": -0.73,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-07-03",
+        "Open": -0.73,
+        "High": -0.7,
+        "Low": -0.79,
+        "Close": -0.79,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-07-04",
+        "Open": -0.79,
+        "High": -0.75,
+        "Low": -0.79,
+        "Close": -0.75,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-07-05",
+        "Open": -0.75,
+        "High": -0.72,
+        "Low": -0.77,
+        "Close": -0.72,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-07-06",
+        "Open": -0.72,
+        "High": -0.72,
+        "Low": -0.74,
+        "Close": -0.73,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-07-09",
+        "Open": -0.73,
+        "High": -0.68,
+        "Low": -0.74,
+        "Close": -0.7,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-07-10",
+        "Open": -0.7,
+        "High": -0.66,
+        "Low": -0.73,
+        "Close": -0.68,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-07-11",
+        "Open": -0.68,
+        "High": -0.58,
+        "Low": -0.71,
+        "Close": -0.59,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-07-12",
+        "Open": -0.59,
+        "High": -0.58,
+        "Low": -0.68,
+        "Close": -0.67,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-07-13",
+        "Open": -0.69,
+        "High": -0.66,
+        "Low": -0.7,
+        "Close": -0.7,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-07-16",
+        "Open": -0.69,
+        "High": -0.68,
+        "Low": -0.7,
+        "Close": -0.7,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-07-17",
+        "Open": -0.71,
+        "High": -0.7,
+        "Low": -0.72,
+        "Close": -0.72,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-07-18",
+        "Open": -0.72,
+        "High": -0.71,
+        "Low": -0.75,
+        "Close": -0.74,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-07-19",
+        "Open": -0.74,
+        "High": -0.68,
+        "Low": -0.74,
+        "Close": -0.7,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-07-20",
+        "Open": -0.74,
+        "High": -0.7,
+        "Low": -0.74,
+        "Close": -0.72,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-07-23",
+        "Open": -0.72,
+        "High": -0.72,
+        "Low": -0.74,
+        "Close": -0.73,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-07-24",
+        "Open": -0.73,
+        "High": -0.72,
+        "Low": -0.73,
+        "Close": -0.73,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-07-25",
+        "Open": -0.74,
+        "High": -0.73,
+        "Low": -0.75,
+        "Close": -0.75,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-07-26",
+        "Open": -0.76,
+        "High": -0.73,
+        "Low": -0.76,
+        "Close": -0.73,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-07-27",
+        "Open": -0.71,
+        "High": -0.71,
+        "Low": -0.73,
+        "Close": -0.72,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-07-30",
+        "Open": -0.71,
+        "High": -0.69,
+        "Low": -0.73,
+        "Close": -0.73,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-07-31",
+        "Open": -0.74,
+        "High": -0.73,
+        "Low": -0.75,
+        "Close": -0.73,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-08-01",
+        "Open": -0.73,
+        "High": -0.71,
+        "Low": -0.74,
+        "Close": -0.72,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-08-02",
+        "Open": -0.73,
+        "High": -0.7,
+        "Low": -0.74,
+        "Close": -0.73,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-08-03",
+        "Open": -0.73,
+        "High": -0.72,
+        "Low": -0.74,
+        "Close": -0.72,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-08-06",
+        "Open": -0.71,
+        "High": -0.69,
+        "Low": -0.72,
+        "Close": -0.71,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-08-07",
+        "Open": -0.71,
+        "High": -0.7,
+        "Low": -0.73,
+        "Close": -0.72,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-08-08",
+        "Open": -0.73,
+        "High": -0.71,
+        "Low": -0.75,
+        "Close": -0.74,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-08-09",
+        "Open": -0.75,
+        "High": -0.71,
+        "Low": -0.75,
+        "Close": -0.73,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-08-10",
+        "Open": -0.73,
+        "High": -0.72,
+        "Low": -0.75,
+        "Close": -0.74,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-08-13",
+        "Open": -0.73,
+        "High": -0.73,
+        "Low": -0.74,
+        "Close": -0.74,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-08-14",
+        "Open": -0.74,
+        "High": -0.74,
+        "Low": -0.79,
+        "Close": -0.75,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-08-15",
+        "Open": -0.7,
+        "High": -0.57,
+        "Low": -0.7,
+        "Close": -0.61,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-08-16",
+        "Open": -0.62,
+        "High": -0.61,
+        "Low": -0.66,
+        "Close": -0.63,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-08-17",
+        "Open": -0.62,
+        "High": -0.5,
+        "Low": -0.62,
+        "Close": -0.53,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-08-20",
+        "Open": -0.5,
+        "High": -0.45,
+        "Low": -0.54,
+        "Close": -0.53,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-08-21",
+        "Open": -0.52,
+        "High": -0.49,
+        "Low": -0.55,
+        "Close": -0.5,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-08-22",
+        "Open": -0.5,
+        "High": -0.49,
+        "Low": -0.53,
+        "Close": -0.52,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-08-23",
+        "Open": -0.52,
+        "High": -0.44,
+        "Low": -0.52,
+        "Close": -0.45,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-08-24",
+        "Open": -0.45,
+        "High": -0.45,
+        "Low": -0.51,
+        "Close": -0.49,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-08-27",
+        "Open": -0.5,
+        "High": -0.48,
+        "Low": -0.54,
+        "Close": -0.53,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-08-28",
+        "Open": -0.54,
+        "High": -0.51,
+        "Low": -0.56,
+        "Close": -0.55,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-08-29",
+        "Open": -0.55,
+        "High": -0.5,
+        "Low": -0.55,
+        "Close": -0.54,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-08-30",
+        "Open": -0.54,
+        "High": -0.54,
+        "Low": -0.59,
+        "Close": -0.57,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-08-31",
+        "Open": -0.58,
+        "High": -0.58,
+        "Low": -0.6,
+        "Close": -0.59,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-09-03",
+        "Open": -0.62,
+        "High": -0.56,
+        "Low": -0.62,
+        "Close": -0.57,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-09-04",
+        "Open": -0.56,
+        "High": -0.55,
+        "Low": -0.59,
+        "Close": -0.58,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-09-05",
+        "Open": -0.59,
+        "High": -0.58,
+        "Low": -0.64,
+        "Close": -0.63,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-09-06",
+        "Open": -0.62,
+        "High": -0.6,
+        "Low": -0.63,
+        "Close": -0.62,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-09-07",
+        "Open": -0.61,
+        "High": -0.57,
+        "Low": -0.61,
+        "Close": -0.59,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-09-10",
+        "Open": -0.59,
+        "High": -0.59,
+        "Low": -0.61,
+        "Close": -0.6,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-09-11",
+        "Open": -0.61,
+        "High": -0.59,
+        "Low": -0.62,
+        "Close": -0.59,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-09-12",
+        "Open": -0.58,
+        "High": -0.57,
+        "Low": -0.61,
+        "Close": -0.59,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-09-13",
+        "Open": -0.58,
+        "High": -0.58,
+        "Low": -0.61,
+        "Close": -0.59,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-09-14",
+        "Open": -0.6,
+        "High": -0.56,
+        "Low": -0.62,
+        "Close": -0.6,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-09-17",
+        "Open": -0.61,
+        "High": -0.58,
+        "Low": -0.61,
+        "Close": -0.59,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-09-18",
+        "Open": -0.6,
+        "High": -0.56,
+        "Low": -0.6,
+        "Close": -0.59,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-09-19",
+        "Open": -0.6,
+        "High": -0.55,
+        "Low": -0.6,
+        "Close": -0.57,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-09-20",
+        "Open": -0.56,
+        "High": -0.56,
+        "Low": -0.6,
+        "Close": -0.59,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-09-21",
+        "Open": -0.6,
+        "High": -0.57,
+        "Low": -0.62,
+        "Close": -0.61,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-09-24",
+        "Open": -0.61,
+        "High": -0.61,
+        "Low": -0.64,
+        "Close": -0.62,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-09-25",
+        "Open": -0.61,
+        "High": -0.59,
+        "Low": -0.62,
+        "Close": -0.62,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-09-26",
+        "Open": -0.64,
+        "High": -0.62,
+        "Low": -0.64,
+        "Close": -0.64,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-09-27",
+        "Open": -0.64,
+        "High": -0.61,
+        "Low": -0.66,
+        "Close": -0.62,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-09-28",
+        "Open": -0.62,
+        "High": -0.58,
+        "Low": -0.62,
+        "Close": -0.58,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-10-03",
+        "Open": -0.58,
+        "High": -0.55,
+        "Low": -0.59,
+        "Close": -0.56,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-10-04",
+        "Open": -0.58,
+        "High": -0.52,
+        "Low": -0.58,
+        "Close": -0.52,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-10-05",
+        "Open": -0.51,
+        "High": -0.51,
+        "Low": -0.55,
+        "Close": -0.54,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-10-08",
+        "Open": -0.55,
+        "High": -0.49,
+        "Low": -0.58,
+        "Close": -0.52,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-10-09",
+        "Open": -0.5,
+        "High": -0.47,
+        "Low": -0.54,
+        "Close": -0.48,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-10-10",
+        "Open": -0.48,
+        "High": -0.42,
+        "Low": -0.49,
+        "Close": -0.45,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-10-11",
+        "Open": -0.47,
+        "High": -0.44,
+        "Low": -0.49,
+        "Close": -0.48,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-10-12",
+        "Open": -0.48,
+        "High": -0.44,
+        "Low": -0.49,
+        "Close": -0.46,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-10-15",
+        "Open": -0.47,
+        "High": -0.45,
+        "Low": -0.5,
+        "Close": -0.49,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-10-16",
+        "Open": -0.48,
+        "High": -0.48,
+        "Low": -0.52,
+        "Close": -0.51,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-10-17",
+        "Open": -0.51,
+        "High": -0.49,
+        "Low": -0.54,
+        "Close": -0.54,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-10-18",
+        "Open": -0.54,
+        "High": -0.49,
+        "Low": -0.56,
+        "Close": -0.52,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-10-19",
+        "Open": -0.52,
+        "High": -0.47,
+        "Low": -0.52,
+        "Close": -0.5,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-10-22",
+        "Open": -0.53,
+        "High": -0.51,
+        "Low": -0.56,
+        "Close": -0.55,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-10-24",
+        "Open": -0.56,
+        "High": -0.52,
+        "Low": -0.56,
+        "Close": -0.53,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-10-25",
+        "Open": -0.54,
+        "High": -0.54,
+        "Low": -0.58,
+        "Close": -0.58,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-10-26",
+        "Open": -0.55,
+        "High": -0.55,
+        "Low": -0.61,
+        "Close": -0.59,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-10-29",
+        "Open": -0.61,
+        "High": -0.57,
+        "Low": -0.62,
+        "Close": -0.62,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-11-01",
+        "Open": -0.56,
+        "High": -0.54,
+        "Low": -0.59,
+        "Close": -0.58,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-11-02",
+        "Open": -0.58,
+        "High": -0.55,
+        "Low": -0.59,
+        "Close": -0.59,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-11-05",
+        "Open": -0.58,
+        "High": -0.57,
+        "Low": -0.61,
+        "Close": -0.57,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-11-06",
+        "Open": -0.57,
+        "High": -0.54,
+        "Low": -0.61,
+        "Close": -0.56,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-11-07",
+        "Open": -0.57,
+        "High": -0.54,
+        "Low": -0.57,
+        "Close": -0.56,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-11-08",
+        "Open": -0.58,
+        "High": -0.57,
+        "Low": -0.6,
+        "Close": -0.59,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-11-09",
+        "Open": -0.6,
+        "High": -0.59,
+        "Low": -0.63,
+        "Close": -0.62,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-11-12",
+        "Open": -0.62,
+        "High": -0.59,
+        "Low": -0.62,
+        "Close": -0.62,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-11-13",
+        "Open": -0.62,
+        "High": -0.61,
+        "Low": -0.68,
+        "Close": -0.65,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-11-14",
+        "Open": -0.64,
+        "High": -0.62,
+        "Low": -0.66,
+        "Close": -0.63,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-11-15",
+        "Open": -0.65,
+        "High": -0.62,
+        "Low": -0.69,
+        "Close": -0.63,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-11-16",
+        "Open": -0.65,
+        "High": -0.58,
+        "Low": -0.67,
+        "Close": -0.64,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-11-19",
+        "Open": -0.62,
+        "High": -0.6,
+        "Low": -0.64,
+        "Close": -0.6,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-11-20",
+        "Open": -0.59,
+        "High": -0.59,
+        "Low": -0.62,
+        "Close": -0.62,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-11-21",
+        "Open": -0.62,
+        "High": -0.6,
+        "Low": -0.64,
+        "Close": -0.62,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-11-22",
+        "Open": -0.62,
+        "High": -0.6,
+        "Low": -0.62,
+        "Close": -0.6,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-11-23",
+        "Open": -0.62,
+        "High": -0.6,
+        "Low": -0.62,
+        "Close": -0.61,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-11-26",
+        "Open": -0.6,
+        "High": -0.6,
+        "Low": -0.62,
+        "Close": -0.61,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-11-27",
+        "Open": -0.6,
+        "High": -0.6,
+        "Low": -0.61,
+        "Close": -0.6,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-11-28",
+        "Open": -0.6,
+        "High": -0.6,
+        "Low": -0.63,
+        "Close": -0.61,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-11-29",
+        "Open": -0.61,
+        "High": -0.6,
+        "Low": -0.64,
+        "Close": -0.6,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-11-30",
+        "Open": -0.6,
+        "High": -0.6,
+        "Low": -0.63,
+        "Close": -0.61,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-12-03",
+        "Open": -0.62,
+        "High": -0.61,
+        "Low": -0.63,
+        "Close": -0.62,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-12-04",
+        "Open": -0.62,
+        "High": -0.62,
+        "Low": -0.66,
+        "Close": -0.64,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-12-05",
+        "Open": -0.64,
+        "High": -0.62,
+        "Low": -0.67,
+        "Close": -0.65,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-12-06",
+        "Open": -0.65,
+        "High": -0.61,
+        "Low": -0.65,
+        "Close": -0.64,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-12-07",
+        "Open": -0.62,
+        "High": -0.58,
+        "Low": -0.64,
+        "Close": -0.58,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-12-10",
+        "Open": -0.55,
+        "High": -0.54,
+        "Low": -0.62,
+        "Close": -0.62,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-12-11",
+        "Open": -0.62,
+        "High": -0.59,
+        "Low": -0.62,
+        "Close": -0.62,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-12-12",
+        "Open": -0.6,
+        "High": -0.55,
+        "Low": -0.6,
+        "Close": -0.55,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-12-13",
+        "Open": -0.54,
+        "High": -0.54,
+        "Low": -0.57,
+        "Close": -0.55,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-12-14",
+        "Open": -0.55,
+        "High": -0.55,
+        "Low": -0.56,
+        "Close": -0.56,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-12-17",
+        "Open": -0.56,
+        "High": -0.54,
+        "Low": -0.57,
+        "Close": -0.56,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-12-18",
+        "Open": -0.56,
+        "High": -0.56,
+        "Low": -0.58,
+        "Close": -0.58,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-12-19",
+        "Open": -0.57,
+        "High": -0.56,
+        "Low": -0.59,
+        "Close": -0.58,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-12-20",
+        "Open": -0.6,
+        "High": -0.56,
+        "Low": -0.62,
+        "Close": -0.58,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-12-21",
+        "Open": -0.59,
+        "High": -0.58,
+        "Low": -0.61,
+        "Close": -0.59,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-12-24",
+        "Open": -0.58,
+        "High": -0.54,
+        "Low": -0.58,
+        "Close": -0.55,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-12-27",
+        "Open": -0.58,
+        "High": -0.52,
+        "Low": -0.58,
+        "Close": -0.54,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-12-28",
+        "Open": -0.54,
+        "High": -0.53,
+        "Low": -0.56,
+        "Close": -0.55,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2012-12-31",
+        "Open": -0.55,
+        "High": -0.55,
+        "Low": -0.58,
+        "Close": -0.58,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2013-01-02",
+        "Open": -0.58,
+        "High": -0.54,
+        "Low": -0.58,
+        "Close": -0.55,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2013-01-03",
+        "Open": -0.59,
+        "High": -0.5,
+        "Low": -0.59,
+        "Close": -0.51,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2013-01-04",
+        "Open": -0.53,
+        "High": -0.5,
+        "Low": -0.54,
+        "Close": -0.52,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2013-01-07",
+        "Open": -0.52,
+        "High": -0.48,
+        "Low": -0.52,
+        "Close": -0.5,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2013-01-08",
+        "Open": -0.48,
+        "High": -0.46,
+        "Low": -0.48,
+        "Close": -0.47,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2013-01-09",
+        "Open": -0.44,
+        "High": -0.38,
+        "Low": -0.45,
+        "Close": -0.39,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2013-01-10",
+        "Open": -0.4,
+        "High": -0.38,
+        "Low": -0.43,
+        "Close": -0.41,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2013-01-11",
+        "Open": -0.41,
+        "High": -0.3,
+        "Low": -0.44,
+        "Close": -0.3,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2013-01-14",
+        "Open": -0.31,
+        "High": -0.28,
+        "Low": -0.34,
+        "Close": -0.33,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2013-01-15",
+        "Open": -0.32,
+        "High": -0.3,
+        "Low": -0.33,
+        "Close": -0.33,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2013-01-16",
+        "Open": -0.33,
+        "High": -0.28,
+        "Low": -0.33,
+        "Close": -0.29,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2013-01-17",
+        "Open": -0.29,
+        "High": -0.23,
+        "Low": -0.36,
+        "Close": -0.33,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2013-01-18",
+        "Open": -0.3,
+        "High": -0.23,
+        "Low": -0.3,
+        "Close": -0.24,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2013-01-21",
+        "Open": -0.24,
+        "High": -0.21,
+        "Low": -0.25,
+        "Close": -0.24,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2013-01-22",
+        "Open": -0.24,
+        "High": -0.23,
+        "Low": -0.28,
+        "Close": -0.24,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2013-01-23",
+        "Open": -0.25,
+        "High": -0.22,
+        "Low": -0.25,
+        "Close": -0.24,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2013-01-24",
+        "Open": -0.25,
+        "High": -0.23,
+        "Low": -0.25,
+        "Close": -0.24,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2013-01-25",
+        "Open": -0.24,
+        "High": -0.24,
+        "Low": -0.3,
+        "Close": -0.25,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2013-01-28",
+        "Open": -0.25,
+        "High": -0.24,
+        "Low": -0.27,
+        "Close": -0.26,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2013-01-29",
+        "Open": -0.23,
+        "High": -0.23,
+        "Low": -0.26,
+        "Close": -0.24,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2013-01-30",
+        "Open": -0.25,
+        "High": -0.23,
+        "Low": -0.26,
+        "Close": -0.24,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2013-01-31",
+        "Open": -0.24,
+        "High": -0.2,
+        "Low": -0.24,
+        "Close": -0.22,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2013-02-01",
+        "Open": -0.22,
+        "High": -0.22,
+        "Low": -0.25,
+        "Close": -0.24,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2013-02-04",
+        "Open": -0.24,
+        "High": -0.21,
+        "Low": -0.24,
+        "Close": -0.22,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2013-02-05",
+        "Open": -0.23,
+        "High": -0.15,
+        "Low": -0.28,
+        "Close": -0.2,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2013-02-06",
+        "Open": -0.2,
+        "High": -0.16,
+        "Low": -0.2,
+        "Close": -0.17,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2013-02-07",
+        "Open": -0.15,
+        "High": -0.14,
+        "Low": -0.18,
+        "Close": -0.17,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2013-02-08",
+        "Open": -0.18,
+        "High": -0.15,
+        "Low": -0.18,
+        "Close": -0.17,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2013-02-14",
+        "Open": -0.17,
+        "High": -0.15,
+        "Low": -0.19,
+        "Close": -0.17,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2013-02-15",
+        "Open": -0.19,
+        "High": -0.14,
+        "Low": -0.19,
+        "Close": -0.16,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2013-02-18",
+        "Open": -0.17,
+        "High": -0.08,
+        "Low": -0.18,
+        "Close": -0.09,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2013-02-19",
+        "Open": -0.09,
+        "High": -0.07,
+        "Low": -0.14,
+        "Close": -0.14,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2013-02-20",
+        "Open": -0.15,
+        "High": -0.11,
+        "Low": -0.15,
+        "Close": -0.12,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2013-02-21",
+        "Open": -0.12,
+        "High": -0.08,
+        "Low": -0.12,
+        "Close": -0.09,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2013-02-22",
+        "Open": -0.11,
+        "High": -0.03,
+        "Low": -0.11,
+        "Close": -0.05,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2013-02-25",
+        "Open": -0.04,
+        "High": 0.01,
+        "Low": -0.05,
+        "Close": -0.04,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2013-02-26",
+        "Open": -0.04,
+        "High": -0.03,
+        "Low": -0.17,
+        "Close": -0.15,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2013-02-27",
+        "Open": -0.15,
+        "High": -0.11,
+        "Low": -0.27,
+        "Close": -0.24,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2013-02-28",
+        "Open": -0.21,
+        "High": -0.07,
+        "Low": -0.24,
+        "Close": -0.11,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2013-03-01",
+        "Open": -0.11,
+        "High": -0.07,
+        "Low": -0.11,
+        "Close": -0.09,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2013-03-04",
+        "Open": -0.1,
+        "High": -0.07,
+        "Low": -0.12,
+        "Close": -0.11,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2013-03-05",
+        "Open": -0.1,
+        "High": -0.05,
+        "Low": -0.1,
+        "Close": -0.08,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2013-03-06",
+        "Open": -0.06,
+        "High": 0.02,
+        "Low": -0.06,
+        "Close": -0.02,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2013-03-07",
+        "Open": -0.02,
+        "High": 0.04,
+        "Low": -0.02,
+        "Close": 0.03,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2013-03-08",
+        "Open": 0.03,
+        "High": 0.04,
+        "Low": -0.05,
+        "Close": -0.03,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2013-03-11",
+        "Open": -0.05,
+        "High": 0.01,
+        "Low": -0.05,
+        "Close": -0.04,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2013-03-12",
+        "Open": -0.02,
+        "High": 0.01,
+        "Low": -0.08,
+        "Close": -0.05,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2013-03-13",
+        "Open": -0.05,
+        "High": -0.02,
+        "Low": -0.12,
+        "Close": -0.08,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2013-03-14",
+        "Open": -0.12,
+        "High": -0.09,
+        "Low": -0.12,
+        "Close": -0.1,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2013-03-15",
+        "Open": -0.1,
+        "High": -0.09,
+        "Low": -0.11,
+        "Close": -0.11,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2013-03-18",
+        "Open": -0.1,
+        "High": -0.03,
+        "Low": -0.22,
+        "Close": -0.14,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2013-03-19",
+        "Open": -0.14,
+        "High": -0.1,
+        "Low": -0.17,
+        "Close": -0.14,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2013-03-20",
+        "Open": -0.14,
+        "High": -0.04,
+        "Low": -0.14,
+        "Close": -0.06,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2013-03-21",
+        "Open": -0.05,
+        "High": -0.05,
+        "Low": -0.1,
+        "Close": -0.05,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2013-03-22",
+        "Open": -0.08,
+        "High": 0.04,
+        "Low": -0.08,
+        "Close": 0.01,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2013-03-25",
+        "Open": -0.02,
+        "High": 0.05,
+        "Low": -0.02,
+        "Close": 0.04,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2013-03-26",
+        "Open": 0.04,
+        "High": 0.04,
+        "Low": -0.01,
+        "Close": 0.01,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2013-03-27",
+        "Open": 0.0,
+        "High": 0.03,
+        "Low": -0.04,
+        "Close": -0.02,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2013-03-28",
+        "Open": -0.04,
+        "High": 0.03,
+        "Low": -0.04,
+        "Close": -0.02,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01093",
+        "Date": "2013-04-02",
+        "Open": 0.08,
+        "High": 0.08,
+        "Low": -0.01,
+        "Close": 0.0,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2010-01-05",
+        "Open": 0.02,
+        "High": 0.04,
+        "Low": -0.01,
+        "Close": 0.01,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2010-01-07",
+        "Open": 0.01,
+        "High": 0.01,
+        "Low": -0.03,
+        "Close": -0.02,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2010-01-08",
+        "Open": -0.03,
+        "High": -0.01,
+        "Low": -0.05,
+        "Close": -0.01,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2010-01-11",
+        "Open": 0.0,
+        "High": 0.0,
+        "Low": -0.02,
+        "Close": -0.02,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2010-01-12",
+        "Open": -0.01,
+        "High": 0.01,
+        "Low": -0.04,
+        "Close": -0.01,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2010-01-13",
+        "Open": -0.02,
+        "High": -0.01,
+        "Low": -0.04,
+        "Close": -0.02,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2010-01-14",
+        "Open": -0.01,
+        "High": 0.0,
+        "Low": -0.04,
+        "Close": -0.04,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2010-01-15",
+        "Open": -0.03,
+        "High": -0.03,
+        "Low": -0.05,
+        "Close": -0.04,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2010-01-18",
+        "Open": -0.04,
+        "High": 0.01,
+        "Low": -0.05,
+        "Close": -0.03,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2010-01-19",
+        "Open": -0.03,
+        "High": -0.01,
+        "Low": -0.04,
+        "Close": -0.02,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2010-01-20",
+        "Open": -0.01,
+        "High": -0.01,
+        "Low": -0.03,
+        "Close": -0.03,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2010-01-21",
+        "Open": -0.04,
+        "High": -0.03,
+        "Low": -0.04,
+        "Close": -0.04,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2010-01-22",
+        "Open": -0.04,
+        "High": -0.04,
+        "Low": -0.1,
+        "Close": -0.06,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2010-01-27",
+        "Open": -0.02,
+        "High": 0.07,
+        "Low": -0.07,
+        "Close": -0.06,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2010-01-28",
+        "Open": -0.04,
+        "High": -0.02,
+        "Low": -0.05,
+        "Close": -0.03,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2010-01-29",
+        "Open": -0.06,
+        "High": -0.04,
+        "Low": -0.06,
+        "Close": -0.05,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2010-02-01",
+        "Open": -0.06,
+        "High": -0.04,
+        "Low": -0.08,
+        "Close": -0.04,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2010-02-02",
+        "Open": -0.04,
+        "High": -0.04,
+        "Low": -0.05,
+        "Close": -0.04,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2010-02-03",
+        "Open": -0.04,
+        "High": -0.02,
+        "Low": -0.06,
+        "Close": -0.05,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2010-02-04",
+        "Open": -0.05,
+        "High": -0.05,
+        "Low": -0.1,
+        "Close": -0.08,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2010-02-05",
+        "Open": -0.1,
+        "High": -0.07,
+        "Low": -0.1,
+        "Close": -0.09,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2010-02-08",
+        "Open": -0.09,
+        "High": -0.08,
+        "Low": -0.13,
+        "Close": -0.12,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2010-02-09",
+        "Open": -0.12,
+        "High": -0.11,
+        "Low": -0.15,
+        "Close": -0.12,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2010-02-10",
+        "Open": -0.11,
+        "High": -0.09,
+        "Low": -0.13,
+        "Close": -0.09,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2010-02-11",
+        "Open": -0.08,
+        "High": -0.07,
+        "Low": -0.1,
+        "Close": -0.08,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2010-02-12",
+        "Open": -0.08,
+        "High": -0.04,
+        "Low": -0.08,
+        "Close": -0.06,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2010-02-17",
+        "Open": -0.06,
+        "High": -0.05,
+        "Low": -0.08,
+        "Close": -0.07,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2010-02-18",
+        "Open": -0.07,
+        "High": -0.04,
+        "Low": -0.07,
+        "Close": -0.05,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2010-02-19",
+        "Open": -0.07,
+        "High": -0.06,
+        "Low": -0.07,
+        "Close": -0.07,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2010-02-22",
+        "Open": -0.04,
+        "High": -0.04,
+        "Low": -0.05,
+        "Close": -0.04,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2010-02-23",
+        "Open": -0.04,
+        "High": 0.02,
+        "Low": -0.05,
+        "Close": -0.01,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2010-02-24",
+        "Open": -0.02,
+        "High": 0.03,
+        "Low": -0.02,
+        "Close": 0.03,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2011-02-10",
+        "Open": 0.01,
+        "High": 0.02,
+        "Low": -0.01,
+        "Close": 0.0,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2011-02-11",
+        "Open": 0.0,
+        "High": 0.01,
+        "Low": -0.02,
+        "Close": -0.01,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2011-02-14",
+        "Open": 0.0,
+        "High": 0.04,
+        "Low": -0.01,
+        "Close": 0.03,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2011-08-09",
+        "Open": 0.04,
+        "High": 0.05,
+        "Low": -0.02,
+        "Close": 0.04,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2011-08-22",
+        "Open": 0.01,
+        "High": 0.02,
+        "Low": -0.01,
+        "Close": 0.0,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2011-08-23",
+        "Open": -0.01,
+        "High": -0.01,
+        "Low": -0.02,
+        "Close": -0.01,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2011-08-29",
+        "Open": 0.02,
+        "High": 0.02,
+        "Low": -0.11,
+        "Close": -0.04,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2011-08-30",
+        "Open": -0.02,
+        "High": -0.02,
+        "Low": -0.04,
+        "Close": -0.02,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2011-08-31",
+        "Open": -0.02,
+        "High": -0.02,
+        "Low": -0.04,
+        "Close": -0.03,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2011-09-01",
+        "Open": -0.02,
+        "High": 0.02,
+        "Low": -0.02,
+        "Close": -0.01,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2011-09-02",
+        "Open": -0.01,
+        "High": 0.0,
+        "Low": -0.02,
+        "Close": -0.02,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2011-09-05",
+        "Open": -0.04,
+        "High": -0.04,
+        "Low": -0.05,
+        "Close": -0.05,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2011-09-06",
+        "Open": -0.05,
+        "High": -0.03,
+        "Low": -0.07,
+        "Close": -0.04,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2011-09-07",
+        "Open": -0.04,
+        "High": -0.04,
+        "Low": -0.06,
+        "Close": -0.05,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2011-09-08",
+        "Open": -0.05,
+        "High": -0.04,
+        "Low": -0.05,
+        "Close": -0.04,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2011-09-09",
+        "Open": -0.04,
+        "High": -0.03,
+        "Low": -0.04,
+        "Close": -0.03,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2011-09-12",
+        "Open": -0.04,
+        "High": -0.04,
+        "Low": -0.06,
+        "Close": -0.06,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2011-09-14",
+        "Open": -0.06,
+        "High": -0.05,
+        "Low": -0.09,
+        "Close": -0.08,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2011-09-15",
+        "Open": -0.07,
+        "High": -0.05,
+        "Low": -0.07,
+        "Close": -0.06,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2011-09-16",
+        "Open": -0.04,
+        "High": -0.03,
+        "Low": -0.05,
+        "Close": -0.04,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2011-09-19",
+        "Open": -0.04,
+        "High": -0.02,
+        "Low": -0.05,
+        "Close": -0.03,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2011-09-20",
+        "Open": -0.03,
+        "High": 0.0,
+        "Low": -0.03,
+        "Close": -0.01,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2011-09-21",
+        "Open": -0.02,
+        "High": -0.01,
+        "Low": -0.04,
+        "Close": -0.02,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2011-09-22",
+        "Open": -0.04,
+        "High": -0.03,
+        "Low": -0.09,
+        "Close": -0.04,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2011-09-23",
+        "Open": -0.07,
+        "High": -0.03,
+        "Low": -0.09,
+        "Close": -0.03,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2011-09-26",
+        "Open": -0.03,
+        "High": -0.03,
+        "Low": -0.1,
+        "Close": -0.06,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2011-09-27",
+        "Open": -0.06,
+        "High": -0.02,
+        "Low": -0.07,
+        "Close": -0.02,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2011-09-28",
+        "Open": -0.03,
+        "High": -0.01,
+        "Low": -0.05,
+        "Close": -0.02,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2011-09-30",
+        "Open": -0.02,
+        "High": -0.01,
+        "Low": -0.04,
+        "Close": -0.02,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2011-10-03",
+        "Open": -0.02,
+        "High": -0.02,
+        "Low": -0.04,
+        "Close": -0.03,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2011-10-04",
+        "Open": -0.05,
+        "High": -0.04,
+        "Low": -0.08,
+        "Close": -0.07,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2011-10-06",
+        "Open": -0.06,
+        "High": -0.03,
+        "Low": -0.06,
+        "Close": -0.04,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2011-10-07",
+        "Open": -0.02,
+        "High": -0.02,
+        "Low": -0.06,
+        "Close": -0.03,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2011-10-10",
+        "Open": -0.03,
+        "High": -0.01,
+        "Low": -0.04,
+        "Close": -0.03,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2011-10-11",
+        "Open": -0.02,
+        "High": -0.01,
+        "Low": -0.04,
+        "Close": -0.03,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2011-10-12",
+        "Open": -0.04,
+        "High": -0.01,
+        "Low": -0.04,
+        "Close": -0.02,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2011-10-13",
+        "Open": -0.02,
+        "High": 0.0,
+        "Low": -0.02,
+        "Close": -0.01,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2011-10-14",
+        "Open": -0.01,
+        "High": -0.01,
+        "Low": -0.03,
+        "Close": -0.03,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2011-10-17",
+        "Open": -0.01,
+        "High": 0.0,
+        "Low": -0.01,
+        "Close": 0.0,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2011-10-18",
+        "Open": -0.01,
+        "High": -0.01,
+        "Low": -0.03,
+        "Close": -0.02,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2011-10-19",
+        "Open": -0.01,
+        "High": -0.01,
+        "Low": -0.02,
+        "Close": -0.01,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2011-10-20",
+        "Open": 0.0,
+        "High": 0.03,
+        "Low": -0.01,
+        "Close": 0.03,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2011-11-10",
+        "Open": 0.0,
+        "High": 0.0,
+        "Low": -0.02,
+        "Close": -0.02,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2011-11-11",
+        "Open": -0.02,
+        "High": -0.01,
+        "Low": -0.02,
+        "Close": -0.01,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2011-11-14",
+        "Open": -0.01,
+        "High": -0.01,
+        "Low": -0.04,
+        "Close": -0.01,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2011-11-15",
+        "Open": -0.01,
+        "High": 0.01,
+        "Low": -0.02,
+        "Close": 0.01,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2011-11-17",
+        "Open": 0.01,
+        "High": 0.01,
+        "Low": -0.01,
+        "Close": 0.01,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2011-11-18",
+        "Open": -0.01,
+        "High": -0.01,
+        "Low": -0.02,
+        "Close": -0.01,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2011-11-21",
+        "Open": -0.01,
+        "High": 0.03,
+        "Low": -0.02,
+        "Close": 0.01,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2011-11-22",
+        "Open": -0.01,
+        "High": 0.02,
+        "Low": -0.02,
+        "Close": 0.01,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2011-12-22",
+        "Open": 0.01,
+        "High": 0.01,
+        "Low": -0.02,
+        "Close": 0.0,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2011-12-28",
+        "Open": 0.01,
+        "High": 0.02,
+        "Low": -0.01,
+        "Close": 0.01,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2012-01-04",
+        "Open": 0.01,
+        "High": 0.01,
+        "Low": -0.01,
+        "Close": 0.0,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2012-01-05",
+        "Open": 0.0,
+        "High": 0.01,
+        "Low": -0.01,
+        "Close": 0.0,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2012-01-06",
+        "Open": -0.01,
+        "High": 0.0,
+        "Low": -0.02,
+        "Close": -0.01,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2012-01-09",
+        "Open": -0.01,
+        "High": -0.01,
+        "Low": -0.03,
+        "Close": -0.02,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2012-01-10",
+        "Open": -0.02,
+        "High": -0.02,
+        "Low": -0.06,
+        "Close": -0.06,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2012-01-11",
+        "Open": -0.05,
+        "High": -0.05,
+        "Low": -0.08,
+        "Close": -0.06,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2012-01-12",
+        "Open": -0.05,
+        "High": -0.04,
+        "Low": -0.07,
+        "Close": -0.05,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2012-01-13",
+        "Open": -0.04,
+        "High": -0.04,
+        "Low": -0.06,
+        "Close": -0.05,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2012-01-16",
+        "Open": -0.06,
+        "High": -0.06,
+        "Low": -0.08,
+        "Close": -0.07,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2012-01-17",
+        "Open": -0.07,
+        "High": -0.07,
+        "Low": -0.09,
+        "Close": -0.08,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2012-01-18",
+        "Open": -0.08,
+        "High": -0.07,
+        "Low": -0.08,
+        "Close": -0.07,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2012-01-19",
+        "Open": -0.07,
+        "High": -0.05,
+        "Low": -0.07,
+        "Close": -0.06,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2012-01-20",
+        "Open": -0.05,
+        "High": -0.05,
+        "Low": -0.07,
+        "Close": -0.07,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2012-01-26",
+        "Open": -0.07,
+        "High": -0.05,
+        "Low": -0.07,
+        "Close": -0.07,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2012-01-27",
+        "Open": -0.07,
+        "High": -0.05,
+        "Low": -0.07,
+        "Close": -0.06,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2012-01-30",
+        "Open": -0.06,
+        "High": -0.05,
+        "Low": -0.06,
+        "Close": -0.05,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2012-01-31",
+        "Open": -0.04,
+        "High": -0.03,
+        "Low": -0.05,
+        "Close": -0.03,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2012-02-01",
+        "Open": -0.04,
+        "High": -0.03,
+        "Low": -0.05,
+        "Close": -0.04,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2012-02-02",
+        "Open": -0.03,
+        "High": -0.02,
+        "Low": -0.04,
+        "Close": -0.02,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2012-02-03",
+        "Open": -0.02,
+        "High": 0.03,
+        "Low": -0.02,
+        "Close": 0.03,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2012-02-07",
+        "Open": 0.01,
+        "High": 0.01,
+        "Low": -0.01,
+        "Close": 0.0,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2012-02-20",
+        "Open": 0.01,
+        "High": 0.01,
+        "Low": -0.04,
+        "Close": -0.04,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2012-02-21",
+        "Open": -0.03,
+        "High": -0.02,
+        "Low": -0.04,
+        "Close": -0.03,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2012-02-22",
+        "Open": -0.03,
+        "High": -0.01,
+        "Low": -0.03,
+        "Close": -0.02,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2012-02-23",
+        "Open": -0.02,
+        "High": -0.02,
+        "Low": -0.03,
+        "Close": -0.03,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2012-02-24",
+        "Open": -0.02,
+        "High": -0.02,
+        "Low": -0.04,
+        "Close": -0.03,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2012-02-27",
+        "Open": -0.03,
+        "High": -0.02,
+        "Low": -0.04,
+        "Close": -0.03,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2012-02-28",
+        "Open": -0.04,
+        "High": -0.03,
+        "Low": -0.04,
+        "Close": -0.03,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2012-02-29",
+        "Open": -0.03,
+        "High": -0.03,
+        "Low": -0.05,
+        "Close": -0.04,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2012-03-01",
+        "Open": -0.04,
+        "High": -0.03,
+        "Low": -0.05,
+        "Close": -0.04,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2012-03-02",
+        "Open": -0.04,
+        "High": -0.03,
+        "Low": -0.04,
+        "Close": -0.04,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2012-03-05",
+        "Open": -0.03,
+        "High": -0.03,
+        "Low": -0.04,
+        "Close": -0.04,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2012-03-06",
+        "Open": -0.04,
+        "High": -0.04,
+        "Low": -0.05,
+        "Close": -0.04,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2012-03-07",
+        "Open": -0.05,
+        "High": -0.04,
+        "Low": -0.06,
+        "Close": -0.04,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2012-03-08",
+        "Open": -0.04,
+        "High": -0.03,
+        "Low": -0.04,
+        "Close": -0.03,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2012-03-09",
+        "Open": -0.02,
+        "High": -0.02,
+        "Low": -0.03,
+        "Close": -0.02,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2012-03-12",
+        "Open": -0.02,
+        "High": -0.02,
+        "Low": -0.03,
+        "Close": -0.02,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2012-03-13",
+        "Open": -0.02,
+        "High": -0.01,
+        "Low": -0.02,
+        "Close": -0.01,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2012-03-14",
+        "Open": 0.0,
+        "High": 0.0,
+        "Low": -0.02,
+        "Close": -0.01,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2012-03-15",
+        "Open": -0.01,
+        "High": -0.01,
+        "Low": -0.04,
+        "Close": -0.04,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2012-03-16",
+        "Open": -0.04,
+        "High": -0.03,
+        "Low": -0.04,
+        "Close": -0.04,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2012-03-19",
+        "Open": -0.04,
+        "High": -0.03,
+        "Low": -0.04,
+        "Close": -0.04,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2012-03-20",
+        "Open": -0.04,
+        "High": -0.03,
+        "Low": -0.04,
+        "Close": -0.03,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2012-03-21",
+        "Open": -0.04,
+        "High": -0.04,
+        "Low": -0.04,
+        "Close": -0.04,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2012-03-22",
+        "Open": -0.04,
+        "High": -0.04,
+        "Low": -0.05,
+        "Close": -0.04,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2012-03-23",
+        "Open": -0.04,
+        "High": -0.04,
+        "Low": -0.06,
+        "Close": -0.05,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2012-03-26",
+        "Open": -0.05,
+        "High": -0.05,
+        "Low": -0.06,
+        "Close": -0.06,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2012-03-27",
+        "Open": -0.05,
+        "High": -0.05,
+        "Low": -0.06,
+        "Close": -0.06,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2012-03-28",
+        "Open": -0.06,
+        "High": -0.05,
+        "Low": -0.08,
+        "Close": -0.07,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2012-03-29",
+        "Open": -0.08,
+        "High": -0.07,
+        "Low": -0.08,
+        "Close": -0.07,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2012-03-30",
+        "Open": -0.07,
+        "High": -0.04,
+        "Low": -0.07,
+        "Close": -0.06,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2012-04-02",
+        "Open": -0.05,
+        "High": -0.05,
+        "Low": -0.08,
+        "Close": -0.07,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2012-04-03",
+        "Open": -0.06,
+        "High": -0.06,
+        "Low": -0.12,
+        "Close": -0.1,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2012-04-05",
+        "Open": -0.09,
+        "High": -0.08,
+        "Low": -0.1,
+        "Close": -0.1,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2012-04-10",
+        "Open": -0.1,
+        "High": -0.08,
+        "Low": -0.1,
+        "Close": -0.09,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2012-04-11",
+        "Open": -0.1,
+        "High": -0.09,
+        "Low": -0.1,
+        "Close": -0.09,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2012-04-12",
+        "Open": -0.1,
+        "High": -0.09,
+        "Low": -0.1,
+        "Close": -0.1,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2012-04-13",
+        "Open": -0.1,
+        "High": -0.09,
+        "Low": -0.11,
+        "Close": -0.1,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2012-04-16",
+        "Open": -0.11,
+        "High": -0.1,
+        "Low": -0.13,
+        "Close": -0.12,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2012-04-17",
+        "Open": -0.12,
+        "High": -0.11,
+        "Low": -0.13,
+        "Close": -0.12,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2012-04-18",
+        "Open": -0.12,
+        "High": -0.09,
+        "Low": -0.12,
+        "Close": -0.09,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2012-04-19",
+        "Open": -0.1,
+        "High": -0.06,
+        "Low": -0.1,
+        "Close": -0.06,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2012-04-20",
+        "Open": -0.07,
+        "High": -0.04,
+        "Low": -0.07,
+        "Close": -0.04,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2012-04-23",
+        "Open": -0.05,
+        "High": -0.04,
+        "Low": -0.07,
+        "Close": -0.06,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2012-04-24",
+        "Open": -0.06,
+        "High": -0.06,
+        "Low": -0.07,
+        "Close": -0.06,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2012-04-25",
+        "Open": -0.06,
+        "High": -0.06,
+        "Low": -0.07,
+        "Close": -0.07,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2012-04-26",
+        "Open": -0.06,
+        "High": -0.05,
+        "Low": -0.06,
+        "Close": -0.05,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2012-04-27",
+        "Open": -0.05,
+        "High": -0.04,
+        "Low": -0.06,
+        "Close": -0.05,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2012-04-30",
+        "Open": -0.04,
+        "High": -0.04,
+        "Low": -0.06,
+        "Close": -0.05,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2012-05-02",
+        "Open": -0.04,
+        "High": -0.04,
+        "Low": -0.08,
+        "Close": -0.07,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2012-05-03",
+        "Open": -0.07,
+        "High": -0.07,
+        "Low": -0.1,
+        "Close": -0.09,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2012-05-04",
+        "Open": -0.09,
+        "High": -0.08,
+        "Low": -0.09,
+        "Close": -0.09,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2012-05-07",
+        "Open": -0.09,
+        "High": -0.05,
+        "Low": -0.09,
+        "Close": -0.06,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2012-05-08",
+        "Open": -0.06,
+        "High": -0.05,
+        "Low": -0.06,
+        "Close": -0.06,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2012-05-09",
+        "Open": -0.06,
+        "High": -0.06,
+        "Low": -0.08,
+        "Close": -0.07,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2012-05-10",
+        "Open": -0.07,
+        "High": -0.03,
+        "Low": -0.07,
+        "Close": -0.04,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2012-05-11",
+        "Open": -0.04,
+        "High": -0.01,
+        "Low": -0.04,
+        "Close": -0.02,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2012-05-14",
+        "Open": -0.02,
+        "High": 0.02,
+        "Low": -0.02,
+        "Close": 0.01,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2012-05-15",
+        "Open": 0.01,
+        "High": 0.01,
+        "Low": -0.04,
+        "Close": 0.0,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2012-05-16",
+        "Open": 0.0,
+        "High": 0.01,
+        "Low": -0.05,
+        "Close": -0.05,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2012-05-17",
+        "Open": -0.03,
+        "High": 0.06,
+        "Low": -0.03,
+        "Close": 0.05,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2012-06-04",
+        "Open": 0.01,
+        "High": 0.02,
+        "Low": -0.02,
+        "Close": -0.01,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "01177",
+        "Date": "2012-06-05",
+        "Open": -0.01,
+        "High": 0.02,
+        "Low": -0.01,
+        "Close": 0.02,
+        "error_type": "Negative price"
+      },
+      {
+        "stock_code": "02611",
+        "Date": "2026-02-26",
+        "Open": 16.88,
+        "High": 16.86,
+        "Low": 15.48,
+        "Close": 15.58,
+        "error_type": "High < Open"
+      }
+    ],
+    "missing_stocks": [
+      "02602",
+      "00579"
+    ]
+  }
+}

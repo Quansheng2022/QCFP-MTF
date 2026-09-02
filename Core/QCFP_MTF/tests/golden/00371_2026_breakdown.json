@@ -1,0 +1,20 @@
+{
+  "case": "00371_2026_breakdown",
+  "description": "北控水务 2026-05~08 阴跌（-28.7%）：长期 BULLISH 但周线 Breakdown + DES>=7 → Canonical Hard Exit，风险归零",
+  "change_reason": "MTR Closure：Golden 迁移 Canonical-only。legacy 显示动作 EXIT 由 canonical_action（PreviousPosition→FinalTarget）取代；FLAT 起算 + Hard Exit → NO_TRADE，目标 0 不变",
+  "inputs": {
+    "structural_regime": "STRUCTURAL_BULLISH",
+    "monthly_behavior_state": "Improving",
+    "tactical_signal": "Breakdown",
+    "position_52w": 0.0896,
+    "des_score": 12
+  },
+  "expected": {
+    "mtf_regime": "BULLISH_WARNING",
+    "canonical_action": "NO_TRADE",
+    "risk_level": "Extreme",
+    "final_target": 0.0,
+    "trade_intent": "NO_TRADE",
+    "primary_reason": "HARD_EXIT"
+  }
+}

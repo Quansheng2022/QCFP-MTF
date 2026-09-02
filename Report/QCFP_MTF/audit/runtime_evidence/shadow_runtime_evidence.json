@@ -1,0 +1,158 @@
+{
+  "run_id": "runtime_2026-08-21_SHADOW_162852",
+  "release_id": "MTR-CLOSURE-1",
+  "trade_date": "2026-08-21",
+  "universe_hash": "86f225dfc84b2070",
+  "config_hash": "a5a04ec6029eff81",
+  "runner_version": "runtime-evidence-1.0",
+  "started_at": "2026-08-29 16:28:52",
+  "completed_at": "2026-08-29 16:29:01",
+  "run_state": "RUN_COMPLETED",
+  "evidence_freeze_id": "0dc64006740e8e14",
+  "runtime_evidence": {
+    "evidence": {
+      "release_identity": {
+        "release_id": "MTR-CLOSURE-1"
+      },
+      "period": {
+        "start": "2026-08-21",
+        "end": "2026-08-21"
+      },
+      "decision": {
+        "expected_decisions": 16,
+        "actual_decisions": 16,
+        "coverage": 1.0,
+        "permission_violations": 0,
+        "uncertified_executions": 0,
+        "pit_violations": 0,
+        "safe_mode_count": 0,
+        "halted_count": 0
+      },
+      "replay": {
+        "replay_total": 16,
+        "replay_eligible": 16,
+        "replay_exact": 16,
+        "critical_replay_mismatch": 0,
+        "replay_status": "REPLAY_PASS"
+      },
+      "outcome": {
+        "outcome_record_coverage": 1.0,
+        "outcome_5d_maturity_rate": 1.0,
+        "outcome_20d_maturity_rate": 0.0,
+        "outcome_60d_maturity_rate": 0.0,
+        "outcome_maturity_5d": 16,
+        "outcome_maturity_20d": 0,
+        "outcome_maturity_60d": 0,
+        "outcome_count": 16,
+        "outcome_coverage": 1.0,
+        "outcome_type_breakdown": {
+          "TRADE": {
+            "n": 1,
+            "success": 1,
+            "failure": 0
+          },
+          "NO_TRADE": {
+            "n": 15,
+            "correct_rejection": 3,
+            "missed_opportunity": 8
+          },
+          "ABSTAIN": {
+            "n": 0,
+            "correct_abstention": 0,
+            "false_abstention": 0
+          }
+        }
+      },
+      "stability": {
+        "decision_flip_rate": 0.1875,
+        "duplicate_decisions": 0
+      },
+      "data_quality": {
+        "pit_grade_distribution": {
+          "C": 285,
+          "D": 19
+        },
+        "data_quality_distribution": {
+          "NULL": 19,
+          "A": 38,
+          "B": 38,
+          "C": 209
+        }
+      },
+      "risk": {
+        "max_drawdown": null
+      },
+      "execution": {
+        "applicable": "OPTIONAL_SIMULATION_EVIDENCE"
+      },
+      "reconciliation": {
+        "expected_reconciliations": 0,
+        "actual_reconciliations": 0,
+        "coverage": 1.0,
+        "mismatch": 0,
+        "unknown": 0,
+        "unresolved_mismatch": 0,
+        "applicable": "OPTIONAL_SIMULATION_EVIDENCE"
+      },
+      "safety": {
+        "incident_count": 0,
+        "recovery_count": 0,
+        "replay_count": 7,
+        "critical_replay_mismatch": 0,
+        "reactivation_count": 0,
+        "replay_hash": "f30265f7504fde5c"
+      },
+      "opportunity": {
+        "outcome_count": 16
+      }
+    },
+    "hard_gates": {
+      "ok": true,
+      "state": "PASS",
+      "suspend_reasons": [],
+      "no_new_risk": []
+    },
+    "evidence_hash": "78fd2f9582b9c779",
+    "execution_mode": "SHADOW",
+    "verdict": "DECISION_SUPPORT_EVIDENCE_READY",
+    "ledger_bindings": {
+      "decision_ledger_chain_tail": "c81c2e6b4e49d09b",
+      "runtime_event_chain_tail": "df0b476fd089307f",
+      "outcome_set_hash": "7ad77ae178a876ce",
+      "replay_hash": "f30265f7504fde5c"
+    },
+    "source": "ledger_only"
+  },
+  "replay": {
+    "status": "REPLAY_PASS",
+    "n_current_release": 16,
+    "n_eligible": 16,
+    "n_ineligible": 0,
+    "n_exact": 16,
+    "n_mismatch": 0,
+    "n_replay_exception": 0,
+    "eligible_rate": 1.0,
+    "exact_rate": 1.0,
+    "critical_mismatch": 0,
+    "replay_hash": "f30265f7504fde5c",
+    "rule": "每日 Replay 只允许四种状态；无数据/缺材料 → REPLAY_NOT_PROVEN"
+  },
+  "daily_evidence_gate": {
+    "state": "DAILY_EVIDENCE_READY",
+    "qualified": true,
+    "checks": {
+      "universe_closure": true,
+      "decision_ledger_closure": true,
+      "replay_closure": true,
+      "outcome_backfill": true,
+      "pit_permission_closure": true,
+      "evidence_hash_verified": true,
+      "projection_persisted": true,
+      "freeze_identity_consistent": true,
+      "verdict_ready": true
+    },
+    "invalid_reasons": [],
+    "incomplete_reasons": [],
+    "evidence_freeze_id": "0dc64006740e8e14"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "declared_retired": [
+    "decision.score_calculator"
+  ],
+  "physically_absent": [
+    "decision.score_calculator"
+  ],
+  "still_present": [],
+  "residual_imports": [],
+  "residual_cli": [],
+  "residual_config": [],
+  "residual_manifest_active": [],
+  "retired_removed_count": 1,
+  "all_retired_physically_deleted": true,
+  "verdict": "DELETE_COMPLETE",
+  "rule": "RETIRED = 当前 Production Tree 中源码不存在；DeclaredRetiredSet ⊆ PhysicallyAbsentSet 且残余=0"
+}

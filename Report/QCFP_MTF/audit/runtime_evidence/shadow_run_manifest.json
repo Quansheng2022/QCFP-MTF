@@ -1,0 +1,12 @@
+{
+  "run_id": "runtime_2026-08-21_SHADOW_162852",
+  "release_id": "MTR-CLOSURE-1",
+  "trade_date": "2026-08-21",
+  "universe_hash": "86f225dfc84b2070",
+  "config_hash": "a5a04ec6029eff81",
+  "runner_version": "runtime-evidence-1.0",
+  "started_at": "2026-08-29 16:28:52",
+  "completed_at": "2026-08-29 16:29:01",
+  "run_state": "RUN_COMPLETED",
+  "evidence_freeze_id": "0dc64006740e8e14"
+}

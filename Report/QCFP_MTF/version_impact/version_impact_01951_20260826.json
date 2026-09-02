@@ -1,0 +1,23 @@
+{
+  "generated_at": "2026-08-26 21:26:32",
+  "stock": "01951",
+  "old_version": "shadow_20260826_133026",
+  "new_version": "shadow_20260826_134659",
+  "impact": {
+    "old_version": "shadow_20260826_133026",
+    "new_version": "shadow_20260826_134659",
+    "n_decisions": 374,
+    "flip_rate": 0.0,
+    "flips": [],
+    "field_flip_counts": {
+      "permission": 0,
+      "wave": 0,
+      "exit": 0,
+      "fsm": 0,
+      "position": 0,
+      "reason": 0
+    },
+    "pnl_diff": 0.0,
+    "risk_diff": 0.0
+  }
+}

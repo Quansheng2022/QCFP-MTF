@@ -1,0 +1,75 @@
+# Phase 1 — Decision Authority Matrix（Spec Authority ↔ Rule Owner ↔ Production Module）
+#
+# 每行：1 Spec ID / 1 logical authority / 1 canonical production writer /
+#       N readers / 0 competing writers。
+# production_owner 使用 rule_ownership.CANONICAL_RULE_OWNERS 的逻辑 Owner 名。
+
+schema: DECISION-AUTHORITY-MATRIX-1
+rule: 1 Spec ID + 1 logical authority + 1 canonical production writer + N readers + 0 competing writers
+
+entries:
+  - domain: Permission
+    spec_id: QCFP-SPEC-AUTH-001
+    logical_authority: Institutional Permission
+    production_owner: PermissionPolicy
+    writable: [permission_cap]
+    other_modules_permission: Read only
+
+  - domain: Opportunity
+    spec_id: QCFP-SPEC-AUTH-002
+    logical_authority: Wave
+    production_owner: WaveStagePolicy
+    writable: [proposal]
+    other_modules_permission: Cannot decide
+
+  - domain: Lifecycle
+    spec_id: QCFP-SPEC-AUTH-003
+    logical_authority: Retail FSM
+    production_owner: RetailFSM
+    writable: [lifecycle_proposal]
+    other_modules_permission: Cannot raise risk
+
+  - domain: Hard Risk
+    spec_id: QCFP-SPEC-AUTH-004
+    logical_authority: Risk
+    production_owner: RiskExit
+    writable: [derisk, exit]
+    other_modules_permission: Cannot add risk
+
+  - domain: Final Target
+    spec_id: QCFP-SPEC-AUTH-005
+    logical_authority: Final Target
+    production_owner: Governance
+    writable: [final_target]
+    other_modules_permission: Downstream reduce only
+
+  - domain: Validation
+    spec_id: QCFP-SPEC-AUTH-006
+    logical_authority: Validation
+    production_owner: ValidationCertificate
+    writable: [validation_state]
+    other_modules_permission: Others cannot PASS
+
+  - domain: Historical Fact
+    spec_id: QCFP-SPEC-AUTH-007
+    logical_authority: Ledger
+    production_owner: Ledger
+    writable: [append]
+    other_modules_permission: No update/delete
+
+  - domain: Report
+    spec_id: QCFP-SPEC-AUTH-008
+    logical_authority: Report (Projection only)
+    production_owner: null
+    writable: []
+    other_modules_permission: Never write Decision
+
+# domain → CANONICAL_RULE_OWNERS rule_id（用于 Owner 交叉核对；Report 无 rule）
+rule_id_mapping:
+  Permission: permission_upper_bound
+  Opportunity: wave_stage
+  Lifecycle: fsm_transition
+  Hard Risk: hard_exit
+  Final Target: final_target
+  Validation: production_validation
+  Historical Fact: historical_fact

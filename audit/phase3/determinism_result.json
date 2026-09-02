@@ -1,0 +1,8 @@
+{
+  "mismatches": [],
+  "deterministic": true,
+  "pass": true,
+  "verdict": "DETERMINISTIC",
+  "compare_mode": "EXACT（无 approximately equal / tolerance）",
+  "fields_compared": 12
+}

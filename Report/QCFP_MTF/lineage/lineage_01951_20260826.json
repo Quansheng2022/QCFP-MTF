@@ -1,0 +1,213 @@
+{
+  "generated_at": "2026-08-26 21:26:23",
+  "stock": "01951",
+  "decision_date": "2026-08-21",
+  "data_snapshot_id": "6c47d79cb5613d61",
+  "ledger": {
+    "decision_id": "01951_2026-08-21",
+    "run_id": "shadow_20260826_134659",
+    "input_fingerprint": "d8b39be270b77429",
+    "data_snapshot_id": "988f7122cd6bbe62"
+  },
+  "lineage": {
+    "decision_id": "01951_2026-08-21",
+    "stock_code": "01951",
+    "decision_date": "2026-08-21",
+    "nodes": [
+      {
+        "kind": "raw",
+        "name": "hk_hist_daily_kline",
+        "data_source_id": "moomoo/openD",
+        "snapshot_id": "6c47d79cb5613d61",
+        "available_at": "2026-08-21",
+        "transform_version": "",
+        "quality_status": "PIT_CHK",
+        "parent_names": []
+      },
+      {
+        "kind": "raw",
+        "name": "hk_hist_daily_moneyflow",
+        "data_source_id": "futu/moomoo",
+        "snapshot_id": "6c47d79cb5613d61",
+        "available_at": "2026-08-21",
+        "transform_version": "",
+        "quality_status": "PIT_CHK",
+        "parent_names": []
+      },
+      {
+        "kind": "raw",
+        "name": "hk_hist_institutional_holdings",
+        "data_source_id": "hkex/ccass",
+        "snapshot_id": "6c47d79cb5613d61",
+        "available_at": "",
+        "transform_version": "",
+        "quality_status": "PIT_CHK",
+        "parent_names": []
+      },
+      {
+        "kind": "raw",
+        "name": "qcfp_quarterly_structural",
+        "data_source_id": "qcfp_p1",
+        "snapshot_id": "6c47d79cb5613d61",
+        "available_at": "2026-08-14",
+        "transform_version": "",
+        "quality_status": "PIT_CHK",
+        "parent_names": []
+      },
+      {
+        "kind": "raw",
+        "name": "qcfp_monthly_behavior",
+        "data_source_id": "qcfp_p2",
+        "snapshot_id": "6c47d79cb5613d61",
+        "available_at": "2026-07-31",
+        "transform_version": "",
+        "quality_status": "PIT_CHK",
+        "parent_names": []
+      },
+      {
+        "kind": "raw",
+        "name": "qcfp_weekly_tactical",
+        "data_source_id": "qcfp_p3",
+        "snapshot_id": "6c47d79cb5613d61",
+        "available_at": "2026-08-21",
+        "transform_version": "",
+        "quality_status": "PIT_CHK",
+        "parent_names": []
+      },
+      {
+        "kind": "raw",
+        "name": "qcfp_daily_tactical",
+        "data_source_id": "qcfp_l4",
+        "snapshot_id": "6c47d79cb5613d61",
+        "available_at": "2026-08-21",
+        "transform_version": "",
+        "quality_status": "PIT_CHK",
+        "parent_names": []
+      },
+      {
+        "kind": "transformation",
+        "name": "qcfp_quarterly_structural",
+        "data_source_id": "",
+        "snapshot_id": "",
+        "available_at": "",
+        "transform_version": "p1_v48",
+        "quality_status": "",
+        "parent_names": [
+          "hk_hist_institutional_holdings"
+        ]
+      },
+      {
+        "kind": "transformation",
+        "name": "qcfp_monthly_behavior",
+        "data_source_id": "",
+        "snapshot_id": "",
+        "available_at": "",
+        "transform_version": "p2_v48",
+        "quality_status": "",
+        "parent_names": [
+          "hk_hist_monthly_kline"
+        ]
+      },
+      {
+        "kind": "transformation",
+        "name": "qcfp_weekly_tactical",
+        "data_source_id": "",
+        "snapshot_id": "",
+        "available_at": "",
+        "transform_version": "p3_v48",
+        "quality_status": "",
+        "parent_names": [
+          "hk_hist_weekly_kline"
+        ]
+      },
+      {
+        "kind": "transformation",
+        "name": "qcfp_daily_tactical",
+        "data_source_id": "",
+        "snapshot_id": "",
+        "available_at": "",
+        "transform_version": "l4_v48",
+        "quality_status": "",
+        "parent_names": [
+          "hk_hist_daily_kline"
+        ]
+      },
+      {
+        "kind": "indicator",
+        "name": "structural_regime",
+        "data_source_id": "",
+        "snapshot_id": "",
+        "available_at": "",
+        "transform_version": "v48",
+        "quality_status": "",
+        "parent_names": [
+          "qcfp_quarterly_structural"
+        ]
+      },
+      {
+        "kind": "indicator",
+        "name": "monthly_behavior_state",
+        "data_source_id": "",
+        "snapshot_id": "",
+        "available_at": "",
+        "transform_version": "v48",
+        "quality_status": "",
+        "parent_names": [
+          "qcfp_monthly_behavior"
+        ]
+      },
+      {
+        "kind": "indicator",
+        "name": "tactical_signal",
+        "data_source_id": "",
+        "snapshot_id": "",
+        "available_at": "",
+        "transform_version": "v48",
+        "quality_status": "",
+        "parent_names": [
+          "qcfp_weekly_tactical"
+        ]
+      },
+      {
+        "kind": "indicator",
+        "name": "daily_state",
+        "data_source_id": "",
+        "snapshot_id": "",
+        "available_at": "",
+        "transform_version": "v48",
+        "quality_status": "",
+        "parent_names": [
+          "qcfp_daily_tactical"
+        ]
+      },
+      {
+        "kind": "feature",
+        "name": "institutional_permission",
+        "data_source_id": "",
+        "snapshot_id": "",
+        "available_at": "",
+        "transform_version": "v48",
+        "quality_status": "",
+        "parent_names": [
+          "structural_regime",
+          "monthly_behavior_state"
+        ]
+      },
+      {
+        "kind": "feature",
+        "name": "final_target",
+        "data_source_id": "",
+        "snapshot_id": "",
+        "available_at": "",
+        "transform_version": "v50",
+        "quality_status": "",
+        "parent_names": [
+          "institutional_permission",
+          "tactical_signal",
+          "daily_state"
+        ]
+      }
+    ],
+    "lineage_hash": "f74013aafce7d223"
+  }
+}

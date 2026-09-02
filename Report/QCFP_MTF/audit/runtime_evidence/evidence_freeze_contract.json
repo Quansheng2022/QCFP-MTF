@@ -1,0 +1,15 @@
+{
+  "schema": "EVIDENCE-FREEZE-CONTRACT-1",
+  "release_id": "MTR-CLOSURE-1",
+  "release_manifest_hash": "33c74a63613fe993",
+  "config_hash": "a5a04ec6029eff81",
+  "feature_manifest_hash": "7c5c34c8d07ac76b",
+  "dataset_contract_hash": "1076906b50de98d0",
+  "universe_definition_hash": "86f225dfc84b2070",
+  "canonical_engine_version": "QCFP-MTF-2.5.0",
+  "runner_version": "runtime-evidence-1.0",
+  "evidence_schema_version": "EVIDENCE-FREEZE-1",
+  "window_start": "2026-08-21",
+  "created_at": "2026-08-29 16:25:40",
+  "evidence_freeze_id": "0dc64006740e8e14"
+}

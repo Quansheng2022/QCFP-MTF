@@ -1,0 +1,189 @@
+{
+  "cases": [
+    {
+      "case_id": "future_pit_timestamp",
+      "input_before": {
+        "decision_date": "2026-08-20",
+        "weekly": {
+          "available_at": "2026-08-21"
+        }
+      },
+      "injected_change": "weekly.available_at 未来时间",
+      "expected_behavior": "BLOCK",
+      "actual_behavior": "BLOCK",
+      "escaped": false,
+      "exception/event": "PIT Evidence Contract 违反：可用时间晚于决策日 2026-08-20：weekly.available_at=2026-08-21",
+      "ledger_result": "NOT_TOUCHED"
+    },
+    {
+      "case_id": "missing_liquidity_cap",
+      "input_before": {
+        "portfolio_cap": 0.3,
+        "liquidity_cap": null,
+        "execution_cap": 0.5
+      },
+      "injected_change": "liquidity_cap=None",
+      "expected_behavior": "NO_NEW_RISK",
+      "actual_behavior": "NO_NEW_RISK",
+      "escaped": false,
+      "exception/event": "['liquidity_cap']",
+      "ledger_result": "UNKNOWN"
+    },
+    {
+      "case_id": "nan_risk_cap",
+      "input_before": {
+        "prev": 0.0,
+        "raw_target": 0.4,
+        "liquidity_cap": "nan"
+      },
+      "injected_change": "liquidity_cap=NaN",
+      "expected_behavior": "NO_NEW_RISK",
+      "actual_behavior": "target=0.0",
+      "escaped": false,
+      "exception/event": "finalize_target UNKNOWN cap → no-new-risk",
+      "ledger_result": "NOT_TOUCHED"
+    },
+    {
+      "case_id": "ledger_row_tamper",
+      "input_before": [
+        {
+          "run_id": "R1",
+          "id": 1,
+          "prev_hash": "",
+          "current_hash": "abc",
+          "run_prev_hash": "",
+          "run_current_hash": "r1"
+        },
+        {
+          "run_id": "R1",
+          "id": 2,
+          "prev_hash": "abc",
+          "current_hash": "def",
+          "run_prev_hash": "r1",
+          "run_current_hash": "r2"
+        }
+      ],
+      "injected_change": "id=2 prev_hash → 'tampered'",
+      "expected_behavior": "GLOBAL_CHAIN_MISMATCH",
+      "actual_behavior": "GLOBAL_CHAIN_MISMATCH",
+      "escaped": false,
+      "exception/event": "[{'location': 'global,id=2', 'expected_prev': 'abc', 'stored_prev': 'tampered'}]",
+      "ledger_result": "NOT_TOUCHED"
+    },
+    {
+      "case_id": "replay_mismatch",
+      "input_before": {
+        "decision_id": "d1",
+        "stock_code": "00700",
+        "previous_position": 0.2,
+        "target_position": 0.15,
+        "next_fsm_state": "TRIMMING",
+        "primary_reason": "POSITION_CAP"
+      },
+      "injected_change": "target_position 0.15 → 0.4",
+      "expected_behavior": "REPLAY_MISMATCH",
+      "actual_behavior": "REPLAY_MISMATCH",
+      "escaped": false,
+      "exception/event": "({'field': 'target_position', 'original': 0.15, 'replay': 0.4},)",
+      "ledger_result": "NOT_TOUCHED"
+    },
+    {
+      "case_id": "release_manifest_mismatch",
+      "input_before": {
+        "snap_release": "REL-A",
+        "manifest_release": "REL-A"
+      },
+      "injected_change": "manifest_release → REL-B",
+      "expected_behavior": "REFUSED",
+      "actual_behavior": "REFUSED",
+      "escaped": false,
+      "exception/event": "['RELEASE_ID_MISMATCH', 'MANIFEST_HASH_MISMATCH']",
+      "ledger_result": "NO_COMMIT"
+    },
+    {
+      "case_id": "evidence_pack_missing",
+      "input_before": {
+        "evidence_pack": "CERTIFIED"
+      },
+      "injected_change": "evidence_pack=None",
+      "expected_behavior": "REFUSED",
+      "actual_behavior": "REFUSED",
+      "escaped": false,
+      "exception/event": "['evidence_pack:NOT_CERTIFIED_OR_MISSING']",
+      "ledger_result": "NO_COMMIT"
+    },
+    {
+      "case_id": "future_aware_wave_label",
+      "input_before": {
+        "wave_id": "w1",
+        "as_of_date": "2026-08-20",
+        "realized_mfe": 0.5
+      },
+      "injected_change": "realized_mfe 进入 as-of 机会",
+      "expected_behavior": "BLOCK",
+      "actual_behavior": "BLOCK",
+      "escaped": false,
+      "exception/event": "FeatureGate: as-of 机会禁止 outcome/future 字段 ['realized_mfe']",
+      "ledger_result": "NOT_TOUCHED"
+    },
+    {
+      "case_id": "execution_bare_snapshot",
+      "input_before": {
+        "decision": "DecisionSnapshot"
+      },
+      "injected_change": "裸快照直接 execute",
+      "expected_behavior": "REJECT",
+      "actual_behavior": "REJECT",
+      "escaped": false,
+      "exception/event": "Execution 只接受 CertifiedDecision；裸 DecisionSnapshot 没有认证资格（请先 certify_decision）。",
+      "ledger_result": "NOT_TOUCHED"
+    },
+    {
+      "case_id": "broker_unknown_ack",
+      "input_before": {
+        "broker_order_id": "B-1"
+      },
+      "injected_change": "broker ACK=UNKNOWN（network timeout）",
+      "expected_behavior": "BLOCK_NEW_ORDER",
+      "actual_behavior": "UNKNOWN",
+      "escaped": false,
+      "exception/event": "UNKNOWN 是必须保留的事实，不能自动当 REJECT/FILL",
+      "ledger_result": "NOT_TOUCHED"
+    },
+    {
+      "case_id": "broker_position_mismatch",
+      "input_before": {
+        "canonical": 0.2,
+        "internal": 0.15,
+        "broker": 0.2
+      },
+      "injected_change": "broker_position → 0.05",
+      "expected_behavior": "MISMATCH/NO_NEW_RISK",
+      "actual_behavior": "MISMATCH",
+      "escaped": false,
+      "exception/event": "Internal vs Broker 不一致 → NO_NEW_RISK",
+      "ledger_result": "NOT_TOUCHED"
+    },
+    {
+      "case_id": "report_action_rewrite",
+      "input_before": {
+        "snapshot_target": 0.15,
+        "ledger_final_target": 0.15
+      },
+      "injected_change": "报告把 final_target 重写为 0.05",
+      "expected_behavior": "BLOCK",
+      "actual_behavior": "BLOCK",
+      "escaped": false,
+      "exception/event": "Report 违反 Ledger-only 契约（报告重算了决策）：prev_fsm_state=FLAT vs ledger.previous_fsm_state=HOLDING; next_fsm_state=TESTING vs ledger.next_fsm_state=TRIMMING; target_position=0.15 vs ledger.final_target=0.05; primary_reason= vs ledger.primary_reason=POSITION_CAP",
+      "ledger_result": "NOT_TOUCHED"
+    }
+  ],
+  "cases_executed": 12,
+  "expected_cases": 12,
+  "missing_cases": [],
+  "not_executed": [],
+  "failure_escaped": [],
+  "failure_escaped_count": 0,
+  "verdict": "RELEASE_QUALIFIED",
+  "rule": "cases_executed=12 & failure_escaped_count=0 & missing_cases=0 才允许 Production Ready"
+}

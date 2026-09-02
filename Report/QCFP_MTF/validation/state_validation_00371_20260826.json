@@ -1,0 +1,174 @@
+{
+  "generated_at": "20260826",
+  "focus": "00371",
+  "summary": {
+    "fwd1w": {
+      "ACCUMULATION": {
+        "n": 2,
+        "mean_return": -0.0245,
+        "median_return": -0.0245,
+        "win_rate": 0.0,
+        "mean_mfe": 0.0,
+        "mean_mae": -0.0245
+      },
+      "ACCUMULATION_WEAK": {
+        "n": 2,
+        "mean_return": 0.0409,
+        "median_return": 0.0409,
+        "win_rate": 1.0,
+        "mean_mfe": 0.0409,
+        "mean_mae": 0.0
+      },
+      "DISTRIBUTION": {
+        "n": 4,
+        "mean_return": 0.0217,
+        "median_return": 0.0152,
+        "win_rate": 0.75,
+        "mean_mfe": 0.0236,
+        "mean_mae": -0.0018
+      },
+      "NEUTRAL": {
+        "n": 67,
+        "mean_return": 0.0201,
+        "median_return": 0.0108,
+        "win_rate": 0.5373,
+        "mean_mfe": 0.0498,
+        "mean_mae": -0.0297
+      },
+      "RECOVERY": {
+        "n": 4,
+        "mean_return": 0.0308,
+        "median_return": 0.0216,
+        "win_rate": 0.75,
+        "mean_mfe": 0.0409,
+        "mean_mae": -0.0101
+      }
+    },
+    "fwd4w": {
+      "ACCUMULATION": {
+        "n": 2,
+        "mean_return": -0.008,
+        "median_return": -0.008,
+        "win_rate": 0.5,
+        "mean_mfe": 0.006,
+        "mean_mae": -0.0679
+      },
+      "ACCUMULATION_WEAK": {
+        "n": 2,
+        "mean_return": 0.0854,
+        "median_return": 0.0854,
+        "win_rate": 1.0,
+        "mean_mfe": 0.124,
+        "mean_mae": -0.0082
+      },
+      "DISTRIBUTION": {
+        "n": 4,
+        "mean_return": 0.0393,
+        "median_return": 0.0534,
+        "win_rate": 0.75,
+        "mean_mfe": 0.0798,
+        "mean_mae": -0.0497
+      },
+      "NEUTRAL": {
+        "n": 67,
+        "mean_return": 0.0394,
+        "median_return": 0.0336,
+        "win_rate": 0.5522,
+        "mean_mfe": 0.3072,
+        "mean_mae": -0.2388
+      },
+      "RECOVERY": {
+        "n": 4,
+        "mean_return": 0.0687,
+        "median_return": 0.024,
+        "win_rate": 0.5,
+        "mean_mfe": 0.1553,
+        "mean_mae": -0.0272
+      }
+    },
+    "fwd8w": {
+      "ACCUMULATION": {
+        "n": 2,
+        "mean_return": -0.0646,
+        "median_return": -0.0646,
+        "win_rate": 0.0,
+        "mean_mfe": 0.0514,
+        "mean_mae": -0.0954
+      },
+      "ACCUMULATION_WEAK": {
+        "n": 2,
+        "mean_return": 0.0876,
+        "median_return": 0.0876,
+        "win_rate": 1.0,
+        "mean_mfe": 0.1513,
+        "mean_mae": -0.0135
+      },
+      "DISTRIBUTION": {
+        "n": 4,
+        "mean_return": 0.001,
+        "median_return": 0.0459,
+        "win_rate": 0.5,
+        "mean_mfe": 0.1321,
+        "mean_mae": -0.1512
+      },
+      "NEUTRAL": {
+        "n": 67,
+        "mean_return": 0.245,
+        "median_return": 0.0714,
+        "win_rate": 0.6269,
+        "mean_mfe": 0.6111,
+        "mean_mae": -0.7608
+      },
+      "RECOVERY": {
+        "n": 4,
+        "mean_return": 0.0879,
+        "median_return": 0.0907,
+        "win_rate": 0.75,
+        "mean_mfe": 0.2514,
+        "mean_mae": -0.0377
+      }
+    },
+    "fwd12w": {
+      "ACCUMULATION": {
+        "n": 2,
+        "mean_return": 0.0329,
+        "median_return": 0.0329,
+        "win_rate": 0.5,
+        "mean_mfe": 0.104,
+        "mean_mae": -0.101
+      },
+      "ACCUMULATION_WEAK": {
+        "n": 2,
+        "mean_return": 0.0625,
+        "median_return": 0.0625,
+        "win_rate": 0.5,
+        "mean_mfe": 0.1825,
+        "mean_mae": -0.046
+      },
+      "DISTRIBUTION": {
+        "n": 4,
+        "mean_return": 0.0321,
+        "median_return": 0.1135,
+        "win_rate": 0.75,
+        "mean_mfe": 0.175,
+        "mean_mae": -0.181
+      },
+      "NEUTRAL": {
+        "n": 67,
+        "mean_return": -0.1248,
+        "median_return": -0.0705,
+        "win_rate": 0.3881,
+        "mean_mfe": 1.5611,
+        "mean_mae": -0.8507
+      },
+      "RECOVERY": {
+        "n": 4,
+        "mean_return": 0.1084,
+        "median_return": 0.1305,
+        "win_rate": 1.0,
+        "mean_mfe": 0.3084,
+        "mean_mae": -0.0567
+      }
+    }
+  }
+}

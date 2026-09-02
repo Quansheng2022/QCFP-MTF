@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8">
+<title>QCFP-MTF All-in-One 01951 2026-08-21</title>
+<style>
+body{font-family:-apple-system,"Microsoft YaHei",sans-serif;margin:24px;color:#1f2937;max-width:960px}
+h1{font-size:20px} h2{font-size:17px;border-bottom:1px solid #e5e7eb;padding-bottom:4px;margin-top:24px}
+h3{font-size:14px}
+table{border-collapse:collapse;margin:8px 0;width:100%}
+td,th{border:1px solid #e5e7eb;padding:4px 8px;font-size:13px;text-align:left}
+th{background:#f3f4f6}
+code{background:#f3f4f6;padding:1px 4px;border-radius:4px;font-size:12px}
+blockquote{border-left:3px solid #d1d5db;margin:8px 0;padding:2px 12px;color:#4b5563}
+li{margin:2px 0}
+</style></head><body><div class='report'>
+<h1>QCFP-MTF 个股一体化分析报告（All-in-One）</h1>
+<li>股票：01951　名称：锦鑫生殖　决策日：2026-08-21　模型：QCFP-MTF-2.5.0</li>
+<li>回测绑定：run_id=bt_20260826_124348　（同一 run_id 才与本次报告同源）</li>
+<li>生成时间：2026-08-26 12:43:53</li>
+<h3>Scope / Provenance</h3>
+<table><tr><th>项</th><th>值</th></tr><tr><td>Analysis Scope</td><td>Single Stock（01951）</td></tr><tr><td>Backtest Scope</td><td>01951（单股回测）</td></tr><tr><td>Research Scope</td><td>Full Universe（Model Diagnosis / 历史 IC 为横截面样本）</td></tr><tr><td>PIT</td><td>PIT-C Estimated（period_end+45d；见回测 RUN STATUS）</td></tr><tr><td>Universe</td><td>当前可得股票集（存在幸存者偏差风险，未配置 PIT Universe）</td></tr><tr><td>Execution</td><td>周线收盘确认 → 次周生效/离场（position=target.shift(1)）</td></tr></table>
+<h2>0.0 Governance Decision Card</h2>
+<table><tr><th>项</th><th>值</th></tr><tr><td>Institutional State</td><td>ACCUMULATION_WEAK</td></tr><tr><td>Permission</td><td><strong>WATCH</strong>（上限 TESTING）</td></tr><tr><td>Permission Upgrade</td><td><strong>NO</strong>（Daily/Setup/FSM/Sizing 均不得升级）</td></tr><tr><td>Participation</td><td><strong>STAND ≤ 0%</strong>（ledger:shadow_20260825_235949（正式事实源））</td></tr><tr><td>Swing Setup</td><td>ACCUMULATION</td></tr><tr><td>Trade Quality</td><td><strong>41 / 100（Tradable）</strong></td></tr><tr><td>Risk</td><td>Extreme（DES=1）</td></tr><tr><td>FSM</td><td>EXITING → EXITING</td></tr><tr><td>Final Target</td><td><strong>0%</strong></td></tr><tr><td>Governance</td><td>✓ 未升级权限　✓ 未越权　✓ PIT Valid　✓ HardExit 明确　✓ Ledger: shadow_20260825_235949</td></tr><tr><td>Decision</td><td><strong>STAND（不参与）</strong>（非 BUY/SELL 信号）</td></tr></table>
+<h3>结论分层</h3>
+<li><strong>Engineering Status</strong>：Governance ✓ / Replay ✓ / Ledger ✓ / PIT —（ledger:shadow_20260825_235949（正式事实源））</li>
+<li><strong>Research Status</strong>：C/F 相对 P 的独立增量<strong>尚未建立</strong>（需 PIT-A/B + 更长样本 + OOS）</li>
+<li><strong>Trading Status</strong>：Current Action = STAND（不参与）（研究输出，非投资建议）</li>
+<h2>一、最新状态快照</h2>
+<table><tr><th>层级</th><th>周期末</th><th>状态</th><th>明细</th></tr><tr><td>季度结构</td><td>2026-06-30</td><td>STRUCTURAL_DECLINE</td><td>score=20.0000 C=C↑ F=F→ P=P↓</td></tr><tr><td>月线行为</td><td>2026-07-31</td><td>Improving</td><td>VP=VP_LOCKED_CANDIDATE T=T2 CBI=51.66</td></tr><tr><td>周线触发</td><td>2026-08-21</td><td>Consolidation</td><td>breakout=0 breakdown=0</td></tr><tr><td>日线战术</td><td>2026-08-21</td><td>DAILY_ACCUMULATION</td><td>日线吸筹：潜在突破，可关注</td></tr><tr><td>MTF 决策</td><td>2026-08-21</td><td>BULLISH_WARNING</td><td>试多（TEST_BUY） / risk=Extreme score=55.0000</td></tr></table>
+<h2>二、决策报告（详细版）</h2>
+<h1>QCFP-MTF 个股决策分析报告（详细版）</h1>
+<li>股票：01951　名称：锦鑫生殖</li>
+<li>决策日：2026-08-21　模型：QCFP-MTF-2.5.0</li>
+<li>综合数据质量：C（季度 C / 月线 C / 周线 A）</li>
+<h2>0. 决策卡（Decision Card）</h2>
+<table><tr><th>层</th><th>当前状态</th></tr><tr><td>Strategic Regime</td><td><strong>BEARISH</strong></td></tr><tr><td>Structural</td><td><strong>STRUCTURAL_DECLINE</strong>（core=20.0000）</td></tr><tr><td>Behavioral</td><td><strong>Improving</strong></td></tr><tr><td>Tactical Trigger</td><td><strong>Consolidation</strong></td></tr><tr><td>Tactical Opportunity</td><td><strong>TEST_BUY</strong></td></tr><tr><td>Risk</td><td><strong>Extreme</strong></td></tr><tr><td>Position（Legacy A0）</td><td><strong>20%（CQS 观察仓 × Risk 上限）</strong></td></tr></table>
+<p><strong>DOWNTREND EVIDENCE</strong>：DES = 1（NORMAL）｜<strong>Tactical Risk Override: INACTIVE</strong></p>
+<p><strong>WHY</strong>：季度 STRUCTURAL_DECLINE / 月线 Improving / 周线 Consolidation / 日线 DAILY_ACCUMULATION</p>
+<p><strong>INVALIDATION</strong>：移动止损：收盘跌破建仓周最低价×(1-2%)（周线收盘确认 → 次周离场；不做盘中触发）</p>
+<p><strong>CONFIDENCE</strong>：Medium / Evidence D（模型结果，非收益预测）</p>
+<h2>0.1 散户决策卡（Retail Execution）</h2>
+<table><tr><th>项</th><th>值</th></tr><tr><td>红黄绿灯</td><td><strong>🔴 RED</strong></td></tr><tr><td>机构状态</td><td>ACCUMULATION_WEAK（压力 +1，持续性 0）→ 权限 <strong>WATCH</strong>（上限 TESTING）</td></tr><tr><td>交易状态</td><td><strong>EXIT</strong>（WAIT/TEST/BUILD/HOLD/REDUCE/EXIT/COOLDOWN）</td></tr><tr><td>仓位状态(FSM)</td><td><strong>EXITING</strong>（EXITING→EXITING，FLAT/TESTING/BUILDING/HOLDING/TRIMMING/EXITING/COOLDOWN）</td></tr><tr><td>仓位动作</td><td><strong>NORMAL（无权限约束）</strong></td></tr><tr><td>决策原因</td><td><strong>FORCED_DELEVERAGE</strong>（INST_ACCUMULATION_WEAK,PRICE_DECLINE）</td></tr><tr><td>Trade Quality</td><td><strong>41 / 100（Tradable）</strong></td></tr><tr><td>参与预算</td><td><strong>STAND（上限 0%）</strong>　仓位类别 <strong>空仓</strong>　退出等级 <strong>L2 风险性</strong></td></tr><tr><td>建议仓位</td><td><strong>0%</strong>（决策链 target；矩阵基准 EXITING）</td></tr><tr><td>趋势</td><td>Improving ｜ 周线 Consolidation ｜ 资金 F→ ｜ 筹码 Medium</td></tr><tr><td>风险</td><td>Extreme（DES=1 NORMAL）</td></tr></table>
+<p><strong>Permission × Opportunity 矩阵</strong></p>
+<table><tr><th>Permission \ Opportunity</th><th>Low</th><th>Mid</th><th>High</th></tr><tr><td>BLOCK</td><td>—</td><td>—</td><td>—</td></tr><tr><td>WATCH</td><td>—</td><td><strong>OBS</strong></td><td>OBS</td></tr><tr><td>TEST</td><td>—</td><td>TEST</td><td>TEST+</td></tr><tr><td>ALLOW</td><td>WAIT</td><td>TRADE</td><td>STRONG</td></tr><tr><td>STRONG_ALLOW</td><td>WAIT</td><td>TRADE</td><td>A+</td></tr></table>
+<p><strong>禁止</strong>：✕ 抄底　✕ 因跌幅巨大补仓　✕ 因估值便宜提前下注</p>
+<p><strong>重新观察</strong>：Monthly Improving → Weekly Breakout → Risk ≤ Medium</p>
+<h2>1. 决策摘要</h2>
+<table><tr><th>维度</th><th>结论</th></tr><tr><td>MTF 状态</td><td><strong>BULLISH_WARNING</strong></td></tr><tr><td>Action Signal</td><td><strong>REDUCE</strong></td></tr><tr><td>Alignment Override</td><td><strong>True</strong></td></tr><tr><td>Base → Final</td><td><strong>REDUCE → REDUCE</strong></td></tr><tr><td>Trade Intent</td><td><strong>TEST_BUY</strong></td></tr><tr><td>战略 × 战术</td><td><strong>BEARISH</strong> × 试多（TEST_BUY）</td></tr><tr><td>State Score</td><td>55.0（状态编码，State-First，非连续预测分数/非收益概率）</td></tr><tr><td>催化剂质量评分</td><td>1.0（中性偏强）</td></tr><tr><td>风险等级</td><td><strong>Extreme</strong></td></tr><tr><td>仓位建议（Legacy A0）</td><td>20%（CQS 观察仓 × Risk 上限）</td></tr><tr><td>止损触发</td><td>移动止损：收盘跌破建仓周最低价×(1-2%)（周线收盘确认 → 次周离场；不做盘中触发）</td></tr></table>
+<h2>2. 季度结构（Layer 1 · Structural）</h2>
+<p><strong>状态</strong>：STRUCTURAL_DECLINE（core_score = 20.0000，证据 A-，解析方式 hold_unmapped，披露日 2026-08-14）</p>
+<table><tr><th>C/F/P 状态</th><th>原始因子</th><th>数值</th></tr><tr><td>C↑</td><td>机构持股比例环比（pp）</td><td>4.8670</td></tr><tr><td>C↑</td><td>持股数量环比（%）</td><td>10.4647</td></tr><tr><td>C↑</td><td>机构数量环比（%）</td><td>-8.5106</td></tr><tr><td>F→</td><td>机构资金净流入 Z</td><td>-0.4961</td></tr><tr><td>F→</td><td>IFA Z-Score</td><td>0.0000</td></tr><tr><td>P↓</td><td>季度收益</td><td>-15.81%</td></tr><tr><td>P↓</td><td>Trend Score</td><td>35.0018</td></tr><tr><td>P↓</td><td>52 周位置</td><td>0.0272</td></tr></table>
+<h2>3. 月线行为（Layer 2 · Stage）</h2>
+<p><strong>状态</strong>：Improving（证据 B）｜VP：VP_LOCKED_CANDIDATE｜换手：T2｜CBI：51.66（CBI_STABLE）</p>
+<table><tr><th>指标</th><th>数值</th></tr><tr><td>换手率 Z-Score</td><td>-0.6475</td></tr><tr><td>换手率百分位</td><td>0.1667</td></tr><tr><td>换手率/MA6</td><td>0.8383</td></tr><tr><td>成交量/MA6</td><td>0.8319</td></tr><tr><td>量加速度</td><td>-0.1103</td></tr><tr><td>换手效率</td><td>1.0265</td></tr></table>
+<h2>4. 周线触发（Layer 3 · Trigger）</h2>
+<p><strong>信号</strong>：Consolidation（证据 C）</p>
+<table><tr><th>指标</th><th>数值</th></tr><tr><td>有效突破</td><td>0</td></tr><tr><td>有效破位</td><td>0</td></tr><tr><td>放量突破</td><td>0</td></tr><tr><td>极度缩量</td><td>0</td></tr><tr><td>极端换手</td><td>0</td></tr><tr><td>换手偏离（vs 季度周均）</td><td>7.71%</td></tr><tr><td>周 VWAP 偏离</td><td>4.33%</td></tr><tr><td>均线斜率</td><td>加速</td></tr></table>
+<h2>4.5 日线战术层（L4 · Tactical Timing）</h2>
+<p><strong>日线状态</strong>：DAILY_ACCUMULATION（截至 2026-08-21）</p>
+<p><strong>时机提示</strong>：日线吸筹：潜在突破，可关注</p>
+<blockquote>定位：Q/M/W 决定战略方向，Daily 只负责交易时机（不改变 Q/M/W 状态）；日线状态/资金流已作为下行风险证据进入 DES（<code>daily.risk</code> 生效），<code>daily.timing</code>（买入时机）仍默认关闭。</blockquote>
+<h2>5. 成本位置</h2>
+<p><strong>状态</strong>：COST_NEUTRAL</p>
+<table><tr><th>周期 VWAP</th><th>偏离</th></tr><tr><td>周</td><td>-1.85%</td></tr><tr><td>月</td><td>0.46%</td></tr><tr><td>季</td><td>-5.46%</td></tr></table>
+<h2>6. 置信度与证据</h2>
+<li>筹码稳定置信度：<strong>Medium</strong>（60%×季度筹码评分 + 40%×CBI，权重已归一化）</li>
+<li>结构-行为对齐：Divergence</li>
+<li>MTF 证据等级：D（模型组合结果，仅供决策参考）</li>
+<li>证据摘要：结构:STRUCTURAL_DECLINE(A/A-); 阶段:Improving(B); 触发:Consolidation(C); 置信度:Medium</li>
+<h2>7. 风险与市场环境</h2>
+<li>风险等级：<strong>Extreme</strong>（综合 MTF 状态、背离、市场环境、数据质量、置信度）</li>
+<li>市场环境：risk_on</li>
+<li>催化剂提示：中性偏强，观察仓 20%，移动止损（收盘跌破建仓周最低价离场）</li>
+<li>HSI：26009　60 日收益：2.69%　VHSI：18.34</li>
+<h2>8. 历史状态时间线</h2>
+<h3>季度结构（近 8 期）</h3>
+<table><tr><th>季度末</th><th>状态</th><th>Score</th><th>C</th><th>F</th><th>P</th></tr><tr><td>2026-06-30</td><td>STRUCTURAL_DECLINE</td><td>20.0000</td><td>C↑</td><td>F→</td><td>P↓</td></tr><tr><td>2026-03-31</td><td>STRUCTURAL_DECLINE</td><td>20.0000</td><td>C↑</td><td>F→</td><td>P→</td></tr><tr><td>2025-12-31</td><td>STRUCTURAL_DECLINE</td><td>20.0000</td><td>C↓</td><td>F↓</td><td>P↓</td></tr><tr><td>2025-09-30</td><td>STRUCTURAL_BOTTOM_CANDIDATE</td><td>45.0000</td><td>C↓</td><td>F↑</td><td>P↓</td></tr><tr><td>2025-06-30</td><td>STRUCTURAL_DECLINE</td><td>20.0000</td><td>C↓</td><td>F↑</td><td>P→</td></tr><tr><td>2025-03-31</td><td>STRUCTURAL_DECLINE</td><td>20.0000</td><td>C↓</td><td>F↑</td><td>P↑</td></tr><tr><td>2024-12-31</td><td>STRUCTURAL_DECLINE</td><td>20.0000</td><td>C↓</td><td>F↓</td><td>P↓</td></tr><tr><td>2024-09-30</td><td>STRUCTURAL_DECLINE</td><td>20.0000</td><td>C→</td><td>F↑</td><td>P↑</td></tr></table>
+<h3>MTF 决策（近 8 周）</h3>
+<table><tr><th>决策日</th><th>MTF 状态</th><th>Action</th><th>风险</th></tr><tr><td>2026-08-21</td><td>BULLISH_WARNING</td><td>REDUCE</td><td>Extreme</td></tr><tr><td>2026-08-14</td><td>BULLISH_WARNING</td><td>EXIT</td><td>Extreme</td></tr><tr><td>2026-08-07</td><td>BEARISH_CONFIRMED</td><td>EXIT</td><td>Extreme</td></tr><tr><td>2026-07-31</td><td>BEARISH_CONFIRMED</td><td>EXIT</td><td>Extreme</td></tr><tr><td>2026-07-24</td><td>BEARISH_CONFIRMED</td><td>EXIT</td><td>Extreme</td></tr><tr><td>2026-07-17</td><td>BEARISH_CONFIRMED</td><td>EXIT</td><td>Extreme</td></tr><tr><td>2026-07-10</td><td>BEARISH_CONFIRMED</td><td>EXIT</td><td>Extreme</td></tr><tr><td>2026-07-03</td><td>BEARISH_CONFIRMED</td><td>EXIT</td><td>Extreme</td></tr></table>
+<h2>9. 状态前向收益对照（历史 IC 证据）</h2>
+<li>STRUCTURAL_DECLINE @ 前向 4 周：历史均值 -0.09%，中位数 -2.09%，命中率 41.68%（样本 1977）</li>
+<li>STRUCTURAL_DECLINE @ 前向 13 周：历史均值 -0.50%，中位数 -4.77%，命中率 41.15%（样本 1932）</li>
+<li>STRUCTURAL_DECLINE @ 前向 26 周：历史均值 -1.73%，中位数 -6.58%，命中率 40.33%（样本 1867）</li>
+<h2>10. 数据质量与合规</h2>
+<table><tr><th>层级</th><th>证据等级</th><th>数据质量</th></tr><tr><td>季度结构（C/F/P 派生复合）</td><td>A-</td><td>C</td></tr><tr><td>月线行为</td><td>B</td><td>C</td></tr><tr><td>周线触发</td><td>C</td><td>A</td></tr><tr><td>MTF 决策</td><td>D</td><td>C</td></tr></table>
+<blockquote>注：证据等级描述数据的<strong>性质</strong>（A 直接事实 / A- 派生 / B 行为代理 / C 短周期 / D 模型结果）；数据质量描述数据的<strong>完整度</strong>（A~D）。二者独立，互不替代。</blockquote>
+<li>Anti-Inference 检查：PASSED</li>
+<hr/>
+<blockquote>模型：QCFP-MTF-2.5.0（State-First, Score-Second；层级不可越权）。本报告为研究输出，不构成投资建议；证据等级与数据质量详见各层标注。</blockquote>
+<h2>2.5 2.2 决策链审计（Stateful Shadow）</h2>
+<blockquote>数据源：ledger:shadow_20260825_235949（正式事实源）；口径：Institutional → Exit Events → Setup → FSM → Sizing（PIT-C Estimated，研究输出非交易指令）</blockquote>
+<table><tr><th>环节</th><th>取值</th></tr><tr><td>Ledger / Run</td><td><code>shadow_20260825_235949</code>（决策台账）</td></tr><tr><td>决策原因</td><td><strong>FORCED_DELEVERAGE</strong>（(&#x27;INST_ACCUMULATION_WEAK&#x27;, &#x27;PRICE_DECLINE&#x27;)）</td></tr><tr><td>Trade Quality</td><td><strong>41.0 / 100（Tradable）</strong></td></tr><tr><td>Participation Budget</td><td>STAND（上限 0.0）｜仓位类别 NONE｜退出等级 L2</td></tr><tr><td>Institutional State</td><td>ACCUMULATION_WEAK</td></tr><tr><td>Institutional Permission</td><td>WATCH （上限 TESTING）</td></tr><tr><td>Exit Event</td><td>FORCED_DELEVERAGE：extreme_risk</td></tr><tr><td>Swing Setup</td><td>ACCUMULATION</td></tr><tr><td>Retail FSM</td><td>EXITING → EXITING</td></tr><tr><td>Matrix Base</td><td>EXITING（矩阵基准）</td></tr><tr><td>Position</td><td>0.0 → 0.0</td></tr><tr><td>Raw Target</td><td>0.0（约束生效：False）</td></tr><tr><td>Position Action</td><td>NORMAL</td></tr><tr><td>Override Rules</td><td>[&#x27;hard_exit&#x27;]</td></tr><tr><td>Decision Path</td><td>[&#x27;evidence&#x27;, &#x27;institutional&#x27;, &#x27;exit_events&#x27;, &#x27;setup&#x27;, &#x27;participation_budget&#x27;, &#x27;fsm&#x27;, &#x27;sizing&#x27;, &#x27;permission_cap&#x27;, &#x27;trade_quality&#x27;, &#x27;governance&#x27;, &#x27;final_target&#x27;]</td></tr><tr><td>Rule / Model / Schema</td><td>GOV-2.5.0 / QCFP-MTF-2.5.0 / DECISION-1.1</td></tr><tr><td>Feature Manifest</td><td><code>ed8b6eceb02a5815</code></td></tr><tr><td>Fingerprint</td><td><code>d8b39be270b77429</code>（输入哈希）</td></tr></table>
+<h2>三、回测汇总</h2>
+<h3>回测汇总（run_id=bt_20260826_124348，2021-01-01 ~ 2026-08-21）</h3>
+<p><strong>Engineering Status: PASS_WITH_WARNING</strong>（PIT disclosure = ESTIMATED (PIT-C)；披露日为推算值（period_end + lag），非真实披露日历（PIT-C）；PIT universe 缺失（research_exploration 模式，存在幸存者偏差风险））</p>
+<p><strong>Research Status: RESEARCH NOT VALIDATED</strong>（OOS Sharpe 中位数 -0.6687）｜<strong>Economic Evidence: NEGATIVE</strong>（组合 Sharpe -0.6419）</p>
+<table><tr><th>指标</th><th>数值</th></tr><tr><td>total_return</td><td>-0.5030</td></tr><tr><td>annualized_return</td><td>-0.1160</td></tr><tr><td>sharpe</td><td>-0.6419</td></tr><tr><td>max_drawdown</td><td>-0.5053</td></tr><tr><td>win_rate</td><td>0.1831</td></tr><tr><td>positive_week_rate</td><td>0.1831</td></tr><tr><td>profit_factor</td><td>0.6259</td></tr><tr><td>sortino</td><td>-0.7803</td></tr><tr><td>calmar</td><td>-0.2295</td></tr><tr><td>annual_turnover</td><td>3.2610</td></tr></table>
+<p><strong>分年度</strong>：</p>
+<table><tr><th>年份</th><th>年化</th><th>Sharpe</th><th>回撤</th></tr><tr><td>2021</td><td>-24.07%</td><td>-0.8720</td><td>-26.54%</td></tr><tr><td>2022</td><td>1.84%</td><td>0.1870</td><td>-19.55%</td></tr><tr><td>2023</td><td>-31.85%</td><td>-1.7210</td><td>-32.12%</td></tr><tr><td>2024</td><td>-1.62%</td><td>-0.3336</td><td>-2.79%</td></tr><tr><td>2025</td><td>-2.12%</td><td>-1.2546</td><td>-2.12%</td></tr><tr><td>2026</td><td>-2.36%</td><td>-0.5152</td><td>-2.58%</td></tr></table>
+<p><strong>市场环境分层</strong>：</p>
+<table><tr><th>环境</th><th>年化</th><th>Sharpe</th><th>胜率</th></tr><tr><td>risk_on</td><td>-2.63%</td><td>-0.0953</td><td>21.43%</td></tr><tr><td>neutral</td><td>1.11%</td><td>0.1692</td><td>30.95%</td></tr><tr><td>risk_off</td><td>-17.39%</td><td>-0.9220</td><td>14.21%</td></tr><tr><td>ALL</td><td>-11.60%</td><td>-0.6419</td><td>18.31%</td></tr></table>
+<p><strong>Rolling OOS（固定参数）</strong>：</p>
+<table><tr><th>窗口</th><th>年化</th><th>Sharpe</th><th>回撤</th></tr><tr><td>20210101-20230101</td><td>-12.19%</td><td>-0.4283</td><td>-40.18%</td></tr><tr><td>20210101-20240101</td><td>-19.26%</td><td>-0.8173</td><td>-47.58%</td></tr><tr><td>20210101-20241231</td><td>-15.19%</td><td>-0.7218</td><td>-49.44%</td></tr><tr><td>20210101-20251231</td><td>-12.73%</td><td>-0.6687</td><td>-49.52%</td></tr></table>
+<p><strong>基准与组合风险</strong>：</p>
+<table><tr><th>项</th><th>值</th></tr><tr><td>等权基准年化超额</td><td>-6.45%</td></tr><tr><td>等权基准 IR</td><td>-0.3471</td></tr><tr><td>恒指年化超额</td><td>-10.68%</td></tr><tr><td>恒指 IR</td><td>-0.6062</td></tr><tr><td>VaR95</td><td>-2.54%</td></tr><tr><td>年化波动</td><td>16.86%</td></tr><tr><td>平均暴露</td><td>13.2%</td></tr></table>
+<p><strong>成本口径</strong>：</p>
+<table><tr><th>项</th><th>值</th></tr><tr><td>年化毛换手</td><td>3.26</td></tr><tr><td>年化交易成本</td><td>1.35%</td></tr><tr><td>成本/毛换手</td><td>0.0041</td></tr><tr><td>平均仓位</td><td>13.2%</td></tr></table>
+<h2>3.5 模型诊断（Layer Ablation）</h2>
+<blockquote><strong>Scope：Full Universe（无焦点股票）</strong>——与上方个股回测不同口径，仅作研究参考。来源：layer_ablation_20260824.json</blockquote>
+<table><tr><th>模型</th><th>年化</th><th>Sharpe</th><th>MDD</th><th>PF</th><th>换手</th><th>IC13</th><th>上行捕获</th><th>下行捕获</th><th>波段</th></tr><tr><td>Q</td><td>-1.33%</td><td>-0.0429</td><td>-32.74%</td><td>0.9835</td><td>0.33</td><td>0.0257</td><td>0.3477</td><td>0.3531</td><td>—</td></tr><tr><td>QM</td><td>-2.30%</td><td>-0.2400</td><td>-25.91%</td><td>0.9126</td><td>1.20</td><td>0.0202</td><td>0.2220</td><td>0.2446</td><td>—</td></tr><tr><td>QMW</td><td>-1.79%</td><td>-0.3168</td><td>-20.23%</td><td>0.8740</td><td>2.52</td><td>0.0258</td><td>0.1109</td><td>0.1301</td><td>—</td></tr><tr><td>Full</td><td>-1.94%</td><td>-0.3219</td><td>-21.95%</td><td>0.8750</td><td>2.92</td><td>0.0253</td><td>0.1249</td><td>0.1456</td><td>—</td></tr></table>
+<h2>四、研究结论与限制</h2>
+<h3>证据</h3>
+<li>OOS Sharpe 中位数：-0.6687；等权基准年化超额：-6.45%</li>
+<li>条件回归（控制 P 后，HAC）：F t_hac=1.2340，C t_hac=-0.5120，增量 R²=0.1365</li>
+<h3>判断：证据强度 中</h3>
+<h3>结论</h3>
+<p>当前证据不足以支持 C/F 在 P 之外的独立增量；需更长样本或调整 C 阈值后复验。</p>
+<h3>限制</h3>
+<li>PIT：available_date 为估计（period_end + 45 天），非真实披露日；</li>
+<li>流动性：未含 ADV/参与率约束；成本为方向费率 + 最低佣金简化模型；</li>
+<li>样本：2021 起（资金流可用期），区间较短；</li>
+<li>组合：未做行业中性化与风险约束（sector/concentration/beta）。</li>
+<h2>五、产物清单</h2>
+<li>产物绑定：run_id=bt_20260826_124348，决策日=2026-08-21，模型=QCFP-MTF-2.5.0</li>
+<li><code>C:\Users\Quansheng\Documents\projects\TA_Workflow\Report\QCFP_MTF\dss\01951_2026-07-10.md</code></li>
+<li><code>C:\Users\Quansheng\Documents\projects\TA_Workflow\Report\QCFP_MTF\dss\01951_2026-08-21.md</code></li>
+<li><code>C:\Users\Quansheng\Documents\projects\TA_Workflow\Report\QCFP_MTF\backtest\summary_bt_20260826_124348_01951.json</code></li>
+<li><code>C:\Users\Quansheng\Documents\projects\TA_Workflow\Report\QCFP_MTF\backtest\report_bt_20260826_124348_01951.html</code></li>
+<hr/>
+<blockquote>模型：QCFP-MTF-2.5.0。本报告为研究输出，不构成投资建议。</blockquote>
+</div></body></html>

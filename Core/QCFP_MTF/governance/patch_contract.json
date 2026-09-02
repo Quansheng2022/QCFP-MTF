@@ -1,0 +1,16 @@
+{
+  "schema": "PATCH-CONTRACT-2",
+  "change_id": "",
+  "implementation_contract_hash": "",
+  "allowed_files": [],
+  "allowed_functions": [],
+  "forbidden_files": [],
+  "forbidden_modules": [],
+  "expected_authority_delta": [],
+  "expected_active_feature_delta": [],
+  "schema_change_allowed": false,
+  "expected_golden_change": {
+    "max_count": 0,
+    "allowed_fields": []
+  }
+}

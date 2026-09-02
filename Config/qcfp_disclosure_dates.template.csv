@@ -1,0 +1,7 @@
+# QCFP-MTF 真实披露日覆盖表（PIT-A）
+# 复制本文件为 qcfp_disclosure_dates.csv 并填入真实披露日。
+# 列：stock_code(5位), period_end(YYYY-MM-DD), available_date(YYYY-MM-DD)
+# 存在该文件时 disclosure_mode=REAL（PIT-A）；否则 period_end+45d 估算（PIT-C）。
+stock_code,period_end,available_date
+00700,2025-12-31,2026-03-20
+01951,2025-12-31,2026-04-10

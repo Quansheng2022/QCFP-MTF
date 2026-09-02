@@ -1,0 +1,12 @@
+﻿stock_code,stock_name,period_end,structural_regime,core_score,data_quality,institutional_flow,chip_flow_price_regime,regime_dir,chip_dir,agree
+00268,金蝶国际,2025-06-30,STRUCTURAL_BULLISH,85.0,C,1369579880.0,多头共振,bull,bull,True
+00357,美兰空港,2025-06-30,STRUCTURAL_DISTRIBUTION,35.0,C,-49222980.0,派发反弹,bear,bear,True
+00371,北控水务,2022-12-31,STRUCTURAL_BULLISH,85.0,C,116512120.0,多头共振,bull,bull,True
+00371,北控水务,2025-06-30,STRUCTURAL_BULLISH,85.0,C,176947020.0,资金流出反弹,bull,bear,False
+00700,腾讯控股,2021-03-31,STRUCTURAL_ACCUMULATION,70.0,B,3280000000.0,资金流出反弹,bull,bear,False
+00788,中国铁塔,2024-06-30,STRUCTURAL_BULLISH,85.0,A,856196880.0,筹码走强,bull,bull,True
+00788,中国铁塔,2024-12-31,STRUCTURAL_BULLISH,85.0,A,583861380.0,多头共振,bull,bull,True
+01177,中生制药,2023-09-30,STRUCTURAL_DECLINE,20.0,C,68729370.0,资金流出下跌,bear,bear,True
+02202,港股万科企业,2025-12-31,STRUCTURAL_DECLINE,20.0,C,55058770.0,资金流出下跌,bear,bear,True
+03800,协鑫科技,2023-09-30,STRUCTURAL_DECLINE,20.0,C,-212194820.0,资金流出下跌,bear,bear,True
+03800,协鑫科技,2025-09-30,STRUCTURAL_DISTRIBUTION,35.0,C,-64638800.0,派发反弹,bear,bear,True

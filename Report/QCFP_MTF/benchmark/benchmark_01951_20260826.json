@@ -1,0 +1,89 @@
+{
+  "generated_at": "20260826",
+  "rows": [
+    {
+      "benchmark": "B0_BuyHold",
+      "annualized_return": -0.170752,
+      "sharpe": -0.0727,
+      "max_drawdown": -0.918648,
+      "calmar": -0.1859,
+      "annual_turnover": 0.9733,
+      "wave_capture": 0.4539,
+      "false_entry": null,
+      "capital_efficiency": -0.1759,
+      "incremental_utility_vs_B0": 0.0
+    },
+    {
+      "benchmark": "B2_SimpleTrend",
+      "annualized_return": -0.069537,
+      "sharpe": -0.0137,
+      "max_drawdown": -0.748811,
+      "calmar": -0.0929,
+      "annual_turnover": 4.4492,
+      "wave_capture": 0.2446,
+      "false_entry": null,
+      "capital_efficiency": -0.197,
+      "incremental_utility_vs_B0": 0.101215
+    },
+    {
+      "benchmark": "B3_Breakout",
+      "annualized_return": -0.124306,
+      "sharpe": -0.2889,
+      "max_drawdown": -0.742976,
+      "calmar": -0.1673,
+      "annual_turnover": 14.738,
+      "wave_capture": 0.0717,
+      "false_entry": null,
+      "capital_efficiency": -0.6548,
+      "incremental_utility_vs_B0": 0.046446
+    },
+    {
+      "benchmark": "B4_WaveOnly",
+      "annualized_return": -0.079671,
+      "sharpe": -0.1713,
+      "max_drawdown": -0.676275,
+      "calmar": -0.1178,
+      "annual_turnover": 4.1711,
+      "wave_capture": 0.0245,
+      "false_entry": null,
+      "capital_efficiency": -0.4082,
+      "incremental_utility_vs_B0": 0.091081
+    },
+    {
+      "benchmark": "B5_PermissionOnly",
+      "annualized_return": 0.0,
+      "sharpe": NaN,
+      "max_drawdown": 0.0,
+      "calmar": null,
+      "annual_turnover": 0.0,
+      "wave_capture": null,
+      "false_entry": null,
+      "capital_efficiency": null,
+      "incremental_utility_vs_B0": 0.170752
+    },
+    {
+      "benchmark": "B6_PermissionWave",
+      "annualized_return": 0.0,
+      "sharpe": NaN,
+      "max_drawdown": 0.0,
+      "calmar": null,
+      "annual_turnover": 0.0,
+      "wave_capture": null,
+      "false_entry": null,
+      "capital_efficiency": null,
+      "incremental_utility_vs_B0": 0.170752
+    },
+    {
+      "benchmark": "B7_FullQCFPMTF",
+      "annualized_return": 0.000967,
+      "sharpe": 0.5284,
+      "max_drawdown": -0.000611,
+      "calmar": 1.582,
+      "annual_turnover": 0.0111,
+      "wave_capture": 0.008,
+      "false_entry": null,
+      "capital_efficiency": 2.1125,
+      "incremental_utility_vs_B0": 0.171719
+    }
+  ]
+}

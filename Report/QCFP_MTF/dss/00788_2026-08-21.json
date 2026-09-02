@@ -1,0 +1,54 @@
+{
+  "stock_code": "00788",
+  "decision_date": "2026-08-21",
+  "model_version": "QCFP-MTF-2.1.1",
+  "structural": {
+    "regime": "STRUCTURAL_DIVERGENCE",
+    "core_score": 55.0,
+    "evidence_level": "A-",
+    "data_quality": "A",
+    "key_drivers": [
+      "c_state: C→",
+      "f_state: F↓",
+      "p_state: P↓"
+    ]
+  },
+  "stage": {
+    "monthly_state": "Improving",
+    "turnover_regime": "T2",
+    "vp_regime": "VP_STABLE_ASCENT",
+    "cbi_score": 69.28125462550412
+  },
+  "cost_position": {
+    "status": "COST_NEUTRAL",
+    "vs_weekly_vwap": 0.011150304445836978,
+    "vs_monthly_vwap": 0.05907024258231086,
+    "vs_quarterly_vwap": -0.016284587721735466
+  },
+  "trigger": {
+    "signal": "Consolidation",
+    "breakout": false,
+    "breakdown": false,
+    "volume_spike": false
+  },
+  "confidence": {
+    "chip_stability_confidence": "Medium",
+    "structure_behavior_alignment": "Aligned",
+    "evidence_summary": "结构:STRUCTURAL_DIVERGENCE(A/A-); 阶段:Improving(B); 触发:Consolidation(C); 置信度:Medium"
+  },
+  "risk": {
+    "risk_level": "Extreme",
+    "divergence_detected": false,
+    "key_risks": [
+      "Extreme"
+    ],
+    "anti_inference_check": "PASSED"
+  },
+  "decision": {
+    "mtf_regime": "BULLISH_WARNING",
+    "action": "REDUCE",
+    "action_detail": "结构性强势下的战术预警，减仓观察，严禁清仓",
+    "position_advice": "20%（Risk 上限约束）",
+    "stop_loss_trigger": "移动止损：收盘跌破建仓周最低价×(1-2%)（周线收盘确认 → 次周离场；不做盘中触发）"
+  }
+}

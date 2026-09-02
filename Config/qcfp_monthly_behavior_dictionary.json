@@ -1,0 +1,227 @@
+{
+  "table_name": "qcfp_monthly_behavior",
+  "generated_at": "2026-08-24 22:03:30",
+  "database_path": "C:\\Users\\Quansheng\\Documents\\projects\\TA_Workflow\\SQLiteDB\\HK_Stock.db",
+  "statistics": {
+    "total_records": 2307,
+    "stock_count": 16
+  },
+  "field_count": 23,
+  "fields": [
+    {
+      "field_name": "id",
+      "data_type": "INTEGER",
+      "description": "主键，自增ID",
+      "sample": null
+    },
+    {
+      "field_name": "stock_code",
+      "data_type": "TEXT",
+      "description": "股票代码（5位数字）",
+      "sample": null
+    },
+    {
+      "field_name": "stock_name",
+      "data_type": "TEXT",
+      "description": "股票名称",
+      "sample": null
+    },
+    {
+      "field_name": "month_end",
+      "data_type": "TEXT",
+      "description": "月份结束日期（YYYY-MM-DD）",
+      "sample": null
+    },
+    {
+      "field_name": "m_turnover_zscore",
+      "data_type": "REAL",
+      "description": "月换手率 Z-Score",
+      "sample": null
+    },
+    {
+      "field_name": "m_turnover_pctl",
+      "data_type": "REAL",
+      "description": "月换手率 52W 百分位（0~1）",
+      "sample": null
+    },
+    {
+      "field_name": "m_turnover_ma_ratio",
+      "data_type": "REAL",
+      "description": "月换手率 / MA6",
+      "sample": null
+    },
+    {
+      "field_name": "m_volume_ma_ratio",
+      "data_type": "REAL",
+      "description": "月成交量 / MA6",
+      "sample": null
+    },
+    {
+      "field_name": "m_volume_accel",
+      "data_type": "REAL",
+      "description": "成交量加速度（VE_t / VE_{t-3} - 1）",
+      "sample": null
+    },
+    {
+      "field_name": "m_vwap_deviation",
+      "data_type": "REAL",
+      "description": "收盘价 vs 月 VWAP 偏离（%）",
+      "sample": null
+    },
+    {
+      "field_name": "m_turnover_efficiency",
+      "data_type": "REAL",
+      "description": "换手效率",
+      "sample": null
+    },
+    {
+      "field_name": "m_vp_regime",
+      "data_type": "TEXT",
+      "description": "量价矩阵状态（9 种，如 VP_EXPANSION）",
+      "sample": null
+    },
+    {
+      "field_name": "turnover_liquidity_regime",
+      "data_type": "TEXT",
+      "description": "换手-流动性状态（T1~T5）",
+      "sample": null
+    },
+    {
+      "field_name": "monthly_behavior_state",
+      "data_type": "TEXT",
+      "description": "月线阶段（Improving/Stable/Deteriorating）",
+      "sample": null
+    },
+    {
+      "field_name": "model_version",
+      "data_type": "TEXT",
+      "description": "模型版本号",
+      "sample": null
+    },
+    {
+      "field_name": "data_quality",
+      "data_type": "TEXT",
+      "description": "数据质量等级（A/B/C/D）",
+      "sample": null
+    },
+    {
+      "field_name": "update_time",
+      "data_type": "TEXT",
+      "description": "更新时间",
+      "sample": null
+    },
+    {
+      "field_name": "cbi_score",
+      "data_type": "REAL",
+      "description": "",
+      "sample": null
+    },
+    {
+      "field_name": "cbi_state",
+      "data_type": "TEXT",
+      "description": "",
+      "sample": null
+    },
+    {
+      "field_name": "cost_position",
+      "data_type": "TEXT",
+      "description": "",
+      "sample": null
+    },
+    {
+      "field_name": "cost_vs_weekly_vwap",
+      "data_type": "REAL",
+      "description": "",
+      "sample": null
+    },
+    {
+      "field_name": "cost_vs_monthly_vwap",
+      "data_type": "REAL",
+      "description": "",
+      "sample": null
+    },
+    {
+      "field_name": "cost_vs_quarterly_vwap",
+      "data_type": "REAL",
+      "description": "",
+      "sample": null
+    }
+  ],
+  "sample_data": [
+    {
+      "id": 21598,
+      "stock_code": "00020",
+      "stock_name": "商汤科技",
+      "month_end": "2021-12-31",
+      "m_turnover_zscore": null,
+      "m_turnover_pctl": null,
+      "m_turnover_ma_ratio": null,
+      "m_volume_ma_ratio": null,
+      "m_volume_accel": null,
+      "m_vwap_deviation": 0.21549693465244868,
+      "m_turnover_efficiency": 0.0,
+      "m_vp_regime": "VP_NEUTRAL",
+      "turnover_liquidity_regime": null,
+      "monthly_behavior_state": "Stable",
+      "model_version": "QCFP-MTF-2.1.1",
+      "data_quality": "C",
+      "update_time": "2026-08-22 00:13:24",
+      "cbi_score": null,
+      "cbi_state": null,
+      "cost_position": "COST_ADVANTAGE",
+      "cost_vs_weekly_vwap": 0.21549693465244868,
+      "cost_vs_monthly_vwap": 0.21549693465244868,
+      "cost_vs_quarterly_vwap": 0.21549693465244868
+    },
+    {
+      "id": 21599,
+      "stock_code": "00020",
+      "stock_name": "商汤科技",
+      "month_end": "2022-01-31",
+      "m_turnover_zscore": null,
+      "m_turnover_pctl": null,
+      "m_turnover_ma_ratio": null,
+      "m_volume_ma_ratio": null,
+      "m_volume_accel": null,
+      "m_vwap_deviation": -0.08903221541506456,
+      "m_turnover_efficiency": 3.882575757575758,
+      "m_vp_regime": "VP_NEUTRAL",
+      "turnover_liquidity_regime": null,
+      "monthly_behavior_state": "Stable",
+      "model_version": "QCFP-MTF-2.1.1",
+      "data_quality": "C",
+      "update_time": "2026-08-22 00:13:24",
+      "cbi_score": null,
+      "cbi_state": null,
+      "cost_position": "COST_NEUTRAL",
+      "cost_vs_weekly_vwap": 0.00984541726491206,
+      "cost_vs_monthly_vwap": -0.08903221541506456,
+      "cost_vs_quarterly_vwap": 0.4873262491292689
+    },
+    {
+      "id": 21600,
+      "stock_code": "00020",
+      "stock_name": "商汤科技",
+      "month_end": "2022-02-28",
+      "m_turnover_zscore": null,
+      "m_turnover_pctl": null,
+      "m_turnover_ma_ratio": 0.44847112117780297,
+      "m_volume_ma_ratio": 0.45666986812696475,
+      "m_volume_accel": null,
+      "m_vwap_deviation": -0.04589844115405084,
+      "m_turnover_efficiency": -3.039308388491158,
+      "m_vp_regime": "VP_DECLINE_SILENT",
+      "turnover_liquidity_regime": null,
+      "monthly_behavior_state": "Deteriorating",
+      "model_version": "QCFP-MTF-2.1.1",
+      "data_quality": "C",
+      "update_time": "2026-08-22 00:13:24",
+      "cbi_score": null,
+      "cbi_state": null,
+      "cost_position": "COST_NEUTRAL",
+      "cost_vs_weekly_vwap": -0.05858849435132629,
+      "cost_vs_monthly_vwap": -0.04589844115405084,
+      "cost_vs_quarterly_vwap": 0.42765639960996693
+    }
+  ]
+}

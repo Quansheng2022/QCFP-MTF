@@ -1,0 +1,22 @@
+# TA_Workflow Cursor 规则
+
+项目全量规范见 `AGENTS.md`，本文件为 Cursor 精简版约束。
+
+## 项目
+
+港股个股技术分析自动化工作台：数据获取（moomoo/Futu OpenD、akshare）→ 指标计算（EMA/MACD/RSI/KDJ/筹码/资金流）→ PDF 报告 → 超级提示词生成。
+
+## 架构约束
+
+- 入口脚本（`run_*_workflow.py`）通过 `SCRIPT_LIST` 顺序执行 `Core/<周期>` 步骤脚本；步骤脚本之间通过 `SQLiteDB/HK_Stock.db` 表传递数据，不互相 import。
+- 共享能力（路径、配置、股票列表、DB 查询）必须复用 `Core/utl`；新增工具放 `Core/utl`，导入方式 `from utl.xxx import ...`（无 `__init__.py`，命名空间包）。
+- 配置一律进 `Config/stock_data_analysis.par` 或 `Config/stock_list.json`，禁止硬编码路径/凭据/股票池。
+- 改表结构必须同步 `Config/*_dictionary.*` 数据字典和 `Code_Prompt/Gen_*.py` 中的字段引用。
+- 新步骤命名 `TA{n}[A/B/C]_<动作>.py`，并加入对应 workflow 的 `SCRIPT_LIST`。
+
+## 编码与运行
+
+- 所有文件 UTF-8；Windows 乱码时设置 `PYTHONIOENCODING=utf-8`/`PYTHONUTF8=1` 或经 `Core/utl/run_with_utf8.py`。
+- 所有脚本从项目根目录运行；日志写入 `Log/<脚本名>.log`。
+- 勿使用 Python 内置模块写文件（用 apply_patch）；不执行破坏性 git 操作。
+- 多进程脚本遵循 `[MULTI_PROCESSING]` 配置，日志文件名保留 `_mproc` 后缀。

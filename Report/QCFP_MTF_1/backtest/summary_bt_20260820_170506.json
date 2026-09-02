@@ -1,0 +1,170 @@
+{
+  "run_id": "bt_20260820_170506",
+  "model_version": "QCFP-MTF-2.1.1",
+  "stock": "01951",
+  "start": "2021-01-01",
+  "end": "2026-08-14",
+  "overall": {
+    "n": 294,
+    "total_return": -0.809087,
+    "annualized_return": -0.253894,
+    "sharpe": -0.5513,
+    "max_drawdown": -0.840668,
+    "win_rate": 0.4046,
+    "profit_factor": 0.7367
+  },
+  "by_year": [
+    {
+      "year": 2021,
+      "n": 53,
+      "total_return": -0.632334,
+      "annualized_return": -0.625327,
+      "sharpe": -1.5767,
+      "max_drawdown": -0.632334,
+      "win_rate": 0.3396,
+      "profit_factor": 0.5476
+    },
+    {
+      "year": 2022,
+      "n": 52,
+      "total_return": -0.159878,
+      "annualized_return": -0.159878,
+      "sharpe": 0.0502,
+      "max_drawdown": -0.59423,
+      "win_rate": 0.3846,
+      "profit_factor": 1.0177
+    },
+    {
+      "year": 2023,
+      "n": 52,
+      "total_return": -0.374184,
+      "annualized_return": -0.374184,
+      "sharpe": -1.0735,
+      "max_drawdown": -0.415302,
+      "win_rate": 0.1923,
+      "profit_factor": 0.4931
+    },
+    {
+      "year": 2024,
+      "n": 52,
+      "total_return": 0.0,
+      "annualized_return": 0.0,
+      "sharpe": NaN,
+      "max_drawdown": 0.0,
+      "win_rate": 0.0,
+      "profit_factor": NaN
+    },
+    {
+      "year": 2025,
+      "n": 52,
+      "total_return": -0.012926,
+      "annualized_return": -0.012926,
+      "sharpe": -0.1973,
+      "max_drawdown": -0.03854,
+      "win_rate": 0.0385,
+      "profit_factor": 0.8124
+    },
+    {
+      "year": 2026,
+      "n": 33,
+      "total_return": 0.000559,
+      "annualized_return": 0.000882,
+      "sharpe": 0.0424,
+      "max_drawdown": -0.022164,
+      "win_rate": 0.0909,
+      "profit_factor": 1.0268
+    }
+  ],
+  "by_market_regime": [
+    {
+      "market_regime": "risk_on",
+      "n": 69,
+      "total_return": 0.093826,
+      "annualized_return": 0.069922,
+      "sharpe": 0.3876,
+      "max_drawdown": -0.185113,
+      "win_rate": 0.1304,
+      "profit_factor": 1.3765
+    },
+    {
+      "market_regime": "neutral",
+      "n": 42,
+      "total_return": 0.276015,
+      "annualized_return": 0.352257,
+      "sharpe": 1.3305,
+      "max_drawdown": -0.102917,
+      "win_rate": 0.3095,
+      "profit_factor": 1.9948
+    },
+    {
+      "market_regime": "risk_off",
+      "n": 183,
+      "total_return": -0.863217,
+      "annualized_return": -0.431801,
+      "sharpe": -1.0273,
+      "max_drawdown": -0.887949,
+      "win_rate": 0.1694,
+      "profit_factor": 0.5925
+    },
+    {
+      "market_regime": "ALL",
+      "n": 294,
+      "total_return": -0.809087,
+      "annualized_return": -0.253894,
+      "sharpe": -0.5513,
+      "max_drawdown": -0.840668,
+      "win_rate": 0.1803,
+      "profit_factor": 0.736
+    }
+  ],
+  "expanding_windows": [
+    {
+      "window": "20210101-20230101",
+      "window_start": "2021-01-01",
+      "window_end": "2023-01-01",
+      "n": 105,
+      "total_return": -0.691116,
+      "annualized_return": -0.441108,
+      "sharpe": -0.6747,
+      "max_drawdown": -0.840668,
+      "win_rate": 0.3918,
+      "profit_factor": 0.7817
+    },
+    {
+      "window": "20210101-20240101",
+      "window_start": "2021-01-01",
+      "window_end": "2024-01-01",
+      "n": 157,
+      "total_return": -0.806695,
+      "annualized_return": -0.419775,
+      "sharpe": -0.7522,
+      "max_drawdown": -0.840668,
+      "win_rate": 0.4103,
+      "profit_factor": 0.7321
+    },
+    {
+      "window": "20210101-20241231",
+      "window_start": "2021-01-01",
+      "window_end": "2024-12-31",
+      "n": 209,
+      "total_return": -0.806695,
+      "annualized_return": -0.335623,
+      "sharpe": -0.651,
+      "max_drawdown": -0.840668,
+      "win_rate": 0.4103,
+      "profit_factor": 0.7321
+    },
+    {
+      "window": "20210101-20251231",
+      "window_start": "2021-01-01",
+      "window_end": "2025-12-31",
+      "n": 261,
+      "total_return": -0.809194,
+      "annualized_return": -0.281098,
+      "sharpe": -0.5865,
+      "max_drawdown": -0.840668,
+      "win_rate": 0.4065,
+      "profit_factor": 0.7332
+    }
+  ]
+}

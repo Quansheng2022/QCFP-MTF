@@ -1,0 +1,98 @@
+{
+  "decision_id": "00371_2026-08-21",
+  "stock_code": "00371",
+  "decision_date": "2026-08-21",
+  "institutional_state": "NEUTRAL",
+  "institutional_permission": "WATCH",
+  "permission_cap": "TESTING",
+  "exit_event_kind": "HARD_EXIT",
+  "exit_event_reason": "des_ge_threshold",
+  "setup_type": "NONE",
+  "prev_fsm_state": "EXITING",
+  "next_fsm_state": "EXITING",
+  "previous_position": 0.0,
+  "target_position": 0.0,
+  "decision_path": [
+    "evidence",
+    "institutional",
+    "exit_events",
+    "setup",
+    "participation_budget",
+    "fsm",
+    "sizing",
+    "permission_cap",
+    "trade_quality",
+    "governance",
+    "final_target"
+  ],
+  "rule_version": "GOV-2.5.0",
+  "model_version": "QCFP-MTF-2.5.0",
+  "schema_version": "DECISION-1.1",
+  "base_fsm_state": "EXITING",
+  "raw_target_position": 0.0,
+  "permission_constraint_applied": false,
+  "override_rule_ids": [
+    "hard_exit"
+  ],
+  "input_fingerprint": "a24de6cdd9fe42c8",
+  "settings_hash": "b32234659953",
+  "institutional_pressure": 0,
+  "institutional_persistence": 0,
+  "institutional_reasons": [],
+  "context": {
+    "structural_regime": "STRUCTURAL_BULLISH",
+    "mtf_regime": "BULLISH_WARNING",
+    "market_context": "risk_on",
+    "daily_trigger": "DAILY_DECLINE",
+    "data_quality": "C",
+    "participation": {
+      "mode": "STAND",
+      "cap": 0.0,
+      "reason": "watch_no_setup_or_high_risk"
+    },
+    "position_class": "NONE",
+    "pit_grade": "C",
+    "evidence_grade": "C",
+    "grade_reasons": [
+      "dq=C",
+      "estimated_period_end_lag"
+    ],
+    "trace": {
+      "institutional": [
+        "base"
+      ],
+      "exit": "HARD_EXIT",
+      "setup": "NONE",
+      "participation": "STAND",
+      "fsm": [
+        "hard_exit"
+      ],
+      "sizing_raw": 0.0,
+      "permission_cap": 0.0,
+      "trade_quality": 19.0,
+      "governance": "PASSED"
+    },
+    "config": {
+      "permission": true,
+      "soft_exit": true,
+      "hard_exit": true,
+      "daily": true,
+      "budget": true
+    }
+  },
+  "primary_reason": "HARD_EXIT",
+  "secondary_reasons": [
+    "FUND_FLOW_NEGATIVE",
+    "PRICE_DECLINE"
+  ],
+  "run_id": "shadow_20260825_235949",
+  "participation_mode": "STAND",
+  "participation_cap": 0.0,
+  "position_class": "NONE",
+  "exit_severity": 3,
+  "feature_manifest_hash": "ed8b6eceb02a5815",
+  "trade_quality": 19.0,
+  "trade_quality_band": "Noise",
+  "pit_grade": "",
+  "evidence_grade": ""
+}

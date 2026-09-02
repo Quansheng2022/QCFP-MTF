@@ -1,0 +1,34 @@
+{
+  "generated_at": "2026-08-26 23:59:07",
+  "certification": {
+    "certified": true,
+    "status": "CERTIFIED",
+    "dimensions": {
+      "no_override": {
+        "label": "不可越权",
+        "ok": true,
+        "missing": []
+      },
+      "auditable": {
+        "label": "可审计",
+        "ok": true,
+        "missing": []
+      },
+      "backtestable": {
+        "label": "可回测",
+        "ok": true,
+        "missing": []
+      },
+      "ablatable": {
+        "label": "可Ablation",
+        "ok": true,
+        "missing": []
+      },
+      "retail_practical": {
+        "label": "牛散实战",
+        "ok": true,
+        "missing": []
+      }
+    }
+  }
+}

@@ -1,0 +1,101 @@
+{
+  "base_identity": {
+    "input_fingerprint": "INPUT-A",
+    "institutional_permission": "ALLOW",
+    "wave_id": "W1",
+    "wave_stage": "ACTIVE",
+    "wave_strength": 1.0,
+    "setup_type": "BREAKOUT",
+    "prev_fsm_state": "HOLDING",
+    "fsm_proposal_target": 0.35,
+    "wave_proposal_target": 0.3,
+    "next_fsm_state": "BUILDING",
+    "exit_event_kind": "NONE",
+    "participation_mode": "TRADE",
+    "participation_cap": 0.5,
+    "governance_caps": {
+      "risk_cap": 0.3,
+      "portfolio_cap": 0.4
+    },
+    "binding_constraint": "permission_cap",
+    "target_position": 0.3,
+    "canonical_action": "ADD",
+    "model_version": "M1",
+    "rule_version": "R1",
+    "schema_version": "S1",
+    "settings_hash": "CFG-1",
+    "release_id": "REL-A",
+    "release_manifest_hash": "RM-A",
+    "evidence_pack_hash": "EV-A",
+    "data_snapshot_id": "DATA-A",
+    "universe_snapshot_id": "UNI-A",
+    "participating_feature_hash": "PF-A",
+    "feature_manifest_hash": "FEAT-1"
+  },
+  "identical_identity_stable": true,
+  "mutations": {
+    "config_settings_hash": {
+      "mutated_field": "settings_hash",
+      "expected": "HASH_MUST_CHANGE",
+      "changed": true,
+      "pass": true
+    },
+    "final_target": {
+      "mutated_field": "target_position",
+      "expected": "HASH_MUST_CHANGE",
+      "changed": true,
+      "pass": true
+    },
+    "binding_constraint": {
+      "mutated_field": "binding_constraint",
+      "expected": "HASH_MUST_CHANGE",
+      "changed": true,
+      "pass": true
+    },
+    "permission": {
+      "mutated_field": "institutional_permission",
+      "expected": "HASH_MUST_CHANGE",
+      "changed": true,
+      "pass": true
+    },
+    "wave_identity": {
+      "mutated_field": "wave_id",
+      "expected": "HASH_MUST_CHANGE",
+      "changed": true,
+      "pass": true
+    },
+    "release_id": {
+      "mutated_field": "release_id",
+      "expected": "HASH_MUST_CHANGE",
+      "changed": true,
+      "pass": true
+    },
+    "evidence_pack_hash": {
+      "mutated_field": "evidence_pack_hash",
+      "expected": "HASH_MUST_CHANGE",
+      "changed": true,
+      "pass": true
+    },
+    "data_snapshot_id": {
+      "mutated_field": "data_snapshot_id",
+      "expected": "HASH_MUST_CHANGE",
+      "changed": true,
+      "pass": true
+    },
+    "universe_snapshot_id": {
+      "mutated_field": "universe_snapshot_id",
+      "expected": "HASH_MUST_CHANGE",
+      "changed": true,
+      "pass": true
+    }
+  },
+  "mutation_failures": [],
+  "helper": {
+    "same_identity_diff_hash": "DETERMINISM_FAILURE",
+    "diff_identity_same_hash": "PATH_HASH_DRIFT"
+  },
+  "constant_hash_attack_blocked": true,
+  "pass": true,
+  "verdict": "PATH_HASH_PASS",
+  "rule": "identity drift 必须被 PathHash 感知；constant hash 必须被拦截"
+}

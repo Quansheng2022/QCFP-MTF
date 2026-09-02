@@ -1,0 +1,9 @@
+{
+  "cases_executed": 12,
+  "expected_cases": 12,
+  "missing_cases": [],
+  "failure_escaped": [],
+  "failure_escaped_count": 0,
+  "verdict": "RELEASE_QUALIFIED",
+  "pass": true
+}

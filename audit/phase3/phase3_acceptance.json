@@ -1,0 +1,713 @@
+{
+  "schema": "PHASE3-ACCEPTANCE-2",
+  "generated_at_utc": "2026-09-02T09:29:05Z",
+  "gates": {
+    "CHAIN_CONFORMANCE": {
+      "gate": "CHAIN_CONFORMANCE",
+      "status": "PASS",
+      "verdict": "CHAIN_CONFORMANT",
+      "problems": [],
+      "evidence": {
+        "gate": "CHAIN_CONFORMANCE",
+        "runtime_source": "OBSERVED_CALL_TRACE",
+        "observed_runtime_path": [
+          "evidence",
+          "institutional",
+          "exit_events",
+          "setup",
+          "participation_budget",
+          "wave",
+          "fsm",
+          "sizing",
+          "trade_quality",
+          "final_target"
+        ],
+        "snapshot_declared_path": [
+          "evidence",
+          "institutional",
+          "exit_events",
+          "setup",
+          "participation_budget",
+          "wave",
+          "fsm",
+          "sizing",
+          "permission_cap",
+          "trade_quality",
+          "governance",
+          "final_target"
+        ],
+        "runtime_snapshot_match": true,
+        "wave_sub_gate_observed": true,
+        "normalized_runtime_path": [
+          "evidence",
+          "institutional",
+          "exit_events",
+          "setup",
+          "participation_budget",
+          "wave",
+          "fsm",
+          "sizing",
+          "trade_quality",
+          "governance",
+          "final_target"
+        ],
+        "normalized_snapshot_path": [
+          "evidence",
+          "institutional",
+          "exit_events",
+          "setup",
+          "participation_budget",
+          "wave",
+          "fsm",
+          "sizing",
+          "trade_quality",
+          "governance",
+          "final_target"
+        ],
+        "observed_canonical_stage_path": [
+          "INPUT",
+          "PERMISSION",
+          "OPPORTUNITY",
+          "LIFECYCLE",
+          "GOVERNANCE"
+        ],
+        "snapshot_canonical_stage_path": [
+          "INPUT",
+          "PERMISSION",
+          "OPPORTUNITY",
+          "LIFECYCLE",
+          "GOVERNANCE"
+        ],
+        "canonical_stage_path": [
+          "INPUT",
+          "PERMISSION",
+          "OPPORTUNITY",
+          "LIFECYCLE",
+          "GOVERNANCE",
+          "OUTPUT",
+          "FACT",
+          "VALIDATION"
+        ],
+        "expected_canonical_stage_path": [
+          "INPUT",
+          "PERMISSION",
+          "OPPORTUNITY",
+          "LIFECYCLE",
+          "GOVERNANCE",
+          "OUTPUT",
+          "FACT",
+          "VALIDATION"
+        ],
+        "missing_stages": [],
+        "reverse_edges": [],
+        "status": "PASS",
+        "verdict": "CHAIN_CONFORMANT",
+        "problems": []
+      },
+      "priority": "P0"
+    },
+    "CANONICAL_PATH": {
+      "gate": "CANONICAL_PATH",
+      "status": "PASS",
+      "verdict": "PATH_CONFORMANT",
+      "problems": [],
+      "evidence": {
+        "canonical_root": "decision.engine.evaluate",
+        "canonical_roots": 1,
+        "second_canonical_roots": [],
+        "recursive_findings": [
+          {
+            "module": "decision.engine",
+            "function": "evaluate",
+            "file": "decision/engine.py",
+            "classification": "CANONICAL",
+            "tokens": [
+              "DecisionSnapshot",
+              "final_target",
+              "canonical_action"
+            ]
+          }
+        ],
+        "research_only_roots": [],
+        "report_recompute": [],
+        "script_recompute": [],
+        "recompute_scan": {
+          "report_scan": "rglob(*.py) AST",
+          "scripts_scan": "rglob(*.py) AST",
+          "orchestrator_allowlist": [
+            "scripts/canonical_audit.py",
+            "scripts/counterfactual_replay.py",
+            "scripts/permission_fsm_ablation.py",
+            "scripts/replay_certify.py",
+            "scripts/shadow_live.py",
+            "scripts/shadow_mode.py",
+            "scripts/shadow_universe.py"
+          ]
+        },
+        "final_target_writer": [
+          "decision/engine.py"
+        ],
+        "final_target_authority": [
+          "decision.governance"
+        ],
+        "final_target_writers": 1
+      },
+      "priority": "P0"
+    },
+    "RUNTIME_INVARIANTS": {
+      "gate": "RUNTIME_INVARIANTS",
+      "status": "PASS",
+      "verdict": "RUNTIME_INVARIANTS_PASS",
+      "problems": [],
+      "evidence": {
+        "invariants": {
+          "P3-INV-01": {
+            "name": "Signal cannot upgrade Permission",
+            "permission": "BLOCK",
+            "target": 0.0,
+            "pass": true
+          },
+          "P3-INV-02": {
+            "name": "Wave cannot upgrade Permission",
+            "permission": "BLOCK",
+            "target": 0.0,
+            "pass": true
+          },
+          "P3-INV-03": {
+            "name": "Proposal != Final Decision",
+            "raw_target": 0.1,
+            "final_target": 0.064,
+            "governance_proof": "PASS",
+            "pass": true
+          },
+          "P3-INV-04": {
+            "name": "FSM cannot directly own FinalTarget",
+            "decision_path": [
+              "evidence",
+              "institutional",
+              "exit_events",
+              "setup",
+              "participation_budget",
+              "wave",
+              "fsm",
+              "sizing",
+              "permission_cap",
+              "trade_quality",
+              "governance",
+              "final_target"
+            ],
+            "pass": true
+          },
+          "P3-INV-05": {
+            "name": "FinalTarget only from Governance",
+            "final_target_writer": [
+              "decision/engine.py"
+            ],
+            "pass": true
+          },
+          "P3-INV-06": {
+            "name": "Downstream risk cannot increase",
+            "raw_target": 0.1,
+            "final_target": 0.064,
+            "pass": true
+          },
+          "P3-INV-07": {
+            "name": "Hard Exit overrides bullish proposals",
+            "exit_event": "HARD_EXIT",
+            "primary_reason": "HARD_EXIT",
+            "target": 0.0,
+            "pass": true
+          }
+        },
+        "failed": [],
+        "pass": true,
+        "verdict": "RUNTIME_INVARIANTS_PASS"
+      },
+      "priority": "P0"
+    },
+    "DECISION_IDENTITY": {
+      "gate": "DECISION_IDENTITY",
+      "status": "PASS",
+      "verdict": "IDENTITY_PASS",
+      "problems": [],
+      "evidence": {
+        "checks": {
+          "full_identity_commit": {
+            "expected": "COMMIT_OK",
+            "actual": "COMMIT_OK",
+            "pass": true
+          },
+          "missing_release_rejected": {
+            "expected": "LedgerCommitRejected",
+            "actual": "LedgerCommitRejected: LedgerCommitGate: ['I6_RELEASE_ID', 'I6_RELEASE_MANIFEST_HASH']",
+            "pass": true
+          },
+          "full_evidence_certified": {
+            "expected": "CERTIFIED",
+            "actual": "CERTIFIED",
+            "pass": true
+          },
+          "missing_evidence_not_certified": {
+            "expected": "NOT_CERTIFIED",
+            "actual": "NOT_CERTIFIED",
+            "pass": true
+          }
+        },
+        "pass": true,
+        "verdict": "IDENTITY_PASS"
+      },
+      "priority": "P0"
+    },
+    "E2E_DETERMINISM": {
+      "gate": "E2E_DETERMINISM",
+      "status": "PASS",
+      "verdict": "DETERMINISTIC",
+      "problems": [],
+      "evidence": {
+        "mismatches": [],
+        "deterministic": true,
+        "pass": true,
+        "verdict": "DETERMINISTIC",
+        "compare_mode": "EXACT（无 approximately equal / tolerance）",
+        "fields_compared": 12
+      },
+      "priority": "P0"
+    },
+    "PATH_HASH": {
+      "gate": "PATH_HASH",
+      "status": "PASS",
+      "verdict": "PATH_HASH_PASS",
+      "problems": [],
+      "evidence": {
+        "base_identity": {
+          "input_fingerprint": "INPUT-A",
+          "institutional_permission": "ALLOW",
+          "wave_id": "W1",
+          "wave_stage": "ACTIVE",
+          "wave_strength": 1.0,
+          "setup_type": "BREAKOUT",
+          "prev_fsm_state": "HOLDING",
+          "fsm_proposal_target": 0.35,
+          "wave_proposal_target": 0.3,
+          "next_fsm_state": "BUILDING",
+          "exit_event_kind": "NONE",
+          "participation_mode": "TRADE",
+          "participation_cap": 0.5,
+          "governance_caps": {
+            "risk_cap": 0.3,
+            "portfolio_cap": 0.4
+          },
+          "binding_constraint": "permission_cap",
+          "target_position": 0.3,
+          "canonical_action": "ADD",
+          "model_version": "M1",
+          "rule_version": "R1",
+          "schema_version": "S1",
+          "settings_hash": "CFG-1",
+          "release_id": "REL-A",
+          "release_manifest_hash": "RM-A",
+          "evidence_pack_hash": "EV-A",
+          "data_snapshot_id": "DATA-A",
+          "universe_snapshot_id": "UNI-A",
+          "participating_feature_hash": "PF-A",
+          "feature_manifest_hash": "FEAT-1"
+        },
+        "identical_identity_stable": true,
+        "mutations": {
+          "config_settings_hash": {
+            "mutated_field": "settings_hash",
+            "expected": "HASH_MUST_CHANGE",
+            "changed": true,
+            "pass": true
+          },
+          "final_target": {
+            "mutated_field": "target_position",
+            "expected": "HASH_MUST_CHANGE",
+            "changed": true,
+            "pass": true
+          },
+          "binding_constraint": {
+            "mutated_field": "binding_constraint",
+            "expected": "HASH_MUST_CHANGE",
+            "changed": true,
+            "pass": true
+          },
+          "permission": {
+            "mutated_field": "institutional_permission",
+            "expected": "HASH_MUST_CHANGE",
+            "changed": true,
+            "pass": true
+          },
+          "wave_identity": {
+            "mutated_field": "wave_id",
+            "expected": "HASH_MUST_CHANGE",
+            "changed": true,
+            "pass": true
+          },
+          "release_id": {
+            "mutated_field": "release_id",
+            "expected": "HASH_MUST_CHANGE",
+            "changed": true,
+            "pass": true
+          },
+          "evidence_pack_hash": {
+            "mutated_field": "evidence_pack_hash",
+            "expected": "HASH_MUST_CHANGE",
+            "changed": true,
+            "pass": true
+          },
+          "data_snapshot_id": {
+            "mutated_field": "data_snapshot_id",
+            "expected": "HASH_MUST_CHANGE",
+            "changed": true,
+            "pass": true
+          },
+          "universe_snapshot_id": {
+            "mutated_field": "universe_snapshot_id",
+            "expected": "HASH_MUST_CHANGE",
+            "changed": true,
+            "pass": true
+          }
+        },
+        "mutation_failures": [],
+        "helper": {
+          "same_identity_diff_hash": "DETERMINISM_FAILURE",
+          "diff_identity_same_hash": "PATH_HASH_DRIFT"
+        },
+        "constant_hash_attack_blocked": true,
+        "pass": true,
+        "verdict": "PATH_HASH_PASS",
+        "rule": "identity drift 必须被 PathHash 感知；constant hash 必须被拦截"
+      },
+      "priority": "P0"
+    },
+    "LEDGER": {
+      "gate": "LEDGER",
+      "status": "PASS",
+      "verdict": "LEDGER_PASS",
+      "problems": [],
+      "evidence": {
+        "checks": {
+          "append_only": true,
+          "no_update": true,
+          "no_delete": true,
+          "strict_identity_lookup": true,
+          "chain_tamper_detected": true
+        },
+        "pass": true,
+        "verdict": "LEDGER_PASS"
+      },
+      "priority": "P0"
+    },
+    "REPLAY": {
+      "gate": "REPLAY",
+      "status": "PASS",
+      "verdict": "REPLAY_PASS",
+      "problems": [],
+      "evidence": {
+        "checks": {
+          "exact_replay": {
+            "verdict": "EXACT_MATCH",
+            "pass": true
+          },
+          "tamper_detected": {
+            "verdict": "REPLAY_MISMATCH",
+            "pass": true
+          },
+          "deterministic": {
+            "verdict": "DETERMINISTIC",
+            "pass": true
+          },
+          "mismatch_fail_closed": {
+            "verdict": "DETERMINISM_FAILURE",
+            "pass": true
+          }
+        },
+        "pass": true,
+        "verdict": "REPLAY_PASS"
+      },
+      "priority": "P0"
+    },
+    "REPORT_PROJECTION": {
+      "gate": "REPORT_PROJECTION",
+      "status": "PASS",
+      "verdict": "REPORT_PROJECTION_PASS",
+      "problems": [],
+      "evidence": {
+        "checks": {
+          "report_equals_ledger": {
+            "ok": true,
+            "mismatches": []
+          },
+          "report_rewrite_rejected": {
+            "ok": true,
+            "mismatches": [
+              "Report 违反 Ledger-only 契约（报告重算了决策）：target_position=0.15 vs ledger.final_target=0.05"
+            ]
+          },
+          "adapter_no_recompute": {
+            "forbidden_imports": []
+          }
+        },
+        "pass": true,
+        "verdict": "REPORT_PROJECTION_PASS"
+      },
+      "priority": "P0"
+    },
+    "GOLDEN": {
+      "gate": "GOLDEN",
+      "status": "PASS",
+      "verdict": "GOLDEN_PASS",
+      "problems": [],
+      "evidence": {
+        "corpus_version": "GOLDEN-CONSTITUTION-1",
+        "n_cases": 14,
+        "n_failed": 0,
+        "failed_cases": [],
+        "coverage": {
+          "permissions": [
+            "ALLOW",
+            "BLOCK",
+            "STRONG_ALLOW",
+            "TEST",
+            "WATCH"
+          ],
+          "waves": [
+            "ACTIVE",
+            "DISCOVERY",
+            "INVALID",
+            "MATURE"
+          ],
+          "events": [
+            "HARD_EXIT",
+            "LIQUIDITY_CAP",
+            "NONE",
+            "PIT_FAILURE",
+            "PORTFOLIO_CAP",
+            "REPLAY_FAILURE",
+            "SAFE_MODE"
+          ],
+          "ok": true
+        },
+        "results": {
+          "G_BLOCK_STRONG": {
+            "case_id": "G_BLOCK_STRONG",
+            "expected": "BLOCK + target=0",
+            "actual": "BLOCK + 0.0",
+            "pass": true,
+            "detail": ""
+          },
+          "G_WATCH_OBSERVE": {
+            "case_id": "G_WATCH_OBSERVE",
+            "expected": "WATCH + 无新增风险",
+            "actual": "WATCH + 0.0",
+            "pass": true,
+            "detail": ""
+          },
+          "G_TEST_LIMITED": {
+            "case_id": "G_TEST_LIMITED",
+            "expected": "TEST + 限额定仓",
+            "actual": "TEST + 0.064",
+            "pass": true,
+            "detail": ""
+          },
+          "G_ALLOW_TRADE": {
+            "case_id": "G_ALLOW_TRADE",
+            "expected": "ALLOW + 可交易",
+            "actual": "perm=ALLOW engine_perm=ALLOW target=0.064 action=ENTRY",
+            "pass": true,
+            "detail": "标准输入 ACCUMULATION+p1 命中 RECOVERY→TEST；ALLOW 经组件状态机与引擎 override 验证"
+          },
+          "G_STRONG_ALLOW": {
+            "case_id": "G_STRONG_ALLOW",
+            "expected": "STRONG_ALLOW + 可交易",
+            "actual": "STRONG_ALLOW + 0.064",
+            "pass": true,
+            "detail": ""
+          },
+          "G_WAVE_DISCOVERY": {
+            "case_id": "G_WAVE_DISCOVERY",
+            "expected": "DISCOVERY 禁止进场",
+            "actual": "wave_allowed=False target=0.0",
+            "pass": true,
+            "detail": ""
+          },
+          "G_WAVE_MATURE": {
+            "case_id": "G_WAVE_MATURE",
+            "expected": "MATURE 按比例缩仓",
+            "actual": "scale=0.5 target=0.032",
+            "pass": true,
+            "detail": ""
+          },
+          "G_WAVE_INVALID": {
+            "case_id": "G_WAVE_INVALID",
+            "expected": "INVALID 禁止进场",
+            "actual": "wave_allowed=False target=0.0",
+            "pass": true,
+            "detail": ""
+          },
+          "G_HARD_EXIT": {
+            "case_id": "G_HARD_EXIT",
+            "expected": "HARD_EXIT 覆盖一切看多",
+            "actual": "HARD_EXIT + 0.0",
+            "pass": true,
+            "detail": ""
+          },
+          "G_LIQUIDITY_BINDING": {
+            "case_id": "G_LIQUIDITY_BINDING",
+            "expected": "liquidity_cap binding",
+            "actual": "target=0.2",
+            "pass": true,
+            "detail": ""
+          },
+          "G_PORTFOLIO_BINDING": {
+            "case_id": "G_PORTFOLIO_BINDING",
+            "expected": "portfolio_cap binding",
+            "actual": "target=0.25",
+            "pass": true,
+            "detail": ""
+          },
+          "G_PIT_FAILURE": {
+            "case_id": "G_PIT_FAILURE",
+            "expected": "PIT invalid → 拒绝",
+            "actual": "EvidenceContractError",
+            "pass": true,
+            "detail": ""
+          },
+          "G_REPLAY_FAILURE": {
+            "case_id": "G_REPLAY_FAILURE",
+            "expected": "Replay mismatch → REPLAY_MISMATCH",
+            "actual": "REPLAY_MISMATCH",
+            "pass": true,
+            "detail": ""
+          },
+          "G_SAFE_MODE": {
+            "case_id": "G_SAFE_MODE",
+            "expected": "SAFE_MODE 禁止新增风险",
+            "actual": "SAFE_MODE blocked=SAFE_MODE_NEW_RISK_BLOCKED",
+            "pass": true,
+            "detail": "",
+            "drawdown": "SAFE_MODE"
+          }
+        },
+        "hash_change_requires_review": true,
+        "unexplained_change_blocked": true,
+        "pass": true,
+        "verdict": "GOLDEN_PASS"
+      },
+      "priority": "P0"
+    },
+    "FAILURE_INJECTION": {
+      "gate": "FAILURE_INJECTION",
+      "status": "PASS",
+      "verdict": "RELEASE_QUALIFIED",
+      "problems": [],
+      "evidence": {
+        "cases_executed": 12,
+        "expected_cases": 12,
+        "missing_cases": [],
+        "failure_escaped": [],
+        "failure_escaped_count": 0,
+        "verdict": "RELEASE_QUALIFIED",
+        "pass": true
+      },
+      "priority": "P0"
+    },
+    "REGRESSION": {
+      "gate": "REGRESSION",
+      "status": "PASS",
+      "verdict": "REGRESSION_PASS",
+      "problems": [],
+      "evidence": {
+        "schema": "PHASE3-REGRESSION-2",
+        "generated_by": "TEST_SYSTEM",
+        "generated_at_utc": "2026-09-02T09:27:47Z",
+        "python": "C:\\Users\\Quansheng\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "required_suites": [
+          "phase3",
+          "decision",
+          "governance",
+          "full_core"
+        ],
+        "missing_suites": [],
+        "suites": {
+          "phase3": {
+            "status": "PASS",
+            "exit_code": 0,
+            "collected": 34,
+            "passed": 34,
+            "failed": 0,
+            "errors": 0,
+            "skipped": 0,
+            "failure_classification": "PASS",
+            "failures": []
+          },
+          "decision": {
+            "status": "PASS",
+            "exit_code": 0,
+            "collected": 430,
+            "passed": 430,
+            "failed": 0,
+            "errors": 0,
+            "skipped": 0,
+            "failure_classification": "PASS",
+            "failures": []
+          },
+          "governance": {
+            "status": "PASS",
+            "exit_code": 0,
+            "collected": 565,
+            "passed": 565,
+            "failed": 0,
+            "errors": 0,
+            "skipped": 0,
+            "failure_classification": "PASS",
+            "failures": []
+          },
+          "full_core": {
+            "status": "PASS",
+            "exit_code": 0,
+            "collected": 2009,
+            "passed": 2009,
+            "failed": 0,
+            "errors": 0,
+            "skipped": 0,
+            "failure_classification": "PASS",
+            "failures": []
+          }
+        },
+        "verdict": "PASS",
+        "rule": "Judge 只消费本文件；缺失 required suite / ENVIRONMENT_BLOCKED / INCOMPLETE → NOT_PROVEN；任何 suite FAIL → PHASE3_FAIL；skipped 不计为 passed；PASS 要求 skipped=0",
+        "extra_suites": []
+      },
+      "priority": "P1"
+    },
+    "FROZEN_BASELINE": {
+      "gate": "FROZEN_BASELINE",
+      "status": "PASS",
+      "verdict": "BASELINE_PASS",
+      "problems": [],
+      "evidence": {
+        "verdict": "BASELINE_PASS",
+        "pass": true,
+        "gate": "BASELINE_GATE",
+        "baseline_id": "GOV-BASELINE-4",
+        "rule": "Baseline 重算 == Frozen Baseline"
+      },
+      "priority": "P0"
+    }
+  },
+  "failures": [],
+  "missing_evidence": [],
+  "freeze_record": {
+    "second_canonical_path": 0,
+    "known_decision_bypass": 0,
+    "open_p0": 0,
+    "open_p1": 0,
+    "missing_required_evidence": 0,
+    "rule": "Freeze Stamp 只投影事实；Human Approval 后才 FROZEN"
+  },
+  "freeze_state": "FREEZE_CANDIDATE",
+  "pass": true,
+  "verdict": "PHASE3_PASS"
+}

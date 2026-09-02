@@ -1,0 +1,8 @@
+﻿stock_code,stock_name,period_end,structural_regime,core_score,data_quality,resolve_method,institutional_flow,chip_flow_price_regime,regime_dir,chip_dir,agree,method
+01951,锦鑫生殖,2021-06-30,STRUCTURAL_ACCUMULATION,70.0,C,hold_unmapped,186088480.0,多头共振,bull,bull,True,hold_unmapped
+01951,锦鑫生殖,2022-06-30,STRUCTURAL_ACCUMULATION,70.0,C,hold_unmapped,64357020.0,派发反弹,bull,bear,False,hold_unmapped
+01951,锦鑫生殖,2023-09-30,STRUCTURAL_DECLINE,20.0,C,hold_unmapped,-38255540.0,资金流出下跌,bear,bear,True,hold_unmapped
+01951,锦鑫生殖,2024-09-30,STRUCTURAL_DECLINE,20.0,C,hold_unmapped,74090010.0,资金流出反弹,bear,bear,True,hold_unmapped
+01951,锦鑫生殖,2025-03-31,STRUCTURAL_DECLINE,20.0,C,hold_unmapped,253756030.0,派发反弹,bear,bear,True,hold_unmapped
+01951,锦鑫生殖,2026-03-31,STRUCTURAL_DECLINE,20.0,C,hold_unmapped,-14294980.0,资金流出下跌,bear,bear,True,hold_unmapped
+01951,锦鑫生殖,2026-06-30,STRUCTURAL_DECLINE,20.0,C,hold_unmapped,-13620830.0,吸筹回调,bear,bull,False,hold_unmapped

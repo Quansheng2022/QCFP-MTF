@@ -1,0 +1,393 @@
+{
+  "generated_at": "20260820_181832",
+  "horizons": [
+    4,
+    13,
+    26
+  ],
+  "factors": {
+    "C 因子(机构持股环比)": {
+      "fwd_4w": {
+        "n": 290,
+        "mean_ic": -0.0044,
+        "std_ic": 0.3205,
+        "icir": -0.0137,
+        "positive_ratio": 0.469
+      },
+      "fwd_13w": {
+        "n": 281,
+        "mean_ic": 0.0445,
+        "std_ic": 0.2875,
+        "icir": 0.1548,
+        "positive_ratio": 0.5979
+      },
+      "fwd_26w": {
+        "n": 268,
+        "mean_ic": 0.083,
+        "std_ic": 0.2537,
+        "icir": 0.3272,
+        "positive_ratio": 0.6119
+      }
+    },
+    "F 因子(资金Z)": {
+      "fwd_4w": {
+        "n": 192,
+        "mean_ic": 0.0178,
+        "std_ic": 0.2953,
+        "icir": 0.0603,
+        "positive_ratio": 0.5208
+      },
+      "fwd_13w": {
+        "n": 183,
+        "mean_ic": 0.061,
+        "std_ic": 0.3054,
+        "icir": 0.1996,
+        "positive_ratio": 0.5683
+      },
+      "fwd_26w": {
+        "n": 170,
+        "mean_ic": 0.0945,
+        "std_ic": 0.3065,
+        "icir": 0.3083,
+        "positive_ratio": 0.6647
+      }
+    },
+    "P 因子(季度收益)": {
+      "fwd_4w": {
+        "n": 290,
+        "mean_ic": -0.0039,
+        "std_ic": 0.31,
+        "icir": -0.0125,
+        "positive_ratio": 0.5034
+      },
+      "fwd_13w": {
+        "n": 281,
+        "mean_ic": -0.0556,
+        "std_ic": 0.2986,
+        "icir": -0.1861,
+        "positive_ratio": 0.4199
+      },
+      "fwd_26w": {
+        "n": 268,
+        "mean_ic": -0.1064,
+        "std_ic": 0.2627,
+        "icir": -0.405,
+        "positive_ratio": 0.3582
+      }
+    },
+    "CBI(行为代理)": {
+      "fwd_4w": {
+        "n": 290,
+        "mean_ic": 0.0603,
+        "std_ic": 0.3365,
+        "icir": 0.1791,
+        "positive_ratio": 0.6
+      },
+      "fwd_13w": {
+        "n": 281,
+        "mean_ic": 0.0983,
+        "std_ic": 0.3161,
+        "icir": 0.3109,
+        "positive_ratio": 0.6655
+      },
+      "fwd_26w": {
+        "n": 268,
+        "mean_ic": 0.1665,
+        "std_ic": 0.2825,
+        "icir": 0.5894,
+        "positive_ratio": 0.694
+      }
+    }
+  },
+  "states": {
+    "结构状态": {
+      "fwd_4w": [
+        {
+          "structural_regime": "STRUCTURAL_BOTTOM_CANDIDATE",
+          "n": 212,
+          "mean_fwd": 0.005476,
+          "median_fwd": -0.014395,
+          "hit_rate": 0.4623
+        },
+        {
+          "structural_regime": "STRUCTURAL_BULLISH",
+          "n": 521,
+          "mean_fwd": 0.001133,
+          "median_fwd": -0.016334,
+          "hit_rate": 0.428
+        },
+        {
+          "structural_regime": "STRUCTURAL_DISTRIBUTION",
+          "n": 67,
+          "mean_fwd": 0.000902,
+          "median_fwd": -0.001916,
+          "hit_rate": 0.4925
+        },
+        {
+          "structural_regime": "STRUCTURAL_DECLINE",
+          "n": 1881,
+          "mean_fwd": -0.000967,
+          "median_fwd": -0.022161,
+          "hit_rate": 0.4136
+        },
+        {
+          "structural_regime": "STRUCTURAL_ACCUMULATION",
+          "n": 838,
+          "mean_fwd": -0.002109,
+          "median_fwd": -0.01821,
+          "hit_rate": 0.4236
+        },
+        {
+          "structural_regime": "STRUCTURAL_DIVERGENCE",
+          "n": 393,
+          "mean_fwd": -0.006674,
+          "median_fwd": -0.032086,
+          "hit_rate": 0.369
+        },
+        {
+          "structural_regime": "STATE_UNDETERMINED",
+          "n": 52,
+          "mean_fwd": -0.028961,
+          "median_fwd": -0.048696,
+          "hit_rate": 0.4423
+        }
+      ],
+      "fwd_13w": [
+        {
+          "structural_regime": "STRUCTURAL_BOTTOM_CANDIDATE",
+          "n": 185,
+          "mean_fwd": 0.025524,
+          "median_fwd": -0.026667,
+          "hit_rate": 0.4216
+        },
+        {
+          "structural_regime": "STRUCTURAL_DECLINE",
+          "n": 1836,
+          "mean_fwd": -0.006466,
+          "median_fwd": -0.05039,
+          "hit_rate": 0.4074
+        },
+        {
+          "structural_regime": "STRUCTURAL_BULLISH",
+          "n": 485,
+          "mean_fwd": -0.010155,
+          "median_fwd": -0.020833,
+          "hit_rate": 0.4495
+        },
+        {
+          "structural_regime": "STRUCTURAL_ACCUMULATION",
+          "n": 829,
+          "mean_fwd": -0.016995,
+          "median_fwd": -0.042386,
+          "hit_rate": 0.3884
+        },
+        {
+          "structural_regime": "STRUCTURAL_DISTRIBUTION",
+          "n": 67,
+          "mean_fwd": -0.05741,
+          "median_fwd": -0.015195,
+          "hit_rate": 0.3881
+        },
+        {
+          "structural_regime": "STRUCTURAL_DIVERGENCE",
+          "n": 384,
+          "mean_fwd": -0.06671,
+          "median_fwd": -0.090513,
+          "hit_rate": 0.2604
+        },
+        {
+          "structural_regime": "STATE_UNDETERMINED",
+          "n": 52,
+          "mean_fwd": -0.0675,
+          "median_fwd": -0.119925,
+          "hit_rate": 0.3846
+        }
+      ],
+      "fwd_26w": [
+        {
+          "structural_regime": "STRUCTURAL_BOTTOM_CANDIDATE",
+          "n": 146,
+          "mean_fwd": 0.167552,
+          "median_fwd": 0.039824,
+          "hit_rate": 0.5411
+        },
+        {
+          "structural_regime": "STRUCTURAL_BULLISH",
+          "n": 433,
+          "mean_fwd": 0.000138,
+          "median_fwd": -0.014069,
+          "hit_rate": 0.485
+        },
+        {
+          "structural_regime": "STRUCTURAL_DECLINE",
+          "n": 1771,
+          "mean_fwd": -0.018013,
+          "median_fwd": -0.067138,
+          "hit_rate": 0.3998
+        },
+        {
+          "structural_regime": "STRUCTURAL_ACCUMULATION",
+          "n": 816,
+          "mean_fwd": -0.055018,
+          "median_fwd": -0.083817,
+          "hit_rate": 0.3382
+        },
+        {
+          "structural_regime": "STRUCTURAL_DIVERGENCE",
+          "n": 371,
+          "mean_fwd": -0.104833,
+          "median_fwd": -0.147959,
+          "hit_rate": 0.2561
+        },
+        {
+          "structural_regime": "STATE_UNDETERMINED",
+          "n": 52,
+          "mean_fwd": -0.117032,
+          "median_fwd": -0.132684,
+          "hit_rate": 0.4038
+        },
+        {
+          "structural_regime": "STRUCTURAL_DISTRIBUTION",
+          "n": 67,
+          "mean_fwd": -0.222961,
+          "median_fwd": -0.305151,
+          "hit_rate": 0.2836
+        }
+      ]
+    },
+    "MTF 状态": {
+      "fwd_4w": [
+        {
+          "mtf_regime": "BEARISH_RECOVERY_CANDIDATE",
+          "n": 6,
+          "mean_fwd": 0.021142,
+          "median_fwd": -0.035527,
+          "hit_rate": 0.3333
+        },
+        {
+          "mtf_regime": "BULLISH_WARNING",
+          "n": 662,
+          "mean_fwd": 0.002541,
+          "median_fwd": -0.027917,
+          "hit_rate": 0.4079
+        },
+        {
+          "mtf_regime": "BEARISH_CONFIRMED",
+          "n": 1942,
+          "mean_fwd": -0.000971,
+          "median_fwd": -0.018884,
+          "hit_rate": 0.4166
+        },
+        {
+          "mtf_regime": "BULLISH_STABLE",
+          "n": 1299,
+          "mean_fwd": -0.003165,
+          "median_fwd": -0.018405,
+          "hit_rate": 0.4234
+        },
+        {
+          "mtf_regime": "DATA_INSUFFICIENT",
+          "n": 349,
+          "mean_fwd": -0.007969,
+          "median_fwd": -0.02,
+          "hit_rate": 0.4269
+        },
+        {
+          "mtf_regime": "BULLISH_CONFIRMED",
+          "n": 3,
+          "mean_fwd": -0.069947,
+          "median_fwd": -0.034843,
+          "hit_rate": 0.3333
+        }
+      ],
+      "fwd_13w": [
+        {
+          "mtf_regime": "BEARISH_CONFIRMED",
+          "n": 1897,
+          "mean_fwd": -0.007996,
+          "median_fwd": -0.047757,
+          "hit_rate": 0.407
+        },
+        {
+          "mtf_regime": "BULLISH_STABLE",
+          "n": 1259,
+          "mean_fwd": -0.017226,
+          "median_fwd": -0.037267,
+          "hit_rate": 0.4059
+        },
+        {
+          "mtf_regime": "BULLISH_WARNING",
+          "n": 621,
+          "mean_fwd": -0.028775,
+          "median_fwd": -0.076923,
+          "hit_rate": 0.3317
+        },
+        {
+          "mtf_regime": "DATA_INSUFFICIENT",
+          "n": 340,
+          "mean_fwd": -0.029675,
+          "median_fwd": -0.058884,
+          "hit_rate": 0.3735
+        },
+        {
+          "mtf_regime": "BEARISH_RECOVERY_CANDIDATE",
+          "n": 6,
+          "mean_fwd": -0.091495,
+          "median_fwd": -0.073165,
+          "hit_rate": 0.3333
+        },
+        {
+          "mtf_regime": "BULLISH_CONFIRMED",
+          "n": 3,
+          "mean_fwd": -0.117073,
+          "median_fwd": -0.045296,
+          "hit_rate": 0.3333
+        }
+      ],
+      "fwd_26w": [
+        {
+          "mtf_regime": "BEARISH_RECOVERY_CANDIDATE",
+          "n": 6,
+          "mean_fwd": 0.033226,
+          "median_fwd": -0.000419,
+          "hit_rate": 0.5
+        },
+        {
+          "mtf_regime": "BULLISH_WARNING",
+          "n": 557,
+          "mean_fwd": -0.012951,
+          "median_fwd": -0.099174,
+          "hit_rate": 0.3501
+        },
+        {
+          "mtf_regime": "BEARISH_CONFIRMED",
+          "n": 1832,
+          "mean_fwd": -0.025676,
+          "median_fwd": -0.069796,
+          "hit_rate": 0.3952
+        },
+        {
+          "mtf_regime": "BULLISH_STABLE",
+          "n": 1206,
+          "mean_fwd": -0.042711,
+          "median_fwd": -0.063736,
+          "hit_rate": 0.3856
+        },
+        {
+          "mtf_regime": "DATA_INSUFFICIENT",
+          "n": 327,
+          "mean_fwd": -0.061075,
+          "median_fwd": -0.07611,
+          "hit_rate": 0.3945
+        },
+        {
+          "mtf_regime": "BULLISH_CONFIRMED",
+          "n": 3,
+          "mean_fwd": -0.180797,
+          "median_fwd": -0.219512,
+          "hit_rate": 0.0
+        }
+      ]
+    }
+  }
+}

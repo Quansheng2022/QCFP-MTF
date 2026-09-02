@@ -1,0 +1,56 @@
+{
+  "run_date": "2026-08-21",
+  "release_id": "MTR-CLOSURE-1",
+  "execution_mode": "SHADOW",
+  "shadow": {
+    "universe_count": 17,
+    "decision_count": 17,
+    "missing_stocks": [],
+    "duplicate_decisions": 0,
+    "state_counts": {
+      "CERTIFIED": 1,
+      "NO_TRADE": 15,
+      "SAFE_MODE": 0,
+      "ABSTAIN": 1,
+      "HALTED": 0
+    },
+    "verdict": "SHADOW_COVERAGE_OK"
+  },
+  "outcome_backfill": {
+    "inserted": 0,
+    "skipped": 0,
+    "errors": [],
+    "dry_run": true
+  },
+  "paper_eod_reconciliation": {
+    "expected_reconciliations": 0,
+    "actual_reconciliations": 0,
+    "reconciliation_coverage": 0.0,
+    "status": "NOT_PROVEN",
+    "reason": "qcfp_runtime_event_ledger 未迁移（SQL schema 未应用）；无法对账（fail-closed）"
+  },
+  "calibration": {
+    "dimensions": {},
+    "research_review_required": false,
+    "status": "NOT_PROVEN",
+    "reason": "qcfp_runtime_event_ledger 未迁移；无 Calibration 样本（fail-closed）"
+  },
+  "runtime_evidence": {
+    "verdict": "NOT_PROVEN",
+    "missing_sections": [],
+    "missing_required_keys": [
+      "safety:incident_count",
+      "safety:recovery_count",
+      "safety:replay_count",
+      "safety:critical_replay_mismatch",
+      "safety:reactivation_count",
+      "safety:incident_count",
+      "safety:recovery_count",
+      "safety:replay_count",
+      "safety:critical_replay_mismatch",
+      "safety:reactivation_count"
+    ],
+    "evidence_hash": "",
+    "rule": "Runtime Evidence 必须来自真实 Ledger/Event/Outcome；缺 key → NOT_PROVEN，绝不 missing → 0 → PASS"
+  }
+}

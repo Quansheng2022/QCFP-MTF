@@ -1,0 +1,15 @@
+{
+  "verdicts": {
+    "permission": "KEEP",
+    "fsm": "KEEP",
+    "soft_exit": "KEEP",
+    "hard_exit": "KEEP",
+    "daily": "KEEP",
+    "budget": "KEEP",
+    "observation": "KEEP"
+  },
+  "keep": 7,
+  "total": 7,
+  "complexity_score": 1.0,
+  "drop_candidates": []
+}

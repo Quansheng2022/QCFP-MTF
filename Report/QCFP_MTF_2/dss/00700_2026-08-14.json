@@ -1,0 +1,54 @@
+{
+  "stock_code": "00700",
+  "decision_date": "2026-08-14",
+  "model_version": "QCFP-MTF-2.1.1",
+  "structural": {
+    "regime": "STRUCTURAL_DECLINE",
+    "core_score": 20.0,
+    "evidence_level": "A-",
+    "data_quality": "B",
+    "key_drivers": [
+      "c_state: C→",
+      "f_state: F→",
+      "p_state: P↓"
+    ]
+  },
+  "stage": {
+    "monthly_state": "Stable",
+    "turnover_regime": "T5",
+    "vp_regime": "VP_EXPANSION",
+    "cbi_score": 20.81570523341336
+  },
+  "cost_position": {
+    "status": "COST_ADVANTAGE",
+    "vs_weekly_vwap": 0.027836434940538002,
+    "vs_monthly_vwap": 0.02951014248627537,
+    "vs_quarterly_vwap": 0.03038160190604189
+  },
+  "trigger": {
+    "signal": "Consolidation",
+    "breakout": false,
+    "breakdown": false,
+    "volume_spike": false
+  },
+  "confidence": {
+    "chip_stability_confidence": "Low",
+    "structure_behavior_alignment": "Aligned",
+    "evidence_summary": "结构:STRUCTURAL_DECLINE(A/A-); 阶段:Stable(B); 触发:Consolidation(C); 置信度:Low"
+  },
+  "risk": {
+    "risk_level": "Extreme",
+    "divergence_detected": false,
+    "key_risks": [
+      "Extreme"
+    ],
+    "anti_inference_check": "PASSED"
+  },
+  "decision": {
+    "mtf_regime": "BEARISH_CONFIRMED",
+    "action": "EXIT",
+    "action_detail": "多周期退潮，坚决回避/离场",
+    "position_advice": "0%",
+    "stop_loss_trigger": "空仓观望"
+  }
+}
