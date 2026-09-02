@@ -1,0 +1,10 @@
+{
+  "verdict": "BASELINE_PASS",
+  "pass": true,
+  "gate": "BASELINE_GATE",
+  "baseline_id": "GOV-BASELINE-4",
+  "rule": "Baseline 重算 == Frozen Baseline",
+  "schema": "BASELINE-GATE-2",
+  "change_id": "CHG-P4-FGC-1",
+  "release_id": "FGC-CLOSURE-1"
+}

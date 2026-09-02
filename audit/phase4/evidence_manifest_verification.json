@@ -1,0 +1,12 @@
+{
+  "schema": "EVIDENCE-MANIFEST-VERIFY-1",
+  "valid": true,
+  "problems": [],
+  "all_identity_ok": true,
+  "artifact_count": 11,
+  "missing_identity": [],
+  "mismatched_identity": [],
+  "change_id": "CHG-P4-FGC-1",
+  "release_id": "FGC-CLOSURE-1",
+  "baseline_id": "GOV-BASELINE-4"
+}

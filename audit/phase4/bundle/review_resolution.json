@@ -1,0 +1,49 @@
+{
+  "schema": "REVIEW-RESOLUTION-2",
+  "review_id": "CHG-P4-FGC-1",
+  "findings": [
+    {
+      "finding_id": "F-P4-01",
+      "severity": "MINOR",
+      "category": "IMPLEMENTATION_DEFECT",
+      "resolution": "FIXED",
+      "patch_id": "bf191a9",
+      "verification_test": "phase4_evidence_builder 现先计算 Spec/Baseline/Traceability 再推导 invariants/unchanged；acceptance gate 重跑 ACCEPTANCE_PASS",
+      "verified": true
+    },
+    {
+      "finding_id": "F-P4-02",
+      "severity": "MINOR",
+      "category": "IMPLEMENTATION_DEFECT",
+      "resolution": "FIXED",
+      "patch_id": "bf191a9",
+      "verification_test": "phase4_regression_runner 已显式 sys.path.insert；--suites phase4_flow 独立运行 PASS",
+      "verified": true
+    },
+    {
+      "finding_id": "F-P4-03",
+      "severity": "MINOR",
+      "category": "DOCUMENTATION_DRIFT",
+      "resolution": "FIXED",
+      "patch_id": "bf191a9",
+      "verification_test": "phase4.py ARTIFACT_SCHEMAS 注释已澄清 out_dir 派生证据分层；test_phase4 7 项全绿",
+      "verified": true
+    }
+  ],
+  "open_critical": 0,
+  "open_major": 0,
+  "open_minor": 0,
+  "accepted_risk": [],
+  "gate": {
+    "gate": "REVIEW_GATE",
+    "open_critical": 0,
+    "open_major": 0,
+    "open_minor": 0,
+    "verdict": "REVIEW_RESOLVED",
+    "allowed": true,
+    "rule": "CRITICAL open>0 → REJECTED；MAJOR open>0 → REJECTED；MINOR open → 允许但必须记录 accepted risk"
+  },
+  "change_id": "CHG-P4-FGC-1",
+  "release_id": "FGC-CLOSURE-1",
+  "baseline_id": "GOV-BASELINE-4"
+}

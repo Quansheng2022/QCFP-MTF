@@ -1,0 +1,39 @@
+{
+  "schema": "PATCH-CONTRACT-2",
+  "change_id": "CHG-P4-FGC-1",
+  "implementation_contract_hash": "8c43dc00e920c8437ba8ee632ea59cd69da9f507fcf718c48036d65057cd329e",
+  "allowed_files": [
+    "Core/QCFP_MTF/governance/phase4.py",
+    "Core/QCFP_MTF/scripts/phase4_evidence_builder.py",
+    "Core/QCFP_MTF/scripts/phase4_regression_runner.py",
+    "Core/QCFP_MTF/scripts/governance_flow.py",
+    "Core/QCFP_MTF/tests/test_governance/test_phase4.py",
+    "Core/QCFP_MTF/tests/run_all_tests.py",
+    "Doc/QCFP-MTF_Phase4_FGC_开发验证规范.md",
+    "audit/phase4/"
+  ],
+  "allowed_functions": [],
+  "forbidden_files": [
+    "Core/QCFP_MTF/CANONICAL_SPEC.md",
+    "Core/QCFP_MTF/ARCHITECTURE.md",
+    "Core/QCFP_MTF/decision/",
+    "Core/QCFP_MTF/governance/governance_baseline.py",
+    "Core/QCFP_MTF/governance/minimal_trusted_release.py",
+    "Core/QCFP_MTF/governance/system_constitution.py",
+    "Core/QCFP_MTF/governance/final_design_principles.py",
+    "Core/QCFP_MTF/decision/versions.py"
+  ],
+  "forbidden_modules": [
+    "research.",
+    "ablation.",
+    "future_label.",
+    "legacy."
+  ],
+  "expected_authority_delta": [],
+  "expected_active_feature_delta": [],
+  "schema_change_allowed": false,
+  "expected_golden_change": {
+    "max_count": 0,
+    "allowed_fields": []
+  }
+}

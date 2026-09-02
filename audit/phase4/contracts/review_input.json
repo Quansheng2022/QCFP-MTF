@@ -1,0 +1,108 @@
+{
+  "change_id": "CHG-P4-FGC-1",
+  "reviewer": "ChatGPT Evidence-Aware Review",
+  "inputs": {
+    "change_id": "CHG-P4-FGC-1",
+    "spec_ids": [
+      "QCFP-SPEC-CHG-001",
+      "QCFP-SPEC-CHG-002",
+      "QCFP-SPEC-CHG-003",
+      "QCFP-SPEC-CHG-004",
+      "QCFP-SPEC-RLS-002",
+      "QCFP-SPEC-RLS-003",
+      "QCFP-SPEC-RLS-004"
+    ],
+    "architecture_baseline": {
+      "baseline_id": "GOV-BASELINE-4",
+      "gate": "BASELINE_GATE",
+      "schema": "BASELINE-GATE-2",
+      "verdict": "BASELINE_PASS"
+    },
+    "implementation_contract": {
+      "change_id": "CHG-P4-FGC-1",
+      "path": "audit/phase4/contracts/implementation_contract.json",
+      "change_tier": "STANDARD"
+    },
+    "actual_diff": {
+      "schema": "OBSERVED-DIFF-2",
+      "source_commit": "cdcab0c88ece298ec2d76f64a3047fb67eb51487",
+      "target_commit": "bf191a9777a5b5707340a5525553e0331dbfcf75",
+      "diff_hash": "014bb899b5168061c7429c26aee31067742efb37e9da265b1346437625b5ae73",
+      "changed_files": [
+        "Core/QCFP_MTF/governance/phase4.py",
+        "Core/QCFP_MTF/scripts/governance_flow.py",
+        "Core/QCFP_MTF/scripts/phase4_evidence_builder.py",
+        "Core/QCFP_MTF/scripts/phase4_regression_runner.py",
+        "Core/QCFP_MTF/tests/run_all_tests.py",
+        "Core/QCFP_MTF/tests/test_governance/test_phase4.py",
+        "Doc/QCFP-MTF_Phase4_FGC_开发验证规范.md"
+      ]
+    },
+    "test_evidence": {
+      "schema": "PHASE4-REGRESSION-1",
+      "verdict": "PASS",
+      "suites": {
+        "phase4_flow": "PASS (85/85)",
+        "bypass": "PASS (27/27)",
+        "phase1": "PASS (20/20)",
+        "phase3": "PASS (34/34)",
+        "decision": "PASS (430/430)",
+        "governance": "PASS (572/572)",
+        "full_core": "PASS (2016/2016)"
+      }
+    },
+    "authority_audit": {
+      "verdict": "AUTHORITY_OK",
+      "authority_delta": [],
+      "writer_delta": {},
+      "production_root_delta": [],
+      "new_active_features": [],
+      "note": "Phase 4 新增模块为 governance/scripts/tests 非生产决策 Authority（authority=NONE）；FROZEN_PRODUCTION_MANIFEST 未变"
+    },
+    "complexity_diff": {
+      "schema": "COMPLEXITY-2",
+      "verdict": "WITHIN_BUDGET",
+      "pass": true,
+      "added_modules": 3,
+      "delta_loc": "+约1600 一次性 Phase 收口工具层（非生产决策代码）",
+      "note": "Roadmap Phase 4 DoD 不看模块数量，只看 zero-bypass；验收后冻结 Governance Feature"
+    },
+    "changed_decision_samples": [],
+    "known_not_proven_items": []
+  },
+  "findings": [
+    {
+      "finding_id": "F-P4-01",
+      "severity": "MINOR",
+      "category": "IMPLEMENTATION_DEFECT",
+      "spec_id": "QCFP-SPEC-RLS-003",
+      "evidence": "code inspection: phase4_evidence_builder 原实现把 acceptance_results.invariants/unchanged 硬编码为 [True]",
+      "affected_file": "Core/QCFP_MTF/scripts/phase4_evidence_builder.py",
+      "why": "Acceptance Gate 的 invariants 必须来自真实机器 Gate 结果（Spec/Baseline/Traceability），硬编码 True 违反 evidence-first 语义。",
+      "required_correction": "在 Acceptance 计算前先运行 Spec/Baseline/Traceability Gate，并把真实结果推导为 invariants/unchanged。",
+      "acceptance_condition": "acceptance_result.json 的 invariants 与 bundle 中 spec_conformance/baseline/traceability 结果一致且全部为 True"
+    },
+    {
+      "finding_id": "F-P4-02",
+      "severity": "MINOR",
+      "category": "IMPLEMENTATION_DEFECT",
+      "spec_id": "QCFP-SPEC-CHG-002",
+      "evidence": "code inspection: phase4_regression_runner 依赖脚本目录在 sys.path 才能 import phase3_regression_runner",
+      "affected_file": "Core/QCFP_MTF/scripts/phase4_regression_runner.py",
+      "why": "隐式 sys.path 依赖在非脚本入口调用时可能 ImportError，降低 Runner 可复现性。",
+      "required_correction": "显式把脚本目录插入 sys.path 后再导入，并保持 phase3 runner 复用（不复制 JUnit 解析）。",
+      "acceptance_condition": "python Core/QCFP_MTF/scripts/phase4_regression_runner.py --suites phase4_flow 可独立运行"
+    },
+    {
+      "finding_id": "F-P4-03",
+      "severity": "MINOR",
+      "category": "DOCUMENTATION_DRIFT",
+      "spec_id": "QCFP-SPEC-RLS-003",
+      "evidence": "code inspection: phase4.py ARTIFACT_SCHEMAS 曾同时列 bundle artifact 与 out_dir 验证证据，未说明分层",
+      "affected_file": "Core/QCFP_MTF/governance/phase4.py",
+      "why": "evidence_pack_readonly / evidence_manifest_verification 是派生验证证据，不属于 bundle 输入；混列会造成读者误解。",
+      "required_correction": "在 ARTIFACT_SCHEMAS 旁注释两件派生验证证据的位置（out_dir）与读取 Provider。",
+      "acceptance_condition": "phase4.py 模块内注释明确两类证据分层；test_phase4 全绿"
+    }
+  ]
+}

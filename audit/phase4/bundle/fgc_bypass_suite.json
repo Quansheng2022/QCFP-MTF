@@ -1,0 +1,14 @@
+{
+  "schema": "FGC-BYPASS-SUITE-1",
+  "all_blocked": true,
+  "checks": {
+    "old_release_qualification_blocked": true,
+    "ai_human_approval_blocked": true,
+    "approval_hash_mismatch_blocked": true
+  },
+  "test_source": "Core/QCFP_MTF/tests/test_governance/test_governance_bypass.py",
+  "rule": "Promotion Bypass（AI approval / 旧 Release / hash mismatch）必须全部 PROMOTION_BLOCKED",
+  "change_id": "CHG-P4-FGC-1",
+  "release_id": "FGC-CLOSURE-1",
+  "baseline_id": "GOV-BASELINE-4"
+}

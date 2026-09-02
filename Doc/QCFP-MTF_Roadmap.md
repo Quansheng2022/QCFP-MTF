@@ -132,7 +132,7 @@ Revalidation / Retirement
 | **1**  | Canonical Specification    | 定义“什么必须永远正确”                            | `CANONICAL_SPEC.md`                    | Spec Conformance       | ✅ 基本完成            |
 | **2**  | Architecture Baseline      | 定义系统如何满足 Spec                           | Architecture、ADR、Baseline              | Architecture Gate      | ✅ 完成              |
 | **3**  | Minimal Trusted Core       | 收敛 Production Decision Path / Authority | Manifest、Authority Graph、MTR Evidence  | MTR Gate               | ✅ 大部分完成           |
-| **4**  | Flow Governance Closure    | 让 AI 开发流程不可绕过                           | Impact/Contract/Oracle/Judge/Promotion | Governance Bypass Gate | 🟡 最后 Closure     |
+| **4**  | Flow Governance Closure    | 让 AI 开发流程不可绕过                           | Impact/Contract/Oracle/Judge/Promotion | Governance Bypass Gate | ✅ 已冻结（2026-09-03） |
 | **5**  | Implementation             | 根据 Contract 实现功能                        | Candidate Patch                        | Scope Lock             | 持续阶段              |
 | **6**  | Verification               | 证明实现没有破坏系统                              | Tests + Evidence                       | Evidence Gate          | 持续阶段              |
 | **7**  | Software Qualification     | 判断代码/实现是否可信                             | Release Verdict                        | Pure Judge             | 🟡 依赖 FGC Closure |
@@ -297,6 +297,19 @@ Bypass Path → PRODUCTION_DSS     = 0
 完成这个阶段后：
 
 > **治理架构冻结，不再继续增加 Governance Feature。**
+
+### Phase 4 完成记录（2026-09-03）
+
+- Phase 4 Development / Validation Specification：
+  `Doc/QCFP-MTF_Phase4_FGC_开发验证规范.md`
+- Machine Verdict：`PHASE4_PASS` → Human Approved → **FROZEN**
+- Zero-Bypass：Bypass → SOFTWARE_QUALIFIED = 0；Bypass → PRODUCTION_DSS = 0
+- 独立回归：phase4_flow 85/85、bypass 27/27、phase1 20/20、phase3 34/34、
+  decision 430/430、governance 572/572、full_core 2016/2016
+- Evidence Pack：`audit/phase4/bundle/` + `evidence_manifest.json`
+  （11 artifacts，Read-Only 校验通过）
+- Acceptance / Freeze：`audit/phase4/phase4_acceptance.{json,md}`、
+  `audit/phase4/phase4_human_approval.txt`
 
 ---
 
@@ -637,8 +650,8 @@ Phase 1  Canonical Specification     ✅
 Phase 2  Architecture Baseline       ✅
 Phase 3  Minimal Trusted Core        ✅ / 基本闭合
 
-Phase 4  Flow Governance Closure     🟡
-         └─ 最后 5 个 Surgical Fix
+Phase 4  Flow Governance Closure     ✅ 已冻结（2026-09-03）
+         └─ FGC-1 + SF-1~SF-5 + Zero-Bypass
 
 Phase 5  Core Implementation         ✅ 已有成熟主体
 Phase 6  Verification Framework      ✅ 已有成熟主体
@@ -729,8 +742,8 @@ M0  SYSTEM PURPOSE FROZEN
 M1  CANONICAL SPEC FROZEN
 M2  ARCHITECTURE BASELINE
 M3  MINIMAL TRUSTED CORE
-M4  GOVERNANCE CLOSED          ← 当前主要目标
-M5  SOFTWARE QUALIFIED
+M4  GOVERNANCE CLOSED          ✅ 2026-09-03
+M5  SOFTWARE QUALIFIED         ← 下一步（依赖已解除的 zero-bypass）
 M6  OOS VALIDATED
 M7  ABLATION/STRESS VALIDATED
 M8  SHADOW VALIDATED

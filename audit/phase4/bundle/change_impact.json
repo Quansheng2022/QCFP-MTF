@@ -1,0 +1,32 @@
+{
+  "change_type": "modify",
+  "change_id": "CHG-P4-FGC-1",
+  "description": "Phase 4 FGC Closure（Spec + Gate + Runner + Evidence Builder + CLI + tests）",
+  "affected_areas": [],
+  "critical_areas": [],
+  "tier": "STANDARD",
+  "validation_requirements": [
+    "static",
+    "unit",
+    "integration",
+    "golden",
+    "invariant",
+    "architecture_conformance"
+  ],
+  "validation_requirement": "STANDARD_VALIDATION",
+  "release_gate": "CHANGE_IMPACT_GATE",
+  "rule": "HIGH 必须 Full Regression + Golden + Replay + PIT + OOS + Ablation + Stress + Failure Injection + Authority Audit + Shadow + Human Review",
+  "declared_tier": "LOW",
+  "observed_tier": "STANDARD",
+  "observed_critical_areas": [],
+  "status": "CHANGE_IMPACT_READY",
+  "diff_status": "CHANGE_IMPACT_READY",
+  "observed_diff_valid": true,
+  "approved_for_contract": true,
+  "schema": "CHANGE-IMPACT-2",
+  "change_hash": "f435fd3eb23cf578fab816bd867aa652676d4a087b881809f93b4c28c38f2afe",
+  "source_commit": "cdcab0c88ece298ec2d76f64a3047fb67eb51487",
+  "generated_at": "2026-09-02T16:01:19Z",
+  "release_id": "FGC-CLOSURE-1",
+  "baseline_id": "GOV-BASELINE-4"
+}

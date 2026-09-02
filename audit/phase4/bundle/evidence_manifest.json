@@ -1,0 +1,97 @@
+{
+  "bundle_schema": "EVIDENCE-BUNDLE-2",
+  "change_id": "CHG-P4-FGC-1",
+  "release_id": "FGC-CLOSURE-1",
+  "baseline_id": "GOV-BASELINE-4",
+  "artifacts": [
+    {
+      "name": "acceptance_result.json",
+      "schema": "ACCEPTANCE-RESULT-2",
+      "sha256": "988ef32fac113dbe60652d0b39470826019decaee632b6431ef76eb998d5143d",
+      "change_id": "CHG-P4-FGC-1",
+      "release_id": "FGC-CLOSURE-1",
+      "baseline_id": "GOV-BASELINE-4"
+    },
+    {
+      "name": "baseline.json",
+      "schema": "BASELINE-GATE-2",
+      "sha256": "2ba9bd085ed6d337d0eab346d01105403801bc04343a04e83c4f4a994d4bf1cc",
+      "change_id": "CHG-P4-FGC-1",
+      "release_id": "FGC-CLOSURE-1",
+      "baseline_id": "GOV-BASELINE-4"
+    },
+    {
+      "name": "change_impact.json",
+      "schema": "CHANGE-IMPACT-2",
+      "sha256": "dd072ad3885e0afda6ed22910efa2b67615d545894fc1ef32d6e194f71a8e05a",
+      "change_id": "CHG-P4-FGC-1",
+      "release_id": "FGC-CLOSURE-1",
+      "baseline_id": "GOV-BASELINE-4"
+    },
+    {
+      "name": "fgc_bypass_suite.json",
+      "schema": "FGC-BYPASS-SUITE-1",
+      "sha256": "1c3551e2a1f05675f2990948ef1e87a1b99123322a1e06ab0248473c867560f3",
+      "change_id": "CHG-P4-FGC-1",
+      "release_id": "FGC-CLOSURE-1",
+      "baseline_id": "GOV-BASELINE-4"
+    },
+    {
+      "name": "implementation_contract_result.json",
+      "schema": "CONTRACT-RESULT-2",
+      "sha256": "3ae53b6c57b344e4fd1baa626842577063de8264fca95c98e933f9f039047a59",
+      "change_id": "CHG-P4-FGC-1",
+      "release_id": "FGC-CLOSURE-1",
+      "baseline_id": "GOV-BASELINE-4"
+    },
+    {
+      "name": "phase4_regression_summary.json",
+      "schema": "PHASE4-REGRESSION-1",
+      "sha256": "cebd0be1b84ac218217996ec6c0df8f980c6e97ca68ea582fb35afc683c84216",
+      "change_id": "CHG-P4-FGC-1",
+      "release_id": "FGC-CLOSURE-1",
+      "baseline_id": "GOV-BASELINE-4"
+    },
+    {
+      "name": "review_report.json",
+      "schema": "REVIEW-2",
+      "sha256": "ebf55bf7c903bac3f8a074eee1214026f353df948d2be1497f58333ce56c4c20",
+      "change_id": "CHG-P4-FGC-1",
+      "release_id": "FGC-CLOSURE-1",
+      "baseline_id": "GOV-BASELINE-4"
+    },
+    {
+      "name": "review_resolution.json",
+      "schema": "REVIEW-RESOLUTION-2",
+      "sha256": "07995a9dd10a2139e24f0c33cdf6cdb8ccd7b0ba6c1e7dd214532fc1f07eaa7f",
+      "change_id": "CHG-P4-FGC-1",
+      "release_id": "FGC-CLOSURE-1",
+      "baseline_id": "GOV-BASELINE-4"
+    },
+    {
+      "name": "scope_audit.json",
+      "schema": "SCOPE-2",
+      "sha256": "72aec09d23e7a27bb7ad3d25d4f03693c9719f5dcf32e6d36db5f937813b7129",
+      "change_id": "CHG-P4-FGC-1",
+      "release_id": "FGC-CLOSURE-1",
+      "baseline_id": "GOV-BASELINE-4"
+    },
+    {
+      "name": "spec_conformance.json",
+      "schema": "SPEC-CONFORMANCE-2",
+      "sha256": "c62ec75e2b327e4d5fc6ebe705f0f247e1dc429ba9290d11f00a6ef284d87e77",
+      "change_id": "CHG-P4-FGC-1",
+      "release_id": "FGC-CLOSURE-1",
+      "baseline_id": "GOV-BASELINE-4"
+    },
+    {
+      "name": "traceability.json",
+      "schema": "TRACEABILITY-2",
+      "sha256": "b40c7967ff305520f90eb8b8bec4cfcdc3dbfa4b69b8739f27b4709b4137e4b3",
+      "change_id": "CHG-P4-FGC-1",
+      "release_id": "FGC-CLOSURE-1",
+      "baseline_id": "GOV-BASELINE-4"
+    }
+  ],
+  "bundle_hash": "9738bf22d5a07099a64b3a126e55d1a4140687eab6f50ae506cb5699cc6cf32c"
+}

@@ -1,0 +1,79 @@
+{
+  "change_id": "CHG-P4-FGC-1",
+  "objective": "Phase 4 Flow Governance Closure：新增 phase4 纯证据聚合器、独立回归 Runner、Evidence Builder、governance_flow phase4 命令与配套单测；治理体系收口后冻结（不再新增 Governance Feature）。",
+  "spec_ids": [
+    "QCFP-SPEC-CHG-001",
+    "QCFP-SPEC-CHG-002",
+    "QCFP-SPEC-CHG-003",
+    "QCFP-SPEC-CHG-004",
+    "QCFP-SPEC-RLS-002",
+    "QCFP-SPEC-RLS-003",
+    "QCFP-SPEC-RLS-004"
+  ],
+  "adr_ids": [],
+  "change_type": "STANDARD",
+  "change_impact_artifact": "audit/phase4/change_impact.json",
+  "change_impact_hash": "f435fd3eb23cf578fab816bd867aa652676d4a087b881809f93b4c28c38f2afe",
+  "change_tier": "STANDARD",
+  "allowed_files": [
+    "Core/QCFP_MTF/governance/phase4.py",
+    "Core/QCFP_MTF/scripts/phase4_evidence_builder.py",
+    "Core/QCFP_MTF/scripts/phase4_regression_runner.py",
+    "Core/QCFP_MTF/scripts/governance_flow.py",
+    "Core/QCFP_MTF/tests/test_governance/test_phase4.py",
+    "Core/QCFP_MTF/tests/run_all_tests.py",
+    "Doc/QCFP-MTF_Phase4_FGC_开发验证规范.md"
+  ],
+  "allowed_new_files": [
+    "Core/QCFP_MTF/governance/phase4.py",
+    "Core/QCFP_MTF/scripts/phase4_evidence_builder.py",
+    "Core/QCFP_MTF/scripts/phase4_regression_runner.py",
+    "Core/QCFP_MTF/tests/test_governance/test_phase4.py",
+    "Doc/QCFP-MTF_Phase4_FGC_开发验证规范.md",
+    "audit/phase4/"
+  ],
+  "files_to_delete": [],
+  "forbidden_files": [
+    "Core/QCFP_MTF/CANONICAL_SPEC.md",
+    "Core/QCFP_MTF/ARCHITECTURE.md",
+    "Core/QCFP_MTF/decision/",
+    "Core/QCFP_MTF/governance/governance_baseline.py",
+    "Core/QCFP_MTF/governance/minimal_trusted_release.py",
+    "Core/QCFP_MTF/governance/system_constitution.py",
+    "Core/QCFP_MTF/governance/final_design_principles.py",
+    "Core/QCFP_MTF/decision/versions.py"
+  ],
+  "authorities_touched": [],
+  "expected_behavior_change": "新增 Phase 4 验收能力：phase4 gate / acceptance / regression / evidence pack 可执行；不改变任何生产决策链输出。",
+  "expected_unchanged_behavior": "决策链（Permission/Wave/FSM/FinalTarget/Ledger）全部不变；Golden/Replay/Invariant 不变；Frozen Baseline 不漂移。",
+  "schema_change": false,
+  "permission_change": false,
+  "final_target_change": false,
+  "pit_change": false,
+  "required_tests": [
+    "test_governance/test_phase4.py",
+    "test_governance/test_flow_governance.py",
+    "test_governance/test_governance_bypass.py",
+    "test_governance/test_phase1.py",
+    "test_governance/test_phase3.py",
+    "test_decision",
+    "test_governance",
+    "full_core"
+  ],
+  "required_negative_tests": [
+    "bypass suite（SF-1~SF-5 + C1-C7 攻击面）全部 BLOCKED"
+  ],
+  "required_failure_injection": [],
+  "required_ablation": [],
+  "required_oos": [],
+  "required_shadow": [],
+  "complexity_budget": "一次性的 Phase 收口工具层；治理体系冻结后不再新增 Governance Feature。",
+  "retirement_effect": "无生产代码退役；纯增量治理证据层。",
+  "acceptance_criteria": [
+    "phase4_flow / bypass / phase1 / phase3 / decision / governance / full_core 全部 PASS",
+    "PHASE4_PASS（12 Gate 无 FAIL / 无 NOT_PROVEN）",
+    "Baseline 无漂移（GOV-BASELINE-4）",
+    "Review 收口：open CRITICAL=0、open MAJOR=0",
+    "Evidence Pack 只读：artifact sha256 前后一致"
+  ]
+}

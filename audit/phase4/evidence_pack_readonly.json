@@ -1,0 +1,11 @@
+{
+  "schema": "EVIDENCE-PACK-READONLY-1",
+  "pack_status": "PACK_ACCEPTED",
+  "all_unchanged": true,
+  "artifact_count": 11,
+  "changed_artifacts": [],
+  "rule": "Packager 只 READ/VERIFY/HASH/INDEX；输入 artifact sha256 前后必须一致",
+  "change_id": "CHG-P4-FGC-1",
+  "release_id": "FGC-CLOSURE-1",
+  "baseline_id": "GOV-BASELINE-4"
+}

@@ -1,0 +1,97 @@
+{
+  "schema": "PHASE4-REGRESSION-1",
+  "generated_by": "TEST_SYSTEM",
+  "generated_at_utc": "2026-09-02T15:54:00Z",
+  "python": ".venv\\Scripts\\python.exe",
+  "required_suites": [
+    "phase4_flow",
+    "bypass",
+    "phase1",
+    "phase3",
+    "decision",
+    "governance",
+    "full_core"
+  ],
+  "missing_suites": [],
+  "suites": {
+    "phase4_flow": {
+      "status": "PASS",
+      "exit_code": 0,
+      "collected": 85,
+      "passed": 85,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "failure_classification": "PASS",
+      "failures": []
+    },
+    "bypass": {
+      "status": "PASS",
+      "exit_code": 0,
+      "collected": 27,
+      "passed": 27,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "failure_classification": "PASS",
+      "failures": []
+    },
+    "phase1": {
+      "status": "PASS",
+      "exit_code": 0,
+      "collected": 20,
+      "passed": 20,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "failure_classification": "PASS",
+      "failures": []
+    },
+    "phase3": {
+      "status": "PASS",
+      "exit_code": 0,
+      "collected": 34,
+      "passed": 34,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "failure_classification": "PASS",
+      "failures": []
+    },
+    "decision": {
+      "status": "PASS",
+      "exit_code": 0,
+      "collected": 430,
+      "passed": 430,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "failure_classification": "PASS",
+      "failures": []
+    },
+    "governance": {
+      "status": "PASS",
+      "exit_code": 0,
+      "collected": 572,
+      "passed": 572,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "failure_classification": "PASS",
+      "failures": []
+    },
+    "full_core": {
+      "status": "PASS",
+      "exit_code": 0,
+      "collected": 2016,
+      "passed": 2016,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "failure_classification": "PASS",
+      "failures": []
+    }
+  },
+  "verdict": "PASS",
+  "rule": "Judge 只消费本文件；缺失 required suite / ENVIRONMENT_BLOCKED / INCOMPLETE → NOT_PROVEN；任何 suite FAIL → PHASE4_FAIL；skipped 不计为 passed；PASS 要求 skipped=0"
+}

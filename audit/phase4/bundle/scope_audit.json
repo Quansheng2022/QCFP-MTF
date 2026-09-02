@@ -1,0 +1,15 @@
+{
+  "schema": "SCOPE-2",
+  "change_id": "CHG-P4-FGC-1",
+  "scope_diff": 0,
+  "authority_delta": [],
+  "authority_source": "AUTHORITY_GRAPH",
+  "active_feature_delta": [],
+  "schema_delta": false,
+  "golden_behavior_delta": 0,
+  "violations": [],
+  "verdict": "PATCH_ACCEPTED",
+  "rule": "Evidence 只能报告 Observed Facts；Expected 只能来自 Frozen Contract；Diff/Graph/Manifest 必须独立提供；Self Report Authority = 0",
+  "release_id": "FGC-CLOSURE-1",
+  "baseline_id": "GOV-BASELINE-4"
+}

@@ -1,0 +1,11 @@
+{
+  "schema": "ACCEPTANCE-RESULT-2",
+  "change_id": "CHG-P4-FGC-1",
+  "verdict": "ACCEPTANCE_PASS",
+  "failures": [],
+  "evidence_gaps": [],
+  "generated_at": "2026-09-02T16:01:20Z",
+  "pass": true,
+  "release_id": "FGC-CLOSURE-1",
+  "baseline_id": "GOV-BASELINE-4"
+}

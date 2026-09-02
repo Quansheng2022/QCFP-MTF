@@ -1,0 +1,41 @@
+{
+  "change_id": "CHG-P4-FGC-1",
+  "spec_requirements": [
+    {
+      "spec_id": "QCFP-SPEC-CHG-001",
+      "requirement": "任何代码任务必须先有 Change Impact，才能生成 Implementation Contract"
+    },
+    {
+      "spec_id": "QCFP-SPEC-CHG-002",
+      "requirement": "Patch 必须通过 Scope Lock 审计（Allowed/Protected Surface）"
+    },
+    {
+      "spec_id": "QCFP-SPEC-CHG-004",
+      "requirement": "Builder 不得修改 Frozen Golden Expected Result"
+    },
+    {
+      "spec_id": "QCFP-SPEC-RLS-002",
+      "requirement": "Software Qualification 与 Strategy Promotion 是两个独立 Gate"
+    },
+    {
+      "spec_id": "QCFP-SPEC-RLS-003",
+      "requirement": "Missing Evidence != PASS；证据不完整只能 NOT_PROVEN"
+    },
+    {
+      "spec_id": "QCFP-SPEC-RLS-004",
+      "requirement": "任何 AI 都无权执行 HUMAN_APPROVED；最终晋升只能由 Human 执行"
+    }
+  ],
+  "positive_cases": [],
+  "boundary_cases": [],
+  "negative_cases": [],
+  "adversarial_cases": [],
+  "golden_cases": [],
+  "expected_invariant_results": [],
+  "expected_unchanged_cases": [],
+  "expected_decision_deltas": {},
+  "frozen_golden_expected": true,
+  "test_oracle_change": {
+    "required": false
+  }
+}
