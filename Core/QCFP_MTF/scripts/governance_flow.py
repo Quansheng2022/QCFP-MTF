@@ -330,6 +330,22 @@ def cmd_phase1(args) -> int:
     return 0 if acceptance["pass"] else 1
 
 
+def cmd_phase4(args) -> int:
+    """Phase 4 — Flow Governance Closure（FGC-1 + SF-1~SF-5 + Zero-Bypass）。"""
+    from QCFP_MTF.governance.phase4 import phase4_acceptance
+    acceptance = phase4_acceptance()
+    print(f"Phase 4 Acceptance: {acceptance['verdict']}")
+    print(f"  Freeze State: {acceptance['freeze_state']}")
+    for key, value in acceptance["close_record"].items():
+        print(f"  {key:<32} {value}")
+    if acceptance["failures"]:
+        print(f"  失败 Gate: {acceptance['failures']}")
+    if acceptance["missing_evidence"]:
+        print(f"  缺证据: {acceptance['missing_evidence']}")
+    print(f"  Acceptance Pack: audit/phase4/phase4_acceptance.json")
+    return 0 if acceptance["pass"] else 1
+
+
 def main(argv=None) -> int:
     parser = argparse.ArgumentParser(description="QCFP-MTF 流程治理流水线")
     sub = parser.add_subparsers(dest="cmd", required=True)
@@ -342,6 +358,8 @@ def main(argv=None) -> int:
     sub.add_parser("traceability", help="Traceability 三类孤儿审计")
     sub.add_parser("phase1", help="Phase 1 Freeze Gate（Spec/Architecture/"
                                   "Authority/Traceability/Baseline）")
+    sub.add_parser("phase4", help="Phase 4 Flow Governance Closure Gate"
+                                  "（FGC-1 + SF-1~SF-5 + Zero-Bypass）")
 
     p = sub.add_parser("baseline-approve",
                        help="Human 批准 Candidate 成为新 Frozen Baseline")
@@ -420,6 +438,7 @@ def main(argv=None) -> int:
         "baseline-approve": cmd_baseline_approve,
         "traceability": cmd_traceability,
         "phase1": cmd_phase1,
+        "phase4": cmd_phase4,
         "contract-impl": cmd_contract_impl,
         "contract-accept": cmd_contract_accept,
         "impact": cmd_impact,

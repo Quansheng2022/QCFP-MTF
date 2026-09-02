@@ -492,6 +492,8 @@ MODULES = [
     "test_governance.test_governance_bypass",
     # Phase 1 — Architecture & Specification Freeze
     "test_governance.test_phase1",
+    # Phase 4 — Flow Governance Closure（FGC-1 + SF-1~SF-5）
+    "test_governance.test_phase4",
 ]
 
 # 依赖真实数据库/项目配置的集成测试模块（--unit-only 时跳过）
