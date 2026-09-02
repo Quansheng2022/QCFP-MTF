@@ -1,6 +1,6 @@
 {
   "schema": "PHASE3-ACCEPTANCE-2",
-  "generated_at_utc": "2026-09-02T09:29:05Z",
+  "generated_at_utc": "2026-09-02T14:48:53Z",
   "gates": {
     "CHAIN_CONFORMANCE": {
       "gate": "CHAIN_CONFORMANCE",
@@ -621,8 +621,8 @@
       "evidence": {
         "schema": "PHASE3-REGRESSION-2",
         "generated_by": "TEST_SYSTEM",
-        "generated_at_utc": "2026-09-02T09:27:47Z",
-        "python": "C:\\Users\\Quansheng\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "generated_at_utc": "2026-09-02T14:28:49Z",
+        "python": "C:\\Users\\Quansheng\\Documents\\projects\\TA_Workflow\\.venv\\Scripts\\python.exe",
         "required_suites": [
           "phase3",
           "decision",

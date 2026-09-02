@@ -1,0 +1,31 @@
+QCFP-MTF PHASE 3 FREEZE CANDIDATE
+=================================
+Git Commit:
+2486fa35315ed957e2a991d5e71f35af7dd3fc53
+
+Engine SHA256:
+B502D945207E7BFAAC8634C7CD959F0FFA01A9A4790B96E3B27F8B6F86E3E98C
+
+Regression:
+PASS
+
+Phase3 Acceptance:
+PHASE3_PASS
+
+Failures:
+0
+
+Missing Evidence:
+0
+
+Open P0:
+0
+
+Open P1:
+0
+
+State:
+FREEZE_CANDIDATE
+
+Human Promotion:
+PENDING

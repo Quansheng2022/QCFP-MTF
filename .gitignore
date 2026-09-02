@@ -72,3 +72,13 @@ Thumbs.db
 # Canonical file is build_qcfp_review_bundles.ps1
 # ----------------------------------------------------------------------
 build_qcfp_review_bundles_v1.1*.ps1
+
+# ----------------------------------------------------------------------
+# Phase 3 frozen baseline: root scratch / symlink / generated analysis
+# (anchored to repo root so Core/QCFP_MTF/tests is never affected)
+# ----------------------------------------------------------------------
+/Data
+/logs/
+/Test/
+/tests/
+/Report/QCFP_MTF/backtest/
