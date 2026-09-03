@@ -24,9 +24,9 @@
   "observed_diff_valid": true,
   "approved_for_contract": true,
   "schema": "CHANGE-IMPACT-2",
-  "change_hash": "f435fd3eb23cf578fab816bd867aa652676d4a087b881809f93b4c28c38f2afe",
-  "source_commit": "cdcab0c88ece298ec2d76f64a3047fb67eb51487",
-  "generated_at": "2026-09-03T10:19:18Z",
+  "change_hash": "cdbc63f4d5dd642fc7321bf7fafa2de7d37ee45d5266ae39dd423d8510f8de9b",
+  "source_commit": "cdcab0c",
+  "generated_at": "2026-09-03T12:50:50Z",
   "release_id": "FGC-CLOSURE-1",
   "baseline_id": "GOV-BASELINE-4"
 }

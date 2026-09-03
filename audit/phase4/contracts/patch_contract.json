@@ -1,7 +1,7 @@
 {
   "schema": "PATCH-CONTRACT-2",
   "change_id": "CHG-P4-FGC-1",
-  "implementation_contract_hash": "3dbbaf11318c5ac35119b300f018e7d3fbcece87bb00670caeb95c6820bb5743",
+  "implementation_contract_hash": "71dadf23e6a9d5f325e2982c68ed51d8ab38133baccd1f2aea57b099a4f52abd",
   "allowed_files": [
     "Core/QCFP_MTF/governance/phase4.py",
     "Core/QCFP_MTF/scripts/phase4_evidence_builder.py",

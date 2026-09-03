@@ -154,7 +154,7 @@ def test_real_runner_builder_judge_pipeline():
         graph_before = out / "graphs" / "authority_graph_before.json"
         graph_after = out / "graphs" / "authority_graph_after.json"
         rc = builder.main([
-            "--base-commit", "cdcab0c88ece298ec2d76f64a3047fb67eb51487",
+            "--base-commit", "cdcab0c",
             "--change-id", "CHG-P4-FGC-1",
             "--release-id", "FGC-CLOSURE-1",
             "--baseline-id", "GOV-BASELINE-4",
