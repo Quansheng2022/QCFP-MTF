@@ -16,6 +16,8 @@ import sys
 import tempfile
 from pathlib import Path
 
+import pytest
+
 _PROJECT_ROOT = Path(__file__).resolve().parents[4]
 _CORE_DIR = _PROJECT_ROOT / "Core"
 _SCRIPTS = _CORE_DIR / "QCFP_MTF" / "scripts"
@@ -128,12 +130,18 @@ def test_real_runner_builder_judge_pipeline():
     audit = _PROJECT_ROOT / "audit" / "phase4"
     regression_path = audit / "phase4_regression_summary.json"
     case_path = audit / "phase4_acceptance_case_results.json"
-    if not (regression_path.exists() and case_path.exists()):
-        return  # 环境前置未满足：真实 Test System 产物尚未生成
+    assert regression_path.exists(), (
+        "Acceptance integration 前置缺失：phase4_regression_summary.json "
+        "不存在 —— 必须先运行 Test System（Runner）")
+    assert case_path.exists(), (
+        "Acceptance integration 前置缺失："
+        "phase4_acceptance_case_results.json 不存在 —— "
+        "必须先运行 Test System（Runner）")
     regression = json.loads(
         regression_path.read_text(encoding="utf-8"))
-    if "golden" not in (regression.get("suites") or {}):
-        return  # 旧版 Runner 产物（无 golden）不满足前置
+    assert "golden" in (regression.get("suites") or {}), (
+        "Acceptance integration 前置缺失：regression summary 无 golden "
+        "suite —— 旧版 Runner 产物不允许静默 PASS")
     with tempfile.TemporaryDirectory() as d:
         tmp = Path(d)
         out = tmp / "phase4"

@@ -26,10 +26,196 @@
       "requirement": "任何 AI 都无权执行 HUMAN_APPROVED；最终晋升只能由 Human 执行"
     }
   ],
-  "positive_cases": [],
-  "boundary_cases": [],
-  "negative_cases": [],
-  "adversarial_cases": [],
+  "positive_cases": [
+    {
+      "case_id": "P4-POS-001",
+      "spec_ids": [
+        "QCFP-SPEC-RLS-003"
+      ],
+      "input_fixture": {
+        "fixture_id": "FIX-POSITIVE-P4-POS-001",
+        "input_hash": "172a7fc09c120635a91345e17c619f7043b1ae55a0b63472dcde04d217101200"
+      },
+      "expected": {
+        "result_hash": "814e8aae99c72a61159a63d91668d98468bfbbd0d38ec3caedf6e9d27de95dfc"
+      }
+    },
+    {
+      "case_id": "P4-POS-002",
+      "spec_ids": [
+        "QCFP-SPEC-RLS-003"
+      ],
+      "input_fixture": {
+        "fixture_id": "FIX-POSITIVE-P4-POS-002",
+        "input_hash": "8c33219e73f1474d16c1e86dacfdd165fe8ae8c8a48c73d4420b590f4abcb6b2"
+      },
+      "expected": {
+        "result_hash": "814e8aae99c72a61159a63d91668d98468bfbbd0d38ec3caedf6e9d27de95dfc"
+      }
+    },
+    {
+      "case_id": "P4-POS-003",
+      "spec_ids": [
+        "QCFP-SPEC-RLS-003"
+      ],
+      "input_fixture": {
+        "fixture_id": "FIX-POSITIVE-P4-POS-003",
+        "input_hash": "a0b6a0193f1d58f079983717a3f038345a34c0e8ca5d6e35a850758173eec3ac"
+      },
+      "expected": {
+        "result_hash": "814e8aae99c72a61159a63d91668d98468bfbbd0d38ec3caedf6e9d27de95dfc"
+      }
+    },
+    {
+      "case_id": "P4-POS-004",
+      "spec_ids": [
+        "QCFP-SPEC-RLS-003"
+      ],
+      "input_fixture": {
+        "fixture_id": "FIX-POSITIVE-P4-POS-004",
+        "input_hash": "6a030393c415f051fb4f0b7d2935240090be13c785cb0439d6d0052a4b54ae87"
+      },
+      "expected": {
+        "result_hash": "814e8aae99c72a61159a63d91668d98468bfbbd0d38ec3caedf6e9d27de95dfc"
+      }
+    }
+  ],
+  "boundary_cases": [
+    {
+      "case_id": "P4-BND-001",
+      "spec_ids": [
+        "QCFP-SPEC-RLS-003"
+      ],
+      "input_fixture": {
+        "fixture_id": "FIX-BOUNDARY-P4-BND-001",
+        "input_hash": "45a0215e01427103e1308025f0e7b83c1eac1ddd98ff6a1297245f7056311798"
+      },
+      "expected": {
+        "result_hash": "814e8aae99c72a61159a63d91668d98468bfbbd0d38ec3caedf6e9d27de95dfc"
+      }
+    },
+    {
+      "case_id": "P4-BND-002",
+      "spec_ids": [
+        "QCFP-SPEC-RLS-003"
+      ],
+      "input_fixture": {
+        "fixture_id": "FIX-BOUNDARY-P4-BND-002",
+        "input_hash": "162d005250abdc80e7a7eae5d1e36688a725cc82786cd7f9ffc3495c712e53ee"
+      },
+      "expected": {
+        "result_hash": "814e8aae99c72a61159a63d91668d98468bfbbd0d38ec3caedf6e9d27de95dfc"
+      }
+    },
+    {
+      "case_id": "P4-BND-003",
+      "spec_ids": [
+        "QCFP-SPEC-RLS-003"
+      ],
+      "input_fixture": {
+        "fixture_id": "FIX-BOUNDARY-P4-BND-003",
+        "input_hash": "93405189f5cdff2f2f19c01bf37264105c7190a93a59d6e1f9e33a00f6ff3b5e"
+      },
+      "expected": {
+        "result_hash": "814e8aae99c72a61159a63d91668d98468bfbbd0d38ec3caedf6e9d27de95dfc"
+      }
+    }
+  ],
+  "negative_cases": [
+    {
+      "case_id": "P4-NEG-001",
+      "spec_ids": [
+        "QCFP-SPEC-RLS-003"
+      ],
+      "input_fixture": {
+        "fixture_id": "FIX-NEGATIVE-P4-NEG-001",
+        "input_hash": "66be487d010aba9083d31d6f093d0b4dccddbc50f33d387b762223cdfc4fe02c"
+      },
+      "expected": {
+        "result_hash": "814e8aae99c72a61159a63d91668d98468bfbbd0d38ec3caedf6e9d27de95dfc"
+      }
+    },
+    {
+      "case_id": "P4-NEG-002",
+      "spec_ids": [
+        "QCFP-SPEC-RLS-003"
+      ],
+      "input_fixture": {
+        "fixture_id": "FIX-NEGATIVE-P4-NEG-002",
+        "input_hash": "0a7ef026d9bae096e79ded00130d53a7a0595eff2f7bc6be1d4f4b9279264ee9"
+      },
+      "expected": {
+        "result_hash": "814e8aae99c72a61159a63d91668d98468bfbbd0d38ec3caedf6e9d27de95dfc"
+      }
+    },
+    {
+      "case_id": "P4-NEG-003",
+      "spec_ids": [
+        "QCFP-SPEC-RLS-003"
+      ],
+      "input_fixture": {
+        "fixture_id": "FIX-NEGATIVE-P4-NEG-003",
+        "input_hash": "a71856f73a11546d7674853fe756393e6a6e16b92584566d54b225a36aa243ff"
+      },
+      "expected": {
+        "result_hash": "814e8aae99c72a61159a63d91668d98468bfbbd0d38ec3caedf6e9d27de95dfc"
+      }
+    }
+  ],
+  "adversarial_cases": [
+    {
+      "case_id": "P4-ADV-001",
+      "spec_ids": [
+        "QCFP-SPEC-RLS-003"
+      ],
+      "input_fixture": {
+        "fixture_id": "FIX-ADVERSARIAL-P4-ADV-001",
+        "input_hash": "4c3e7d6d29c3d8aa86da0140375f2d3b70b18a0a9420037e72de523239680225"
+      },
+      "expected": {
+        "result_hash": "814e8aae99c72a61159a63d91668d98468bfbbd0d38ec3caedf6e9d27de95dfc"
+      }
+    },
+    {
+      "case_id": "P4-ADV-002",
+      "spec_ids": [
+        "QCFP-SPEC-RLS-003"
+      ],
+      "input_fixture": {
+        "fixture_id": "FIX-ADVERSARIAL-P4-ADV-002",
+        "input_hash": "b600680679f5dae274581143951a3668d205e5efc8f76e64590683443a836276"
+      },
+      "expected": {
+        "result_hash": "814e8aae99c72a61159a63d91668d98468bfbbd0d38ec3caedf6e9d27de95dfc"
+      }
+    },
+    {
+      "case_id": "P4-ADV-003",
+      "spec_ids": [
+        "QCFP-SPEC-RLS-003"
+      ],
+      "input_fixture": {
+        "fixture_id": "FIX-ADVERSARIAL-P4-ADV-003",
+        "input_hash": "3aeb47456d1d5ceea789dc6de236edc48d63fd63e352e792594aa4bbc1f4cc84"
+      },
+      "expected": {
+        "result_hash": "814e8aae99c72a61159a63d91668d98468bfbbd0d38ec3caedf6e9d27de95dfc"
+      }
+    },
+    {
+      "case_id": "P4-ADV-004",
+      "spec_ids": [
+        "QCFP-SPEC-RLS-003"
+      ],
+      "input_fixture": {
+        "fixture_id": "FIX-ADVERSARIAL-P4-ADV-004",
+        "input_hash": "a782fab842aff788f3a3d33fc3c09e04de5369f1fffbfe3f4cd48ca482175739"
+      },
+      "expected": {
+        "result_hash": "814e8aae99c72a61159a63d91668d98468bfbbd0d38ec3caedf6e9d27de95dfc"
+      }
+    }
+  ],
   "golden_cases": [],
   "expected_invariant_results": [],
   "expected_unchanged_cases": [],

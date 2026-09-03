@@ -1,6 +1,6 @@
 {
   "schema": "PHASE4-ACCEPTANCE-1",
-  "generated_at_utc": "2026-09-03T04:37:25Z",
+  "generated_at_utc": "2026-09-03T10:19:46Z",
   "gates": {
     "SPEC": {
       "gate": "SPEC",
@@ -2134,7 +2134,7 @@
       "evidence": {
         "schema": "PHASE4-REGRESSION-1",
         "generated_by": "TEST_SYSTEM",
-        "generated_at_utc": "2026-09-03T04:34:03Z",
+        "generated_at_utc": "2026-09-03T10:17:53Z",
         "python": ".venv\\Scripts\\python.exe",
         "required_suites": [
           "phase4_flow",
@@ -2206,8 +2206,8 @@
           "governance": {
             "status": "PASS",
             "exit_code": 0,
-            "collected": 581,
-            "passed": 581,
+            "collected": 572,
+            "passed": 572,
             "failed": 0,
             "errors": 0,
             "skipped": 0,
@@ -2228,8 +2228,8 @@
           "full_core": {
             "status": "PASS",
             "exit_code": 0,
-            "collected": 2030,
-            "passed": 2030,
+            "collected": 2021,
+            "passed": 2021,
             "failed": 0,
             "errors": 0,
             "skipped": 0,

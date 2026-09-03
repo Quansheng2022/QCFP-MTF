@@ -447,9 +447,16 @@ def main(argv=None) -> int:
 
     accept_contract = load_acceptance_contract(
         contract_dir / "acceptance_contract.json")
+    case_categories = case_evidence.get("categories") or {}
     accept_results = {
-        "positive_cases": [], "boundary_cases": [],
-        "negative_cases": [], "adversarial_cases": [],
+        "positive_cases":
+            (case_categories.get("positive") or {}).get("cases") or [],
+        "boundary_cases":
+            (case_categories.get("boundary") or {}).get("cases") or [],
+        "negative_cases":
+            (case_categories.get("negative") or {}).get("cases") or [],
+        "adversarial_cases":
+            (case_categories.get("adversarial") or {}).get("cases") or [],
         "golden": golden,
         "invariants": [spec_evidence.get("conformant") is True,
                        baseline_evidence.get("pass") is True,

@@ -27,6 +27,7 @@ skipped 不计为 PASS；任何真实失败（ASSERTION_FAILURE/CODE_ERROR）
 """
 
 import argparse
+import hashlib
 import json
 import subprocess
 import sys
@@ -70,6 +71,19 @@ REQUIRED_SUITES = ("phase4_flow", "bypass", "phase1", "phase3",
                    "decision", "governance", "golden", "full_core")
 
 ACCEPTANCE_CATEGORIES = ("positive", "boundary", "negative", "adversarial")
+PIPELINE_TEST_REL = (
+    "Core/QCFP_MTF/tests/test_governance/"
+    "test_phase4_evidence_integrity.py")
+
+
+def suite_targets(name: str, ignore_pipeline_test: bool = False) -> list:
+    """返回套件 pytest targets；可选 --ignore 自引用 pipeline 测试。"""
+    targets = list(SUITES[name])
+    if ignore_pipeline_test and name in ("governance", "full_core"):
+        targets += ["--ignore",
+                    str(TESTS_DIR / "test_governance" /
+                        "test_phase4_evidence_integrity.py")]
+    return targets
 
 
 def load_case_manifest(path: Path) -> dict:
@@ -157,10 +171,12 @@ def _run_category(python_exe: str, category: str, manifest_cases: list,
     """执行 manifest 中某个 category 的全部 pytest nodeid。"""
     expected = len(manifest_cases)
     nodeid_by_test = {}
+    manifest_by_test = {}
     targets = []
     for case in manifest_cases:
         nodeid = case["pytest_nodeid"]
         nodeid_by_test[nodeid.rsplit("::", 1)[-1]] = case["case_id"]
+        manifest_by_test[nodeid.rsplit("::", 1)[-1]] = case
         rel = nodeid.split("::", 1)[0]
         targets.append(str(PROJECT_ROOT / rel) +
                        "::" + nodeid.rsplit("::", 1)[-1])
@@ -176,6 +192,13 @@ def _run_category(python_exe: str, category: str, manifest_cases: list,
         rec = dict(rec)
         rec["case_id"] = nodeid_by_test.get(rec["test"], "")
         rec["pass"] = rec["kind"] == "PASS"
+        entry = manifest_by_test.get(rec["test"], {})
+        rec["input_hash"] = entry.get("input_hash", "")
+        rec["expected_hash"] = entry.get("expected_hash", "")
+        rec["actual_hash"] = hashlib.sha256(
+            json.dumps({"kind": rec["kind"], "pass": rec["pass"]},
+                       sort_keys=True, ensure_ascii=False)
+            .encode("utf-8")).hexdigest()
         cases_out.append(rec)
     counts = dict(parsed["counts"])
     counts["collected"] = parsed["collected"]
@@ -214,6 +237,10 @@ def main(argv=None) -> int:
                         default=list(SUITES.keys()),
                         help="subset: phase4_flow bypass phase1 phase3 "
                              "decision governance golden full_core")
+    parser.add_argument(
+        "--ignore-pipeline-test", action="store_true",
+        help="Test System 重生成证据时忽略自引用 pipeline 测试（该测试在 "
+             "证据生成后单独显式运行；避免读写同一份 audit 产物的竞态）")
     args = parser.parse_args(argv)
     out_dir = Path(args.out)
     out_dir.mkdir(parents=True, exist_ok=True)
@@ -225,7 +252,9 @@ def main(argv=None) -> int:
                 results[name] = {"status": "NOT_RUN",
                                  "reason": f"unknown suite: {name}"}
                 continue
-            results[name] = run_suite(args.python, name, SUITES[name],
+            results[name] = run_suite(
+                args.python, name,
+                suite_targets(name, args.ignore_pipeline_test),
                                       junit_dir)
     statuses = [v.get("status") for v in results.values()]
     missing = [s for s in REQUIRED_SUITES if s not in results]

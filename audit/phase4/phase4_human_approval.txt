@@ -8,8 +8,8 @@ GOVERNANCE_FREEZE_CANDIDATE
 
 Regression:
 PASS (phase4_flow 85/85, bypass 27/27, phase1 20/20,
-      phase3 34/34, decision 430/430, governance 581/581,
-      golden 5/5, full_core 2030/2030; missing_suites=[])
+      phase3 34/34, decision 430/430, governance 572/572,
+      golden 5/5, full_core 2021/2021; missing_suites=[])
 
 Acceptance Cases (Test System, phase4_acceptance_case_results.json):
 PASS (positive 4/4, boundary 3/3, negative 3/3,
@@ -22,7 +22,12 @@ P1 Closure:
 P1-REV-01  CLOSED  (P4-REVIEW-COVERAGE-01 PASS:
                     changed target text files merged 8/8, missing=0)
 P1-EVID-01 CLOSED  (golden/case facts projected from TEST_SYSTEM only;
-                    Builder 不再自造 PASS/n_failed=0)
+                    Builder 不再自造 PASS/n_failed=0；四类 case evidence
+                    已真实送入 Acceptance Contract（非空、hash 可比对）)
+
+Pipeline Integration Test:
+PASS 14/14 (evidence integrity 9/9 + merger coverage 5/5；真实
+Runner→Builder→Judge 闭环显式执行，缺 Evidence 即 FAIL，不允许 silent return)
 
 Review:
 REVIEW_ISSUES (3 MINOR, all FIXED; open CRITICAL=0, open MAJOR=0)
