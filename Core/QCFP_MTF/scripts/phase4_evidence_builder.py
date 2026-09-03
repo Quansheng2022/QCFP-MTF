@@ -85,6 +85,13 @@ from QCFP_MTF.governance.traceability import audit_traceability  # noqa: E402
 
 IDENTITY_FIELDS = ("change_id", "release_id", "baseline_id")
 
+REQUIRED_REGRESSION_SUITES = (
+    "phase4_flow", "bypass", "phase1", "phase3",
+    "decision", "governance", "golden", "full_core",
+)
+
+ACCEPTANCE_CATEGORIES = ("positive", "boundary", "negative", "adversarial")
+
 
 def _sha256_bytes(raw: bytes) -> str:
     return hashlib.sha256(raw).hexdigest()
@@ -201,6 +208,68 @@ def _hash_files(bundle_dir: Path) -> dict:
     return hashes
 
 
+def _suite_ok(suite: dict) -> bool:
+    """机械布尔运算：suite 必须 PASS 且 counts 自洽（无 skipped/failed）。"""
+    try:
+        collected = int(suite.get("collected") or 0)
+        passed = int(suite.get("passed") or 0)
+        failed = int(suite.get("failed") or 0)
+        errors = int(suite.get("errors") or 0)
+        skipped = int(suite.get("skipped") or 0)
+    except (TypeError, ValueError):
+        return False
+    return (
+        suite.get("status") == "PASS"
+        and collected > 0
+        and collected == passed + failed + errors + skipped
+        and failed == 0 and errors == 0 and skipped == 0
+    )
+
+
+def _validate_regression_payload(regression: dict) -> tuple:
+    """Test System 事实校验：verdict PASS 且全部 required suite PASS。"""
+    suites = regression.get("suites") or {}
+    problems = []
+    if regression.get("verdict") != "PASS":
+        problems.append(f"regression verdict = "
+                        f"{regression.get('verdict')} != PASS")
+    missing = [
+        s for s in REQUIRED_REGRESSION_SUITES
+        if s not in suites]
+    if missing:
+        problems.append(f"missing suites: {missing}")
+    for name in REQUIRED_REGRESSION_SUITES:
+        if name in suites and not _suite_ok(suites[name]):
+            problems.append(f"suite {name} 未 PASS/自洽")
+    return problems
+
+
+def _validate_case_results(case_evidence: dict) -> list:
+    """Acceptance Case Evidence 必须来自 Test System 且全部通过。"""
+    problems = []
+    if case_evidence.get("schema") != \
+            "PHASE4-ACCEPTANCE-CASE-RESULTS-1":
+        problems.append("case evidence schema != "
+                        "PHASE4-ACCEPTANCE-CASE-RESULTS-1")
+    if case_evidence.get("verdict") != "PASS":
+        problems.append(f"case evidence verdict = "
+                        f"{case_evidence.get('verdict')} != PASS")
+    categories = case_evidence.get("categories") or {}
+    for category in ACCEPTANCE_CATEGORIES:
+        cat = categories.get(category) or {}
+        if cat.get("status") != "PASS":
+            problems.append(f"category {category} status = "
+                            f"{cat.get('status')} != PASS")
+        if int(cat.get("expected") or 0) <= 0:
+            problems.append(f"category {category} expected <= 0")
+        if int(cat.get("expected") or -1) != int(cat.get("executed") or -2):
+            problems.append(f"category {category} expected != executed")
+        if int(cat.get("failed") or 0) or int(cat.get("errors") or 0) \
+                or int(cat.get("skipped") or 0):
+            problems.append(f"category {category} 存在 failed/errors/skipped")
+    return problems
+
+
 def main(argv=None) -> int:
     parser = argparse.ArgumentParser(
         description="Phase 4 Evidence Builder")
@@ -219,6 +288,10 @@ def main(argv=None) -> int:
                         default=str(
                             PROJECT_ROOT / "audit" / "phase4" /
                             "phase4_regression_summary.json"))
+    parser.add_argument("--case-results",
+                        default=str(
+                            PROJECT_ROOT / "audit" / "phase4" /
+                            "phase4_acceptance_case_results.json"))
     args = parser.parse_args(argv)
 
     out_dir = Path(args.out)
@@ -309,18 +382,75 @@ def main(argv=None) -> int:
         _write_json(bundle_dir / name, _stamp(data, identity))
     print("Spec / Baseline / Traceability evidence written")
 
+    regression_path = Path(args.regression_summary)
+    if not regression_path.exists():
+        print(f"ERROR: regression summary 缺失（先运行 Test System）: "
+              f"{regression_path}")
+        return 1
     regression = json.loads(
-        Path(args.regression_summary).read_text(encoding="utf-8"))
-    flow_counts = (regression.get("suites") or {}).get(
-        "phase4_flow", {})
-    golden_total = int(flow_counts.get("collected") or 0)
+        regression_path.read_text(encoding="utf-8"))
+    regression_problems = _validate_regression_payload(regression)
+    if regression_problems:
+        print(f"ERROR: regression evidence 未满足 PASS/NOT_PROVEN 语义: "
+              f"{regression_problems}")
+        return 1
+
+    # Golden = Test System 原样投影（P1-EVID-01）：
+    # n_failed/status 不得由 Builder 构造；Test System status 原样保留。
+    golden_suite = (regression.get("suites") or {}).get("golden") or {}
+    golden = {
+        "n_total": int(golden_suite.get("collected") or 0),
+        "n_failed": int(golden_suite.get("failed") or 0)
+        + int(golden_suite.get("errors") or 0),
+        "n_skipped": int(golden_suite.get("skipped") or 0),
+        "status": golden_suite.get("status"),
+        "results": golden_suite.get("failures") or [],
+        "source_artifact": "phase4_regression_summary.json",
+        "source_suite": "golden",
+        "generated_by": "EVIDENCE_BUILDER",
+        "evidence_authority": "TEST_SYSTEM",
+    }
+    _write_json(
+        bundle_dir / "golden_evidence.json",
+        _stamp({
+            "schema": "PHASE4-GOLDEN-EVIDENCE-1",
+            "golden": golden,
+            "rule": "Golden 只投影 Test System 的 golden suite 事实",
+        }, identity))
+
+    case_results_path = Path(args.case_results)
+    if not case_results_path.exists():
+        print(f"ERROR: acceptance case results 缺失"
+              f"（先运行 Test System）: {case_results_path}")
+        return 1
+    case_evidence = json.loads(
+        case_results_path.read_text(encoding="utf-8"))
+    case_problems = _validate_case_results(case_evidence)
+    if case_problems:
+        print(f"ERROR: acceptance case evidence 未满足 PASS 语义: "
+              f"{case_problems}")
+        return 1
+    _write_json(
+        bundle_dir / "acceptance_case_evidence.json",
+        _stamp({
+            "schema": "PHASE4-ACCEPTANCE-CASE-EVIDENCE-1",
+            "categories": {
+                k: {kk: vv for kk, vv in v.items() if kk != "cases"}
+                for k, v in (case_evidence.get("categories") or {}).items()
+            },
+            "source_artifact": "phase4_acceptance_case_results.json",
+            "generated_by": "EVIDENCE_BUILDER",
+            "evidence_authority": "TEST_SYSTEM",
+            "rule": "Builder 只投影 Test System 的逐 case 事实，"
+                    "不计算、不改写结果",
+        }, identity))
+
     accept_contract = load_acceptance_contract(
         contract_dir / "acceptance_contract.json")
     accept_results = {
         "positive_cases": [], "boundary_cases": [],
         "negative_cases": [], "adversarial_cases": [],
-        "golden": {"n_total": golden_total, "n_failed": 0,
-                   "status": "PASS", "results": []},
+        "golden": golden,
         "invariants": [spec_evidence.get("conformant") is True,
                        baseline_evidence.get("pass") is True,
                        trace_evidence.get("pass") is True],
@@ -341,8 +471,9 @@ def main(argv=None) -> int:
               f"{accept_gate.get('failures')} "
               f"{accept_gate.get('evidence_gaps')}")
         return 1
-    print(f"Acceptance Gate: ACCEPTANCE_PASS (golden_total="
-          f"{golden_total})")
+    print(f"Acceptance Gate: ACCEPTANCE_PASS (golden from TEST_SYSTEM, "
+          f"n_total={golden['n_total']}, status={golden['status']}, "
+          f"case_categories=PASS)")
 
     # ---- 4. Patch Scope Audit（SF-2） ---------------------------------
     schema_before = _schema_hash(source_commit, root)

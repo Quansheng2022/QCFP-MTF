@@ -494,6 +494,10 @@ MODULES = [
     "test_governance.test_phase1",
     # Phase 4 — Flow Governance Closure（FGC-1 + SF-1~SF-5）
     "test_governance.test_phase4",
+    # Phase 4 P1 Closure — Evidence Integrity（P1-EVID-01）
+    "test_governance.test_phase4_evidence_integrity",
+    # Phase 4 P1 Closure — Changed-File Review Coverage（P1-REV-01）
+    "test_scripts.test_merge_project_for_phase4_review_v4",
 ]
 
 # 依赖真实数据库/项目配置的集成测试模块（--unit-only 时跳过）

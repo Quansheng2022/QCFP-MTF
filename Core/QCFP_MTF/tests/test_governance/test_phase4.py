@@ -58,7 +58,7 @@ def _bundle_artifacts() -> dict:
             "schema": "PHASE4-REGRESSION-1", "suites": {
                 name: _suite() for name in (
                     "phase4_flow", "bypass", "phase1", "phase3",
-                    "decision", "governance", "full_core")}},
+                    "decision", "governance", "golden", "full_core")}},
     }
 
 

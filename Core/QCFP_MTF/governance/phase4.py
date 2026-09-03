@@ -81,7 +81,7 @@ ARTIFACT_SCHEMAS = {
 
 REQUIRED_REGRESSION_SUITES = (
     "phase4_flow", "bypass", "phase1", "phase3",
-    "decision", "governance", "full_core",
+    "decision", "governance", "golden", "full_core",
 )
 
 

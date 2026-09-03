@@ -1,0 +1,69 @@
+{
+  "schema": "PHASE4-ACCEPTANCE-CASES-1",
+  "change_id": "CHG-P4-FGC-1",
+  "rule": "Manifest 定义应该执行什么（Spec/Contract Authority）；结果由 Test System 执行后另行产出。四类 required category 均不得为空。",
+  "positive": [
+    {
+      "case_id": "P4-POS-001",
+      "pytest_nodeid": "Core/QCFP_MTF/tests/test_governance/test_flow_governance.py::test_spec_conformance_real_file"
+    },
+    {
+      "case_id": "P4-POS-002",
+      "pytest_nodeid": "Core/QCFP_MTF/tests/test_governance/test_flow_governance.py::test_traceability_manifest_real_audit"
+    },
+    {
+      "case_id": "P4-POS-003",
+      "pytest_nodeid": "Core/QCFP_MTF/tests/test_governance/test_flow_governance.py::test_baseline_create_only_immutable"
+    },
+    {
+      "case_id": "P4-POS-004",
+      "pytest_nodeid": "Core/QCFP_MTF/tests/test_governance/test_phase4.py::test_phase4_acceptance_pass_all_gates"
+    }
+  ],
+  "boundary": [
+    {
+      "case_id": "P4-BND-001",
+      "pytest_nodeid": "Core/QCFP_MTF/tests/test_governance/test_phase4.py::test_missing_artifact_not_proven"
+    },
+    {
+      "case_id": "P4-BND-002",
+      "pytest_nodeid": "Core/QCFP_MTF/tests/test_governance/test_phase4.py::test_missing_regression_suite_not_proven"
+    },
+    {
+      "case_id": "P4-BND-003",
+      "pytest_nodeid": "Core/QCFP_MTF/tests/test_governance/test_governance_bypass.py::test_bypass_missing_authority_graphs_not_proven"
+    }
+  ],
+  "negative": [
+    {
+      "case_id": "P4-NEG-001",
+      "pytest_nodeid": "Core/QCFP_MTF/tests/test_governance/test_governance_bypass.py::test_bypass_low_change_without_diff_not_proven"
+    },
+    {
+      "case_id": "P4-NEG-002",
+      "pytest_nodeid": "Core/QCFP_MTF/tests/test_governance/test_governance_bypass.py::test_bypass_empty_patch_evidence_not_proven"
+    },
+    {
+      "case_id": "P4-NEG-003",
+      "pytest_nodeid": "Core/QCFP_MTF/tests/test_governance/test_governance_bypass.py::test_bypass_manifest_missing_not_proven"
+    }
+  ],
+  "adversarial": [
+    {
+      "case_id": "P4-ADV-001",
+      "pytest_nodeid": "Core/QCFP_MTF/tests/test_governance/test_governance_bypass.py::test_bypass_bundle_hash_tampered_not_proven"
+    },
+    {
+      "case_id": "P4-ADV-002",
+      "pytest_nodeid": "Core/QCFP_MTF/tests/test_governance/test_governance_bypass.py::test_bypass_ai_human_approval_blocked"
+    },
+    {
+      "case_id": "P4-ADV-003",
+      "pytest_nodeid": "Core/QCFP_MTF/tests/test_governance/test_governance_bypass.py::test_bypass_approval_hash_mismatch_blocked"
+    },
+    {
+      "case_id": "P4-ADV-004",
+      "pytest_nodeid": "Core/QCFP_MTF/tests/test_governance/test_phase4.py::test_pack_not_readonly_fails_sf3_gate"
+    }
+  ]
+}

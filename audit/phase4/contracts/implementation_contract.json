@@ -29,8 +29,11 @@
     "Core/QCFP_MTF/scripts/phase4_evidence_builder.py",
     "Core/QCFP_MTF/scripts/phase4_regression_runner.py",
     "Core/QCFP_MTF/tests/test_governance/test_phase4.py",
+    "Core/QCFP_MTF/tests/test_governance/test_phase4_evidence_integrity.py",
+    "Core/QCFP_MTF/tests/test_scripts/test_merge_project_for_phase4_review_v4.py",
     "Doc/QCFP-MTF_Phase4_FGC_开发验证规范.md",
-    "audit/phase4/"
+    "audit/phase4/",
+    "tools/review/merge_project_for_phase4_review_v4.py"
   ],
   "files_to_delete": [],
   "forbidden_files": [
