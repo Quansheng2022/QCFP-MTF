@@ -6,7 +6,7 @@ Freeze State : GOVERNANCE_FREEZE_CANDIDATE
 
 bypass_to_software_qualified     0
 bypass_to_production_dss         0
-evidence_pack_artifacts          11
+evidence_pack_artifacts          13
 review_verdict                   REVIEW_ISSUES
 open_critical                    0
 open_major                       0

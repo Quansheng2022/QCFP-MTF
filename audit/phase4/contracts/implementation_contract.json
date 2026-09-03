@@ -22,7 +22,8 @@
     "Core/QCFP_MTF/scripts/governance_flow.py",
     "Core/QCFP_MTF/tests/test_governance/test_phase4.py",
     "Core/QCFP_MTF/tests/run_all_tests.py",
-    "Doc/QCFP-MTF_Phase4_FGC_开发验证规范.md"
+    "Doc/QCFP-MTF_Phase4_FGC_开发验证规范.md",
+    "Doc/QCFP-MTF_Roadmap.md"
   ],
   "allowed_new_files": [
     "Core/QCFP_MTF/governance/phase4.py",

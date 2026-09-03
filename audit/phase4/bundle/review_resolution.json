@@ -7,7 +7,7 @@
       "severity": "MINOR",
       "category": "IMPLEMENTATION_DEFECT",
       "resolution": "FIXED",
-      "patch_id": "bf191a9",
+      "patch_id": "17b901a",
       "verification_test": "phase4_evidence_builder 现先计算 Spec/Baseline/Traceability 再推导 invariants/unchanged；acceptance gate 重跑 ACCEPTANCE_PASS",
       "verified": true
     },
@@ -16,7 +16,7 @@
       "severity": "MINOR",
       "category": "IMPLEMENTATION_DEFECT",
       "resolution": "FIXED",
-      "patch_id": "bf191a9",
+      "patch_id": "17b901a",
       "verification_test": "phase4_regression_runner 已显式 sys.path.insert；--suites phase4_flow 独立运行 PASS",
       "verified": true
     },
@@ -25,7 +25,7 @@
       "severity": "MINOR",
       "category": "DOCUMENTATION_DRIFT",
       "resolution": "FIXED",
-      "patch_id": "bf191a9",
+      "patch_id": "17b901a",
       "verification_test": "phase4.py ARTIFACT_SCHEMAS 注释已澄清 out_dir 派生证据分层；test_phase4 7 项全绿",
       "verified": true
     }

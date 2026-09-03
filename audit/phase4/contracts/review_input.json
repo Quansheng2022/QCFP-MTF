@@ -26,8 +26,8 @@
     "actual_diff": {
       "schema": "OBSERVED-DIFF-2",
       "source_commit": "cdcab0c88ece298ec2d76f64a3047fb67eb51487",
-      "target_commit": "bf191a9777a5b5707340a5525553e0331dbfcf75",
-      "diff_hash": "014bb899b5168061c7429c26aee31067742efb37e9da265b1346437625b5ae73",
+      "target_commit": "17b901a0561337f80777795a80882adf0c63b202",
+      "diff_hash": "be4629aa0607273952d6f74bf3d41e9f383d7e9fa0d936f37f0af99324b6c642",
       "changed_files": [
         "Core/QCFP_MTF/governance/phase4.py",
         "Core/QCFP_MTF/scripts/governance_flow.py",
@@ -35,7 +35,11 @@
         "Core/QCFP_MTF/scripts/phase4_regression_runner.py",
         "Core/QCFP_MTF/tests/run_all_tests.py",
         "Core/QCFP_MTF/tests/test_governance/test_phase4.py",
-        "Doc/QCFP-MTF_Phase4_FGC_开发验证规范.md"
+        "Core/QCFP_MTF/tests/test_governance/test_phase4_evidence_integrity.py",
+        "Core/QCFP_MTF/tests/test_scripts/test_merge_project_for_phase4_review_v4.py",
+        "Doc/QCFP-MTF_Phase4_FGC_开发验证规范.md",
+        "Doc/QCFP-MTF_Roadmap.md",
+        "tools/review/merge_project_for_phase4_review_v4.py"
       ]
     },
     "test_evidence": {

@@ -1,0 +1,18 @@
+{
+  "schema": "PHASE4-GOLDEN-EVIDENCE-1",
+  "golden": {
+    "n_total": 5,
+    "n_failed": 0,
+    "n_skipped": 0,
+    "status": "PASS",
+    "results": [],
+    "source_artifact": "phase4_regression_summary.json",
+    "source_suite": "golden",
+    "generated_by": "EVIDENCE_BUILDER",
+    "evidence_authority": "TEST_SYSTEM"
+  },
+  "rule": "Golden 只投影 Test System 的 golden suite 事实",
+  "change_id": "CHG-P4-FGC-1",
+  "release_id": "FGC-CLOSURE-1",
+  "baseline_id": "GOV-BASELINE-4"
+}

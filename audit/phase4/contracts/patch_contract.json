@@ -1,7 +1,7 @@
 {
   "schema": "PATCH-CONTRACT-2",
   "change_id": "CHG-P4-FGC-1",
-  "implementation_contract_hash": "b8a5ed71c5f759040cf9731c627016fa829968312faf5440537ed0d4cad2c596",
+  "implementation_contract_hash": "3dbbaf11318c5ac35119b300f018e7d3fbcece87bb00670caeb95c6820bb5743",
   "allowed_files": [
     "Core/QCFP_MTF/governance/phase4.py",
     "Core/QCFP_MTF/scripts/phase4_evidence_builder.py",
@@ -12,6 +12,7 @@
     "Core/QCFP_MTF/tests/test_scripts/test_merge_project_for_phase4_review_v4.py",
     "Core/QCFP_MTF/tests/run_all_tests.py",
     "Doc/QCFP-MTF_Phase4_FGC_开发验证规范.md",
+    "Doc/QCFP-MTF_Roadmap.md",
     "audit/phase4/",
     "tools/review/merge_project_for_phase4_review_v4.py"
   ],

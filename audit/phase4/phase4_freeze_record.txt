@@ -6,7 +6,7 @@ Freeze State : GOVERNANCE_FREEZE_CANDIDATE
 
 Bypass to SOFTWARE_QUALIFIED : 0
 Bypass to PRODUCTION_DSS     : 0
-Evidence Pack Artifacts      : 11
+Evidence Pack Artifacts      : 13
 Open P0                      : 0
 Open P1                      : 0
 Missing Evidence             : 0

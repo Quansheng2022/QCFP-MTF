@@ -12693,12 +12693,22 @@
     },
     {
       "source": "scripts.phase4_regression_runner",
+      "target": "subprocess",
+      "type": "IMPORTS"
+    },
+    {
+      "source": "scripts.phase4_regression_runner",
       "target": "sys",
       "type": "IMPORTS"
     },
     {
       "source": "scripts.phase4_regression_runner",
       "target": "tempfile",
+      "type": "IMPORTS"
+    },
+    {
+      "source": "scripts.phase4_regression_runner",
+      "target": "xml.etree.ElementTree",
       "type": "IMPORTS"
     },
     {

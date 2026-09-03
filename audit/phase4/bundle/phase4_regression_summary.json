@@ -1,7 +1,7 @@
 {
   "schema": "PHASE4-REGRESSION-1",
   "generated_by": "TEST_SYSTEM",
-  "generated_at_utc": "2026-09-02T15:54:00Z",
+  "generated_at_utc": "2026-09-03T04:34:03Z",
   "python": ".venv\\Scripts\\python.exe",
   "required_suites": [
     "phase4_flow",
@@ -10,6 +10,7 @@
     "phase3",
     "decision",
     "governance",
+    "golden",
     "full_core"
   ],
   "missing_suites": [],
@@ -72,8 +73,19 @@
     "governance": {
       "status": "PASS",
       "exit_code": 0,
-      "collected": 572,
-      "passed": 572,
+      "collected": 581,
+      "passed": 581,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "failure_classification": "PASS",
+      "failures": []
+    },
+    "golden": {
+      "status": "PASS",
+      "exit_code": 0,
+      "collected": 5,
+      "passed": 5,
       "failed": 0,
       "errors": 0,
       "skipped": 0,
@@ -83,8 +95,8 @@
     "full_core": {
       "status": "PASS",
       "exit_code": 0,
-      "collected": 2016,
-      "passed": 2016,
+      "collected": 2030,
+      "passed": 2030,
       "failed": 0,
       "errors": 0,
       "skipped": 0,

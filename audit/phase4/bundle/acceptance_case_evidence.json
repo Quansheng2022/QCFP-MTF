@@ -1,0 +1,60 @@
+{
+  "schema": "PHASE4-ACCEPTANCE-CASE-EVIDENCE-1",
+  "categories": {
+    "positive": {
+      "category": "positive",
+      "expected": 4,
+      "executed": 4,
+      "passed": 4,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "status": "PASS",
+      "mismatch": false,
+      "rule": "Test System 逐 case 执行 manifest；expected == executed；任何真实失败 → FAIL；skipped → INCOMPLETE；缺失/不匹配 → NOT_PROVEN"
+    },
+    "boundary": {
+      "category": "boundary",
+      "expected": 3,
+      "executed": 3,
+      "passed": 3,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "status": "PASS",
+      "mismatch": false,
+      "rule": "Test System 逐 case 执行 manifest；expected == executed；任何真实失败 → FAIL；skipped → INCOMPLETE；缺失/不匹配 → NOT_PROVEN"
+    },
+    "negative": {
+      "category": "negative",
+      "expected": 3,
+      "executed": 3,
+      "passed": 3,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "status": "PASS",
+      "mismatch": false,
+      "rule": "Test System 逐 case 执行 manifest；expected == executed；任何真实失败 → FAIL；skipped → INCOMPLETE；缺失/不匹配 → NOT_PROVEN"
+    },
+    "adversarial": {
+      "category": "adversarial",
+      "expected": 4,
+      "executed": 4,
+      "passed": 4,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "status": "PASS",
+      "mismatch": false,
+      "rule": "Test System 逐 case 执行 manifest；expected == executed；任何真实失败 → FAIL；skipped → INCOMPLETE；缺失/不匹配 → NOT_PROVEN"
+    }
+  },
+  "source_artifact": "phase4_acceptance_case_results.json",
+  "generated_by": "EVIDENCE_BUILDER",
+  "evidence_authority": "TEST_SYSTEM",
+  "rule": "Builder 只投影 Test System 的逐 case 事实，不计算、不改写结果",
+  "change_id": "CHG-P4-FGC-1",
+  "release_id": "FGC-CLOSURE-1",
+  "baseline_id": "GOV-BASELINE-4"
+}

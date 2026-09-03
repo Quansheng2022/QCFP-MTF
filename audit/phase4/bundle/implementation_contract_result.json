@@ -5,7 +5,7 @@
   "change_impact_hash": "f435fd3eb23cf578fab816bd867aa652676d4a087b881809f93b4c28c38f2afe",
   "verdict": "CONTRACT_OK",
   "violations": [],
-  "generated_at": "2026-09-02T16:01:19Z",
+  "generated_at": "2026-09-03T04:37:12Z",
   "pass": true,
   "release_id": "FGC-CLOSURE-1",
   "baseline_id": "GOV-BASELINE-4"

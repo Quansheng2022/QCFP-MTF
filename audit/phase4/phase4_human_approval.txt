@@ -8,17 +8,30 @@ GOVERNANCE_FREEZE_CANDIDATE
 
 Regression:
 PASS (phase4_flow 85/85, bypass 27/27, phase1 20/20,
-      phase3 34/34, decision 430/430, governance 572/572,
-      full_core 2016/2016; missing_suites=[])
+      phase3 34/34, decision 430/430, governance 581/581,
+      golden 5/5, full_core 2030/2030; missing_suites=[])
+
+Acceptance Cases (Test System, phase4_acceptance_case_results.json):
+PASS (positive 4/4, boundary 3/3, negative 3/3,
+      adversarial 4/4; verdict=PASS)
 
 Evidence Pack:
-PACK_ACCEPTED (11 artifacts, read-only OK; evidence_manifest.json)
+PACK_ACCEPTED (13 artifacts, read-only OK; evidence_manifest.json)
+
+P1 Closure:
+P1-REV-01  CLOSED  (P4-REVIEW-COVERAGE-01 PASS:
+                    changed target text files merged 8/8, missing=0)
+P1-EVID-01 CLOSED  (golden/case facts projected from TEST_SYSTEM only;
+                    Builder 不再自造 PASS/n_failed=0)
 
 Review:
 REVIEW_ISSUES (3 MINOR, all FIXED; open CRITICAL=0, open MAJOR=0)
 
+Acceptance Review Bundle:
+ERROR=0, BLOCKER=0, WARN=0, PASS=14
+
 Git Commit (source identity):
-bf191a9777a5b5707340a5525553e0331dbfcf75
+17b901a0561337f80777795a80882adf0c63b202
 
 Human Decision (2026-09-03):
 User instructed Phase 4 Development / Validation Specification,

@@ -1,0 +1,193 @@
+{
+  "schema": "PHASE4-ACCEPTANCE-CASE-RESULTS-1",
+  "generated_by": "TEST_SYSTEM",
+  "generated_at_utc": "2026-09-03T04:34:14Z",
+  "python": ".venv\\Scripts\\python.exe",
+  "manifest_source": "C:\\Users\\Quansheng\\Documents\\projects\\TA_Workflow\\audit\\phase4\\contracts\\acceptance_case_manifest.json",
+  "categories": {
+    "positive": {
+      "category": "positive",
+      "expected": 4,
+      "executed": 4,
+      "passed": 4,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "status": "PASS",
+      "cases": [
+        {
+          "test": "test_spec_conformance_real_file",
+          "classname": "Core.QCFP_MTF.tests.test_governance.test_flow_governance",
+          "kind": "PASS",
+          "message": "",
+          "classification": "PASS",
+          "case_id": "P4-POS-001",
+          "pass": true
+        },
+        {
+          "test": "test_traceability_manifest_real_audit",
+          "classname": "Core.QCFP_MTF.tests.test_governance.test_flow_governance",
+          "kind": "PASS",
+          "message": "",
+          "classification": "PASS",
+          "case_id": "P4-POS-002",
+          "pass": true
+        },
+        {
+          "test": "test_baseline_create_only_immutable",
+          "classname": "Core.QCFP_MTF.tests.test_governance.test_flow_governance",
+          "kind": "PASS",
+          "message": "",
+          "classification": "PASS",
+          "case_id": "P4-POS-003",
+          "pass": true
+        },
+        {
+          "test": "test_phase4_acceptance_pass_all_gates",
+          "classname": "Core.QCFP_MTF.tests.test_governance.test_phase4",
+          "kind": "PASS",
+          "message": "",
+          "classification": "PASS",
+          "case_id": "P4-POS-004",
+          "pass": true
+        }
+      ],
+      "mismatch": false,
+      "rule": "Test System 逐 case 执行 manifest；expected == executed；任何真实失败 → FAIL；skipped → INCOMPLETE；缺失/不匹配 → NOT_PROVEN"
+    },
+    "boundary": {
+      "category": "boundary",
+      "expected": 3,
+      "executed": 3,
+      "passed": 3,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "status": "PASS",
+      "cases": [
+        {
+          "test": "test_missing_artifact_not_proven",
+          "classname": "Core.QCFP_MTF.tests.test_governance.test_phase4",
+          "kind": "PASS",
+          "message": "",
+          "classification": "PASS",
+          "case_id": "P4-BND-001",
+          "pass": true
+        },
+        {
+          "test": "test_missing_regression_suite_not_proven",
+          "classname": "Core.QCFP_MTF.tests.test_governance.test_phase4",
+          "kind": "PASS",
+          "message": "",
+          "classification": "PASS",
+          "case_id": "P4-BND-002",
+          "pass": true
+        },
+        {
+          "test": "test_bypass_missing_authority_graphs_not_proven",
+          "classname": "Core.QCFP_MTF.tests.test_governance.test_governance_bypass",
+          "kind": "PASS",
+          "message": "",
+          "classification": "PASS",
+          "case_id": "P4-BND-003",
+          "pass": true
+        }
+      ],
+      "mismatch": false,
+      "rule": "Test System 逐 case 执行 manifest；expected == executed；任何真实失败 → FAIL；skipped → INCOMPLETE；缺失/不匹配 → NOT_PROVEN"
+    },
+    "negative": {
+      "category": "negative",
+      "expected": 3,
+      "executed": 3,
+      "passed": 3,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "status": "PASS",
+      "cases": [
+        {
+          "test": "test_bypass_low_change_without_diff_not_proven",
+          "classname": "Core.QCFP_MTF.tests.test_governance.test_governance_bypass",
+          "kind": "PASS",
+          "message": "",
+          "classification": "PASS",
+          "case_id": "P4-NEG-001",
+          "pass": true
+        },
+        {
+          "test": "test_bypass_empty_patch_evidence_not_proven",
+          "classname": "Core.QCFP_MTF.tests.test_governance.test_governance_bypass",
+          "kind": "PASS",
+          "message": "",
+          "classification": "PASS",
+          "case_id": "P4-NEG-002",
+          "pass": true
+        },
+        {
+          "test": "test_bypass_manifest_missing_not_proven",
+          "classname": "Core.QCFP_MTF.tests.test_governance.test_governance_bypass",
+          "kind": "PASS",
+          "message": "",
+          "classification": "PASS",
+          "case_id": "P4-NEG-003",
+          "pass": true
+        }
+      ],
+      "mismatch": false,
+      "rule": "Test System 逐 case 执行 manifest；expected == executed；任何真实失败 → FAIL；skipped → INCOMPLETE；缺失/不匹配 → NOT_PROVEN"
+    },
+    "adversarial": {
+      "category": "adversarial",
+      "expected": 4,
+      "executed": 4,
+      "passed": 4,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "status": "PASS",
+      "cases": [
+        {
+          "test": "test_bypass_bundle_hash_tampered_not_proven",
+          "classname": "Core.QCFP_MTF.tests.test_governance.test_governance_bypass",
+          "kind": "PASS",
+          "message": "",
+          "classification": "PASS",
+          "case_id": "P4-ADV-001",
+          "pass": true
+        },
+        {
+          "test": "test_bypass_ai_human_approval_blocked",
+          "classname": "Core.QCFP_MTF.tests.test_governance.test_governance_bypass",
+          "kind": "PASS",
+          "message": "",
+          "classification": "PASS",
+          "case_id": "P4-ADV-002",
+          "pass": true
+        },
+        {
+          "test": "test_bypass_approval_hash_mismatch_blocked",
+          "classname": "Core.QCFP_MTF.tests.test_governance.test_governance_bypass",
+          "kind": "PASS",
+          "message": "",
+          "classification": "PASS",
+          "case_id": "P4-ADV-003",
+          "pass": true
+        },
+        {
+          "test": "test_pack_not_readonly_fails_sf3_gate",
+          "classname": "Core.QCFP_MTF.tests.test_governance.test_phase4",
+          "kind": "PASS",
+          "message": "",
+          "classification": "PASS",
+          "case_id": "P4-ADV-004",
+          "pass": true
+        }
+      ],
+      "mismatch": false,
+      "rule": "Test System 逐 case 执行 manifest；expected == executed；任何真实失败 → FAIL；skipped → INCOMPLETE；缺失/不匹配 → NOT_PROVEN"
+    }
+  },
+  "verdict": "PASS",
+  "rule": "四类 Acceptance Cases 由 Test System 逐 case 执行；Builder/Judge 只消费本文件；缺失或失败 → 不得 PASS"
+}

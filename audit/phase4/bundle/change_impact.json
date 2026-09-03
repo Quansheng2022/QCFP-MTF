@@ -26,7 +26,7 @@
   "schema": "CHANGE-IMPACT-2",
   "change_hash": "f435fd3eb23cf578fab816bd867aa652676d4a087b881809f93b4c28c38f2afe",
   "source_commit": "cdcab0c88ece298ec2d76f64a3047fb67eb51487",
-  "generated_at": "2026-09-02T16:01:19Z",
+  "generated_at": "2026-09-03T04:37:12Z",
   "release_id": "FGC-CLOSURE-1",
   "baseline_id": "GOV-BASELINE-4"
 }

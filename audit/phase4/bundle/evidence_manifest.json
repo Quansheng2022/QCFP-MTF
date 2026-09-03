@@ -5,9 +5,17 @@
   "baseline_id": "GOV-BASELINE-4",
   "artifacts": [
     {
+      "name": "acceptance_case_evidence.json",
+      "schema": "PHASE4-ACCEPTANCE-CASE-EVIDENCE-1",
+      "sha256": "145a6ce4cd528490ea0a702450c4fd16d21aae76583125a66aa75ba60a5a5b3c",
+      "change_id": "CHG-P4-FGC-1",
+      "release_id": "FGC-CLOSURE-1",
+      "baseline_id": "GOV-BASELINE-4"
+    },
+    {
       "name": "acceptance_result.json",
       "schema": "ACCEPTANCE-RESULT-2",
-      "sha256": "988ef32fac113dbe60652d0b39470826019decaee632b6431ef76eb998d5143d",
+      "sha256": "4c60fad7a89fe00bb36899564c68595531aeceb722f62032b1de446c62669e26",
       "change_id": "CHG-P4-FGC-1",
       "release_id": "FGC-CLOSURE-1",
       "baseline_id": "GOV-BASELINE-4"
@@ -23,7 +31,7 @@
     {
       "name": "change_impact.json",
       "schema": "CHANGE-IMPACT-2",
-      "sha256": "dd072ad3885e0afda6ed22910efa2b67615d545894fc1ef32d6e194f71a8e05a",
+      "sha256": "88c8cc53b366003bba92064df5f868d0d75ba0765101c324aba5eb6d08e84bae",
       "change_id": "CHG-P4-FGC-1",
       "release_id": "FGC-CLOSURE-1",
       "baseline_id": "GOV-BASELINE-4"
@@ -37,9 +45,17 @@
       "baseline_id": "GOV-BASELINE-4"
     },
     {
+      "name": "golden_evidence.json",
+      "schema": "PHASE4-GOLDEN-EVIDENCE-1",
+      "sha256": "ec345e008f7d0a88a86011720ca51e921cf60b629e7a12f67263da1495b17ddc",
+      "change_id": "CHG-P4-FGC-1",
+      "release_id": "FGC-CLOSURE-1",
+      "baseline_id": "GOV-BASELINE-4"
+    },
+    {
       "name": "implementation_contract_result.json",
       "schema": "CONTRACT-RESULT-2",
-      "sha256": "3ae53b6c57b344e4fd1baa626842577063de8264fca95c98e933f9f039047a59",
+      "sha256": "13674e3a5ebfbfaa574537465c6c44bc5472a4f8bb8669f7c4dbca534c2cdbbc",
       "change_id": "CHG-P4-FGC-1",
       "release_id": "FGC-CLOSURE-1",
       "baseline_id": "GOV-BASELINE-4"
@@ -47,7 +63,7 @@
     {
       "name": "phase4_regression_summary.json",
       "schema": "PHASE4-REGRESSION-1",
-      "sha256": "cebd0be1b84ac218217996ec6c0df8f980c6e97ca68ea582fb35afc683c84216",
+      "sha256": "69dfda2f79f66f65592124ebe93b78bfb940a3990de263ecf2db7fc38ab01a54",
       "change_id": "CHG-P4-FGC-1",
       "release_id": "FGC-CLOSURE-1",
       "baseline_id": "GOV-BASELINE-4"
@@ -63,7 +79,7 @@
     {
       "name": "review_resolution.json",
       "schema": "REVIEW-RESOLUTION-2",
-      "sha256": "07995a9dd10a2139e24f0c33cdf6cdb8ccd7b0ba6c1e7dd214532fc1f07eaa7f",
+      "sha256": "29c96e521dbb30526a430d1aa2dbd76a84033d3492ae5d04a09db2d7a071c5c7",
       "change_id": "CHG-P4-FGC-1",
       "release_id": "FGC-CLOSURE-1",
       "baseline_id": "GOV-BASELINE-4"
@@ -87,11 +103,11 @@
     {
       "name": "traceability.json",
       "schema": "TRACEABILITY-2",
-      "sha256": "b40c7967ff305520f90eb8b8bec4cfcdc3dbfa4b69b8739f27b4709b4137e4b3",
+      "sha256": "fb3044d8cae248851f8150db1d1316fca48d2013fb1f65057bcbb8f66fb72670",
       "change_id": "CHG-P4-FGC-1",
       "release_id": "FGC-CLOSURE-1",
       "baseline_id": "GOV-BASELINE-4"
     }
   ],
-  "bundle_hash": "9738bf22d5a07099a64b3a126e55d1a4140687eab6f50ae506cb5699cc6cf32c"
+  "bundle_hash": "aa3b2f8b3decbff78fb994dd4652e3aad85230c0b7f89cf51a3ac1f9e516af09"
 }

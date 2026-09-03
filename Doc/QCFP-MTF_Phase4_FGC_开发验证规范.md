@@ -188,3 +188,44 @@ Freeze State 只允许：`GOVERNANCE_FREEZE_CANDIDATE` / `BLOCKED` / `NOT_PROVEN
 
 见 `audit/phase4/phase4_acceptance.md`（机器验收记录）与
 `audit/phase4/phase4_human_approval.txt`（Human Freeze Approval）。
+
+---
+
+## 八、P1 Closure 修订记录（2026-09-03）
+
+### P1-REV-01 — Review Bundle 完整性
+
+`tools/review/merge_project_for_phase4_review_v4.py` 增加
+**Changed-File Coverage Gate（P4-REVIEW-COVERAGE-01）**：
+
+```text
+review_files = phase4_relevant_files
+             ∪ review_anchor_files
+             ∪ changed_target_files        ← unconditional
+             ∪ protected_phase3_changed_files
+
+Changed Target Text Files ⊆ Merged Review Files
+```
+
+缺失 changed target 文本文件：Development=ERROR / Acceptance=BLOCKER；
+changed binary：INFO + 2A manifest；oversized：WARN / ERROR。
+Bundle 新增 `2A. CHANGED-FILE REVIEW COVERAGE` 索引
+（Git Diff ↔ Manifest ↔ Merged Content 闭环）。
+
+### P1-EVID-01 — Evidence Builder 不得构造 PASS
+
+- Regression Runner 新增真实 **golden suite**（tests/test_golden）并加入
+  required suites；
+- 新增 `audit/phase4/contracts/acceptance_case_manifest.json`
+  （positive/boundary/negative/adversarial 四类 required cases）；
+- Runner 逐 case 执行 manifest 并产出
+  `phase4_acceptance_case_results.json`（PHASE4-ACCEPTANCE-CASE-RESULTS-1）；
+- Builder 删除自造 `n_failed=0 / status=PASS`，只做：
+  read → schema validate → bind identity → 纯投影 → hash → pack；
+  golden/case 事实 authority = TEST_SYSTEM；
+- 缺证据 / skipped / tampered / FAIL 一律 fail-closed（NOT_PROVEN 语义）。
+
+验收复核（2026-09-03）：PHASE4_PASS /
+GOVERNANCE_FREEZE_CANDIDATE；Acceptance Review Bundle
+ERROR=0 / BLOCKER=0；P4-REVIEW-COVERAGE-01 = PASS（8/8）；
+Evidence Pack = 13 artifacts（read-only）。
