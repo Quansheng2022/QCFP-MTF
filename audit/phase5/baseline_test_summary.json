@@ -1,0 +1,27 @@
+{
+  "schema": "PHASE5-BASELINE-TEST-SUMMARY-1",
+  "phase": 5,
+  "work_package": "P5-A03",
+  "phase4_tag": "qcfp-mtf-phase4-frozen",
+  "phase4_commit": "275726b37ff264f1717d41c3fec26c7135bace74",
+  "executed_before_any_phase5_code_change": true,
+  "command": ".venv/Scripts/python.exe -m pytest Core/QCFP_MTF/tests -q --junitxml=Temp/phase5_baseline_junit.xml",
+  "python": ".venv\\Scripts\\python.exe",
+  "pytest_version": "9.1.1",
+  "scope_note": "与 Phase 4 Regression Runner 的 full_core/decision/governance/golden/phase1/phase3/bypass 套件同范围（Core/QCFP_MTF/tests 全量）。",
+  "baseline_test_count": {
+    "collected": 2030,
+    "passed": 2030,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "return_code": 0,
+  "duration_seconds": 257.19,
+  "junit_evidence": "audit/phase5/baseline_pytest_junit.xml",
+  "mandatory_condition_met": "baseline pytest rc = 0",
+  "verdict": "PASS",
+  "note_phase4_record": "Phase 4 冻结记录 full_core=2021（JUnit 分类口径）；本次裸 pytest 收集 2030，全部通过，rc=0，不影响 P5-A03 判定。",
+  "generated_at_utc": "2026-09-03T23:30:49Z",
+  "generated_by": "AI_AGENT_P5-A03 (TEST_SYSTEM)"
+}

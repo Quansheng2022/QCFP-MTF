@@ -1,0 +1,25 @@
+{
+  "schema": "PHASE5-BASELINE-IDENTITY-1",
+  "phase": 5,
+  "work_package": "P5-A01",
+  "phase4_tag": "qcfp-mtf-phase4-frozen",
+  "phase4_commit": "275726b37ff264f1717d41c3fec26c7135bace74",
+  "phase5_start_commit": "275726b37ff264f1717d41c3fec26c7135bace74",
+  "phase5_start_branch": "codex/phase4-fgc-closure",
+  "phase5_work_branch": "codex/phase5-shadow-operation",
+  "working_tree_clean": false,
+  "working_tree_note": "Phase 5 开始前已存在用户生成产物（Report/Prompt 输出、Report/QCFP_MTF 运行产物、audit/phase1/phase1_acceptance.json 等）。P5 只允许新增 PHASE5_ALLOWED 面文件，不得把这些脏文件混入 Phase 5 commit。",
+  "preexisting_dirty_inventory": {
+    "Report": 163,
+    "Prompt": 17,
+    "audit": 1,
+    "tools": 1
+  },
+  "verified": {
+    "tag_resolves_to_phase4_commit": true,
+    "head_before_phase5_work_matches_phase4_commit": true,
+    "repository_history_consistent": true
+  },
+  "generated_at_utc": "2026-09-03T23:30:49Z",
+  "generated_by": "AI_AGENT_P5-A01"
+}
