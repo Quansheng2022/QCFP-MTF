@@ -1,0 +1,75 @@
+{
+  "schema": "PHASE5-FIX02B-EVIDENCE-1",
+  "phase": 5,
+  "task": "FIX-02B — Frozen Evidence Test-Side-Effect Isolation",
+  "branch": "codex/phase5-shadow-operation",
+  "status": "PASS / CLOSED",
+  "root_cause": {
+    "defect": "Historical regression test writes production/frozen Phase 1 acceptance evidence",
+    "writer": "Core/QCFP_MTF/governance/phase1.py :: phase1_acceptance()",
+    "trigger": "Core/QCFP_MTF/tests/test_governance/test_phase1.py :: test_phase1_acceptance_pending_baseline()",
+    "trigger_pattern": "phase1_acceptance() 未传 out_dir → 写默认 audit/phase1/phase1_acceptance.json",
+    "observed_side_effect": "audit/phase1/phase1_acceptance.json 在 pytest 期间被重新生成",
+    "functional_test_status": "PASS",
+    "governance_immutability_status": "FAIL（修复前）",
+    "authority_semantic_change": "NO",
+    "phase1_reopen_required": "NO"
+  },
+  "remediation": [
+    {
+      "item": "Phase 5 等价隔离测试",
+      "file": "Core/QCFP_MTF/tests/test_phase5/test_phase1_acceptance_isolation.py",
+      "behavior": "保留原 test_phase1_acceptance_pending_baseline 全部断言，仅改为 phase1_acceptance(out_dir=tmp_path)",
+      "immutability_proof": "test_phase1_acceptance_isolated_does_not_touch_frozen_evidence：调用前后 audit/phase1/phase1_acceptance.json SHA256 一致"
+    },
+    {
+      "item": "Reviewer 受控 deselect",
+      "file": "tools/review/merge_project_for_phase5_review.py",
+      "behavior": "GOVERNED_DESELECTIONS 显式登记两项（Phase 4 closure pipeline 自引用测试 + Phase 1 副作用测试），每项带精确 node 与 reason；Phase 5 不修改任何 frozen 测试"
+    },
+    {
+      "item": "Reviewer 自身测试锁定 deselect 集合",
+      "file": "tools/review/tests/test_merge_project_for_phase5_review.py",
+      "behavior": "test_governed_deselection_set_is_exact_and_documented：集合必须精确等于登记的两项，无法静默扩展"
+    }
+  ],
+  "not_modified": [
+    "Core/QCFP_MTF/governance/phase1.py",
+    "Core/QCFP_MTF/tests/test_governance/test_phase1.py",
+    "audit/phase1/**",
+    "audit/phase3/**",
+    "audit/phase4/**",
+    "audit/baseline/**"
+  ],
+  "verification": {
+    "focused_isolation_tests": {
+      "command": "pytest Core/QCFP_MTF/tests/test_phase5/test_phase1_acceptance_isolation.py",
+      "result": "2 passed"
+    },
+    "reviewer_self_tests": {
+      "command": "pytest tools/review/tests -q",
+      "result": "27 passed"
+    },
+    "full_regression": {
+      "command": "pytest Core/QCFP_MTF/tests --deselect <phase4 closure pipeline> --deselect <phase1 side-effect test>",
+      "result": "2030 passed, 2 governed deselected, 0 failed, rc=0"
+    },
+    "frozen_evidence_clean_after_full_regression": true,
+    "reviewer_strict_run": {
+      "command": "merge_project_for_phase5_review.py --mode development --scope phase5 --run-pytest --pytest-scope full --strict",
+      "result": "exit 0；BLOCKER=0；ERROR=0；pytest rc=0（2030 passed）",
+      "note": "WARN 仅剩开发期预期项（P5-GIT-03 既有脏工作区、P5-STRUCT-05 Phase 5 aging 尚未实现）"
+    }
+  },
+  "acceptance_criteria": {
+    "pytest_rc": 0,
+    "git_status_audit_phase1_phase1_acceptance_json": "clean",
+    "frozen_dirty": 0,
+    "shared_read_only_dirty": 0,
+    "unknown_dirty": 0,
+    "blocker": 0,
+    "error": 0
+  },
+  "generated_at_utc": "2026-09-04T19:34:54Z",
+  "generated_by": "AI_AGENT FIX-02B"
+}

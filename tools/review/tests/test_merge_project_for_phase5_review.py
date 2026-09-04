@@ -236,9 +236,9 @@ def test_full_pytest_discovery_uses_qcfp_test_root():
     assert targets == ["Core/QCFP_MTF/tests"], note
 
 
-def test_phase5_pytest_scope_reports_empty_development():
+def test_phase5_pytest_scope_discovers_phase5_suite():
     targets, note = rv.find_pytest_targets(PROJECT_ROOT, "phase5")
-    assert targets == [], note
+    assert targets == ["Core/QCFP_MTF/tests/test_phase5"], note
 
 
 def test_targeted_pytest_scope_discovers_qcfp_suites():
@@ -250,9 +250,9 @@ def test_targeted_pytest_scope_discovers_qcfp_suites():
     assert any("shadow" in t.lower() for t in targets)
 
 
-def test_no_targets_does_not_fabricate_pytest_rc():
+def test_no_targets_does_not_fabricate_pytest_rc(tmp_path):
     rc, out, targets, executed, status = rv.run_pytest(
-        PROJECT_ROOT, "phase5", [])
+        tmp_path, "phase5", [])
     assert rc is None
     assert executed is False
     assert status == "NO_TARGETS"
@@ -276,8 +276,32 @@ def test_full_pytest_executes_discovered_root(monkeypatch):
     assert status == "TARGETS_FOUND"
     assert targets == ["Core/QCFP_MTF/tests"]
     assert calls
-    assert "--deselect" in calls[0]
-    assert rv.PHASE4_PIPELINE_TEST_NODE in calls[0]
+    nodes = [
+        entry["node"] for entry in rv.GOVERNED_DESELECTIONS
+    ]
+    assert calls[0].count("--deselect") == len(nodes)
+    for node in nodes:
+        assert node in calls[0]
+
+
+def test_governed_deselection_set_is_exact_and_documented():
+    """受控 deselect 集合必须精确、显式、不能静默扩展。"""
+    entries = rv.GOVERNED_DESELECTIONS
+    assert isinstance(entries, tuple)
+    expected_nodes = (
+        "Core/QCFP_MTF/tests/test_governance/"
+        "test_phase4_evidence_integrity.py::"
+        "test_real_runner_builder_judge_pipeline",
+        "Core/QCFP_MTF/tests/test_governance/test_phase1.py::"
+        "test_phase1_acceptance_pending_baseline",
+    )
+    actual_nodes = tuple(entry["node"] for entry in entries)
+    assert actual_nodes == expected_nodes
+    assert len({entry["node"] for entry in entries}) == len(entries)
+    for entry in entries:
+        assert entry["reason"].strip()
+        file_part = entry["node"].split("::", 1)[0]
+        assert (PROJECT_ROOT / file_part).exists(), file_part
 
 
 def test_git_path_commands_disable_quotepath(monkeypatch):

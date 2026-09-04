@@ -71,15 +71,38 @@ from typing import Iterable, Sequence
 TOOL_VERSION = "1.1.0"
 DEFAULT_BASELINE = "qcfp-mtf-phase4-frozen"
 DEFAULT_MANIFEST_REL = "audit/phase5/frozen_surface_manifest.json"
-# Phase 4 closure's live builder→judge pipeline test diffs cdcab0c..HEAD and
-# is only meaningful while HEAD == Phase 4 frozen commit. Phase 4's own
-# regression runner exposes --ignore-pipeline-test for exactly this reason.
-# Phase 5 full regression excludes that self-referential closure test node and
-# keeps every other test in the file active.
-PHASE4_PIPELINE_TEST_NODE = (
-    "Core/QCFP_MTF/tests/test_governance/"
-    "test_phase4_evidence_integrity.py::"
-    "test_real_runner_builder_judge_pipeline"
+
+# Controlled full-regression deselections. Every entry must carry an explicit
+# node and reason; the reviewer self-tests pin this exact set so it cannot
+# silently expand. Phase 5 never modifies the frozen tests themselves.
+GOVERNED_DESELECTIONS = (
+    {
+        "node": (
+            "Core/QCFP_MTF/tests/test_governance/"
+            "test_phase4_evidence_integrity.py::"
+            "test_real_runner_builder_judge_pipeline"
+        ),
+        "reason": (
+            "Phase 4 closure self-reference: the live builder→judge pipeline "
+            "diffs cdcab0c..HEAD and is meaningful only while HEAD == Phase 4 "
+            "frozen commit. Phase 4's own regression runner exposes "
+            "--ignore-pipeline-test for this reason. Frozen test untouched."
+        ),
+    },
+    {
+        "node": (
+            "Core/QCFP_MTF/tests/test_governance/test_phase1.py::"
+            "test_phase1_acceptance_pending_baseline"
+        ),
+        "reason": (
+            "Historical Phase 1 acceptance test calls phase1_acceptance() "
+            "without out_dir and therefore regenerates frozen "
+            "audit/phase1/phase1_acceptance.json. Phase 5 does not modify the "
+            "frozen test; equivalent behavioral coverage is provided by "
+            "Core/QCFP_MTF/tests/test_phase5/"
+            "test_phase1_acceptance_isolation.py (out_dir=tmp_path)."
+        ),
+    },
 )
 
 TEXT_EXTENSIONS = {
@@ -1566,9 +1589,12 @@ def run_pytest(
             "NO_TARGETS",
         )
     cmd.extend(targets)
-    if scope == "full" and (root / PHASE4_PIPELINE_TEST_NODE.split("::")[0]).exists():
-        # Self-referential Phase 4 closure pipeline test (see constant note).
-        cmd.extend(["--deselect", PHASE4_PIPELINE_TEST_NODE])
+    if scope == "full":
+        for entry in GOVERNED_DESELECTIONS:
+            node = entry["node"]
+            file_part = node.split("::", 1)[0]
+            if (root / file_part).exists():
+                cmd.extend(["--deselect", node])
     cmd.extend(extra_args)
     rc, out = run(cmd, root, timeout=3600)
     return rc, out, targets, True, "TARGETS_FOUND"
