@@ -1,5 +1,7 @@
 {
   "schema": "PHASE5-FROZEN-SURFACE-MANIFEST-1",
+  "revision": 2,
+  "revision_note": "Rev2: 声明 Phase 5 Review Tool（tools/review/merge_project_for_phase5_review.py）与其测试目录 tools/review/tests/** 为 PHASE5_ALLOWED；out_of_scope_non_authority 由 brace 通配改为逐目录 glob（fnmatch 兼容）。",
   "phase": 5,
   "work_package": "P5-A02",
   "phase4_tag": "qcfp-mtf-phase4-frozen",
@@ -171,6 +173,14 @@
     {
       "path": "Core/QCFP_MTF/scripts/phase5_*.py",
       "role": "Phase 5 CLI / Runner / Evidence Builder（新文件）"
+    },
+    {
+      "path": "tools/review/merge_project_for_phase5_review.py",
+      "role": "Phase 5 Review Tool（单一边界权威的执行器，新文件）"
+    },
+    {
+      "path": "tools/review/tests/**",
+      "role": "Phase 5 Review Tool 自身回归测试（新文件）"
     }
   ],
   "shared_read_only": [
@@ -219,9 +229,14 @@
     "Doc/**",
     "converted_scripts/**",
     "md_docx_convert/**",
-    "Core/{Daily,Weekly,Monthly,HK_Macro,utl}/**",
+    "Core/Daily/**",
+    "Core/Weekly/**",
+    "Core/Monthly/**",
+    "Core/HK_Macro/**",
+    "Core/utl/**",
     "Code_Prompt/**",
-    "Code_utl/**"
+    "Code_utl/**",
+    "tools/review/merge_project_for_phase4_review_*.py"
   ],
   "unknown": [],
   "unknown_note": "通过 qcfp-mtf-phase4-frozen 完整 git ls-tree 清点；仓库内所有文件均可归入 FROZEN / SHARED_READ_ONLY / OUT_OF_SCOPE / PHASE5_ALLOWED。开发前若出现新的 UNKNOWN 分类必须停下处理。",

@@ -1,0 +1,99 @@
+{
+  "schema": "PHASE5-REVIEW-TOOL-REPAIR-R1-1",
+  "phase": 5,
+  "round": 1,
+  "scope": "FIX-01 + FIX-03 + FIX-04（Review Tool 可信度修复，先行于 Phase 5 功能开发）",
+  "branch": "codex/phase5-shadow-operation",
+  "phase4_baseline": "qcfp-mtf-phase4-frozen",
+  "fixes": [
+    {
+      "id": "FIX-01",
+      "title": "Frozen Surface Validator 与 Frozen Manifest 统一",
+      "status": "PASS",
+      "implemented": [
+        "Review Tool 增加 load_frozen_surface_manifest()，读取 audit/phase5/frozen_surface_manifest.json 作为单一边界权威",
+        "新增 classify_phase5_path()：FROZEN / SHARED_READ_ONLY / PHASE5_ALLOWED / OUT_OF_SCOPE / UNKNOWN 统一分类",
+        "enforce_frozen_surface() 对所有 changed path（committed/staged/unstaged/renamed/deleted/type-changed/untracked-new）分类；FROZEN/SHARED_READ_ONLY/UNKNOWN 变更（含新增文件）→ BLOCKER",
+        "删除 Reviewer 内部第二套 PROTECTED_*_PATTERNS（不再维护第二份 Frozen Truth）",
+        "冻结面 manifest 同步声明 tools/review/merge_project_for_phase5_review.py 与 tools/review/tests/** 为 PHASE5_ALLOWED，phase4 遗留 review 工具为 OUT_OF_SCOPE"
+      ],
+      "acceptance_proof": [
+        "audit/phase1/phase1_acceptance.json modified → BLOCKER（P5-FROZEN-01，FROZEN_EVIDENCE）",
+        "Core/QCFP_MTF/decision/alternate_engine.py new → BLOCKER（P5-FROZEN-03，SHARED_READ_ONLY）",
+        "Core/QCFP_MTF/wave/alternate_wave.py new → BLOCKER（P5-FROZEN-01）",
+        "Core/QCFP_MTF/phase5/contracts.py new → allowed（P5-FROZEN-06 PASS）"
+      ]
+    },
+    {
+      "id": "FIX-03",
+      "title": "修复 pytest target discovery",
+      "status": "PASS",
+      "implemented": [
+        "discover_test_roots() 发现真实 QCFP-MTF 测试根 Core/QCFP_MTF/tests",
+        "full scope → pytest Core/QCFP_MTF/tests（不再跑整仓库无关测试）",
+        "phase5/targeted scope 按 Core/QCFP_MTF/tests 下 test_phase5/test_decision/test_governance/test_safety + shadow/promotion/outcome 回归文件发现目标",
+        "无目标时不再伪造 pytest rc=5；改为 pytest_executed=false + discovery_status=NO_TARGETS，qualification 模式按 ERROR 处理",
+        "full 回归按 Phase 4 Runner 既有 --ignore-pipeline-test 语义 deselect 自引用 Phase 4 closure pipeline 测试（该测试只在 HEAD==Phase4 frozen 时成立），其余测试保持激活"
+      ],
+      "acceptance_proof": [
+        "pytest Core/QCFP_MTF/tests --deselect <phase4 pipeline test> → 2029 passed / 1 deselected / rc=0",
+        "工具自身 26 tests passed"
+      ]
+    },
+    {
+      "id": "FIX-04",
+      "title": "修复 Shadow Future Leakage false positive",
+      "status": "PASS",
+      "implemented": [
+        "新增 is_test_file()：/tests/、/test/、test_*.py、*_test.py",
+        "scan_source_boundaries 对测试文件跳过 runtime 静态 Authority/Leakage 扫描（测试行为由 pytest 验证）；runtime Shadow import outcome 仍为 ERROR",
+        "test_shadow_universe.py import backfill_research_outcomes.compute_outcome 不再产生 P5-STATIC-03 ERROR"
+      ],
+      "acceptance_proof": [
+        "Review Tool development 运行无任何 P5-STATIC-03 runtime ERROR",
+        "回归测试 test_runtime_shadow_outcome_import_is_error / test_shadow_test_outcome_import_is_not_runtime_error"
+      ]
+    },
+    {
+      "id": "SUB-FIX-QUOTEPATH",
+      "title": "非 ASCII 路径 classification 修复",
+      "status": "PASS",
+      "implemented": [
+        "所有 git diff/ls-files 路径命令加 -c core.quotepath=false，避免 C 风格转义导致 Prompt/* 中文路径被误判 UNKNOWN"
+      ],
+      "acceptance_proof": "Review Tool 运行：Prompt/Report 脏文件归类 OUT_OF_SCOPE（INFO），仅 audit/phase1 BLOCKER 保留"
+    }
+  ],
+  "tests": {
+    "review_tool_self_regression": {
+      "command": "pytest tools/review/tests -q",
+      "result": "26 passed",
+      "return_code": 0
+    },
+    "qcfp_full_regression": {
+      "command": "pytest Core/QCFP_MTF/tests --deselect Core/QCFP_MTF/tests/test_governance/test_phase4_evidence_integrity.py::test_real_runner_builder_judge_pipeline",
+      "result": "2029 passed, 1 deselected, 0 failed",
+      "return_code": 0,
+      "note": "Deselected 项为 Phase 4 自引用 closure pipeline 测试（diff cdcab0c..HEAD 仅在 HEAD==Phase4 frozen commit 时成立），Phase 4 Runner 以 --ignore-pipeline-test 提供同等语义；未修改任何 Phase 4 冻结测试。"
+    }
+  },
+  "review_tool_run": {
+    "mode": "development",
+    "scope": "phase5",
+    "output": "Temp/phase5_review_dev_r1.txt",
+    "findings": {
+      "BLOCKER": 1,
+      "ERROR": 0,
+      "WARN": 4,
+      "note": "唯一 BLOCKER = audit/phase1/phase1_acceptance.json（FROZEN_EVIDENCE 被修改）→ FIX-02 待人工治理决策；WARN = 既有脏工作区 + Phase 5 实现未开始的 STRUCT 提示（P5-STRUCT-02/05/09，development 模式预期）。"
+    }
+  },
+  "frozen_files_modified": "NONE",
+  "blockers": [
+    "FIX-02（audit/phase1/phase1_acceptance.json dirty）—— 按计划为独立人工治理动作，Agent 不自动恢复"
+  ],
+  "checkpoint_5a_status": "HOLD（Reviewer Round 1 PASS；FIX-02 待人工决策后重新验收 P5-A）",
+  "next_permitted_task": "FIX-02 人工决策 → Reviewer Repair Round 2（FIX-05/06/07/08）→ P5-A 重新验收 → P5-B01",
+  "generated_at_utc": "2026-09-04T12:39:37Z",
+  "generated_by": "AI_AGENT (Reviewer Repair Round 1)"
+}
