@@ -73,9 +73,16 @@ DEFAULT_BASELINE = "qcfp-mtf-phase4-frozen"
 DEFAULT_MANIFEST_REL = "audit/phase5/frozen_surface_manifest.json"
 GOVERNANCE_BASELINE_REL = "audit/phase5/phase5_governance_baseline.json"
 GOVERNANCE_BASELINE_SCHEMA = "PHASE5-GOVERNANCE-BASELINE-1"
+GOVERNANCE_ACCEPTANCE_REL = "audit/phase5/phase5_governance_acceptance.json"
+GOVERNANCE_ACCEPTANCE_SCHEMA = "PHASE5-GOVERNANCE-ACCEPTANCE-1"
 GOVERNANCE_BOOTSTRAP_STATE = "PHASE5_BOOTSTRAP_MUTABLE"
+GOVERNANCE_READY_STATE = "READY_FOR_HUMAN_GOVERNANCE_ACCEPTANCE"
 GOVERNANCE_FROZEN_STATE = "PHASE5_GOVERNANCE_FROZEN"
-GOVERNANCE_STATES = (GOVERNANCE_BOOTSTRAP_STATE, GOVERNANCE_FROZEN_STATE)
+GOVERNANCE_STATES = (
+    GOVERNANCE_BOOTSTRAP_STATE,
+    GOVERNANCE_READY_STATE,
+    GOVERNANCE_FROZEN_STATE,
+)
 
 # Controlled full-regression deselections. Every entry must carry an explicit
 # node and reason; the reviewer self-tests pin this exact set so it cannot
@@ -1744,6 +1751,111 @@ def load_governance_baseline(
     return data, ""
 
 
+def load_governance_acceptance(
+    root: Path,
+    rel: str = GOVERNANCE_ACCEPTANCE_REL,
+) -> tuple[dict | None, str]:
+    """Load the external Human governance acceptance record (P5-REV-09R1)."""
+    path = root / rel
+    if not path.exists():
+        return None, f"Phase 5 governance acceptance record missing: {rel}"
+    try:
+        data = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, ValueError) as exc:
+        return None, (
+            f"Phase 5 governance acceptance record unreadable ({rel}): {exc}"
+        )
+    if not isinstance(data, dict):
+        return None, (
+            f"Phase 5 governance acceptance root must be an object ({rel})"
+        )
+    if data.get("schema") != GOVERNANCE_ACCEPTANCE_SCHEMA:
+        return None, (
+            f"Phase 5 governance acceptance schema != "
+            f"{GOVERNANCE_ACCEPTANCE_SCHEMA} ({rel})"
+        )
+    return data, ""
+
+
+def validate_governance_acceptance(
+    root: Path,
+    baseline: dict,
+) -> list[Finding]:
+    """P5-REV-09R1/R2 — external Human Authority anchor.
+
+    Only enforced when the governance baseline is PHASE5_GOVERNANCE_FROZEN.
+    Binds: decision == APPROVE, accepted_by == HUMAN, and
+    SHA256(actual phase5_governance_baseline.json) ==
+    acceptance.governance_baseline_sha256. Any mismatch = BLOCKER.
+    """
+    if baseline.get("baseline_state") != GOVERNANCE_FROZEN_STATE:
+        return []
+
+    baseline_path = root / GOVERNANCE_BASELINE_REL
+    acceptance, err = load_governance_acceptance(root)
+    if err:
+        return [
+            Finding(
+                "BLOCKER",
+                "P5-GOV-04",
+                GOVERNANCE_ACCEPTANCE_REL,
+                f"Frozen governance baseline requires a valid external Human "
+                f"acceptance record; fail-closed: {err}",
+            )
+        ]
+
+    problems: list[str] = []
+    if acceptance.get("decision") != "APPROVE":
+        problems.append(
+            f"decision={acceptance.get('decision')!r} (expected 'APPROVE')"
+        )
+    if acceptance.get("accepted_by") != "HUMAN":
+        problems.append(
+            f"accepted_by={acceptance.get('accepted_by')!r} "
+            "(expected 'HUMAN')"
+        )
+    if not acceptance.get("accepted_at_utc"):
+        problems.append("accepted_at_utc missing/empty")
+    if not acceptance.get("governance_commit"):
+        problems.append("governance_commit missing/empty")
+    elif git_available(root) and not git_commit_exists(
+        root, str(acceptance["governance_commit"])
+    ):
+        problems.append(
+            "governance_commit does not resolve to a Git commit: "
+            f"{acceptance['governance_commit']}"
+        )
+    actual_baseline_sha = sha256_file(baseline_path)
+    expected_baseline_sha = acceptance.get("governance_baseline_sha256")
+    if expected_baseline_sha != actual_baseline_sha:
+        problems.append(
+            "governance_baseline_sha256 mismatch: "
+            f"acceptance={expected_baseline_sha} "
+            f"actual_baseline={actual_baseline_sha}"
+        )
+
+    if problems:
+        return [
+            Finding(
+                "BLOCKER",
+                "P5-GOV-04",
+                GOVERNANCE_ACCEPTANCE_REL,
+                "Governance acceptance record invalid: "
+                + " | ".join(problems),
+            )
+        ]
+    return [
+        Finding(
+            "PASS",
+            "P5-GOV-04",
+            "",
+            "Frozen governance baseline is bound to a valid external Human "
+            "acceptance record (decision=APPROVE, accepted_by=HUMAN, "
+            "baseline SHA match).",
+        )
+    ]
+
+
 def validate_governance_baseline(root: Path, mode: str) -> list[Finding]:
     """P5-REV-09 governance baseline validation.
 
@@ -1781,6 +1893,82 @@ def validate_governance_baseline(root: Path, mode: str) -> list[Finding]:
     )
 
     frozen = state == GOVERNANCE_FROZEN_STATE
+
+    # ---- P5-REV-09R2/R3: state consistency + transition guard -------------
+    consistency_problems: list[str] = []
+    acceptance_record = baseline.get("acceptance_record")
+    if state == GOVERNANCE_BOOTSTRAP_STATE:
+        if baseline.get("status") != "PENDING_HUMAN_ACCEPTANCE":
+            consistency_problems.append(
+                "BOOTSTRAP_MUTABLE requires status=PENDING_HUMAN_ACCEPTANCE; "
+                f"got {baseline.get('status')!r}"
+            )
+        if baseline.get("accepted_by") not in (None, ""):
+            consistency_problems.append(
+                "BOOTSTRAP_MUTABLE requires accepted_by=null; "
+                f"got {baseline.get('accepted_by')!r}"
+            )
+        if acceptance_record not in (None, ""):
+            consistency_problems.append(
+                "BOOTSTRAP_MUTABLE requires acceptance_record=null"
+            )
+    elif state == GOVERNANCE_READY_STATE:
+        if baseline.get("status") != "READY_FOR_HUMAN_GOVERNANCE_ACCEPTANCE":
+            consistency_problems.append(
+                "READY_FOR_HUMAN_GOVERNANCE_ACCEPTANCE requires "
+                "status=READY_FOR_HUMAN_GOVERNANCE_ACCEPTANCE; "
+                f"got {baseline.get('status')!r}"
+            )
+        if baseline.get("accepted_by") not in (None, ""):
+            consistency_problems.append(
+                "READY state requires accepted_by=null (Human not yet accepted); "
+                f"got {baseline.get('accepted_by')!r}"
+            )
+        if acceptance_record not in (None, ""):
+            consistency_problems.append(
+                "READY state requires acceptance_record=null until Human "
+                "acceptance record exists"
+            )
+        findings.append(
+            Finding(
+                "INFO",
+                "P5-GOV-06",
+                GOVERNANCE_BASELINE_REL,
+                "Governance baseline is ready for Human governance acceptance; "
+                "machine must stop and must not transition to "
+                "PHASE5_GOVERNANCE_FROZEN itself.",
+            )
+        )
+    elif frozen:
+        if baseline.get("status") != "ACCEPTED":
+            consistency_problems.append(
+                "FROZEN requires status=ACCEPTED; "
+                f"got {baseline.get('status')!r}"
+            )
+        if baseline.get("accepted_by") != "HUMAN":
+            consistency_problems.append(
+                "FROZEN requires accepted_by=HUMAN; "
+                f"got {baseline.get('accepted_by')!r}"
+            )
+        if acceptance_record in (None, ""):
+            consistency_problems.append(
+                "FROZEN requires a non-null acceptance_record"
+            )
+
+    if consistency_problems:
+        findings.append(
+            Finding(
+                "BLOCKER" if frozen else "ERROR",
+                "P5-GOV-05",
+                GOVERNANCE_BASELINE_REL,
+                "Governance baseline state consistency violation: "
+                + " | ".join(consistency_problems),
+            )
+        )
+
+    if frozen:
+        findings.extend(validate_governance_acceptance(root, baseline))
+
     mismatches: list[str] = []
     missing_on_disk: list[str] = []
     for entry in baseline.get("governance_files") or []:

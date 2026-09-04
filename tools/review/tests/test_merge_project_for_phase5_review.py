@@ -323,7 +323,17 @@ def test_git_path_commands_disable_quotepath(monkeypatch):
         assert "core.quotepath=false" in cmd
 
 
-def _write_tmp_governance(tmp_path, files, state="PHASE5_GOVERNANCE_FROZEN"):
+_NOT_SET = object()
+
+
+def _write_tmp_governance(
+    tmp_path,
+    files,
+    state="PHASE5_GOVERNANCE_FROZEN",
+    status=None,
+    accepted_by=None,
+    acceptance_record=_NOT_SET,
+):
     """Build a synthetic governance baseline + pinned files in tmp_path."""
     entries = []
     for rel, content in files.items():
@@ -331,13 +341,27 @@ def _write_tmp_governance(tmp_path, files, state="PHASE5_GOVERNANCE_FROZEN"):
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_text(content, encoding="utf-8")
         entries.append({"path": rel, "sha256": rv.sha256_file(path)})
+    if status is None:
+        status = {
+            "PHASE5_GOVERNANCE_FROZEN": "ACCEPTED",
+            "READY_FOR_HUMAN_GOVERNANCE_ACCEPTANCE":
+                "READY_FOR_HUMAN_GOVERNANCE_ACCEPTANCE",
+        }.get(state, "PENDING_HUMAN_ACCEPTANCE")
+    if accepted_by is None:
+        accepted_by = "HUMAN" if state == "PHASE5_GOVERNANCE_FROZEN" else None
+    if acceptance_record is _NOT_SET:
+        acceptance_record = (
+            "audit/phase5/phase5_governance_acceptance.json"
+            if state == "PHASE5_GOVERNANCE_FROZEN"
+            else None
+        )
     baseline = {
         "schema": rv.GOVERNANCE_BASELINE_SCHEMA,
         "phase": 5,
         "baseline_state": state,
-        "status": "ACCEPTED" if state == rv.GOVERNANCE_FROZEN_STATE
-        else "PENDING_HUMAN_ACCEPTANCE",
-        "accepted_by": "HUMAN" if state == rv.GOVERNANCE_FROZEN_STATE else None,
+        "status": status,
+        "accepted_by": accepted_by,
+        "acceptance_record": acceptance_record,
         "human_acceptance_required": True,
         "governance_files": entries,
     }
@@ -345,6 +369,39 @@ def _write_tmp_governance(tmp_path, files, state="PHASE5_GOVERNANCE_FROZEN"):
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(
         rv.json.dumps(baseline, indent=2, ensure_ascii=False),
+        encoding="utf-8",
+    )
+    return out
+
+
+def _write_tmp_acceptance(
+    tmp_path,
+    decision="APPROVE",
+    accepted_by="HUMAN",
+    sha_override=None,
+    commit="a" * 40,
+):
+    baseline_path = tmp_path / rv.GOVERNANCE_BASELINE_REL
+    baseline_sha = (
+        sha_override
+        if sha_override is not None
+        else rv.sha256_file(baseline_path)
+    )
+    record = {
+        "schema": rv.GOVERNANCE_ACCEPTANCE_SCHEMA,
+        "phase": 5,
+        "decision": decision,
+        "accepted_by": accepted_by,
+        "governance_baseline_sha256": baseline_sha,
+        "governance_commit": commit,
+        "governance_tag": "qcfp-mtf-phase5-governance-v1",
+        "accepted_at_utc": "2026-09-05T00:00:00Z",
+        "reopen_required_on_change": True,
+    }
+    out = tmp_path / rv.GOVERNANCE_ACCEPTANCE_REL
+    out.parent.mkdir(parents=True, exist_ok=True)
+    out.write_text(
+        rv.json.dumps(record, indent=2, ensure_ascii=False),
         encoding="utf-8",
     )
     return out
@@ -423,6 +480,113 @@ def test_governance_baseline_cannot_self_refresh(tmp_path):
         "Reviewer must never rewrite the governance baseline (self-refresh "
         "must be impossible)"
     )
+
+
+def test_frozen_governance_requires_acceptance_record(tmp_path):
+    _write_tmp_governance(
+        tmp_path, {"gov_a.txt": "AAA"},
+        acceptance_record=None)
+    findings = rv.validate_governance_baseline(tmp_path, "qualification")
+    assert any(
+        f.code == "P5-GOV-05" and f.severity == "BLOCKER"
+        for f in findings
+    )
+
+
+def test_missing_acceptance_record_blocks(tmp_path):
+    _write_tmp_governance(tmp_path, {"gov_a.txt": "AAA"})
+    findings = rv.validate_governance_baseline(tmp_path, "qualification")
+    assert any(
+        f.code == "P5-GOV-04" and f.severity == "BLOCKER"
+        for f in findings
+    )
+
+
+def test_valid_acceptance_record_passes(tmp_path):
+    _write_tmp_governance(tmp_path, {"gov_a.txt": "AAA"})
+    _write_tmp_acceptance(tmp_path)
+    findings = rv.validate_governance_baseline(tmp_path, "qualification")
+    assert any(
+        f.code == "P5-GOV-04" and f.severity == "PASS"
+        for f in findings
+    )
+    assert not any(f.severity == "BLOCKER" for f in findings)
+
+
+def test_acceptance_baseline_hash_mismatch_blocks(tmp_path):
+    _write_tmp_governance(tmp_path, {"gov_a.txt": "AAA"})
+    _write_tmp_acceptance(tmp_path, sha_override="0" * 64)
+    findings = rv.validate_governance_baseline(tmp_path, "qualification")
+    assert any(
+        f.code == "P5-GOV-04" and f.severity == "BLOCKER"
+        for f in findings
+    )
+
+
+def test_acceptance_wrong_decision_blocks(tmp_path):
+    _write_tmp_governance(tmp_path, {"gov_a.txt": "AAA"})
+    _write_tmp_acceptance(tmp_path, decision="REJECT")
+    findings = rv.validate_governance_baseline(tmp_path, "qualification")
+    assert any(
+        f.code == "P5-GOV-04" and f.severity == "BLOCKER"
+        for f in findings
+    )
+
+
+def test_acceptance_nonhuman_authority_blocks(tmp_path):
+    _write_tmp_governance(tmp_path, {"gov_a.txt": "AAA"})
+    _write_tmp_acceptance(tmp_path, accepted_by="AI_AGENT")
+    findings = rv.validate_governance_baseline(tmp_path, "qualification")
+    assert any(
+        f.code == "P5-GOV-04" and f.severity == "BLOCKER"
+        for f in findings
+    )
+
+
+def test_bootstrap_state_with_accepted_by_set_is_invalid(tmp_path):
+    _write_tmp_governance(
+        tmp_path, {"gov_a.txt": "AAA"},
+        state="PHASE5_BOOTSTRAP_MUTABLE", accepted_by="HUMAN")
+    findings = rv.validate_governance_baseline(tmp_path, "development")
+    assert any(
+        f.code == "P5-GOV-05" and f.severity == "ERROR"
+        for f in findings
+    )
+
+
+def test_bootstrap_state_with_acceptance_record_set_is_invalid(tmp_path):
+    _write_tmp_governance(
+        tmp_path, {"gov_a.txt": "AAA"},
+        state="PHASE5_BOOTSTRAP_MUTABLE",
+        acceptance_record="audit/phase5/phase5_governance_acceptance.json")
+    findings = rv.validate_governance_baseline(tmp_path, "development")
+    assert any(
+        f.code == "P5-GOV-05" and f.severity == "ERROR"
+        for f in findings
+    )
+
+
+def test_ready_state_is_supported_and_pending_human(tmp_path):
+    _write_tmp_governance(
+        tmp_path, {"gov_a.txt": "AAA"},
+        state="READY_FOR_HUMAN_GOVERNANCE_ACCEPTANCE")
+    findings = rv.validate_governance_baseline(tmp_path, "qualification")
+    assert any(
+        f.code == "P5-GOV-06" and f.severity == "INFO"
+        for f in findings
+    )
+    assert not any(f.severity == "BLOCKER" for f in findings)
+
+
+def test_reviewer_never_writes_baseline_or_acceptance(tmp_path):
+    baseline_file = _write_tmp_governance(tmp_path, {"gov_a.txt": "AAA"})
+    acceptance_file = _write_tmp_acceptance(tmp_path)
+    baseline_before = baseline_file.read_bytes()
+    acceptance_before = acceptance_file.read_bytes()
+    findings = rv.validate_governance_baseline(tmp_path, "qualification")
+    assert not any(f.severity == "BLOCKER" for f in findings)
+    assert baseline_file.read_bytes() == baseline_before
+    assert acceptance_file.read_bytes() == acceptance_before
 
 
 def test_is_test_file():

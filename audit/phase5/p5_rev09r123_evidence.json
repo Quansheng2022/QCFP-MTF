@@ -1,0 +1,75 @@
+{
+  "schema": "PHASE5-REV09R123-EVIDENCE-1",
+  "phase": 5,
+  "task": "P5-REV-09R1 + P5-REV-09R2 + P5-REV-09R3 — Governance Baseline Self-Anchor / Human Acceptance Binding / State Transition Guard",
+  "branch": "codex/phase5-shadow-operation",
+  "status": "PASS",
+  "machine_status": "READY_FOR_HUMAN_GOVERNANCE_ACCEPTANCE_MECHANISM_REVIEW",
+  "governance_state": "PHASE5_BOOTSTRAP_MUTABLE",
+  "governance_revision": 2,
+  "human_approval_record_created_by_agent": false,
+  "governance_frozen_by_agent": false,
+  "implemented": {
+    "P5-REV-09R1": {
+      "defect": "baseline 自身无外部 Authority Anchor（Agent 可同时改 governance 文件与 baseline 内 expected SHA）",
+      "fix": "新增外部 Human Acceptance Contract 路径 audit/phase5/phase5_governance_acceptance.json；FROZEN 时强制 SHA256(实际 baseline) == acceptance.governance_baseline_sha256；Agent 未创建真实 APPROVE record",
+      "findings": "P5-GOV-04（缺失/无效 acceptance → BLOCKER）"
+    },
+    "P5-REV-09R2": {
+      "defect": "accepted_by/status 仅为描述字段，FROZEN 未绑定真实 Human record",
+      "fix": "状态一致性规则：BOOTSTRAP 要求 PENDING_HUMAN_ACCEPTANCE/null/null；READY 要求 accepted_by/acceptance_record 为 null；FROZEN 要求 ACCEPTED/HUMAN/acceptance_record 存在且外部记录校验通过；非法组合 fail-closed",
+      "findings": "P5-GOV-05"
+    },
+    "P5-REV-09R3": {
+      "defect": "Agent 理论可把状态直接改成 FROZEN",
+      "fix": "状态机只允许 PHASE5_BOOTSTRAP_MUTABLE -> READY_FOR_HUMAN_GOVERNANCE_ACCEPTANCE -> PHASE5_GOVERNANCE_FROZEN；READY 状态输出 P5-GOV-06 INFO 并阻止机器自行跃迁；Re-open 走 governance_revision + 新 Human acceptance",
+      "findings": "P5-GOV-06"
+    }
+  },
+  "reviewer_self_tests": {
+    "command": "pytest tools/review/tests -q",
+    "result": "45 passed",
+    "return_code": 0,
+    "new_cases": [
+      "test_frozen_governance_requires_acceptance_record",
+      "test_missing_acceptance_record_blocks",
+      "test_valid_acceptance_record_passes",
+      "test_acceptance_baseline_hash_mismatch_blocks",
+      "test_acceptance_wrong_decision_blocks",
+      "test_acceptance_nonhuman_authority_blocks",
+      "test_bootstrap_state_with_accepted_by_set_is_invalid",
+      "test_bootstrap_state_with_acceptance_record_set_is_invalid",
+      "test_ready_state_is_supported_and_pending_human",
+      "test_reviewer_never_writes_baseline_or_acceptance"
+    ]
+  },
+  "governance_files": [
+    {
+      "path": "audit/phase5/frozen_surface_manifest.json",
+      "sha256": "edb531c118e85f51738e37656687c59850763802eb0a12f194a552ef9bf54e75"
+    },
+    {
+      "path": "tools/review/merge_project_for_phase5_review.py",
+      "sha256": "ad7dafe8c353840e1723f16449961fdd97dd071ede347a6fd862fe99db37db93"
+    },
+    {
+      "path": "tools/review/tests/test_merge_project_for_phase5_review.py",
+      "sha256": "7af97660cb42e4629f924a84aa31f22df8cc1d069bfc3b5c35dc4bd1fb67c78f"
+    }
+  ],
+  "frozen_dirty": 0,
+  "shared_read_only_dirty": 0,
+  "unknown_dirty": 0,
+  "frozen_files_modified": "NONE",
+  "changed_files": [
+    "audit/phase5/phase5_governance_baseline.json (modified, revision 2)",
+    "audit/phase5/p5_rev09r123_evidence.json (new)",
+    "tools/review/merge_project_for_phase5_review.py (modified)",
+    "tools/review/tests/test_merge_project_for_phase5_review.py (modified)"
+  ],
+  "blockers": [],
+  "next_permitted_task": "FIX-05 — Baseline-aware Structure Detection（Governance 机制就绪后）",
+  "human_decision_required": "最终 governance freeze 与 CHECKPOINT 5A 均在后续 Human gate 处理",
+  "generated_at_utc": "2026-09-05T00:00:00Z",
+  "generated_by": "AI_AGENT P5-REV-09R1/R2/R3"
+}
