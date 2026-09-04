@@ -1,0 +1,37 @@
+{
+  "schema": "PHASE5-GOVERNANCE-BASELINE-1",
+  "phase": 5,
+  "baseline_state": "PHASE5_BOOTSTRAP_MUTABLE",
+  "status": "PENDING_HUMAN_ACCEPTANCE",
+  "human_acceptance_required": true,
+  "accepted_by": null,
+  "acceptance_record": null,
+  "phase4_baseline": {
+    "tag": "qcfp-mtf-phase4-frozen",
+    "tag_object": "fef63f57fe87d98d60234411ed346efc3147b37a",
+    "peeled_commit": "275726b37ff264f1717d41c3fec26c7135bace74"
+  },
+  "phase5_governance_commit": "d4c3af74b63f36a583ef427c33e8168884c927b6",
+  "pinned_at_note": "SHA256 pins refer to the governance file contents at P5-REV-09 artifact creation; the baseline artifact itself is introduced by the P5-REV-09 commit. State flips to PHASE5_GOVERNANCE_FROZEN only through an explicit Human acceptance record.",
+  "governance_files": [
+    {
+      "path": "audit/phase5/frozen_surface_manifest.json",
+      "sha256": "edb531c118e85f51738e37656687c59850763802eb0a12f194a552ef9bf54e75",
+      "role": "Phase 5 Frozen Surface Manifest（单一边界权威）"
+    },
+    {
+      "path": "tools/review/merge_project_for_phase5_review.py",
+      "sha256": "281c5251711eed9c20e00a164f85b668b8c59ac31b3e8fad54e5beb450f5c300",
+      "role": "Phase 5 Review Tool（执行器）"
+    },
+    {
+      "path": "tools/review/tests/test_merge_project_for_phase5_review.py",
+      "sha256": "630acb15c0cd56e20348162b5208a16433c2d5570fa835007397d1110e2df469",
+      "role": "Phase 5 Review Tool 自身回归测试"
+    }
+  ],
+  "authority_rule": "Subsequent mutation of pinned governance files requires governance reopen + explicit Human acceptance. The Reviewer must never refresh this baseline by itself.",
+  "reopen_policy": "Any post-freeze change to governance_files must be submitted as a change record with impact analysis, reviewed by Human, and only then accepted as a new governance baseline revision.",
+  "generated_at_utc": "2026-09-04T20:00:00Z",
+  "generated_by": "AI_AGENT P5-REV-09"
+}

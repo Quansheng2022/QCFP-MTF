@@ -323,6 +323,108 @@ def test_git_path_commands_disable_quotepath(monkeypatch):
         assert "core.quotepath=false" in cmd
 
 
+def _write_tmp_governance(tmp_path, files, state="PHASE5_GOVERNANCE_FROZEN"):
+    """Build a synthetic governance baseline + pinned files in tmp_path."""
+    entries = []
+    for rel, content in files.items():
+        path = tmp_path / rel
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(content, encoding="utf-8")
+        entries.append({"path": rel, "sha256": rv.sha256_file(path)})
+    baseline = {
+        "schema": rv.GOVERNANCE_BASELINE_SCHEMA,
+        "phase": 5,
+        "baseline_state": state,
+        "status": "ACCEPTED" if state == rv.GOVERNANCE_FROZEN_STATE
+        else "PENDING_HUMAN_ACCEPTANCE",
+        "accepted_by": "HUMAN" if state == rv.GOVERNANCE_FROZEN_STATE else None,
+        "human_acceptance_required": True,
+        "governance_files": entries,
+    }
+    out = tmp_path / rv.GOVERNANCE_BASELINE_REL
+    out.parent.mkdir(parents=True, exist_ok=True)
+    out.write_text(
+        rv.json.dumps(baseline, indent=2, ensure_ascii=False),
+        encoding="utf-8",
+    )
+    return out
+
+
+def test_governance_baseline_valid():
+    baseline, err = rv.load_governance_baseline(PROJECT_ROOT)
+    assert baseline is not None, err
+    assert baseline["schema"] == rv.GOVERNANCE_BASELINE_SCHEMA
+    assert baseline["baseline_state"] in rv.GOVERNANCE_STATES
+    assert baseline.get("governance_files")
+
+
+def _governance_entry_sha(rel):
+    baseline, err = rv.load_governance_baseline(PROJECT_ROOT)
+    assert baseline is not None, err
+    for entry in baseline["governance_files"]:
+        if entry["path"] == rel:
+            return entry["sha256"]
+    raise AssertionError(f"governance baseline missing pinned path {rel}")
+
+
+def test_governance_baseline_manifest_hash_matches():
+    rel = "audit/phase5/frozen_surface_manifest.json"
+    assert rv.sha256_file(PROJECT_ROOT / rel) == _governance_entry_sha(rel)
+
+
+def test_governance_baseline_reviewer_hash_matches():
+    rel = "tools/review/merge_project_for_phase5_review.py"
+    assert rv.sha256_file(PROJECT_ROOT / rel) == _governance_entry_sha(rel)
+
+
+def test_governance_baseline_reviewer_tests_hash_matches():
+    rel = "tools/review/tests/test_merge_project_for_phase5_review.py"
+    assert rv.sha256_file(PROJECT_ROOT / rel) == _governance_entry_sha(rel)
+
+
+def test_governance_baseline_mutation_blocks(tmp_path):
+    _write_tmp_governance(tmp_path, {"gov_a.txt": "AAA"})
+    (tmp_path / "gov_a.txt").write_text("BBB", encoding="utf-8")
+    findings = rv.validate_governance_baseline(tmp_path, "qualification")
+    assert any(
+        f.code == "P5-GOV-02" and f.severity == "BLOCKER"
+        for f in findings
+    )
+
+
+def test_governance_baseline_bootstrap_mutation_warns(tmp_path):
+    _write_tmp_governance(
+        tmp_path, {"gov_a.txt": "AAA"}, state="PHASE5_BOOTSTRAP_MUTABLE")
+    (tmp_path / "gov_a.txt").write_text("BBB", encoding="utf-8")
+    findings = rv.validate_governance_baseline(tmp_path, "development")
+    assert any(
+        f.code == "P5-GOV-02" and f.severity == "WARN"
+        for f in findings
+    )
+    assert not any(f.severity == "BLOCKER" for f in findings)
+
+
+def test_governance_baseline_missing_fails_closed(tmp_path):
+    findings = rv.validate_governance_baseline(tmp_path, "development")
+    assert any(
+        f.code == "P5-GOV-01" and f.severity == "ERROR"
+        for f in findings
+    )
+
+
+def test_governance_baseline_cannot_self_refresh(tmp_path):
+    baseline_file = _write_tmp_governance(tmp_path, {"gov_a.txt": "AAA"})
+    baseline_before = baseline_file.read_bytes()
+    (tmp_path / "gov_a.txt").write_text("TAMPERED", encoding="utf-8")
+    findings = rv.validate_governance_baseline(tmp_path, "qualification")
+    assert any(f.code == "P5-GOV-02" and f.severity == "BLOCKER"
+               for f in findings)
+    assert baseline_file.read_bytes() == baseline_before, (
+        "Reviewer must never rewrite the governance baseline (self-refresh "
+        "must be impossible)"
+    )
+
+
 def test_is_test_file():
     assert rv.is_test_file(
         "Core/QCFP_MTF/tests/test_scripts/test_shadow_universe.py")

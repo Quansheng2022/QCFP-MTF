@@ -68,9 +68,14 @@ from pathlib import Path
 from typing import Iterable, Sequence
 
 
-TOOL_VERSION = "1.1.0"
+TOOL_VERSION = "1.2.0"
 DEFAULT_BASELINE = "qcfp-mtf-phase4-frozen"
 DEFAULT_MANIFEST_REL = "audit/phase5/frozen_surface_manifest.json"
+GOVERNANCE_BASELINE_REL = "audit/phase5/phase5_governance_baseline.json"
+GOVERNANCE_BASELINE_SCHEMA = "PHASE5-GOVERNANCE-BASELINE-1"
+GOVERNANCE_BOOTSTRAP_STATE = "PHASE5_BOOTSTRAP_MUTABLE"
+GOVERNANCE_FROZEN_STATE = "PHASE5_GOVERNANCE_FROZEN"
+GOVERNANCE_STATES = (GOVERNANCE_BOOTSTRAP_STATE, GOVERNANCE_FROZEN_STATE)
 
 # Controlled full-regression deselections. Every entry must carry an explicit
 # node and reason; the reviewer self-tests pin this exact set so it cannot
@@ -1686,6 +1691,159 @@ def render_git_section(root: Path, baseline: str) -> str:
     )
 
 
+def load_governance_baseline(
+    root: Path,
+    rel: str = GOVERNANCE_BASELINE_REL,
+) -> tuple[dict | None, str]:
+    """Load audit/phase5/phase5_governance_baseline.json (P5-REV-09).
+
+    Returns (baseline_dict, error_message). Any structural defect fails closed.
+    """
+    path = root / rel
+    if not path.exists():
+        return None, f"Phase 5 governance baseline missing: {rel}"
+    try:
+        data = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, ValueError) as exc:
+        return None, f"Phase 5 governance baseline unreadable ({rel}): {exc}"
+    if not isinstance(data, dict):
+        return None, f"Phase 5 governance baseline root must be an object ({rel})"
+    if data.get("schema") != GOVERNANCE_BASELINE_SCHEMA:
+        return None, (
+            f"Phase 5 governance baseline schema != "
+            f"{GOVERNANCE_BASELINE_SCHEMA} ({rel})"
+        )
+    state = data.get("baseline_state")
+    if state not in GOVERNANCE_STATES:
+        return None, (
+            f"Phase 5 governance baseline state must be one of "
+            f"{GOVERNANCE_STATES}; got {state!r} ({rel})"
+        )
+    entries = data.get("governance_files") or []
+    if not isinstance(entries, list) or not entries:
+        return None, (
+            f"Phase 5 governance baseline governance_files must be a "
+            f"non-empty list ({rel})"
+        )
+    seen: set[str] = set()
+    for entry in entries:
+        if not isinstance(entry, dict):
+            return None, f"governance_files entry must be an object ({rel})"
+        p = entry.get("path")
+        h = entry.get("sha256")
+        if not isinstance(p, str) or not p:
+            return None, f"governance_files entry missing path ({rel})"
+        if not isinstance(h, str) or len(h) != 64:
+            return None, (
+                f"governance_files entry missing/malformed sha256 "
+                f"for {p} ({rel})"
+            )
+        if p in seen:
+            return None, f"duplicate governance_files path {p} ({rel})"
+        seen.add(p)
+    return data, ""
+
+
+def validate_governance_baseline(root: Path, mode: str) -> list[Finding]:
+    """P5-REV-09 governance baseline validation.
+
+    Once the baseline state is PHASE5_GOVERNANCE_FROZEN, any SHA drift of the
+    pinned governance files (frozen surface manifest, reviewer, reviewer
+    self-tests) is a BLOCKER. During PHASE5_BOOTSTRAP_MUTABLE, drift is
+    reported as WARN pending explicit Human acceptance. This reviewer NEVER
+    rewrites the governance baseline (no self-refresh).
+    """
+    findings: list[Finding] = []
+    baseline, err = load_governance_baseline(root)
+    if err:
+        return [
+            Finding(
+                "ERROR",
+                "P5-GOV-01",
+                GOVERNANCE_BASELINE_REL,
+                f"Governance baseline fail-closed: {err}",
+            )
+        ]
+
+    state = baseline.get("baseline_state")
+    status = baseline.get("status") or "UNKNOWN"
+    accepted_by = baseline.get("accepted_by")
+    human_required = bool(baseline.get("human_acceptance_required", True))
+    findings.append(
+        Finding(
+            "INFO",
+            "P5-GOV-00",
+            GOVERNANCE_BASELINE_REL,
+            f"Governance baseline state={state}; status={status}; "
+            f"accepted_by={accepted_by or '<none>'}; "
+            f"human_acceptance_required={human_required}.",
+        )
+    )
+
+    frozen = state == GOVERNANCE_FROZEN_STATE
+    mismatches: list[str] = []
+    missing_on_disk: list[str] = []
+    for entry in baseline.get("governance_files") or []:
+        rel = str(entry["path"]).replace("\\", "/")
+        path = root / rel
+        expected = str(entry["sha256"])
+        if not path.exists():
+            missing_on_disk.append(rel)
+            continue
+        actual = sha256_file(path)
+        if actual != expected:
+            mismatches.append(f"{rel} before={expected} after={actual}")
+
+    if missing_on_disk:
+        findings.append(
+            Finding(
+                "ERROR",
+                "P5-GOV-03",
+                GOVERNANCE_BASELINE_REL,
+                "Pinned governance file(s) missing on disk: "
+                + ", ".join(missing_on_disk),
+            )
+        )
+    else:
+        findings.append(
+            Finding(
+                "PASS",
+                "P5-GOV-03",
+                "",
+                "All pinned governance files exist on disk.",
+            )
+        )
+
+    if mismatches:
+        severity = "BLOCKER" if frozen else "WARN"
+        prefix = (
+            "Governance baseline FROZEN: mutation of pinned governance file(s) "
+            "requires explicit governance reopen / Human acceptance."
+            if frozen
+            else "Governance files changed since pinned baseline; state is "
+            "BOOTSTRAP_MUTABLE and remains pending explicit Human acceptance."
+        )
+        findings.append(
+            Finding(
+                severity,
+                "P5-GOV-02",
+                GOVERNANCE_BASELINE_REL,
+                prefix + " Details: " + " | ".join(mismatches),
+            )
+        )
+    else:
+        findings.append(
+            Finding(
+                "PASS",
+                "P5-GOV-02",
+                "",
+                "Pinned governance file hashes match the governance baseline "
+                f"(state={state}).",
+            )
+        )
+    return findings
+
+
 def render_frozen_change_section(
     changes: Sequence[GitChange],
     root: Path,
@@ -1770,6 +1928,7 @@ def main() -> int:
     print(f"Project root: {root}")
     print(f"Baseline:     {args.baseline}")
     print(f"Manifest:     {DEFAULT_MANIFEST_REL}")
+    print(f"Governance:   {GOVERNANCE_BASELINE_REL}")
     print(f"Scope:        {args.scope}")
     print(f"Output:       {output}")
     print("=" * 80)
@@ -1804,6 +1963,7 @@ def main() -> int:
             root, args.baseline, all_changes, args.mode, surface_manifest
         )
     )
+    findings.extend(validate_governance_baseline(root, args.mode))
 
     if not args.skip_structure_validation:
         findings.extend(validate_structure(root, args.mode))

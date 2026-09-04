@@ -1,0 +1,58 @@
+{
+  "schema": "PHASE5-REV09-EVIDENCE-1",
+  "phase": 5,
+  "task": "P5-REV-09 — Phase 5 Governance Baseline",
+  "branch": "codex/phase5-shadow-operation",
+  "status": "PASS",
+  "baseline_artifact": "audit/phase5/phase5_governance_baseline.json",
+  "baseline_state": "PHASE5_BOOTSTRAP_MUTABLE",
+  "status_note": "机器已建立并校验 governance baseline；state 翻转为 PHASE5_GOVERNANCE_FROZEN 需要显式 Human acceptance record（Agent 不得 self-authorize）。",
+  "phase4_identity": {
+    "tag": "qcfp-mtf-phase4-frozen",
+    "tag_object": "fef63f57fe87d98d60234411ed346efc3147b37a",
+    "peeled_commit": "275726b37ff264f1717d41c3fec26c7135bace74"
+  },
+  "phase5_governance_commit_at_creation": "d4c3af74b63f36a583ef427c33e8168884c927b6",
+  "pinned_governance_files": [
+    {
+      "path": "audit/phase5/frozen_surface_manifest.json",
+      "sha256": "edb531c118e85f51738e37656687c59850763802eb0a12f194a552ef9bf54e75"
+    },
+    {
+      "path": "tools/review/merge_project_for_phase5_review.py",
+      "sha256": "281c5251711eed9c20e00a164f85b668b8c59ac31b3e8fad54e5beb450f5c300"
+    },
+    {
+      "path": "tools/review/tests/test_merge_project_for_phase5_review.py",
+      "sha256": "630acb15c0cd56e20348162b5208a16433c2d5570fa835007397d1110e2df469"
+    }
+  ],
+  "reviewer_behavior": {
+    "two_phase_model": "PHASE5_BOOTSTRAP_MUTABLE → Human acceptance → PHASE5_GOVERNANCE_FROZEN",
+    "frozen_mutation_severity": "BLOCKER (P5-GOV-02)",
+    "bootstrap_mutation_severity": "WARN pending Human acceptance",
+    "missing_or_malformed_baseline": "ERROR fail-closed (P5-GOV-01)",
+    "pinned_file_missing_on_disk": "ERROR fail-closed (P5-GOV-03)",
+    "self_refresh": "FORBIDDEN — Reviewer 不写入 governance baseline（回归测试证明）"
+  },
+  "reviewer_self_tests": {
+    "command": "pytest tools/review/tests -q",
+    "result": "35 passed",
+    "return_code": 0
+  },
+  "frozen_dirty": 0,
+  "shared_read_only_dirty": 0,
+  "unknown_dirty": 0,
+  "frozen_files_modified": "NONE",
+  "changed_files": [
+    "audit/phase5/phase5_governance_baseline.json (new)",
+    "audit/phase5/p5_rev09_evidence.json (new)",
+    "tools/review/merge_project_for_phase5_review.py (modified, TOOL_VERSION 1.2.0)",
+    "tools/review/tests/test_merge_project_for_phase5_review.py (modified)"
+  ],
+  "blockers": [],
+  "next_permitted_task": "FIX-05 — Baseline-aware Structure Detection",
+  "human_decision_required": "Governance baseline acceptance（state → PHASE5_GOVERNANCE_FROZEN）留待 P5-A Human gate",
+  "generated_at_utc": "2026-09-04T20:00:00Z",
+  "generated_by": "AI_AGENT P5-REV-09"
+}
