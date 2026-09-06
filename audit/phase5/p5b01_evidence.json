@@ -1,0 +1,81 @@
+{
+  "schema": "PHASE5-P5B01-EVIDENCE-1",
+  "phase": 5,
+  "task": "P5-B01 — Contract Foundation",
+  "branch": "codex/phase5-shadow-operation",
+  "start_head": "29b3cb92a2efa0f4d4495317adb1bf50f98659e6",
+  "status": "PASS",
+  "execution_steps": {
+    "B01-00_entry_preflight": "PASS（HEAD/staged empty/frozen clean/governance sha 0fdc27bb.../remote-backed 29b3cb9）",
+    "B01-01_contract_inventory": "PASS",
+    "B01-02_common_contract_foundation": "PASS",
+    "B01-03_domain_contracts": "PASS（6 contracts）",
+    "B01-04_serialization_and_schema": "PASS（deterministic UTF-8 JSON / sort_keys / fixed separators / UTC / NaN-forbidden / unknown-key rejection）",
+    "B01-05_contract_invariants": "PASS",
+    "B01-06_dedicated_tests": "PASS（45 contract tests；phase5 focused 64 passed）",
+    "B01-07_evidence_package": "PASS（本文件）",
+    "B01-08_exact_commit_and_reviewer": "PENDING until commit+strict review"
+  },
+  "contract_inventory_matrix": [
+    {"concept": "Decision Identity", "existing": "decision/release_identity.py, decision/decision_snapshot.py, decision/versions.py", "decision": "REUSE (opaque id strings)", "authority": "FROZEN"},
+    {"concept": "Canonical Decision", "existing": "decision/engine.py evaluate, decision/canonical_action.py", "decision": "REUSE (reference id only)", "authority": "FROZEN"},
+    {"concept": "Permission / FSM / Tactical", "existing": "decision/permission_*, retail_fsm*, tactical/*", "decision": "REUSE (no shadow copies)", "authority": "FROZEN"},
+    {"concept": "Ledger / Replay", "existing": "decision/decision_ledger.py, replay_engine.py", "decision": "REUSE (ids/refs only)", "authority": "FROZEN"},
+    {"concept": "Shadow structures", "existing": "shadow/drift.py, scripts/shadow_*.py, governance/shadow_divergence.py", "decision": "REUSE semantics; P5-B adds carrier only", "authority": "FROZEN"},
+    {"concept": "Outcome structures", "existing": "scripts/backfill_research_outcomes.py, wave/outcome_label.py", "decision": "REUSE id semantics; P5-B carrier only", "authority": "FROZEN"},
+    {"concept": "Incident structures", "existing": "safety/incident_protocol.py, runtime_incident_qualification.py", "decision": "REUSE status vocabulary; P5-B carrier only", "authority": "FROZEN"},
+    {"concept": "Aging/freshness", "existing": "governance/evidence_expiry.py, governance_aging.py", "decision": "REUSE states; P5-B carrier only", "authority": "FROZEN"},
+    {"concept": "Promotion", "existing": "governance/promotion_gate.py, qualification_promotion.py", "decision": "REUSE Human-only authority; P5-B carrier only", "authority": "FROZEN"}
+  ],
+  "contract_files": [
+    {"path": "Core/QCFP_MTF/phase5/__init__.py", "sha256": "2f41fe3e9cec091f4abaaa0af46864929ffee7bc126af141396615cfd0f8eac8"},
+    {"path": "Core/QCFP_MTF/phase5/contracts.py", "sha256": "6cda999e7c603c11c6fc5e46fc5bf8b48992bfe9a6e3f381a66af385e3fdc2ac"}
+  ],
+  "test_files": [
+    {"path": "Core/QCFP_MTF/tests/test_phase5/test_contracts.py", "sha256": "31b0f3ea44a91fe7cd40e7aac73580444737f88479648cf4bcdaeed3db7fdf91"}
+  ],
+  "contract_manifest": [
+    {"contract_name": "ShadowRunContract", "schema_version": 1, "source_file": "Core/QCFP_MTF/phase5/contracts.py", "sha256": "6cda999e7c603c11c6fc5e46fc5bf8b48992bfe9a6e3f381a66af385e3fdc2ac"},
+    {"contract_name": "DivergenceContract", "schema_version": 1, "source_file": "Core/QCFP_MTF/phase5/contracts.py", "sha256": "6cda999e7c603c11c6fc5e46fc5bf8b48992bfe9a6e3f381a66af385e3fdc2ac"},
+    {"contract_name": "OutcomeContract", "schema_version": 1, "source_file": "Core/QCFP_MTF/phase5/contracts.py", "sha256": "6cda999e7c603c11c6fc5e46fc5bf8b48992bfe9a6e3f381a66af385e3fdc2ac"},
+    {"contract_name": "AgingContract", "schema_version": 1, "source_file": "Core/QCFP_MTF/phase5/contracts.py", "sha256": "6cda999e7c603c11c6fc5e46fc5bf8b48992bfe9a6e3f381a66af385e3fdc2ac"},
+    {"contract_name": "IncidentContract", "schema_version": 1, "source_file": "Core/QCFP_MTF/phase5/contracts.py", "sha256": "6cda999e7c603c11c6fc5e46fc5bf8b48992bfe9a6e3f381a66af385e3fdc2ac"},
+    {"contract_name": "PromotionQualificationContract", "schema_version": 1, "source_file": "Core/QCFP_MTF/phase5/contracts.py", "sha256": "6cda999e7c603c11c6fc5e46fc5bf8b48992bfe9a6e3f381a66af385e3fdc2ac"}
+  ],
+  "serialization": {
+    "encoding": "UTF-8",
+    "json_options": "sort_keys=True, separators=(',',':'), ensure_ascii=False, allow_nan=False",
+    "determinism": "PASS",
+    "roundtrip": "PASS",
+    "nan_infinity_forbidden": true,
+    "unknown_key_rejected": true,
+    "utc_timestamps_only": true
+  },
+  "authority_invariants": {
+    "contract_not_authority": "PASS",
+    "contract_not_execution": "PASS",
+    "contract_not_approval": "PASS",
+    "promotion_machine_max": "QUALIFIED_FOR_HUMAN_REVIEW",
+    "forbidden_statuses": ["AUTO_PROMOTED", "PROMOTION_APPROVED_BY_MACHINE"],
+    "outcome_retroactive_write": "FORBIDDEN",
+    "side_effect_free_serialization": "PASS"
+  },
+  "tests": {
+    "contracts": {"command": "pytest Core/QCFP_MTF/tests/test_phase5/test_contracts.py -q", "passed": 45, "return_code": 0},
+    "phase5_focused": {"command": "pytest Core/QCFP_MTF/tests/test_phase5 -q", "passed": 64, "return_code": 0}
+  },
+  "governance": {
+    "state": "PHASE5_GOVERNANCE_FROZEN",
+    "revision": 7,
+    "baseline_sha256": "0fdc27bbf373653bd98857018ea3013776f721dd4b52776e7a39f486d54904dd"
+  },
+  "frozen_status": {"frozen_dirty": 0, "shared_read_only_dirty": 0, "unknown_dirty": 0},
+  "p5_c_started": false,
+  "p5_d_started": false,
+  "phase5_pass_authorized": false,
+  "phase6_authorized": false,
+  "blockers": [],
+  "next_step": "B01-08 exact commit + full strict reviewer, then STOP for Human Semantic Review (B01-H1); push/remote closure only after Human APPROVE",
+  "generated_at_utc": "2026-09-06T14:40:16Z",
+  "generated_by": "AI_AGENT P5-B01"
+}
