@@ -380,6 +380,7 @@ def _write_tmp_acceptance(
     accepted_by="HUMAN",
     sha_override=None,
     commit="a" * 40,
+    tag="qcfp-mtf-phase5-governance-v1",
 ):
     baseline_path = tmp_path / rv.GOVERNANCE_BASELINE_REL
     baseline_sha = (
@@ -394,7 +395,7 @@ def _write_tmp_acceptance(
         "accepted_by": accepted_by,
         "governance_baseline_sha256": baseline_sha,
         "governance_commit": commit,
-        "governance_tag": "qcfp-mtf-phase5-governance-v1",
+        "governance_tag": tag,
         "accepted_at_utc": "2026-09-05T00:00:00Z",
         "reopen_required_on_change": True,
     }
@@ -676,6 +677,125 @@ def test_current_repo_baseline_capabilities_are_not_false_pass():
     for f in struct:
         assert "Classification:" in f.message
         assert f.severity in {"INFO", "PASS"}, f.render()
+
+
+def _git(repo, *args):
+    rc, out = rv.run(["git", *args], repo, timeout=60)
+    assert rc == 0, f"git {' '.join(args)} failed: {out}"
+    return out.strip()
+
+
+def _init_tmp_git(tmp_path):
+    repo = tmp_path / "repo"
+    repo.mkdir()
+    _git(repo, "init", "-b", "main")
+    _git(repo, "config", "user.email", "phase5@example.com")
+    _git(repo, "config", "user.name", "Phase5 Tests")
+
+    def commit(msg):
+        (repo / "f.txt").write_text(msg, encoding="utf-8")
+        _git(repo, "add", "f.txt")
+        _git(repo, "commit", "-m", msg)
+        return _git(repo, "rev-parse", "HEAD")
+
+    c1 = commit("one")
+    c2 = commit("two")
+    return repo, c1, c2
+
+
+def test_annotated_tag_object_identity(tmp_path):
+    repo, c1, c2 = _init_tmp_git(tmp_path)
+    _git(repo, "tag", "-a", "ann-v1", "-m", "annotated", c1)
+    ident = rv.git_ref_identity(repo, "ann-v1")
+    assert ident["resolves"] is True
+    assert ident["peeled_commit"] == c1
+    assert ident["tag_object"] != c1
+    assert ident["is_annotated_tag"] is True
+    assert ident["is_ancestor_of_head"] is True
+    assert ident["merge_base_with_head"] == c1
+
+
+def test_lightweight_tag_object_identity(tmp_path):
+    repo, _c1, c2 = _init_tmp_git(tmp_path)
+    _git(repo, "tag", "light-v1", c2)
+    ident = rv.git_ref_identity(repo, "light-v1")
+    assert ident["resolves"] is True
+    assert ident["tag_object"] == c2
+    assert ident["peeled_commit"] == c2
+    assert ident["is_annotated_tag"] is False
+
+
+def test_missing_tag_identity_fails(tmp_path):
+    repo, _c1, _c2 = _init_tmp_git(tmp_path)
+    ident = rv.git_ref_identity(repo, "does-not-exist")
+    assert ident["resolves"] is False
+    assert ident["error"]
+
+
+def test_tag_moved_peeled_identity(tmp_path):
+    repo, c1, c2 = _init_tmp_git(tmp_path)
+    _git(repo, "tag", "-a", "moved", "-m", "first", c1)
+    _git(repo, "tag", "-f", "-a", "moved", "-m", "second", c2)
+    ident = rv.git_ref_identity(repo, "moved")
+    assert ident["resolves"] is True
+    assert ident["peeled_commit"] == c2
+    assert ident["tag_object"] != c2
+
+
+def _frozen_acceptance_root(repo):
+    _write_tmp_governance(repo, {"gov_a.txt": "AAA"})
+    return repo
+
+
+def test_governance_tag_peel_mismatch_blocks(tmp_path):
+    repo, c1, _c2 = _init_tmp_git(tmp_path)
+    _git(repo, "tag", "-a", "qcfp-mtf-phase5-governance-v1",
+         "-m", "accept", c1)
+    _frozen_acceptance_root(repo)
+    # governance_commit points at HEAD (c2) but governance_tag peels to c1.
+    head = _git(repo, "rev-parse", "HEAD")
+    _write_tmp_acceptance(repo, commit=head, )
+    findings = rv.validate_governance_acceptance(
+        repo, {"baseline_state": "PHASE5_GOVERNANCE_FROZEN"})
+    assert any(
+        f.code == "P5-GOV-04" and f.severity == "BLOCKER"
+        and "peeled commit mismatch" in f.message
+        for f in findings
+    )
+
+
+def test_governance_commit_not_ancestor_blocks(tmp_path):
+    repo, _c1, _c2 = _init_tmp_git(tmp_path)
+    _git(repo, "checkout", "-b", "side")
+    (repo / "f.txt").write_text("side", encoding="utf-8")
+    _git(repo, "add", "f.txt")
+    _git(repo, "commit", "-m", "side")
+    side = _git(repo, "rev-parse", "HEAD")
+    _git(repo, "checkout", "main")
+    _frozen_acceptance_root(repo)
+    _write_tmp_acceptance(repo, commit=side)
+    findings = rv.validate_governance_acceptance(
+        repo, {"baseline_state": "PHASE5_GOVERNANCE_FROZEN"})
+    assert any(
+        f.code == "P5-GOV-04" and f.severity == "BLOCKER"
+        and "not an ancestor" in f.message
+        for f in findings
+    )
+
+
+def test_governance_anchor_valid_passes(tmp_path):
+    repo, _c1, c2 = _init_tmp_git(tmp_path)
+    _git(repo, "tag", "-a", "qcfp-mtf-phase5-governance-v1",
+         "-m", "accept", c2)
+    _frozen_acceptance_root(repo)
+    _write_tmp_acceptance(repo, commit=c2)
+    findings = rv.validate_governance_acceptance(
+        repo, {"baseline_state": "PHASE5_GOVERNANCE_FROZEN"})
+    assert any(
+        f.code == "P5-GOV-04" and f.severity == "PASS"
+        for f in findings
+    )
+    assert not any(f.severity == "BLOCKER" for f in findings)
 
 
 def test_is_test_file():

@@ -68,7 +68,7 @@ from pathlib import Path
 from typing import Iterable, Sequence
 
 
-TOOL_VERSION = "1.2.0"
+TOOL_VERSION = "1.3.0"
 DEFAULT_BASELINE = "qcfp-mtf-phase4-frozen"
 DEFAULT_MANIFEST_REL = "audit/phase5/frozen_surface_manifest.json"
 GOVERNANCE_BASELINE_REL = "audit/phase5/phase5_governance_baseline.json"
@@ -649,6 +649,52 @@ def git_commit_exists(root: Path, ref: str) -> bool:
 def git_is_ancestor(root: Path, ancestor: str, descendant: str = "HEAD") -> bool:
     rc, _ = run(["git", "merge-base", "--is-ancestor", ancestor, descendant], root, timeout=30)
     return rc == 0
+
+
+def git_ref_identity(root: Path, ref: str) -> dict:
+    """FIX-07 — unambiguous Git ref identity.
+
+    Separates the annotated tag object (git rev-parse <ref>) from the peeled
+    commit (git rev-parse <ref>^{commit}), the merge base, and ancestry.
+    """
+    out: dict = {
+        "ref": ref,
+        "resolves": False,
+        "tag_object": None,
+        "peeled_commit": None,
+        "is_annotated_tag": None,
+        "merge_base_with_head": None,
+        "is_ancestor_of_head": None,
+        "error": None,
+    }
+    if not git_available(root):
+        out["error"] = "Git repository not detected"
+        return out
+    if not git_commit_exists(root, ref):
+        out["error"] = f"ref does not resolve to a commit: {ref}"
+        return out
+    rc, tag_obj = run(["git", "rev-parse", ref], root, timeout=30)
+    if rc != 0:
+        out["error"] = tag_obj or "git rev-parse failed"
+        return out
+    rc2, peeled = run(
+        ["git", "rev-parse", f"{ref}^{{commit}}"], root, timeout=30
+    )
+    if rc2 != 0:
+        out["error"] = peeled or "git peel failed"
+        return out
+    out["tag_object"] = tag_obj.strip()
+    out["peeled_commit"] = peeled.strip()
+    out["resolves"] = True
+    out["is_annotated_tag"] = out["tag_object"] != out["peeled_commit"]
+    rc3, mb = run(
+        ["git", "merge-base", f"{ref}^{{commit}}", "HEAD"], root, timeout=30
+    )
+    out["merge_base_with_head"] = mb.strip() if rc3 == 0 else None
+    out["is_ancestor_of_head"] = git_is_ancestor(
+        root, f"{ref}^{{commit}}", "HEAD"
+    )
+    return out
 
 
 def git_file_existed_at(root: Path, baseline: str, rel: str) -> bool:
@@ -1881,20 +1927,24 @@ def render_git_section(root: Path, baseline: str) -> str:
     branch = git_text(root, "branch", "--show-current") or "<detached>"
     head = git_text(root, "rev-parse", "HEAD")
     status = git_text(root, "status", "--short") or "<clean>"
-    baseline_ok = git_commit_exists(root, baseline)
+    ident = git_ref_identity(root, baseline)
 
-    if baseline_ok:
-        baseline_full = git_text(root, "rev-parse", baseline)
-        ancestor = git_is_ancestor(root, baseline, "HEAD")
-        merge_base = git_text(root, "merge-base", baseline, "HEAD")
+    if ident["resolves"]:
+        baseline_full = ident["tag_object"]
+        peeled = ident["peeled_commit"]
+        ancestor = ident["is_ancestor_of_head"]
+        merge_base = ident["merge_base_with_head"] or "<no merge base>"
+        annotated = ident["is_annotated_tag"]
         diff_stat = git_text(root, "diff", "--stat", f"{baseline}...HEAD") or "<no committed diff>"
         name_status = git_text(
             root, "diff", "--name-status", "--find-renames", f"{baseline}...HEAD"
         ) or "<no committed diff>"
     else:
         baseline_full = "<not found>"
-        ancestor = False
+        peeled = "<not found>"
         merge_base = "<unavailable>"
+        annotated = None
+        ancestor = False
         diff_stat = "<unavailable>"
         name_status = "<unavailable>"
 
@@ -1903,11 +1953,16 @@ def render_git_section(root: Path, baseline: str) -> str:
 
     return "\n".join(
         [
-            f"Branch:               {branch}",
-            f"HEAD:                 {head}",
-            f"Baseline:             {baseline} -> {baseline_full}",
-            f"Baseline is ancestor: {ancestor}",
-            f"Merge base:           {merge_base}",
+            f"Branch:                    {branch}",
+            f"HEAD:                      {head}",
+            f"Baseline ref:              {baseline}",
+            f"Tag object (rev-parse):    {baseline_full}",
+            f"Peeled commit:             {peeled}",
+            f"Is annotated tag:          {annotated}",
+            f"Merge base (peeled..HEAD): {merge_base}",
+            f"Baseline is ancestor (peeled): {ancestor}",
+            "" if ident["resolves"] else
+            f"Baseline identity error:   {ident.get('error')}",
             "",
             "Working tree:",
             status,
@@ -2045,15 +2100,36 @@ def validate_governance_acceptance(
         )
     if not acceptance.get("accepted_at_utc"):
         problems.append("accepted_at_utc missing/empty")
-    if not acceptance.get("governance_commit"):
+    governance_commit = acceptance.get("governance_commit")
+    if not governance_commit:
         problems.append("governance_commit missing/empty")
-    elif git_available(root) and not git_commit_exists(
-        root, str(acceptance["governance_commit"])
-    ):
-        problems.append(
-            "governance_commit does not resolve to a Git commit: "
-            f"{acceptance['governance_commit']}"
-        )
+    elif git_available(root):
+        commit = str(governance_commit)
+        if not git_commit_exists(root, commit):
+            problems.append(
+                "governance_commit does not resolve to a Git commit: "
+                f"{commit}"
+            )
+        elif not git_is_ancestor(root, commit, "HEAD"):
+            problems.append(
+                "governance_commit is not an ancestor of HEAD "
+                f"(acceptance anchor must precede current review): {commit}"
+            )
+        governance_tag = acceptance.get("governance_tag")
+        if governance_tag:
+            tag_ident = git_ref_identity(root, str(governance_tag))
+            if not tag_ident["resolves"]:
+                problems.append(
+                    "governance_tag does not resolve to a commit: "
+                    f"{governance_tag} ({tag_ident.get('error')})"
+                )
+            elif tag_ident["peeled_commit"] != commit:
+                problems.append(
+                    "governance_tag peeled commit mismatch: "
+                    f"tag={governance_tag} -> "
+                    f"{tag_ident['peeled_commit']} vs "
+                    f"governance_commit={commit}"
+                )
     actual_baseline_sha = sha256_file(baseline_path)
     expected_baseline_sha = acceptance.get("governance_baseline_sha256")
     if expected_baseline_sha != actual_baseline_sha:
