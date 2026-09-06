@@ -1,0 +1,56 @@
+{
+  "schema": "PHASE5-P5A-R4-EVIDENCE-1",
+  "phase": 5,
+  "task": "P5-A-R4 — CHECKPOINT 5A Human Acceptance Recording",
+  "branch": "codex/phase5-shadow-operation",
+  "status": "PASS",
+  "type": "Mechanical Human-Decision Recording Transaction",
+  "agent_decision_authority": "NONE",
+  "decision_source": "HUMAN",
+  "human_decision": {
+    "gate": "CHECKPOINT_5A",
+    "decision": "APPROVE",
+    "accepted_by": "HUMAN",
+    "approved_commit": "65a604e7da187a67dd08021019a53e6b3da88a4d",
+    "acceptance_package_sha256": "180ab57a8b0b31ef7263dad5451fccd499ff6216ef9210a9431331ebb5940974",
+    "p5a_r3_evidence_sha256": "729de721983ca792b7fa85ddd321a97dc3f8ba637e4feefc2ecbf4aaed5b63a6",
+    "pre_transition_current_state_sha256": "e2f741a16d4d5c19711f8ae35c0cc36efa804de30a1d7eb24c2ac466fa67bd63",
+    "review_manifest_sha256": "45129313ef31deff5ffe5095149f0dc8cb3f667c6d2a1721a6c4d981b6cc35ab"
+  },
+  "verification": {
+    "approved_commit_matches_head": true,
+    "acceptance_package_sha_matches": true,
+    "p5a_r3_evidence_sha_matches": true,
+    "pre_transition_current_state_sha_matches": true,
+    "review_manifest_sha_local_reproducibility": "NOT_REPRODUCIBLE_FROM_REPO_ARTIFACTS",
+    "review_manifest_note": "值 45129313ef31deff5ffe5095149f0dc8cb3f667c6d2a1721a6c4d981b6cc35ab 由 Human 提供并原样记录；本地对 Merged_Code 各 review bundle 文件计算 SHA 均不相等，未作替换或推断。"
+  },
+  "recorded_artifacts": {
+    "checkpoint5a_human_acceptance": {
+      "path": "audit/phase5/checkpoint5a_human_acceptance.json",
+      "sha256": "8012062d0a71761fb4c89b5f29538865ec5f45b4c40825a6fcd4053b7a94273d"
+    },
+    "current_state_after_transition": {
+      "path": "audit/phase5/p5a_current_state.json",
+      "state_revision": 3,
+      "sha256": "4435298c8e1dc727f8c71e4afcb3e745ef1dbc301d3c630077ccca79ab36e863",
+      "checkpoint_5a_status": "ACCEPTED",
+      "checkpoint_5a_human_decision": "APPROVE",
+      "p5b_permitted": true
+    }
+  },
+  "dedicated_tests": {
+    "command": "pytest Core/QCFP_MTF/tests/test_phase5/test_p5a_current_state.py -q",
+    "expected": "10 passed rc=0"
+  },
+  "not_performed": [
+    "Phase 5 frozen tag creation",
+    "Phase 6 start",
+    "P5-B01 implementation start"
+  ],
+  "blockers": [],
+  "next_step": "Human-approved CHECKPOINT 5A recorded; P5-B01 now PERMITTED. Agent stops; Phase 5 freeze/Phase 6 remain outside this transaction.",
+  "human_decision_required": false,
+  "generated_at_utc": "2026-09-06T21:33:37Z",
+  "generated_by": "AI_AGENT P5-A-R4"
+}

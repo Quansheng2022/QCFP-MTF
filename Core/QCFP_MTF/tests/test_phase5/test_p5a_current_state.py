@@ -63,17 +63,21 @@ def test_governance_baseline_sha_actual_match():
     assert actual == _state()["governance"]["baseline_sha256"]
 
 
-def test_human_checkpoint_still_pending():
+def test_human_checkpoint_recorded_accepted():
     p5a = _state()["p5a"]
-    assert p5a["checkpoint_5a_status"] == "HOLD"
-    assert p5a["checkpoint_5a_human_decision"] == "NOT_YET_MADE"
-    assert p5a["checkpoint_5a_human_required"] is True
+    assert p5a["checkpoint_5a_status"] == "ACCEPTED"
+    assert p5a["checkpoint_5a_human_decision"] == "APPROVE"
+    assert p5a["checkpoint_5a_human_required"] is False
 
 
-def test_p5b_hard_prohibition():
+def test_p5b_permitted_after_human_acceptance():
     p5a = _state()["p5a"]
-    assert p5a["p5b_permitted"] is False
-    assert p5a["next_machine_task_after_human_review"] != "P5-B01"
+    # P5-B01 is only permitted after an explicit Human APPROVE record exists.
+    record = _state()["checkpoint5a_acceptance_record"]
+    assert record["decision"] == "APPROVE"
+    assert record["accepted_by"] == "HUMAN"
+    assert p5a["p5b_permitted"] is True
+    assert p5a["next_machine_task_after_human_review"] == "P5-B01"
 
 
 def test_historical_checkpoint_claim_superseded():

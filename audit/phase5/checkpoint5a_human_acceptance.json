@@ -1,0 +1,15 @@
+{
+  "schema": "PHASE5-CHECKPOINT5A-HUMAN-ACCEPTANCE-1",
+  "phase": 5,
+  "gate": "CHECKPOINT_5A",
+  "decision": "APPROVE",
+  "accepted_by": "HUMAN",
+  "approved_commit": "65a604e7da187a67dd08021019a53e6b3da88a4d",
+  "acceptance_package_sha256": "180ab57a8b0b31ef7263dad5451fccd499ff6216ef9210a9431331ebb5940974",
+  "p5a_r3_evidence_sha256": "729de721983ca792b7fa85ddd321a97dc3f8ba637e4feefc2ecbf4aaed5b63a6",
+  "pre_transition_current_state_sha256": "e2f741a16d4d5c19711f8ae35c0cc36efa804de30a1d7eb24c2ac466fa67bd63",
+  "review_manifest_sha256": "45129313ef31deff5ffe5095149f0dc8cb3f667c6d2a1721a6c4d981b6cc35ab",
+  "accepted_at_utc": "2026-09-06T21:33:37Z",
+  "authority_source": "Human approval supplied externally (P5-A-R4, Decision=APPROVE). AI_AGENT executed mechanical recording only; Agent Decision Authority = NONE.",
+  "reopen_required_on_change": true
+}
