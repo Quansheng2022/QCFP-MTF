@@ -1,0 +1,45 @@
+{
+  "schema": "PHASE5-P5A-R1-EVIDENCE-1",
+  "phase": 5,
+  "task": "P5-A-R1 — Full Regression Re-run",
+  "branch": "codex/phase5-shadow-operation",
+  "status": "PASS",
+  "governance_state": "PHASE5_GOVERNANCE_FROZEN",
+  "governance_revision": 7,
+  "checkpoint_5a": "HOLD",
+  "p5b_permitted": false,
+  "steps": {
+    "step1_reviewer_self_tests": {
+      "command": "pytest tools/review/tests -q",
+      "result": "76 passed / 0 failed / 0 errors",
+      "return_code": 0
+    },
+    "step2_phase5_focused_tests": {
+      "command": "pytest Core/QCFP_MTF/tests/test_phase5 -q",
+      "result": "12 passed / 0 failed / 0 errors",
+      "return_code": 0
+    },
+    "step3_full_governed_regression": {
+      "command": "merge_project_for_phase5_review.py --mode development --run-pytest --pytest-scope full --strict --output Merged_Code/merged_QCFP_MTF_phase5_P5A_R1_review.txt",
+      "pytest_result": "2040 passed, 2 governed deselected, 0 failed",
+      "pytest_return_code": 0,
+      "finding_counts": "PASS=37 | INFO=317 | WARN=1 | ERROR=0 | BLOCKER=0",
+      "P5-PYTEST-FROZEN-01": "PASS",
+      "P5-PYTEST-03": "PASS",
+      "P5-GOV-02": "PASS",
+      "P5-GOV-03": "PASS",
+      "P5-GOV-04": "PASS",
+      "P5-GOV-05": "no violation"
+    }
+  },
+  "post_run_state": {
+    "frozen_dirty": 0,
+    "shared_read_only_dirty": 0,
+    "unknown_dirty": 0
+  },
+  "blockers": [],
+  "next_permitted_task": "P5-A-R2 — Strict Development Review",
+  "human_decision_required": false,
+  "generated_at_utc": "2026-09-06T20:44:56Z",
+  "generated_by": "AI_AGENT P5-A-R1"
+}
