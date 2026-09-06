@@ -8,6 +8,14 @@ from pathlib import Path
 PROJECT_ROOT = Path(__file__).resolve().parents[4]
 
 STATE_PATH = PROJECT_ROOT / "audit" / "phase5" / "p5a_current_state.json"
+ACCEPTANCE_PATH = (
+    PROJECT_ROOT / "audit" / "phase5" /
+    "checkpoint5a_human_acceptance.json"
+)
+CORRECTION_PATH = (
+    PROJECT_ROOT / "audit" / "phase5" /
+    "checkpoint5a_human_acceptance_correction.json"
+)
 
 # Pre-task captured immutability anchors (P5-EVID-02 §7.5 / §14).
 EXPECTED_SHA = {
@@ -78,6 +86,67 @@ def test_p5b_permitted_after_human_acceptance():
     assert record["accepted_by"] == "HUMAN"
     assert p5a["p5b_permitted"] is True
     assert p5a["next_machine_task_after_human_review"] == "P5-B01"
+
+
+def test_state_revision_is_4():
+    assert _state()["state_revision"] == 4
+
+
+def test_human_acceptance_artifact_exists():
+    assert ACCEPTANCE_PATH.exists()
+
+
+def test_human_artifact_sha_locked():
+    record_meta = _state()["checkpoint5a_acceptance_record"]
+    assert _sha256(
+        "audit/phase5/checkpoint5a_human_acceptance.json"
+    ) == record_meta["sha256"]
+    assert record_meta["sha256"] == \
+        "8012062d0a71761fb4c89b5f29538865ec5f45b4c40825a6fcd4053b7a94273d"
+
+
+def test_real_human_artifact_parsed():
+    """直接解析真实 Human artifact，而非 Current State 复制字段。"""
+    actual = json.loads(ACCEPTANCE_PATH.read_text(encoding="utf-8"))
+    assert actual["schema"] == \
+        "PHASE5-CHECKPOINT5A-HUMAN-ACCEPTANCE-1"
+    assert actual["decision"] == "APPROVE"
+    assert actual["accepted_by"] == "HUMAN"
+    assert actual["approved_commit"] == \
+        "65a604e7da187a67dd08021019a53e6b3da88a4d"
+
+
+def test_human_approved_input_shas_locked():
+    actual = json.loads(ACCEPTANCE_PATH.read_text(encoding="utf-8"))
+    assert actual["acceptance_package_sha256"] == \
+        "180ab57a8b0b31ef7263dad5451fccd499ff6216ef9210a9431331ebb5940974"
+    assert actual["p5a_r3_evidence_sha256"] == \
+        "729de721983ca792b7fa85ddd321a97dc3f8ba637e4feefc2ecbf4aaed5b63a6"
+    assert actual["pre_transition_current_state_sha256"] == \
+        "e2f741a16d4d5c19711f8ae35c0cc36efa804de30a1d7eb24c2ac466fa67bd63"
+    assert actual["review_manifest_sha256"] == \
+        "45129313ef31deff5ffe5095149f0dc8cb3f667c6d2a1721a6c4d981b6cc35ab"
+
+
+def test_correction_artifact_sha_locked():
+    assert CORRECTION_PATH.exists()
+    record_meta = _state()["checkpoint5a_acceptance_record"]
+    correction = record_meta["integrity_correction"]
+    assert _sha256(
+        "audit/phase5/checkpoint5a_human_acceptance_correction.json"
+    ) == correction["sha256"]
+    assert correction["sha256"] == \
+        "1298f9407c35ca430c0ae72b6b902f6af403675091e8c8a7dc00340c71184b0c"
+
+
+def test_timestamp_correction_semantics():
+    correction = json.loads(CORRECTION_PATH.read_text(encoding="utf-8"))
+    ts = correction["timestamp_correction"]
+    assert ts["original_value"] == "2026-09-06T21:33:37Z"
+    assert ts["normalized_recording_time_utc"] == "2026-09-06T13:33:37Z"
+    assert ts["decision_semantics_changed"] is False
+    assert correction["original_human_acceptance"]["sha256"] == \
+        "8012062d0a71761fb4c89b5f29538865ec5f45b4c40825a6fcd4053b7a94273d"
 
 
 def test_historical_checkpoint_claim_superseded():

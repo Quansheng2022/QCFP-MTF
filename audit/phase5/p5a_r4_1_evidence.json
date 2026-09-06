@@ -1,0 +1,57 @@
+{
+  "schema": "PHASE5-P5A-R4-1-EVIDENCE-1",
+  "phase": 5,
+  "task": "P5-A-R4.1 — Human Acceptance Record Integrity Repair",
+  "status": "PASS",
+  "repair_scope": [
+    "timestamp semantic correction",
+    "external Human acceptance SHA binding",
+    "dedicated test fail-closed validation"
+  ],
+  "human_decision_changed": false,
+  "human_reapproval_required": false,
+  "original_human_acceptance": {
+    "path": "audit/phase5/checkpoint5a_human_acceptance.json",
+    "sha256": "8012062d0a71761fb4c89b5f29538865ec5f45b4c40825a6fcd4053b7a94273d",
+    "modified": false
+  },
+  "correction_artifact": {
+    "path": "audit/phase5/checkpoint5a_human_acceptance_correction.json",
+    "sha256": "1298f9407c35ca430c0ae72b6b902f6af403675091e8c8a7dc00340c71184b0c"
+  },
+  "state_transition": {
+    "from_revision": 3,
+    "from_sha256": "4435298c8e1dc727f8c71e4afcb3e745ef1dbc301d3c630077ccca79ab36e863",
+    "to_revision": 4,
+    "to_sha256": "ed82b417a57b04bd051a23d095112aff7a49ee031d3976a4b62f16625347189e",
+    "authority_semantics_changed": false,
+    "checkpoint_5a": "ACCEPTED",
+    "human_decision": "APPROVE",
+    "p5b_permitted": true
+  },
+  "timestamp_correction": {
+    "original_field": "accepted_at_utc",
+    "original_value": "2026-09-06T21:33:37Z",
+    "issue": "Asia/Singapore local wall-clock value was mislabeled with UTC Z suffix",
+    "normalized_recording_time_utc": "2026-09-06T13:33:37Z",
+    "exact_human_decision_time_from_repository": "NOT_AVAILABLE"
+  },
+  "governance_changed": false,
+  "governance": {
+    "state": "PHASE5_GOVERNANCE_FROZEN",
+    "revision": 7,
+    "baseline_sha256": "0fdc27bbf373653bd98857018ea3013776f721dd4b52776e7a39f486d54904dd"
+  },
+  "dedicated_tests": {
+    "command": "pytest Core/QCFP_MTF/tests/test_phase5/test_p5a_current_state.py -q",
+    "result": "17 passed",
+    "return_code": 0
+  },
+  "p5b01_started": false,
+  "phase5_pass_authorized": false,
+  "phase6_authorized": false,
+  "next_step": "P5-A-R4.1 strict full review",
+  "agent_stop_required": true,
+  "generated_at_utc": "2026-09-06T14:02:32Z",
+  "generated_by": "AI_AGENT P5-A-R4.1"
+}

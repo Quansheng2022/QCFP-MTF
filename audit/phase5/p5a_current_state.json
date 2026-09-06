@@ -1,10 +1,10 @@
 {
   "schema": "PHASE5-P5A-CURRENT-STATE-1",
   "phase": 5,
-  "state_revision": 3,
+  "state_revision": 4,
   "authority_role": "SINGLE_CURRENT_MACHINE_STATE",
   "current": true,
-  "generated_at_utc": "2026-09-06T21:33:37Z",
+  "generated_at_utc": "2026-09-06T14:01:10Z",
   "governance": {
     "state": "PHASE5_GOVERNANCE_FROZEN",
     "revision": 7,
@@ -25,9 +25,18 @@
   },
   "checkpoint5a_acceptance_record": {
     "path": "audit/phase5/checkpoint5a_human_acceptance.json",
+    "sha256": "8012062d0a71761fb4c89b5f29538865ec5f45b4c40825a6fcd4053b7a94273d",
     "decision": "APPROVE",
     "accepted_by": "HUMAN",
-    "approved_commit": "65a604e7da187a67dd08021019a53e6b3da88a4d"
+    "approved_commit": "65a604e7da187a67dd08021019a53e6b3da88a4d",
+    "integrity_correction": {
+      "path": "audit/phase5/checkpoint5a_human_acceptance_correction.json",
+      "sha256": "1298f9407c35ca430c0ae72b6b902f6af403675091e8c8a7dc00340c71184b0c"
+    }
+  },
+  "previous_state": {
+    "state_revision": 3,
+    "sha256": "4435298c8e1dc727f8c71e4afcb3e745ef1dbc301d3c630077ccca79ab36e863"
   },
   "machine_completed": {
     "P5-A-R1": "PASS",

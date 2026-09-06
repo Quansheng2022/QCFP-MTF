@@ -1,0 +1,33 @@
+{
+  "schema": "PHASE5-CHECKPOINT5A-HUMAN-ACCEPTANCE-CORRECTION-1",
+  "phase": 5,
+  "gate": "CHECKPOINT_5A",
+  "correction_type": "TIMESTAMP_SEMANTICS_AND_INTEGRITY_ANCHOR",
+  "original_human_acceptance": {
+    "path": "audit/phase5/checkpoint5a_human_acceptance.json",
+    "sha256": "8012062d0a71761fb4c89b5f29538865ec5f45b4c40825a6fcd4053b7a94273d",
+    "decision": "APPROVE",
+    "accepted_by": "HUMAN",
+    "approved_commit": "65a604e7da187a67dd08021019a53e6b3da88a4d"
+  },
+  "timestamp_correction": {
+    "original_field": "accepted_at_utc",
+    "original_value": "2026-09-06T21:33:37Z",
+    "issue": "Asia/Singapore local wall-clock value was mislabeled with UTC Z suffix",
+    "normalized_recording_time_utc": "2026-09-06T13:33:37Z",
+    "exact_human_decision_time_from_repository": "NOT_AVAILABLE",
+    "decision_semantics_changed": false
+  },
+  "authority": {
+    "decision_source": "HUMAN",
+    "correction_recorded_by": "AI_AGENT",
+    "agent_decision_authority": "NONE",
+    "human_reapproval_required": false
+  },
+  "governance": {
+    "state": "PHASE5_GOVERNANCE_FROZEN",
+    "revision": 7,
+    "changed": false
+  },
+  "generated_at_utc": "2026-09-06T14:01:10Z"
+}
