@@ -1,0 +1,49 @@
+{
+  "schema": "PHASE5-P5A-R2-EVIDENCE-1",
+  "phase": 5,
+  "task": "P5-A-R2 — Strict Development Review",
+  "branch": "codex/phase5-shadow-operation",
+  "status": "PASS",
+  "governance_state": "PHASE5_GOVERNANCE_FROZEN",
+  "governance_revision": 7,
+  "checkpoint_5a": "HOLD",
+  "p5b_permitted": false,
+  "review_bundle": "Merged_Code/merged_QCFP_MTF_phase5_development_review.txt",
+  "bundle_contents": [
+    "Git identity（Baseline ref / Tag object / Peeled commit / merge base / ancestry）",
+    "Phase4 peeled baseline (275726b37ff264f1717d41c3fec26c7135bace74)",
+    "Phase5 governance baseline findings (P5-GOV-00..04)",
+    "Frozen surface classification (P5-FROZEN)",
+    "pytest output (full, 2040 passed, 2 governed deselected, rc=0)",
+    "Frozen pre/post integrity (P5-PYTEST-FROZEN-01 PASS)",
+    "Governed deselection replacement binding (P5-PYTEST-03 PASS)",
+    "JUnit XML（FILE: audit/phase5/baseline_pytest_junit.xml, SHA in manifest）",
+    "Reviewer tests source in file manifest",
+    "Structure classification (P5-STRUCT baseline-aware)",
+    "Evidence current state（FILE: audit/phase5/p5a_current_state.json）",
+    "Finding counts + file SHA manifest"
+  ],
+  "review_results": {
+    "pytest_return_code": 0,
+    "pytest_passed": 2040,
+    "governed_deselected": 2,
+    "P5-GOV-02": "PASS",
+    "P5-GOV-03": "PASS",
+    "P5-GOV-04": "PASS",
+    "P5-GOV-05": "no violation",
+    "P5-PYTEST-FROZEN-01": "PASS",
+    "P5-PYTEST-03": "PASS",
+    "finding_counts": "PASS=38 | INFO=317 | WARN=1 | ERROR=0 | BLOCKER=0",
+    "allowed_warn_note": "唯一 WARN 为 development-only 的既有脏工作区提示 P5-GIT-03，不影响 CHECKPOINT 5A Governance Closure"
+  },
+  "post_run_state": {
+    "frozen_dirty": 0,
+    "shared_read_only_dirty": 0,
+    "unknown_dirty": 0
+  },
+  "blockers": [],
+  "next_permitted_task": "P5-A-R3 — Acceptance Evidence（生成 p5a_review_acceptance.json）",
+  "human_decision_required": false,
+  "generated_at_utc": "2026-09-06T20:52:25Z",
+  "generated_by": "AI_AGENT P5-A-R2"
+}
