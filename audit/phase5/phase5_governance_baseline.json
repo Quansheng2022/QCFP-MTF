@@ -1,7 +1,7 @@
 {
   "schema": "PHASE5-GOVERNANCE-BASELINE-1",
   "phase": 5,
-  "governance_revision": 2,
+  "governance_revision": 3,
   "baseline_state": "PHASE5_BOOTSTRAP_MUTABLE",
   "status": "PENDING_HUMAN_ACCEPTANCE",
   "human_acceptance_required": true,
@@ -15,7 +15,7 @@
     "peeled_commit": "275726b37ff264f1717d41c3fec26c7135bace74"
   },
   "phase5_governance_commit": "d4c3af74b63f36a583ef427c33e8168884c927b6",
-  "pinned_at_note": "Revision 2 after P5-REV-09R1/R2/R3: added external acceptance contract anchor (phase5_governance_acceptance.json), state transition guard (BOOTSTRAP_MUTABLE -> READY_FOR_HUMAN_GOVERNANCE_ACCEPTANCE -> PHASE5_GOVERNANCE_FROZEN) and refreshed pinned hashes. State flips to PHASE5_GOVERNANCE_FROZEN only through an explicit external Human acceptance record; Agent must never create that record.",
+  "pinned_at_note": "Revision 3 after FIX-05: baseline-aware structure detection (capability classification BASELINE_PRESENT / PHASE5_ADDED / PHASE5_MODIFIED / PHASE5_TESTED / PHASE5_EVIDENCED) and refreshed pinned hashes. State flips to PHASE5_GOVERNANCE_FROZEN only through an explicit external Human acceptance record; Agent must never create that record.",
   "governance_files": [
     {
       "path": "audit/phase5/frozen_surface_manifest.json",
@@ -24,12 +24,12 @@
     },
     {
       "path": "tools/review/merge_project_for_phase5_review.py",
-      "sha256": "ad7dafe8c353840e1723f16449961fdd97dd071ede347a6fd862fe99db37db93",
+      "sha256": "c48eba8f97bbab6dc265330006c97b4a0ccef12142d4c2b5ecda762cf8798ec9",
       "role": "Phase 5 Review Tool（执行器）"
     },
     {
       "path": "tools/review/tests/test_merge_project_for_phase5_review.py",
-      "sha256": "7af97660cb42e4629f924a84aa31f22df8cc1d069bfc3b5c35dc4bd1fb67c78f",
+      "sha256": "e20cf912cf333e115cbeca0bcdb1cc955c2808349239bc46033040d0ebe626a0",
       "role": "Phase 5 Review Tool 自身回归测试"
     }
   ],

@@ -589,6 +589,95 @@ def test_reviewer_never_writes_baseline_or_acceptance(tmp_path):
     assert acceptance_file.read_bytes() == acceptance_before
 
 
+def test_baseline_only_capability_not_counted_as_phase5_added():
+    state = rv.classify_capability_state(True, False, False, False, False)
+    assert state == "BASELINE_PRESENT"
+
+
+def test_phase5_added_without_test_not_evidenced():
+    state = rv.classify_capability_state(False, True, False, False, False)
+    assert state == "PHASE5_ADDED"
+
+
+def test_phase5_modified_without_test_not_evidenced():
+    state = rv.classify_capability_state(True, False, True, False, False)
+    assert state == "PHASE5_MODIFIED"
+
+
+def test_phase5_test_without_implementation_not_evidenced():
+    state = rv.classify_capability_state(False, False, False, True, False)
+    assert state == "PHASE5_TESTED"
+
+
+def test_phase5_implementation_and_test_and_evidence_is_evidenced():
+    state = rv.classify_capability_state(False, True, False, True, True)
+    assert state == "PHASE5_EVIDENCED"
+
+
+def test_structure_detection_uses_phase4_baseline():
+    cap = rv.PHASE5_CAPABILITIES[2]  # divergence capability
+    baseline_rels = {
+        "Core/QCFP_MTF/governance/shadow_divergence.py",
+        "Core/QCFP_MTF/governance/phase1.py",
+    }
+    state, flags = rv.evaluate_capability(
+        cap, baseline_rels, set(), set(), set(), set())
+    assert state == "BASELINE_PRESENT"
+    assert flags["phase5_added"] is False
+    assert flags["phase5_evidenced"] is False
+
+
+def test_phase5_triple_binding_produces_evidenced():
+    cap = rv.PHASE5_CAPABILITIES[2]
+    baseline_rels = {"Core/QCFP_MTF/governance/shadow_divergence.py"}
+    state, flags = rv.evaluate_capability(
+        cap,
+        baseline_rels,
+        {"Core/QCFP_MTF/phase5/divergence.py"},
+        set(),
+        {
+            "Core/QCFP_MTF/tests/test_phase5/test_divergence.py",
+            "Core/QCFP_MTF/tests/test_phase5/__init__.py",
+        },
+        {"divergence_summary.json"},
+    )
+    assert state == "PHASE5_EVIDENCED"
+    assert flags["phase5_evidenced"] is True
+
+
+def test_evidence_name_required_for_evidenced():
+    cap = rv.PHASE5_CAPABILITIES[2]
+    state, _ = rv.evaluate_capability(
+        cap,
+        set(),
+        {"Core/QCFP_MTF/phase5/divergence.py"},
+        set(),
+        {"Core/QCFP_MTF/tests/test_phase5/test_divergence.py"},
+        set(),
+    )
+    assert state != "PHASE5_EVIDENCED"
+
+
+def test_current_repo_baseline_capabilities_are_not_false_pass():
+    """当前仓库历史能力不得被当作 Phase 5 completion（dev 输出 INFO 而非 PASS）。"""
+    manifest, err = rv.load_frozen_surface_manifest(PROJECT_ROOT)
+    assert manifest is not None, err
+    changes = rv.parse_committed_changes(
+        PROJECT_ROOT, "qcfp-mtf-phase4-frozen")
+    changes += rv.parse_worktree_changes(PROJECT_ROOT)
+    changes += [
+        rv.GitChange(status="U", path=rel, source="untracked")
+        for rel in rv.current_untracked_files(PROJECT_ROOT)
+    ]
+    findings = rv.validate_structure(
+        PROJECT_ROOT, "development", "qcfp-mtf-phase4-frozen",
+        changes, manifest)
+    struct = [f for f in findings if f.code.startswith("P5-STRUCT-0")]
+    for f in struct:
+        assert "Classification:" in f.message
+        assert f.severity in {"INFO", "PASS"}, f.render()
+
+
 def test_is_test_file():
     assert rv.is_test_file(
         "Core/QCFP_MTF/tests/test_scripts/test_shadow_universe.py")

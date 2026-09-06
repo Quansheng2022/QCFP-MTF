@@ -874,73 +874,302 @@ def validate_git_baseline(root: Path, baseline: str, mode: str) -> list[Finding]
     return findings
 
 
-def validate_structure(root: Path, mode: str) -> list[Finding]:
+@dataclass(frozen=True)
+class Phase5Capability:
+    """FIX-05 — capability contract for baseline-aware structure detection."""
+
+    code: str
+    label: str
+    baseline_tokens: tuple[str, ...]
+    impl_keywords: tuple[str, ...]
+    test_markers: tuple[str, ...]
+    evidence_names: tuple[str, ...]
+    test_only: bool = False
+
+
+PHASE5_CAPABILITIES = (
+    Phase5Capability(
+        "P5-STRUCT-01",
+        "Shadow runtime / shadow identity surface",
+        ("/shadow/", "shadow_runtime", "shadow_run", "shadow_decision",
+         "shadow_identity"),
+        ("shadow_runtime", "shadow_identity", "shadow_run"),
+        ("shadow_runtime", "shadow_identity", "shadow_run"),
+        ("shadow_runtime_summary.json",),
+    ),
+    Phase5Capability(
+        "P5-STRUCT-02",
+        "Shadow isolation / authority guard",
+        ("shadow_isolation", "isolation", "boundary_guard", "no_write_guard"),
+        ("isolation", "boundary_guard", "no_write_guard"),
+        ("isolation", "boundary_guard", "no_write_guard"),
+        ("shadow_isolation_evidence.json",),
+    ),
+    Phase5Capability(
+        "P5-STRUCT-03",
+        "Canonical-vs-Shadow divergence framework",
+        ("/divergence/", "divergence_", "divergence"),
+        ("divergence",),
+        ("divergence",),
+        ("divergence_summary.json", "unexplained_divergence_report.json"),
+    ),
+    Phase5Capability(
+        "P5-STRUCT-04",
+        "Decision outcome observation",
+        ("/observation/", "outcome_observation", "outcome_",
+         "observation_horizon"),
+        ("outcome", "observation_horizon", "observation"),
+        ("outcome", "observation"),
+        ("outcome_observation_summary.json",),
+    ),
+    Phase5Capability(
+        "P5-STRUCT-05",
+        "Evidence aging / freshness governance",
+        ("evidence_aging", "freshness", "evidence_age", "stale_evidence"),
+        ("aging", "freshness", "evidence_age"),
+        ("aging", "freshness", "evidence_age"),
+        ("evidence_aging_summary.json",),
+    ),
+    Phase5Capability(
+        "P5-STRUCT-06",
+        "Failure / incident qualification",
+        ("/incidents/", "incident_", "incident_registry", "failure_taxonomy"),
+        ("incident", "failure_taxonomy"),
+        ("incident", "failure_taxonomy"),
+        ("incident_register.json",),
+    ),
+    Phase5Capability(
+        "P5-STRUCT-07",
+        "Promotion qualification gate",
+        ("/promotion/", "promotion_gate", "promotion_qualification",
+         "qualification"),
+        ("promotion", "qualification"),
+        ("promotion", "qualification"),
+        ("promotion_gate_result.json",),
+    ),
+    Phase5Capability(
+        "P5-STRUCT-08",
+        "Replay / audit validation",
+        ("replay_validation", "shadow_replay", "replay"),
+        ("replay_validation", "shadow_replay"),
+        ("replay_validation", "shadow_replay"),
+        ("replay_validation.json",),
+    ),
+    Phase5Capability(
+        "P5-STRUCT-09",
+        "Phase 5 tests",
+        ("tests/phase5/", "test_phase5", "phase5_test"),
+        (),
+        (),
+        ("baseline_test_summary.json", "pytest_summary.json"),
+        test_only=True,
+    ),
+)
+
+
+def git_ls_tree_rels(root: Path, baseline: str) -> set[str]:
+    """Repository file list at the frozen baseline (one git call)."""
+    if not git_available(root) or not git_commit_exists(root, baseline):
+        return set()
+    rc, out = run(
+        [
+            "git",
+            "-c",
+            "core.quotepath=false",
+            "ls-tree",
+            "-r",
+            "--name-only",
+            baseline,
+        ],
+        root,
+        timeout=120,
+    )
+    if rc != 0:
+        return set()
+    return {
+        line.strip().replace("\\", "/")
+        for line in out.splitlines()
+        if line.strip()
+    }
+
+
+def _path_has_any(rel: str, keywords: Sequence[str]) -> bool:
+    low = rel.lower().replace("\\", "/")
+    return any(kw.lower() in low for kw in keywords)
+
+
+def classify_capability_state(
+    baseline_present: bool,
+    phase5_added: bool,
+    phase5_modified: bool,
+    phase5_tested: bool,
+    phase5_evidenced: bool,
+) -> str:
+    """FIX-05 state machine for one Phase 5 capability."""
+    if phase5_evidenced:
+        return "PHASE5_EVIDENCED"
+    if phase5_added or phase5_modified:
+        if phase5_tested:
+            return "PHASE5_TESTED"
+        return "PHASE5_MODIFIED" if phase5_modified and not phase5_added \
+            else "PHASE5_ADDED"
+    if phase5_tested:
+        return "PHASE5_TESTED"
+    if baseline_present:
+        return "BASELINE_PRESENT"
+    return "NOT_PRESENT"
+
+
+def evaluate_capability(
+    cap: Phase5Capability,
+    baseline_rels: set[str],
+    phase5_added_rels: set[str],
+    phase5_modified_rels: set[str],
+    phase5_test_rels: set[str],
+    existing_evidence_names: set[str],
+) -> tuple[str, dict[str, bool]]:
+    """Evaluate one capability against baseline + Phase 5 deltas."""
+    baseline_present = any(
+        _path_has_any(rel, cap.baseline_tokens) for rel in baseline_rels
+    )
+    if cap.test_only:
+        phase5_tested = bool(phase5_test_rels)
+        phase5_evidenced = phase5_tested and bool(
+            existing_evidence_names & set(cap.evidence_names)
+        )
+        state = classify_capability_state(
+            baseline_present, False, False, phase5_tested, phase5_evidenced)
+        flags = {
+            "baseline_present": baseline_present,
+            "phase5_added": False,
+            "phase5_modified": False,
+            "phase5_tested": phase5_tested,
+            "phase5_evidenced": phase5_evidenced,
+        }
+        return state, flags
+
+    impl_candidates = {
+        rel
+        for rel in (phase5_added_rels | phase5_modified_rels)
+        if not is_test_file(rel)
+    }
+    impl_added = {
+        rel for rel in phase5_added_rels
+        if rel in impl_candidates and _path_has_any(rel, cap.impl_keywords)
+    }
+    impl_modified = {
+        rel for rel in phase5_modified_rels
+        if rel in impl_candidates and _path_has_any(rel, cap.impl_keywords)
+    }
+    tested_rels = {
+        rel for rel in phase5_test_rels
+        if _path_has_any(rel, cap.test_markers)
+    }
+    evidenced = bool(impl_added or impl_modified) and bool(tested_rels) and bool(
+        existing_evidence_names & set(cap.evidence_names)
+    )
+    state = classify_capability_state(
+        baseline_present,
+        bool(impl_added),
+        bool(impl_modified),
+        bool(tested_rels),
+        evidenced,
+    )
+    flags = {
+        "baseline_present": baseline_present,
+        "phase5_added": bool(impl_added),
+        "phase5_modified": bool(impl_modified),
+        "phase5_tested": bool(tested_rels),
+        "phase5_evidenced": evidenced,
+    }
+    return state, flags
+
+
+def validate_structure(
+    root: Path,
+    mode: str,
+    baseline: str,
+    changes: Sequence[GitChange],
+    manifest: FrozenSurfaceManifest | None,
+) -> list[Finding]:
+    """FIX-05 — baseline-aware structure detection.
+
+    A capability may exist at the Phase 4 baseline without being a Phase 5
+    deliverable. Only implementation (Phase5 allowed surface) + Phase5 test +
+    Phase5 evidence together produce PHASE5_EVIDENCED / PASS. Historical
+    features alone must not count as Phase 5 completion.
+    """
     findings: list[Finding] = []
     all_rels = [
         relpath(path, root)
         for path in iter_all_eligible(root, max_file_bytes=10_000_000)
     ]
-    low_rels = [rel.lower() for rel in all_rels]
-
-    def has_any(tokens: Sequence[str]) -> bool:
-        return any(any(token in rel for token in tokens) for rel in low_rels)
-
-    capability_checks = [
-        (
-            "P5-STRUCT-01",
-            ("/shadow/", "shadow_runtime", "shadow_run", "shadow_decision"),
-            "Shadow runtime / shadow identity surface",
-        ),
-        (
-            "P5-STRUCT-02",
-            ("shadow_isolation", "isolation", "boundary_guard", "no_write_guard"),
-            "Shadow isolation / authority guard",
-        ),
-        (
-            "P5-STRUCT-03",
-            ("/divergence/", "divergence_", "divergence"),
-            "Canonical-vs-Shadow divergence framework",
-        ),
-        (
-            "P5-STRUCT-04",
-            ("/observation/", "outcome_observation", "outcome_", "observation_horizon"),
-            "Decision outcome observation",
-        ),
-        (
-            "P5-STRUCT-05",
-            ("evidence_aging", "freshness", "evidence_age", "stale_evidence"),
-            "Evidence aging / freshness governance",
-        ),
-        (
-            "P5-STRUCT-06",
-            ("/incidents/", "incident_", "incident_registry", "failure_taxonomy"),
-            "Failure / incident qualification",
-        ),
-        (
-            "P5-STRUCT-07",
-            ("/promotion/", "promotion_gate", "promotion_qualification", "qualification"),
-            "Promotion qualification gate",
-        ),
-        (
-            "P5-STRUCT-08",
-            ("replay_validation", "shadow_replay", "replay"),
-            "Replay / audit validation",
-        ),
-        (
-            "P5-STRUCT-09",
-            ("tests/phase5/", "test_phase5", "phase5_test"),
-            "Phase 5 tests",
-        ),
-    ]
-
-    for code, tokens, label in capability_checks:
-        if has_any(tokens):
-            findings.append(Finding("PASS", code, "", f"{label} detected."))
-        else:
-            sev = "ERROR" if mode in {"qualification", "final-acceptance"} else "WARN"
-            findings.append(
-                Finding(sev, code, "", f"{label} not detected by path/name heuristics.")
+    baseline_rels = git_ls_tree_rels(root, baseline)
+    if not baseline_rels and mode in {"qualification", "final-acceptance"}:
+        findings.append(
+            Finding(
+                "ERROR",
+                "P5-STRUCT-00",
+                "",
+                f"Could not read Phase 4 baseline file list ({baseline}); "
+                "baseline-aware structure classification unavailable.",
             )
+        )
+
+    phase5_added: set[str] = set()
+    phase5_modified: set[str] = set()
+    for change in changes:
+        for rel_raw in (change.path, change.old_path):
+            if not rel_raw:
+                continue
+            rel = rel_raw.replace("\\", "/")
+            if manifest is not None and classify_phase5_path(
+                rel, manifest
+            ) != PHASE5_ALLOWED:
+                continue
+            if change.status == "U" or rel not in baseline_rels:
+                phase5_added.add(rel)
+            elif rel in baseline_rels:
+                phase5_modified.add(rel)
+
+    phase5_test_rels = {
+        rel for rel in (phase5_added | phase5_modified)
+        if "/tests/test_phase5/" in rel.lower()
+        or rel.lower().startswith("core/qcfp_mtf/tests/test_phase5/")
+    }
+    existing_names = {Path(rel).name.lower() for rel in all_rels}
+    evidence_names = {
+        name.lower()
+        for name in existing_names
+        if name.endswith(".json")
+    }
+
+    for cap in PHASE5_CAPABILITIES:
+        state, flags = evaluate_capability(
+            cap,
+            baseline_rels,
+            phase5_added,
+            phase5_modified,
+            phase5_test_rels,
+            evidence_names,
+        )
+        detail = (
+            f"Capability: {cap.label} | Classification: {state} | "
+            f"baseline_present={flags['baseline_present']} "
+            f"phase5_added={flags['phase5_added']} "
+            f"phase5_modified={flags['phase5_modified']} "
+            f"phase5_tested={flags['phase5_tested']} "
+            f"phase5_evidenced={flags['phase5_evidenced']}"
+        )
+        if state == "PHASE5_EVIDENCED":
+            findings.append(Finding("PASS", cap.code, "", detail))
+        else:
+            sev = (
+                "ERROR"
+                if mode in {"qualification", "final-acceptance"}
+                else "INFO"
+            )
+            findings.append(Finding(sev, cap.code, "", detail))
 
     existing_names = {Path(rel).name.lower() for rel in all_rels}
     missing_qualification = [
@@ -2154,7 +2383,11 @@ def main() -> int:
     findings.extend(validate_governance_baseline(root, args.mode))
 
     if not args.skip_structure_validation:
-        findings.extend(validate_structure(root, args.mode))
+        findings.extend(
+            validate_structure(
+                root, args.mode, args.baseline, all_changes, surface_manifest
+            )
+        )
 
     files = collect_review_files(
         root=root,

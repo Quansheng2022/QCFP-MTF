@@ -1,0 +1,58 @@
+{
+  "schema": "PHASE5-FIX05-EVIDENCE-1",
+  "phase": 5,
+  "task": "FIX-05 — Baseline-aware Structure Detection",
+  "branch": "codex/phase5-shadow-operation",
+  "status": "PASS",
+  "governance_state": "PHASE5_BOOTSTRAP_MUTABLE (revision 3)",
+  "problem": "旧 P5-STRUCT-XX PASS 仅基于路径/名称 heuristic，会把 Phase 4 冻结基线中已存在的历史能力误当作 Phase 5 完成",
+  "implemented": {
+    "capability_model": "PHASE5_CAPABILITIES（9 项 P5-STRUCT-01..09，含 baseline_tokens / impl_keywords / test_markers / evidence_names）",
+    "classification_states": "NOT_PRESENT / BASELINE_PRESENT / PHASE5_ADDED / PHASE5_MODIFIED / PHASE5_TESTED / PHASE5_EVIDENCED",
+    "baseline_awareness": "git ls-tree 读取 qcfp-mtf-phase4-frozen 文件清单，能力必须对比 Phase 4 baseline",
+    "phase5_delta_source": "只统计 PHASE5_ALLOWED 变更（committed/staged/unstaged/untracked-new），且排除测试文件误作 implementation",
+    "triple_binding": "只有 implementation + Phase5 test + Phase5 evidence 三者齐备才输出 PHASE5_EVIDENCED / PASS"
+  },
+  "behavioral_evidence": {
+    "P5-STRUCT-01": "INFO BASELINE_PRESENT（历史 shadow 模块，非 Phase 5 新增）",
+    "P5-STRUCT-02": "INFO PHASE5_TESTED（仅有隔离相关 Phase5 测试标记，无 implementation）",
+    "P5-STRUCT-03": "INFO BASELINE_PRESENT",
+    "P5-STRUCT-04": "INFO BASELINE_PRESENT",
+    "P5-STRUCT-05": "INFO NOT_PRESENT",
+    "P5-STRUCT-06": "INFO BASELINE_PRESENT",
+    "P5-STRUCT-07": "INFO BASELINE_PRESENT",
+    "P5-STRUCT-08": "INFO BASELINE_PRESENT",
+    "P5-STRUCT-09": "PASS PHASE5_EVIDENCED（test_phase5 存在 + baseline_test_summary.json 证据）"
+  },
+  "reviewer_self_tests": {
+    "command": "pytest tools/review/tests -q",
+    "result": "54 passed",
+    "return_code": 0,
+    "new_cases": [
+      "test_baseline_only_capability_not_counted_as_phase5_added",
+      "test_phase5_added_without_test_not_evidenced",
+      "test_phase5_modified_without_test_not_evidenced",
+      "test_phase5_test_without_implementation_not_evidenced",
+      "test_phase5_implementation_and_test_and_evidence_is_evidenced",
+      "test_structure_detection_uses_phase4_baseline",
+      "test_phase5_triple_binding_produces_evidenced",
+      "test_evidence_name_required_for_evidenced",
+      "test_current_repo_baseline_capabilities_are_not_false_pass"
+    ]
+  },
+  "frozen_dirty": 0,
+  "shared_read_only_dirty": 0,
+  "unknown_dirty": 0,
+  "frozen_files_modified": "NONE",
+  "changed_files": [
+    "tools/review/merge_project_for_phase5_review.py (modified)",
+    "tools/review/tests/test_merge_project_for_phase5_review.py (modified)",
+    "audit/phase5/phase5_governance_baseline.json (modified, revision 3)",
+    "audit/phase5/fix05_evidence.json (new)"
+  ],
+  "blockers": [],
+  "next_permitted_task": "FIX-07 — Git Identity Verification",
+  "human_decision_required": false,
+  "generated_at_utc": "2026-09-06T00:00:00Z",
+  "generated_by": "AI_AGENT FIX-05"
+}
