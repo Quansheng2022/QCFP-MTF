@@ -2,9 +2,21 @@
   "schema": "PHASE5-SHADOW-ISOLATION-EVIDENCE-1",
   "phase": 5,
   "task": "P5-D",
+  "status": "READY_FOR_P5_D_R1_STRICT_REVIEW",
   "start_base": "315007fa0d3a2c2a4d93e48c541a0be6206d1fa6",
+  "p5_d_r1_parent_candidate": "0f3445897d62f8bc1717cfa93c0a17c35142d2e7",
   "branch": "codex/phase5-shadow-operation",
-  "status": "READY_FOR_P5_D_STRICT_REVIEW",
+  "p5_d_r1": {
+    "status": "PASS",
+    "repairs": [
+      "AUTHORITY_TAXONOMY",
+      "REAL_CANONICAL_ENGINE_CAPTURE",
+      "SINK_SPY_TAXONOMY",
+      "STATIC_IMPORT_BOUNDARY",
+      "SQLITE_DB_WAL_SHM_PROOF"
+    ],
+    "canonical_engine_fake_used": false
+  },
   "threat_model": {
     "isolation_claim_scope": "GOVERNED_PHASE5_RUNTIME_SURFACE",
     "arbitrary_code_sandbox": "NOT_CLAIMED",
@@ -12,10 +24,10 @@
   },
   "authority_surface_inventory": [
     {"path": "Core/QCFP_MTF/decision/decision_ledger.py", "symbols": ["ledger_event", "record_snapshot", "register_model"], "authority_role": "CANONICAL_LEDGER_MUTATION_CAPABLE", "read_only_or_mutator": "MUTATOR", "shadow_allowed_access": "NONE"},
-    {"path": "Core/QCFP_MTF/decision/governance.py", "symbols": ["finalize_target"], "authority_role": "FINAL_TARGET_AUTHORITY", "read_only_or_mutator": "MUTATOR", "shadow_allowed_access": "NONE"},
-    {"path": "Core/QCFP_MTF/decision/retail_position_fsm.py", "symbols": ["transition"], "authority_role": "FSM_AUTHORITY", "read_only_or_mutator": "MUTATOR", "shadow_allowed_access": "NONE"},
+    {"path": "Core/QCFP_MTF/decision/governance.py", "symbols": ["finalize_target"], "authority_role": "FINAL_TARGET_AUTHORITY_COMPUTATION", "read_only_or_mutator": "CANONICAL_COMPUTATION_INSIDE_ENGINE", "shadow_allowed_access": "ONLY_VIA_APPROVED_ENGINE_BRIDGE; DIRECT_CALL_FORBIDDEN"},
+    {"path": "Core/QCFP_MTF/decision/retail_position_fsm.py", "symbols": ["transition"], "authority_role": "FSM_AUTHORITY_COMPUTATION", "read_only_or_mutator": "CANONICAL_COMPUTATION_INSIDE_ENGINE", "shadow_allowed_access": "ONLY_VIA_APPROVED_ENGINE_BRIDGE; DIRECT_CALL_FORBIDDEN"},
     {"path": "Core/QCFP_MTF/decision/permission_gate.py|permission_policy.py|institutional_permission.py", "symbols": ["permission surface"], "authority_role": "PERMISSION_AUTHORITY", "read_only_or_mutator": "READ_ONLY_FROM_SHADOW", "shadow_allowed_access": "READ ONLY"},
-    {"path": "Core/QCFP_MTF/governance/promotion_gate.py", "symbols": ["promote_release_status"], "authority_role": "PROMOTION_AUTHORITY", "read_only_or_mutator": "MUTATOR", "shadow_allowed_access": "NONE"},
+    {"path": "Core/QCFP_MTF/governance/promotion_gate.py", "symbols": ["promote_release_status"], "authority_role": "PROMOTION_AUTHORITY", "read_only_or_mutator": "MUTATOR", "shadow_allowed_access": "NONE (direct bypass spy; not part of canonical engine chain)"},
     {"path": "Core/QCFP_MTF/execution/broker_adapter.py", "symbols": ["BrokerAdapter.submit_order"], "authority_role": "PRODUCTION_ACTION", "read_only_or_mutator": "MUTATOR", "shadow_allowed_access": "NONE"},
     {"path": "Core/QCFP_MTF/execution/execution_gate.py", "symbols": ["execute"], "authority_role": "PRODUCTION_ACTION", "read_only_or_mutator": "MUTATOR", "shadow_allowed_access": "NONE"},
     {"path": "Core/QCFP_MTF/execution/order_state_machine.py", "symbols": ["OrderStateMachine.send"], "authority_role": "PRODUCTION_ACTION", "read_only_or_mutator": "MUTATOR", "shadow_allowed_access": "NONE"},
@@ -26,12 +38,18 @@
     "CANONICAL_MUTATION_ZERO": "PASS",
     "PRODUCTION_PATH_ZERO": "PASS",
     "AUTHORITY_BYPASS_ZERO": "PASS",
+    "CANONICAL_COMPUTATION_VIA_APPROVED_BRIDGE": "PASS",
+    "REAL_CANONICAL_ENGINE_EXECUTED": "PASS",
     "shadow_mode": "PASS",
     "replay_mode": "PASS",
     "canonical_capture": "PASS",
     "storage_boundary": "PASS",
-    "authority_mutator_calls": 0,
+    "canonical_persistence_calls": 0,
     "production_action_calls": 0,
+    "direct_authority_bypass_calls": 0,
+    "static_direct_authority_imports": "NONE (AST check)",
+    "CANONICAL_DB_FAMILY_UNCHANGED": "PASS",
+    "canonical_engine_fake_used": false,
     "canonical_pre_post_diff": {
       "modified": [],
       "created": [],
@@ -42,24 +60,24 @@
   "implementation_files": [
     {
       "path": "Core/QCFP_MTF/phase5/shadow_isolation.py",
-      "sha256": "97bbadc273ab8a445311efc72063d7e2cb0cf27adfd3b58ccad23a2113649bf1"
+      "sha256": "928d31190860065206c5c999e90443c98ea12ab3bac99774edbac661dedcbc74"
     }
   ],
   "test_files": [
     {
       "path": "Core/QCFP_MTF/tests/test_phase5/test_shadow_isolation.py",
-      "sha256": "b9d742a90c5fe59847699f47db6cca0a7f7daee1ef29276ccf091847e0301119"
+      "sha256": "46a46abd964b870ca4359bc578b4a19cd21d005ecb3fd05ca41b80f84d05a6ba"
     }
   ],
   "tests": {
     "isolation": {
       "command": "pytest Core/QCFP_MTF/tests/test_phase5/test_shadow_isolation.py -q",
-      "passed": 7,
+      "passed": 8,
       "return_code": 0
     },
     "phase5_focused": {
       "command": "pytest Core/QCFP_MTF/tests/test_phase5 -q",
-      "passed": 138,
+      "passed": 139,
       "return_code": 0
     }
   },
@@ -73,7 +91,7 @@
     "revision": 7,
     "changed": false
   },
-  "next_step": "P5-D09 exact 3-file commit + strict full review; semantic review before push/closure",
-  "generated_at_utc": "2026-09-06T17:33:32Z",
-  "generated_by": "AI_AGENT P5-D / WP5.1"
+  "next_step": "P5-D-R1 exact 3-file commit + strict full review; semantic review before push/closure",
+  "generated_at_utc": "2026-09-06T17:56:14Z",
+  "generated_by": "AI_AGENT P5-D / WP5.1 (updated P5-D-R1)"
 }

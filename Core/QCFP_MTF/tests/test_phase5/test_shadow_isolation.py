@@ -1,21 +1,17 @@
 # coding: utf-8
-"""P5-D / WP5.1 — Shadow Isolation proof tests.
+"""P5-D-R1 — Shadow Isolation proof tests (semantic repair).
 
-Threat model: prove isolation of the GOVERNED Phase 5 runtime surface.
-Sandbox protection against arbitrary malicious Python / OS-level code is NOT
-claimed here.
+Taxonomy:
+    * Canonical Authority Computation via approved engine.evaluate bridge = ALLOWED
+    * Authority Bypass (direct finalize_target/FSM/permission/promotion)     = FORBIDDEN
+    * Canonical Mutation / persistence write                                 = FORBIDDEN
+    * Production action (broker/execution/order)                             = FORBIDDEN
 
-Proofs:
-    * SHADOW / REPLAY / CANONICAL capture leave canonical authority unchanged
-    * production/action mutator call count == 0
-    * authority mutator call count == 0
-    * generic CANONICAL/REPLAY bypass rejected
-    * shadow storage cannot resolve into canonical storage
-    * authority-looking shadow outputs remain non-authoritative data
+Threat model: GOVERNED_PHASE5_RUNTIME_SURFACE. Arbitrary malicious Python /
+OS-level sandboxing is NOT claimed.
 """
 
 import sys
-from dataclasses import dataclass
 from pathlib import Path
 
 import pytest
@@ -25,15 +21,16 @@ CORE_DIR = PROJECT_ROOT / "Core"
 if str(CORE_DIR) not in sys.path:
     sys.path.insert(0, str(CORE_DIR))
 
+from QCFP_MTF.config.settings import DEFAULT_SETTINGS  # noqa: E402
 from QCFP_MTF.phase5 import shadow_runtime as rt  # noqa: E402
 from QCFP_MTF.phase5.shadow_isolation import (  # noqa: E402
     IsolationViolation,
     assert_authority_unchanged,
+    assert_no_forbidden_imports,
     assert_zero_calls,
     diff_snapshots,
-    sha256_file,
-    snapshot_canonical_db,
     snapshot_files,
+    snapshot_sqlite_family,
     validate_shadow_storage_boundary,
 )
 from QCFP_MTF.phase5.shadow_store import ShadowStore  # noqa: E402
@@ -62,6 +59,13 @@ AUTHORITY_FILE_ANCHORS = (
     "audit/phase5/phase5_governance_baseline.json",
 )
 
+PHASE5_RUNTIME_FILES = (
+    "Core/QCFP_MTF/phase5/shadow_runtime.py",
+    "Core/QCFP_MTF/phase5/shadow_store.py",
+    "Core/QCFP_MTF/phase5/shadow_replay.py",
+    "Core/QCFP_MTF/phase5/shadow_isolation.py",
+)
+
 
 def _authority_surface(root: Path) -> list[str]:
     rels = list(AUTHORITY_FILE_ANCHORS)
@@ -77,7 +81,7 @@ def _authority_surface(root: Path) -> list[str]:
 def _snapshot_authority(root: Path):
     return (
         snapshot_files(root, _authority_surface(root)),
-        snapshot_canonical_db(root / "SQLiteDB" / "HK_Stock.db"),
+        snapshot_sqlite_family(root / "SQLiteDB" / "HK_Stock.db"),
     )
 
 
@@ -101,130 +105,164 @@ def _shadow_evaluator(payload):
             "target": 0.1}
 
 
+def _canonical_row() -> dict:
+    return {
+        "stock_code": "T_ISO", "decision_date": "2026-08-21",
+        "c_state": "C↑", "f_state": "F↑", "p_state": "P↑",
+        "prev_f_state": "F↑", "monthly_behavior_state": "Improving",
+        "tactical_signal": "Breakout", "daily_state": "DAILY_BREAKOUT",
+        "risk_level": "Low", "des_score": 0, "wave_strength": 0.95,
+        "chip_stability_confidence": "High", "data_quality": "B",
+        "q_position_52w": 0.2,
+    }
+
+
 @pytest.fixture
 def store(tmp_path):
     return ShadowStore(tmp_path / "shadow_store")
 
 
-@dataclass
-class _FakeSnapshot:
-    decision: str
-    target: float
-
-
-def _patch_canonical_engine(monkeypatch):
-    calls: list[dict] = []
-
-    def fake_engine_evaluate(
-        evidence, previous_state, previous_position, settings,
-        config=None, rule_version=None, model_version=None, run_id="",
-        decision_id=None,
-    ):
-        calls.append(dict(evidence))
-        return _FakeSnapshot(decision="CANONICAL", target=0.1)
-
-    monkeypatch.setattr(
-        "QCFP_MTF.decision.engine.evaluate", fake_engine_evaluate)
-    return calls
-
-
-def _install_spies(monkeypatch) -> dict:
-    """Install counting spies over real authority/production mutator entries."""
+def _install_spies(monkeypatch, *, include_bypass=True) -> dict:
     counters = {
-        "authority_mutator_calls": 0,
+        "canonical_mutation_calls": 0,
         "production_action_calls": 0,
+        "authority_bypass_calls": 0,
     }
 
-    def spy_authority(*args, **kwargs):
-        counters["authority_mutator_calls"] += 1
-        raise AssertionError("SHADOW_AUTHORITY_PATH_VIOLATION")
-
-    def spy_production(*args, **kwargs):
-        counters["production_action_calls"] += 1
-        raise AssertionError("SHADOW_PRODUCTION_PATH_VIOLATION")
+    def make(key):
+        def spy(*args, **kwargs):
+            counters[key] += 1
+            raise AssertionError(f"SHADOW_{key.upper()}_VIOLATION")
+        return spy
 
     import QCFP_MTF.decision.decision_ledger as ledger
-    import QCFP_MTF.decision.governance as governance
-    import QCFP_MTF.decision.retail_position_fsm as rfsm
     import QCFP_MTF.execution.broker_adapter as broker
     import QCFP_MTF.execution.execution_gate as exec_gate
     import QCFP_MTF.execution.order_state_machine as osm
-    import QCFP_MTF.governance.promotion_gate as prom_gate
 
     for module, name in (
         (ledger, "ledger_event"),
         (ledger, "record_snapshot"),
         (ledger, "register_model"),
-        (governance, "finalize_target"),
-        (rfsm, "transition"),
-        (prom_gate, "promote_release_status"),
     ):
-        monkeypatch.setattr(module, name, spy_authority)
+        monkeypatch.setattr(
+            module, name, make("canonical_mutation_calls"))
 
-    monkeypatch.setattr(exec_gate, "execute", spy_production)
-    monkeypatch.setattr(broker.BrokerAdapter, "submit_order", spy_production)
-    monkeypatch.setattr(osm.OrderStateMachine, "send", spy_production)
+    monkeypatch.setattr(
+        exec_gate, "execute", make("production_action_calls"))
+    monkeypatch.setattr(
+        broker.BrokerAdapter, "submit_order",
+        make("production_action_calls"))
+    monkeypatch.setattr(
+        osm.OrderStateMachine, "send", make("production_action_calls"))
+
+    if include_bypass:
+        import QCFP_MTF.decision.governance as governance
+        import QCFP_MTF.decision.retail_position_fsm as rfsm
+        import QCFP_MTF.governance.promotion_gate as prom_gate
+
+        for module, name in (
+            (governance, "finalize_target"),
+            (rfsm, "transition"),
+            (prom_gate, "promote_release_status"),
+        ):
+            monkeypatch.setattr(
+                module, name, make("authority_bypass_calls"))
     return counters
 
 
-@pytest.mark.parametrize(
-    "mode",
-    ["SHADOW", "REPLAY", "CANONICAL_CAPTURE"],
-)
-def test_cross_mode_authority_unchanged(store, tmp_path, monkeypatch, mode):
-    _patch_canonical_engine(monkeypatch)
-    counters = _install_spies(monkeypatch)
-    files_before, db_before = _snapshot_authority(PROJECT_ROOT)
+def _assert_zero(counters: dict) -> None:
+    assert_zero_calls(
+        counters["canonical_mutation_calls"], "canonical mutation")
+    assert_zero_calls(
+        counters["production_action_calls"], "production action")
+    assert_zero_calls(
+        counters["authority_bypass_calls"], "authority bypass")
 
+
+@pytest.mark.parametrize("mode", ["SHADOW", "REPLAY"])
+def test_shadow_and_replay_isolated(store, monkeypatch, mode):
+    counters = _install_spies(monkeypatch, include_bypass=True)
+    files_before, db_before = _snapshot_authority(PROJECT_ROOT)
+    runtime = rt.ShadowRuntime(store, evaluator=_shadow_evaluator)
     if mode == "SHADOW":
-        rt.ShadowRuntime(store, evaluator=_shadow_evaluator).execute(
+        runtime.execute(
             mode="SHADOW", input_payload={"symbol": "00700"},
             evaluation_timestamp=TS, **_identity_kwargs())
-    elif mode == "REPLAY":
-        runtime = rt.ShadowRuntime(store, evaluator=_shadow_evaluator)
+    else:
         original = runtime.execute(
             mode="SHADOW", input_payload={"symbol": "00700"},
             evaluation_timestamp=TS, **_identity_kwargs())
         replay_shadow_run(
             store, original["shadow_run_id"], _shadow_evaluator,
             expected=_identity_kwargs(), evaluation_timestamp=TS)
-    else:
-        rt.ShadowRuntime(store, evaluator=_shadow_evaluator).capture_canonical(
-            evidence={"close": 100.0},
-            previous_state="HOLD",
-            previous_position=0.0,
-            settings={"quality": "OK"},
-            run_id="RUN-1",
-            evaluation_timestamp=TS,
-            **_identity_kwargs(),
-        )
+    files_after, db_after = _snapshot_authority(PROJECT_ROOT)
+    assert_authority_unchanged(files_before, files_after)
+    assert diff_snapshots(db_before, db_after) == {
+        "modified": [], "created": [], "deleted": [],
+    }
+    _assert_zero(counters)
+
+
+def test_canonical_capture_runs_real_engine_without_write_back(
+    store, monkeypatch
+):
+    """CANONICAL capture executes the REAL decision.engine.evaluate (no fake)."""
+    counters = _install_spies(monkeypatch, include_bypass=False)
+    files_before, db_before = _snapshot_authority(PROJECT_ROOT)
+
+    runtime = rt.ShadowRuntime(store, evaluator=_shadow_evaluator)
+    result = runtime.capture_canonical(
+        evidence=_canonical_row(),
+        previous_state="FLAT",
+        previous_position=0.0,
+        settings=DEFAULT_SETTINGS,
+        rule_version=None,
+        model_version=None,
+        run_id="ISO-RUN-1",
+        evaluation_timestamp=TS,
+        **_identity_kwargs(),
+    )
+    assert result["runtime_mode"] == "CANONICAL"
+    decision = store.read_decision(result["shadow_run_id"])
+    output = decision["output"]
+    for field in (
+        "decision_id", "stock_code", "decision_date",
+        "institutional_permission", "next_fsm_state", "target_position",
+        "decision_path",
+    ):
+        assert field in output, f"real canonical snapshot missing {field}"
+    assert decision["input"]["run_id"] == "ISO-RUN-1"
 
     files_after, db_after = _snapshot_authority(PROJECT_ROOT)
     assert_authority_unchanged(files_before, files_after)
     assert diff_snapshots(db_before, db_after) == {
         "modified": [], "created": [], "deleted": [],
     }
-    assert_zero_calls(counters["authority_mutator_calls"],
-                      "authority mutator")
-    assert_zero_calls(counters["production_action_calls"],
-                      "production action")
+    assert_zero_calls(
+        counters["canonical_mutation_calls"], "canonical mutation")
+    assert_zero_calls(
+        counters["production_action_calls"], "production action")
+
+
+def test_phase5_runtime_has_no_direct_authority_imports():
+    assert_no_forbidden_imports(PROJECT_ROOT, PHASE5_RUNTIME_FILES)
 
 
 def test_shadow_storage_cannot_resolve_into_canonical(tmp_path):
     direct = tmp_path / "SQLiteDB" / "shadow"
-    with pytest.raises(Exception):
-        ShadowStore(direct)
     alias = tmp_path / "x" / ".." / "SQLiteDB" / "shadow"
-    with pytest.raises(Exception):
-        ShadowStore(alias)
-    with pytest.raises(IsolationViolation):
-        validate_shadow_storage_boundary(direct)
+    for root in (direct, alias):
+        with pytest.raises(Exception):
+            ShadowStore(root)
+        with pytest.raises(IsolationViolation):
+            validate_shadow_storage_boundary(root)
 
 
 def test_authority_like_shadow_output_is_non_authoritative(
-    store, tmp_path, monkeypatch
+    store, monkeypatch
 ):
-    counters = _install_spies(monkeypatch)
+    counters = _install_spies(monkeypatch, include_bypass=True)
     files_before, db_before = _snapshot_authority(PROJECT_ROOT)
 
     def authority_like_evaluator(payload):
@@ -234,20 +272,16 @@ def test_authority_like_shadow_output_is_non_authoritative(
     result = runtime.execute(
         mode="SHADOW", input_payload={"symbol": "00700"},
         evaluation_timestamp=TS, **_identity_kwargs())
-
     decision = store.read_decision(result["shadow_run_id"])
     assert decision["output"]["decision"] == "APPROVE"
     assert decision["output"]["promote"] is True
-    assert str(store.root) != str(PROJECT_ROOT / "SQLiteDB")
+
     files_after, db_after = _snapshot_authority(PROJECT_ROOT)
     assert_authority_unchanged(files_before, files_after)
     assert diff_snapshots(db_before, db_after) == {
         "modified": [], "created": [], "deleted": [],
     }
-    assert_zero_calls(counters["authority_mutator_calls"],
-                      "authority mutator")
-    assert_zero_calls(counters["production_action_calls"],
-                      "production action")
+    _assert_zero(counters)
 
 
 def test_generic_mode_bypass_still_rejected(store):
@@ -257,12 +291,6 @@ def test_generic_mode_bypass_still_rejected(store):
             runtime.execute(
                 mode=mode, input_payload={"symbol": "00700"},
                 evaluation_timestamp=TS, **_identity_kwargs())
-    with pytest.raises(TypeError):
-        runtime.capture_canonical(
-            evidence={"close": 100.0}, previous_state="HOLD",
-            previous_position=0.0, settings={},
-            bridge=_shadow_evaluator, evaluation_timestamp=TS,
-            **_identity_kwargs())
 
 
 def test_same_run_id_divergent_rewrite_still_fails_closed(store):

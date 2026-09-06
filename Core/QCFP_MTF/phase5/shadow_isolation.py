@@ -13,6 +13,7 @@ process/isolation architecture, not P5-D).
 from __future__ import annotations
 
 import hashlib
+import ast
 import json
 import sqlite3
 from pathlib import Path
@@ -88,6 +89,24 @@ def snapshot_canonical_db(db_path: Path) -> dict[str, Any]:
     return base
 
 
+def snapshot_sqlite_family(db_path: Path) -> dict[str, dict[str, Any]]:
+    """Byte-level read-only snapshot of db + wal + shm (no write connection)."""
+    db_path = Path(db_path)
+    family: dict[str, dict[str, Any]] = {}
+    for suffix in ("", "-wal", "-shm"):
+        path = Path(f"{db_path}{suffix}")
+        rel = f"{db_path.name}{suffix}"
+        if path.exists() and path.is_file():
+            family[rel] = {
+                "exists": True,
+                "size": path.stat().st_size,
+                "sha256": sha256_file(path),
+            }
+        else:
+            family[rel] = {"exists": False, "size": None, "sha256": None}
+    return family
+
+
 def diff_snapshots(
     before: Mapping[str, Any],
     after: Mapping[str, Any],
@@ -135,3 +154,59 @@ def validate_shadow_storage_boundary(root: Path) -> dict[str, Any]:
             f"(contains {hit}): {resolved}"
         )
     return {"path": str(resolved), "isolated": True}
+
+
+FORBIDDEN_DIRECT_IMPORT_MODULES = (
+    "QCFP_MTF.decision.decision_ledger",
+    "QCFP_MTF.decision.governance",
+    "QCFP_MTF.decision.governance_caps",
+    "QCFP_MTF.decision.permission_gate",
+    "QCFP_MTF.decision.permission_policy",
+    "QCFP_MTF.decision.institutional_permission",
+    "QCFP_MTF.decision.retail_fsm",
+    "QCFP_MTF.decision.retail_position_fsm",
+    "QCFP_MTF.decision.fsm_authority",
+    "QCFP_MTF.governance.promotion_gate",
+    "QCFP_MTF.governance.qualification_promotion",
+    "QCFP_MTF.governance.runtime_promotion_gate",
+    "QCFP_MTF.execution",
+)
+
+
+def assert_no_forbidden_imports(root: Path, py_files: Iterable[str]) -> None:
+    """AST-based static boundary: Phase5 modules may only import the approved
+    canonical engine bridge (QCFP_MTF.decision.engine), never direct
+    Authority implementations / production modules."""
+    violations: list[str] = []
+    for rel in py_files:
+        path = root / rel
+        try:
+            tree = ast.parse(path.read_text(encoding="utf-8"))
+        except (OSError, SyntaxError) as exc:
+            violations.append(f"{rel}: unparsable ({exc})")
+            continue
+        for node in ast.walk(tree):
+            if isinstance(node, ast.ImportFrom):
+                module = node.module or ""
+                full = module
+            elif isinstance(node, ast.Import):
+                for alias in node.names:
+                    full = alias.name
+                    if any(
+                        full == forbidden
+                        or full.startswith(forbidden + ".")
+                        for forbidden in FORBIDDEN_DIRECT_IMPORT_MODULES
+                    ):
+                        violations.append(f"{rel}:{node.lineno}: {full}")
+                continue
+            else:
+                continue
+            if any(
+                full == forbidden or full.startswith(forbidden + ".")
+                for forbidden in FORBIDDEN_DIRECT_IMPORT_MODULES
+            ):
+                violations.append(f"{rel}:{node.lineno}: {full}")
+    if violations:
+        raise IsolationViolation(
+            "FORBIDDEN_DIRECT_AUTHORITY_IMPORT: " + "; ".join(violations)
+        )
