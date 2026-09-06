@@ -68,6 +68,51 @@ def _finite_number(value: Any) -> bool:
     return False
 
 
+def _type_matches(value: Any, expected: Any) -> bool:
+    """Type check with explicit bool-vs-int disambiguation."""
+    if isinstance(expected, tuple):
+        if value is None and type(None) in expected:
+            return True
+        candidates = [t for t in expected if t is not type(None)]
+        if int in candidates and isinstance(value, bool):
+            return False
+        return any(isinstance(value, t) for t in candidates)
+    if expected is int and isinstance(value, bool):
+        return False
+    return isinstance(value, expected)
+
+
+def _validate_string_sequence(
+    name: str, field_name: str, value: Any
+) -> None:
+    if not isinstance(value, (list, tuple)):
+        raise ContractValidationError(
+            f"{name}.{field_name}: must be a list/tuple of strings"
+        )
+    if not all(isinstance(item, str) for item in value):
+        raise ContractValidationError(
+            f"{name}.{field_name}: every element must be str"
+        )
+
+
+def _validate_string_bool_map(
+    name: str, field_name: str, value: Any
+) -> None:
+    if not isinstance(value, Mapping):
+        raise ContractValidationError(
+            f"{name}.{field_name}: must be a mapping"
+        )
+    for key, result in value.items():
+        if not isinstance(key, str):
+            raise ContractValidationError(
+                f"{name}.{field_name}: mapping keys must be str"
+            )
+        if not isinstance(result, bool):
+            raise ContractValidationError(
+                f"{name}.{field_name}: mapping values must be bool"
+            )
+
+
 # ---------------------------------------------------------------------------
 # Common enums (contract vocabulary only)
 # ---------------------------------------------------------------------------
@@ -76,7 +121,8 @@ RUNTIME_MODES = ("CANONICAL", "SHADOW", "REPLAY")
 FRESHNESS_STATES = (
     "FRESH", "AGING", "STALE", "EXPIRED", "INVALID", "UNKNOWN",
 )
-SEVERITIES = ("INFO", "LOW", "MEDIUM", "HIGH", "CRITICAL")
+DIVERGENCE_SEVERITIES = ("INFO", "LOW", "MEDIUM", "HIGH", "CRITICAL")
+INCIDENT_SEVERITIES = ("SEV-0", "SEV-1", "SEV-2", "SEV-3")
 OUTCOME_STATUSES = (
     "PENDING", "REALIZED", "MISSING_DATA", "INVALID", "EXPIRED",
 )
@@ -85,11 +131,11 @@ INCIDENT_STATUSES = (
     "REPLAYED", "REGRESSION_TESTED", "CLOSED",
 )
 PROMOTION_MACHINE_STATUSES = (
-    "NOT_EVALUATED", "NOT_QUALIFIED", "CONDITIONALLY_QUALIFIED",
-    "QUALIFIED_FOR_HUMAN_REVIEW", "REJECTED",
+    "NOT_EVALUATED", "NOT_QUALIFIED", "QUALIFIED_FOR_HUMAN_REVIEW",
 )
 FORBIDDEN_PROMOTION_STATUSES = (
     "AUTO_PROMOTED", "PROMOTION_APPROVED_BY_MACHINE",
+    "APPROVED", "REJECTED", "HOLD", "REQUEST_MORE_EVIDENCE",
 )
 
 
@@ -113,6 +159,18 @@ CONTRACT_DEFINITIONS: dict[str, dict[str, Any]] = {
         "optional": (),
         "enums": {"runtime_mode": RUNTIME_MODES},
         "timestamps": ("evaluation_timestamp", "as_of_timestamp"),
+        "types": {
+            "shadow_run_id": str, "decision_id": str,
+            "source_snapshot_id": str, "evidence_pack_id": str,
+            "canonical_baseline_id": str, "shadow_version_id": str,
+            "evaluation_timestamp": str, "as_of_timestamp": str,
+            "runtime_mode": str, "config_hash": str, "code_identity": str,
+        },
+        "nonempty_strings": (
+            "shadow_run_id", "decision_id", "source_snapshot_id",
+            "evidence_pack_id", "canonical_baseline_id",
+            "shadow_version_id", "config_hash", "code_identity",
+        ),
         "note": (
             "Identity-only shadow run record; no execution/write/promote "
             "capability."
@@ -125,8 +183,16 @@ CONTRACT_DEFINITIONS: dict[str, dict[str, Any]] = {
             "severity", "explanation", "review_state",
         ),
         "optional": ("reason_code", "evidence_refs"),
-        "enums": {"severity": SEVERITIES},
+        "enums": {"severity": DIVERGENCE_SEVERITIES},
         "timestamps": (),
+        "types": {
+            "canonical_decision_id": str, "shadow_decision_id": str,
+            "diverged": bool, "severity": str, "explanation": str,
+            "review_state": str, "reason_code": (str, type(None)),
+            "evidence_refs": (list, tuple),
+        },
+        "string_sequences": ("evidence_refs",),
+        "nonempty_strings": ("canonical_decision_id", "shadow_decision_id"),
         "note": (
             "Canonical-vs-Shadow divergence carrier. Classification "
             "taxonomy/lifecycle belongs to P5-E."
@@ -143,6 +209,17 @@ CONTRACT_DEFINITIONS: dict[str, dict[str, Any]] = {
         ),
         "enums": {"outcome_status": OUTCOME_STATUSES},
         "timestamps": ("as_of_timestamp", "observation_timestamp"),
+        "types": {
+            "decision_id": str, "as_of_timestamp": str,
+            "observation_timestamp": str, "horizon": int,
+            "outcome_status": str,
+            "future_return": (int, float, type(None)),
+            "mae": (int, float, type(None)),
+            "mfe": (int, float, type(None)),
+            "evidence_refs": (list, tuple),
+        },
+        "string_sequences": ("evidence_refs",),
+        "nonempty_strings": ("decision_id",),
         "note": (
             "Post-decision observation carrier. Never retroactively rewrites "
             "a decision; outcome observation belongs to P5-F."
@@ -157,6 +234,12 @@ CONTRACT_DEFINITIONS: dict[str, dict[str, Any]] = {
         "optional": ("age",),
         "enums": {"aging_state": FRESHNESS_STATES},
         "timestamps": ("observed_at", "evaluated_at"),
+        "types": {
+            "evidence_id": str, "observed_at": str, "evaluated_at": str,
+            "policy_version": str, "aging_state": str, "reason": str,
+            "age": (int, float, type(None)),
+        },
+        "nonempty_strings": ("evidence_id", "policy_version"),
         "note": "Evidence freshness carrier; aging engine belongs to P5-G.",
     },
     "IncidentContract": {
@@ -169,8 +252,24 @@ CONTRACT_DEFINITIONS: dict[str, dict[str, Any]] = {
             "evidence_refs", "affected_decisions", "replay_refs",
             "resolution",
         ),
-        "enums": {"severity": SEVERITIES, "status": INCIDENT_STATUSES},
+        "enums": {
+            "severity": INCIDENT_SEVERITIES,
+            "status": INCIDENT_STATUSES,
+        },
         "timestamps": ("detected_at",),
+        "types": {
+            "incident_id": str, "incident_type": str, "severity": str,
+            "status": str, "detected_at": str,
+            "human_review_required": bool,
+            "evidence_refs": (list, tuple),
+            "affected_decisions": (list, tuple),
+            "replay_refs": (list, tuple),
+            "resolution": (str, type(None)),
+        },
+        "string_sequences": (
+            "evidence_refs", "affected_decisions", "replay_refs",
+        ),
+        "nonempty_strings": ("incident_id", "incident_type"),
         "note": (
             "Incident carrier. Detection / lifecycle / blocking belong to "
             "P5-H; this carrier never auto-clears an authority blocker."
@@ -189,6 +288,15 @@ CONTRACT_DEFINITIONS: dict[str, dict[str, Any]] = {
             "machine_status": PROMOTION_MACHINE_STATUSES,
         },
         "timestamps": ("evaluated_at",),
+        "types": {
+            "candidate_id": str, "qualified": bool, "machine_status": str,
+            "evaluated_at": str, "gate_results": dict,
+            "evidence_refs": (list, tuple),
+            "blocking_gates": (list, tuple),
+        },
+        "string_sequences": ("evidence_refs", "blocking_gates"),
+        "string_bool_maps": ("gate_results",),
+        "nonempty_strings": ("candidate_id",),
         "note": (
             "Machine qualification carrier only. machine_status max = "
             "QUALIFIED_FOR_HUMAN_REVIEW; promotion approval is Human-only."
@@ -260,6 +368,29 @@ def validate_contract_dict(data: Mapping[str, Any]) -> dict[str, Any]:
             raise ContractValidationError(
                 f"{name}.{field_name}: invalid UTC timestamp {value!r}"
             )
+
+    for field_name, expected in definition.get("types", {}).items():
+        if field_name in payload and payload[field_name] is not None \
+                and not _type_matches(payload[field_name], expected):
+            raise ContractValidationError(
+                f"{name}.{field_name}: type mismatch "
+                f"({payload[field_name]!r} not allowed by {expected!r})"
+            )
+
+    for field_name in definition.get("nonempty_strings", ()):
+        value = payload.get(field_name)
+        if not isinstance(value, str) or value.strip() == "":
+            raise ContractValidationError(
+                f"{name}.{field_name}: must be a non-empty string"
+            )
+
+    for field_name in definition.get("string_sequences", ()):
+        if field_name in payload and payload[field_name] is not None:
+            _validate_string_sequence(name, field_name, payload[field_name])
+
+    for field_name in definition.get("string_bool_maps", ()):
+        if field_name in payload and payload[field_name] is not None:
+            _validate_string_bool_map(name, field_name, payload[field_name])
 
     for field_name in ("future_return", "mae", "mfe", "age"):
         if field_name in payload and payload[field_name] is not None \

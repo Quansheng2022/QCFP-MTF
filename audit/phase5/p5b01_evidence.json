@@ -14,7 +14,20 @@
     "B01-05_contract_invariants": "PASS",
     "B01-06_dedicated_tests": "PASS（45 contract tests；phase5 focused 64 passed）",
     "B01-07_evidence_package": "PASS（本文件）",
-    "B01-08_exact_commit_and_reviewer": "PENDING until commit+strict review"
+    "B01-08_exact_commit_and_reviewer": "P5-B01 initial candidate reviewed (e67ddab); P5-B01-R1 semantic repair pending strict review"
+  },
+  "semantic_integrity_repair": {
+    "repair_id": "P5-B01-R1",
+    "status": "PASS",
+    "findings_repaired": [
+      "INCIDENT_SEVERITY_VOCABULARY",
+      "MACHINE_PROMOTION_AUTHORITY_VOCABULARY",
+      "RUNTIME_TYPE_VALIDATION"
+    ],
+    "schema_version_changed": false,
+    "governance_changed": false,
+    "human_authority_changed": false,
+    "p5_c_started": false
   },
   "contract_inventory_matrix": [
     {"concept": "Decision Identity", "existing": "decision/release_identity.py, decision/decision_snapshot.py, decision/versions.py", "decision": "REUSE (opaque id strings)", "authority": "FROZEN"},
@@ -29,18 +42,18 @@
   ],
   "contract_files": [
     {"path": "Core/QCFP_MTF/phase5/__init__.py", "sha256": "2f41fe3e9cec091f4abaaa0af46864929ffee7bc126af141396615cfd0f8eac8"},
-    {"path": "Core/QCFP_MTF/phase5/contracts.py", "sha256": "6cda999e7c603c11c6fc5e46fc5bf8b48992bfe9a6e3f381a66af385e3fdc2ac"}
+    {"path": "Core/QCFP_MTF/phase5/contracts.py", "sha256": "76bd8083ba0e6f798e5f5401aa8e3bdb483bca336f00359c722ccfaf888871a5"}
   ],
   "test_files": [
-    {"path": "Core/QCFP_MTF/tests/test_phase5/test_contracts.py", "sha256": "31b0f3ea44a91fe7cd40e7aac73580444737f88479648cf4bcdaeed3db7fdf91"}
+    {"path": "Core/QCFP_MTF/tests/test_phase5/test_contracts.py", "sha256": "3a6d9b8a5fb034a6cd4f1791697ac8f84c01c9172e21f68b0a9ffb2b64d2b467"}
   ],
   "contract_manifest": [
-    {"contract_name": "ShadowRunContract", "schema_version": 1, "source_file": "Core/QCFP_MTF/phase5/contracts.py", "sha256": "6cda999e7c603c11c6fc5e46fc5bf8b48992bfe9a6e3f381a66af385e3fdc2ac"},
-    {"contract_name": "DivergenceContract", "schema_version": 1, "source_file": "Core/QCFP_MTF/phase5/contracts.py", "sha256": "6cda999e7c603c11c6fc5e46fc5bf8b48992bfe9a6e3f381a66af385e3fdc2ac"},
-    {"contract_name": "OutcomeContract", "schema_version": 1, "source_file": "Core/QCFP_MTF/phase5/contracts.py", "sha256": "6cda999e7c603c11c6fc5e46fc5bf8b48992bfe9a6e3f381a66af385e3fdc2ac"},
-    {"contract_name": "AgingContract", "schema_version": 1, "source_file": "Core/QCFP_MTF/phase5/contracts.py", "sha256": "6cda999e7c603c11c6fc5e46fc5bf8b48992bfe9a6e3f381a66af385e3fdc2ac"},
-    {"contract_name": "IncidentContract", "schema_version": 1, "source_file": "Core/QCFP_MTF/phase5/contracts.py", "sha256": "6cda999e7c603c11c6fc5e46fc5bf8b48992bfe9a6e3f381a66af385e3fdc2ac"},
-    {"contract_name": "PromotionQualificationContract", "schema_version": 1, "source_file": "Core/QCFP_MTF/phase5/contracts.py", "sha256": "6cda999e7c603c11c6fc5e46fc5bf8b48992bfe9a6e3f381a66af385e3fdc2ac"}
+    {"contract_name": "ShadowRunContract", "schema_version": 1, "source_file": "Core/QCFP_MTF/phase5/contracts.py", "sha256": "76bd8083ba0e6f798e5f5401aa8e3bdb483bca336f00359c722ccfaf888871a5"},
+    {"contract_name": "DivergenceContract", "schema_version": 1, "source_file": "Core/QCFP_MTF/phase5/contracts.py", "sha256": "76bd8083ba0e6f798e5f5401aa8e3bdb483bca336f00359c722ccfaf888871a5"},
+    {"contract_name": "OutcomeContract", "schema_version": 1, "source_file": "Core/QCFP_MTF/phase5/contracts.py", "sha256": "76bd8083ba0e6f798e5f5401aa8e3bdb483bca336f00359c722ccfaf888871a5"},
+    {"contract_name": "AgingContract", "schema_version": 1, "source_file": "Core/QCFP_MTF/phase5/contracts.py", "sha256": "76bd8083ba0e6f798e5f5401aa8e3bdb483bca336f00359c722ccfaf888871a5"},
+    {"contract_name": "IncidentContract", "schema_version": 1, "source_file": "Core/QCFP_MTF/phase5/contracts.py", "sha256": "76bd8083ba0e6f798e5f5401aa8e3bdb483bca336f00359c722ccfaf888871a5"},
+    {"contract_name": "PromotionQualificationContract", "schema_version": 1, "source_file": "Core/QCFP_MTF/phase5/contracts.py", "sha256": "76bd8083ba0e6f798e5f5401aa8e3bdb483bca336f00359c722ccfaf888871a5"}
   ],
   "serialization": {
     "encoding": "UTF-8",
@@ -61,8 +74,8 @@
     "side_effect_free_serialization": "PASS"
   },
   "tests": {
-    "contracts": {"command": "pytest Core/QCFP_MTF/tests/test_phase5/test_contracts.py -q", "passed": 45, "return_code": 0},
-    "phase5_focused": {"command": "pytest Core/QCFP_MTF/tests/test_phase5 -q", "passed": 64, "return_code": 0}
+    "contracts": {"command": "pytest Core/QCFP_MTF/tests/test_phase5/test_contracts.py -q", "passed": 69, "return_code": 0},
+    "phase5_focused": {"command": "pytest Core/QCFP_MTF/tests/test_phase5 -q", "passed": 88, "return_code": 0}
   },
   "governance": {
     "state": "PHASE5_GOVERNANCE_FROZEN",
@@ -76,6 +89,6 @@
   "phase6_authorized": false,
   "blockers": [],
   "next_step": "B01-08 exact commit + full strict reviewer, then STOP for Human Semantic Review (B01-H1); push/remote closure only after Human APPROVE",
-  "generated_at_utc": "2026-09-06T14:40:16Z",
-  "generated_by": "AI_AGENT P5-B01"
+  "generated_at_utc": "2026-09-06T15:22:13Z",
+  "generated_by": "AI_AGENT P5-B01 (updated P5-B01-R1)"
 }

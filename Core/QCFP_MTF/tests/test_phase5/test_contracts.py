@@ -91,7 +91,7 @@ def _sample(name: str) -> dict:
             "schema_version": 1,
             "incident_id": "INC-1",
             "incident_type": "REPLAY_MISMATCH",
-            "severity": "HIGH",
+            "severity": "SEV-2",
             "status": "DETECTED",
             "detected_at": TS,
             "human_review_required": True,
@@ -196,6 +196,101 @@ def test_nan_and_infinity_rejected():
 def test_auto_promoted_rejected():
     payload = _sample("PromotionQualificationContract")
     payload["machine_status"] = "AUTO_PROMOTED"
+    with pytest.raises(c.ContractValidationError):
+        c.validate_contract_dict(payload)
+
+
+@pytest.mark.parametrize("sev", ["SEV-0", "SEV-1", "SEV-2", "SEV-3"])
+def test_incident_severity_accepts_sev_0_to_3(sev):
+    payload = _sample("IncidentContract")
+    payload["severity"] = sev
+    assert c.validate_contract_dict(payload)["severity"] == sev
+
+
+@pytest.mark.parametrize("sev", ["HIGH", "CRITICAL", "LOW", "MEDIUM"])
+def test_incident_severity_rejects_generic_levels(sev):
+    payload = _sample("IncidentContract")
+    payload["severity"] = sev
+    with pytest.raises(c.ContractValidationError):
+        c.validate_contract_dict(payload)
+
+
+def test_divergence_severity_still_accepts_high():
+    payload = _sample("DivergenceContract")
+    payload["severity"] = "HIGH"
+    assert c.validate_contract_dict(payload)["severity"] == "HIGH"
+
+
+@pytest.mark.parametrize(
+    "status",
+    [
+        "REJECTED", "CONDITIONALLY_QUALIFIED", "APPROVE", "HOLD",
+        "REQUEST_MORE_EVIDENCE", "AUTO_PROMOTED",
+    ],
+)
+def test_machine_status_rejects_human_and_legacy_vocabulary(status):
+    payload = _sample("PromotionQualificationContract")
+    payload["machine_status"] = status
+    with pytest.raises(c.ContractValidationError):
+        c.validate_contract_dict(payload)
+
+
+def test_machine_status_allows_only_three_machine_states():
+    assert c.PROMOTION_MACHINE_STATUSES == (
+        "NOT_EVALUATED", "NOT_QUALIFIED", "QUALIFIED_FOR_HUMAN_REVIEW",
+    )
+
+
+def test_machine_max_status_is_qualified_for_human_review():
+    payload = _sample("PromotionQualificationContract")
+    payload["qualified"] = True
+    payload["machine_status"] = "QUALIFIED_FOR_HUMAN_REVIEW"
+    assert c.validate_contract_dict(payload)["machine_status"] == \
+        "QUALIFIED_FOR_HUMAN_REVIEW"
+
+
+def test_decision_id_must_be_string():
+    payload = _sample("ShadowRunContract")
+    payload["decision_id"] = 123
+    with pytest.raises(c.ContractValidationError):
+        c.validate_contract_dict(payload)
+
+
+def test_identity_field_must_be_nonempty():
+    payload = _sample("ShadowRunContract")
+    payload["shadow_run_id"] = ""
+    with pytest.raises(c.ContractValidationError):
+        c.validate_contract_dict(payload)
+
+
+@pytest.mark.parametrize(
+    "field,bad",
+    [
+        ("evidence_refs", "E-1"),
+        ("evidence_refs", ["E-1", 2]),
+        ("blocking_gates", [1]),
+    ],
+)
+def test_string_sequence_type_validation(field, bad):
+    payload = _sample("PromotionQualificationContract")
+    payload[field] = bad
+    with pytest.raises(c.ContractValidationError):
+        c.validate_contract_dict(payload)
+
+
+def test_gate_results_must_be_string_bool_map():
+    payload = _sample("PromotionQualificationContract")
+    payload["gate_results"] = ["G1"]
+    with pytest.raises(c.ContractValidationError):
+        c.validate_contract_dict(payload)
+    payload["gate_results"] = {"G1": "PASS"}
+    with pytest.raises(c.ContractValidationError):
+        c.validate_contract_dict(payload)
+
+
+def test_horizon_rejects_bool():
+    payload = _sample("OutcomeContract")
+    payload["horizon"] = True
     with pytest.raises(c.ContractValidationError):
         c.validate_contract_dict(payload)
 
