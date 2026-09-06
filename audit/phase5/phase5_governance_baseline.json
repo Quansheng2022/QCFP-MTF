@@ -1,21 +1,23 @@
 {
   "schema": "PHASE5-GOVERNANCE-BASELINE-1",
   "phase": 5,
-  "governance_revision": 6,
-  "baseline_state": "PHASE5_BOOTSTRAP_MUTABLE",
-  "status": "PENDING_HUMAN_ACCEPTANCE",
+  "governance_revision": 7,
+  "baseline_state": "READY_FOR_HUMAN_GOVERNANCE_ACCEPTANCE",
+  "status": "READY_FOR_HUMAN_GOVERNANCE_ACCEPTANCE",
   "human_acceptance_required": true,
   "accepted_by": null,
   "acceptance_record": null,
   "acceptance_record_path": "audit/phase5/phase5_governance_acceptance.json",
   "governance_acceptance_schema": "PHASE5-GOVERNANCE-ACCEPTANCE-1",
+  "freeze_candidate": true,
+  "machine_status": "READY_FOR_HUMAN_GOVERNANCE_ACCEPTANCE",
   "phase4_baseline": {
     "tag": "qcfp-mtf-phase4-frozen",
     "tag_object": "fef63f57fe87d98d60234411ed346efc3147b37a",
     "peeled_commit": "275726b37ff264f1717d41c3fec26c7135bace74"
   },
-  "phase5_governance_commit": "d4c3af74b63f36a583ef427c33e8168884c927b6",
-  "pinned_at_note": "Revision 6 after FIX-06: trusted XML evidence packaging (audit/phase5/**/*.xml only; required baseline_pytest_junit.xml presence check P5-XML-01) and refreshed pinned hashes. State flips to PHASE5_GOVERNANCE_FROZEN only through an explicit external Human acceptance record; Agent must never create that record.",
+  "phase5_governance_commit": "579bc75a0c927ca7227ca970463fe2351e33c8ae",
+  "pinned_at_note": "Revision 7 = FINAL GOVERNANCE BASELINE CANDIDATE (P5-GOV-FREEZE). Machine 已完成全部 P5-A Reviewer/Governance 修复并停在此 READY 状态。只有 Human 审查后显式创建 phase5_governance_acceptance.json（decision=APPROVE/accepted_by=HUMAN/governance_baseline_sha256=本文件 SHA）并授权 qcfp-mtf-phase5-governance-v1 tag，状态才可翻转为 PHASE5_GOVERNANCE_FROZEN。Agent 不得自行创建该 record 或翻转状态。",
   "governance_files": [
     {
       "path": "audit/phase5/frozen_surface_manifest.json",

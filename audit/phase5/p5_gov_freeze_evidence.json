@@ -1,0 +1,71 @@
+{
+  "schema": "PHASE5-GOV-FREEZE-EVIDENCE-1",
+  "phase": 5,
+  "task": "P5-GOV-FREEZE — Final Governance Baseline Revision",
+  "branch": "codex/phase5-shadow-operation",
+  "status": "MACHINE_READY / HUMAN_ACCEPTANCE_REQUIRED",
+  "governance_revision": 7,
+  "baseline_state": "READY_FOR_HUMAN_GOVERNANCE_ACCEPTANCE",
+  "machine_status": "READY_FOR_HUMAN_GOVERNANCE_ACCEPTANCE",
+  "governance_frozen_by_agent": false,
+  "human_approval_record_created_by_agent": false,
+  "phase4_identity": {
+    "tag": "qcfp-mtf-phase4-frozen",
+    "peeled_commit": "275726b37ff264f1717d41c3fec26c7135bace74"
+  },
+  "phase5_governance_commit": "579bc75a0c927ca7227ca970463fe2351e33c8ae",
+  "pinned_governance_files": [
+    {
+      "path": "audit/phase5/frozen_surface_manifest.json",
+      "sha256": "edb531c118e85f51738e37656687c59850763802eb0a12f194a552ef9bf54e75"
+    },
+    {
+      "path": "tools/review/merge_project_for_phase5_review.py",
+      "sha256": "44afc41e1790750f53701f19694116c3c364c2be4ac40ef438e7f9f5f633758b"
+    },
+    {
+      "path": "tools/review/tests/test_merge_project_for_phase5_review.py",
+      "sha256": "5133c9d5265e5770700fdcc32c23f88e87e00cddc88e3cfe3716c2418cc3835e"
+    }
+  ],
+  "prerequisites_completed": {
+    "P5-REV-09R1": "PASS",
+    "P5-REV-09R2": "PASS",
+    "P5-REV-09R3": "PASS",
+    "FIX-05": "PASS",
+    "FIX-07": "PASS",
+    "FIX-08": "PASS",
+    "FIX-06": "PASS"
+  },
+  "reviewer_self_tests": {
+    "command": "pytest tools/review/tests -q",
+    "result": "76 passed",
+    "return_code": 0
+  },
+  "reviewer_cli_state": {
+    "P5-GOV-00": "INFO state=READY_FOR_HUMAN_GOVERNANCE_ACCEPTANCE",
+    "P5-GOV-06": "INFO machine must stop; must not transition to FROZEN",
+    "P5-GOV-02": "PASS pinned hashes match",
+    "P5-GOV-03": "PASS all pinned files exist"
+  },
+  "human_acceptance_next_steps": [
+    "审查 baseline SHA 与 governance files hashes",
+    "审查 reviewer self-tests 与 full regression",
+    "Human APPROVE 后创建 audit/phase5/phase5_governance_acceptance.json（decision=APPROVE / accepted_by=HUMAN / governance_baseline_sha256=<本 baseline 文件 SHA>）",
+    "Human 授权创建 annotated tag qcfp-mtf-phase5-governance-v1（peeled commit = governance_commit）",
+    "随后才可将 baseline_state 翻转为 PHASE5_GOVERNANCE_FROZEN"
+  ],
+  "frozen_dirty": 0,
+  "shared_read_only_dirty": 0,
+  "unknown_dirty": 0,
+  "frozen_files_modified": "NONE",
+  "changed_files": [
+    "audit/phase5/phase5_governance_baseline.json (modified, revision 7)",
+    "audit/phase5/p5_gov_freeze_evidence.json (new)"
+  ],
+  "blockers": [],
+  "next_permitted_task": "Human Governance Acceptance → P5-EVID-02（Single Current State Authority）",
+  "human_decision_required": true,
+  "generated_at_utc": "2026-09-06T00:00:00Z",
+  "generated_by": "AI_AGENT P5-GOV-FREEZE"
+}
