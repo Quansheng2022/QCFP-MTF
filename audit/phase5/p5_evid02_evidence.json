@@ -1,0 +1,37 @@
+{
+  "schema": "PHASE5-EVID02-EVIDENCE-1",
+  "phase": 5,
+  "task": "P5-EVID-02 — Single Current State Authority",
+  "status": "PASS",
+  "machine_status": "READY_FOR_HUMAN_P5_EVID02_REVIEW",
+  "current_state_artifact": {
+    "path": "audit/phase5/p5a_current_state.json",
+    "sha256": "1e53e4135a3297fbf01c4c5b3ec86991e87bff33e94aaa31215c0bbe167a29c0"
+  },
+  "governance_anchor": {
+    "state": "PHASE5_GOVERNANCE_FROZEN",
+    "revision": 7,
+    "candidate_commit": "997181cde302b26d56f02bf505f51b6165430c2b",
+    "activation_commit": "992dfa8fffe9e525621a4c3bfdca20dd458ea67d",
+    "tag": "qcfp-mtf-phase5-governance-v1",
+    "baseline_sha256": "0fdc27bbf373653bd98857018ea3013776f721dd4b52776e7a39f486d54904dd"
+  },
+  "superseded_current_claims": [
+    "audit/phase5/p5a_checkpoint.json",
+    "audit/phase5/p5_gov_freeze_evidence.json"
+  ],
+  "historical_files_modified": false,
+  "governance_files_modified": false,
+  "checkpoint_5a": "HOLD",
+  "p5b_permitted": false,
+  "targeted_tests": {
+    "return_code": 0,
+    "failed": 0,
+    "errors": 0
+  },
+  "blockers": [],
+  "next_step": "HUMAN_P5_EVID02_REVIEW",
+  "post_human_review_next_task": "P5-A-R1",
+  "generated_at_utc": "2026-09-06T19:16:28Z",
+  "generated_by": "AI_AGENT P5-EVID-02"
+}

@@ -1,0 +1,47 @@
+{
+  "schema": "PHASE5-P5A-CURRENT-STATE-1",
+  "phase": 5,
+  "state_revision": 1,
+  "authority_role": "SINGLE_CURRENT_MACHINE_STATE",
+  "current": true,
+  "generated_at_utc": "2026-09-06T19:16:28Z",
+  "governance": {
+    "state": "PHASE5_GOVERNANCE_FROZEN",
+    "revision": 7,
+    "accepted_by": "HUMAN",
+    "candidate_commit": "997181cde302b26d56f02bf505f51b6165430c2b",
+    "activation_commit": "992dfa8fffe9e525621a4c3bfdca20dd458ea67d",
+    "tag": "qcfp-mtf-phase5-governance-v1",
+    "baseline_sha256": "0fdc27bbf373653bd98857018ea3013776f721dd4b52776e7a39f486d54904dd"
+  },
+  "p5a": {
+    "evidence_state_consistency": "PASS",
+    "checkpoint_5a_status": "HOLD",
+    "checkpoint_5a_human_decision": "NOT_YET_MADE",
+    "checkpoint_5a_human_required": true,
+    "p5b_permitted": false,
+    "next_machine_task_after_human_review": "P5-A-R1"
+  },
+  "superseded_current_claims": [
+    {
+      "path": "audit/phase5/p5a_checkpoint.json",
+      "historical_claim": "CHECKPOINT 5A PASS / next_permitted_task=P5-B01",
+      "current_authority": false,
+      "status": "HISTORICAL_CLAIM_SUPERSEDED",
+      "reason": "Predates final governance freeze and current Human CHECKPOINT 5A process."
+    },
+    {
+      "path": "audit/phase5/p5_gov_freeze_evidence.json",
+      "historical_claim": "Pre-freeze candidate procedure / Human next-step description",
+      "current_authority": false,
+      "status": "HISTORICAL_CLAIM_SUPERSEDED",
+      "reason": "Governance freeze transaction has completed under explicit Human authorization."
+    }
+  ],
+  "historical_evidence_policy": {
+    "preserve_original_files": true,
+    "rewrite_history": false,
+    "delete_history": false
+  },
+  "authority_rule": "This artifact is the sole current machine-readable Phase 5A state authority. It cannot override Human Authority, Canonical Specification, Frozen Architecture, Governance Acceptance, or the frozen Governance Baseline."
+}
