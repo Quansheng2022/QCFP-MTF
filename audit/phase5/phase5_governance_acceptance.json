@@ -1,0 +1,12 @@
+{
+  "schema": "PHASE5-GOVERNANCE-ACCEPTANCE-1",
+  "phase": 5,
+  "decision": "APPROVE",
+  "accepted_by": "HUMAN",
+  "governance_baseline_sha256": "0fdc27bbf373653bd98857018ea3013776f721dd4b52776e7a39f486d54904dd",
+  "governance_commit": "997181cde302b26d56f02bf505f51b6165430c2b",
+  "governance_tag": "qcfp-mtf-phase5-governance-v1",
+  "accepted_at_utc": "2026-09-06T18:33:51Z",
+  "reopen_required_on_change": true,
+  "authority_source": "Human approval supplied externally (P5-GOV-FREEZE-HUMAN-AUTHORIZED). Agent executed the activation mechanically and did not generate this approval decision."
+}
