@@ -31,7 +31,7 @@ def replay_shadow_run(
     run_id: str,
     evaluator: Evaluator,
     *,
-    expected: Mapping[str, str] | None = None,
+    expected: Mapping[str, str],
     evaluation_timestamp: str | None = None,
 ) -> dict[str, Any]:
     """Re-execute a recorded shadow run in REPLAY mode.
@@ -46,10 +46,18 @@ def replay_shadow_run(
     if not isinstance(recorded_input, Mapping):
         raise ReplayMismatch(f"recorded source inputs missing for {run_id}")
 
-    expected = dict(expected or {})
+    expected = dict(expected)
     mismatches: list[str] = []
+    missing = [
+        field for field in REPLAY_CHECK_FIELDS if field not in expected
+    ]
+    if missing:
+        raise ReplayMismatch(
+            "replay expected identity incomplete (missing: "
+            + ", ".join(missing) + ")"
+        )
     for field in REPLAY_CHECK_FIELDS:
-        expected_value = expected.get(field, identity.get(field))
+        expected_value = expected[field]
         if expected_value != identity.get(field):
             mismatches.append(
                 f"{field}: expected={expected_value!r} "

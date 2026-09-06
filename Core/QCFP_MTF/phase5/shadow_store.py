@@ -27,6 +27,18 @@ CANONICAL_STORE_DIR_NAMES = ("SQLiteDB",)
 class ShadowStore:
     """File-backed shadow store with deterministic serialization."""
 
+    @staticmethod
+    def _write_once_or_verify_identical(path: Path, text: str) -> None:
+        """CREATE once; identical rewrite is a no-op; divergent rewrite fails."""
+        encoded = text.encode("utf-8")
+        if path.exists():
+            if path.read_bytes() != encoded:
+                raise ShadowRuntimeError(
+                    f"SHADOW_RUN_IMMUTABILITY_VIOLATION: {path}"
+                )
+            return
+        path.write_bytes(encoded)
+
     def __init__(self, root: Path):
         if root is None:
             raise ShadowRuntimeError(
@@ -63,9 +75,8 @@ class ShadowStore:
         self._decisions.mkdir(parents=True, exist_ok=True)
 
         run_path = self._runs / f"{run_id}.json"
-        run_path.write_text(
-            deterministic_dumps(validated), encoding="utf-8"
-        )
+        self._write_once_or_verify_identical(
+            run_path, deterministic_dumps(validated))
 
         input_sha = sha256_payload(input_payload)
         output_sha = sha256_payload(decision_output)
@@ -78,9 +89,8 @@ class ShadowStore:
             "output": dict(decision_output),
         }
         decision_path = self._decisions / f"{run_id}.json"
-        decision_path.write_text(
-            deterministic_dumps(decision), encoding="utf-8"
-        )
+        self._write_once_or_verify_identical(
+            decision_path, deterministic_dumps(decision))
         return {
             "run_id": run_id,
             "run_path": str(run_path),

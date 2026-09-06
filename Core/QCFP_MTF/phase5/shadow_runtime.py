@@ -150,6 +150,10 @@ def canonical_evaluate(
     return asdict(snapshot)
 
 
+canonical_evaluate._approved_canonical_bridge = True  # type: ignore[attr-defined]
+CANONICAL_BRIDGE = canonical_evaluate
+
+
 Evaluator = Callable[..., Mapping[str, Any]]
 
 
@@ -177,8 +181,18 @@ class ShadowRuntime:
         evaluation_timestamp: str | None = None,
         evaluator: Evaluator | None = None,
     ) -> dict[str, Any]:
-        """Record a Shadow/Replay evaluation without touching canonical state."""
+        """Record a Shadow/Replay evaluation without touching canonical state.
+
+        CANONICAL mode is intentionally rejected here: canonical provenance
+        may only be produced through the approved canonical bridge (see
+        capture_canonical), never by an arbitrary evaluator.
+        """
         validate_runtime_mode(mode)
+        if mode == "CANONICAL":
+            raise ShadowRuntimeError(
+                "CANONICAL mode requires approved canonical bridge; "
+                "use ShadowRuntime.capture_canonical() instead"
+            )
         fn = evaluator or self._evaluator
         if fn is None:
             raise ShadowRuntimeError(
@@ -205,6 +219,60 @@ class ShadowRuntime:
         return {
             "shadow_run_id": identity["shadow_run_id"],
             "runtime_mode": mode,
+            "store_root": str(self._store.root),
+            "input_sha256": meta["input_sha256"],
+            "output_sha256": meta["output_sha256"],
+        }
+
+    def capture_canonical(
+        self,
+        *,
+        input_payload: Mapping[str, Any],
+        decision_id: str,
+        source_snapshot_id: str,
+        evidence_pack_id: str,
+        canonical_baseline_id: str,
+        shadow_version_id: str,
+        config_hash: str,
+        code_identity: str,
+        as_of_timestamp: str,
+        evaluation_timestamp: str | None = None,
+        bridge: Callable[..., Mapping[str, Any]] | None = None,
+    ) -> dict[str, Any]:
+        """CANONICAL capture path bound to the approved canonical bridge.
+
+        An injected bridge is only accepted when it is marked as an approved
+        canonical bridge (monkeypatched wrappers used by dedicated tests);
+        arbitrary evaluators cannot create CANONICAL-labelled evidence.
+        """
+        fn = bridge if bridge is not None else CANONICAL_BRIDGE
+        if not callable(fn) or not getattr(
+            fn, "_approved_canonical_bridge", False
+        ):
+            raise ShadowRuntimeError(
+                "CANONICAL capture requires an approved canonical bridge"
+            )
+        identity = self._identity.generate(
+            decision_id=decision_id,
+            source_snapshot_id=source_snapshot_id,
+            evidence_pack_id=evidence_pack_id,
+            canonical_baseline_id=canonical_baseline_id,
+            shadow_version_id=shadow_version_id,
+            config_hash=config_hash,
+            code_identity=code_identity,
+            as_of_timestamp=as_of_timestamp,
+            runtime_mode="CANONICAL",
+            evaluation_timestamp=evaluation_timestamp,
+        )
+        decision_output = dict(fn(input_payload))
+        meta = self._store.write(
+            identity=identity,
+            decision_output=decision_output,
+            input_payload=dict(input_payload),
+        )
+        return {
+            "shadow_run_id": identity["shadow_run_id"],
+            "runtime_mode": "CANONICAL",
             "store_root": str(self._store.root),
             "input_sha256": meta["input_sha256"],
             "output_sha256": meta["output_sha256"],

@@ -151,6 +151,87 @@ def test_storage_deterministic(store):
     assert run_file.read_bytes() == bytes_before
 
 
+def test_duplicate_identical_write_is_idempotent(store):
+    runtime = rt.ShadowRuntime(store, evaluator=_fake_evaluator)
+    first = runtime.execute(
+        mode="SHADOW", input_payload={"symbol": "00700"},
+        evaluation_timestamp=TS, **_identity_kwargs())
+    run_file = store.root / "runs" / f"{first['shadow_run_id']}.json"
+    run_bytes = run_file.read_bytes()
+    dec_file = store.root / "decisions" / f"{first['shadow_run_id']}.json"
+    dec_bytes = dec_file.read_bytes()
+    second = runtime.execute(
+        mode="SHADOW", input_payload={"symbol": "00700"},
+        evaluation_timestamp=TS, **_identity_kwargs())
+    assert second["shadow_run_id"] == first["shadow_run_id"]
+    assert run_file.read_bytes() == run_bytes
+    assert dec_file.read_bytes() == dec_bytes
+
+
+def test_same_identity_different_input_fails_closed(store):
+    runtime = rt.ShadowRuntime(store, evaluator=_fake_evaluator)
+    first = runtime.execute(
+        mode="SHADOW", input_payload={"symbol": "00700"},
+        evaluation_timestamp=TS, **_identity_kwargs())
+    run_file = store.root / "runs" / f"{first['shadow_run_id']}.json"
+    dec_file = store.root / "decisions" / f"{first['shadow_run_id']}.json"
+    run_before = run_file.read_bytes()
+    dec_before = dec_file.read_bytes()
+    with pytest.raises(rt.ShadowRuntimeError):
+        runtime.execute(
+            mode="SHADOW", input_payload={"symbol": "00700", "x": 1},
+            evaluation_timestamp=TS, **_identity_kwargs())
+    assert run_file.read_bytes() == run_before
+    assert dec_file.read_bytes() == dec_before
+
+
+def test_same_identity_same_input_different_output_fails_closed(store):
+    def evaluator_v2(payload):
+        return {"decision": "SHADOW", "symbol": "00700", "target": 0.2}
+
+    runtime = rt.ShadowRuntime(store, evaluator=_fake_evaluator)
+    first = runtime.execute(
+        mode="SHADOW", input_payload={"symbol": "00700"},
+        evaluation_timestamp=TS, **_identity_kwargs())
+    dec_file = store.root / "decisions" / f"{first['shadow_run_id']}.json"
+    dec_before = dec_file.read_bytes()
+    with pytest.raises(rt.ShadowRuntimeError):
+        rt.ShadowRuntime(store, evaluator=evaluator_v2).execute(
+            mode="SHADOW", input_payload={"symbol": "00700"},
+            evaluation_timestamp=TS, **_identity_kwargs())
+    assert dec_file.read_bytes() == dec_before
+
+
+def test_generic_execute_canonical_rejected(store):
+    runtime = rt.ShadowRuntime(store, evaluator=_fake_evaluator)
+    with pytest.raises(rt.ShadowRuntimeError):
+        runtime.execute(
+            mode="CANONICAL", input_payload={"symbol": "00700"},
+            evaluation_timestamp=TS, **_identity_kwargs())
+
+
+def _approved_test_bridge(payload):
+    return {"decision": "CANONICAL", "symbol": payload.get("symbol"),
+            "target": 0.1}
+
+
+_approved_test_bridge._approved_canonical_bridge = True  # type: ignore
+
+
+def test_canonical_capture_requires_approved_bridge(store):
+    runtime = rt.ShadowRuntime(store, evaluator=_fake_evaluator)
+    with pytest.raises(rt.ShadowRuntimeError):
+        runtime.capture_canonical(
+            input_payload={"symbol": "00700"}, bridge=_fake_evaluator,
+            evaluation_timestamp=TS, **_identity_kwargs())
+    result = runtime.capture_canonical(
+        input_payload={"symbol": "00700"}, bridge=_approved_test_bridge,
+        evaluation_timestamp=TS, **_identity_kwargs())
+    assert result["runtime_mode"] == "CANONICAL"
+    record = store.read(result["shadow_run_id"])
+    assert record["runtime_mode"] == "CANONICAL"
+
+
 def test_replay_matches_and_creates_replay_run(store):
     runtime = rt.ShadowRuntime(store, evaluator=_fake_evaluator)
     original = runtime.execute(
@@ -162,6 +243,38 @@ def test_replay_matches_and_creates_replay_run(store):
     assert result["replay_result"] == "MATCH"
     assert result["runtime_mode"] == "REPLAY"
     assert len(store.list_runs()) == 2
+
+
+def test_replay_requires_explicit_expected_identity(store):
+    runtime = rt.ShadowRuntime(store, evaluator=_fake_evaluator)
+    original = runtime.execute(
+        mode="SHADOW", input_payload={"symbol": "00700"},
+        evaluation_timestamp=TS, **_identity_kwargs())
+    with pytest.raises(ReplayMismatch):
+        replay_shadow_run(
+            store, original["shadow_run_id"], _fake_evaluator,
+            expected={}, evaluation_timestamp=TS)
+
+
+@pytest.mark.parametrize(
+    "field",
+    [
+        "source_snapshot_id", "canonical_baseline_id",
+        "shadow_version_id", "config_hash", "code_identity",
+        "as_of_timestamp",
+    ],
+)
+def test_replay_missing_expected_field_fails(store, field):
+    runtime = rt.ShadowRuntime(store, evaluator=_fake_evaluator)
+    original = runtime.execute(
+        mode="SHADOW", input_payload={"symbol": "00700"},
+        evaluation_timestamp=TS, **_identity_kwargs())
+    expected = _identity_kwargs()
+    del expected[field]
+    with pytest.raises(ReplayMismatch):
+        replay_shadow_run(
+            store, original["shadow_run_id"], _fake_evaluator,
+            expected=expected, evaluation_timestamp=TS)
 
 
 @pytest.mark.parametrize(

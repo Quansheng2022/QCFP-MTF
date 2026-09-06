@@ -2,26 +2,28 @@
   "schema": "PHASE5-SHADOW-RUNTIME-SUMMARY-1",
   "phase": 5,
   "task": "P5-C / WP5.1",
+  "status": "READY_FOR_P5_C_R1_STRICT_REVIEW",
   "start_base": "e82755daea0e88f6c928cb1fd74eaea28b05b3d2",
+  "p5_c_r1_candidate_base": "e94e81e8615f73177cf1df67bee2f83e06bb90ad",
   "branch": "codex/phase5-shadow-operation",
   "runtime_implementation_files": [
     {
       "path": "Core/QCFP_MTF/phase5/shadow_runtime.py",
-      "sha256": "cfbd422b1a7a2195ee02ca76d768a55f591095fa36f037e5e6c7ed84810b3da8"
+      "sha256": "f5a580100497c7d7f03fa913301914dced78b8db55d1ae1e32f5e7ac5997f7ce"
     },
     {
       "path": "Core/QCFP_MTF/phase5/shadow_store.py",
-      "sha256": "9f3f9f0023aa80f610f0acaa71612efb44eae833e2be00a9c945220b3a5f7977"
+      "sha256": "076d08e3ea8cb94ccc8a607c22247107b7b589fc43112dc1b3b31f307ebfe18f"
     },
     {
       "path": "Core/QCFP_MTF/phase5/shadow_replay.py",
-      "sha256": "304eb85ecdfe9ae551fbfc5b74ba4e0d1644ca55aaa7d1ba28c4dcb2d2d974c4"
+      "sha256": "14e5b7ea743fbab613b45e7f12693715eaf173f18eb2b8e8a6ff667dd8018405"
     }
   ],
   "test_files": [
     {
       "path": "Core/QCFP_MTF/tests/test_phase5/test_shadow_runtime.py",
-      "sha256": "a01a8ad87080c27d028e1a023c7f477b1c5c6d131eae101d62a4c8c72cfe83e9"
+      "sha256": "ecb185605694dd3fd45397e9d7aca992b8eaa1d41e68881fe5c4fa42e575024f"
     }
   ],
   "p5b_contract": {
@@ -34,6 +36,18 @@
   "independent_storage": "PASS",
   "replay": "PASS",
   "canonical_write_back": "ZERO / FORBIDDEN",
+  "evidence_immutability": "PASS",
+  "duplicate_write_policy": "CREATE_ONCE_OR_IDENTICAL",
+  "canonical_mode_provenance": "APPROVED_CANONICAL_BRIDGE_ONLY",
+  "replay_expected_identity_required": true,
+  "p5_c_r1": {
+    "status": "PASS",
+    "repairs": [
+      "C-SEM-01",
+      "C-SEM-02",
+      "C-SEM-03"
+    ]
+  },
   "canonical_evaluation_bridge": "READ/CALL ONLY (decision.engine.evaluate)",
   "deterministic_evidence": "PASS",
   "p5_d_started": false,
@@ -48,17 +62,17 @@
   "tests": {
     "shadow_runtime": {
       "command": "pytest Core/QCFP_MTF/tests/test_phase5/test_shadow_runtime.py -q",
-      "passed": 22,
+      "passed": 34,
       "return_code": 0
     },
     "phase5_focused": {
       "command": "pytest Core/QCFP_MTF/tests/test_phase5 -q",
-      "passed": 116,
+      "passed": 128,
       "return_code": 0
     }
   },
   "blockers": [],
-  "next_step": "P5-C09 exact commit + full strict review + push + remote verification; then P5-D",
-  "generated_at_utc": "2026-09-06T16:08:18Z",
-  "generated_by": "AI_AGENT P5-C / WP5.1"
+  "next_step": "P5-C-R1 exact 5-file commit + strict full review; semantic re-review before push/closure",
+  "generated_at_utc": "2026-09-06T16:42:41Z",
+  "generated_by": "AI_AGENT P5-C / WP5.1 (updated P5-C-R1)"
 }
