@@ -798,6 +798,125 @@ def test_governance_anchor_valid_passes(tmp_path):
     assert not any(f.severity == "BLOCKER" for f in findings)
 
 
+def _frozen_tmp_tree(tmp_path):
+    roots = [
+        tmp_path / "audit" / "phase1",
+        tmp_path / "audit" / "phase3",
+        tmp_path / "audit" / "phase4",
+        tmp_path / "audit" / "baseline",
+    ]
+    files = []
+    for i, base in enumerate(roots):
+        base.mkdir(parents=True, exist_ok=True)
+        p = base / f"evidence_{i}.json"
+        p.write_text(f'{{"n": {i}}}', encoding="utf-8")
+        files.append(p)
+    return files
+
+
+def test_pytest_does_not_mutate_frozen_evidence(tmp_path):
+    _frozen_tmp_tree(tmp_path)
+    before, errs = rv.snapshot_frozen_evidence(tmp_path)
+    assert errs == []
+    after, errs2 = rv.snapshot_frozen_evidence(tmp_path)
+    assert errs2 == []
+    assert rv.diff_frozen_snapshots(before, after) == []
+
+
+def test_pytest_frozen_file_mutation_blocks(tmp_path):
+    files = _frozen_tmp_tree(tmp_path)
+    before, _ = rv.snapshot_frozen_evidence(tmp_path)
+    files[0].write_text('{"n": 999}', encoding="utf-8")
+    after, _ = rv.snapshot_frozen_evidence(tmp_path)
+    events = rv.diff_frozen_snapshots(before, after)
+    assert any(e.startswith("MODIFIED ") for e in events)
+
+
+def test_pytest_frozen_file_creation_blocks(tmp_path):
+    _frozen_tmp_tree(tmp_path)
+    before, _ = rv.snapshot_frozen_evidence(tmp_path)
+    new = tmp_path / "audit" / "phase1" / "created.json"
+    new.write_text("{}", encoding="utf-8")
+    after, _ = rv.snapshot_frozen_evidence(tmp_path)
+    events = rv.diff_frozen_snapshots(before, after)
+    assert any(e.startswith("CREATED ") for e in events)
+
+
+def test_pytest_frozen_file_delete_blocks(tmp_path):
+    files = _frozen_tmp_tree(tmp_path)
+    before, _ = rv.snapshot_frozen_evidence(tmp_path)
+    files[0].unlink()
+    after, _ = rv.snapshot_frozen_evidence(tmp_path)
+    events = rv.diff_frozen_snapshots(before, after)
+    assert any(e.startswith("DELETED ") for e in events)
+
+
+def test_pytest_frozen_file_rename_blocks(tmp_path):
+    files = _frozen_tmp_tree(tmp_path)
+    before, _ = rv.snapshot_frozen_evidence(tmp_path)
+    files[0].rename(tmp_path / "audit" / "phase1" / "renamed.json")
+    after, _ = rv.snapshot_frozen_evidence(tmp_path)
+    events = rv.diff_frozen_snapshots(before, after)
+    assert any(e.startswith("RENAMED ") for e in events)
+
+
+def test_pytest_snapshot_failure_blocks(tmp_path, monkeypatch):
+    _frozen_tmp_tree(tmp_path)
+
+    def boom(path):
+        raise OSError("cannot read")
+
+    monkeypatch.setattr(rv, "sha256_file", boom)
+    _snap, errors = rv.snapshot_frozen_evidence(tmp_path)
+    assert errors
+
+
+def test_no_auto_restore_after_pytest(tmp_path):
+    files = _frozen_tmp_tree(tmp_path)
+    before_bytes = {p.name: p.read_bytes() for p in files}
+    before, _ = rv.snapshot_frozen_evidence(tmp_path)
+    files[0].write_text('{"n": 2}', encoding="utf-8")
+    after, _ = rv.snapshot_frozen_evidence(tmp_path)
+    _ = rv.diff_frozen_snapshots(before, after)
+    # Reviewer must report, never restore.
+    assert files[0].read_text(encoding="utf-8") == '{"n": 2}'
+    assert all(p.read_bytes() == before_bytes[p.name] for p in files[1:])
+
+
+def test_governed_replacement_exists():
+    phase1_node = (
+        "Core/QCFP_MTF/tests/test_governance/test_phase1.py::"
+        "test_phase1_acceptance_pending_baseline"
+    )
+    assert phase1_node in rv.DESELECT_REPLACEMENTS
+    replacement = rv.DESELECT_REPLACEMENTS[phase1_node]["replacement"]
+    assert replacement == (
+        "Core/QCFP_MTF/tests/test_phase5/"
+        "test_phase1_acceptance_isolation.py::"
+        "test_phase1_acceptance_pending_baseline_isolated"
+    )
+    file_part = replacement.split("::", 1)[0]
+    assert (PROJECT_ROOT / file_part).exists()
+
+
+def test_governed_replacement_is_collected(monkeypatch):
+    monkeypatch.setattr(
+        rv, "run", lambda cmd, cwd, timeout=1800: (0, "1 passed"))
+    findings = rv.validate_deselect_replacement(PROJECT_ROOT, [])
+    assert any(
+        f.code == "P5-PYTEST-03" and f.severity == "PASS"
+        for f in findings
+    )
+
+
+def test_governed_replacement_missing_errors(tmp_path):
+    findings = rv.validate_deselect_replacement(tmp_path, [])
+    assert any(
+        f.code == "P5-PYTEST-03" and f.severity == "ERROR"
+        for f in findings
+    )
+
+
 def test_is_test_file():
     assert rv.is_test_file(
         "Core/QCFP_MTF/tests/test_scripts/test_shadow_universe.py")

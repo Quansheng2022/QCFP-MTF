@@ -1,0 +1,56 @@
+{
+  "schema": "PHASE5-FIX08-EVIDENCE-1",
+  "phase": 5,
+  "task": "FIX-08 — Reviewer Hardening（Frozen snapshot guard + replacement binding + fail-closed）",
+  "branch": "codex/phase5-shadow-operation",
+  "status": "PASS",
+  "governance_state": "PHASE5_BOOTSTRAP_MUTABLE (revision 5)",
+  "implemented": {
+    "FIX-08A": "pytest 前后对 audit/phase1|phase3|phase4|baseline 全树做 SHA256/existence snapshot",
+    "FIX-08B": "full pytest 使用既有 governed deselection（精确 2 项，禁止增加第三项）",
+    "FIX-08C": "pre/post snapshot 比较：MODIFIED / CREATED / DELETED / RENAMED 检测",
+    "FIX-08D": "任何 frozen 变化 → BLOCKER P5-PYTEST-FROZEN-01；禁止自动 git restore",
+    "FIX-08E": "governed deselection replacement 绑定：test_phase1_acceptance_pending_baseline_isolated 必须被 collect 且 PASS（P5-PYTEST-03）；快照失败（P5-PYTEST-FROZEN-02）与不可解析 pytest 输出（P5-PYTEST-04）fail-closed"
+  },
+  "reviewer_self_tests": {
+    "command": "pytest tools/review/tests -q",
+    "result": "71 passed",
+    "return_code": 0,
+    "new_cases": [
+      "test_pytest_does_not_mutate_frozen_evidence",
+      "test_pytest_frozen_file_mutation_blocks",
+      "test_pytest_frozen_file_creation_blocks",
+      "test_pytest_frozen_file_delete_blocks",
+      "test_pytest_frozen_file_rename_blocks",
+      "test_pytest_snapshot_failure_blocks",
+      "test_no_auto_restore_after_pytest",
+      "test_governed_replacement_exists",
+      "test_governed_replacement_is_collected",
+      "test_governed_replacement_missing_errors"
+    ]
+  },
+  "end_to_end_verification": {
+    "command": "merge_project_for_phase5_review.py --mode development --scope phase5 --run-pytest --pytest-scope full --strict",
+    "pytest_rc": 0,
+    "pytest_passed": 2030,
+    "P5-PYTEST-FROZEN-01": "PASS（frozen evidence pre/post 一致）",
+    "P5-PYTEST-03": "PASS（replacement collected & passing）",
+    "P5-PYTEST-01": "PASS",
+    "finding_counts": "PASS=28 | INFO=305 | WARN=1 | ERROR=0 | BLOCKER=0"
+  },
+  "frozen_dirty": 0,
+  "shared_read_only_dirty": 0,
+  "unknown_dirty": 0,
+  "frozen_files_modified": "NONE",
+  "changed_files": [
+    "tools/review/merge_project_for_phase5_review.py (modified, TOOL_VERSION 1.4.0)",
+    "tools/review/tests/test_merge_project_for_phase5_review.py (modified)",
+    "audit/phase5/phase5_governance_baseline.json (modified, revision 5)",
+    "audit/phase5/fix08_evidence.json (new)"
+  ],
+  "blockers": [],
+  "next_permitted_task": "FIX-06 — XML Evidence Packaging（JUnit XML 限定性纳入 manifest/hash/merge）",
+  "human_decision_required": false,
+  "generated_at_utc": "2026-09-06T00:00:00Z",
+  "generated_by": "AI_AGENT FIX-08"
+}

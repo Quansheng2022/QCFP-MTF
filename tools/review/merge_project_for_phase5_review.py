@@ -68,7 +68,7 @@ from pathlib import Path
 from typing import Iterable, Sequence
 
 
-TOOL_VERSION = "1.3.0"
+TOOL_VERSION = "1.4.0"
 DEFAULT_BASELINE = "qcfp-mtf-phase4-frozen"
 DEFAULT_MANIFEST_REL = "audit/phase5/frozen_surface_manifest.json"
 GOVERNANCE_BASELINE_REL = "audit/phase5/phase5_governance_baseline.json"
@@ -116,6 +116,33 @@ GOVERNED_DESELECTIONS = (
         ),
     },
 )
+
+# FIX-08A — frozen evidence trees guarded around every pytest run.
+FROZEN_EVIDENCE_DIRS = (
+    "audit/phase1",
+    "audit/phase3",
+    "audit/phase4",
+    "audit/baseline",
+)
+
+# FIX-08D — governed deselection -> Phase5 replacement binding.
+DESELECT_REPLACEMENTS = {
+    (
+        "Core/QCFP_MTF/tests/test_governance/test_phase1.py::"
+        "test_phase1_acceptance_pending_baseline"
+    ): {
+        "replacement": (
+            "Core/QCFP_MTF/tests/test_phase5/"
+            "test_phase1_acceptance_isolation.py::"
+            "test_phase1_acceptance_pending_baseline_isolated"
+        ),
+        "reason": (
+            "Historical Phase 1 acceptance test regenerates frozen "
+            "audit/phase1/phase1_acceptance.json; Phase5 isolated equivalent "
+            "uses out_dir=tmp_path and must be collected and passing."
+        ),
+    },
+}
 
 TEXT_EXTENSIONS = {
     ".py", ".pyi", ".md", ".rst", ".txt",
@@ -1854,6 +1881,111 @@ def find_pytest_targets(root: Path, scope: str) -> tuple[list[str], str]:
     return targets, note
 
 
+def snapshot_frozen_evidence(root: Path) -> tuple[dict, list[str]]:
+    """FIX-08A — SHA256/existence snapshot of frozen evidence trees."""
+    snap: dict[str, dict] = {}
+    errors: list[str] = []
+    for rel_dir in FROZEN_EVIDENCE_DIRS:
+        base = root / rel_dir
+        if not base.exists():
+            continue
+        for path in sorted(base.rglob("*")):
+            if not path.is_file():
+                continue
+            rel = relpath(path, root)
+            try:
+                snap[rel] = {"sha256": sha256_file(path)}
+            except OSError as exc:
+                errors.append(f"{rel}: {exc}")
+    return snap, errors
+
+
+def diff_frozen_snapshots(before: dict, after: dict) -> list[str]:
+    """FIX-08B/C — MODIFIED / CREATED / DELETED / RENAMED detection."""
+    events: list[str] = []
+    created = sorted(set(after) - set(before))
+    deleted = sorted(set(before) - set(after))
+    for new in list(created):
+        sha = after[new]["sha256"]
+        for old in list(deleted):
+            if before[old]["sha256"] == sha:
+                events.append(f"RENAMED {old} -> {new}")
+                deleted.remove(old)
+                created.remove(new)
+                break
+    for old in deleted:
+        events.append(f"DELETED {old}")
+    for new in created:
+        events.append(f"CREATED {new}")
+    for rel in sorted(set(before) & set(after)):
+        if before[rel]["sha256"] != after[rel]["sha256"]:
+            events.append(
+                f"MODIFIED {rel} before={before[rel]['sha256']} "
+                f"after={after[rel]['sha256']}"
+            )
+    return events
+
+
+def validate_deselect_replacement(
+    root: Path,
+    extra_args: Sequence[str],
+) -> list[Finding]:
+    """FIX-08D — replacement of a governed deselection must be collected+PASS."""
+    findings: list[Finding] = []
+    for node, mapping in DESELECT_REPLACEMENTS.items():
+        if node not in {
+            entry["node"] for entry in GOVERNED_DESELECTIONS
+        }:
+            findings.append(
+                Finding(
+                    "ERROR",
+                    "P5-PYTEST-03",
+                    node,
+                    "Replacement binding references a node that is not in "
+                    "GOVERNED_DESELECTIONS.",
+                )
+            )
+            continue
+        replacement = str(mapping["replacement"])
+        file_part, _, test_part = replacement.partition("::")
+        if not (root / file_part).exists():
+            findings.append(
+                Finding(
+                    "ERROR",
+                    "P5-PYTEST-03",
+                    replacement,
+                    "Governed deselection replacement file missing; full "
+                    "regression cannot PASS without equivalent coverage: "
+                    f"{file_part}",
+                )
+            )
+            continue
+        cmd = [sys.executable, "-m", "pytest", "-q", replacement]
+        cmd.extend(extra_args)
+        rc, out = run(cmd, root, timeout=1800)
+        if rc == 0:
+            findings.append(
+                Finding(
+                    "PASS",
+                    "P5-PYTEST-03",
+                    replacement,
+                    "Governed deselection replacement collected and passing: "
+                    f"{replacement} (rc=0).",
+                )
+            )
+        else:
+            findings.append(
+                Finding(
+                    "ERROR",
+                    "P5-PYTEST-03",
+                    replacement,
+                    "Governed deselection replacement failed or was not "
+                    f"collected: {replacement} rc={rc}\n{out}",
+                )
+            )
+    return findings
+
+
 def run_pytest(
     root: Path,
     scope: str,
@@ -2489,8 +2621,21 @@ def main() -> int:
     }
     pytest_executed = False
     pytest_discovery_status = ""
+    frozen_events: list[str] = []
+    frozen_snapshot_status = "NOT_SNAPSHOTTED"
     if args.run_pytest:
         print("Running pytest...")
+        frozen_before, snap_before_errors = snapshot_frozen_evidence(root)
+        if snap_before_errors:
+            findings.append(
+                Finding(
+                    "ERROR",
+                    "P5-PYTEST-FROZEN-02",
+                    "",
+                    "Pre-pytest frozen evidence snapshot failed: "
+                    + "; ".join(snap_before_errors),
+                )
+            )
         (
             pytest_rc,
             pytest_out,
@@ -2502,6 +2647,49 @@ def main() -> int:
         )
         if pytest_executed:
             pytest_counts = parse_pytest_counts(pytest_out)
+            frozen_after, snap_after_errors = snapshot_frozen_evidence(root)
+            if snap_after_errors:
+                findings.append(
+                    Finding(
+                        "ERROR",
+                        "P5-PYTEST-FROZEN-02",
+                        "",
+                        "Post-pytest frozen evidence snapshot failed: "
+                        + "; ".join(snap_after_errors),
+                    )
+                )
+                frozen_snapshot_status = "SNAPSHOT_ERROR"
+            else:
+                frozen_events = diff_frozen_snapshots(
+                    frozen_before, frozen_after)
+                if frozen_events:
+                    findings.append(
+                        Finding(
+                            "BLOCKER",
+                            "P5-PYTEST-FROZEN-01",
+                            "",
+                            "pytest mutated Frozen Evidence: "
+                            + " | ".join(frozen_events)
+                            + " (auto git restore is forbidden; investigate "
+                            "and fix the mutating test)",
+                        )
+                    )
+                    frozen_snapshot_status = "MUTATED"
+                else:
+                    findings.append(
+                        Finding(
+                            "PASS",
+                            "P5-PYTEST-FROZEN-01",
+                            "",
+                            "Frozen Evidence unchanged across pytest "
+                            "(pre/post snapshot identical).",
+                        )
+                    )
+                    frozen_snapshot_status = "UNCHANGED"
+            findings.extend(
+                validate_deselect_replacement(
+                    root, args.pytest_extra_arg)
+            )
             sev = "PASS" if pytest_rc == 0 else "ERROR"
             findings.append(
                 Finding(
@@ -2514,6 +2702,16 @@ def main() -> int:
                     f"counts={pytest_counts}",
                 )
             )
+            if pytest_rc == 0 and pytest_counts["passed"] is None:
+                findings.append(
+                    Finding(
+                        "ERROR",
+                        "P5-PYTEST-04",
+                        "",
+                        "pytest output unparsable: no passed count detected; "
+                        "fail closed.",
+                    )
+                )
         else:
             sev = (
                 "ERROR"
@@ -2604,7 +2802,9 @@ def main() -> int:
             f"pytest discovery: {pytest_discovery_status}\n"
             f"pytest targets: {pytest_targets or ['<full suite>']}\n"
             f"pytest return code: {pytest_rc}\n"
-            f"pytest parsed counts: {pytest_counts}\n\n"
+            f"pytest parsed counts: {pytest_counts}\n"
+            f"frozen evidence snapshot status: {frozen_snapshot_status}\n"
+            f"frozen evidence events: {frozen_events or []}\n\n"
             f"{pytest_out or '<no output>'}"
         )
     else:
