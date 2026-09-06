@@ -1,7 +1,7 @@
 {
   "schema": "PHASE5-GOVERNANCE-BASELINE-1",
   "phase": 5,
-  "governance_revision": 5,
+  "governance_revision": 6,
   "baseline_state": "PHASE5_BOOTSTRAP_MUTABLE",
   "status": "PENDING_HUMAN_ACCEPTANCE",
   "human_acceptance_required": true,
@@ -15,7 +15,7 @@
     "peeled_commit": "275726b37ff264f1717d41c3fec26c7135bace74"
   },
   "phase5_governance_commit": "d4c3af74b63f36a583ef427c33e8168884c927b6",
-  "pinned_at_note": "Revision 5 after FIX-08: reviewer hardening (frozen evidence pre/post pytest snapshot guard P5-PYTEST-FROZEN-01/02 with MODIFIED/CREATED/DELETED/RENAMED detection, governed deselection replacement binding P5-PYTEST-03, fail-closed unparsable output P5-PYTEST-04) and refreshed pinned hashes. State flips to PHASE5_GOVERNANCE_FROZEN only through an explicit external Human acceptance record; Agent must never create that record.",
+  "pinned_at_note": "Revision 6 after FIX-06: trusted XML evidence packaging (audit/phase5/**/*.xml only; required baseline_pytest_junit.xml presence check P5-XML-01) and refreshed pinned hashes. State flips to PHASE5_GOVERNANCE_FROZEN only through an explicit external Human acceptance record; Agent must never create that record.",
   "governance_files": [
     {
       "path": "audit/phase5/frozen_surface_manifest.json",
@@ -24,12 +24,12 @@
     },
     {
       "path": "tools/review/merge_project_for_phase5_review.py",
-      "sha256": "4c799aa440e0e18c8aa45b404798936da53c184f3573a091979f583dd34240d6",
+      "sha256": "44afc41e1790750f53701f19694116c3c364c2be4ac40ef438e7f9f5f633758b",
       "role": "Phase 5 Review Tool（执行器）"
     },
     {
       "path": "tools/review/tests/test_merge_project_for_phase5_review.py",
-      "sha256": "0983e069c54de2627997756b74f73d69ee36823e8f0fb3bc1fb44f95e36b7f18",
+      "sha256": "5133c9d5265e5770700fdcc32c23f88e87e00cddc88e3cfe3716c2418cc3835e",
       "role": "Phase 5 Review Tool 自身回归测试"
     }
   ],

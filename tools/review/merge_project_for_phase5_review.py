@@ -68,9 +68,11 @@ from pathlib import Path
 from typing import Iterable, Sequence
 
 
-TOOL_VERSION = "1.4.0"
+TOOL_VERSION = "1.5.0"
 DEFAULT_BASELINE = "qcfp-mtf-phase4-frozen"
 DEFAULT_MANIFEST_REL = "audit/phase5/frozen_surface_manifest.json"
+TRUSTED_XML_REL_PREFIX = "audit/phase5/"
+REQUIRED_XML_EVIDENCE = ("audit/phase5/baseline_pytest_junit.xml",)
 GOVERNANCE_BASELINE_REL = "audit/phase5/phase5_governance_baseline.json"
 GOVERNANCE_BASELINE_SCHEMA = "PHASE5-GOVERNANCE-BASELINE-1"
 GOVERNANCE_ACCEPTANCE_REL = "audit/phase5/phase5_governance_acceptance.json"
@@ -620,16 +622,32 @@ def is_excluded_file(path: Path) -> bool:
     return any(fnmatch.fnmatch(path.name, pat) for pat in EXCLUDED_FILE_GLOBS)
 
 
-def eligible_text_file(path: Path, max_file_bytes: int) -> bool:
+def is_trusted_xml(rel: str) -> bool:
+    """FIX-06 — XML is mergeable only inside trusted evidence paths."""
+    rel = rel.replace("\\", "/").lower()
+    return rel.endswith(".xml") and rel.startswith(
+        TRUSTED_XML_REL_PREFIX.lower()
+    )
+
+
+def eligible_text_file(
+    path: Path, max_file_bytes: int, root: Path | None = None
+) -> bool:
     if not path.is_file():
         return False
     if is_excluded_dir(path):
         return False
     if is_excluded_file(path):
         return False
-    if path.suffix.lower() not in TEXT_EXTENSIONS and path.name not in {
-        "Dockerfile", "Makefile"
-    }:
+    suffix = path.suffix.lower()
+    trusted_xml = suffix == ".xml" and root is not None and is_trusted_xml(
+        relpath(path, root)
+    )
+    if (
+        suffix not in TEXT_EXTENSIONS
+        and not trusted_xml
+        and path.name not in {"Dockerfile", "Makefile"}
+    ):
         return False
     try:
         if path.stat().st_size > max_file_bytes:
@@ -834,7 +852,7 @@ def combine_changes(*groups: Sequence[GitChange]) -> list[GitChange]:
 
 def iter_all_eligible(root: Path, max_file_bytes: int) -> Iterable[Path]:
     for path in root.rglob("*"):
-        if eligible_text_file(path, max_file_bytes):
+        if eligible_text_file(path, max_file_bytes, root=root):
             yield path
 
 
@@ -1986,6 +2004,44 @@ def validate_deselect_replacement(
     return findings
 
 
+def validate_xml_evidence(root: Path, mode: str) -> list[Finding]:
+    """FIX-06 — required trusted XML evidence (JUnit) presence check."""
+    findings: list[Finding] = []
+    for rel in REQUIRED_XML_EVIDENCE:
+        path = root / rel
+        if path.exists():
+            findings.append(
+                Finding(
+                    "PASS",
+                    "P5-XML-01",
+                    rel,
+                    f"Required trusted XML evidence present "
+                    f"(sha256={sha256_file(path)}).",
+                )
+            )
+        elif mode in {"qualification", "final-acceptance"}:
+            findings.append(
+                Finding(
+                    "ERROR",
+                    "P5-XML-01",
+                    rel,
+                    "Required trusted XML evidence missing; qualification "
+                    "cannot bind pytest JUnit output.",
+                )
+            )
+        else:
+            findings.append(
+                Finding(
+                    "INFO",
+                    "P5-XML-01",
+                    rel,
+                    "Required trusted XML evidence missing (allowed in "
+                    "development mode).",
+                )
+            )
+    return findings
+
+
 def run_pytest(
     root: Path,
     scope: str,
@@ -2596,6 +2652,7 @@ def main() -> int:
                 root, args.mode, args.baseline, all_changes, surface_manifest
             )
         )
+    findings.extend(validate_xml_evidence(root, args.mode))
 
     files = collect_review_files(
         root=root,

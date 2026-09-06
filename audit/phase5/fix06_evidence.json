@@ -1,0 +1,47 @@
+{
+  "schema": "PHASE5-FIX06-EVIDENCE-1",
+  "phase": 5,
+  "task": "FIX-06 — XML Evidence Packaging",
+  "branch": "codex/phase5-shadow-operation",
+  "status": "PASS",
+  "governance_state": "PHASE5_BOOTSTRAP_MUTABLE (revision 6)",
+  "problem": "TEXT_EXTENSIONS 不含 .xml，audit/phase5/baseline_pytest_junit.xml 未被正式 merge/hash",
+  "implemented": {
+    "trusted_xml_scope": "仅 audit/phase5/**/*.xml 允许作为 XML evidence 打包；仓库其他 XML 不自动纳入",
+    "eligible_text_file": "新增 root 参数 + is_trusted_xml() 判定",
+    "required_xml_check": "REQUIRED_XML_EVIDENCE=(audit/phase5/baseline_pytest_junit.xml)；qualification/final 缺失 → ERROR P5-XML-01",
+    "manifest_inclusion": "XML 进入 file manifest（SIZE/SHA256）与 merged content（FILE/SHA256/CONTENT）"
+  },
+  "observed": {
+    "FILE": "audit/phase5/baseline_pytest_junit.xml",
+    "P5-XML-01": "PASS（sha256=08a90c2a9fe3ea077cf2309d1b9cc442a30314aef3e9d240a848cca229e8758e）",
+    "bundle_files_merged": 173
+  },
+  "reviewer_self_tests": {
+    "command": "pytest tools/review/tests -q",
+    "result": "76 passed",
+    "return_code": 0,
+    "new_cases": [
+      "test_phase5_junit_xml_is_packaged",
+      "test_unrelated_xml_not_auto_packaged",
+      "test_xml_sha256_in_manifest",
+      "test_missing_required_xml_detected_when_required",
+      "test_real_junit_xml_is_trusted_eligible"
+    ]
+  },
+  "frozen_dirty": 0,
+  "shared_read_only_dirty": 0,
+  "unknown_dirty": 0,
+  "frozen_files_modified": "NONE",
+  "changed_files": [
+    "tools/review/merge_project_for_phase5_review.py (modified, TOOL_VERSION 1.5.0)",
+    "tools/review/tests/test_merge_project_for_phase5_review.py (modified)",
+    "audit/phase5/phase5_governance_baseline.json (modified, revision 6)",
+    "audit/phase5/fix06_evidence.json (new)"
+  ],
+  "blockers": [],
+  "next_permitted_task": "P5-GOV-FREEZE — Final Governance Baseline Revision（machine 状态写 READY_FOR_HUMAN_GOVERNANCE_ACCEPTANCE 后 STOP，Human 才执行 freeze/acceptance）",
+  "human_decision_required": false,
+  "generated_at_utc": "2026-09-06T00:00:00Z",
+  "generated_by": "AI_AGENT FIX-06"
+}

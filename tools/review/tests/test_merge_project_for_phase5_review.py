@@ -917,6 +917,56 @@ def test_governed_replacement_missing_errors(tmp_path):
     )
 
 
+def test_phase5_junit_xml_is_packaged(tmp_path):
+    xml_dir = tmp_path / "audit" / "phase5"
+    xml_dir.mkdir(parents=True)
+    xml = xml_dir / "baseline_pytest_junit.xml"
+    xml.write_text("<testsuites><testsuite tests='1'/></testsuites>",
+                   encoding="utf-8")
+    files = rv.collect_review_files(tmp_path, "qcfp-mtf-phase4-frozen",
+                                    "all", 1_500_000)
+    rels = {rv.relpath(p, tmp_path) for p in files}
+    assert "audit/phase5/baseline_pytest_junit.xml" in rels
+
+
+def test_unrelated_xml_not_auto_packaged(tmp_path):
+    (tmp_path / "unrelated.xml").write_text("<x/>", encoding="utf-8")
+    nested = tmp_path / "Core" / "QCFP_MTF"
+    nested.mkdir(parents=True)
+    (nested / "data.xml").write_text("<x/>", encoding="utf-8")
+    files = rv.collect_review_files(tmp_path, "qcfp-mtf-phase4-frozen",
+                                    "all", 1_500_000)
+    rels = {rv.relpath(p, tmp_path) for p in files}
+    assert "unrelated.xml" not in rels
+    assert "Core/QCFP_MTF/data.xml" not in rels
+
+
+def test_xml_sha256_in_manifest(tmp_path):
+    xml = tmp_path / "audit" / "phase5" / "baseline_pytest_junit.xml"
+    xml.parent.mkdir(parents=True)
+    xml.write_text("<testsuites/>", encoding="utf-8")
+    manifest = rv.build_manifest([xml], tmp_path)
+    assert manifest[0]["path"] == "audit/phase5/baseline_pytest_junit.xml"
+    assert manifest[0]["sha256"] == rv.sha256_file(xml)
+
+
+def test_missing_required_xml_detected_when_required(tmp_path):
+    findings = rv.validate_xml_evidence(tmp_path, "qualification")
+    assert any(
+        f.code == "P5-XML-01" and f.severity == "ERROR"
+        for f in findings
+    )
+    findings_dev = rv.validate_xml_evidence(tmp_path, "development")
+    assert not any(f.severity == "ERROR" for f in findings_dev)
+
+
+def test_real_junit_xml_is_trusted_eligible():
+    xml = PROJECT_ROOT / "audit" / "phase5" / "baseline_pytest_junit.xml"
+    assert xml.exists()
+    assert rv.is_trusted_xml("audit/phase5/baseline_pytest_junit.xml")
+    assert rv.eligible_text_file(xml, 10_000_000, root=PROJECT_ROOT)
+
+
 def test_is_test_file():
     assert rv.is_test_file(
         "Core/QCFP_MTF/tests/test_scripts/test_shadow_universe.py")
