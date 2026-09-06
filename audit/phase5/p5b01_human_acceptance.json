@@ -1,0 +1,31 @@
+{
+  "schema": "PHASE5-P5B01-HUMAN-ACCEPTANCE-1",
+  "phase": 5,
+  "gate": "P5-B01-H1",
+  "decision": "APPROVE",
+  "accepted_by": "HUMAN",
+  "approved_commit": "c75110b184ec4deb9baf884d4ec538e927fa7599",
+  "review_manifest_sha256": "37af687763c61dc67611f3ef8141e4aa731b58df473508b868d6de3cb53fb36d",
+  "rationale": [
+    "Incident Severity Vocabulary repaired",
+    "Machine Promotion Authority Vocabulary repaired",
+    "Runtime Type Validation repaired",
+    "Strict full review PASS",
+    "Frozen Evidence unchanged",
+    "Governance Revision 7 unchanged",
+    "ERROR=0",
+    "BLOCKER=0",
+    "pytest rc=0",
+    "Remote HEAD equals Local HEAD"
+  ],
+  "decision_source": "HUMAN",
+  "recorded_by": "AI_AGENT",
+  "agent_decision_authority": "NONE",
+  "approved_candidate_remote_backed": true,
+  "p5b_close_authorized": true,
+  "p5c_start_authorized_after_closure": true,
+  "phase5_pass_authorized": false,
+  "phase6_authorized": false,
+  "human_decision_time": "NOT_RECORDED_EXACTLY",
+  "recorded_at_utc": "2026-09-06T15:44:30Z"
+}

@@ -1,0 +1,40 @@
+{
+  "schema": "PHASE5-P5B01-CLOSURE-EVIDENCE-1",
+  "phase": 5,
+  "task": "P5-B01-H1R",
+  "transaction_type": "MECHANICAL_HUMAN_DECISION_RECORDING_AND_GATE_CLOSURE",
+  "decision_source": "HUMAN",
+  "agent_decision_authority": "NONE",
+  "approved_candidate_commit": "c75110b184ec4deb9baf884d4ec538e927fa7599",
+  "review_manifest_sha256": "37af687763c61dc67611f3ef8141e4aa731b58df473508b868d6de3cb53fb36d",
+  "human_acceptance_artifact": {
+    "path": "audit/phase5/p5b01_human_acceptance.json",
+    "sha256": "a7c6868e5c7032eeb00545f5f73a42360eecd89814f6bc269f32c327d17f30b3"
+  },
+  "p5b01_r1_semantic_findings": {
+    "INCIDENT_SEVERITY_VOCABULARY": "PASS",
+    "MACHINE_PROMOTION_AUTHORITY": "PASS",
+    "RUNTIME_TYPE_VALIDATION": "PASS"
+  },
+  "strict_review": {
+    "error": 0,
+    "blocker": 0,
+    "pytest_rc": 0
+  },
+  "full_regression": {
+    "passed": 2116,
+    "governed_deselected": 2
+  },
+  "frozen_evidence": "UNCHANGED",
+  "governance": {
+    "state": "PHASE5_GOVERNANCE_FROZEN",
+    "revision": 7,
+    "changed": false
+  },
+  "approved_candidate_remote_backed": true,
+  "p5_c_started": false,
+  "phase5_pass_authorized": false,
+  "phase6_authorized": false,
+  "recorded_at_utc": "2026-09-06T15:44:30Z",
+  "generated_by": "AI_AGENT P5-B01-H1R"
+}
