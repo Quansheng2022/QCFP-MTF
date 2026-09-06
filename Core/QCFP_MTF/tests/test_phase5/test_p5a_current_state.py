@@ -17,6 +17,8 @@ EXPECTED_SHA = {
         "0ba897695eee6620bc6b7565922c3c7bc65c28b529cb408414ee22db747ffbeb",
     "audit/phase5/phase5_governance_baseline.json":
         "0fdc27bbf373653bd98857018ea3013776f721dd4b52776e7a39f486d54904dd",
+    "audit/phase5/phase5_governance_acceptance.json":
+        "9307fd57ae6e8b1f78820206f8a796493c1611ea9c2690fc3f9c5c96665a66fa",
     "audit/phase5/frozen_surface_manifest.json":
         "edb531c118e85f51738e37656687c59850763802eb0a12f194a552ef9bf54e75",
     "tools/review/merge_project_for_phase5_review.py":
@@ -105,6 +107,7 @@ def test_historical_files_preserved():
 def test_frozen_governance_preserved():
     for rel in (
         "audit/phase5/phase5_governance_baseline.json",
+        "audit/phase5/phase5_governance_acceptance.json",
         "audit/phase5/frozen_surface_manifest.json",
         "tools/review/merge_project_for_phase5_review.py",
         "tools/review/tests/test_merge_project_for_phase5_review.py",
