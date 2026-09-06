@@ -1,10 +1,10 @@
 {
   "schema": "PHASE5-P5A-CURRENT-STATE-1",
   "phase": 5,
-  "state_revision": 1,
+  "state_revision": 2,
   "authority_role": "SINGLE_CURRENT_MACHINE_STATE",
   "current": true,
-  "generated_at_utc": "2026-09-06T19:16:28Z",
+  "generated_at_utc": "2026-09-06T20:56:01Z",
   "governance": {
     "state": "PHASE5_GOVERNANCE_FROZEN",
     "revision": 7,
@@ -19,8 +19,14 @@
     "checkpoint_5a_status": "HOLD",
     "checkpoint_5a_human_decision": "NOT_YET_MADE",
     "checkpoint_5a_human_required": true,
+    "checkpoint_5a_review_package_ready": true,
     "p5b_permitted": false,
-    "next_machine_task_after_human_review": "P5-A-R1"
+    "next_machine_task_after_human_review": "CHECKPOINT_5A_HUMAN_GATE"
+  },
+  "machine_completed": {
+    "P5-A-R1": "PASS",
+    "P5-A-R2": "PASS",
+    "P5-A-R3": "PASS"
   },
   "superseded_current_claims": [
     {

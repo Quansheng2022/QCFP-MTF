@@ -1,0 +1,39 @@
+{
+  "schema": "PHASE5-P5A-ACCEPTANCE-1",
+  "checkpoint": "CHECKPOINT_5A",
+  "machine_status": "READY_FOR_HUMAN_ACCEPTANCE",
+  "blocker_count": 0,
+  "error_count": 0,
+  "frozen_dirty": 0,
+  "shared_read_only_dirty": 0,
+  "unknown_dirty": 0,
+  "full_regression_rc": 0,
+  "full_regression_passed": 2040,
+  "governed_deselected": 2,
+  "pytest_frozen_immutability": "PASS",
+  "governance_baseline": "PASS",
+  "governance_anchor": {
+    "state": "PHASE5_GOVERNANCE_FROZEN",
+    "revision": 7,
+    "accepted_by": "HUMAN",
+    "candidate_commit": "997181cde302b26d56f02bf505f51b6165430c2b",
+    "activation_commit": "992dfa8fffe9e525621a4c3bfdca20dd458ea67d",
+    "tag": "qcfp-mtf-phase5-governance-v1",
+    "baseline_sha256": "0fdc27bbf373653bd98857018ea3013776f721dd4b52776e7a39f486d54904dd"
+  },
+  "reviewer_self_tests": "PASS",
+  "evidence_consistency": "PASS",
+  "evidence_references": {
+    "review_bundle": "Merged_Code/merged_QCFP_MTF_phase5_development_review.txt",
+    "current_state": "audit/phase5/p5a_current_state.json",
+    "governance_baseline": "audit/phase5/phase5_governance_baseline.json",
+    "governance_acceptance": "audit/phase5/phase5_governance_acceptance.json",
+    "r1_evidence": "audit/phase5/p5a_r1_evidence.json",
+    "r2_evidence": "audit/phase5/p5a_r2_evidence.json"
+  },
+  "human_acceptance_required": true,
+  "p5b_permitted": false,
+  "note": "Machine qualification only. CHECKPOINT_5A_ACCEPTED / P5-B01 permit / Phase 6 are Human-only decisions; Agent did not make them.",
+  "generated_at_utc": "2026-09-06T20:56:01Z",
+  "generated_by": "AI_AGENT P5-A-R3"
+}

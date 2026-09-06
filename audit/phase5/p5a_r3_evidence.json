@@ -1,0 +1,58 @@
+{
+  "schema": "PHASE5-P5A-R3-EVIDENCE-1",
+  "phase": 5,
+  "task": "P5-A-R3 — Acceptance Evidence",
+  "branch": "codex/phase5-shadow-operation",
+  "status": "PASS",
+  "machine_status": "READY_FOR_HUMAN_ACCEPTANCE",
+  "governance_state": "PHASE5_GOVERNANCE_FROZEN",
+  "governance_revision": 7,
+  "checkpoint_5a": "HOLD",
+  "checkpoint_5a_human_decision": "NOT_YET_MADE",
+  "p5b_permitted": false,
+  "acceptance_package": {
+    "path": "audit/phase5/p5a_review_acceptance.json",
+    "sha256": "180ab57a8b0b31ef7263dad5451fccd499ff6216ef9210a9431331ebb5940974",
+    "machine_status": "READY_FOR_HUMAN_ACCEPTANCE"
+  },
+  "current_state_update": {
+    "path": "audit/phase5/p5a_current_state.json",
+    "state_revision": 2,
+    "sha256": "e2f741a16d4d5c19711f8ae35c0cc36efa804de30a1d7eb24c2ac466fa67bd63",
+    "machine_completed": {
+      "P5-A-R1": "PASS",
+      "P5-A-R2": "PASS",
+      "P5-A-R3": "PASS"
+    },
+    "next_machine_task_after_human_review": "CHECKPOINT_5A_HUMAN_GATE"
+  },
+  "machine_acceptance_criteria_summary": {
+    "blocker_count": 0,
+    "error_count": 0,
+    "frozen_dirty": 0,
+    "shared_read_only_dirty": 0,
+    "unknown_dirty": 0,
+    "full_regression_rc": 0,
+    "full_regression_passed": 2040,
+    "governed_deselected": 2,
+    "pytest_frozen_immutability": "PASS",
+    "governance_baseline": "PASS",
+    "reviewer_self_tests": "PASS",
+    "evidence_consistency": "PASS"
+  },
+  "dedicated_tests_after_state_update": {
+    "command": "pytest Core/QCFP_MTF/tests/test_phase5/test_p5a_current_state.py -q",
+    "expected": "10 passed rc=0"
+  },
+  "not_authorized": [
+    "CHECKPOINT_5A_ACCEPTED",
+    "P5-B01_PERMITTED",
+    "PHASE5_PASS",
+    "PHASE6_START"
+  ],
+  "blockers": [],
+  "next_step": "HUMAN CHECKPOINT 5A — APPROVE / HOLD / REJECT / REQUEST_MORE_EVIDENCE",
+  "human_decision_required": true,
+  "generated_at_utc": "2026-09-06T20:56:01Z",
+  "generated_by": "AI_AGENT P5-A-R3"
+}
