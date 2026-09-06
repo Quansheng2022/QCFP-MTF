@@ -150,10 +150,6 @@ def canonical_evaluate(
     return asdict(snapshot)
 
 
-canonical_evaluate._approved_canonical_bridge = True  # type: ignore[attr-defined]
-CANONICAL_BRIDGE = canonical_evaluate
-
-
 Evaluator = Callable[..., Mapping[str, Any]]
 
 
@@ -183,15 +179,22 @@ class ShadowRuntime:
     ) -> dict[str, Any]:
         """Record a Shadow/Replay evaluation without touching canonical state.
 
-        CANONICAL mode is intentionally rejected here: canonical provenance
-        may only be produced through the approved canonical bridge (see
-        capture_canonical), never by an arbitrary evaluator.
+        Generic execution is SHADOW-only. CANONICAL and REPLAY each have a
+        dedicated governed entry point (capture_canonical / replay_shadow_run)
+        and must not be reachable through this generic surface.
         """
         validate_runtime_mode(mode)
-        if mode == "CANONICAL":
+        if mode != "SHADOW":
+            if mode == "CANONICAL":
+                raise ShadowRuntimeError(
+                    "CANONICAL mode requires ShadowRuntime.capture_canonical()"
+                )
+            if mode == "REPLAY":
+                raise ShadowRuntimeError(
+                    "REPLAY mode requires replay_shadow_run()"
+                )
             raise ShadowRuntimeError(
-                "CANONICAL mode requires approved canonical bridge; "
-                "use ShadowRuntime.capture_canonical() instead"
+                f"unsupported generic runtime mode: {mode}"
             )
         fn = evaluator or self._evaluator
         if fn is None:
@@ -227,7 +230,10 @@ class ShadowRuntime:
     def capture_canonical(
         self,
         *,
-        input_payload: Mapping[str, Any],
+        evidence: Mapping[str, Any],
+        previous_state: str,
+        previous_position: float,
+        settings: Mapping[str, Any],
         decision_id: str,
         source_snapshot_id: str,
         evidence_pack_id: str,
@@ -236,22 +242,37 @@ class ShadowRuntime:
         config_hash: str,
         code_identity: str,
         as_of_timestamp: str,
+        config: Any = None,
+        rule_version: str | None = None,
+        model_version: str | None = None,
+        run_id: str = "",
         evaluation_timestamp: str | None = None,
-        bridge: Callable[..., Mapping[str, Any]] | None = None,
     ) -> dict[str, Any]:
-        """CANONICAL capture path bound to the approved canonical bridge.
+        """CANONICAL capture through the fixed canonical evaluation bridge.
 
-        An injected bridge is only accepted when it is marked as an approved
-        canonical bridge (monkeypatched wrappers used by dedicated tests);
-        arbitrary evaluators cannot create CANONICAL-labelled evidence.
+        No caller-supplied bridge exists: the recorded inputs are exactly the
+        arguments passed to canonical_evaluate() -> decision.engine.evaluate(),
+        so stored provenance cannot diverge from the actual canonical call.
         """
-        fn = bridge if bridge is not None else CANONICAL_BRIDGE
-        if not callable(fn) or not getattr(
-            fn, "_approved_canonical_bridge", False
-        ):
+        recorded_input = {
+            "evidence": dict(evidence),
+            "previous_state": previous_state,
+            "previous_position": previous_position,
+            "settings": dict(settings),
+            "config": config,
+            "rule_version": rule_version,
+            "model_version": model_version,
+            "run_id": run_id,
+            "decision_id": decision_id,
+        }
+        try:
+            deterministic_dumps(recorded_input)
+        except (TypeError, ValueError) as exc:
             raise ShadowRuntimeError(
-                "CANONICAL capture requires an approved canonical bridge"
-            )
+                "canonical capture inputs are not deterministic JSON "
+                f"serializable: {exc}"
+            ) from exc
+
         identity = self._identity.generate(
             decision_id=decision_id,
             source_snapshot_id=source_snapshot_id,
@@ -264,11 +285,21 @@ class ShadowRuntime:
             runtime_mode="CANONICAL",
             evaluation_timestamp=evaluation_timestamp,
         )
-        decision_output = dict(fn(input_payload))
+        decision_output = canonical_evaluate(
+            evidence=evidence,
+            previous_state=previous_state,
+            previous_position=previous_position,
+            settings=settings,
+            config=config,
+            rule_version=rule_version,
+            model_version=model_version,
+            run_id=run_id,
+            decision_id=decision_id,
+        )
         meta = self._store.write(
             identity=identity,
             decision_output=decision_output,
-            input_payload=dict(input_payload),
+            input_payload=recorded_input,
         )
         return {
             "shadow_run_id": identity["shadow_run_id"],

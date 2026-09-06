@@ -210,26 +210,90 @@ def test_generic_execute_canonical_rejected(store):
             evaluation_timestamp=TS, **_identity_kwargs())
 
 
-def _approved_test_bridge(payload):
-    return {"decision": "CANONICAL", "symbol": payload.get("symbol"),
-            "target": 0.1}
-
-
-_approved_test_bridge._approved_canonical_bridge = True  # type: ignore
-
-
-def test_canonical_capture_requires_approved_bridge(store):
+def test_generic_execute_replay_rejected(store):
     runtime = rt.ShadowRuntime(store, evaluator=_fake_evaluator)
     with pytest.raises(rt.ShadowRuntimeError):
-        runtime.capture_canonical(
-            input_payload={"symbol": "00700"}, bridge=_fake_evaluator,
+        runtime.execute(
+            mode="REPLAY", input_payload={"symbol": "00700"},
             evaluation_timestamp=TS, **_identity_kwargs())
+
+
+def test_capture_canonical_default_bridge_executes(store, monkeypatch):
+    from dataclasses import dataclass
+
+    @dataclass
+    class FakeSnapshot:
+        decision: str
+        target: float
+
+    calls: list[dict] = []
+
+    def fake_engine_evaluate(
+        evidence, previous_state, previous_position, settings,
+        config=None, rule_version=None, model_version=None, run_id="",
+        decision_id=None,
+    ):
+        calls.append({
+            "evidence": dict(evidence),
+            "previous_state": previous_state,
+            "previous_position": previous_position,
+            "settings": dict(settings),
+            "config": config,
+            "rule_version": rule_version,
+            "model_version": model_version,
+            "run_id": run_id,
+            "decision_id": decision_id,
+        })
+        return FakeSnapshot(decision="CANONICAL", target=0.1)
+
+    monkeypatch.setattr(
+        "QCFP_MTF.decision.engine.evaluate", fake_engine_evaluate)
+    runtime = rt.ShadowRuntime(store, evaluator=_fake_evaluator)
     result = runtime.capture_canonical(
-        input_payload={"symbol": "00700"}, bridge=_approved_test_bridge,
-        evaluation_timestamp=TS, **_identity_kwargs())
+        evidence={"close": 100.0},
+        previous_state="HOLD",
+        previous_position=0.0,
+        settings={"quality": "OK"},
+        config=None,
+        rule_version=None,
+        model_version=None,
+        run_id="RUN-1",
+        evaluation_timestamp=TS,
+        **_identity_kwargs(),
+    )
     assert result["runtime_mode"] == "CANONICAL"
+    assert len(calls) == 1
+    decision = store.read_decision(result["shadow_run_id"])
+    assert decision["output"]["decision"] == "CANONICAL"
+    assert decision["input"]["decision_id"] == "D-1"
+    assert decision["input"]["evidence"]["close"] == 100.0
+    assert decision["input"]["run_id"] == "RUN-1"
     record = store.read(result["shadow_run_id"])
     assert record["runtime_mode"] == "CANONICAL"
+
+
+def test_capture_canonical_rejects_bridge_argument(store):
+    runtime = rt.ShadowRuntime(store, evaluator=_fake_evaluator)
+    with pytest.raises(TypeError):
+        runtime.capture_canonical(
+            evidence={"close": 100.0},
+            previous_state="HOLD",
+            previous_position=0.0,
+            settings={"quality": "OK"},
+            bridge=_fake_evaluator,
+            evaluation_timestamp=TS,
+            **_identity_kwargs(),
+        )
+
+
+def test_no_self_approval_marker_in_runtime_surface():
+    marker = "_approved_" + "canonical_bridge"
+    source = Path(
+        PROJECT_ROOT / "Core/QCFP_MTF/phase5/shadow_runtime.py"
+    ).read_text(encoding="utf-8")
+    assert marker not in source
+    test_source = Path(__file__).read_text(encoding="utf-8")
+    assert marker not in test_source
 
 
 def test_replay_matches_and_creates_replay_run(store):
