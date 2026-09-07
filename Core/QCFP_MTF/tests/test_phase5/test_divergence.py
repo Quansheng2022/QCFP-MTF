@@ -146,6 +146,25 @@ def test_missing_required_field_is_dx(field):
     assert result["severity"] == "CRITICAL"
 
 
+def test_missing_execution_cap_does_not_become_d0():
+    canonical = _canonical()
+    shadow = _shadow()
+    del canonical["execution_cap"]
+    del shadow["execution_cap"]
+    result = dv.classify_divergence(canonical, shadow)
+    assert result["code"] == "DX"
+    assert result["severity"] == "CRITICAL"
+
+
+def test_missing_execution_cap_single_side_is_dx():
+    canonical = _canonical()
+    shadow = _shadow()
+    del shadow["execution_cap"]
+    result = dv.classify_divergence(canonical, shadow)
+    assert result["code"] == "DX"
+    assert result["severity"] == "CRITICAL"
+
+
 def test_missing_evidence_does_not_become_d9():
     canonical = {"decision_id": "D-1", "model_output": "alpha"}
     shadow = {"decision_id": "D-1", "model_output": "beta"}
@@ -219,6 +238,24 @@ def test_review_lifecycle_valid_path():
 def test_review_lifecycle_illegal_transitions(state, target):
     with pytest.raises(dv.DivergenceError):
         dv.advance_review_state(_record(state), target)
+
+
+def test_tampered_dx_record_cannot_close():
+    record = {
+        "review_state": "REVIEWED",
+        "code": "DX",
+        "reason_code": "D1_DATA_DELTA",
+        "severity": "MEDIUM",
+    }
+    with pytest.raises(dv.DivergenceError):
+        dv.advance_review_state(record, "CLOSED")
+
+
+def test_tampered_severity_record_fails_closed():
+    record = _record(state="REVIEWED", severity="LOW",
+                     reason_code="D1_DATA_DELTA", code="D1")
+    with pytest.raises(dv.DivergenceError):
+        dv.advance_review_state(record, "CLOSED")
 
 
 def test_critical_record_cannot_be_downgraded_by_caller():
@@ -295,6 +332,30 @@ def test_replay_divergence_classification_mismatch_escalates(store):
     canonical_allow = _canonical()
     outcome = dv.replay_divergence(
         canonical_allow, original_result, store,
+        original["shadow_run_id"], _full_evaluator,
+        expected=_identity_kwargs())
+    assert outcome["replay_status"] == "MISMATCH"
+    assert outcome["severity"] == "CRITICAL"
+    assert outcome["review_state"] == "ESCALATED"
+    assert outcome["reason_code"] == \
+        "REPLAY_DIVERGENCE_CLASSIFICATION_MISMATCH"
+
+
+def test_replay_same_code_different_causal_basis_mismatch(store):
+    runtime = ShadowRuntime(store, evaluator=_full_evaluator)
+    original = runtime.execute(
+        mode="SHADOW", input_payload={"symbol": "00700"},
+        evaluation_timestamp=TS, **_identity_kwargs())
+    shadow_view = _original_shadow_view(store, original["shadow_run_id"])
+    # Original: D1 caused by source_snapshot_id difference.
+    canonical_src = _canonical(source_snapshot_id="SNAP-X")
+    original_result = dv.classify_divergence(canonical_src, shadow_view)
+    assert original_result["code"] == "D1"
+    assert "source_snapshot_id" in original_result["changed_fields"]
+    # Replay: D1 caused by evidence_pack_id difference (same D-code).
+    canonical_pack = _canonical(evidence_pack_id="EP-X")
+    outcome = dv.replay_divergence(
+        canonical_pack, original_result, store,
         original["shadow_run_id"], _full_evaluator,
         expected=_identity_kwargs())
     assert outcome["replay_status"] == "MISMATCH"

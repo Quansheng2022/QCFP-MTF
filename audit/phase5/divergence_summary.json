@@ -5,8 +5,9 @@
   "work_package": "WP5.2",
   "start_base": "aaa61270380a8abee91daa20d7cf459a7400dc8a",
   "branch": "codex/phase5-shadow-operation",
-  "status": "READY_FOR_P5_E_R1_STRICT_REVIEW",
+  "status": "READY_FOR_P5_E_R2_STRICT_REVIEW",
   "taxonomy_version": "D0-D9-DX-1",
+  "p5_e_r2_candidate_base": "592bca83d229b83bde3d1df0665f9888bf6f2b53",
   "p5_e_r1_candidate_base": "675b3fa0fb08d16463b76b0f5c55be82d8b97a76",
   "p5_e_r1": {
     "status": "PASS",
@@ -25,6 +26,28 @@
     "lifecycle_severity_source": "DIVERGENCE_RECORD",
     "caller_supplied_severity_allowed": false,
     "empty_evidence_refs_allowed": false
+  },
+  "p5_e_r2": {
+    "status": "PASS",
+    "repairs": {
+      "E-SEM-01A": "CLOSED",
+      "E-SEM-02A": "CLOSED",
+      "E-SEM-03A": "CLOSED"
+    },
+    "execution_cap_required_and_validated": true,
+    "replay_classification_fingerprint": {
+      "code": true,
+      "reason_code": true,
+      "diverged": true,
+      "severity": true,
+      "changed_fields": true
+    },
+    "causal_basis_replay_required": true,
+    "lifecycle_record_validation": {
+      "code_reason_binding": true,
+      "code_severity_binding": true,
+      "inconsistent_record": "FAIL_CLOSED"
+    }
   },
   "taxonomy_coverage": {
     "D0": "PASS",
@@ -69,6 +92,7 @@
     "target_position",
     "model_output"
   ],
+  "execution_cap_validated": true,
   "review_lifecycle": [
     "DETECTED",
     "CLASSIFIED",
@@ -92,13 +116,13 @@
   "implementation_files": [
     {
       "path": "Core/QCFP_MTF/phase5/divergence.py",
-      "sha256": "41d4d4434aa74be6281164f4f99a54b628c7b5f0e8b555c0ac62f269e2f3971c"
+      "sha256": "c7db2588bc4d373879c522ba43e7f327ce5b9dd85b901b24ad33bd83cc1f5576"
     }
   ],
   "test_files": [
     {
       "path": "Core/QCFP_MTF/tests/test_phase5/test_divergence.py",
-      "sha256": "2b3e25727998c7dec9223d118adf99d158b499c47579a957cf558a93642af5ac"
+      "sha256": "57caacc9014a8dffb13a478482c5f94b17cb88a32f14eaf3f37b7206913692a6"
     }
   ],
   "replay": {
@@ -113,12 +137,12 @@
   "tests": {
     "divergence": {
       "command": "pytest Core/QCFP_MTF/tests/test_phase5/test_divergence.py -q",
-      "passed": 34,
+      "passed": 39,
       "return_code": 0
     },
     "phase5_focused": {
       "command": "pytest Core/QCFP_MTF/tests/test_phase5 -q",
-      "passed": 173,
+      "passed": 178,
       "return_code": 0
     }
   },
@@ -131,7 +155,7 @@
     "revision": 7,
     "changed": false
   },
-  "next_step": "P5-E-R1 exact 3-file commit + strict full review; semantic review before push/closure",
-  "generated_at_utc": "2026-09-07T03:37:22Z",
-  "generated_by": "AI_AGENT P5-E / WP5.2 (updated P5-E-R1)"
+  "next_step": "P5-E-R2 exact 3-file commit + strict full review; semantic review before push/closure",
+  "generated_at_utc": "2026-09-07T04:21:20Z",
+  "generated_by": "AI_AGENT P5-E / WP5.2 (updated P5-E-R2)"
 }

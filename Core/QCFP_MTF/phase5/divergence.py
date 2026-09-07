@@ -70,6 +70,15 @@ REQUIRED_VERSION_BASIS = (
     "model_version",
 )
 
+REQUIRED_COMPARISON_FIELDS = (
+    "permission",
+    "fsm_state",
+    "execution_cap",
+    "decision_path",
+    "target_position",
+    "model_output",
+)
+
 
 def validate_comparison_evidence(
     canonical_view: Mapping[str, Any],
@@ -84,8 +93,7 @@ def validate_comparison_evidence(
                 raise DivergenceError(
                     f"{side} missing required comparison evidence: {field}"
                 )
-        for field in ("permission", "fsm_state", "decision_path",
-                      "model_output", "target_position"):
+        for field in REQUIRED_COMPARISON_FIELDS:
             value = view.get(field)
             if value is None or value == "" or value == []:
                 raise DivergenceError(
@@ -290,6 +298,31 @@ def divergence_severity(result: Mapping[str, Any]) -> dict[str, str]:
     }
 
 
+def validate_divergence_record(record: Mapping[str, Any]) -> None:
+    """Fail closed on semantically inconsistent taxonomy records."""
+    code = record.get("code")
+    reason_code = record.get("reason_code")
+    severity = record.get("severity")
+    review_state = record.get("review_state")
+    if code not in DIVERGENCE_CODES:
+        raise DivergenceError(f"invalid divergence code: {code!r}")
+    if reason_code != reason_code_for(code):
+        raise DivergenceError(
+            f"reason_code mismatch: code={code} "
+            f"expected={reason_code_for(code)} got={reason_code!r}"
+        )
+    expected_severity = _severity_for(code)
+    if severity != expected_severity:
+        raise DivergenceError(
+            f"severity mismatch: code={code} "
+            f"expected={expected_severity} got={severity!r}"
+        )
+    if review_state not in REVIEW_STATES:
+        raise DivergenceError(
+            f"invalid review_state: {review_state!r}"
+        )
+
+
 def build_divergence_contract(
     canonical: Mapping[str, Any],
     shadow: Mapping[str, Any],
@@ -330,6 +363,7 @@ def advance_review_state(
     divergence_record: Mapping[str, Any],
     target: str,
 ) -> str:
+    validate_divergence_record(divergence_record)
     current = divergence_record.get("review_state")
     severity = divergence_record.get("severity")
     reason_code = divergence_record.get("reason_code")
@@ -395,18 +429,8 @@ def replay_divergence(
     }
     replayed_shadow.update(dict(decision.get("output") or {}))
     recomputed = classify_divergence(canonical, replayed_shadow)
-    original_keys = (
-        str(original_divergence.get("code")),
-        str(original_divergence.get("reason_code")),
-        bool(original_divergence.get("diverged")),
-        str(original_divergence.get("severity")),
-    )
-    replay_keys = (
-        recomputed["code"],
-        recomputed["reason_code"],
-        recomputed["diverged"],
-        recomputed["severity"],
-    )
+    original_keys = _classification_fingerprint(original_divergence)
+    replay_keys = _classification_fingerprint(recomputed)
     if original_keys != replay_keys:
         return {
             "replay_status": "MISMATCH",
@@ -442,3 +466,16 @@ def divergence_blocks(result: Mapping[str, Any]) -> dict[str, Any]:
         ),
         "is_authority": False,
     }
+
+
+def _classification_fingerprint(
+    result: Mapping[str, Any],
+) -> tuple[Any, ...]:
+    """Deterministic replay fingerprint incl. causal changed_fields."""
+    return (
+        str(result.get("code")),
+        str(result.get("reason_code")),
+        bool(result.get("diverged")),
+        str(result.get("severity")),
+        tuple(sorted(str(x) for x in result.get("changed_fields", ()))),
+    )
