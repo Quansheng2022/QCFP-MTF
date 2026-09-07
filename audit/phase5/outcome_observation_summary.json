@@ -6,6 +6,7 @@
   "start_base": "fbacdab3972c791579ea185b5380e9808f78de0c",
   "branch": "codex/phase5-shadow-operation",
   "status": "READY_FOR_P5_F_R1_STRICT_REVIEW",
+  "human_decision_required": false,
   "definition": "Outcome Observer observes what happened after a Decision; it never changes what the Decision was.",
   "p5b_contract": {
     "path": "Core/QCFP_MTF/phase5/contracts.py",
@@ -65,7 +66,7 @@
   ],
   "evidence_files": [
     "audit/phase5/outcome_sample_evidence.json",
-    "audit/phase5/outcome_summary.json"
+    "audit/phase5/outcome_observation_summary.json"
   ],
   "lifecycle_boundary": {
     "observer_statuses": [
@@ -111,7 +112,7 @@
     "state": "PHASE5_GOVERNANCE_FROZEN",
     "changed": false
   },
-  "next_step": "P5-F-R1: strict independent review + evidence closure; Human Gate before execution pointer advances to P5-G / S/N 32",
-  "generated_at_utc": "2026-09-07T05:14:03Z",
-  "generated_by": "AI_AGENT P5-F / WP5.3"
+  "next_step": "P5-F-R1 strict review -> independent semantic review -> remote-backed closure -> P5-G / S/N 32 permitted",
+  "generated_at_utc": "2026-09-07T06:05:00Z",
+  "generated_by": "AI_AGENT P5-F-R1 / WP5.3 (evidence contract repair)"
 }
