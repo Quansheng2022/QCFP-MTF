@@ -1,0 +1,117 @@
+{
+  "schema": "PHASE5-OUTCOME-SUMMARY-1",
+  "phase": 5,
+  "task": "P5-F",
+  "work_package": "WP5.3",
+  "start_base": "fbacdab3972c791579ea185b5380e9808f78de0c",
+  "branch": "codex/phase5-shadow-operation",
+  "status": "READY_FOR_P5_F_R1_STRICT_REVIEW",
+  "definition": "Outcome Observer observes what happened after a Decision; it never changes what the Decision was.",
+  "p5b_contract": {
+    "path": "Core/QCFP_MTF/phase5/contracts.py",
+    "sha256": "76bd8083ba0e6f798e5f5401aa8e3bdb483bca336f00359c722ccfaf888871a5",
+    "unchanged": true,
+    "outcome_contract_version": 1
+  },
+  "hard_invariants": {
+    "F-INV-01_Decision_Immutability": "PASS",
+    "F-INV-02_Future_Only": "PASS",
+    "F-INV-03_No_Future_Leakage": "PASS",
+    "F-INV-04_Fixed_Horizon": "PASS",
+    "F-INV-05_Provenance_Required": "PASS",
+    "F-INV-06_Append_only_Observation": "PASS",
+    "F-INV-07_No_Authority_Feedback": "PASS",
+    "F-INV-08_Deterministic_Replay": "PASS"
+  },
+  "blocking_tests": {
+    "BLOCKER-F01_future_leakage": "PASS",
+    "BLOCKER-F02_historical_decision_mutation": "PASS",
+    "BLOCKER-F03_horizon_drift_or_substitution": "PASS",
+    "BLOCKER-F04_non_replayable_outcome": "PASS"
+  },
+  "gates": {
+    "GATE_F-1_Contract_Binding": "PASS",
+    "GATE_F-2_Horizon_Semantics": "PASS",
+    "GATE_F-3_Future_only": "PASS",
+    "GATE_F-4_No_Future_Leakage": "PASS",
+    "GATE_F-5_MAE_MFE_Correctness": "PASS",
+    "GATE_F-6_Decision_Immutability": "PASS",
+    "GATE_F-7_Canonical_Isolation": "PASS",
+    "GATE_F-8_Deterministic_Replay": "PASS",
+    "GATE_F-9_Evidence_Completeness": "PASS",
+    "GATE_F-10_Full_Regression": "PASS",
+    "GATE_F-11_Strict_Reviewer": "OPEN_REQUIRES_INDEPENDENT_REVIEW",
+    "GATE_F-12_Remote_backed_Identity": "OPEN_REQUIRES_POST_REVIEW_PUSH"
+  },
+  "implementation_files": [
+    {
+      "path": "Core/QCFP_MTF/phase5/outcome_observer.py",
+      "sha256": "0c3a2d35b0f106d3bfae5085cfa06cd8615dfae6c9184a79a61655d7f45e2e09"
+    },
+    {
+      "path": "Core/QCFP_MTF/phase5/outcome_store.py",
+      "sha256": "f01bade1a9cc54c527a7dae5a15c5ddba5600a7ca1d753263df2727d61ba29b6"
+    }
+  ],
+  "test_files": [
+    {
+      "path": "Core/QCFP_MTF/tests/test_phase5/test_outcome_observer.py",
+      "sha256": "b6c0c95cebd3d6f1293f700e8ac7ba9f09598bce2a7ca648bc62e6b595f7c912"
+    },
+    {
+      "path": "Core/QCFP_MTF/tests/test_phase5/test_outcome_store.py",
+      "sha256": "b55f4f188090bff0f3d59bf9209197dbb082b515d87244c4a60a206be4d0c3ad"
+    }
+  ],
+  "evidence_files": [
+    "audit/phase5/outcome_sample_evidence.json",
+    "audit/phase5/outcome_summary.json"
+  ],
+  "lifecycle_boundary": {
+    "observer_statuses": [
+      "NOT_DUE",
+      "ELIGIBLE",
+      "OBSERVED",
+      "DATA_UNAVAILABLE",
+      "OBSERVATION_ERROR"
+    ],
+    "aging_vocabulary": "NOT_IMPLEMENTED (P5-G)",
+    "incident_vocabulary": "NOT_IMPLEMENTED (P5-H)",
+    "promotion_authority": "NONE"
+  },
+  "tests": {
+    "dedicated": {
+      "command": "pytest Core/QCFP_MTF/tests/test_phase5/test_outcome_observer.py Core/QCFP_MTF/tests/test_phase5/test_outcome_store.py -q",
+      "passed": 49,
+      "return_code": 0
+    },
+    "phase5_focused": {
+      "command": "pytest Core/QCFP_MTF/tests/test_phase5 -q",
+      "passed": 227,
+      "return_code": 0
+    },
+    "full_regression": {
+      "command": "pytest Core/QCFP_MTF/tests -q --deselect Core/QCFP_MTF/tests/test_governance/test_phase4_evidence_integrity.py::test_real_runner_builder_judge_pipeline --deselect Core/QCFP_MTF/tests/test_governance/test_phase1.py::test_phase1_acceptance_pending_baseline",
+      "passed": 2255,
+      "governed_deselected": 2,
+      "return_code": 0
+    },
+    "junit_evidence": {
+      "path": "audit/phase5/p5f_outcome_junit.xml",
+      "sha256": "fbff51875d3c0f081d41dce5b04f463eabf30f069fe0bf5f97f7d151f064cc98"
+    }
+  },
+  "canonical_mutation": "ZERO",
+  "production_action": "ZERO",
+  "p5_f_closure": "OPEN_REQUIRES_STRICT_REVIEW",
+  "p5_g_started": false,
+  "phase5_pass": false,
+  "phase6": false,
+  "governance": {
+    "state": "PHASE5_GOVERNANCE_FROZEN",
+    "changed": false
+  },
+  "next_step": "P5-F-R1: strict independent review + evidence closure; Human Gate before execution pointer advances to P5-G / S/N 32",
+  "generated_at_utc": "2026-09-07T05:14:03Z",
+  "generated_by": "AI_AGENT P5-F / WP5.3"
+}

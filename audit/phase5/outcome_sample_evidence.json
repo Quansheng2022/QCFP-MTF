@@ -1,0 +1,137 @@
+{
+  "schema": "PHASE5-OUTCOME-SAMPLE-EVIDENCE-1",
+  "phase": 5,
+  "task": "P5-F / WP5.3",
+  "sample": {
+    "decision": {
+      "decision_id": "D-P5F-SAMPLE-2026-08-24-00700",
+      "instrument_id": "00700",
+      "as_of_date": "2026-08-24",
+      "decision_semantic": "ENTRY"
+    },
+    "decision_hash": "79fe93061df04985fbe34bb54535011e835ee56f2de1603513aff45e2fbfb87a",
+    "market_provenance": {
+      "instrument_id": "00700",
+      "source_identity": "HKEX-DAILY-SYNTH-1",
+      "snapshot_identity": "SNAP-P5F-SAMPLE-2026-08-24-1",
+      "price_basis": "ADJUSTED",
+      "adjustment_policy": "ADJ-POLICY-1",
+      "source_version": "1.0"
+    },
+    "sessions_from": "2026-08-24",
+    "sessions_to": "2026-09-25",
+    "n_sessions": 25,
+    "interpretation_policy_version": "QCFP-CANONICAL-ACTION-1",
+    "horizon_policy_version": "HORIZON-T1-T3-T5-T10-T20-1",
+    "metric_version": "RETURN-MAE-MFE-1"
+  },
+  "time_progression_matrix": [
+    {
+      "clock": "2026-08-24T09:00:00Z",
+      "T+1": "NOT_DUE",
+      "T+3": "NOT_DUE",
+      "T+5": "NOT_DUE",
+      "T+10": "NOT_DUE",
+      "T+20": "NOT_DUE"
+    },
+    {
+      "clock": "2026-08-25T09:00:00Z",
+      "T+1": "OBSERVED",
+      "T+3": "NOT_DUE",
+      "T+5": "NOT_DUE",
+      "T+10": "NOT_DUE",
+      "T+20": "NOT_DUE"
+    },
+    {
+      "clock": "2026-08-27T09:00:00Z",
+      "T+1": "OBSERVED",
+      "T+3": "OBSERVED",
+      "T+5": "NOT_DUE",
+      "T+10": "NOT_DUE",
+      "T+20": "NOT_DUE"
+    },
+    {
+      "clock": "2026-08-31T09:00:00Z",
+      "T+1": "OBSERVED",
+      "T+3": "OBSERVED",
+      "T+5": "OBSERVED",
+      "T+10": "NOT_DUE",
+      "T+20": "NOT_DUE"
+    },
+    {
+      "clock": "2026-09-07T09:00:00Z",
+      "T+1": "OBSERVED",
+      "T+3": "OBSERVED",
+      "T+5": "OBSERVED",
+      "T+10": "OBSERVED",
+      "T+20": "NOT_DUE"
+    },
+    {
+      "clock": "2026-09-21T09:00:00Z",
+      "T+1": "OBSERVED",
+      "T+3": "OBSERVED",
+      "T+5": "OBSERVED",
+      "T+10": "OBSERVED",
+      "T+20": "OBSERVED"
+    }
+  ],
+  "terminal_observations_at_t20": [
+    {
+      "horizon": 1,
+      "outcome_status": "OBSERVED",
+      "reference_price": 100.0,
+      "horizon_price": 101.8347121818,
+      "raw_return": 0.0183471218,
+      "directional_mfe": 0.028530593,
+      "directional_mae": 0.0,
+      "evidence_hash": "c61cd563096fcccbefb7b26dced107669468933b79e485e28dc585cef482c2ea",
+      "observation_id": "f847486d3f87958c37034d64eca4263a0b09855dbb6147b0d56c8da885bd10e1"
+    },
+    {
+      "horizon": 3,
+      "outcome_status": "OBSERVED",
+      "reference_price": 100.0,
+      "horizon_price": 102.5509263611,
+      "raw_return": 0.0255092636,
+      "directional_mfe": 0.0382713868,
+      "directional_mae": 0.0,
+      "evidence_hash": "1dcf948d0b86f13bc9fe46b274a8458f671e8a36198751db63d4f1ed06c4ab70",
+      "observation_id": "4182f9c1c675d6a0aa5cda6a7ff1c271a9f3f1522c929dbfde05251e613b8a85"
+    },
+    {
+      "horizon": 5,
+      "outcome_status": "OBSERVED",
+      "reference_price": 100.0,
+      "horizon_price": 100.4863950094,
+      "raw_return": 0.0048639501,
+      "directional_mfe": 0.0382713868,
+      "directional_mae": 0.0051846894,
+      "evidence_hash": "c0eafbf68ba26a361f6a7ec5859768df8f650d1a806abbda0b91dfaab765bc90",
+      "observation_id": "683ba2dd24035177a282d8cc076d9552a2d343851347ee4681cc61f3965c5f57"
+    },
+    {
+      "horizon": 10,
+      "outcome_status": "OBSERVED",
+      "reference_price": 100.0,
+      "horizon_price": 105.9787164932,
+      "raw_return": 0.0597871649,
+      "directional_mfe": 0.0703850366,
+      "directional_mae": 0.0059640593,
+      "evidence_hash": "2bde1bec33250c90acde51df7199acde0f332c89191535dec3dd5601bc13a21e",
+      "observation_id": "ecee0cf9bbcbfbfc0e2a5ad42322304b72d90f73c8cadc689118dbed6e082991"
+    },
+    {
+      "horizon": 20,
+      "outcome_status": "OBSERVED",
+      "reference_price": 100.0,
+      "horizon_price": 107.4241933667,
+      "raw_return": 0.0742419337,
+      "directional_mfe": 0.1022262871,
+      "directional_mae": 0.0059640593,
+      "evidence_hash": "6773b077553c3a340237993e1b6f2ce006589640081795c3b831a399db551a8b",
+      "observation_id": "d4d8740b8937b6643f6f8985aeff83656cc43c5f1b11296daa7e3d7f10cdbeae"
+    }
+  ],
+  "generated_at_utc": "2026-09-07T05:14:03Z",
+  "generated_by": "AI_AGENT P5-F / WP5.3 (evidence generator)"
+}
