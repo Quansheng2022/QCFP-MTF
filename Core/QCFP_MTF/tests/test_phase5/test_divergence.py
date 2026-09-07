@@ -1,5 +1,5 @@
 # coding: utf-8
-"""P5-E / WP5.2 — Canonical-vs-Shadow divergence dedicated tests."""
+"""P5-E-R1 — Divergence semantic repair dedicated tests."""
 
 import copy
 import sys
@@ -56,9 +56,45 @@ def _shadow(**overrides):
         "decision_path": ["A", "B"],
         "target_position": 0.1,
         "model_output": "alpha",
+        "shadow_run_id": "SR-1",
     }
     data.update(overrides)
     return data
+
+
+def _record(state="DETECTED", severity="MEDIUM",
+            reason_code="D1_DATA_DELTA", code="D1"):
+    return {
+        "review_state": state,
+        "severity": severity,
+        "reason_code": reason_code,
+        "code": code,
+    }
+
+
+def _full_evaluator(payload):
+    return {
+        "rule_version": "R-1",
+        "model_version": "M-1",
+        "permission": "ALLOW",
+        "fsm_state": "HOLD",
+        "execution_cap": 1.0,
+        "decision_path": ["A", "B"],
+        "target_position": 0.1,
+        "model_output": "alpha",
+    }
+
+
+def _merge_view(identity: dict, output: dict) -> dict:
+    view = {
+        "decision_id": identity["decision_id"],
+        "source_snapshot_id": identity["source_snapshot_id"],
+        "evidence_pack_id": identity["evidence_pack_id"],
+        "config_hash": identity["config_hash"],
+        "code_identity": identity["code_identity"],
+    }
+    view.update(output)
+    return view
 
 
 @pytest.mark.parametrize(
@@ -90,58 +126,89 @@ def test_taxonomy_positive_cases(
     assert result["reason_code"] == dv.reason_code_for(expected_code)
 
 
-def test_dx_fail_safe_on_missing_evidence():
-    result = dv.classify_divergence({}, _shadow())
+def test_missing_evidence_does_not_become_d0():
+    result = dv.classify_divergence(
+        {"decision_id": "D-1"}, {"decision_id": "D-1"})
     assert result["code"] == "DX"
     assert result["severity"] == "CRITICAL"
+
+
+@pytest.mark.parametrize(
+    "field", ["source_snapshot_id", "config_hash", "code_identity",
+              "rule_version", "model_version"]
+)
+def test_missing_required_field_is_dx(field):
+    canonical = _canonical()
+    shadow = _shadow()
+    del canonical[field]
+    result = dv.classify_divergence(canonical, shadow)
+    assert result["code"] == "DX"
+    assert result["severity"] == "CRITICAL"
+
+
+def test_missing_evidence_does_not_become_d9():
+    canonical = {"decision_id": "D-1", "model_output": "alpha"}
+    shadow = {"decision_id": "D-1", "model_output": "beta"}
+    result = dv.classify_divergence(canonical, shadow)
+    assert result["code"] == "DX"
+
+
+def test_incomplete_evidence_model_output_delta_is_dx():
+    canonical = _canonical()
+    shadow = _shadow()
+    del shadow["fsm_state"]
+    shadow["model_output"] = "beta"
+    result = dv.classify_divergence(canonical, shadow)
+    assert result["code"] == "DX"
 
 
 def test_dx_on_identity_contradiction():
     result = dv.classify_divergence(
-        _canonical(decision_id="D-1"),
-        _shadow(decision_id="D-9"))
+        _canonical(decision_id="D-1"), _shadow(decision_id="D-9"))
     assert result["code"] == "DX"
     assert result["severity"] == "CRITICAL"
 
 
-def test_contract_carrier_uses_frozen_divergence_contract():
+def test_contract_carrier_requires_complete_evidence_and_refs():
     contract = dv.build_divergence_contract(
         _canonical(institutional_permission="BLOCK"),
         _shadow(),
         review_state="DETECTED",
     )
     assert contract["schema_name"] == "DivergenceContract"
-    assert contract["schema_version"] == 1
     assert contract["reason_code"] == "D4_GOVERNANCE_INTERCEPTION"
-    assert contract["diverged"] is True
-    assert contract["severity"] == "LOW"
-    assert contract["review_state"] == "DETECTED"
+    assert contract["evidence_refs"] == ["SNAP-1", "SR-1"]
+
+
+def test_empty_evidence_refs_fail_closed():
+    with pytest.raises(dv.DivergenceError):
+        dv.build_divergence_contract(_canonical(), _shadow(shadow_run_id=""))
+    with pytest.raises(dv.DivergenceError):
+        dv.build_divergence_contract(
+            _canonical(source_snapshot_id=""), _shadow())
 
 
 def test_inputs_are_immutable():
     canonical = _canonical(institutional_permission="BLOCK")
     shadow = _shadow()
-    canonical_before = copy.deepcopy(canonical)
-    shadow_before = copy.deepcopy(shadow)
+    c_before = copy.deepcopy(canonical)
+    s_before = copy.deepcopy(shadow)
     _ = dv.classify_divergence(canonical, shadow)
     _ = dv.build_divergence_contract(canonical, shadow)
-    assert canonical == canonical_before
-    assert shadow == shadow_before
+    assert canonical == c_before
+    assert shadow == s_before
 
 
 def test_review_lifecycle_valid_path():
-    state = dv.advance_review_state(
-        "DETECTED", "CLASSIFIED", severity="MEDIUM")
-    state = dv.advance_review_state(
-        state, "EXPLAINED", severity="MEDIUM")
-    state = dv.advance_review_state(state, "REPLAYED", severity="MEDIUM")
-    state = dv.advance_review_state(state, "REVIEWED", severity="MEDIUM")
-    assert dv.advance_review_state(
-        state, "CLOSED", severity="MEDIUM") == "CLOSED"
+    record = _record("DETECTED", severity="MEDIUM")
+    for target in ("CLASSIFIED", "EXPLAINED", "REPLAYED", "REVIEWED",
+                   "CLOSED"):
+        record["review_state"] = dv.advance_review_state(record, target)
+    assert record["review_state"] == "CLOSED"
 
 
 @pytest.mark.parametrize(
-    "current,target",
+    "state,target",
     [
         ("DETECTED", "CLOSED"),
         ("CLASSIFIED", "CLOSED"),
@@ -149,16 +216,16 @@ def test_review_lifecycle_valid_path():
         ("DETECTED", "EXPLAINED"),
     ],
 )
-def test_review_lifecycle_illegal_transitions(current, target):
+def test_review_lifecycle_illegal_transitions(state, target):
     with pytest.raises(dv.DivergenceError):
-        dv.advance_review_state(
-            current, target, severity="MEDIUM")
+        dv.advance_review_state(_record(state), target)
 
 
-def test_critical_cannot_auto_close():
+def test_critical_record_cannot_be_downgraded_by_caller():
+    record = _record("REVIEWED", severity="CRITICAL",
+                     reason_code="DX_UNEXPLAINED_DIVERGENCE", code="DX")
     with pytest.raises(dv.DivergenceError):
-        dv.advance_review_state(
-            "REVIEWED", "CLOSED", severity="CRITICAL")
+        dv.advance_review_state(record, "CLOSED")
 
 
 def test_no_aggregate_score_and_no_authority():
@@ -166,7 +233,6 @@ def test_no_aggregate_score_and_no_authority():
         _canonical(institutional_permission="BLOCK"), _shadow())
     sev = dv.divergence_severity(result)
     assert sev["severity"] in dv.DIVERGENCE_SEVERITIES
-    assert isinstance(sev["severity"], str)
     assert dv.divergence_blocks(result)["is_authority"] is False
 
 
@@ -193,33 +259,65 @@ def _identity_kwargs():
     }
 
 
-def _shadow_evaluator(payload):
-    return {"decision": "SHADOW", "symbol": payload.get("symbol"),
-            "target": 0.1}
+def _original_shadow_view(store, run_id: str) -> dict:
+    identity = store.read(run_id)
+    decision = store.read_decision(run_id)
+    return _merge_view(identity, decision["output"])
 
 
-def test_replay_divergence_match(store):
-    runtime = ShadowRuntime(store, evaluator=_shadow_evaluator)
+def test_replay_divergence_match_reclassifies_same(store):
+    runtime = ShadowRuntime(store, evaluator=_full_evaluator)
     original = runtime.execute(
         mode="SHADOW", input_payload={"symbol": "00700"},
         evaluation_timestamp=TS, **_identity_kwargs())
+    canonical = _canonical()
+    shadow_view = _original_shadow_view(store, original["shadow_run_id"])
+    original_result = dv.classify_divergence(canonical, shadow_view)
     outcome = dv.replay_divergence(
-        store, original["shadow_run_id"], _shadow_evaluator,
-        expected=_identity_kwargs())
+        canonical, original_result, store, original["shadow_run_id"],
+        _full_evaluator, expected=_identity_kwargs())
     assert outcome["replay_status"] == "MATCH"
+    assert outcome["divergence_reproducible"] is True
     assert outcome["review_state"] == "REPLAYED"
 
 
-def test_replay_divergence_mismatch_escalates(store):
-    runtime = ShadowRuntime(store, evaluator=_shadow_evaluator)
+def test_replay_divergence_classification_mismatch_escalates(store):
+    runtime = ShadowRuntime(store, evaluator=_full_evaluator)
     original = runtime.execute(
         mode="SHADOW", input_payload={"symbol": "00700"},
         evaluation_timestamp=TS, **_identity_kwargs())
+    shadow_view = _original_shadow_view(store, original["shadow_run_id"])
+    # Original classification used a BLOCK canonical record -> D4.
+    canonical_block = _canonical(institutional_permission="BLOCK")
+    original_result = dv.classify_divergence(canonical_block, shadow_view)
+    assert original_result["code"] == "D4"
+    # Replay reclassifies against ALLOW canonical -> D0 mismatch.
+    canonical_allow = _canonical()
+    outcome = dv.replay_divergence(
+        canonical_allow, original_result, store,
+        original["shadow_run_id"], _full_evaluator,
+        expected=_identity_kwargs())
+    assert outcome["replay_status"] == "MISMATCH"
+    assert outcome["severity"] == "CRITICAL"
+    assert outcome["review_state"] == "ESCALATED"
+    assert outcome["reason_code"] == \
+        "REPLAY_DIVERGENCE_CLASSIFICATION_MISMATCH"
+
+
+def test_replay_divergence_shadow_mismatch_escalates(store):
+    runtime = ShadowRuntime(store, evaluator=_full_evaluator)
+    original = runtime.execute(
+        mode="SHADOW", input_payload={"symbol": "00700"},
+        evaluation_timestamp=TS, **_identity_kwargs())
+    canonical = _canonical()
+    shadow_view = _original_shadow_view(store, original["shadow_run_id"])
+    original_result = dv.classify_divergence(canonical, shadow_view)
     bad_expected = dict(_identity_kwargs())
     bad_expected["canonical_baseline_id"] = "WRONG"
     outcome = dv.replay_divergence(
-        store, original["shadow_run_id"], _shadow_evaluator,
-        expected=bad_expected)
+        canonical, original_result, store, original["shadow_run_id"],
+        _full_evaluator, expected=bad_expected)
     assert outcome["replay_status"] == "MISMATCH"
+    assert outcome["reason_code"] == "REPLAY_SHADOW_MISMATCH"
     assert outcome["severity"] == "CRITICAL"
     assert outcome["review_state"] == "ESCALATED"

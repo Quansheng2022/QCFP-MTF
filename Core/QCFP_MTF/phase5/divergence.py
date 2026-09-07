@@ -57,6 +57,41 @@ REVIEW_TRANSITIONS = {
     "ESCALATED": (),
 }
 
+REQUIRED_COMPARISON_IDENTITY = (
+    "decision_id",
+    "source_snapshot_id",
+    "evidence_pack_id",
+    "config_hash",
+    "code_identity",
+)
+
+REQUIRED_VERSION_BASIS = (
+    "rule_version",
+    "model_version",
+)
+
+
+def validate_comparison_evidence(
+    canonical_view: Mapping[str, Any],
+    shadow_view: Mapping[str, Any],
+) -> None:
+    """Any missing/empty required governed evidence fails closed (DX)."""
+    for side, view in (("canonical", canonical_view),
+                       ("shadow", shadow_view)):
+        for field in REQUIRED_COMPARISON_IDENTITY + REQUIRED_VERSION_BASIS:
+            value = view.get(field)
+            if value is None or value == "":
+                raise DivergenceError(
+                    f"{side} missing required comparison evidence: {field}"
+                )
+        for field in ("permission", "fsm_state", "decision_path",
+                      "model_output", "target_position"):
+            value = view.get(field)
+            if value is None or value == "" or value == []:
+                raise DivergenceError(
+                    f"{side} missing required comparison field: {field}"
+                )
+
 
 def reason_code_for(code: str) -> str:
     if code not in REASON_CODE_MAP:
@@ -110,6 +145,7 @@ def classify_divergence(
     try:
         c = normalize_decision(canonical)
         s = normalize_decision(shadow)
+        validate_comparison_evidence(c, s)
     except DivergenceError:
         return {
             "diverged": True,
@@ -186,7 +222,22 @@ def classify_divergence(
                 "severity_rationale": _severity_rationale(code),
             }
 
-    # Residual model delta with full evidence (D9), never a dumping ground.
+    if "model_output" not in changed:
+        return {
+            "diverged": True,
+            "code": "DX",
+            "reason_code": reason_code_for("DX"),
+            "changed_fields": changed,
+            "explanation": (
+                "residual difference lacks an explainable causal basis "
+                f"and model_output is not the delta -> DX; "
+                f"changed_fields={changed}"
+            ),
+            "severity": "CRITICAL",
+            "severity_rationale": "unexplained residual without causal "
+                                  "basis -> CRITICAL",
+        }
+    # D9 = full-evidence residual model delta (never a dumping ground).
     return {
         "diverged": True,
         "code": "D9",
@@ -248,42 +299,65 @@ def build_divergence_contract(
     if review_state not in REVIEW_STATES:
         raise DivergenceError(f"invalid review_state: {review_state!r}")
     result = classify_divergence(canonical, shadow)
+    canonical_decision_id = str(canonical.get("decision_id") or "")
+    shadow_decision_id = str(shadow.get("decision_id") or "")
+    canonical_ref = str(canonical.get("source_snapshot_id") or "")
+    shadow_ref = str(shadow.get("shadow_run_id") or "")
+    for value, label in (
+        (canonical_decision_id, "canonical_decision_id"),
+        (shadow_decision_id, "shadow_decision_id"),
+        (canonical_ref, "canonical evidence ref"),
+        (shadow_ref, "shadow_run_id evidence ref"),
+    ):
+        if not value or value == "":
+            raise DivergenceError(
+                f"cannot build complete DivergenceContract: {label} empty"
+            )
     carrier = DivergenceContract(
-        canonical_decision_id=str(canonical.get("decision_id", "")),
-        shadow_decision_id=str(shadow.get("decision_id", "")),
+        canonical_decision_id=canonical_decision_id,
+        shadow_decision_id=shadow_decision_id,
         diverged=bool(result["diverged"]),
         severity=result["severity"],
         explanation=result["explanation"],
         review_state=review_state,
         reason_code=result["reason_code"],
-        evidence_refs=(
-            str(canonical.get("source_snapshot_id", "")),
-            str(shadow.get("shadow_run_id", shadow.get("shadow_run_id", ""))),
-        ),
+        evidence_refs=(canonical_ref, shadow_ref),
     )
     return contract_dict(carrier)
 
 
 def advance_review_state(
-    current: str,
+    divergence_record: Mapping[str, Any],
     target: str,
-    *,
-    severity: str,
 ) -> str:
+    current = divergence_record.get("review_state")
+    severity = divergence_record.get("severity")
+    reason_code = divergence_record.get("reason_code")
     if current not in REVIEW_STATES or target not in REVIEW_STATES:
         raise DivergenceError("unknown review state")
     if target not in REVIEW_TRANSITIONS.get(current, ()):
         raise DivergenceError(
             f"illegal review transition {current} -> {target}"
         )
+    critical_markers = ("CRITICAL", "UNEXPLAINED_DIVERGENCE",
+                        "REPLAY_SHADOW_MISMATCH",
+                        "REPLAY_DIVERGENCE_CLASSIFICATION_MISMATCH")
     if severity == "CRITICAL" and target == "CLOSED":
         raise DivergenceError(
             "CRITICAL divergence cannot auto-close; must ESCALATE"
+        )
+    if reason_code and any(
+        marker in str(reason_code) for marker in critical_markers
+    ) and target == "CLOSED":
+        raise DivergenceError(
+            f"record {reason_code} cannot auto-close; must ESCALATE"
         )
     return target
 
 
 def replay_divergence(
+    canonical: Mapping[str, Any],
+    original_divergence: Mapping[str, Any],
     store: Any,
     shadow_run_id: str,
     evaluator: Any,
@@ -297,20 +371,63 @@ def replay_divergence(
         outcome = replay_shadow_run(
             store, shadow_run_id, evaluator,
             expected=expected)
-        return {
-            "replay_status": "MATCH",
-            "replay_run_id": outcome["replay_shadow_run_id"],
-            "severity": None,
-            "review_state": "REPLAYED",
-        }
     except ReplayMismatch as exc:
         return {
             "replay_status": "MISMATCH",
             "replay_run_id": None,
             "severity": "CRITICAL",
             "review_state": "ESCALATED",
+            "reason_code": "REPLAY_SHADOW_MISMATCH",
             "reason": str(exc),
+            "divergence_reproducible": False,
         }
+
+    replay_run_id = outcome["replay_shadow_run_id"]
+    run_identity = store.read(replay_run_id)
+    decision = store.read_decision(replay_run_id)
+    replayed_shadow = {
+        key: run_identity.get(key)
+        for key in (
+            "decision_id", "source_snapshot_id", "evidence_pack_id",
+            "config_hash", "code_identity", "rule_version",
+            "model_version", "as_of_timestamp",
+        )
+    }
+    replayed_shadow.update(dict(decision.get("output") or {}))
+    recomputed = classify_divergence(canonical, replayed_shadow)
+    original_keys = (
+        str(original_divergence.get("code")),
+        str(original_divergence.get("reason_code")),
+        bool(original_divergence.get("diverged")),
+        str(original_divergence.get("severity")),
+    )
+    replay_keys = (
+        recomputed["code"],
+        recomputed["reason_code"],
+        recomputed["diverged"],
+        recomputed["severity"],
+    )
+    if original_keys != replay_keys:
+        return {
+            "replay_status": "MISMATCH",
+            "replay_run_id": replay_run_id,
+            "severity": "CRITICAL",
+            "review_state": "ESCALATED",
+            "reason_code": "REPLAY_DIVERGENCE_CLASSIFICATION_MISMATCH",
+            "reason": (
+                f"original={original_keys} replay={replay_keys}"
+            ),
+            "divergence_reproducible": False,
+            "recomputed_classification": recomputed,
+        }
+    return {
+        "replay_status": "MATCH",
+        "replay_run_id": replay_run_id,
+        "severity": None,
+        "review_state": "REPLAYED",
+        "divergence_reproducible": True,
+        "recomputed_classification": recomputed,
+    }
 
 
 def divergence_blocks(result: Mapping[str, Any]) -> dict[str, Any]:
