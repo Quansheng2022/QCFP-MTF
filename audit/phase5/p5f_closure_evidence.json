@@ -1,0 +1,110 @@
+{
+  "schema": "PHASE5-P5F-CLOSURE-EVIDENCE-1",
+  "phase": 5,
+  "task": "P5-F / S/N 31",
+  "work_package": "WP5.3",
+  "branch": "codex/phase5-shadow-operation",
+  "status": "CLOSED / REMOTE-BACKED",
+  "definition": "Outcome Observer observes what happened after a Decision; it never changes what the Decision was.",
+  "human_decision_required": false,
+  "semantic_review": {
+    "reviewer": "HUMAN (user-supplied WP5.3 Definition of Done)",
+    "decision": "APPROVED_EXECUTE",
+    "note": "User supplied the frozen WP5.3 DoD and instructed execution of the development/closure plan."
+  },
+  "approved_candidate": {
+    "commit": "80b9fb34f0baa20d4751071b562101659cd7df5b",
+    "message": "QCFP-MTF Phase 5 P5-F-R1: close outcome evidence contract"
+  },
+  "remote_backed_identity": {
+    "remote": "origin",
+    "remote_url": "https://github.com/Quansheng2022/QCFP-MTF.git",
+    "ref": "refs/heads/codex/phase5-shadow-operation",
+    "local_head": "80b9fb34f0baa20d4751071b562101659cd7df5b",
+    "remote_head": "80b9fb34f0baa20d4751071b562101659cd7df5b",
+    "match": "PASS",
+    "verified_at_utc": "2026-09-07T06:47:00Z"
+  },
+  "definition_of_done": {
+    "1_historical_decisions_observable_at_T1_T3_T5_T10_T20": "PASS",
+    "2_all_outcome_observations_future_only": "PASS",
+    "3_deterministic_versioned_horizon_policy": "PASS",
+    "4_no_future_access_before_eligibility": "PASS",
+    "5_return_mae_mfe_deterministic_and_provenance_bound": "PASS",
+    "6_outcome_records_independent_append_only": "PASS",
+    "7_historical_decision_payload_identity_ledger_unchanged": "PASS",
+    "8_zero_write_path_to_canonical_permission_fsm_finalize_production": "PASS",
+    "9_source_revisions_never_silently_overwrite": "PASS",
+    "10_every_outcome_replayable_from_decision_snapshot_policy_metric": "PASS",
+    "11_adversarial_leakage_mutation_horizon_drift_tests": "PASS",
+    "12_full_regression_frozen_unchanged_strict_reviewer_error_zero_blocker_zero": "PASS"
+  },
+  "gates": {
+    "GATE_F-1_Contract_Binding": "PASS",
+    "GATE_F-2_Horizon_Semantics": "PASS",
+    "GATE_F-3_Future_only": "PASS",
+    "GATE_F-4_No_Future_Leakage": "PASS",
+    "GATE_F-5_MAE_MFE_Correctness": "PASS",
+    "GATE_F-6_Decision_Immutability": "PASS",
+    "GATE_F-7_Canonical_Isolation": "PASS",
+    "GATE_F-8_Deterministic_Replay": "PASS",
+    "GATE_F-9_Evidence_Completeness": "PASS",
+    "GATE_F-10_Full_Regression": "PASS",
+    "GATE_F-11_Strict_Reviewer": "PASS",
+    "GATE_F-12_Remote_backed_Identity": "PASS"
+  },
+  "machine_evidence": {
+    "dedicated_tests": {
+      "command": "pytest Core/QCFP_MTF/tests/test_phase5/test_outcome_observer.py Core/QCFP_MTF/tests/test_phase5/test_outcome_store.py -q",
+      "passed": 49,
+      "return_code": 0
+    },
+    "phase5_focused": {
+      "command": "pytest Core/QCFP_MTF/tests/test_phase5 -q",
+      "passed": 227,
+      "return_code": 0
+    },
+    "full_regression": {
+      "command": "python tools/review/merge_project_for_phase5_review.py --mode development --scope phase5 --run-pytest --pytest-scope full --strict",
+      "passed": 2255,
+      "governed_deselected": 2,
+      "return_code": 0
+    },
+    "strict_reviewer": {
+      "result": "PASS=74 | INFO=325 | WARN=1 | ERROR=0 | BLOCKER=0",
+      "frozen_dirty": 0,
+      "shared_read_only_dirty": 0,
+      "unknown_dirty": 0,
+      "p5_frozen_01": "PASS",
+      "p5_struct_04": "PHASE5_EVIDENCED",
+      "p5_pytest_frozen_01": "PASS",
+      "p5_pytest_01": "PASS",
+      "p5_pytest_03": "PASS",
+      "p5_gov_02": "PASS",
+      "p5_gov_03": "PASS",
+      "p5_static_12": "PASS",
+      "p5_static_99": "PASS"
+    },
+    "blocking_tests": {
+      "BLOCKER-F01_future_leakage": "PASS",
+      "BLOCKER-F02_historical_decision_mutation": "PASS",
+      "BLOCKER-F03_horizon_drift_or_substitution": "PASS",
+      "BLOCKER-F04_non_replayable_outcome": "PASS"
+    }
+  },
+  "evidence_refs": [
+    "audit/phase5/outcome_observation_summary.json",
+    "audit/phase5/outcome_sample_evidence.json",
+    "audit/phase5/p5f_outcome_junit.xml",
+    "Merged_Code/merged_QCFP_MTF_phase5_p5f_r1_outcome_observation_review.txt"
+  ],
+  "execution_pointer": {
+    "p5_f": "CLOSED / REMOTE-BACKED",
+    "p5_g_permitted": true,
+    "next_task": "P5-G / S/N 32 / WP5.4 may start",
+    "phase5_pass": false,
+    "phase6": false
+  },
+  "generated_at_utc": "2026-09-07T06:49:46Z",
+  "generated_by": "AI_AGENT P5-F / WP5.3 (remote-backed closure record)"
+}
