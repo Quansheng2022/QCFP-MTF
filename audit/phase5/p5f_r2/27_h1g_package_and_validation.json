@@ -1,0 +1,23 @@
+{
+  "schema": "P5F-R2-H1G-PACKAGE-AND-VALIDATION-1",
+  "package": {
+    "schema": "P5F-R2-H1G-PACKAGE-1",
+    "gate": "H1G_SUCCESOR_ACCEPTANCE_BINDING",
+    "candidate_sha256": "9f16adbb69007661ca04f991e90c4c981acdb60b1fd31b49c6718f357811e1e9",
+    "governance_commit": "7b9d38cd50ed27c76c0f61be06194fe36f2a594f",
+    "successor_manifest_sha256": "92df5b7b5144d3d54d12093d066352058caeefa829aa5df5ad7024a5e7a6ce69",
+    "successor_baseline_sha256": "c834d6e3bef1d6d46bac8270802757bd1bba19deff5ad8aa1bf0fd6ecec73508",
+    "predecessor_rev8_acceptance_sha256": "a51ffade1ee497eb26ccec6b89c0205d87bbb53f040c88b34e0d662de5d159b9",
+    "candidate_package_sha256": "606ed98658dd042f655de454cfb919767be7ffe35d8aec917ad259c07507621a"
+  },
+  "validation": {
+    "fields_null": true,
+    "commit_real": true,
+    "state": {
+      "cpub_authority": "NOT_GRANTED",
+      "ledger_mutation": 0,
+      "01093": "NOT_RUN",
+      "projection": "OFF"
+    }
+  }
+}

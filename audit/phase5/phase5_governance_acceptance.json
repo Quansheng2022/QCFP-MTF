@@ -3,10 +3,12 @@
   "phase": 5,
   "decision": "APPROVE",
   "accepted_by": "HUMAN",
-  "governance_baseline_sha256": "0fdc27bbf373653bd98857018ea3013776f721dd4b52776e7a39f486d54904dd",
-  "governance_commit": "997181cde302b26d56f02bf505f51b6165430c2b",
-  "governance_tag": "qcfp-mtf-phase5-governance-v1",
-  "accepted_at_utc": "2026-09-06T18:33:51Z",
+  "accepted_at_utc": "2026-09-08T10:56:11Z",
+  "governance_commit": "7b9d38cd50ed27c76c0f61be06194fe36f2a594f",
+  "governance_baseline_sha256": "c834d6e3bef1d6d46bac8270802757bd1bba19deff5ad8aa1bf0fd6ecec73508",
+  "governance_manifest_sha256": "92df5b7b5144d3d54d12093d066352058caeefa829aa5df5ad7024a5e7a6ce69",
+  "predecessor_rev8_acceptance_sha256": "a51ffade1ee497eb26ccec6b89c0205d87bbb53f040c88b34e0d662de5d159b9",
+  "rev7_acceptance_sha256": "9307fd57ae6e8b1f78820206f8a796493c1611ea9c2690fc3f9c5c96665a66fa",
   "reopen_required_on_change": true,
-  "authority_source": "Human approval supplied externally (P5-GOV-FREEZE-HUMAN-AUTHORIZED). Agent executed the activation mechanically and did not generate this approval decision."
+  "authority_source": "H1G Human approval (successor governance acceptance). Agent records explicit Human decision; does not self-authorize."
 }
