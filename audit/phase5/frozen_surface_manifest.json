@@ -1,11 +1,5 @@
 {
-  "schema": "PHASE5-FROZEN-SURFACE-MANIFEST-1",
-  "revision": 2,
-  "revision_note": "Rev2: 声明 Phase 5 Review Tool（tools/review/merge_project_for_phase5_review.py）与其测试目录 tools/review/tests/** 为 PHASE5_ALLOWED；out_of_scope_non_authority 由 brace 通配改为逐目录 glob（fnmatch 兼容）。",
-  "phase": 5,
-  "work_package": "P5-A02",
-  "phase4_tag": "qcfp-mtf-phase4-frozen",
-  "phase4_commit": "275726b37ff264f1717d41c3fec26c7135bace74",
+  "authority_boundary_rule": "Shadow 无 Canonical Authority：可 read/evaluate/compare/observe/record/replay/report；不可 mutate canonical / override / call execution / change permission/state/final target / write production decision。",
   "classification_rule": "Phase 5 不修改任何 FROZEN / SHARED_READ_ONLY 既有文件；只允许在 PHASE5_ALLOWED 面内新增文件。任何 UNKNOWN 必须在开发前处理。",
   "frozen": [
     {
@@ -157,6 +151,57 @@
       "role": "既有 Shadow Universe 脚本（Frozen）"
     }
   ],
+  "generated_at_utc": "2026-09-08T10:47:08Z",
+  "generated_by": "AI_AGENT H1F CANDIDATE",
+  "human_approved_existing_changes": [
+    {
+      "approved_sha256": "96554bc0bae5c3c421a5aa10d2ee20dac94086dab8b20651b219a824af0adcb7",
+      "authorization_record": "audit/phase5/p5f_r2/06_r2_08_human_scoped_authorization.json",
+      "canonical_decision_change": false,
+      "change_class": "TEST_SEMANTIC_ALIGNMENT",
+      "classification": "HUMAN_APPROVED_EXISTING_CHANGE",
+      "outcome_semantic_change": false,
+      "path": "Core/QCFP_MTF/tests/test_decision/test_tactical_chain.py",
+      "purpose": "Stage-aware PRE-AUTHORITY vs POST-PROJECTION regression alignment",
+      "runtime_semantic_change": false,
+      "task_id": "P5F-R2-08"
+    },
+    {
+      "approved_sha256": "18cf69c652406b54a3ff88c422af2013b03b4fd196ec2c1d60f80518c3c730d8",
+      "canonical_decision_change": false,
+      "change_class": "TEST_SEMANTIC_ALIGNMENT",
+      "classification": "HUMAN_APPROVED_EXISTING_CHANGE",
+      "outcome_semantic_change": false,
+      "path": "Core/QCFP_MTF/tests/test_governance/test_phase4_evidence_integrity.py",
+      "purpose": "Phase4 replayability successor-rule test alignment (H1E4)",
+      "runtime_semantic_change": false,
+      "task_id": "P5F-R2-08"
+    }
+  ],
+  "out_of_scope_non_authority": [
+    "Report/**",
+    "Prompt/**",
+    "Log/**",
+    "Temp/**",
+    "Data/**",
+    "SQLiteDB/**",
+    "output/**",
+    "Merged_Code/**",
+    "Doc/**",
+    "converted_scripts/**",
+    "md_docx_convert/**",
+    "Core/Daily/**",
+    "Core/Weekly/**",
+    "Core/Monthly/**",
+    "Core/HK_Macro/**",
+    "Core/utl/**",
+    "Code_Prompt/**",
+    "Code_utl/**",
+    "tools/review/merge_project_for_phase4_review_*.py"
+  ],
+  "phase": 5,
+  "phase4_commit": "275726b37ff264f1717d41c3fec26c7135bace74",
+  "phase4_tag": "qcfp-mtf-phase4-frozen",
   "phase5_allowed_new_files": [
     {
       "path": "audit/phase5/**",
@@ -183,6 +228,9 @@
       "role": "Phase 5 Review Tool 自身回归测试（新文件）"
     }
   ],
+  "revision": 4,
+  "revision_note": "Rev2: 声明 Phase 5 Review Tool（tools/review/merge_project_for_phase5_review.py）与其测试目录 tools/review/tests/** 为 PHASE5_ALLOWED；out_of_scope_non_authority 由 brace 通配改为逐目录 glob（fnmatch 兼容）。",
+  "schema": "PHASE5-FROZEN-SURFACE-MANIFEST-1",
   "shared_read_only": [
     {
       "path": "Core/QCFP_MTF/common/**",
@@ -217,30 +265,7 @@
       "role": "主配置与数据字典（只读；Phase 5 不新增配置项）"
     }
   ],
-  "out_of_scope_non_authority": [
-    "Report/**",
-    "Prompt/**",
-    "Log/**",
-    "Temp/**",
-    "Data/**",
-    "SQLiteDB/**",
-    "output/**",
-    "Merged_Code/**",
-    "Doc/**",
-    "converted_scripts/**",
-    "md_docx_convert/**",
-    "Core/Daily/**",
-    "Core/Weekly/**",
-    "Core/Monthly/**",
-    "Core/HK_Macro/**",
-    "Core/utl/**",
-    "Code_Prompt/**",
-    "Code_utl/**",
-    "tools/review/merge_project_for_phase4_review_*.py"
-  ],
   "unknown": [],
   "unknown_note": "通过 qcfp-mtf-phase4-frozen 完整 git ls-tree 清点；仓库内所有文件均可归入 FROZEN / SHARED_READ_ONLY / OUT_OF_SCOPE / PHASE5_ALLOWED。开发前若出现新的 UNKNOWN 分类必须停下处理。",
-  "authority_boundary_rule": "Shadow 无 Canonical Authority：可 read/evaluate/compare/observe/record/replay/report；不可 mutate canonical / override / call execution / change permission/state/final target / write production decision。",
-  "generated_at_utc": "2026-09-03T23:30:49Z",
-  "generated_by": "AI_AGENT_P5-A02"
+  "work_package": "P5-A02"
 }

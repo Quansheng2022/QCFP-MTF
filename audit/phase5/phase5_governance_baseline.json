@@ -1,42 +1,46 @@
 {
-  "schema": "PHASE5-GOVERNANCE-BASELINE-1",
-  "phase": 5,
-  "governance_revision": 7,
-  "baseline_state": "PHASE5_GOVERNANCE_FROZEN",
-  "status": "ACCEPTED",
-  "human_acceptance_required": true,
-  "accepted_by": "HUMAN",
   "acceptance_record": "audit/phase5/phase5_governance_acceptance.json",
   "acceptance_record_path": "audit/phase5/phase5_governance_acceptance.json",
-  "governance_acceptance_schema": "PHASE5-GOVERNANCE-ACCEPTANCE-1",
+  "accepted_by": "HUMAN",
+  "activation": false,
+  "authority_rule": "Subsequent mutation of pinned governance files requires governance reopen + explicit Human acceptance. The Reviewer must never refresh this baseline by itself.",
+  "baseline_role": "REV8_GOVERNANCE_BOOTSTRAP_CANDIDATE",
+  "baseline_state": "PHASE5_GOVERNANCE_FROZEN",
+  "candidate_status": "POST_H1F_TARGET_CANDIDATE_NON_AUTHORITATIVE",
   "freeze_candidate": false,
-  "machine_status": "PHASE5_GOVERNANCE_FROZEN",
-  "phase4_baseline": {
-    "tag": "qcfp-mtf-phase4-frozen",
-    "tag_object": "fef63f57fe87d98d60234411ed346efc3147b37a",
-    "peeled_commit": "275726b37ff264f1717d41c3fec26c7135bace74"
-  },
-  "phase5_governance_commit": "997181cde302b26d56f02bf505f51b6165430c2b",
-  "pinned_at_note": "Revision 7 = ACTIVATED by Human approval (P5-GOV-FREEZE-HUMAN-AUTHORIZED, candidate 997181cde302b26d56f02bf505f51b6165430c2b). baseline_state=PHASE5_GOVERNANCE_FROZEN, status=ACCEPTED, accepted_by=HUMAN, acceptance_record=audit/phase5/phase5_governance_acceptance.json. Any post-freeze change to pinned governance files requires governance reopen + explicit Human acceptance.",
+  "frozen_surface_manifest_sha256": "cfbc46198ac8ed0e833900c228b5fc90e5ee4d123464287fc502005b5fb516c8",
+  "generated_at_utc": "2026-09-08T08:00:01Z",
+  "generated_by": "AI_AGENT H1F CANDIDATE",
+  "governance_acceptance_schema": "PHASE5-GOVERNANCE-ACCEPTANCE-1",
   "governance_files": [
     {
       "path": "audit/phase5/frozen_surface_manifest.json",
-      "sha256": "edb531c118e85f51738e37656687c59850763802eb0a12f194a552ef9bf54e75",
-      "role": "Phase 5 Frozen Surface Manifest（单一边界权威）"
+      "role": "Phase 5 Frozen Surface Manifest（单一边界权威）",
+      "sha256": "92df5b7b5144d3d54d12093d066352058caeefa829aa5df5ad7024a5e7a6ce69"
     },
     {
       "path": "tools/review/merge_project_for_phase5_review.py",
-      "sha256": "44afc41e1790750f53701f19694116c3c364c2be4ac40ef438e7f9f5f633758b",
-      "role": "Phase 5 Review Tool（执行器）"
+      "role": "Phase 5 Review Tool（执行器）",
+      "sha256": "d2dcaf12715406a839af1c1779fd6827f815f6c22a42a49121b022727c53ae10"
     },
     {
       "path": "tools/review/tests/test_merge_project_for_phase5_review.py",
-      "sha256": "5133c9d5265e5770700fdcc32c23f88e87e00cddc88e3cfe3716c2418cc3835e",
-      "role": "Phase 5 Review Tool 自身回归测试"
+      "role": "Phase 5 Review Tool 自身回归测试",
+      "sha256": "d839d472136a7dfa430381073555bd5c802ac2524aea1e601ea98aedd053b657"
     }
   ],
-  "authority_rule": "Subsequent mutation of pinned governance files requires governance reopen + explicit Human acceptance. The Reviewer must never refresh this baseline by itself.",
+  "governance_revision": 8,
+  "human_acceptance_required": true,
+  "machine_status": "PHASE5_GOVERNANCE_FROZEN",
+  "phase": 5,
+  "phase4_baseline": {
+    "peeled_commit": "275726b37ff264f1717d41c3fec26c7135bace74",
+    "tag": "qcfp-mtf-phase4-frozen",
+    "tag_object": "fef63f57fe87d98d60234411ed346efc3147b37a"
+  },
+  "phase5_governance_commit": "997181cde302b26d56f02bf505f51b6165430c2b",
+  "pinned_at_note": "Revision 7 = ACTIVATED by Human approval (P5-GOV-FREEZE-HUMAN-AUTHORIZED, candidate 997181cde302b26d56f02bf505f51b6165430c2b). baseline_state=PHASE5_GOVERNANCE_FROZEN, status=ACCEPTED, accepted_by=HUMAN, acceptance_record=audit/phase5/phase5_governance_acceptance.json. Any post-freeze change to pinned governance files requires governance reopen + explicit Human acceptance.",
   "reopen_policy": "Any post-freeze change to governance_files must be submitted as a change record with impact analysis, reviewed by Human, and only then accepted as a new governance baseline revision.",
-  "generated_at_utc": "2026-09-04T20:00:00Z",
-  "generated_by": "AI_AGENT P5-REV-09"
+  "schema": "PHASE5-GOVERNANCE-BASELINE-1",
+  "status": "ACCEPTED"
 }
