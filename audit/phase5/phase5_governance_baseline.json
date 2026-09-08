@@ -4,13 +4,11 @@
   "accepted_by": "HUMAN",
   "activation": false,
   "authority_rule": "Subsequent mutation of pinned governance files requires governance reopen + explicit Human acceptance. The Reviewer must never refresh this baseline by itself.",
-  "baseline_role": "REV8_GOVERNANCE_BOOTSTRAP_CANDIDATE",
+  "baseline_role": "PHASE5_GOVERNANCE_BASELINE",
   "baseline_state": "PHASE5_GOVERNANCE_FROZEN",
-  "candidate_status": "POST_H1F_TARGET_CANDIDATE_NON_AUTHORITATIVE",
-  "freeze_candidate": false,
-  "frozen_surface_manifest_sha256": "cfbc46198ac8ed0e833900c228b5fc90e5ee4d123464287fc502005b5fb516c8",
-  "generated_at_utc": "2026-09-08T08:00:01Z",
-  "generated_by": "AI_AGENT H1F CANDIDATE",
+  "frozen_surface_manifest_sha256": "92df5b7b5144d3d54d12093d066352058caeefa829aa5df5ad7024a5e7a6ce69",
+  "generated_at_utc": "2026-09-08T11:15:13Z",
+  "generated_by": "AI_AGENT H1I CANDIDATE (semantic normalization)",
   "governance_acceptance_schema": "PHASE5-GOVERNANCE-ACCEPTANCE-1",
   "governance_files": [
     {
@@ -31,6 +29,8 @@
   ],
   "governance_revision": 8,
   "human_acceptance_required": true,
+  "human_authority_source": "EXTERNAL_ACCEPTANCE_RECORD_ONLY",
+  "lifecycle_state": "ACTIVE",
   "machine_status": "PHASE5_GOVERNANCE_FROZEN",
   "phase": 5,
   "phase4_baseline": {
@@ -38,8 +38,14 @@
     "tag": "qcfp-mtf-phase4-frozen",
     "tag_object": "fef63f57fe87d98d60234411ed346efc3147b37a"
   },
-  "phase5_governance_commit": "997181cde302b26d56f02bf505f51b6165430c2b",
+  "phase5_governance_commit": null,
   "pinned_at_note": "Revision 7 = ACTIVATED by Human approval (P5-GOV-FREEZE-HUMAN-AUTHORIZED, candidate 997181cde302b26d56f02bf505f51b6165430c2b). baseline_state=PHASE5_GOVERNANCE_FROZEN, status=ACCEPTED, accepted_by=HUMAN, acceptance_record=audit/phase5/phase5_governance_acceptance.json. Any post-freeze change to pinned governance files requires governance reopen + explicit Human acceptance.",
+  "predecessor_lineage": {
+    "predecessor_acceptance_commit": "e6287898bc0dff1b093c35154ac8c9bef42d379f",
+    "predecessor_acceptance_sha256": "89393d2a3cf45f92cda5b3e92cc1b182787f6556a43f32e25d445c525317b30b",
+    "predecessor_baseline_sha256": "c834d6e3bef1d6d46bac8270802757bd1bba19deff5ad8aa1bf0fd6ecec73508",
+    "predecessor_governance_commit": "7b9d38cd50ed27c76c0f61be06194fe36f2a594f"
+  },
   "reopen_policy": "Any post-freeze change to governance_files must be submitted as a change record with impact analysis, reviewed by Human, and only then accepted as a new governance baseline revision.",
   "schema": "PHASE5-GOVERNANCE-BASELINE-1",
   "status": "ACCEPTED"
