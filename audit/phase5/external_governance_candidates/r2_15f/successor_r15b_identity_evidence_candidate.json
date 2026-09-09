@@ -1,0 +1,73 @@
+{
+  "schema": "P5F-R2-R2-15F-SUCCESSOR-R15B-IDENTITY-EVIDENCE-CANDIDATE-1",
+  "status": "CANDIDATE-ONLY; awaiting Human exact-byte review",
+  "decision_date": "2026-09-04",
+  "current_successor_r15b_candidate": "45158cedce27c9e01f294e33a9755cdfcef2f81a38288e636aeec9a4324e410c",
+  "historical_recorded_r15b": "163f067aab4c611a2a1a40d9bd79c5101cfb55f23d82c0b033abdaa3d0178ec2",
+  "historical_r15b_status": "IMMUTABLE_HISTORICAL_RECORDED_IDENTITY",
+  "historical_comparability": "NOT_ESTABLISHED_INPUT_UNAVAILABLE",
+  "explicit_scope": "This artifact binds the CURRENT successor R15-B candidate identity 45158ced... only. It does NOT replace, correct, invalidate, or reinterpret historical R15-B 163f067a..., and makes no claim about the causal origin of the historical mismatch.",
+  "binding_evidence": {
+    "diagnostic_evidence_58_sha256": "09092fd59e688af97eff8b04df17c10f359fb2a1d3c00248a3dfa2fa34ef4fe7",
+    "post_activation_preflight_evidence_57_sha256": "9895b6047105db69278b92ca96214653c32d6490eafda505e75fc4759fc13c0e",
+    "materialization_execution_evidence_56_sha256": "c8cc01806e0b8e20057516c9f84299e8b9977586c9d835847934e9a17c066f32",
+    "approved_materialization_manifest_sha256": "a30ced80b3889d76c63119616e6441a70e61b47c7c3005b3c135d3ed00761af6"
+  },
+  "active_successor_chain_a": {
+    "manifest_raw_sha256": "113e61363eabd83841557e5629b4dea99785c460152d953803a7061faad893d2",
+    "package_raw_sha256": "d293ee10fbb7da79b31f27208f2fb6b0b0462b50bb24e78b1c635ebe30d78fdc",
+    "package_digest": "a0979324d02bca3fd029c369c51856af1e5b49602e95d714dc6e2abc79cc5507",
+    "canonical_publication_target": "480ddd02a367b5cd091fff5f98ecac5aaf1c8bfed924c34f16ee629712ccc06f",
+    "publication_universe_target": "2f5379d7451f36ed1566c74be05a9ccb223b952e877f4450614edb10bed37cc6",
+    "cpub_package_human_acceptance": "171b05629b8042957545bd8fbd7fc3d7d0519c38661a8a889d1aecbe28d20242",
+    "activation_record": "1f247b43ebbc4bdc5dc50e3f1b20ff6af3ebac67105e823ba947a61895023237",
+    "activated_baseline": "0b0b349a2ceb6f02814a6ef64a23618a24d8e4ff94ae756e3786276a31aeda4f",
+    "governance_acceptance": "07213f328c5c71e054fc8ffd6888bb884a6baaf137e25bdce25c59ea809c331c",
+    "successor_evidence_54_sha256": "dde3883cf1e7470aaad31f2ce20cb9f1625cc8e8d1ef045e3ff72dc5673d51f8"
+  },
+  "active_chain_b": {
+    "decision_ledger_sha256": "991fedf52d2540982b7a921dbf265c30ad8c63a7811b66d4b881da41f560bbc4",
+    "completed_human_acceptance_sha256": "188f72305a1e7dcd3ba2dfcbc8f6113b3568d04f285998d8d9e4423fa4caa8e8"
+  },
+  "r15_a": "4f9c4e631b0f7e96322511c9d0be120dc93ce156c5a236a2061ef3281e24a63a",
+  "expected_missing_set": ["01093"],
+  "canonicalization_contract": {
+    "rule": "R15-B = sha256(canonical_json(row)) where canonical_json uses the repository canonical digest convention (json.dumps(sort_keys=True, separators=(\",\",\":\"), ensure_ascii=False)) over the ACTIVE qcfp_decision_ledger row for (stock_code=01093, decision_date=2026-09-04, status=ACTIVE) AFTER the single-stock canonical recovery insert.",
+    "created_at_treatment": "created_at is the ONLY existing exclusion (volatile non-authority metadata); no new exclusion rule created.",
+    "unchanged": true
+  },
+  "deterministic_repeat_proof": {
+    "identity": "45158cedce27c9e01f294e33a9755cdfcef2f81a38288e636aeec9a4324e410c",
+    "independent_reproductions": [
+      "preflight s1 success recovery (57)",
+      "preflight s2 first recovery (57)",
+      "r15b variant probe (canonical run id)",
+      "field diagnostic predecessor-bytes reproduction (58)",
+      "field diagnostic successor-bytes reproduction (58)"
+    ],
+    "result": "identical value 45158ced... in every independent isolated reproduction; deterministic repeat PASS"
+  },
+  "existing_15_immutability": {
+    "proof": "preflight s1: digest of the 15 existing ACTIVE rows after insert == R15-A 4f9c4e63...; per-row canonical bytes byte-identical",
+    "result": "PASS"
+  },
+  "real_ledger_state": {
+    "active_ledger_rows": 15,
+    "r15_a": "4f9c4e631b0f7e96322511c9d0be120dc93ce156c5a236a2061ef3281e24a63a",
+    "01093": "NOT_RUN",
+    "projection": "OFF"
+  },
+  "not_authorized": [
+    "completed Human R15-B' acceptance",
+    "successor-bound R15-C generation",
+    "real 01093 publication",
+    "ACTIVE Ledger 15->16 mutation",
+    "production recovery transaction",
+    "Projection",
+    "F10/F11/F12 closure",
+    "P5-F freeze",
+    "P5-G",
+    "Phase 6"
+  ],
+  "machine_action": "STOP; submit successor R15-B identity evidence candidate exact bytes for Human exact-byte review."
+}

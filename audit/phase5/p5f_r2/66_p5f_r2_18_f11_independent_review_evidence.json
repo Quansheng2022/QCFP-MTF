@@ -1,0 +1,427 @@
+{
+  "schema": "P5F-R2-R2-18-F11-INDEPENDENT-REVIEW-EVIDENCE-1",
+  "generated_at_utc": "2026-09-09T12:33:53+00:00",
+  "verdict": "PASS_CANDIDATE",
+  "reviewer": "MACHINE INDEPENDENT FINAL REVIEW (read-only)",
+  "binding": {
+    "r2_15_evidence_61": "b2befd991c063509ddf45af831e701147a8d5dfdd925b1798bf6c9fc1edfd40e",
+    "r2_16_evidence_62": "2f31b2bc3705999f81bca79aa24c711504915584585ed7a915ab3202c16e9923",
+    "f10_fail_closed_evidence_63": "27cb3f8d4ff143a28cf2415032f0c4bbeceea02664612f1cb69d68905662e8ff",
+    "correction_candidate_evidence_64": "3deac2239d23d422ae242cfa45e224abe1a1370b3fd7e3ffdd259a94cb7af453",
+    "f10_pass_evidence_65": "0664c46e584653f5a7f5a0c0ca96d92058f5a3d92ee71b6ff459f97480d420e8",
+    "formal_f10_log_sha256": "b5a55b5da4de2200413fba1eac394a2844f8a93e5f9820f6e00cef96428679bc",
+    "active_chain_a": {
+      "09": "113e61363eabd83841557e5629b4dea99785c460152d953803a7061faad893d2",
+      "10": "d293ee10fbb7da79b31f27208f2fb6b0b0462b50bb24e78b1c635ebe30d78fdc",
+      "package_digest": "a0979324d02bca3fd029c369c51856af1e5b49602e95d714dc6e2abc79cc5507",
+      "cpub_acceptance": "171b05629b8042957545bd8fbd7fc3d7d0519c38661a8a889d1aecbe28d20242",
+      "activation": "1f247b43ebbc4bdc5dc50e3f1b20ff6af3ebac67105e823ba947a61895023237",
+      "baseline": "0b0b349a2ceb6f02814a6ef64a23618a24d8e4ff94ae756e3786276a31aeda4f",
+      "gov_acceptance": "07213f328c5c71e054fc8ffd6888bb884a6baaf137e25bdce25c59ea809c331c",
+      "canonical": "480ddd02a367b5cd091fff5f98ecac5aaf1c8bfed924c34f16ee629712ccc06f",
+      "universe": "2f5379d7451f36ed1566c74be05a9ccb223b952e877f4450614edb10bed37cc6"
+    },
+    "active_chain_b": {
+      "ledger": "991fedf52d2540982b7a921dbf265c30ad8c63a7811b66d4b881da41f560bbc4",
+      "acceptance": "188f72305a1e7dcd3ba2dfcbc8f6113b3568d04f285998d8d9e4423fa4caa8e8"
+    },
+    "R15_A": "4f9c4e631b0f7e96322511c9d0be120dc93ce156c5a236a2061ef3281e24a63a",
+    "R15_B2": "2a7ec1d807e84cb657daff6a96bc44ea805abc40d2b69289f960c76f05788fec",
+    "dataset_manifest": "4d6f06935cae6038",
+    "projection": "ON"
+  },
+  "findings": [
+    {
+      "domain": "spec_consistency",
+      "check": "WP5.3 spec artifact hash",
+      "classification": "PASS",
+      "detail": "870c0e237892b43168d9afc4cefa97b7cc1d957556dfc6e5caaee762796bb87b"
+    },
+    {
+      "domain": "spec_consistency",
+      "check": "Outcome Observer module hash",
+      "classification": "PASS",
+      "detail": "a54ddf08cc584fad6599046bd2df47ce00f896811113dbf8cb7e4c75ec31e0e6"
+    },
+    {
+      "domain": "spec_consistency",
+      "check": "Outcome Observer M1.1 semantics via F10 formal suite",
+      "classification": "PASS",
+      "detail": "F10 formal 2421 passed rc=0 includes test_outcome_observer regression; no semantic expansion observed"
+    },
+    {
+      "domain": "spec_consistency",
+      "check": "standalone WP5.3 frozen-pin lineage",
+      "classification": "WARNING",
+      "detail": "evidence 56-65 did not bind a standalone WP5.3 spec hash; F11 records current hash for future lineage"
+    },
+    {
+      "domain": "implementation",
+      "check": "canonical_publication exact identity",
+      "classification": "PASS",
+      "detail": "480ddd02a367b5cd091fff5f98ecac5aaf1c8bfed924c34f16ee629712ccc06f expected 480ddd02a367b5cd091fff5f98ecac5aaf1c8bfed924c34f16ee629712ccc06f"
+    },
+    {
+      "domain": "implementation",
+      "check": "decision_ledger exact identity",
+      "classification": "PASS",
+      "detail": "991fedf52d2540982b7a921dbf265c30ad8c63a7811b66d4b881da41f560bbc4 expected 991fedf52d2540982b7a921dbf265c30ad8c63a7811b66d4b881da41f560bbc4"
+    },
+    {
+      "domain": "implementation",
+      "check": "_gov_current exact identity",
+      "classification": "PASS",
+      "detail": "1c22679cfdf742dd40aeb778be85fd26ee4f01cce31420c448d03bc1a5d6f294 expected 1c22679cfdf742dd40aeb778be85fd26ee4f01cce31420c448d03bc1a5d6f294"
+    },
+    {
+      "domain": "implementation",
+      "check": "chain_a_09 exact identity",
+      "classification": "PASS",
+      "detail": "113e61363eabd83841557e5629b4dea99785c460152d953803a7061faad893d2 expected 113e61363eabd83841557e5629b4dea99785c460152d953803a7061faad893d2"
+    },
+    {
+      "domain": "implementation",
+      "check": "chain_a_10 exact identity",
+      "classification": "PASS",
+      "detail": "d293ee10fbb7da79b31f27208f2fb6b0b0462b50bb24e78b1c635ebe30d78fdc expected d293ee10fbb7da79b31f27208f2fb6b0b0462b50bb24e78b1c635ebe30d78fdc"
+    },
+    {
+      "domain": "implementation",
+      "check": "chain_a_cpub_acceptance exact identity",
+      "classification": "PASS",
+      "detail": "171b05629b8042957545bd8fbd7fc3d7d0519c38661a8a889d1aecbe28d20242 expected 171b05629b8042957545bd8fbd7fc3d7d0519c38661a8a889d1aecbe28d20242"
+    },
+    {
+      "domain": "implementation",
+      "check": "chain_a_activation exact identity",
+      "classification": "PASS",
+      "detail": "1f247b43ebbc4bdc5dc50e3f1b20ff6af3ebac67105e823ba947a61895023237 expected 1f247b43ebbc4bdc5dc50e3f1b20ff6af3ebac67105e823ba947a61895023237"
+    },
+    {
+      "domain": "implementation",
+      "check": "chain_a_baseline exact identity",
+      "classification": "PASS",
+      "detail": "0b0b349a2ceb6f02814a6ef64a23618a24d8e4ff94ae756e3786276a31aeda4f expected 0b0b349a2ceb6f02814a6ef64a23618a24d8e4ff94ae756e3786276a31aeda4f"
+    },
+    {
+      "domain": "implementation",
+      "check": "chain_a_gov_acceptance exact identity",
+      "classification": "PASS",
+      "detail": "07213f328c5c71e054fc8ffd6888bb884a6baaf137e25bdce25c59ea809c331c expected 07213f328c5c71e054fc8ffd6888bb884a6baaf137e25bdce25c59ea809c331c"
+    },
+    {
+      "domain": "implementation",
+      "check": "chain_a_universe exact identity",
+      "classification": "PASS",
+      "detail": "2f5379d7451f36ed1566c74be05a9ccb223b952e877f4450614edb10bed37cc6 expected 2f5379d7451f36ed1566c74be05a9ccb223b952e877f4450614edb10bed37cc6"
+    },
+    {
+      "domain": "implementation",
+      "check": "chain_b_acceptance exact identity",
+      "classification": "PASS",
+      "detail": "188f72305a1e7dcd3ba2dfcbc8f6113b3568d04f285998d8d9e4423fa4caa8e8 expected 188f72305a1e7dcd3ba2dfcbc8f6113b3568d04f285998d8d9e4423fa4caa8e8"
+    },
+    {
+      "domain": "implementation",
+      "check": "_gov_current TEST_ALIGNMENT-only role",
+      "classification": "PASS",
+      "detail": "role/static check"
+    },
+    {
+      "domain": "implementation",
+      "check": "no new canonical writer / bypass in decision_engine.py",
+      "classification": "PASS",
+      "detail": "static scan + F10 governance isolation tests"
+    },
+    {
+      "domain": "recovery_transaction",
+      "check": "generic recovery + caller transaction ownership",
+      "classification": "PASS",
+      "detail": "static scan; no stock-specific bypass"
+    },
+    {
+      "domain": "canonical_state",
+      "check": "16/16/16 cohort identities",
+      "classification": "PASS",
+      "detail": "{\"universe\": [\"00020\", \"00268\", \"00354\", \"00357\", \"00371\", \"00700\", \"00788\", \"01093\", \"01177\", \"01951\", \"02202\", \"02602\", \"02611\", \"03033\", \"03800\", \"06060\"], \"fusion\": [\"00020\", \"00268\", \"00354\", \"00357\", \"00371\", \"00700\", \"00788\", \"01093\", \"01177\", \"01951\", \"02202\", \"02602\", \"02611\", \"03033\", \"03800\", \"06060\"], \"ledger_codes\": [\"00020\", \"00268\", \"00354\", \"00357\", \"00371\", \"00700\", \"00788\", \"01093\", \"01177\", \"01951\", \"02202\", \"02602\", \"02611\", \"03033\", \"03800\", \"06060\"], \"ledger_count\": 16, \"subset\": \"4f9c4e631b0f7e96322511c9d0be120dc93ce156c5a236a2061ef3281e24a63a\", \"01093_rows\": 1, \"01093_identity\": \"2a7ec1d807e84cb657daff6a96bc44ea805abc40d2b69289f960c76f05788fec\", \"manifest\": \"4d6f06935cae6038\"}"
+    },
+    {
+      "domain": "governance_authority",
+      "check": "completed Human R15-B'' acceptance exact",
+      "classification": "PASS",
+      "detail": "77f27ed8a2b5c4cc67277aad7ab2dbe03d1a017542e65d6207d89a2c97020d2e"
+    },
+    {
+      "domain": "governance_authority",
+      "check": "source-bound R15-C lineage exact",
+      "classification": "PASS",
+      "detail": "47ef777647242ac2352627581a1ad86c8fb85db28d28409c804dfa26d4c794a7"
+    },
+    {
+      "domain": "governance_authority",
+      "check": "no machine artifact masquerades as HUMAN",
+      "classification": "PASS",
+      "detail": "HUMAN_ACCEPTED fields only in Human-completed acceptance artifacts; candidates carry CANDIDATE status"
+    },
+    {
+      "domain": "recovery_transaction",
+      "check": "R2-15 recovery PASS evidence",
+      "classification": "PASS",
+      "detail": "R2-15 GOVERNED RECOVERY = PASS"
+    },
+    {
+      "domain": "recovery_transaction",
+      "check": "rollback + idempotence protections",
+      "classification": "PASS",
+      "detail": "pre-COMMIT gates + repeat NOOP recorded in evidence 61"
+    },
+    {
+      "domain": "projection_isolation",
+      "check": "R2-16 Projection evidence exact",
+      "classification": "PASS",
+      "detail": "2f31b2bc3705999f81bca79aa24c711504915584585ed7a915ab3202c16e9923"
+    },
+    {
+      "domain": "projection_isolation",
+      "check": "LEDGER_PROJECTION_ONLY + canonical mutation 0",
+      "classification": "PASS",
+      "detail": "PASS"
+    },
+    {
+      "domain": "regression",
+      "check": "F10 evidence 65 exact",
+      "classification": "PASS",
+      "detail": "0664c46e584653f5a7f5a0c0ca96d92058f5a3d92ee71b6ff459f97480d420e8"
+    },
+    {
+      "domain": "regression",
+      "check": "formal pytest log exact",
+      "classification": "PASS",
+      "detail": "b5a55b5da4de2200413fba1eac394a2844f8a93e5f9820f6e00cef96428679bc"
+    },
+    {
+      "domain": "regression",
+      "check": "2421 passed / rc=0",
+      "classification": "PASS",
+      "detail": "{\"command\": \"C:\\\\Users\\\\Quansheng\\\\Documents\\\\projects\\\\TA_Workflow\\\\.venv\\\\Scripts\\\\python.exe -m pytest Core/QCFP_MTF/tests audit/phase5/external_governance_candidates/tools/governance/tests -q --no-header -p no:cacheprovider\", \"returncode\": 0, \"counts\": {\"passed\": 2421, \"failed\": 0, \"skipped\": 0}, \"collection_status\": \"CLEAN (zero collection errors)\"}"
+    },
+    {
+      "domain": "historical_immutability",
+      "check": "evidence 44 unchanged",
+      "classification": "PASS",
+      "detail": "4b95c88d84b5a86747961ce7d5890a4d4c1c6f97db425b4b1c1cf78e2977b0ca"
+    },
+    {
+      "domain": "historical_immutability",
+      "check": "evidence 54 unchanged",
+      "classification": "PASS",
+      "detail": "dde3883cf1e7470aaad31f2ce20cb9f1625cc8e8d1ef045e3ff72dc5673d51f8"
+    },
+    {
+      "domain": "historical_immutability",
+      "check": "prior R15-B' evidence unchanged",
+      "classification": "PASS",
+      "detail": "4e2ca8c191d187f5a2b33f2dbcd5d944e1f0ec44bdd8e2eed785aa967058c0b7"
+    },
+    {
+      "domain": "historical_immutability",
+      "check": "Phase4 frozen evidence recomputed",
+      "classification": "PASS",
+      "detail": "32 files; F10 formal suite included test_phase4_evidence_integrity and passed"
+    },
+    {
+      "domain": "audit_chain",
+      "check": "evidence 56-65 lineage exact (no overwrite)",
+      "classification": "PASS",
+      "detail": "10/10 exact"
+    },
+    {
+      "domain": "audit_chain",
+      "check": "current-vs-historical identity distinction",
+      "classification": "PASS",
+      "detail": "163f... historical / 45158ced... prior accepted / 2a7ec1d8... current successor-bound R15-B'' preserved"
+    }
+  ],
+  "counts": {
+    "total": 35,
+    "blocker": 0,
+    "error": 0,
+    "warning": 1
+  },
+  "independent_measurements": {
+    "state": {
+      "universe": [
+        "00020",
+        "00268",
+        "00354",
+        "00357",
+        "00371",
+        "00700",
+        "00788",
+        "01093",
+        "01177",
+        "01951",
+        "02202",
+        "02602",
+        "02611",
+        "03033",
+        "03800",
+        "06060"
+      ],
+      "fusion": [
+        "00020",
+        "00268",
+        "00354",
+        "00357",
+        "00371",
+        "00700",
+        "00788",
+        "01093",
+        "01177",
+        "01951",
+        "02202",
+        "02602",
+        "02611",
+        "03033",
+        "03800",
+        "06060"
+      ],
+      "ledger_codes": [
+        "00020",
+        "00268",
+        "00354",
+        "00357",
+        "00371",
+        "00700",
+        "00788",
+        "01093",
+        "01177",
+        "01951",
+        "02202",
+        "02602",
+        "02611",
+        "03033",
+        "03800",
+        "06060"
+      ],
+      "ledger_count": 16,
+      "subset": "4f9c4e631b0f7e96322511c9d0be120dc93ce156c5a236a2061ef3281e24a63a",
+      "01093_rows": 1,
+      "01093_identity": "2a7ec1d807e84cb657daff6a96bc44ea805abc40d2b69289f960c76f05788fec",
+      "manifest": "4d6f06935cae6038"
+    },
+    "shas": {
+      "canonical_publication": "480ddd02a367b5cd091fff5f98ecac5aaf1c8bfed924c34f16ee629712ccc06f",
+      "decision_ledger": "991fedf52d2540982b7a921dbf265c30ad8c63a7811b66d4b881da41f560bbc4",
+      "_gov_current": "1c22679cfdf742dd40aeb778be85fd26ee4f01cce31420c448d03bc1a5d6f294",
+      "chain_a_09": "113e61363eabd83841557e5629b4dea99785c460152d953803a7061faad893d2",
+      "chain_a_10": "d293ee10fbb7da79b31f27208f2fb6b0b0462b50bb24e78b1c635ebe30d78fdc",
+      "chain_a_cpub_acceptance": "171b05629b8042957545bd8fbd7fc3d7d0519c38661a8a889d1aecbe28d20242",
+      "chain_a_activation": "1f247b43ebbc4bdc5dc50e3f1b20ff6af3ebac67105e823ba947a61895023237",
+      "chain_a_baseline": "0b0b349a2ceb6f02814a6ef64a23618a24d8e4ff94ae756e3786276a31aeda4f",
+      "chain_a_gov_acceptance": "07213f328c5c71e054fc8ffd6888bb884a6baaf137e25bdce25c59ea809c331c",
+      "chain_a_universe": "2f5379d7451f36ed1566c74be05a9ccb223b952e877f4450614edb10bed37cc6",
+      "chain_b_acceptance": "188f72305a1e7dcd3ba2dfcbc8f6113b3568d04f285998d8d9e4423fa4caa8e8"
+    },
+    "wp53_spec_sha": "870c0e237892b43168d9afc4cefa97b7cc1d957556dfc6e5caaee762796bb87b",
+    "outcome_observer_sha": "a54ddf08cc584fad6599046bd2df47ce00f896811113dbf8cb7e4c75ec31e0e6",
+    "log_sha": "b5a55b5da4de2200413fba1eac394a2844f8a93e5f9820f6e00cef96428679bc",
+    "phase4_file_count": 32,
+    "phase4_hashes": {
+      "audit\\phase4\\bundle\\acceptance_case_evidence.json": "7a600e97751bf90542802561519a2344bbae3593a02e59d278daedcb657e31f2",
+      "audit\\phase4\\bundle\\acceptance_result.json": "14b066eb1ec99dc8ae0f797e1b889a73f50426844f64febd3f79fe4388df3d78",
+      "audit\\phase4\\bundle\\baseline.json": "25ddc67f1a3bf95bd8f946f343a4065546fbbc49f745c5add519c9472f64ab10",
+      "audit\\phase4\\bundle\\change_impact.json": "37b2bcdca3f853f20eaa4f8736b3158e9abb4eadeca6ff57f34274f47d18f70f",
+      "audit\\phase4\\bundle\\evidence_manifest.json": "d939dae416469fccf0c7f4185c17d7409e84aff5bed570d30497e54d998bb49d",
+      "audit\\phase4\\bundle\\fgc_bypass_suite.json": "c0c88d19c6a5658f48b4a168e094c9aba89e72883e250ef8c8b6cad93a5fd5a5",
+      "audit\\phase4\\bundle\\golden_evidence.json": "6b9e114099e1942382fa3f60975e73321bfacb230f7937e77f04a66eb7971f75",
+      "audit\\phase4\\bundle\\implementation_contract_result.json": "7fc2dddf60ef4e6c289f7e420fc2ff800299e56e35d22fc8ca7539f56f64941a",
+      "audit\\phase4\\bundle\\phase4_regression_summary.json": "2dc116264f508b0aa9cf1a230e7b355c961283aff6ebf64a2afcd953c4d3ab49",
+      "audit\\phase4\\bundle\\review_report.json": "1d9aea2b6a0e4b336ca4d37ab6788807aa0ba41ecbb6a2470d98cdf68d2c99df",
+      "audit\\phase4\\bundle\\review_report.md": "fcb3d2816cc46f1c494512973ec46386f4c6448f91d550a8a432226c450078e7",
+      "audit\\phase4\\bundle\\review_resolution.json": "85c4df3534299b82fc421b8ee9f8ea06a557a72c5a0347f984cc3efe2ee88354",
+      "audit\\phase4\\bundle\\scope_audit.json": "fcefc424d05ac8f71d607699d242f185b93bd5c7aad73fce041b103a5bc71b9b",
+      "audit\\phase4\\bundle\\spec_conformance.json": "ae21ecdab7c06b8dcd6db21dce45db343a323994f8544cd0fc54036b55163361",
+      "audit\\phase4\\bundle\\traceability.json": "2551b9ff31c11f493d23adcd42cb2d06c4c402c2cca2030af3a2cb8d732b38ce",
+      "audit\\phase4\\contracts\\acceptance_case_manifest.json": "e07d1dbf9a8023110e1cecb20626737c78f2a303231248be77a51b6bda5e43dd",
+      "audit\\phase4\\contracts\\acceptance_contract.json": "33dd732b0c7a65a8d26cfabfccd5ea6d65733e135294d4dca7aed312b8d49fab",
+      "audit\\phase4\\contracts\\implementation_contract.json": "efde4210cae78dd06597ddd7439e932903debf592549ea03c85847bc3cfdd167",
+      "audit\\phase4\\contracts\\patch_contract.json": "3558f7b54ee7410a08f7d7899146b085e253324471cf3232851530c1e2c5f2cf",
+      "audit\\phase4\\contracts\\review_input.json": "ac5ad933d0286277be2f4da3d3510875bfb275fb4cde51ddda730e70a9b32f91",
+      "audit\\phase4\\contracts\\review_resolutions.json": "191dc7c0d029e05d0539d6358cc88f0c9496652606677e97483d0ff515ad638f",
+      "audit\\phase4\\evidence_manifest_verification.json": "b5da26730a0cf0081b5b5751967c36f3fbf78e523155b3549b21d5e2790c77ae",
+      "audit\\phase4\\evidence_pack_readonly.json": "3220896be2bd15624b576cae4e765f224f17bb7c4339f561bfc8eac00622d60a",
+      "audit\\phase4\\graphs\\authority_graph_after.json": "f74a3d40cbeac9511d5ca753f19a5547db97ee54f6e4e1578de59abf3efd73c8",
+      "audit\\phase4\\graphs\\authority_graph_before.json": "c708022e117b58cd1bb3c562737750e272b4385724e27457c2d1fc27d28463d4",
+      "audit\\phase4\\observed_diff.json": "601e2dea649e9009424b3818673c75b0bcc9b0723a8dc33488e48fd4b92d7f0b",
+      "audit\\phase4\\phase4_acceptance.json": "cad643cf2d0b672f52bac22eae8f34475f6c6c2da25cd6948172b371230f13b8",
+      "audit\\phase4\\phase4_acceptance.md": "7ee6ad9194a9f21cd56d11a57db37afdf18be2288ad99a57df9ef8b57bdf5b00",
+      "audit\\phase4\\phase4_acceptance_case_results.json": "35b4867aecc81feb45ee0f28e70543a3ab2ee78b31c8af5d9ae09ff26c3f067e",
+      "audit\\phase4\\phase4_freeze_record.txt": "710200a19391e4433bb7655bcd84674688262ede2516f9ee140f9c7157ae4c8b",
+      "audit\\phase4\\phase4_human_approval.txt": "0d28cece77414fd60120712a442d25d49859469aabfd9c616bc51a6d7a41e7cb",
+      "audit\\phase4\\phase4_regression_summary.json": "8030531c779b10ba335ef493d1fe827aa7d3c9d60319a91b2eb5225907eb79ba"
+    }
+  },
+  "canonical_state": {
+    "universe": [
+      "00020",
+      "00268",
+      "00354",
+      "00357",
+      "00371",
+      "00700",
+      "00788",
+      "01093",
+      "01177",
+      "01951",
+      "02202",
+      "02602",
+      "02611",
+      "03033",
+      "03800",
+      "06060"
+    ],
+    "fusion": [
+      "00020",
+      "00268",
+      "00354",
+      "00357",
+      "00371",
+      "00700",
+      "00788",
+      "01093",
+      "01177",
+      "01951",
+      "02202",
+      "02602",
+      "02611",
+      "03033",
+      "03800",
+      "06060"
+    ],
+    "ledger_codes": [
+      "00020",
+      "00268",
+      "00354",
+      "00357",
+      "00371",
+      "00700",
+      "00788",
+      "01093",
+      "01177",
+      "01951",
+      "02202",
+      "02602",
+      "02611",
+      "03033",
+      "03800",
+      "06060"
+    ],
+    "ledger_count": 16,
+    "subset": "4f9c4e631b0f7e96322511c9d0be120dc93ce156c5a236a2061ef3281e24a63a",
+    "01093_rows": 1,
+    "01093_identity": "2a7ec1d807e84cb657daff6a96bc44ea805abc40d2b69289f960c76f05788fec",
+    "manifest": "4d6f06935cae6038"
+  },
+  "machine_action": "STOP FOR HUMAN REVIEW. F11 = CLOSED is NOT authorized until Human exact-byte review. F12, P5-F freeze, P5-G, Phase6 NOT authorized."
+}

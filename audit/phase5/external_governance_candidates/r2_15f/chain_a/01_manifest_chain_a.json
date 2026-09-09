@@ -1,0 +1,33 @@
+{
+  "schema": "P5F-R2-R2-15F-CHAIN-A-MANIFEST-1",
+  "files": [
+    {
+      "role": "CANONICAL_PUBLICATION_AUTHORITY_CANDIDATE",
+      "materialization_type": "EXACT_MATERIALIZATION_TARGET",
+      "target_path": "Core/QCFP_MTF/decision/canonical_publication.py",
+      "sha256": "480ddd02a367b5cd091fff5f98ecac5aaf1c8bfed924c34f16ee629712ccc06f",
+      "candidate_path": "audit/phase5/external_governance_candidates/r2_15f/canonical_publication_r2_15f_candidate.py"
+    },
+    {
+      "role": "CANONICAL_PUBLICATION_INPUT_AUTHORITY_CANDIDATE",
+      "materialization_type": "EXACT_MATERIALIZATION_TARGET",
+      "target_path": "Core/QCFP_MTF/decision/publication_universe.py",
+      "sha256": "2f5379d7451f36ed1566c74be05a9ccb223b952e877f4450614edb10bed37cc6",
+      "candidate_path": "Core/QCFP_MTF/decision/publication_universe.py"
+    },
+    {
+      "role": "FROZEN_SURFACE_MANIFEST_CANDIDATE",
+      "materialization_type": "IDENTICAL_CURRENT_GOVERNANCE",
+      "target_path": "audit/phase5/frozen_surface_manifest.json",
+      "sha256": "92df5b7b5144d3d54d12093d066352058caeefa829aa5df5ad7024a5e7a6ce69",
+      "candidate_path": "audit/phase5/frozen_surface_manifest.json"
+    },
+    {
+      "role": "GOVERNANCE_BASELINE_PREACTIVATION_CANDIDATE",
+      "materialization_type": "IDENTICAL_CURRENT_GOVERNANCE",
+      "target_path": "audit/phase5/phase5_governance_baseline.json",
+      "sha256": "163ddd73db9c38de9a50e28690d0e71b4a87844c956565c1d1745bddc552757f",
+      "candidate_path": "audit/phase5/phase5_governance_baseline.json"
+    }
+  ]
+}

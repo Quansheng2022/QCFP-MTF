@@ -1,0 +1,22 @@
+{
+  "schema": "P5F-R2-R2-15F-CHAIN-A-PACKAGE-1",
+  "candidate_revision": "R2-15F-CHAIN-A",
+  "status": "CANDIDATE / PRE_HUMAN",
+  "activation": false,
+  "human_acceptance_required": true,
+  "file_sha256": {
+    "CANDIDATE_MANIFEST": "113e61363eabd83841557e5629b4dea99785c460152d953803a7061faad893d2",
+    "CANONICAL_PUBLICATION_AUTHORITY_CANDIDATE": "480ddd02a367b5cd091fff5f98ecac5aaf1c8bfed924c34f16ee629712ccc06f",
+    "CANONICAL_PUBLICATION_INPUT_AUTHORITY_CANDIDATE": "2f5379d7451f36ed1566c74be05a9ccb223b952e877f4450614edb10bed37cc6",
+    "FROZEN_SURFACE_MANIFEST_CANDIDATE": "92df5b7b5144d3d54d12093d066352058caeefa829aa5df5ad7024a5e7a6ce69",
+    "GOVERNANCE_BASELINE_PREACTIVATION_CANDIDATE": "163ddd73db9c38de9a50e28690d0e71b4a87844c956565c1d1745bddc552757f"
+  },
+  "referenced_files": {
+    "CANDIDATE_MANIFEST": "audit/phase5/external_governance_candidates/r2_15f/chain_a/01_manifest_chain_a.json",
+    "CANONICAL_PUBLICATION_AUTHORITY_CANDIDATE": "audit/phase5/external_governance_candidates/r2_15f/canonical_publication_r2_15f_candidate.py",
+    "CANONICAL_PUBLICATION_INPUT_AUTHORITY_CANDIDATE": "Core/QCFP_MTF/decision/publication_universe.py",
+    "FROZEN_SURFACE_MANIFEST_CANDIDATE": "audit/phase5/frozen_surface_manifest.json",
+    "GOVERNANCE_BASELINE_PREACTIVATION_CANDIDATE": "audit/phase5/phase5_governance_baseline.json"
+  },
+  "candidate_package_sha256": "a0979324d02bca3fd029c369c51856af1e5b49602e95d714dc6e2abc79cc5507"
+}

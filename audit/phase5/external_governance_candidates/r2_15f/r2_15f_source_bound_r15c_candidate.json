@@ -1,0 +1,143 @@
+{
+  "schema": "P5F-R2-R2-15F-SOURCE-BOUND-R15C-CANDIDATE-1",
+  "status": "CANDIDATE-ONLY; awaiting Human exact-byte / second-production-attempt review",
+  "generated_at_utc": "2026-09-09T10:15:42+00:00",
+  "decision_date": "2026-09-04",
+  "operation_mode": "MISSING_ONLY_RECOVERY",
+  "lineage": {
+    "historical_R15_B": "163f067aab4c611a2a1a40d9bd79c5101cfb55f23d82c0b033abdaa3d0178ec2",
+    "prior_human_accepted_R15_B_prime": "45158cedce27c9e01f294e33a9755cdfcef2f81a38288e636aeec9a4324e410c",
+    "note": "163f... and 45158ced... remain immutable lineage records; neither is overwritten or reinterpreted.",
+    "r15c_rev1_sha256": "ac4824d5a96cbf6c8e0c5ca41f971f87d133ea7a60eaf435e04c1f323ace147f",
+    "r15c_rev2_sha256": "2734d6df3d63840698eb385eb6a520e15dea99fe94ccdbc6ea09123c3e57988c",
+    "evidence_56_sha256": "c8cc01806e0b8e20057516c9f84299e8b9977586c9d835847934e9a17c066f32",
+    "evidence_57_sha256": "9895b6047105db69278b92ca96214653c32d6490eafda505e75fc4759fc13c0e",
+    "evidence_58_sha256": "09092fd59e688af97eff8b04df17c10f359fb2a1d3c00248a3dfa2fa34ef4fe7",
+    "evidence_59_sha256": "469efec2c51a1048dcf24a7b4ca47f68d5bbbe533ec05987ca3afc8214d9f79a",
+    "evidence_60_sha256": "d98283de4bc1888e6dfc0068887c92e733b9ff75c0dc9dbd01a68645099dff52"
+  },
+  "mandatory_identity_bindings": {
+    "R15_A": "4f9c4e631b0f7e96322511c9d0be120dc93ce156c5a236a2061ef3281e24a63a",
+    "human_accepted_successor_R15_B2": "2a7ec1d807e84cb657daff6a96bc44ea805abc40d2b69289f960c76f05788fec",
+    "completed_human_R15_B2_acceptance_sha256": "77f27ed8a2b5c4cc67277aad7ab2dbe03d1a017542e65d6207d89a2c97020d2e",
+    "R15_B2_identity_evidence_sha256": "04b65c48ee53795f46c26c3b49abe72b27ac03a6bfa47f2a95545cb44d598823",
+    "source_state_stabilization_evidence_sha256": "e54df0418518b2f85723b3d18db12f0aa1caab40363e2a46b7fa3e64e627a8b7",
+    "dataset_manifest_hash": "4d6f06935cae6038",
+    "evidence_59_sha256": "469efec2c51a1048dcf24a7b4ca47f68d5bbbe533ec05987ca3afc8214d9f79a",
+    "evidence_60_sha256": "d98283de4bc1888e6dfc0068887c92e733b9ff75c0dc9dbd01a68645099dff52",
+    "approved_dual_authority_manifest_sha256": "a30ced80b3889d76c63119616e6441a70e61b47c7c3005b3c135d3ed00761af6"
+  },
+  "active_successor_authority": {
+    "chain_a": {
+      "09_manifest": "113e61363eabd83841557e5629b4dea99785c460152d953803a7061faad893d2",
+      "10_package_raw": "d293ee10fbb7da79b31f27208f2fb6b0b0462b50bb24e78b1c635ebe30d78fdc",
+      "package_digest": "a0979324d02bca3fd029c369c51856af1e5b49602e95d714dc6e2abc79cc5507",
+      "cpub_human_acceptance": "171b05629b8042957545bd8fbd7fc3d7d0519c38661a8a889d1aecbe28d20242",
+      "activation": "1f247b43ebbc4bdc5dc50e3f1b20ff6af3ebac67105e823ba947a61895023237",
+      "governance_baseline": "0b0b349a2ceb6f02814a6ef64a23618a24d8e4ff94ae756e3786276a31aeda4f",
+      "governance_acceptance": "07213f328c5c71e054fc8ffd6888bb884a6baaf137e25bdce25c59ea809c331c",
+      "canonical_publication": "480ddd02a367b5cd091fff5f98ecac5aaf1c8bfed924c34f16ee629712ccc06f",
+      "publication_universe": "2f5379d7451f36ed1566c74be05a9ccb223b952e877f4450614edb10bed37cc6"
+    },
+    "chain_b": {
+      "decision_ledger": "991fedf52d2540982b7a921dbf265c30ad8c63a7811b66d4b881da41f560bbc4",
+      "completed_human_acceptance": "188f72305a1e7dcd3ba2dfcbc8f6113b3568d04f285998d8d9e4423fa4caa8e8"
+    }
+  },
+  "recovery_contract": {
+    "decision_date": "2026-09-04",
+    "operation": "MISSING_ONLY_RECOVERY",
+    "expected_missing_set": [
+      "01093"
+    ],
+    "pre_ledger_count": 15,
+    "post_ledger_count": 16,
+    "existing_15_mutation": "PROHIBITED",
+    "only_01093_may_be_added": true,
+    "duplicates_or_unexpected_members": "FAIL_CLOSED",
+    "caller_owns_final_commit_rollback": true,
+    "lower_level_ledger_write": "manage_transaction=False",
+    "projection_during_recovery": "OFF",
+    "repeat_after_success": "zero mutation"
+  },
+  "source_data_identity_gate": {
+    "required_live_dataset_manifest_hash": "4d6f06935cae6038",
+    "before_first_production_write": "live_dataset_manifest_hash == 4d6f06935cae6038; on mismatch: SOURCE_DATASET_IDENTITY_MISMATCH - ZERO MUTATION",
+    "identity_must_remain_valid_through": [
+      "pre-execution assertions",
+      "01093 evaluation",
+      "row insertion",
+      "pre-COMMIT R15-B'' verification"
+    ],
+    "immediately_before_commit": "recompute consumed/live source manifest and require dataset_manifest_hash == 4d6f06935cae6038",
+    "on_change_at_any_point": "SOURCE_STATE_DRIFT_DURING_RECOVERY -> rollback exactly to R15-A"
+  },
+  "pre_commit_row_identity_gate": {
+    "identity": "2a7ec1d807e84cb657daff6a96bc44ea805abc40d2b69289f960c76f05788fec",
+    "inside_caller_owned_transaction": [
+      "read the newly inserted ACTIVE 01093 row",
+      "canonicalize under the unchanged R15-B contract",
+      "exclude created_at only",
+      "compute actual R15-B",
+      "require actual_R15_B == 2a7ec1d807e84cb657daff6a96bc44ea805abc40d2b69289f960c76f05788fec"
+    ],
+    "mismatch_failure": "R15_B2_IDENTITY_MISMATCH -> rollback exactly to R15-A",
+    "required_before_commit": [
+      "Ledger == 16",
+      "exactly one 01093 added",
+      "existing 15 byte-identical",
+      "duplicates == 0",
+      "unexpected == 0",
+      "source dataset identity still exact (4d6f06935cae6038)"
+    ],
+    "commit_only_after_all_pass": true
+  },
+  "post_commit_verification": {
+    "ledger": 16,
+    "universe_equals_fusion_equals_ledger": "16/16/16",
+    "exactly_one_active_01093_row": true,
+    "persisted_R15_B2": "2a7ec1d807e84cb657daff6a96bc44ea805abc40d2b69289f960c76f05788fec",
+    "persisted_row_data_snapshot_id_corresponds_to_manifest": "4d6f06935cae6038",
+    "existing_15_immutable": true,
+    "repeat_invocation": "zero mutation (NOOP)",
+    "projection": "OFF"
+  },
+  "pre_execution_assertions_required": {
+    "resolver": "ACTIVE",
+    "governed_universe_count": 16,
+    "fusion_count": 16,
+    "active_ledger_count": 15,
+    "missing_set_exact": [
+      "01093"
+    ],
+    "duplicates": 0,
+    "unexpected": 0,
+    "R15_A_exact": "4f9c4e631b0f7e96322511c9d0be120dc93ce156c5a236a2061ef3281e24a63a",
+    "01093_active_rows": 0,
+    "projection": "OFF",
+    "live_dataset_manifest_hash": "4d6f06935cae6038",
+    "all_successor_authority_identities_exact": true,
+    "human_successor_R15_B2_acceptance_exact": "77f27ed8a2b5c4cc67277aad7ab2dbe03d1a017542e65d6207d89a2c97020d2e"
+  },
+  "preflight_validation_summary": {
+    "stabilization_evidence": "e54df0418518b2f85723b3d18db12f0aa1caab40363e2a46b7fa3e64e627a8b7",
+    "R15_B2_deterministic_repeat": "4 independent isolated reproductions = 2a7ec1d8... under dataset manifest 4d6f06935cae6038",
+    "negative_proofs": "wrong R15-A / wrong missing set / stale authority / fault rollback / repeat NOOP / caller-transaction guard ALL PASS (stabilization evidence)"
+  },
+  "real_ledger_state_at_generation": {
+    "active_ledger_rows": 15,
+    "R15_A": "4f9c4e631b0f7e96322511c9d0be120dc93ce156c5a236a2061ef3281e24a63a",
+    "01093": "NOT_RUN",
+    "projection": "OFF"
+  },
+  "not_authorized": [
+    "second production recovery attempt",
+    "Ledger 15->16 mutation",
+    "Projection",
+    "F10/F11/F12 closure",
+    "P5-F freeze",
+    "P5-G",
+    "Phase 6"
+  ],
+  "machine_action": "STOP; submit source-bound R15-C exact SHA and bytes for Human exact-byte / second-production-attempt review."
+}

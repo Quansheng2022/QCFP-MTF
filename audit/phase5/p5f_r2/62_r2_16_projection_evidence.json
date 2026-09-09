@@ -1,0 +1,89 @@
+{
+  "schema": "P5F-R2-R2-16-PROJECTION-EVIDENCE-1",
+  "generated_at_utc": "2026-09-09T10:32:20+00:00",
+  "verdict": "PASS",
+  "approved_r2_15_recovery_evidence_61_sha256": "b2befd991c063509ddf45af831e701147a8d5dfdd925b1798bf6c9fc1edfd40e",
+  "decision_date": "2026-09-04",
+  "pre_projection_canonical_cohort_state": {
+    "universe_count": 16,
+    "fusion_count": 16,
+    "active_ledger_count": 16,
+    "missing": 0,
+    "duplicates": 0,
+    "unexpected": 0,
+    "01093_active_rows": 1,
+    "existing_15_subset_digest": "4f9c4e631b0f7e96322511c9d0be120dc93ce156c5a236a2061ef3281e24a63a",
+    "01093_canonical_identity": "2a7ec1d807e84cb657daff6a96bc44ea805abc40d2b69289f960c76f05788fec",
+    "projection_state": "OFF",
+    "dataset_manifest_hash": "4d6f06935cae6038",
+    "canonical_codes": [
+      "00020",
+      "00268",
+      "00354",
+      "00357",
+      "00371",
+      "00700",
+      "00788",
+      "01093",
+      "01177",
+      "01951",
+      "02202",
+      "02602",
+      "02611",
+      "03033",
+      "03800",
+      "06060"
+    ]
+  },
+  "projection_execution": {
+    "adapter": "Core/QCFP_MTF/scripts/decision_engine.py",
+    "authority": "LEDGER_PROJECTION_ONLY",
+    "returncode": 0,
+    "note": "downstream display-field projection; no canonical publication authority acquired"
+  },
+  "projected_member_set_09_04": [
+    "00020",
+    "00268",
+    "00354",
+    "00357",
+    "00371",
+    "00700",
+    "00788",
+    "01093",
+    "01177",
+    "01951",
+    "02202",
+    "02602",
+    "02611",
+    "03033",
+    "03800",
+    "06060"
+  ],
+  "projected_member_count_09_04": 16,
+  "tactical_chain_consistency": {
+    "universe": 16,
+    "fusion": 16,
+    "active_ledger": 16,
+    "projected_display_rows": 16,
+    "projected_codes_equal_canonical": true,
+    "01093_present_exactly_once_in_downstream_chain": true,
+    "01093_action_signal": "EXIT",
+    "01093_ledger_status_in_export": "PROJECTED"
+  },
+  "canonical_ledger_immutability": {
+    "pre_lines_hash": "e0846909e67074caab19290bfd4e0dfcf9c95a48cc159c29a8bb514856773bae",
+    "post_lines_hash": "e0846909e67074caab19290bfd4e0dfcf9c95a48cc159c29a8bb514856773bae",
+    "byte_identical": true,
+    "existing_15_subset_digest_after": "4f9c4e631b0f7e96322511c9d0be120dc93ce156c5a236a2061ef3281e24a63a",
+    "01093_r15_b2_after": "2a7ec1d807e84cb657daff6a96bc44ea805abc40d2b69289f960c76f05788fec"
+  },
+  "authority_isolation": {
+    "projection_authority": "LEDGER_PROJECTION_ONLY",
+    "canonical_ledger_mutation": 0,
+    "no_authority_path_changed": true
+  },
+  "final_projection_state": "ON (R2-16 executed; historical 08_projection_state_evidence remains OFF/immutable)",
+  "dataset_manifest_before_projection": "4d6f06935cae6038",
+  "dataset_manifest_after_projection": "4d6f06935cae6038",
+  "machine_action": "STOP FOR HUMAN REVIEW. F10/F11/F12, P5-F freeze, P5-G, Phase6 NOT authorized."
+}

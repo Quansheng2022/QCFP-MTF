@@ -1,0 +1,42 @@
+{
+  "schema": "P5F-R2-R2-15F-SUCCESSOR-R15B2-PREHUMAN-ACCEPTANCE-TEMPLATE-1",
+  "status": "CANDIDATE_TEMPLATE_NOT_A_DECISION",
+  "decision": null,
+  "accepted_by": null,
+  "accepted_at": null,
+  "decision_date": "2026-09-04",
+  "dataset_manifest_hash_bound": "4d6f06935cae6038",
+  "current_successor_r15b2_identity": "2a7ec1d807e84cb657daff6a96bc44ea805abc40d2b69289f960c76f05788fec",
+  "historical_recorded_R15_B": "163f067aab4c611a2a1a40d9bd79c5101cfb55f23d82c0b033abdaa3d0178ec2",
+  "prior_human_accepted_R15_B_prime": "45158cedce27c9e01f294e33a9755cdfcef2f81a38288e636aeec9a4324e410c",
+  "historical_comparability": "NOT_ESTABLISHED_INPUT_UNAVAILABLE",
+  "authorization_scope": "Human acceptance of this template would authorize ONLY the current successor R15-B'' identity bound to the exact dataset_manifest_hash above, for the active successor authority path. It does NOT replace, correct, invalidate, or reinterpret historical R15-B 163f... or prior Human-accepted R15-B' 45158ced..., and makes no causal-origin claim.",
+  "bindings": {
+    "R15_B2_identity": "2a7ec1d807e84cb657daff6a96bc44ea805abc40d2b69289f960c76f05788fec",
+    "R15_B2_evidence_candidate_sha256": "04b65c48ee53795f46c26c3b49abe72b27ac03a6bfa47f2a95545cb44d598823",
+    "source_state_stabilization_evidence_sha256": "e54df0418518b2f85723b3d18db12f0aa1caab40363e2a46b7fa3e64e627a8b7",
+    "dataset_manifest_hash": "4d6f06935cae6038",
+    "R15_A": "4f9c4e631b0f7e96322511c9d0be120dc93ce156c5a236a2061ef3281e24a63a",
+    "active_chain_a": {
+      "canonical_publication": "480ddd02a367b5cd091fff5f98ecac5aaf1c8bfed924c34f16ee629712ccc06f",
+      "activation": "1f247b43ebbc4bdc5dc50e3f1b20ff6af3ebac67105e823ba947a61895023237",
+      "governance_baseline": "0b0b349a2ceb6f02814a6ef64a23618a24d8e4ff94ae756e3786276a31aeda4f",
+      "governance_acceptance": "07213f328c5c71e054fc8ffd6888bb884a6baaf137e25bdce25c59ea809c331c",
+      "cpub_human_acceptance": "171b05629b8042957545bd8fbd7fc3d7d0519c38661a8a889d1aecbe28d20242",
+      "publication_universe": "2f5379d7451f36ed1566c74be05a9ccb223b952e877f4450614edb10bed37cc6"
+    },
+    "active_chain_b": {
+      "decision_ledger": "991fedf52d2540982b7a921dbf265c30ad8c63a7811b66d4b881da41f560bbc4",
+      "completed_human_acceptance": "188f72305a1e7dcd3ba2dfcbc8f6113b3568d04f285998d8d9e4423fa4caa8e8"
+    },
+    "lineage_evidence_56_57_58_59_60": [
+      "c8cc01806e0b8e20057516c9f84299e8b9977586c9d835847934e9a17c066f32",
+      "9895b6047105db69278b92ca96214653c32d6490eafda505e75fc4759fc13c0e",
+      "09092fd59e688af97eff8b04df17c10f359fb2a1d3c00248a3dfa2fa34ef4fe7",
+      "469efec2c51a1048dcf24a7b4ca47f68d5bbbe533ec05987ca3afc8214d9f79a",
+      "d98283de4bc1888e6dfc0068887c92e733b9ff75c0dc9dbd01a68645099dff52"
+    ]
+  },
+  "explicit_no_causal_origin_claim": true,
+  "machine_action": "STOP; submit pre-human successor R15-B'' acceptance template exact bytes for Human exact-byte review. Template is not a decision."
+}

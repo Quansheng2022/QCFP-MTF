@@ -1,0 +1,70 @@
+{
+  "schema": "P5F-R2-R2-15F-SUCCESSOR-R15B2-IDENTITY-EVIDENCE-CANDIDATE-1",
+  "status": "CANDIDATE-ONLY; awaiting Human exact-byte review",
+  "decision_date": "2026-09-04",
+  "dataset_manifest_hash_bound": "4d6f06935cae6038",
+  "current_successor_r15b2_candidate": "2a7ec1d807e84cb657daff6a96bc44ea805abc40d2b69289f960c76f05788fec",
+  "lineage": {
+    "historical_R15_B": "163f067aab4c611a2a1a40d9bd79c5101cfb55f23d82c0b033abdaa3d0178ec2",
+    "human_accepted_R15_B_prime": "45158cedce27c9e01f294e33a9755cdfcef2f81a38288e636aeec9a4324e410c",
+    "note": "163f... and 45158ced... remain immutable lineage records; neither is overwritten.",
+    "evidence_56_sha256": "c8cc01806e0b8e20057516c9f84299e8b9977586c9d835847934e9a17c066f32",
+    "evidence_57_sha256": "9895b6047105db69278b92ca96214653c32d6490eafda505e75fc4759fc13c0e",
+    "evidence_58_sha256": "09092fd59e688af97eff8b04df17c10f359fb2a1d3c00248a3dfa2fa34ef4fe7",
+    "evidence_59_sha256": "469efec2c51a1048dcf24a7b4ca47f68d5bbbe533ec05987ca3afc8214d9f79a",
+    "evidence_60_sha256": "d98283de4bc1888e6dfc0068887c92e733b9ff75c0dc9dbd01a68645099dff52",
+    "source_state_stabilization_evidence_sha256": "e54df0418518b2f85723b3d18db12f0aa1caab40363e2a46b7fa3e64e627a8b7"
+  },
+  "active_successor_authority": {
+    "chain_a": {
+      "09_manifest": "113e61363eabd83841557e5629b4dea99785c460152d953803a7061faad893d2",
+      "10_package_raw": "d293ee10fbb7da79b31f27208f2fb6b0b0462b50bb24e78b1c635ebe30d78fdc",
+      "package_digest": "a0979324d02bca3fd029c369c51856af1e5b49602e95d714dc6e2abc79cc5507",
+      "cpub_human_acceptance": "171b05629b8042957545bd8fbd7fc3d7d0519c38661a8a889d1aecbe28d20242",
+      "activation": "1f247b43ebbc4bdc5dc50e3f1b20ff6af3ebac67105e823ba947a61895023237",
+      "governance_baseline": "0b0b349a2ceb6f02814a6ef64a23618a24d8e4ff94ae756e3786276a31aeda4f",
+      "governance_acceptance": "07213f328c5c71e054fc8ffd6888bb884a6baaf137e25bdce25c59ea809c331c",
+      "canonical_publication": "480ddd02a367b5cd091fff5f98ecac5aaf1c8bfed924c34f16ee629712ccc06f",
+      "publication_universe": "2f5379d7451f36ed1566c74be05a9ccb223b952e877f4450614edb10bed37cc6"
+    },
+    "chain_b": {
+      "decision_ledger": "991fedf52d2540982b7a921dbf265c30ad8c63a7811b66d4b881da41f560bbc4",
+      "completed_human_acceptance": "188f72305a1e7dcd3ba2dfcbc8f6113b3568d04f285998d8d9e4423fa4caa8e8"
+    }
+  },
+  "R15_A": "4f9c4e631b0f7e96322511c9d0be120dc93ce156c5a236a2061ef3281e24a63a",
+  "expected_missing_set": [
+    "01093"
+  ],
+  "canonicalization_contract": {
+    "rule": "repository canonical JSON convention; exclude created_at only; no additional exclusions",
+    "unchanged": true
+  },
+  "deterministic_repeat_proof": {
+    "independent_isolated_reproductions": [
+      "2a7ec1d807e84cb657daff6a96bc44ea805abc40d2b69289f960c76f05788fec",
+      "2a7ec1d807e84cb657daff6a96bc44ea805abc40d2b69289f960c76f05788fec",
+      "2a7ec1d807e84cb657daff6a96bc44ea805abc40d2b69289f960c76f05788fec",
+      "2a7ec1d807e84cb657daff6a96bc44ea805abc40d2b69289f960c76f05788fec"
+    ],
+    "result": "identical R15-B'' in every independent reproduction against the bound dataset_manifest_hash"
+  },
+  "existing_15_immutability": {
+    "proof": "existing-15 subset digest == R15-A and per-row canonical bytes byte-identical in every success scenario"
+  },
+  "negative_proofs": {
+    "wrong_r15a": true,
+    "wrong_missing_set": true,
+    "stale_authority": true,
+    "fault_rollback": true,
+    "repeat_noop": true,
+    "caller_transaction_guard": true
+  },
+  "real_ledger_state": {
+    "active_ledger_rows": 15,
+    "R15_A": "4f9c4e631b0f7e96322511c9d0be120dc93ce156c5a236a2061ef3281e24a63a",
+    "01093": "NOT_RUN",
+    "projection": "OFF"
+  },
+  "machine_action": "STOP; submit successor R15-B'' identity evidence candidate exact bytes for Human exact-byte review."
+}

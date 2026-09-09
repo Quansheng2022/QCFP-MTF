@@ -1,0 +1,134 @@
+{
+  "schema": "P5F-R2-R2-15F-SUCCESSOR-BOUND-R15C-CANDIDATE-1",
+  "status": "CANDIDATE-ONLY; awaiting Human exact-byte / real-mutation execution review",
+  "generated_at_utc": "2026-09-09T09:31:39+00:00",
+  "decision_date": "2026-09-04",
+  "operation_mode": "MISSING_ONLY_RECOVERY",
+  "mandatory_authority_bindings": {
+    "R15_A": "4f9c4e631b0f7e96322511c9d0be120dc93ce156c5a236a2061ef3281e24a63a",
+    "human_accepted_successor_R15_B_prime": "45158cedce27c9e01f294e33a9755cdfcef2f81a38288e636aeec9a4324e410c",
+    "completed_human_R15_B_prime_acceptance_sha256": "042708358788d1a7073647a4d129a634dda72670f652d4224a9b356e22b2929a",
+    "R15_B_identity_evidence_candidate_sha256": "4e2ca8c191d187f5a2b33f2dbcd5d944e1f0ec44bdd8e2eed785aa967058c0b7",
+    "diagnostic_evidence_58_sha256": "09092fd59e688af97eff8b04df17c10f359fb2a1d3c00248a3dfa2fa34ef4fe7",
+    "post_activation_preflight_evidence_57_sha256": "9895b6047105db69278b92ca96214653c32d6490eafda505e75fc4759fc13c0e",
+    "materialization_execution_evidence_56_sha256": "c8cc01806e0b8e20057516c9f84299e8b9977586c9d835847934e9a17c066f32",
+    "approved_dual_authority_manifest_sha256": "a30ced80b3889d76c63119616e6441a70e61b47c7c3005b3c135d3ed00761af6"
+  },
+  "active_successor_authority": {
+    "chain_a": {
+      "09_manifest": "113e61363eabd83841557e5629b4dea99785c460152d953803a7061faad893d2",
+      "10_package_raw": "d293ee10fbb7da79b31f27208f2fb6b0b0462b50bb24e78b1c635ebe30d78fdc",
+      "package_digest": "a0979324d02bca3fd029c369c51856af1e5b49602e95d714dc6e2abc79cc5507",
+      "cpub_human_acceptance": "171b05629b8042957545bd8fbd7fc3d7d0519c38661a8a889d1aecbe28d20242",
+      "activation": "1f247b43ebbc4bdc5dc50e3f1b20ff6af3ebac67105e823ba947a61895023237",
+      "governance_baseline": "0b0b349a2ceb6f02814a6ef64a23618a24d8e4ff94ae756e3786276a31aeda4f",
+      "governance_acceptance": "07213f328c5c71e054fc8ffd6888bb884a6baaf137e25bdce25c59ea809c331c",
+      "canonical_publication": "480ddd02a367b5cd091fff5f98ecac5aaf1c8bfed924c34f16ee629712ccc06f",
+      "publication_universe": "2f5379d7451f36ed1566c74be05a9ccb223b952e877f4450614edb10bed37cc6"
+    },
+    "chain_b": {
+      "decision_ledger": "991fedf52d2540982b7a921dbf265c30ad8c63a7811b66d4b881da41f560bbc4",
+      "completed_human_acceptance": "188f72305a1e7dcd3ba2dfcbc8f6113b3568d04f285998d8d9e4423fa4caa8e8"
+    }
+  },
+  "historical_identity_treatment": {
+    "historical_R15_B": "163f067aab4c611a2a1a40d9bd79c5101cfb55f23d82c0b033abdaa3d0178ec2",
+    "historical_R15_B_status": "IMMUTABLE_HISTORICAL_RECORDED_IDENTITY",
+    "historical_R15_B_source_row_comparability": "NOT_ESTABLISHED_INPUT_UNAVAILABLE",
+    "no_successor_context_drift_causation_claim": true,
+    "historical_artifacts_byte_immutable": true,
+    "predecessor_R15_C_manifest_rev2_sha256": "7e0dd674d810dfdc005ad99baa9d4edc66d67b2cd0787b5d787acf648ca6a76e"
+  },
+  "recovery_contract": {
+    "decision_date": "2026-09-04",
+    "operation_mode": "MISSING_ONLY_RECOVERY",
+    "expected_missing_set": [
+      "01093"
+    ],
+    "actual_pre_ledger_count": 15,
+    "expected_post_ledger_count": 16,
+    "existing_15_mutation": "PROHIBITED",
+    "only_01093_may_be_added": true,
+    "duplicate_publication": "PROHIBITED",
+    "unexpected_missing_set_or_member": "FAIL_CLOSED",
+    "active_successor_authority_resolver_required_before_mutation": true,
+    "caller_owns_final_recovery_commit_rollback": true,
+    "lower_level_ledger_write_mode": "caller-managed transaction (manage_transaction=False)",
+    "any_failure_rolls_back_exactly_to_R15_A": true,
+    "repeat_after_success": "zero mutation",
+    "projection_during_recovery": "OFF"
+  },
+  "pre_execution_assertions_required_before_any_future_real_mutation": {
+    "resolver": "ACTIVE",
+    "governed_universe_count": 16,
+    "fusion_count": 16,
+    "active_ledger_count": 15,
+    "missing_set_exact": [
+      "01093"
+    ],
+    "duplicates": 0,
+    "unexpected": 0,
+    "R15_A_exact": "4f9c4e631b0f7e96322511c9d0be120dc93ce156c5a236a2061ef3281e24a63a",
+    "01093_active_rows": 0,
+    "projection": "OFF",
+    "all_successor_authority_identities_exact": true,
+    "human_successor_R15_B_prime_acceptance_exact": "042708358788d1a7073647a4d129a634dda72670f652d4224a9b356e22b2929a"
+  },
+  "preflight_validation_summary": {
+    "post_activation_preflight_evidence_57": "recovery 16/16 PASS; existing-15 byte-identical; only 01093 added; repeat NOOP zero mutation; wrong R15-A / wrong missing set / stale authority fail before mutation; fault rollback restores exact R15-A; CALLER_TRANSACTION_REQUIRED guard PASS",
+    "R15_B_prime_deterministic_repeat": "5 independent isolated reproductions = 45158cedce27c9e01f294e33a9755cdfcef2f81a38288e636aeec9a4324e410c",
+    "diagnostic_evidence_58": "predecessor-bytes and successor-bytes reproductions produce identical in-scope canonical rows; historical source row unavailable"
+  },
+  "real_ledger_state_at_generation": {
+    "active_ledger_rows": 15,
+    "R15_A": "4f9c4e631b0f7e96322511c9d0be120dc93ce156c5a236a2061ef3281e24a63a",
+    "01093": "NOT_RUN",
+    "projection": "OFF"
+  },
+  "not_authorized": [
+    "real 01093 publication",
+    "ACTIVE Ledger 15->16 mutation",
+    "production recovery transaction",
+    "Projection",
+    "F10/F11/F12 closure",
+    "P5-F freeze",
+    "P5-G",
+    "Phase 6"
+  ],
+  "machine_action": "STOP; submit successor-bound R15-C exact SHA and bytes for Human exact-byte / real-mutation execution review.",
+  "post_insert_pre_commit_r15_b_identity_gate": {
+    "required": true,
+    "location": "inside the caller-owned production recovery transaction, before final COMMIT",
+    "r15_b_prime_identity": "45158cedce27c9e01f294e33a9755cdfcef2f81a38288e636aeec9a4324e410c",
+    "sequence": [
+      "verify all existing pre-execution assertions",
+      "execute generic MISSING_ONLY_RECOVERY",
+      "read the newly created ACTIVE 01093 ledger row",
+      "canonicalize using the unchanged R15-B contract (repository canonical JSON convention; exclude created_at only; no additional exclusions)",
+      "compute the actual R15-B identity",
+      "require actual_R15_B == 45158cedce27c9e01f294e33a9755cdfcef2f81a38288e636aeec9a4324e410c",
+      "on mismatch: fail with R15_B_IDENTITY_MISMATCH and ROLLBACK EXACTLY TO R15-A"
+    ],
+    "mismatch_must_leave": {
+      "ledger": 15,
+      "R15_A_exact": "4f9c4e631b0f7e96322511c9d0be120dc93ce156c5a236a2061ef3281e24a63a",
+      "01093_active_rows": 0,
+      "projection": "OFF"
+    },
+    "post_gate_verifications_before_commit": [
+      "ledger == 16",
+      "only 01093 added",
+      "existing 15 byte-identical",
+      "no duplicates",
+      "no unexpected rows"
+    ],
+    "commit_allowed_only_after": "R15-B identity PASS and all post-gate verifications PASS"
+  },
+  "post_commit_r15_b_identity_verification": {
+    "required": true,
+    "timing": "immediately after successful final COMMIT",
+    "action": "independently recompute the persisted ACTIVE 01093 ledger row canonical identity (created_at excluded only)",
+    "require": "actual_R15_B == 45158cedce27c9e01f294e33a9755cdfcef2f81a38288e636aeec9a4324e410c",
+    "failure_handling": "hard execution failure; follow the approved recovery/incident handling path; may not be silently accepted"
+  }
+}

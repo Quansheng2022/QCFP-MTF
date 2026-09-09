@@ -1,0 +1,32 @@
+{
+  "schema": "P5F-R2-R2-15F-SUCCESSOR-R15B-PREHUMAN-ACCEPTANCE-TEMPLATE-1",
+  "status": "CANDIDATE_TEMPLATE_NOT_A_DECISION",
+  "decision": null,
+  "accepted_by": null,
+  "accepted_at": null,
+  "decision_date": "2026-09-04",
+  "current_successor_r15b_identity": "45158cedce27c9e01f294e33a9755cdfcef2f81a38288e636aeec9a4324e410c",
+  "historical_recorded_r15b": "163f067aab4c611a2a1a40d9bd79c5101cfb55f23d82c0b033abdaa3d0178ec2",
+  "historical_comparability": "NOT_ESTABLISHED_INPUT_UNAVAILABLE",
+  "authorization_scope": "Human acceptance of this template would authorize ONLY the current successor R15-B identity 45158ced... as the successor-bound R15-B' identity for the successor authority path. It does NOT replace, correct, invalidate, or reinterpret historical R15-B 163f067a..., and makes no claim about the causal origin of the historical mismatch.",
+  "explicit_no_causal_origin_claim": true,
+  "binding_references": {
+    "successor_r15b_identity_evidence_candidate": "audit/phase5/external_governance_candidates/r2_15f/successor_r15b_identity_evidence_candidate.json",
+    "successor_r15b_identity_evidence_candidate_sha256": "4e2ca8c191d187f5a2b33f2dbcd5d944e1f0ec44bdd8e2eed785aa967058c0b7",
+    "diagnostic_evidence_58_sha256": "09092fd59e688af97eff8b04df17c10f359fb2a1d3c00248a3dfa2fa34ef4fe7",
+    "post_activation_preflight_evidence_57_sha256": "9895b6047105db69278b92ca96214653c32d6490eafda505e75fc4759fc13c0e"
+  },
+  "not_authorized_by_template": [
+    "any claim about causal origin of historical 163f... mismatch",
+    "successor-bound R15-C generation",
+    "real 01093 publication",
+    "ACTIVE Ledger 15->16 mutation",
+    "production recovery transaction",
+    "Projection",
+    "F10/F11/F12 closure",
+    "P5-F freeze",
+    "P5-G",
+    "Phase 6"
+  ],
+  "machine_action": "STOP; submit pre-human successor R15-B acceptance template exact bytes for Human exact-byte review. Template is not a decision."
+}

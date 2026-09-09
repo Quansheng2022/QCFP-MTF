@@ -1,0 +1,47 @@
+{
+  "schema": "P5F-R2-R2-15F-SOURCE-STATE-STABILIZATION-EVIDENCE-1",
+  "status": "CANDIDATE-ONLY; awaiting Human exact-byte review",
+  "verdict": "SOURCE_STATE_STABLE during validated observation window",
+  "decision_date": "2026-09-04",
+  "stabilization_started_at_utc": "2026-09-09T10:00:04+00:00",
+  "stabilization_ended_at_utc": "2026-09-09T10:00:26+00:00",
+  "dataset_manifest_hash": "4d6f06935cae6038",
+  "database_identity": {
+    "path": "C:\\Users\\Quansheng\\Documents\\projects\\TA_Workflow\\SQLiteDB\\HK_Stock.db",
+    "file_sha256": "1f84684f4b2f83401bb2a6602617c06249742907b648407a75e3eee740aad546",
+    "file_size": 284143616
+  },
+  "governed_source_table_counts": {
+    "qcfp_quarterly_structural": 960,
+    "qcfp_monthly_behavior": 2307,
+    "qcfp_weekly_tactical": 10078,
+    "qcfp_daily_tactical": 47505,
+    "qcfp_mtf_decision": 10078,
+    "hk_stock_info": 17,
+    "corporate_action": null,
+    "disclosure_overrides": null
+  },
+  "repeated_read_manifest_sequence": [
+    "4d6f06935cae6038",
+    "4d6f06935cae6038",
+    "4d6f06935cae6038",
+    "4d6f06935cae6038"
+  ],
+  "final_read_manifest_equals_stabilized": true,
+  "immutability_proof": "dataset_manifest_hash identical across repeated reads, all isolated preflight copies, and final read",
+  "authority": {
+    "resolver": "ACTIVE",
+    "canonical_publication_sha256": "480ddd02a367b5cd091fff5f98ecac5aaf1c8bfed924c34f16ee629712ccc06f",
+    "decision_ledger_sha256": "991fedf52d2540982b7a921dbf265c30ad8c63a7811b66d4b881da41f560bbc4"
+  },
+  "ledger_state": {
+    "R15_A": "4f9c4e631b0f7e96322511c9d0be120dc93ce156c5a236a2061ef3281e24a63a",
+    "active_ledger_rows": 15,
+    "missing_set": [
+      "01093"
+    ],
+    "01093_active_rows": 0,
+    "projection": "OFF"
+  },
+  "machine_action": "STOP; submit stabilization evidence exact bytes for Human exact-byte review."
+}

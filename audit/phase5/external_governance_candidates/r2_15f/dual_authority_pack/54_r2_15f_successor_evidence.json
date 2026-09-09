@@ -1,0 +1,14 @@
+{
+  "schema": "P5F-R2-R2-15F-SUCCESSOR-CURRENT-EVIDENCE-1",
+  "authority_chain": "CHAIN_A",
+  "manifest_raw_sha256": "113e61363eabd83841557e5629b4dea99785c460152d953803a7061faad893d2",
+  "package_raw_sha256": "d293ee10fbb7da79b31f27208f2fb6b0b0462b50bb24e78b1c635ebe30d78fdc",
+  "package_digest": "a0979324d02bca3fd029c369c51856af1e5b49602e95d714dc6e2abc79cc5507",
+  "canonical_publication_target": "480ddd02a367b5cd091fff5f98ecac5aaf1c8bfed924c34f16ee629712ccc06f",
+  "publication_universe_target": "2f5379d7451f36ed1566c74be05a9ccb223b952e877f4450614edb10bed37cc6",
+  "cpub_package_acceptance": "171b05629b8042957545bd8fbd7fc3d7d0519c38661a8a889d1aecbe28d20242",
+  "activation_record": "1f247b43ebbc4bdc5dc50e3f1b20ff6af3ebac67105e823ba947a61895023237",
+  "activated_baseline": "0b0b349a2ceb6f02814a6ef64a23618a24d8e4ff94ae756e3786276a31aeda4f",
+  "governance_acceptance": "07213f328c5c71e054fc8ffd6888bb884a6baaf137e25bdce25c59ea809c331c",
+  "historical_predecessor_evidence": "IMMUTABLE (31/44 not modified)"
+}

@@ -1,0 +1,21 @@
+{
+  "schema": "P5F-R2-REV8-GOVERNANCE-BASELINE-ACCEPTANCE-TEMPLATE-CHAIN-A-1",
+  "status": "HUMAN_ACCEPTED",
+  "decision_scope": "REV8_GOVERNANCE_BASELINE_ACCEPTANCE_R2_15F_CHAIN_A",
+  "decision": "APPROVE",
+  "accepted_by": "HUMAN",
+  "accepted_at": "2026-09-09T05:34:25Z",
+  "rev8_governance_baseline_sha256": "0b0b349a2ceb6f02814a6ef64a23618a24d8e4ff94ae756e3786276a31aeda4f",
+  "governance_baseline_sha256": "0b0b349a2ceb6f02814a6ef64a23618a24d8e4ff94ae756e3786276a31aeda4f",
+  "governance_manifest_sha256": "92df5b7b5144d3d54d12093d066352058caeefa829aa5df5ad7024a5e7a6ce69",
+  "governance_commit": "97c7f0b568abe9cdd718a413adc97e4f9c3eeab9",
+  "candidate_package_sha256": "a0979324d02bca3fd029c369c51856af1e5b49602e95d714dc6e2abc79cc5507",
+  "candidate_manifest_raw_sha256": "113e61363eabd83841557e5629b4dea99785c460152d953803a7061faad893d2",
+  "activation_record_sha256": "1f247b43ebbc4bdc5dc50e3f1b20ff6af3ebac67105e823ba947a61895023237",
+  "completed_chain_a_package_acceptance_sha256": "171b05629b8042957545bd8fbd7fc3d7d0519c38661a8a889d1aecbe28d20242",
+  "predecessor_governance_acceptance_sha256": "ee87996330064a8a5f5979db4ed54b81f608399c6d394f887985dfff09bee58b",
+  "predecessor_baseline_sha256": "163ddd73db9c38de9a50e28690d0e71b4a87844c956565c1d1745bddc552757f",
+  "target_phase": 5,
+  "target_revision": 8,
+  "rationale": "R2_15F_CHAIN_A_PRE_HUMAN_SUCCESOR_GOVERNANCE_ACCEPTANCE"
+}

@@ -191,8 +191,7 @@ def register_model(conn, settings, model_version, rule_version,
 
 
 def record_snapshot(conn, snap, run_id, pit_grade=None, evidence_grade=None,
-                    created_at=None, settings=None, data_snapshot_id=None,
-                    manage_transaction: bool = True):
+                    created_at=None, settings=None, data_snapshot_id=None):
     """把 DecisionSnapshot 追加写入台账（不可变：INSERT OR IGNORE）
 
     同一七元审计身份已存在 → 跳过（不覆盖历史）。
@@ -204,11 +203,6 @@ def record_snapshot(conn, snap, run_id, pit_grade=None, evidence_grade=None,
     不可篡改的事实链（current = hash(prev_hash + 本条决策核心字段)）。
     """
     from .fsm_authority import assert_fsm_explains_target_change
-    if not manage_transaction and not conn.in_transaction:
-        raise ValueError(
-            "CALLER_TRANSACTION_REQUIRED: caller-managed mode requires an "
-            "already active caller-owned transaction (final COMMIT/ROLLBACK "
-            "belongs to the caller).")
     # PWC-1（第 6 项）：Ledger Commit 前不可绕过 Invariant Gate
     assert_snapshot_commit_invariants(snap)
     assert_fsm_explains_target_change(
@@ -337,8 +331,7 @@ def record_snapshot(conn, snap, run_id, pit_grade=None, evidence_grade=None,
         f"({','.join(LEDGER_COLUMNS)}) VALUES "
         f"({','.join('?' * len(LEDGER_COLUMNS))})",
         [row.get(c) for c in LEDGER_COLUMNS])
-    if manage_transaction:
-        conn.commit()
+    conn.commit()
     return 1
 
 

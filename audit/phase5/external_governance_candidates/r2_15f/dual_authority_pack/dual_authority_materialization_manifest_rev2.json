@@ -1,0 +1,58 @@
+{
+  "schema": "P5F-R2-R2-15F-DUAL-AUTHORITY-MATERIALIZATION-MANIFEST-REV2-1",
+  "status": "CANDIDATE-ONLY; awaiting Human exact-byte/execution review",
+  "supersedes": {
+    "manifest": "audit/phase5/external_governance_candidates/r2_15f/dual_authority_pack/dual_authority_materialization_manifest.json",
+    "sha256": "49ebc41b62368fa458a86a370555053d55c8e380ae42f116f7f2d5175a78a899",
+    "reason": "HISTORICAL_EVIDENCE_IMMUTABILITY_VIOLATION corrected: 44_r2_14_successor_evidence.json removed from write targets; successor evidence moved to new path 54_r2_15f_successor_evidence.json"
+  },
+  "atomicity": {
+    "all_or_nothing": true,
+    "partial_chain_a_prohibited": true,
+    "partial_chain_b_prohibited": true,
+    "mixed_runtime_state_prohibited": true,
+    "rollback_all_on_any_write_or_verification_failure": true
+  },
+  "targets": [
+    {"path": "Core/QCFP_MTF/decision/canonical_publication.py", "pre_sha256": "dfbf54f3bd6dae4faecd5a412ae790a0326841e733c62e66fc48a93ff68d9b00", "post_sha256": "480ddd02a367b5cd091fff5f98ecac5aaf1c8bfed924c34f16ee629712ccc06f", "source_sha256": "480ddd02a367b5cd091fff5f98ecac5aaf1c8bfed924c34f16ee629712ccc06f", "rollback_sha256": "dfbf54f3bd6dae4faecd5a412ae790a0326841e733c62e66fc48a93ff68d9b00", "source": "audit/phase5/external_governance_candidates/r2_15f/canonical_publication_r2_15f_candidate.py", "rollback_source": "audit/phase5/external_governance_candidates/r2_15f/dual_authority_pack/rollback/canonical_publication.py", "authority": "CHAIN_A"},
+    {"path": "Core/QCFP_MTF/decision/decision_ledger.py", "pre_sha256": "8924436a944fb40ae3371a540cf4ac673508d1c06d4c3a3f8321b3b38dc05ca9", "post_sha256": "991fedf52d2540982b7a921dbf265c30ad8c63a7811b66d4b881da41f560bbc4", "source_sha256": "991fedf52d2540982b7a921dbf265c30ad8c63a7811b66d4b881da41f560bbc4", "rollback_sha256": "8924436a944fb40ae3371a540cf4ac673508d1c06d4c3a3f8321b3b38dc05ca9", "source": "audit/phase5/external_governance_candidates/r2_15f/decision_ledger_r2_15f_candidate.py", "rollback_source": "audit/phase5/external_governance_candidates/r2_15f/dual_authority_pack/rollback/decision_ledger.py", "authority": "CHAIN_B"},
+    {"path": "audit/phase5/cpub_candidate/09_candidate_manifest.json", "pre_sha256": "fd4d35ae17323d672a8aef998ed8a928069b346524ea64494a2ffb643ca2c8e3", "post_sha256": "113e61363eabd83841557e5629b4dea99785c460152d953803a7061faad893d2", "source_sha256": "113e61363eabd83841557e5629b4dea99785c460152d953803a7061faad893d2", "rollback_sha256": "fd4d35ae17323d672a8aef998ed8a928069b346524ea64494a2ffb643ca2c8e3", "source": "audit/phase5/external_governance_candidates/r2_15f/chain_a/01_manifest_chain_a.json", "rollback_source": "audit/phase5/external_governance_candidates/r2_15f/dual_authority_pack/rollback/09_candidate_manifest.json", "authority": "CHAIN_A"},
+    {"path": "audit/phase5/cpub_candidate/10_candidate_package.json", "pre_sha256": "fcbed1c085cd3df037190239729b53405b145786bd7393a2ffe13f73e0720b3a", "post_sha256": "d293ee10fbb7da79b31f27208f2fb6b0b0462b50bb24e78b1c635ebe30d78fdc", "source_sha256": "d293ee10fbb7da79b31f27208f2fb6b0b0462b50bb24e78b1c635ebe30d78fdc", "rollback_sha256": "fcbed1c085cd3df037190239729b53405b145786bd7393a2ffe13f73e0720b3a", "source": "audit/phase5/external_governance_candidates/r2_15f/chain_a/02_package_chain_a.json", "rollback_source": "audit/phase5/external_governance_candidates/r2_15f/dual_authority_pack/rollback/10_candidate_package.json", "authority": "CHAIN_A"},
+    {"path": "audit/phase5/p5_gov_reopen_cpub_human_acceptance.json", "pre_sha256": "6e8a7df1c1345501d990d2c098019931b44a8292c80df4ae91bc1dc3e9cc8d77", "post_sha256": "171b05629b8042957545bd8fbd7fc3d7d0519c38661a8a889d1aecbe28d20242", "source_sha256": "171b05629b8042957545bd8fbd7fc3d7d0519c38661a8a889d1aecbe28d20242", "rollback_sha256": "6e8a7df1c1345501d990d2c098019931b44a8292c80df4ae91bc1dc3e9cc8d77", "source": "audit/phase5/external_governance_candidates/r2_15f/chain_a/successor/03_chain_a_package_acceptance.json", "rollback_source": "audit/phase5/external_governance_candidates/r2_15f/dual_authority_pack/rollback/p5_gov_reopen_cpub_human_acceptance.json", "authority": "CHAIN_A"},
+    {"path": "audit/phase5/p5_gov_reopen_cpub_activation.json", "pre_sha256": "14b9dc1cb709d0605b91578df3434013cd6c7f03f0302497b2c41d584c8f13de", "post_sha256": "1f247b43ebbc4bdc5dc50e3f1b20ff6af3ebac67105e823ba947a61895023237", "source_sha256": "1f247b43ebbc4bdc5dc50e3f1b20ff6af3ebac67105e823ba947a61895023237", "rollback_sha256": "14b9dc1cb709d0605b91578df3434013cd6c7f03f0302497b2c41d584c8f13de", "source": "audit/phase5/external_governance_candidates/r2_15f/chain_a/successor/04_activation_record_chain_a.json", "rollback_source": "audit/phase5/external_governance_candidates/r2_15f/dual_authority_pack/rollback/p5_gov_reopen_cpub_activation.json", "authority": "CHAIN_A"},
+    {"path": "audit/phase5/phase5_governance_baseline.json", "pre_sha256": "163ddd73db9c38de9a50e28690d0e71b4a87844c956565c1d1745bddc552757f", "post_sha256": "0b0b349a2ceb6f02814a6ef64a23618a24d8e4ff94ae756e3786276a31aeda4f", "source_sha256": "0b0b349a2ceb6f02814a6ef64a23618a24d8e4ff94ae756e3786276a31aeda4f", "rollback_sha256": "163ddd73db9c38de9a50e28690d0e71b4a87844c956565c1d1745bddc552757f", "source": "audit/phase5/external_governance_candidates/r2_15f/chain_a/successor/05_activated_baseline_chain_a.json", "rollback_source": "audit/phase5/external_governance_candidates/r2_15f/dual_authority_pack/rollback/phase5_governance_baseline.json", "authority": "CHAIN_A"},
+    {"path": "audit/phase5/phase5_governance_acceptance.json", "pre_sha256": "ee87996330064a8a5f5979db4ed54b81f608399c6d394f887985dfff09bee58b", "post_sha256": "07213f328c5c71e054fc8ffd6888bb884a6baaf137e25bdce25c59ea809c331c", "source_sha256": "07213f328c5c71e054fc8ffd6888bb884a6baaf137e25bdce25c59ea809c331c", "rollback_sha256": "ee87996330064a8a5f5979db4ed54b81f608399c6d394f887985dfff09bee58b", "source": "audit/phase5/external_governance_candidates/r2_15f/chain_a/successor/07_governance_acceptance_completed_chain_a.json", "rollback_source": "audit/phase5/external_governance_candidates/r2_15f/dual_authority_pack/rollback/phase5_governance_acceptance.json", "authority": "CHAIN_A"},
+    {"path": "audit/phase5/p5f_r2/54_r2_15f_successor_evidence.json", "pre_sha256": null, "post_sha256": "dde3883cf1e7470aaad31f2ce20cb9f1625cc8e8d1ef045e3ff72dc5673d51f8", "source_sha256": "dde3883cf1e7470aaad31f2ce20cb9f1625cc8e8d1ef045e3ff72dc5673d51f8", "rollback_sha256": null, "source": "audit/phase5/external_governance_candidates/r2_15f/dual_authority_pack/54_r2_15f_successor_evidence.json", "rollback_source": "DELETE_ON_ROLLBACK", "authority": "CHAIN_A", "new_file": true},
+    {"path": "Core/QCFP_MTF/tests/test_phase5/_gov_current.py", "pre_sha256": "9fccc4b542362f9f0aecf27a384a70a01bb3dd69210c19c4812bf212b7d458b8", "post_sha256": "c8a459f71489af4fe501e7a2e22af308d389e3be6ef2f4d9d78ae28977dd8ea4", "source_sha256": "c8a459f71489af4fe501e7a2e22af308d389e3be6ef2f4d9d78ae28977dd8ea4", "rollback_sha256": "9fccc4b542362f9f0aecf27a384a70a01bb3dd69210c19c4812bf212b7d458b8", "source": "audit/phase5/external_governance_candidates/r2_15f/dual_authority_pack/_gov_current_r2_15f_successor_candidate.py", "rollback_source": "audit/phase5/external_governance_candidates/r2_15f/dual_authority_pack/rollback/_gov_current.py", "authority": "TEST_ALIGNMENT"},
+    {"path": "Core/QCFP_MTF/tests/test_phase5/test_cpub_candidate_binding.py", "pre_sha256": "7a79387d24eb69d888729e85d62e03bec318d161fdba5033f1fe9a3af6e13691", "post_sha256": "8aaee47e4c2f672914843e51665630f5f9a1978ccc9e2a167150bbc171c9dcfe", "source_sha256": "8aaee47e4c2f672914843e51665630f5f9a1978ccc9e2a167150bbc171c9dcfe", "rollback_sha256": "7a79387d24eb69d888729e85d62e03bec318d161fdba5033f1fe9a3af6e13691", "source": "audit/phase5/external_governance_candidates/r2_15f/chain_a/aligned_tests/test_cpub_candidate_binding_aligned.py", "rollback_source": "audit/phase5/external_governance_candidates/r2_15f/dual_authority_pack/rollback/test_cpub_candidate_binding.py", "authority": "TEST_ALIGNMENT"},
+    {"path": "Core/QCFP_MTF/tests/test_phase5/test_cpub_activation_candidate.py", "pre_sha256": "5f96f0fd2faacde3c20fc3fd851d148a1c30ee7602d5d4e29b062ca6e4e6c923", "post_sha256": "49ce4ede376348e17f408bc0db6f134fe4dd0657821b20361c73240e7e525b01", "source_sha256": "49ce4ede376348e17f408bc0db6f134fe4dd0657821b20361c73240e7e525b01", "rollback_sha256": "5f96f0fd2faacde3c20fc3fd851d148a1c30ee7602d5d4e29b062ca6e4e6c923", "source": "audit/phase5/external_governance_candidates/r2_15f/chain_a/aligned_tests/test_cpub_activation_candidate_aligned.py", "rollback_source": "audit/phase5/external_governance_candidates/r2_15f/dual_authority_pack/rollback/test_cpub_activation_candidate.py", "authority": "TEST_ALIGNMENT"}
+  ],
+  "historical_immutability": {
+    "44_r2_14_successor_evidence.json": "UNTOUCHED (pre 4b95c88d... preserved byte-for-byte; not a write target)"
+  },
+  "verify_only_preconditions": {
+    "publication_universe.py": "2f5379d7451f36ed1566c74be05a9ccb223b952e877f4450614edb10bed37cc6",
+    "frozen_surface_manifest.json": "92df5b7b5144d3d54d12093d066352058caeefa829aa5df5ad7024a5e7a6ce69",
+    "engine.py": "cad0c8a66cd9c97c814a6372c6e0883ee67fc1dc1fa1141a4013f13a4db19ed9"
+  },
+  "post_transition_verifier": {
+    "resolver_must_be_ACTIVE_consuming_chain_a": [
+      "09 manifest = 113e6136...", "10 package digest = a0979324...",
+      "CPUB Human acceptance = 171b0562...", "activation = 1f247b43...",
+      "baseline = 0b0b349a...", "governance acceptance = 07213f32...",
+      "canonical target = 480ddd02...", "universe = 2f5379d7..."
+    ],
+    "chain_b": {
+      "decision_ledger.py": "991fedf52d2540982b7a921dbf265c30ad8c63a7811b66d4b881da41f560bbc4",
+      "completed_acceptance": "188f72305a1e7dcd3ba2dfcbc8f6113b3568d04f285998d8d9e4423fa4caa8e8"
+    },
+    "successor_evidence_at_new_path": "54_r2_15f_successor_evidence.json = dde3883c..."
+  },
+  "ledger_binding": {
+    "R15_A": "4f9c4e631b0f7e96322511c9d0be120dc93ce156c5a236a2061ef3281e24a63a",
+    "rows": 15,
+    "01093": "NOT_RUN",
+    "projection": "OFF"
+  },
+  "machine_action": "STOP; submit regenerated Dual-Authority manifest (Rev2) exact bytes for Human review."
+}

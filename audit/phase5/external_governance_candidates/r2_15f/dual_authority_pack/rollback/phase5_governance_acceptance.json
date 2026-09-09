@@ -1,0 +1,18 @@
+{
+  "schema": "P5F-R2-REV8-GOVERNANCE-BASELINE-ACCEPTANCE-CANDIDATE-R2_15D-1",
+  "decision_scope": "REV8_GOVERNANCE_BASELINE_ACCEPTANCE_R2_15D",
+  "status": "HUMAN_ACCEPTED",
+  "decision": "APPROVE",
+  "accepted_by": "HUMAN",
+  "accepted_at": "2026-09-09T04:20:56Z",
+  "rev8_governance_baseline_sha256": "163ddd73db9c38de9a50e28690d0e71b4a87844c956565c1d1745bddc552757f",
+  "candidate_package_sha256": "1cb37a416389c55a4870d76d0270b8a38171e68b74fae9db3676def3f87ae08c",
+  "frozen_surface_manifest_sha256": "92df5b7b5144d3d54d12093d066352058caeefa829aa5df5ad7024a5e7a6ce69",
+  "activation_record_sha256": "14b9dc1cb709d0605b91578df3434013cd6c7f03f0302497b2c41d584c8f13de",
+  "completed_h2_successor_acceptance_sha256": "6e8a7df1c1345501d990d2c098019931b44a8292c80df4ae91bc1dc3e9cc8d77",
+  "predecessor_baseline_sha256": "7580c7bd505bfb6933452c3665c82820c56a352af24584e46be8e5badf61c8d5",
+  "predecessor_governance_acceptance_sha256": "af35182e571c3d88399f4237078b1c7c884b687089f8ef69e03149f5d33395ad",
+  "target_phase": 5,
+  "target_revision": 8,
+  "rationale": "R2_15D_PRE_HUMAN_SUCCESOR_GOVERNANCE_ACCEPTANCE"
+}

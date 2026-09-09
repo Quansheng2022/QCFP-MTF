@@ -1,0 +1,13 @@
+{
+  "schema": "P5F-R2-R2-15F-CHAIN-B-ACCEPTANCE-TEMPLATE-1",
+  "status": "HUMAN_ACCEPTED",
+  "decision": "APPROVE",
+  "accepted_by": "HUMAN",
+  "accepted_at": "2026-09-09T05:40:00Z",
+  "decision_scope": "DECISION_LEDGER_TRANSACTION_BOUNDARY_REPAIR",
+  "target": "Core/QCFP_MTF/decision/decision_ledger.py",
+  "pre_sha256": "8924436a944fb40ae3371a540cf4ac673508d1c06d4c3a3f8321b3b38dc05ca9",
+  "post_sha256": "991fedf52d2540982b7a921dbf265c30ad8c63a7811b66d4b881da41f560bbc4",
+  "authority_domain": "DECISION_LEDGER_TRANSACTION_BOUNDARY_REPAIR",
+  "rationale": "R2_15F_CHAIN_B_PRE_HUMAN"
+}

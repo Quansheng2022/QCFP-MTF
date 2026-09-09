@@ -1,0 +1,61 @@
+{
+  "schema": "P5F-R2-R2-17-TEST-ALIGNMENT-CORRECTION-CANDIDATE-EVIDENCE-1",
+  "generated_at_utc": "2026-09-09T10:53:46+00:00",
+  "verdict": "CANDIDATE VALIDATED (staged; NOT materialized)",
+  "binding": {
+    "f10_evidence_63_sha256": "27cb3f8d4ff143a28cf2415032f0c4bbeceea02664612f1cb69d68905662e8ff",
+    "r2_16_projection_evidence_62_sha256": "2f31b2bc3705999f81bca79aa24c711504915584585ed7a915ab3202c16e9923",
+    "evidence_54_sha256": "dde3883cf1e7470aaad31f2ce20cb9f1625cc8e8d1ef045e3ff72dc5673d51f8"
+  },
+  "target": {
+    "path": "Core/QCFP_MTF/tests/test_phase5/_gov_current.py",
+    "role": "TEST_ALIGNMENT / current-state helper only",
+    "pre_sha256": "c8a459f71489af4fe501e7a2e22af308d389e3be6ef2f4d9d78ae28977dd8ea4",
+    "candidate_path": "audit/phase5/external_governance_candidates/r2_15f/_gov_current_test_alignment_correction_candidate.py",
+    "candidate_post_sha256": "1c22679cfdf742dd40aeb778be85fd26ee4f01cce31420c448d03bc1a5d6f294"
+  },
+  "semantic_diff": {
+    "summary": "limited to evidence-54 acceptance-key alignment",
+    "pre_line": "if str(ev.get(\"completed_acceptance_sha256\", \"\")) != acceptance_sha:",
+    "post_line": "if str(ev.get(\"governance_acceptance\", \"\")) != acceptance_sha:",
+    "invariant": "evidence54[\"governance_acceptance\"] == sha256(phase5_governance_acceptance.json)",
+    "expected_value": "07213f328c5c71e054fc8ffd6888bb884a6baaf137e25bdce25c59ea809c331c",
+    "fail_closed": true,
+    "no_permissive_alias": true
+  },
+  "focused_staged_validation": {
+    "mechanism": "pytest plugin injected the candidate as '_gov_current' in sys.modules; no repository materialization",
+    "modules": [
+      "Core/QCFP_MTF/tests/test_phase5/test_cpub_candidate_binding.py",
+      "Core/QCFP_MTF/tests/test_phase5/test_p5a_current_state.py",
+      "Core/QCFP_MTF/tests/test_phase5/test_p5b01_human_acceptance.py"
+    ],
+    "result": "51 passed / returncode 0"
+  },
+  "fail_closed_probes": {
+    "exact_real_root": {
+      "expected": "PASS",
+      "result": "PASS",
+      "acceptance": "07213f328c5c71e054fc8ffd6888bb884a6baaf137e25bdce25c59ea809c331c"
+    },
+    "missing_governance_acceptance": {
+      "expected": "GOVERNANCE_CURRENT_STATE_CONFLICT",
+      "result": "PASS (raised; message includes 'acceptance evidence mismatch')"
+    },
+    "wrong_governance_acceptance": {
+      "expected": "GOVERNANCE_CURRENT_STATE_CONFLICT",
+      "result": "PASS (raised; message includes 'acceptance evidence mismatch')"
+    }
+  },
+  "canonical_state_unchanged": {
+    "universe": 16,
+    "fusion": 16,
+    "active_ledger": 16,
+    "R15_A_existing_15": "4f9c4e631b0f7e96322511c9d0be120dc93ce156c5a236a2061ef3281e24a63a",
+    "R15_B2_01093": "2a7ec1d807e84cb657daff6a96bc44ea805abc40d2b69289f960c76f05788fec",
+    "dataset_manifest_hash": "4d6f06935cae6038",
+    "projection": "ON"
+  },
+  "materialization": "NOT AUTHORIZED in this step",
+  "machine_action": "STOP FOR HUMAN EXACT-BYTE REVIEW. Only after separate Human exact-byte approval may the corrected helper be materialized; afterwards a NEW complete F10 run is mandatory. F10/F11/F12 closure, P5-F freeze, P5-G, Phase6 NOT authorized."
+}
