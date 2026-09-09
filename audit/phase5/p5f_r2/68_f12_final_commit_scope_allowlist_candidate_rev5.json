@@ -1,0 +1,5211 @@
+{
+  "schema": "P5F-R2-R2-19-F12-FINAL-COMMIT-SCOPE-ALLOWLIST-CANDIDATE-5",
+  "status": "CANDIDATE-ONLY; awaiting Human exact-byte approval",
+  "generated_at_utc": "2026-09-09T13:47:07+00:00",
+  "revision_note": "REV5 authority-metadata-only: canonical resolvable anchors only (IDxxxxx or approved artifact SHA); R15-B' entries bound to ID73542 and R15-B'' completion bound to ID41782; entries without canonical anchor moved to AMBIGUOUS_NOT_AUTHORIZED",
+  "binding": {
+    "evidence_67": "3490b74c8a81d4b1ffdff0a3b0104a87ad88ea3f5dd78a7dc6893cbe49313520",
+    "branch": "codex/phase5-shadow-operation",
+    "pre_commit_head": "7ecef2d860a6983e5166559a59534762f3ae5034",
+    "remote": "https://github.com/Quansheng2022/QCFP-MTF.git",
+    "evidence_65": "0664c46e584653f5a7f5a0c0ca96d92058f5a3d92ee71b6ff459f97480d420e8",
+    "evidence_66": "b45e272e56bb9b8a32006a883408be9c294f35650a536f76f0e3b9d6582070a5",
+    "wp53_json": "870c0e237892b43168d9afc4cefa97b7cc1d957556dfc6e5caaee762796bb87b",
+    "wp53_md": "14f9e2800d280ec932f820e51e14a286d3f928f82bef3073d32546308edc28db"
+  },
+  "summary": {
+    "included_file_count": 49,
+    "excluded_dirty_count": 857,
+    "self_reference_only_authority_count": 0,
+    "symbolic_only_human_authority_count": 0,
+    "r15_lineage_authority_conflict_count": 0,
+    "authority_untraceable_included": 0,
+    "M_with_tracked_false": 0,
+    "directory_or_wildcard_entries": 0,
+    "duplicate_paths": 0,
+    "included_excluded_overlap": 0
+  },
+  "included_files": [
+    {
+      "path": "Core/QCFP_MTF/decision/canonical_publication.py",
+      "git_status_code": "??",
+      "tracked": false,
+      "sha256": "480ddd02a367b5cd091fff5f98ecac5aaf1c8bfed924c34f16ee629712ccc06f",
+      "size": 17216,
+      "phase5_role": "Human-approved exact materialization (R2-15F Rev2)",
+      "authority_basis": "Human-approved exact materialization (R2-15F Rev2)",
+      "authority_refs": [
+        "480ddd02a367b5cd091fff5f98ecac5aaf1c8bfed924c34f16ee629712ccc06f",
+        "HUMAN_DECISION_R2_15F_REV2_MATERIALIZATION_APPROVE",
+        "a30ced80b3889d76c63119616e6441a70e61b47c7c3005b3c135d3ed00761af6",
+        "c8cc01806e0b8e20057516c9f84299e8b9977586c9d835847934e9a17c066f32"
+      ],
+      "human_authority_refs": [
+        "a30ced80b3889d76c63119616e6441a70e61b47c7c3005b3c135d3ed00761af6",
+        "c8cc01806e0b8e20057516c9f84299e8b9977586c9d835847934e9a17c066f32"
+      ]
+    },
+    {
+      "path": "Core/QCFP_MTF/decision/decision_ledger.py",
+      "git_status_code": "M",
+      "tracked": true,
+      "sha256": "991fedf52d2540982b7a921dbf265c30ad8c63a7811b66d4b881da41f560bbc4",
+      "size": 32553,
+      "phase5_role": "Human-approved Chain B successor materialization",
+      "authority_basis": "Human-approved Chain B successor materialization",
+      "authority_refs": [
+        "991fedf52d2540982b7a921dbf265c30ad8c63a7811b66d4b881da41f560bbc4",
+        "HUMAN_DECISION_R2_15F_REV2_MATERIALIZATION_APPROVE",
+        "a30ced80b3889d76c63119616e6441a70e61b47c7c3005b3c135d3ed00761af6",
+        "c8cc01806e0b8e20057516c9f84299e8b9977586c9d835847934e9a17c066f32"
+      ],
+      "human_authority_refs": [
+        "a30ced80b3889d76c63119616e6441a70e61b47c7c3005b3c135d3ed00761af6",
+        "c8cc01806e0b8e20057516c9f84299e8b9977586c9d835847934e9a17c066f32"
+      ]
+    },
+    {
+      "path": "Core/QCFP_MTF/decision/publication_universe.py",
+      "git_status_code": "??",
+      "tracked": false,
+      "sha256": "2f5379d7451f36ed1566c74be05a9ccb223b952e877f4450614edb10bed37cc6",
+      "size": 3513,
+      "phase5_role": "Chain A approved publication-universe target identity (Human-approved activation/baseline)",
+      "authority_basis": "Chain A approved publication-universe target identity (Human-approved activation/baseline)",
+      "authority_refs": [
+        "2f5379d7451f36ed1566c74be05a9ccb223b952e877f4450614edb10bed37cc6",
+        "HUMAN_DECISION_R2_15F_REV2_MATERIALIZATION_APPROVE",
+        "a30ced80b3889d76c63119616e6441a70e61b47c7c3005b3c135d3ed00761af6",
+        "c8cc01806e0b8e20057516c9f84299e8b9977586c9d835847934e9a17c066f32"
+      ],
+      "human_authority_refs": [
+        "a30ced80b3889d76c63119616e6441a70e61b47c7c3005b3c135d3ed00761af6",
+        "c8cc01806e0b8e20057516c9f84299e8b9977586c9d835847934e9a17c066f32"
+      ]
+    },
+    {
+      "path": "Core/QCFP_MTF/tests/test_phase5/_gov_current.py",
+      "git_status_code": "??",
+      "tracked": false,
+      "sha256": "1c22679cfdf742dd40aeb778be85fd26ee4f01cce31420c448d03bc1a5d6f294",
+      "size": 2993,
+      "phase5_role": "Human-approved TEST_ALIGNMENT materialization",
+      "authority_basis": "Human-approved TEST_ALIGNMENT materialization",
+      "authority_refs": [
+        "1c22679cfdf742dd40aeb778be85fd26ee4f01cce31420c448d03bc1a5d6f294",
+        "HUMAN_DECISION_TEST_ALIGNMENT_MATERIALIZATION_APPROVE",
+        "3deac2239d23d422ae242cfa45e224abe1a1370b3fd7e3ffdd259a94cb7af453",
+        "0664c46e584653f5a7f5a0c0ca96d92058f5a3d92ee71b6ff459f97480d420e8"
+      ],
+      "human_authority_refs": [
+        "ID15683",
+        "3deac2239d23d422ae242cfa45e224abe1a1370b3fd7e3ffdd259a94cb7af453",
+        "0664c46e584653f5a7f5a0c0ca96d92058f5a3d92ee71b6ff459f97480d420e8"
+      ]
+    },
+    {
+      "path": "Core/QCFP_MTF/tests/test_phase5/test_cpub_activation_candidate.py",
+      "git_status_code": "??",
+      "tracked": false,
+      "sha256": "49ce4ede376348e17f408bc0db6f134fe4dd0657821b20361c73240e7e525b01",
+      "size": 17336,
+      "phase5_role": "Human-approved test-alignment materialization target (R2-15F Rev2)",
+      "authority_basis": "Human-approved test-alignment materialization target (R2-15F Rev2)",
+      "authority_refs": [
+        "49ce4ede376348e17f408bc0db6f134fe4dd0657821b20361c73240e7e525b01",
+        "HUMAN_DECISION_R2_15F_REV2_MATERIALIZATION_APPROVE",
+        "c8cc01806e0b8e20057516c9f84299e8b9977586c9d835847934e9a17c066f32"
+      ],
+      "human_authority_refs": [
+        "a30ced80b3889d76c63119616e6441a70e61b47c7c3005b3c135d3ed00761af6",
+        "c8cc01806e0b8e20057516c9f84299e8b9977586c9d835847934e9a17c066f32"
+      ]
+    },
+    {
+      "path": "Core/QCFP_MTF/tests/test_phase5/test_cpub_candidate_binding.py",
+      "git_status_code": "??",
+      "tracked": false,
+      "sha256": "8aaee47e4c2f672914843e51665630f5f9a1978ccc9e2a167150bbc171c9dcfe",
+      "size": 27727,
+      "phase5_role": "Human-approved test-alignment materialization target (R2-15F Rev2)",
+      "authority_basis": "Human-approved test-alignment materialization target (R2-15F Rev2)",
+      "authority_refs": [
+        "8aaee47e4c2f672914843e51665630f5f9a1978ccc9e2a167150bbc171c9dcfe",
+        "HUMAN_DECISION_R2_15F_REV2_MATERIALIZATION_APPROVE",
+        "c8cc01806e0b8e20057516c9f84299e8b9977586c9d835847934e9a17c066f32"
+      ],
+      "human_authority_refs": [
+        "a30ced80b3889d76c63119616e6441a70e61b47c7c3005b3c135d3ed00761af6",
+        "c8cc01806e0b8e20057516c9f84299e8b9977586c9d835847934e9a17c066f32"
+      ]
+    },
+    {
+      "path": "Report/QCFP_MTF/fusion/decision_20260909.csv",
+      "git_status_code": "??",
+      "tracked": false,
+      "sha256": "a9d551a2da0ab62649a6d72370d6f2482253fda1c8587b64d422c71a87873ed9",
+      "size": 14256,
+      "phase5_role": "Authorized R2-16 Projection output (Projection execution Human-approved)",
+      "authority_basis": "Authorized R2-16 Projection output (Projection execution Human-approved)",
+      "authority_refs": [
+        "a9d551a2da0ab62649a6d72370d6f2482253fda1c8587b64d422c71a87873ed9",
+        "ID53826",
+        "2f31b2bc3705999f81bca79aa24c711504915584585ed7a915ab3202c16e9923"
+      ],
+      "human_authority_refs": [
+        "ID53826",
+        "2f31b2bc3705999f81bca79aa24c711504915584585ed7a915ab3202c16e9923"
+      ]
+    },
+    {
+      "path": "Report/QCFP_MTF/fusion/decision_20260909.json",
+      "git_status_code": "??",
+      "tracked": false,
+      "sha256": "044df000339539c1b64b7e44e635658c56f09f593a20b4295d4355d45da5b499",
+      "size": 53160,
+      "phase5_role": "Authorized R2-16 Projection output (Projection execution Human-approved)",
+      "authority_basis": "Authorized R2-16 Projection output (Projection execution Human-approved)",
+      "authority_refs": [
+        "044df000339539c1b64b7e44e635658c56f09f593a20b4295d4355d45da5b499",
+        "ID53826",
+        "2f31b2bc3705999f81bca79aa24c711504915584585ed7a915ab3202c16e9923"
+      ],
+      "human_authority_refs": [
+        "ID53826",
+        "2f31b2bc3705999f81bca79aa24c711504915584585ed7a915ab3202c16e9923"
+      ]
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/r2_15f/_gov_current_test_alignment_correction_candidate.py",
+      "git_status_code": "??",
+      "tracked": false,
+      "sha256": "1c22679cfdf742dd40aeb778be85fd26ee4f01cce31420c448d03bc1a5d6f294",
+      "size": 2993,
+      "phase5_role": "Human-authorized successor candidate/authority artifact",
+      "authority_basis": "Human-authorized successor candidate/authority artifact; exact SHA bound in evidence 56-67",
+      "authority_refs": [
+        "1c22679cfdf742dd40aeb778be85fd26ee4f01cce31420c448d03bc1a5d6f294",
+        "HUMAN_DECISION_TEST_ALIGNMENT_MATERIALIZATION_APPROVE",
+        "3deac2239d23d422ae242cfa45e224abe1a1370b3fd7e3ffdd259a94cb7af453",
+        "0664c46e584653f5a7f5a0c0ca96d92058f5a3d92ee71b6ff459f97480d420e8"
+      ],
+      "human_authority_refs": [
+        "ID15683",
+        "3deac2239d23d422ae242cfa45e224abe1a1370b3fd7e3ffdd259a94cb7af453",
+        "0664c46e584653f5a7f5a0c0ca96d92058f5a3d92ee71b6ff459f97480d420e8"
+      ]
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/r2_15f/canonical_publication_r2_15f_candidate.py",
+      "git_status_code": "??",
+      "tracked": false,
+      "sha256": "480ddd02a367b5cd091fff5f98ecac5aaf1c8bfed924c34f16ee629712ccc06f",
+      "size": 17216,
+      "phase5_role": "Human-authorized successor candidate/authority artifact",
+      "authority_basis": "Human-authorized successor candidate/authority artifact; exact SHA bound in evidence 56-67",
+      "authority_refs": [
+        "480ddd02a367b5cd091fff5f98ecac5aaf1c8bfed924c34f16ee629712ccc06f",
+        "HUMAN_DECISION_R2_15F_REV2_MATERIALIZATION_APPROVE",
+        "a30ced80b3889d76c63119616e6441a70e61b47c7c3005b3c135d3ed00761af6",
+        "c8cc01806e0b8e20057516c9f84299e8b9977586c9d835847934e9a17c066f32"
+      ],
+      "human_authority_refs": [
+        "a30ced80b3889d76c63119616e6441a70e61b47c7c3005b3c135d3ed00761af6",
+        "c8cc01806e0b8e20057516c9f84299e8b9977586c9d835847934e9a17c066f32"
+      ]
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/r2_15f/chain_a/01_manifest_chain_a.json",
+      "git_status_code": "??",
+      "tracked": false,
+      "sha256": "113e61363eabd83841557e5629b4dea99785c460152d953803a7061faad893d2",
+      "size": 1580,
+      "phase5_role": "Human-authorized successor candidate/authority artifact",
+      "authority_basis": "Human-authorized successor candidate/authority artifact; exact SHA bound in evidence 56-67",
+      "authority_refs": [
+        "113e61363eabd83841557e5629b4dea99785c460152d953803a7061faad893d2",
+        "HUMAN_DECISION_R2_15F_REV2_MATERIALIZATION_APPROVE",
+        "a30ced80b3889d76c63119616e6441a70e61b47c7c3005b3c135d3ed00761af6",
+        "c8cc01806e0b8e20057516c9f84299e8b9977586c9d835847934e9a17c066f32"
+      ],
+      "human_authority_refs": [
+        "a30ced80b3889d76c63119616e6441a70e61b47c7c3005b3c135d3ed00761af6",
+        "c8cc01806e0b8e20057516c9f84299e8b9977586c9d835847934e9a17c066f32"
+      ]
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/r2_15f/chain_a/02_package_chain_a.json",
+      "git_status_code": "??",
+      "tracked": false,
+      "sha256": "d293ee10fbb7da79b31f27208f2fb6b0b0462b50bb24e78b1c635ebe30d78fdc",
+      "size": 1468,
+      "phase5_role": "Human-authorized successor candidate/authority artifact",
+      "authority_basis": "Human-authorized successor candidate/authority artifact; exact SHA bound in evidence 56-67",
+      "authority_refs": [
+        "d293ee10fbb7da79b31f27208f2fb6b0b0462b50bb24e78b1c635ebe30d78fdc",
+        "HUMAN_DECISION_R2_15F_REV2_MATERIALIZATION_APPROVE",
+        "a30ced80b3889d76c63119616e6441a70e61b47c7c3005b3c135d3ed00761af6",
+        "c8cc01806e0b8e20057516c9f84299e8b9977586c9d835847934e9a17c066f32"
+      ],
+      "human_authority_refs": [
+        "a30ced80b3889d76c63119616e6441a70e61b47c7c3005b3c135d3ed00761af6",
+        "c8cc01806e0b8e20057516c9f84299e8b9977586c9d835847934e9a17c066f32"
+      ]
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/r2_15f/chain_a/aligned_tests/test_cpub_activation_candidate_aligned.py",
+      "git_status_code": "??",
+      "tracked": false,
+      "sha256": "49ce4ede376348e17f408bc0db6f134fe4dd0657821b20361c73240e7e525b01",
+      "size": 17336,
+      "phase5_role": "Human-authorized successor candidate/authority artifact",
+      "authority_basis": "Human-authorized successor candidate/authority artifact; exact SHA bound in evidence 56-67",
+      "authority_refs": [
+        "49ce4ede376348e17f408bc0db6f134fe4dd0657821b20361c73240e7e525b01",
+        "HUMAN_DECISION_R2_15F_REV2_MATERIALIZATION_APPROVE",
+        "a30ced80b3889d76c63119616e6441a70e61b47c7c3005b3c135d3ed00761af6",
+        "c8cc01806e0b8e20057516c9f84299e8b9977586c9d835847934e9a17c066f32"
+      ],
+      "human_authority_refs": [
+        "a30ced80b3889d76c63119616e6441a70e61b47c7c3005b3c135d3ed00761af6",
+        "c8cc01806e0b8e20057516c9f84299e8b9977586c9d835847934e9a17c066f32"
+      ]
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/r2_15f/chain_a/aligned_tests/test_cpub_candidate_binding_aligned.py",
+      "git_status_code": "??",
+      "tracked": false,
+      "sha256": "8aaee47e4c2f672914843e51665630f5f9a1978ccc9e2a167150bbc171c9dcfe",
+      "size": 27727,
+      "phase5_role": "Human-authorized successor candidate/authority artifact",
+      "authority_basis": "Human-authorized successor candidate/authority artifact; exact SHA bound in evidence 56-67",
+      "authority_refs": [
+        "8aaee47e4c2f672914843e51665630f5f9a1978ccc9e2a167150bbc171c9dcfe",
+        "HUMAN_DECISION_R2_15F_REV2_MATERIALIZATION_APPROVE",
+        "a30ced80b3889d76c63119616e6441a70e61b47c7c3005b3c135d3ed00761af6",
+        "c8cc01806e0b8e20057516c9f84299e8b9977586c9d835847934e9a17c066f32"
+      ],
+      "human_authority_refs": [
+        "a30ced80b3889d76c63119616e6441a70e61b47c7c3005b3c135d3ed00761af6",
+        "c8cc01806e0b8e20057516c9f84299e8b9977586c9d835847934e9a17c066f32"
+      ]
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/r2_15f/chain_a/successor/03_chain_a_package_acceptance.json",
+      "git_status_code": "??",
+      "tracked": false,
+      "sha256": "171b05629b8042957545bd8fbd7fc3d7d0519c38661a8a889d1aecbe28d20242",
+      "size": 1214,
+      "phase5_role": "Human-authorized successor candidate/authority artifact",
+      "authority_basis": "Human-authorized successor candidate/authority artifact; exact SHA bound in evidence 56-67",
+      "authority_refs": [
+        "171b05629b8042957545bd8fbd7fc3d7d0519c38661a8a889d1aecbe28d20242",
+        "HUMAN_DECISION_R2_15F_REV2_MATERIALIZATION_APPROVE",
+        "a30ced80b3889d76c63119616e6441a70e61b47c7c3005b3c135d3ed00761af6",
+        "c8cc01806e0b8e20057516c9f84299e8b9977586c9d835847934e9a17c066f32"
+      ],
+      "human_authority_refs": [
+        "a30ced80b3889d76c63119616e6441a70e61b47c7c3005b3c135d3ed00761af6",
+        "c8cc01806e0b8e20057516c9f84299e8b9977586c9d835847934e9a17c066f32"
+      ]
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/r2_15f/chain_a/successor/04_activation_record_chain_a.json",
+      "git_status_code": "??",
+      "tracked": false,
+      "sha256": "1f247b43ebbc4bdc5dc50e3f1b20ff6af3ebac67105e823ba947a61895023237",
+      "size": 866,
+      "phase5_role": "Human-authorized successor candidate/authority artifact",
+      "authority_basis": "Human-authorized successor candidate/authority artifact; exact SHA bound in evidence 56-67",
+      "authority_refs": [
+        "1f247b43ebbc4bdc5dc50e3f1b20ff6af3ebac67105e823ba947a61895023237",
+        "HUMAN_DECISION_R2_15F_REV2_MATERIALIZATION_APPROVE",
+        "a30ced80b3889d76c63119616e6441a70e61b47c7c3005b3c135d3ed00761af6",
+        "c8cc01806e0b8e20057516c9f84299e8b9977586c9d835847934e9a17c066f32"
+      ],
+      "human_authority_refs": [
+        "a30ced80b3889d76c63119616e6441a70e61b47c7c3005b3c135d3ed00761af6",
+        "c8cc01806e0b8e20057516c9f84299e8b9977586c9d835847934e9a17c066f32"
+      ]
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/r2_15f/chain_a/successor/05_activated_baseline_chain_a.json",
+      "git_status_code": "??",
+      "tracked": false,
+      "sha256": "0b0b349a2ceb6f02814a6ef64a23618a24d8e4ff94ae756e3786276a31aeda4f",
+      "size": 3013,
+      "phase5_role": "Human-authorized successor candidate/authority artifact",
+      "authority_basis": "Human-authorized successor candidate/authority artifact; exact SHA bound in evidence 56-67",
+      "authority_refs": [
+        "0b0b349a2ceb6f02814a6ef64a23618a24d8e4ff94ae756e3786276a31aeda4f",
+        "HUMAN_DECISION_R2_15F_REV2_MATERIALIZATION_APPROVE",
+        "a30ced80b3889d76c63119616e6441a70e61b47c7c3005b3c135d3ed00761af6",
+        "c8cc01806e0b8e20057516c9f84299e8b9977586c9d835847934e9a17c066f32"
+      ],
+      "human_authority_refs": [
+        "a30ced80b3889d76c63119616e6441a70e61b47c7c3005b3c135d3ed00761af6",
+        "c8cc01806e0b8e20057516c9f84299e8b9977586c9d835847934e9a17c066f32"
+      ]
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/r2_15f/chain_a/successor/07_governance_acceptance_completed_chain_a.json",
+      "git_status_code": "??",
+      "tracked": false,
+      "sha256": "07213f328c5c71e054fc8ffd6888bb884a6baaf137e25bdce25c59ea809c331c",
+      "size": 1398,
+      "phase5_role": "Human-authorized successor candidate/authority artifact",
+      "authority_basis": "Human-authorized successor candidate/authority artifact; exact SHA bound in evidence 56-67",
+      "authority_refs": [
+        "07213f328c5c71e054fc8ffd6888bb884a6baaf137e25bdce25c59ea809c331c",
+        "HUMAN_DECISION_R2_15F_REV2_MATERIALIZATION_APPROVE",
+        "a30ced80b3889d76c63119616e6441a70e61b47c7c3005b3c135d3ed00761af6",
+        "c8cc01806e0b8e20057516c9f84299e8b9977586c9d835847934e9a17c066f32"
+      ],
+      "human_authority_refs": [
+        "a30ced80b3889d76c63119616e6441a70e61b47c7c3005b3c135d3ed00761af6",
+        "c8cc01806e0b8e20057516c9f84299e8b9977586c9d835847934e9a17c066f32"
+      ]
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/r2_15f/chain_b/decision_ledger_repair_acceptance_completed.json",
+      "git_status_code": "??",
+      "tracked": false,
+      "sha256": "188f72305a1e7dcd3ba2dfcbc8f6113b3568d04f285998d8d9e4423fa4caa8e8",
+      "size": 589,
+      "phase5_role": "Human-authorized successor candidate/authority artifact",
+      "authority_basis": "Human-authorized successor candidate/authority artifact; exact SHA bound in evidence 56-67",
+      "authority_refs": [
+        "188f72305a1e7dcd3ba2dfcbc8f6113b3568d04f285998d8d9e4423fa4caa8e8",
+        "HUMAN_DECISION_CHAIN_B_ACCEPTED",
+        "c8cc01806e0b8e20057516c9f84299e8b9977586c9d835847934e9a17c066f32"
+      ],
+      "human_authority_refs": [
+        "a30ced80b3889d76c63119616e6441a70e61b47c7c3005b3c135d3ed00761af6",
+        "c8cc01806e0b8e20057516c9f84299e8b9977586c9d835847934e9a17c066f32"
+      ]
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/r2_15f/completed_human_successor_r15b2_acceptance.json",
+      "git_status_code": "??",
+      "tracked": false,
+      "sha256": "77f27ed8a2b5c4cc67277aad7ab2dbe03d1a017542e65d6207d89a2c97020d2e",
+      "size": 2953,
+      "phase5_role": "Human-authorized successor candidate/authority artifact",
+      "authority_basis": "Human-authorized successor candidate/authority artifact; exact SHA bound in evidence 56-67",
+      "authority_refs": [
+        "77f27ed8a2b5c4cc67277aad7ab2dbe03d1a017542e65d6207d89a2c97020d2e",
+        "HUMAN_DECISION_R15B2_ACCEPTANCE_APPROVE"
+      ],
+      "human_authority_refs": [
+        "ID41782"
+      ]
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/r2_15f/completed_human_successor_r15b_acceptance.json",
+      "git_status_code": "??",
+      "tracked": false,
+      "sha256": "042708358788d1a7073647a4d129a634dda72670f652d4224a9b356e22b2929a",
+      "size": 1935,
+      "phase5_role": "Human-authorized successor candidate/authority artifact",
+      "authority_basis": "Human-authorized successor candidate/authority artifact; exact SHA bound in evidence 56-67",
+      "authority_refs": [
+        "042708358788d1a7073647a4d129a634dda72670f652d4224a9b356e22b2929a",
+        "HUMAN_DECISION_R15B2_ACCEPTANCE_APPROVE"
+      ],
+      "human_authority_refs": [
+        "ID73542"
+      ]
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/r2_15f/decision_ledger_r2_15f_candidate.py",
+      "git_status_code": "??",
+      "tracked": false,
+      "sha256": "991fedf52d2540982b7a921dbf265c30ad8c63a7811b66d4b881da41f560bbc4",
+      "size": 32553,
+      "phase5_role": "Human-authorized successor candidate/authority artifact",
+      "authority_basis": "Human-authorized successor candidate/authority artifact; exact SHA bound in evidence 56-67",
+      "authority_refs": [
+        "991fedf52d2540982b7a921dbf265c30ad8c63a7811b66d4b881da41f560bbc4",
+        "HUMAN_DECISION_R2_15F_REV2_MATERIALIZATION_APPROVE",
+        "a30ced80b3889d76c63119616e6441a70e61b47c7c3005b3c135d3ed00761af6",
+        "c8cc01806e0b8e20057516c9f84299e8b9977586c9d835847934e9a17c066f32"
+      ],
+      "human_authority_refs": [
+        "a30ced80b3889d76c63119616e6441a70e61b47c7c3005b3c135d3ed00761af6",
+        "c8cc01806e0b8e20057516c9f84299e8b9977586c9d835847934e9a17c066f32"
+      ]
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/r2_15f/dual_authority_pack/54_r2_15f_successor_evidence.json",
+      "git_status_code": "??",
+      "tracked": false,
+      "sha256": "dde3883cf1e7470aaad31f2ce20cb9f1625cc8e8d1ef045e3ff72dc5673d51f8",
+      "size": 1015,
+      "phase5_role": "Human-authorized successor candidate/authority artifact",
+      "authority_basis": "Human-authorized successor candidate/authority artifact; exact SHA bound in evidence 56-67",
+      "authority_refs": [
+        "dde3883cf1e7470aaad31f2ce20cb9f1625cc8e8d1ef045e3ff72dc5673d51f8",
+        "HUMAN_DECISION_R2_15F_REV2_MATERIALIZATION_APPROVE",
+        "a30ced80b3889d76c63119616e6441a70e61b47c7c3005b3c135d3ed00761af6",
+        "c8cc01806e0b8e20057516c9f84299e8b9977586c9d835847934e9a17c066f32"
+      ],
+      "human_authority_refs": [
+        "a30ced80b3889d76c63119616e6441a70e61b47c7c3005b3c135d3ed00761af6",
+        "c8cc01806e0b8e20057516c9f84299e8b9977586c9d835847934e9a17c066f32"
+      ]
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/r2_15f/dual_authority_pack/_gov_current_r2_15f_successor_candidate.py",
+      "git_status_code": "??",
+      "tracked": false,
+      "sha256": "c8a459f71489af4fe501e7a2e22af308d389e3be6ef2f4d9d78ae28977dd8ea4",
+      "size": 2999,
+      "phase5_role": "Human-authorized successor candidate/authority artifact",
+      "authority_basis": "Human-authorized successor candidate/authority artifact; exact SHA bound in evidence 56-67",
+      "authority_refs": [
+        "c8a459f71489af4fe501e7a2e22af308d389e3be6ef2f4d9d78ae28977dd8ea4",
+        "HUMAN_DECISION_R2_15F_REV2_MATERIALIZATION_APPROVE",
+        "a30ced80b3889d76c63119616e6441a70e61b47c7c3005b3c135d3ed00761af6",
+        "c8cc01806e0b8e20057516c9f84299e8b9977586c9d835847934e9a17c066f32"
+      ],
+      "human_authority_refs": [
+        "a30ced80b3889d76c63119616e6441a70e61b47c7c3005b3c135d3ed00761af6",
+        "c8cc01806e0b8e20057516c9f84299e8b9977586c9d835847934e9a17c066f32"
+      ]
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/r2_15f/dual_authority_pack/dual_authority_materialization_manifest_rev2.json",
+      "git_status_code": "??",
+      "tracked": false,
+      "sha256": "a30ced80b3889d76c63119616e6441a70e61b47c7c3005b3c135d3ed00761af6",
+      "size": 10220,
+      "phase5_role": "Human-authorized successor candidate/authority artifact",
+      "authority_basis": "Human-authorized successor candidate/authority artifact; exact SHA bound in evidence 56-67",
+      "authority_refs": [
+        "a30ced80b3889d76c63119616e6441a70e61b47c7c3005b3c135d3ed00761af6",
+        "HUMAN_DECISION_R2_15F_REV2_MATERIALIZATION_APPROVE",
+        "a30ced80b3889d76c63119616e6441a70e61b47c7c3005b3c135d3ed00761af6",
+        "c8cc01806e0b8e20057516c9f84299e8b9977586c9d835847934e9a17c066f32"
+      ],
+      "human_authority_refs": [
+        "a30ced80b3889d76c63119616e6441a70e61b47c7c3005b3c135d3ed00761af6",
+        "c8cc01806e0b8e20057516c9f84299e8b9977586c9d835847934e9a17c066f32"
+      ]
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/r2_15f/dual_authority_pack/rollback/09_candidate_manifest.json",
+      "git_status_code": "??",
+      "tracked": false,
+      "sha256": "fd4d35ae17323d672a8aef998ed8a928069b346524ea64494a2ffb643ca2c8e3",
+      "size": 1578,
+      "phase5_role": "Human-authorized successor candidate/authority artifact",
+      "authority_basis": "Human-authorized successor candidate/authority artifact; exact SHA bound in evidence 56-67",
+      "authority_refs": [
+        "fd4d35ae17323d672a8aef998ed8a928069b346524ea64494a2ffb643ca2c8e3",
+        "HUMAN_DECISION_R2_15F_REV2_MATERIALIZATION_APPROVE",
+        "a30ced80b3889d76c63119616e6441a70e61b47c7c3005b3c135d3ed00761af6",
+        "c8cc01806e0b8e20057516c9f84299e8b9977586c9d835847934e9a17c066f32"
+      ],
+      "human_authority_refs": [
+        "a30ced80b3889d76c63119616e6441a70e61b47c7c3005b3c135d3ed00761af6",
+        "c8cc01806e0b8e20057516c9f84299e8b9977586c9d835847934e9a17c066f32"
+      ]
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/r2_15f/dual_authority_pack/rollback/10_candidate_package.json",
+      "git_status_code": "??",
+      "tracked": false,
+      "sha256": "fcbed1c085cd3df037190239729b53405b145786bd7393a2ffe13f73e0720b3a",
+      "size": 1472,
+      "phase5_role": "Human-authorized successor candidate/authority artifact",
+      "authority_basis": "Human-authorized successor candidate/authority artifact; exact SHA bound in evidence 56-67",
+      "authority_refs": [
+        "fcbed1c085cd3df037190239729b53405b145786bd7393a2ffe13f73e0720b3a",
+        "HUMAN_DECISION_R2_15F_REV2_MATERIALIZATION_APPROVE",
+        "a30ced80b3889d76c63119616e6441a70e61b47c7c3005b3c135d3ed00761af6",
+        "c8cc01806e0b8e20057516c9f84299e8b9977586c9d835847934e9a17c066f32"
+      ],
+      "human_authority_refs": [
+        "a30ced80b3889d76c63119616e6441a70e61b47c7c3005b3c135d3ed00761af6",
+        "c8cc01806e0b8e20057516c9f84299e8b9977586c9d835847934e9a17c066f32"
+      ]
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/r2_15f/dual_authority_pack/rollback/_gov_current.py",
+      "git_status_code": "??",
+      "tracked": false,
+      "sha256": "9fccc4b542362f9f0aecf27a384a70a01bb3dd69210c19c4812bf212b7d458b8",
+      "size": 2998,
+      "phase5_role": "Human-authorized successor candidate/authority artifact",
+      "authority_basis": "Human-authorized successor candidate/authority artifact; exact SHA bound in evidence 56-67",
+      "authority_refs": [
+        "9fccc4b542362f9f0aecf27a384a70a01bb3dd69210c19c4812bf212b7d458b8",
+        "HUMAN_DECISION_R2_15F_REV2_MATERIALIZATION_APPROVE",
+        "a30ced80b3889d76c63119616e6441a70e61b47c7c3005b3c135d3ed00761af6",
+        "c8cc01806e0b8e20057516c9f84299e8b9977586c9d835847934e9a17c066f32"
+      ],
+      "human_authority_refs": [
+        "a30ced80b3889d76c63119616e6441a70e61b47c7c3005b3c135d3ed00761af6",
+        "c8cc01806e0b8e20057516c9f84299e8b9977586c9d835847934e9a17c066f32"
+      ]
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/r2_15f/dual_authority_pack/rollback/canonical_publication.py",
+      "git_status_code": "??",
+      "tracked": false,
+      "sha256": "dfbf54f3bd6dae4faecd5a412ae790a0326841e733c62e66fc48a93ff68d9b00",
+      "size": 17157,
+      "phase5_role": "Human-authorized successor candidate/authority artifact",
+      "authority_basis": "Human-authorized successor candidate/authority artifact; exact SHA bound in evidence 56-67",
+      "authority_refs": [
+        "dfbf54f3bd6dae4faecd5a412ae790a0326841e733c62e66fc48a93ff68d9b00",
+        "HUMAN_DECISION_R2_15F_REV2_MATERIALIZATION_APPROVE",
+        "a30ced80b3889d76c63119616e6441a70e61b47c7c3005b3c135d3ed00761af6",
+        "c8cc01806e0b8e20057516c9f84299e8b9977586c9d835847934e9a17c066f32"
+      ],
+      "human_authority_refs": [
+        "a30ced80b3889d76c63119616e6441a70e61b47c7c3005b3c135d3ed00761af6",
+        "c8cc01806e0b8e20057516c9f84299e8b9977586c9d835847934e9a17c066f32"
+      ]
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/r2_15f/dual_authority_pack/rollback/decision_ledger.py",
+      "git_status_code": "??",
+      "tracked": false,
+      "sha256": "8924436a944fb40ae3371a540cf4ac673508d1c06d4c3a3f8321b3b38dc05ca9",
+      "size": 32191,
+      "phase5_role": "Human-authorized successor candidate/authority artifact",
+      "authority_basis": "Human-authorized successor candidate/authority artifact; exact SHA bound in evidence 56-67",
+      "authority_refs": [
+        "8924436a944fb40ae3371a540cf4ac673508d1c06d4c3a3f8321b3b38dc05ca9",
+        "HUMAN_DECISION_R2_15F_REV2_MATERIALIZATION_APPROVE",
+        "a30ced80b3889d76c63119616e6441a70e61b47c7c3005b3c135d3ed00761af6",
+        "c8cc01806e0b8e20057516c9f84299e8b9977586c9d835847934e9a17c066f32"
+      ],
+      "human_authority_refs": [
+        "a30ced80b3889d76c63119616e6441a70e61b47c7c3005b3c135d3ed00761af6",
+        "c8cc01806e0b8e20057516c9f84299e8b9977586c9d835847934e9a17c066f32"
+      ]
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/r2_15f/dual_authority_pack/rollback/p5_gov_reopen_cpub_activation.json",
+      "git_status_code": "??",
+      "tracked": false,
+      "sha256": "14b9dc1cb709d0605b91578df3434013cd6c7f03f0302497b2c41d584c8f13de",
+      "size": 866,
+      "phase5_role": "Human-authorized successor candidate/authority artifact",
+      "authority_basis": "Human-authorized successor candidate/authority artifact; exact SHA bound in evidence 56-67",
+      "authority_refs": [
+        "14b9dc1cb709d0605b91578df3434013cd6c7f03f0302497b2c41d584c8f13de",
+        "HUMAN_DECISION_R2_15F_REV2_MATERIALIZATION_APPROVE",
+        "a30ced80b3889d76c63119616e6441a70e61b47c7c3005b3c135d3ed00761af6",
+        "c8cc01806e0b8e20057516c9f84299e8b9977586c9d835847934e9a17c066f32"
+      ],
+      "human_authority_refs": [
+        "a30ced80b3889d76c63119616e6441a70e61b47c7c3005b3c135d3ed00761af6",
+        "c8cc01806e0b8e20057516c9f84299e8b9977586c9d835847934e9a17c066f32"
+      ]
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/r2_15f/dual_authority_pack/rollback/p5_gov_reopen_cpub_human_acceptance.json",
+      "git_status_code": "??",
+      "tracked": false,
+      "sha256": "6e8a7df1c1345501d990d2c098019931b44a8292c80df4ae91bc1dc3e9cc8d77",
+      "size": 1227,
+      "phase5_role": "Human-authorized successor candidate/authority artifact",
+      "authority_basis": "Human-authorized successor candidate/authority artifact; exact SHA bound in evidence 56-67",
+      "authority_refs": [
+        "6e8a7df1c1345501d990d2c098019931b44a8292c80df4ae91bc1dc3e9cc8d77",
+        "HUMAN_DECISION_R2_15F_REV2_MATERIALIZATION_APPROVE",
+        "a30ced80b3889d76c63119616e6441a70e61b47c7c3005b3c135d3ed00761af6",
+        "c8cc01806e0b8e20057516c9f84299e8b9977586c9d835847934e9a17c066f32"
+      ],
+      "human_authority_refs": [
+        "a30ced80b3889d76c63119616e6441a70e61b47c7c3005b3c135d3ed00761af6",
+        "c8cc01806e0b8e20057516c9f84299e8b9977586c9d835847934e9a17c066f32"
+      ]
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/r2_15f/dual_authority_pack/rollback/phase5_governance_acceptance.json",
+      "git_status_code": "??",
+      "tracked": false,
+      "sha256": "ee87996330064a8a5f5979db4ed54b81f608399c6d394f887985dfff09bee58b",
+      "size": 1113,
+      "phase5_role": "Human-authorized successor candidate/authority artifact",
+      "authority_basis": "Human-authorized successor candidate/authority artifact; exact SHA bound in evidence 56-67",
+      "authority_refs": [
+        "ee87996330064a8a5f5979db4ed54b81f608399c6d394f887985dfff09bee58b",
+        "HUMAN_DECISION_R2_15F_REV2_MATERIALIZATION_APPROVE",
+        "a30ced80b3889d76c63119616e6441a70e61b47c7c3005b3c135d3ed00761af6",
+        "c8cc01806e0b8e20057516c9f84299e8b9977586c9d835847934e9a17c066f32"
+      ],
+      "human_authority_refs": [
+        "a30ced80b3889d76c63119616e6441a70e61b47c7c3005b3c135d3ed00761af6",
+        "c8cc01806e0b8e20057516c9f84299e8b9977586c9d835847934e9a17c066f32"
+      ]
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/r2_15f/dual_authority_pack/rollback/phase5_governance_baseline.json",
+      "git_status_code": "??",
+      "tracked": false,
+      "sha256": "163ddd73db9c38de9a50e28690d0e71b4a87844c956565c1d1745bddc552757f",
+      "size": 3013,
+      "phase5_role": "Human-authorized successor candidate/authority artifact",
+      "authority_basis": "Human-authorized successor candidate/authority artifact; exact SHA bound in evidence 56-67",
+      "authority_refs": [
+        "163ddd73db9c38de9a50e28690d0e71b4a87844c956565c1d1745bddc552757f",
+        "HUMAN_DECISION_R2_15F_REV2_MATERIALIZATION_APPROVE",
+        "a30ced80b3889d76c63119616e6441a70e61b47c7c3005b3c135d3ed00761af6",
+        "c8cc01806e0b8e20057516c9f84299e8b9977586c9d835847934e9a17c066f32"
+      ],
+      "human_authority_refs": [
+        "a30ced80b3889d76c63119616e6441a70e61b47c7c3005b3c135d3ed00761af6",
+        "c8cc01806e0b8e20057516c9f84299e8b9977586c9d835847934e9a17c066f32"
+      ]
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/r2_15f/dual_authority_pack/rollback/test_cpub_activation_candidate.py",
+      "git_status_code": "??",
+      "tracked": false,
+      "sha256": "5f96f0fd2faacde3c20fc3fd851d148a1c30ee7602d5d4e29b062ca6e4e6c923",
+      "size": 16021,
+      "phase5_role": "Human-approved test-alignment materialization target (R2-15F Rev2)",
+      "authority_basis": "Human-approved test-alignment materialization target (R2-15F Rev2)",
+      "authority_refs": [
+        "5f96f0fd2faacde3c20fc3fd851d148a1c30ee7602d5d4e29b062ca6e4e6c923",
+        "HUMAN_DECISION_R2_15F_REV2_MATERIALIZATION_APPROVE",
+        "c8cc01806e0b8e20057516c9f84299e8b9977586c9d835847934e9a17c066f32"
+      ],
+      "human_authority_refs": [
+        "a30ced80b3889d76c63119616e6441a70e61b47c7c3005b3c135d3ed00761af6",
+        "c8cc01806e0b8e20057516c9f84299e8b9977586c9d835847934e9a17c066f32"
+      ]
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/r2_15f/dual_authority_pack/rollback/test_cpub_candidate_binding.py",
+      "git_status_code": "??",
+      "tracked": false,
+      "sha256": "7a79387d24eb69d888729e85d62e03bec318d161fdba5033f1fe9a3af6e13691",
+      "size": 26924,
+      "phase5_role": "Human-approved test-alignment materialization target (R2-15F Rev2)",
+      "authority_basis": "Human-approved test-alignment materialization target (R2-15F Rev2)",
+      "authority_refs": [
+        "7a79387d24eb69d888729e85d62e03bec318d161fdba5033f1fe9a3af6e13691",
+        "HUMAN_DECISION_R2_15F_REV2_MATERIALIZATION_APPROVE",
+        "c8cc01806e0b8e20057516c9f84299e8b9977586c9d835847934e9a17c066f32"
+      ],
+      "human_authority_refs": [
+        "a30ced80b3889d76c63119616e6441a70e61b47c7c3005b3c135d3ed00761af6",
+        "c8cc01806e0b8e20057516c9f84299e8b9977586c9d835847934e9a17c066f32"
+      ]
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/r2_15f/prehuman_successor_r15b2_acceptance_template.json",
+      "git_status_code": "??",
+      "tracked": false,
+      "sha256": "3ed2a7877b8a57a4e464e51fc3cb32ec2f0f8d3221d62668b97334af173073bf",
+      "size": 2946,
+      "phase5_role": "Human-authorized successor candidate/authority artifact",
+      "authority_basis": "Human-authorized successor candidate/authority artifact; exact SHA bound in evidence 56-67",
+      "authority_refs": [
+        "3ed2a7877b8a57a4e464e51fc3cb32ec2f0f8d3221d62668b97334af173073bf",
+        "HUMAN_DECISION_R15B2_SOURCE_STATE_STABILIZATION_APPROVE"
+      ],
+      "human_authority_refs": [
+        "a30ced80b3889d76c63119616e6441a70e61b47c7c3005b3c135d3ed00761af6",
+        "c8cc01806e0b8e20057516c9f84299e8b9977586c9d835847934e9a17c066f32"
+      ]
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/r2_15f/prehuman_successor_r15b_acceptance_template.json",
+      "git_status_code": "??",
+      "tracked": false,
+      "sha256": "0ee14456193e0e7194f871970bc192f64301c24dd06a8bf92e114fd05baef0a8",
+      "size": 1803,
+      "phase5_role": "Human-authorized successor candidate/authority artifact",
+      "authority_basis": "Human-authorized successor candidate/authority artifact; exact SHA bound in evidence 56-67",
+      "authority_refs": [
+        "0ee14456193e0e7194f871970bc192f64301c24dd06a8bf92e114fd05baef0a8",
+        "HUMAN_DECISION_R15B2_ACCEPTANCE_APPROVE"
+      ],
+      "human_authority_refs": [
+        "ID73542"
+      ]
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/r2_15f/prehuman_successor_r15b_acceptance_template_rev2.json",
+      "git_status_code": "??",
+      "tracked": false,
+      "sha256": "7b77678bebf84c734bcd6c5a445ec946f476eea271d74e4c8faddf6da7cd8ca4",
+      "size": 1928,
+      "phase5_role": "Human-authorized successor candidate/authority artifact",
+      "authority_basis": "Human-authorized successor candidate/authority artifact; exact SHA bound in evidence 56-67",
+      "authority_refs": [
+        "7b77678bebf84c734bcd6c5a445ec946f476eea271d74e4c8faddf6da7cd8ca4",
+        "HUMAN_DECISION_R15B2_ACCEPTANCE_APPROVE"
+      ],
+      "human_authority_refs": [
+        "ID73542"
+      ]
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/r2_15f/r2_15f_source_bound_r15c_candidate.json",
+      "git_status_code": "??",
+      "tracked": false,
+      "sha256": "47ef777647242ac2352627581a1ad86c8fb85db28d28409c804dfa26d4c794a7",
+      "size": 7327,
+      "phase5_role": "Human-authorized successor candidate/authority artifact",
+      "authority_basis": "Human-authorized successor candidate/authority artifact; exact SHA bound in evidence 56-67",
+      "authority_refs": [
+        "47ef777647242ac2352627581a1ad86c8fb85db28d28409c804dfa26d4c794a7",
+        "HUMAN_DECISION_SOURCE_BOUND_R15C_APPROVE"
+      ],
+      "human_authority_refs": [
+        "a30ced80b3889d76c63119616e6441a70e61b47c7c3005b3c135d3ed00761af6",
+        "c8cc01806e0b8e20057516c9f84299e8b9977586c9d835847934e9a17c066f32"
+      ]
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/r2_15f/r2_15f_successor_bound_r15c_candidate_rev2.json",
+      "git_status_code": "??",
+      "tracked": false,
+      "sha256": "2734d6df3d63840698eb385eb6a520e15dea99fe94ccdbc6ea09123c3e57988c",
+      "size": 7223,
+      "phase5_role": "Human-authorized successor candidate/authority artifact",
+      "authority_basis": "Human-authorized successor candidate/authority artifact; exact SHA bound in evidence 56-67",
+      "authority_refs": [
+        "2734d6df3d63840698eb385eb6a520e15dea99fe94ccdbc6ea09123c3e57988c",
+        "HUMAN_DECISION_R15C_REV2_GATE_APPROVE"
+      ],
+      "human_authority_refs": [
+        "a30ced80b3889d76c63119616e6441a70e61b47c7c3005b3c135d3ed00761af6",
+        "c8cc01806e0b8e20057516c9f84299e8b9977586c9d835847934e9a17c066f32"
+      ]
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/r2_15f/source_state_stabilization_evidence.json",
+      "git_status_code": "??",
+      "tracked": false,
+      "sha256": "e54df0418518b2f85723b3d18db12f0aa1caab40363e2a46b7fa3e64e627a8b7",
+      "size": 1845,
+      "phase5_role": "Human-authorized successor candidate/authority artifact",
+      "authority_basis": "Human-authorized successor candidate/authority artifact; exact SHA bound in evidence 56-67",
+      "authority_refs": [
+        "e54df0418518b2f85723b3d18db12f0aa1caab40363e2a46b7fa3e64e627a8b7",
+        "HUMAN_DECISION_R15B2_SOURCE_STATE_STABILIZATION_APPROVE"
+      ],
+      "human_authority_refs": [
+        "a30ced80b3889d76c63119616e6441a70e61b47c7c3005b3c135d3ed00761af6",
+        "c8cc01806e0b8e20057516c9f84299e8b9977586c9d835847934e9a17c066f32"
+      ]
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/r2_15f/successor_r15b2_identity_evidence_candidate.json",
+      "git_status_code": "??",
+      "tracked": false,
+      "sha256": "04b65c48ee53795f46c26c3b49abe72b27ac03a6bfa47f2a95545cb44d598823",
+      "size": 3817,
+      "phase5_role": "Human-authorized successor candidate/authority artifact",
+      "authority_basis": "Human-authorized successor candidate/authority artifact; exact SHA bound in evidence 56-67",
+      "authority_refs": [
+        "04b65c48ee53795f46c26c3b49abe72b27ac03a6bfa47f2a95545cb44d598823",
+        "HUMAN_DECISION_R15B2_SOURCE_STATE_STABILIZATION_APPROVE"
+      ],
+      "human_authority_refs": [
+        "a30ced80b3889d76c63119616e6441a70e61b47c7c3005b3c135d3ed00761af6",
+        "c8cc01806e0b8e20057516c9f84299e8b9977586c9d835847934e9a17c066f32"
+      ]
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/r2_15f/successor_r15b_identity_evidence_candidate.json",
+      "git_status_code": "??",
+      "tracked": false,
+      "sha256": "4e2ca8c191d187f5a2b33f2dbcd5d944e1f0ec44bdd8e2eed785aa967058c0b7",
+      "size": 4530,
+      "phase5_role": "Human-authorized successor candidate/authority artifact",
+      "authority_basis": "Human-authorized successor candidate/authority artifact; exact SHA bound in evidence 56-67",
+      "authority_refs": [
+        "4e2ca8c191d187f5a2b33f2dbcd5d944e1f0ec44bdd8e2eed785aa967058c0b7",
+        "HUMAN_DECISION_R15B2_ACCEPTANCE_APPROVE"
+      ],
+      "human_authority_refs": [
+        "ID73542"
+      ]
+    },
+    {
+      "path": "audit/phase5/p5f_r2/54_r2_15f_successor_evidence.json",
+      "git_status_code": "??",
+      "tracked": false,
+      "sha256": "dde3883cf1e7470aaad31f2ce20cb9f1625cc8e8d1ef045e3ff72dc5673d51f8",
+      "size": 1015,
+      "phase5_role": "Successor-current evidence created by Human-approved R2-15F Rev2 materialization (manifest a30ced80..., evidence 56)",
+      "authority_basis": "Successor-current evidence created by Human-approved R2-15F Rev2 materialization (manifest a30ced80..., evidence 56)",
+      "authority_refs": [
+        "dde3883cf1e7470aaad31f2ce20cb9f1625cc8e8d1ef045e3ff72dc5673d51f8",
+        "HUMAN_DECISION_R2_15F_REV2_MATERIALIZATION_APPROVE",
+        "a30ced80b3889d76c63119616e6441a70e61b47c7c3005b3c135d3ed00761af6",
+        "c8cc01806e0b8e20057516c9f84299e8b9977586c9d835847934e9a17c066f32"
+      ],
+      "human_authority_refs": [
+        "a30ced80b3889d76c63119616e6441a70e61b47c7c3005b3c135d3ed00761af6",
+        "c8cc01806e0b8e20057516c9f84299e8b9977586c9d835847934e9a17c066f32"
+      ]
+    },
+    {
+      "path": "audit/phase5/p5f_r2/62_r2_16_projection_evidence.json",
+      "git_status_code": "??",
+      "tracked": false,
+      "sha256": "2f31b2bc3705999f81bca79aa24c711504915584585ed7a915ab3202c16e9923",
+      "size": 2849,
+      "phase5_role": "Human exact-byte approved immutable evidence in R2-15F..R2-19 lineage",
+      "authority_basis": "Human exact-byte approved immutable evidence in R2-15F..R2-19 lineage; Human decision accepted its SHA",
+      "authority_refs": [
+        "2f31b2bc3705999f81bca79aa24c711504915584585ed7a915ab3202c16e9923",
+        "ID53826",
+        "2f31b2bc3705999f81bca79aa24c711504915584585ed7a915ab3202c16e9923"
+      ],
+      "human_authority_refs": [
+        "ID53826"
+      ]
+    },
+    {
+      "path": "audit/phase5/p5f_r2/64_test_alignment_correction_candidate_evidence.json",
+      "git_status_code": "??",
+      "tracked": false,
+      "sha256": "3deac2239d23d422ae242cfa45e224abe1a1370b3fd7e3ffdd259a94cb7af453",
+      "size": 3142,
+      "phase5_role": "Human exact-byte approved immutable evidence in R2-15F..R2-19 lineage",
+      "authority_basis": "Human exact-byte approved immutable evidence in R2-15F..R2-19 lineage; Human decision accepted its SHA",
+      "authority_refs": [
+        "3deac2239d23d422ae242cfa45e224abe1a1370b3fd7e3ffdd259a94cb7af453",
+        "HUMAN_DECISION_TEST_ALIGNMENT_MATERIALIZATION_APPROVE",
+        "3deac2239d23d422ae242cfa45e224abe1a1370b3fd7e3ffdd259a94cb7af453"
+      ],
+      "human_authority_refs": [
+        "ID15683",
+        "0664c46e584653f5a7f5a0c0ca96d92058f5a3d92ee71b6ff459f97480d420e8"
+      ]
+    },
+    {
+      "path": "audit/phase5/p5f_r2/65_test_alignment_materialization_f10_evidence.json",
+      "git_status_code": "??",
+      "tracked": false,
+      "sha256": "0664c46e584653f5a7f5a0c0ca96d92058f5a3d92ee71b6ff459f97480d420e8",
+      "size": 3001,
+      "phase5_role": "Human exact-byte approved immutable evidence in R2-15F..R2-19 lineage",
+      "authority_basis": "Human exact-byte approved immutable evidence in R2-15F..R2-19 lineage; Human decision accepted its SHA",
+      "authority_refs": [
+        "0664c46e584653f5a7f5a0c0ca96d92058f5a3d92ee71b6ff459f97480d420e8",
+        "ID67142",
+        "0664c46e584653f5a7f5a0c0ca96d92058f5a3d92ee71b6ff459f97480d420e8"
+      ],
+      "human_authority_refs": [
+        "ID67142"
+      ]
+    },
+    {
+      "path": "audit/phase5/p5f_r2/66_p5f_r2_18_f11_independent_review_evidence.json",
+      "git_status_code": "??",
+      "tracked": false,
+      "sha256": "b45e272e56bb9b8a32006a883408be9c294f35650a536f76f0e3b9d6582070a5",
+      "size": 19315,
+      "phase5_role": "Human exact-byte approved immutable evidence in R2-15F..R2-19 lineage",
+      "authority_basis": "Human exact-byte approved immutable evidence in R2-15F..R2-19 lineage; Human decision accepted its SHA",
+      "authority_refs": [
+        "b45e272e56bb9b8a32006a883408be9c294f35650a536f76f0e3b9d6582070a5",
+        "ID58327"
+      ],
+      "human_authority_refs": [
+        "ID58327"
+      ]
+    }
+  ],
+  "excluded_dirty_inventory": [
+    {
+      "path": "\"Prompt/Prompt_Daily_00020_\\345\\225\\206\\346\\261\\244\\347\\247\\221\\346\\212\\200.txt\"",
+      "git_status": "M",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "\"Prompt/Prompt_Daily_00268_\\351\\207\\221\\350\\235\\266\\345\\233\\275\\351\\231\\205.txt\"",
+      "git_status": "M",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "\"Prompt/Prompt_Daily_00354_\\344\\270\\255\\350\\275\\257\\345\\233\\275\\351\\231\\205.txt\"",
+      "git_status": "M",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "\"Prompt/Prompt_Daily_00357_\\347\\276\\216\\345\\205\\260\\347\\251\\272\\346\\270\\257.txt\"",
+      "git_status": "M",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "\"Prompt/Prompt_Daily_00371_\\345\\214\\227\\346\\216\\247\\346\\260\\264\\345\\212\\241.txt\"",
+      "git_status": "M",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "\"Prompt/Prompt_Daily_00700_\\350\\205\\276\\350\\256\\257\\346\\216\\247\\350\\202\\241.txt\"",
+      "git_status": "M",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "\"Prompt/Prompt_Daily_00788_\\344\\270\\255\\345\\233\\275\\351\\223\\201\\345\\241\\224.txt\"",
+      "git_status": "M",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "\"Prompt/Prompt_Daily_01093_\\347\\237\\263\\350\\215\\257\\351\\233\\206\\345\\233\\242.txt\"",
+      "git_status": "M",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "\"Prompt/Prompt_Daily_01177_\\344\\270\\255\\347\\224\\237\\345\\210\\266\\350\\215\\257.txt\"",
+      "git_status": "M",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "\"Prompt/Prompt_Daily_01951_\\351\\224\\246\\351\\221\\253\\347\\224\\237\\346\\256\\226.txt\"",
+      "git_status": "M",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "\"Prompt/Prompt_Daily_02202_\\346\\270\\257\\350\\202\\241\\344\\270\\207\\347\\247\\221\\344\\274\\201\\344\\270\\232.txt\"",
+      "git_status": "M",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "\"Prompt/Prompt_Daily_02602_\\346\\270\\257\\350\\202\\241\\344\\270\\207\\347\\211\\251\\344\\272\\221.txt\"",
+      "git_status": "M",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "\"Prompt/Prompt_Daily_02611_\\345\\233\\275\\346\\263\\260\\346\\265\\267\\351\\200\\232.txt\"",
+      "git_status": "M",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "\"Prompt/Prompt_Daily_03033_\\345\\215\\227\\346\\226\\271\\346\\201\\222\\347\\224\\237\\347\\247\\221\\346\\212\\200.txt\"",
+      "git_status": "M",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "\"Prompt/Prompt_Daily_03800_\\345\\215\\217\\351\\221\\253\\347\\247\\221\\346\\212\\200.txt\"",
+      "git_status": "M",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "\"Prompt/Prompt_Daily_06060_\\344\\274\\227\\345\\256\\211\\345\\234\\250\\347\\272\\277.txt\"",
+      "git_status": "M",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "\"Prompt/Prompt_Weekly_00020_\\345\\225\\206\\346\\261\\244\\347\\247\\221\\346\\212\\200.txt\"",
+      "git_status": "M",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "\"Prompt/Prompt_Weekly_00268_\\351\\207\\221\\350\\235\\266\\345\\233\\275\\351\\231\\205.txt\"",
+      "git_status": "M",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "\"Prompt/Prompt_Weekly_00354_\\344\\270\\255\\350\\275\\257\\345\\233\\275\\351\\231\\205.txt\"",
+      "git_status": "M",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "\"Prompt/Prompt_Weekly_00357_\\347\\276\\216\\345\\205\\260\\347\\251\\272\\346\\270\\257.txt\"",
+      "git_status": "M",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "\"Prompt/Prompt_Weekly_00371_\\345\\214\\227\\346\\216\\247\\346\\260\\264\\345\\212\\241.txt\"",
+      "git_status": "M",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "\"Prompt/Prompt_Weekly_00700_\\350\\205\\276\\350\\256\\257\\346\\216\\247\\350\\202\\241.txt\"",
+      "git_status": "M",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "\"Prompt/Prompt_Weekly_00788_\\344\\270\\255\\345\\233\\275\\351\\223\\201\\345\\241\\224.txt\"",
+      "git_status": "M",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "\"Prompt/Prompt_Weekly_01093_\\347\\237\\263\\350\\215\\257\\351\\233\\206\\345\\233\\242.txt\"",
+      "git_status": "M",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "\"Prompt/Prompt_Weekly_01177_\\344\\270\\255\\347\\224\\237\\345\\210\\266\\350\\215\\257.txt\"",
+      "git_status": "M",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "\"Prompt/Prompt_Weekly_01951_\\351\\224\\246\\351\\221\\253\\347\\224\\237\\346\\256\\226.txt\"",
+      "git_status": "M",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "\"Prompt/Prompt_Weekly_02202_\\346\\270\\257\\350\\202\\241\\344\\270\\207\\347\\247\\221\\344\\274\\201\\344\\270\\232.txt\"",
+      "git_status": "M",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "\"Prompt/Prompt_Weekly_02602_\\346\\270\\257\\350\\202\\241\\344\\270\\207\\347\\211\\251\\344\\272\\221.txt\"",
+      "git_status": "M",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "\"Prompt/Prompt_Weekly_02611_\\345\\233\\275\\346\\263\\260\\346\\265\\267\\351\\200\\232.txt\"",
+      "git_status": "M",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "\"Prompt/Prompt_Weekly_03033_\\345\\215\\227\\346\\226\\271\\346\\201\\222\\347\\224\\237\\347\\247\\221\\346\\212\\200.txt\"",
+      "git_status": "M",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "\"Prompt/Prompt_Weekly_03800_\\345\\215\\217\\351\\221\\253\\347\\247\\221\\346\\212\\200.txt\"",
+      "git_status": "M",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "\"Prompt/Prompt_Weekly_06060_\\344\\274\\227\\345\\256\\211\\345\\234\\250\\347\\272\\277.txt\"",
+      "git_status": "M",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Code_utl/synch_folders.py",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Core/QCFP_MTF/decision/engine.py",
+      "git_status": "M",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Core/QCFP_MTF/phase5/outcome_binding.py",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Core/QCFP_MTF/phase5/outcome_observer.py",
+      "git_status": "M",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Core/QCFP_MTF/phase5/outcome_store.py",
+      "git_status": "M",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Core/QCFP_MTF/phase5/publication_universe.py",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Core/QCFP_MTF/scripts/phase5_canonical_decision_publish.py",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Core/QCFP_MTF/scripts/phase5_canonical_publication_workflow.py",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Core/QCFP_MTF/tests/test_decision/test_2dot2_engines.py",
+      "git_status": "M",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Core/QCFP_MTF/tests/test_decision/test_governance.py",
+      "git_status": "M",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Core/QCFP_MTF/tests/test_decision/test_tactical_chain.py",
+      "git_status": "M",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Core/QCFP_MTF/tests/test_governance/test_phase4_evidence_integrity.py",
+      "git_status": "M",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Core/QCFP_MTF/tests/test_phase5/test_canonical_decision_publish.py",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Core/QCFP_MTF/tests/test_phase5/test_cpub_universe_provider_candidate.py",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Core/QCFP_MTF/tests/test_phase5/test_gov_reopen_cpub.py",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Core/QCFP_MTF/tests/test_phase5/test_outcome_binding.py",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Core/QCFP_MTF/tests/test_phase5/test_outcome_observer.py",
+      "git_status": "M",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Core/QCFP_MTF/tests/test_phase5/test_outcome_store.py",
+      "git_status": "M",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Core/QCFP_MTF/tests/test_phase5/test_p5a_current_state.py",
+      "git_status": "M",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Core/QCFP_MTF/tests/test_phase5/test_p5b01_human_acceptance.py",
+      "git_status": "M",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Core/QCFP_MTF/tests/test_phase5/test_publication_universe.py",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Doc/Governance_AI_Engineering.md",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Doc/QCFP_MTF/Governed_AI_Implementation_Spec_Standard_Template.md",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Doc/QCFP_MTF/QCFP-MTF_Project.xlsx",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Doc/QCFP_MTF/QCFP-MTF_Project_RoadMap_Updates.md",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Doc/QCFP_MTF/QCFP_MTF_AI_Agent_Specification-Aware_Execution_Plan.md",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Prompt/Prompt_Daily.txt",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Prompt/Prompt_Weekly.txt",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/00020_analysis_report.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/00020_buy_signal_analysis_sum.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/00020_daily_TA_indicator_analysis.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/00020_daily_analysis_report.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/00020_daily_chip_distribution_analysis.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/00020_daily_chip_signal_analysis.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/00020_daily_moneyflow_analysis.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/00020_sell_signal_analysis_sum.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/00020_weekly_TA_analysis.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/00020_weekly_analysis_report.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/00020_weekly_moneyflow_analysis.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/00268_analysis_report.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/00268_buy_signal_analysis_sum.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/00268_daily_TA_indicator_analysis.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/00268_daily_analysis_report.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/00268_daily_chip_distribution_analysis.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/00268_daily_chip_signal_analysis.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/00268_daily_moneyflow_analysis.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/00268_sell_signal_analysis_sum.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/00268_weekly_TA_analysis.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/00268_weekly_analysis_report.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/00268_weekly_moneyflow_analysis.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/00354_analysis_report.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/00354_buy_signal_analysis_sum.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/00354_daily_TA_indicator_analysis.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/00354_daily_analysis_report.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/00354_daily_chip_distribution_analysis.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/00354_daily_chip_signal_analysis.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/00354_daily_moneyflow_analysis.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/00354_sell_signal_analysis_sum.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/00354_weekly_TA_analysis.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/00354_weekly_analysis_report.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/00354_weekly_moneyflow_analysis.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/00357_analysis_report.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/00357_buy_signal_analysis_sum.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/00357_daily_TA_indicator_analysis.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/00357_daily_analysis_report.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/00357_daily_chip_distribution_analysis.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/00357_daily_chip_signal_analysis.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/00357_daily_moneyflow_analysis.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/00357_sell_signal_analysis_sum.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/00357_weekly_TA_analysis.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/00357_weekly_analysis_report.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/00357_weekly_moneyflow_analysis.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/00371_analysis_report.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/00371_buy_signal_analysis_sum.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/00371_daily_TA_indicator_analysis.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/00371_daily_analysis_report.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/00371_daily_chip_distribution_analysis.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/00371_daily_chip_signal_analysis.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/00371_daily_moneyflow_analysis.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/00371_sell_signal_analysis_sum.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/00371_weekly_TA_analysis.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/00371_weekly_analysis_report.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/00371_weekly_moneyflow_analysis.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/00700_analysis_report.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/00700_buy_signal_analysis_sum.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/00700_daily_TA_indicator_analysis.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/00700_daily_analysis_report.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/00700_daily_chip_distribution_analysis.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/00700_daily_chip_signal_analysis.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/00700_daily_moneyflow_analysis.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/00700_sell_signal_analysis_sum.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/00700_weekly_TA_analysis.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/00700_weekly_analysis_report.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/00700_weekly_moneyflow_analysis.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/00788_analysis_report.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/00788_buy_signal_analysis_sum.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/00788_daily_TA_indicator_analysis.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/00788_daily_analysis_report.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/00788_daily_chip_distribution_analysis.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/00788_daily_chip_signal_analysis.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/00788_daily_moneyflow_analysis.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/00788_sell_signal_analysis_sum.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/00788_weekly_TA_analysis.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/00788_weekly_analysis_report.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/00788_weekly_moneyflow_analysis.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/01093_analysis_report.pdf",
+      "git_status": "M",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/01093_buy_signal_analysis_sum.pdf",
+      "git_status": "M",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/01093_daily_TA_indicator_analysis.pdf",
+      "git_status": "M",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/01093_daily_analysis_report.pdf",
+      "git_status": "M",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/01093_daily_chip_distribution_analysis.pdf",
+      "git_status": "M",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/01093_daily_chip_signal_analysis.pdf",
+      "git_status": "M",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/01093_daily_moneyflow_analysis.pdf",
+      "git_status": "M",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/01093_sell_signal_analysis_sum.pdf",
+      "git_status": "M",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/01093_weekly_TA_analysis.pdf",
+      "git_status": "M",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/01093_weekly_analysis_report.pdf",
+      "git_status": "M",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/01093_weekly_moneyflow_analysis.pdf",
+      "git_status": "M",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/01177_analysis_report.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/01177_buy_signal_analysis_sum.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/01177_daily_TA_indicator_analysis.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/01177_daily_analysis_report.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/01177_daily_chip_distribution_analysis.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/01177_daily_chip_signal_analysis.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/01177_daily_moneyflow_analysis.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/01177_sell_signal_analysis_sum.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/01177_weekly_TA_analysis.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/01177_weekly_analysis_report.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/01177_weekly_moneyflow_analysis.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/01951_analysis_report.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/01951_buy_signal_analysis_sum.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/01951_daily_TA_indicator_analysis.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/01951_daily_analysis_report.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/01951_daily_chip_distribution_analysis.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/01951_daily_chip_signal_analysis.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/01951_daily_moneyflow_analysis.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/01951_sell_signal_analysis_sum.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/01951_weekly_TA_analysis.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/01951_weekly_analysis_report.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/01951_weekly_moneyflow_analysis.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/02202_analysis_report.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/02202_buy_signal_analysis_sum.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/02202_daily_TA_indicator_analysis.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/02202_daily_analysis_report.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/02202_daily_chip_distribution_analysis.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/02202_daily_chip_signal_analysis.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/02202_daily_moneyflow_analysis.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/02202_sell_signal_analysis_sum.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/02202_weekly_TA_analysis.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/02202_weekly_analysis_report.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/02202_weekly_moneyflow_analysis.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/02602_analysis_report.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/02602_buy_signal_analysis_sum.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/02602_daily_TA_indicator_analysis.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/02602_daily_analysis_report.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/02602_daily_chip_distribution_analysis.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/02602_daily_chip_signal_analysis.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/02602_daily_moneyflow_analysis.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/02602_sell_signal_analysis_sum.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/02602_weekly_TA_analysis.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/02602_weekly_analysis_report.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/02602_weekly_moneyflow_analysis.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/02611_analysis_report.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/02611_buy_signal_analysis_sum.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/02611_daily_TA_indicator_analysis.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/02611_daily_analysis_report.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/02611_daily_chip_distribution_analysis.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/02611_daily_chip_signal_analysis.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/02611_daily_moneyflow_analysis.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/02611_sell_signal_analysis_sum.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/02611_weekly_TA_analysis.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/02611_weekly_analysis_report.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/02611_weekly_moneyflow_analysis.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/03033_analysis_report.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/03033_buy_signal_analysis_sum.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/03033_daily_TA_indicator_analysis.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/03033_daily_analysis_report.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/03033_daily_chip_distribution_analysis.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/03033_daily_chip_signal_analysis.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/03033_daily_moneyflow_analysis.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/03033_sell_signal_analysis_sum.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/03033_weekly_TA_analysis.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/03033_weekly_analysis_report.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/03033_weekly_moneyflow_analysis.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/03800_analysis_report.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/03800_buy_signal_analysis_sum.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/03800_daily_TA_indicator_analysis.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/03800_daily_analysis_report.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/03800_daily_chip_distribution_analysis.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/03800_daily_chip_signal_analysis.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/03800_daily_moneyflow_analysis.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/03800_sell_signal_analysis_sum.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/03800_weekly_TA_analysis.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/03800_weekly_analysis_report.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/03800_weekly_moneyflow_analysis.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/06060_analysis_report.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/06060_buy_signal_analysis_sum.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/06060_daily_TA_indicator_analysis.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/06060_daily_analysis_report.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/06060_daily_chip_distribution_analysis.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/06060_daily_chip_signal_analysis.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/06060_daily_moneyflow_analysis.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/06060_sell_signal_analysis_sum.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/06060_weekly_TA_analysis.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/06060_weekly_analysis_report.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/06060_weekly_moneyflow_analysis.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/HK_Macro_Dashboard.pdf",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/HK_Macro_Dashboard.txt",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "Report/QCFP_MTF/audit/coverage_report_20260903.csv",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/audit/coverage_report_20260903.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/audit/coverage_report_20260904.csv",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/audit/coverage_report_20260904.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/audit/coverage_report_20260907.csv",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/audit/coverage_report_20260907.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/audit/coverage_report_20260908.csv",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/audit/coverage_report_20260908.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/audit/coverage_report_20260909.csv",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/audit/coverage_report_20260909.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/audit/daily_data_trust_20260903.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/audit/daily_data_trust_20260903.md",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/audit/daily_data_trust_20260904.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/audit/daily_data_trust_20260904.md",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/audit/daily_data_trust_20260907.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/audit/daily_data_trust_20260907.md",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/audit/daily_data_trust_20260908.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/audit/daily_data_trust_20260908.md",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/audit/daily_data_trust_20260909.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/audit/daily_data_trust_20260909.md",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/audit/data_quality_report_20260903.csv",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/audit/data_quality_report_20260903.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/audit/data_quality_report_20260904.csv",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/audit/data_quality_report_20260904.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/audit/data_quality_report_20260907.csv",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/audit/data_quality_report_20260907.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/audit/data_quality_report_20260908.csv",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/audit/data_quality_report_20260908.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/audit/data_quality_report_20260909.csv",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/audit/data_quality_report_20260909.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/audit/oos/current_release_oos.json",
+      "git_status": "M",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/daily_tactical/daily_tactical_00700_20260903.csv",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/daily_tactical/daily_tactical_00700_20260903.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/daily_tactical/daily_tactical_00700_20260904.csv",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/daily_tactical/daily_tactical_00700_20260904.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/daily_tactical/daily_tactical_00700_20260905.csv",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/daily_tactical/daily_tactical_00700_20260905.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/daily_tactical/daily_tactical_00700_20260906.csv",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/daily_tactical/daily_tactical_00700_20260906.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/daily_tactical/daily_tactical_00700_20260907.csv",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/daily_tactical/daily_tactical_00700_20260907.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/daily_tactical/daily_tactical_00700_20260908.csv",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/daily_tactical/daily_tactical_00700_20260908.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/daily_tactical/daily_tactical_00700_20260909.csv",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/daily_tactical/daily_tactical_00700_20260909.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/daily_tactical/daily_tactical_20260903.csv",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/daily_tactical/daily_tactical_20260903.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/daily_tactical/daily_tactical_20260904.csv",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/daily_tactical/daily_tactical_20260904.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/daily_tactical/daily_tactical_20260907.csv",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/daily_tactical/daily_tactical_20260907.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/daily_tactical/daily_tactical_20260908.csv",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/daily_tactical/daily_tactical_20260908.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/daily_tactical/daily_tactical_20260909.csv",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/daily_tactical/daily_tactical_20260909.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/dss/00700_2026-09-04.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/dss/00700_2026-09-04.md",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/fusion/decision_00700_20260903.csv",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/fusion/decision_00700_20260903.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/fusion/decision_00700_20260904.csv",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/fusion/decision_00700_20260904.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/fusion/decision_00700_20260905.csv",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/fusion/decision_00700_20260905.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/fusion/decision_00700_20260906.csv",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/fusion/decision_00700_20260906.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/fusion/decision_00700_20260907.csv",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/fusion/decision_00700_20260907.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/fusion/decision_00700_20260908.csv",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/fusion/decision_00700_20260908.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/fusion/decision_00700_20260909.csv",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/fusion/decision_00700_20260909.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/fusion/decision_20260903.csv",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/fusion/decision_20260903.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/fusion/decision_20260904.csv",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/fusion/decision_20260904.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/fusion/decision_20260907.csv",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/fusion/decision_20260907.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/fusion/decision_20260908.csv",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/fusion/decision_20260908.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/fusion/mtf_decision_00700_20260903.csv",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/fusion/mtf_decision_00700_20260903.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/fusion/mtf_decision_00700_20260904.csv",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/fusion/mtf_decision_00700_20260904.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/fusion/mtf_decision_00700_20260905.csv",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/fusion/mtf_decision_00700_20260905.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/fusion/mtf_decision_00700_20260906.csv",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/fusion/mtf_decision_00700_20260906.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/fusion/mtf_decision_00700_20260907.csv",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/fusion/mtf_decision_00700_20260907.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/fusion/mtf_decision_00700_20260908.csv",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/fusion/mtf_decision_00700_20260908.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/fusion/mtf_decision_00700_20260909.csv",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/fusion/mtf_decision_00700_20260909.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/fusion/mtf_decision_20260903.csv",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/fusion/mtf_decision_20260903.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/fusion/mtf_decision_20260904.csv",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/fusion/mtf_decision_20260904.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/fusion/mtf_decision_20260907.csv",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/fusion/mtf_decision_20260907.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/fusion/mtf_decision_20260908.csv",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/fusion/mtf_decision_20260908.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/fusion/mtf_decision_20260909.csv",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/fusion/mtf_decision_20260909.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/monthly/monthly_behavior_00700_20260903.csv",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/monthly/monthly_behavior_00700_20260903.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/monthly/monthly_behavior_00700_20260904.csv",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/monthly/monthly_behavior_00700_20260904.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/monthly/monthly_behavior_00700_20260905.csv",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/monthly/monthly_behavior_00700_20260905.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/monthly/monthly_behavior_00700_20260906.csv",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/monthly/monthly_behavior_00700_20260906.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/monthly/monthly_behavior_00700_20260907.csv",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/monthly/monthly_behavior_00700_20260907.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/monthly/monthly_behavior_00700_20260908.csv",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/monthly/monthly_behavior_00700_20260908.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/monthly/monthly_behavior_00700_20260909.csv",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/monthly/monthly_behavior_00700_20260909.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/monthly/monthly_behavior_20260903.csv",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/monthly/monthly_behavior_20260903.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/monthly/monthly_behavior_20260904.csv",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/monthly/monthly_behavior_20260904.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/monthly/monthly_behavior_20260907.csv",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/monthly/monthly_behavior_20260907.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/monthly/monthly_behavior_20260908.csv",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/monthly/monthly_behavior_20260908.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/monthly/monthly_behavior_20260909.csv",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/monthly/monthly_behavior_20260909.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/structural/structural_00700_20260903.csv",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/structural/structural_00700_20260903.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/structural/structural_00700_20260904.csv",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/structural/structural_00700_20260904.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/structural/structural_00700_20260905.csv",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/structural/structural_00700_20260905.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/structural/structural_00700_20260906.csv",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/structural/structural_00700_20260906.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/structural/structural_00700_20260907.csv",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/structural/structural_00700_20260907.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/structural/structural_00700_20260908.csv",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/structural/structural_00700_20260908.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/structural/structural_00700_20260909.csv",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/structural/structural_00700_20260909.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/structural/structural_20260903.csv",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/structural/structural_20260903.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/structural/structural_20260904.csv",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/structural/structural_20260904.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/structural/structural_20260907.csv",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/structural/structural_20260907.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/structural/structural_20260908.csv",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/structural/structural_20260908.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/structural/structural_20260909.csv",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/structural/structural_20260909.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/structural/validate_20260903.csv",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/structural/validate_20260903.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/structural/validate_20260904.csv",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/structural/validate_20260904.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/structural/validate_20260907.csv",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/structural/validate_20260907.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/structural/validate_20260908.csv",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/structural/validate_20260908.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/structural/validate_20260909.csv",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/structural/validate_20260909.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/weekly/weekly_tactical_00700_20260903.csv",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/weekly/weekly_tactical_00700_20260903.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/weekly/weekly_tactical_00700_20260904.csv",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/weekly/weekly_tactical_00700_20260904.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/weekly/weekly_tactical_00700_20260905.csv",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/weekly/weekly_tactical_00700_20260905.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/weekly/weekly_tactical_00700_20260906.csv",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/weekly/weekly_tactical_00700_20260906.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/weekly/weekly_tactical_00700_20260907.csv",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/weekly/weekly_tactical_00700_20260907.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/weekly/weekly_tactical_00700_20260908.csv",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/weekly/weekly_tactical_00700_20260908.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/weekly/weekly_tactical_00700_20260909.csv",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/weekly/weekly_tactical_00700_20260909.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/weekly/weekly_tactical_20260903.csv",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/weekly/weekly_tactical_20260903.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/weekly/weekly_tactical_20260904.csv",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/weekly/weekly_tactical_20260904.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/weekly/weekly_tactical_20260907.csv",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/weekly/weekly_tactical_20260907.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/weekly/weekly_tactical_20260908.csv",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/weekly/weekly_tactical_20260908.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/weekly/weekly_tactical_20260909.csv",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "Report/QCFP_MTF/weekly/weekly_tactical_20260909.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase1/phase1_acceptance.json",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "audit/phase5/cpub_candidate/01_canonical_publication.py.txt",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/cpub_candidate/02_publication_universe_provider.py.txt",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/cpub_candidate/03_authority_matrix_candidate.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/cpub_candidate/04_frozen_surface_manifest_candidate.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/cpub_candidate/05_phase5_governance_baseline_candidate.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/cpub_candidate/06_change_record.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/cpub_candidate/07_impact_analysis.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/cpub_candidate/08_activation_test_plan.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/cpub_candidate/09_candidate_manifest.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/cpub_candidate/10_candidate_package.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/cpub_candidate/11_build_activation_record.py.txt",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/cpub_candidate/12_finalize_governance_baseline.py.txt",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/cpub_candidate_final/04_frozen_surface_manifest_final.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/cpub_candidate_final/05_governance_baseline_final.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/cpub_candidate_final/10_cpub_acceptance_candidate.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/cpub_candidate_final/11_final_cpub_package.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/agent/README.md",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/agent/change_manifests/.gitkeep",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/agent/contexts/.gitkeep",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/agent/contexts/P5F-R2/allowed_files.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/agent/contexts/P5F-R2/authority_boundary.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/agent/contexts/P5F-R2/baseline.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/agent/contexts/P5F-R2/change_manifest_template.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/agent/contexts/P5F-R2/dependency_graph.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/agent/contexts/P5F-R2/evidence_plan.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/agent/contexts/P5F-R2/forbidden_files.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/agent/contexts/P5F-R2/requirements.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/agent/contexts/P5F-R2/resolved_context.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/agent/contexts/P5F-R2/specification.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/agent/contexts/P5F-R2/test_plan.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/agent/contexts/P5F_WP5.3/allowed_files.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/agent/contexts/P5F_WP5.3/authority_boundary.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/agent/contexts/P5F_WP5.3/baseline.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/agent/contexts/P5F_WP5.3/change_manifest_template.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/agent/contexts/P5F_WP5.3/dependency_graph.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/agent/contexts/P5F_WP5.3/evidence_plan.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/agent/contexts/P5F_WP5.3/forbidden_files.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/agent/contexts/P5F_WP5.3/requirements.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/agent/contexts/P5F_WP5.3/resolved_context.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/agent/contexts/P5F_WP5.3/specification.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/agent/contexts/P5F_WP5.3/test_plan.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/agent/evidence/.gitkeep",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/agent/reviews/.gitkeep",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/baseline/baseline_tree_phase0_5_catalog.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/baseline/historical_anchors/QCFP-MTF_Project_RoadMap_Updates.md",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/baseline/historical_anchors/phase4_frozen_baseline_identity.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/baseline/historical_anchors/phase5_governance_acceptance_rev7.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/baseline/historical_anchors/phase5_governance_baseline_rev7.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/baseline/phase0/phase0_baseline_catalog.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/baseline/phase0/phase0_baseline_catalog.md",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/baseline/phase0/project_governance_foundation/phase0_project_governance_spec_baseline_binding.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/baseline/phase0/project_governance_foundation/phase0_project_governance_spec_baseline_binding.md",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/baseline/phase1/architecture/canonical_architecture_spec_baseline_binding.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/baseline/phase1/architecture/canonical_architecture_spec_baseline_binding.md",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/baseline/phase1/authority/authority_ownership_spec_baseline_binding.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/baseline/phase1/authority/authority_ownership_spec_baseline_binding.md",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/baseline/phase1/boundaries/module_contract_boundary_spec_baseline_binding.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/baseline/phase1/boundaries/module_contract_boundary_spec_baseline_binding.md",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/baseline/phase1/canonical_system/canonical_system_spec_baseline_binding.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/baseline/phase1/canonical_system/canonical_system_spec_baseline_binding.md",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/baseline/phase1/phase1_baseline_catalog.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/baseline/phase1/phase1_baseline_catalog.md",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/baseline/phase2/evidence_governance/evidence_governance_spec_baseline_binding.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/baseline/phase2/evidence_governance/evidence_governance_spec_baseline_binding.md",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/baseline/phase2/phase2_baseline_catalog.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/baseline/phase2/phase2_baseline_catalog.md",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/baseline/phase2/pit_provenance/pit_provenance_spec_baseline_binding.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/baseline/phase2/pit_provenance/pit_provenance_spec_baseline_binding.md",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/baseline/phase2/source_identity/source_identity_spec_baseline_binding.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/baseline/phase2/source_identity/source_identity_spec_baseline_binding.md",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/baseline/phase3/canonical_decision_chain/phase3_canonical_decision_chain_spec_baseline_binding.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/baseline/phase3/canonical_decision_chain/phase3_canonical_decision_chain_spec_baseline_binding.md",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/baseline/phase3/decision_identity/decision_identity_spec_baseline_binding.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/baseline/phase3/decision_identity/decision_identity_spec_baseline_binding.md",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/baseline/phase3/finalize_target/finalize_target_spec_baseline_binding.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/baseline/phase3/finalize_target/finalize_target_spec_baseline_binding.md",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/baseline/phase3/fsm/fsm_spec_baseline_binding.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/baseline/phase3/fsm/fsm_spec_baseline_binding.md",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/baseline/phase3/ledger_replay/ledger_replay_spec_baseline_binding.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/baseline/phase3/ledger_replay/ledger_replay_spec_baseline_binding.md",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/baseline/phase3/permission/permission_authority_spec_baseline_binding.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/baseline/phase3/permission/permission_authority_spec_baseline_binding.md",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/baseline/phase3/phase3_baseline_catalog.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/baseline/phase3/phase3_baseline_catalog.md",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/baseline/phase3/wave_proposal/wave_proposal_spec_baseline_binding.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/baseline/phase3/wave_proposal/wave_proposal_spec_baseline_binding.md",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/baseline/phase4/ablation/ablation_spec_baseline_binding.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/baseline/phase4/ablation/ablation_spec_baseline_binding.md",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/baseline/phase4/backtest/backtest_spec_baseline_binding.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/baseline/phase4/backtest/backtest_spec_baseline_binding.md",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/baseline/phase4/cost_model/cost_model_spec_baseline_binding.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/baseline/phase4/cost_model/cost_model_spec_baseline_binding.md",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/baseline/phase4/phase4_baseline_catalog.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/baseline/phase4/phase4_baseline_catalog.md",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/baseline/phase4/regime_validation/regime_validation_spec_baseline_binding.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/baseline/phase4/regime_validation/regime_validation_spec_baseline_binding.md",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/baseline/phase4/retail_practicality/retail_practicality_spec_baseline_binding.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/baseline/phase4/retail_practicality/retail_practicality_spec_baseline_binding.md",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/baseline/phase4/robustness/robustness_spec_baseline_binding.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/baseline/phase4/robustness/robustness_spec_baseline_binding.md",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/baseline/phase4/validation_framework/phase4_validation_spec_baseline_binding.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/baseline/phase4/validation_framework/phase4_validation_spec_baseline_binding.md",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/baseline/phase4/walk_forward/walk_forward_spec_baseline_binding.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/baseline/phase4/walk_forward/walk_forward_spec_baseline_binding.md",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/baseline/phase5/historical_frozen/checkpoint5a_human_acceptance.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/baseline/phase5/historical_frozen/checkpoint5a_human_acceptance_correction.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/baseline/phase5/historical_frozen/frozen_baseline_identity.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/baseline/phase5/historical_frozen/frozen_surface_manifest.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/baseline/phase5/historical_frozen/p5a_current_state.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/baseline/phase5/historical_frozen/p5a_review_acceptance.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/baseline/phase5/historical_frozen/p5b01_human_acceptance.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/baseline/phase5/historical_frozen/phase5_governance_acceptance.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/baseline/phase5/historical_frozen/phase5_governance_baseline.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/baseline/phase5/p5a_governance_foundation/p5a_governance_foundation_baseline.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/baseline/phase5/p5a_governance_foundation/p5a_governance_foundation_baseline.md",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/baseline/phase5/phase5_baseline_catalog.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/baseline/phase5/phase5_baseline_catalog.md",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/baseline/phase5/wp5_0_common_contracts/wp5_0_common_contracts_baseline_binding.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/baseline/phase5/wp5_0_common_contracts/wp5_0_common_contracts_baseline_binding.md",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/baseline/phase5/wp5_1_shadow_runtime_isolation/wp5_1_shadow_runtime_isolation_baseline_binding.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/baseline/phase5/wp5_1_shadow_runtime_isolation/wp5_1_shadow_runtime_isolation_baseline_binding.md",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/baseline/phase5/wp5_2_divergence/wp5_2_divergence_baseline_binding.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/baseline/phase5/wp5_2_divergence/wp5_2_divergence_baseline_binding.md",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/baseline/phase5/wp5_3_outcome_observation/wp5_3_outcome_observation_baseline_binding.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/baseline/phase5/wp5_3_outcome_observation/wp5_3_outcome_observation_baseline_binding.md",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/candidate_relocation_manifest.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/governance_bootstrap/candidates/04_frozen_surface_manifest_bootstrap.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/governance_bootstrap/candidates/05_governance_baseline_bootstrap.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/governance_bootstrap/candidates/05_governance_baseline_bootstrap_fix2.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/governance_bootstrap/candidates/10_governance_bootstrap_package.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/governance_bootstrap/candidates/10_governance_bootstrap_package_fix2.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/governance_bootstrap/files/merge_project_for_phase5_review.py",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/governance_bootstrap/files/test_merge_project_for_phase5_review.py",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/governance_bootstrap/files/test_tactical_chain.py",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/h1c/candidate_tests/test_cpub_candidate_binding.py",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/h1c/candidate_tests/test_p5a_current_state.py",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/h1c/candidate_tests/test_p5b01_human_acceptance.py",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/h1c/candidates/05_governance_baseline_rev8_post_h1c_target.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/h1c/candidates/10_h1c_package.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/h1c/candidates/10_h1c_package_gen2.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/h1c/candidates/rev7_rev8_transition_record.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/h1c/candidates/rev7_rev8_transition_record_gen2.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/h1c/candidates/rev8_acceptance_binding_candidate.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/h1c/candidates/rev8_acceptance_binding_candidate_gen2.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/h1c/rev7_archive/phase5_governance_acceptance_rev7.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/h1d/candidate_tests/test_cpub_candidate_binding.py",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/h1d/candidate_tests/test_p5a_current_state.py",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/h1d/candidate_tests/test_p5b01_human_acceptance.py",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/h1d/candidates/10_h1d_package.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/h1d2/candidate_tests/test_cpub_candidate_binding.py",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/h1e3/evidence/phase4_acceptance_case_results.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/h1e3/evidence/phase4_regression_summary.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/h1e3/replay_inputs/HK_Stock_replay_snapshot.db",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/h1e3/replay_inputs/HK_Stock_replay_snapshot.db-shm",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/h1e3/replay_inputs/HK_Stock_replay_snapshot.db-wal",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/h1e4_governance/candidate_tests/test_phase4_evidence_integrity.py",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/h1e_phase4/candidate_tests/test_phase4_evidence_integrity.py",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/h1f/04_frozen_surface_manifest_h1f.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/h1f/05_governance_baseline_h1f.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/h1f/10_h1f_package.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/h1g/rev8_successor_acceptance_candidate.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/h1h/candidate_tests/_gov_current.py",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/h1h/candidate_tests/test_cpub_candidate_binding.py",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/h1h/candidate_tests/test_p5a_current_state.py",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/h1h/candidate_tests/test_p5b01_human_acceptance.py",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/h1i/05_governance_baseline_h1i.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/h1j/rev8_successor_acceptance_h1j_candidate.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/h1k/candidate_tests/test_cpub_candidate_binding.py",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/r2_01c/10_candidate_package_runtime_converged.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/r2_01c/h2_cpub_acceptance_candidate_r2_01c.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/r2_01d/01_canonical_publication.py.txt",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/r2_01d/02_publication_universe_provider.py.txt",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/r2_01d/04_frozen_surface_manifest_final.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/r2_01d/05_governance_baseline_final.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/r2_01d/09_candidate_manifest_final.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/r2_01d/10_candidate_package_runtime_converged_r2_01d.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/r2_01e/04_frozen_surface_manifest_runtime_mirror.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/r2_01e/05_governance_baseline_runtime_mirror.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/r2_01e/09_candidate_manifest_r2_01e.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/r2_01e/10_runtime_package_r2_01e.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/r2_01e/h2_cpub_acceptance_candidate.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/r2_01e/h2_cpub_acceptance_candidate_c4.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/r2_13b/11_r2_14_activation_record_candidate.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/r2_13b/12_rev8_activated_baseline_candidate.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/r2_13b/13_rev8_governance_acceptance_candidate_prehuman.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/r2_14_pack/E_phase5_governance_acceptance_candidate.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/r2_14_pack/_gov_current_successor_candidate.py.txt",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/r2_14_pack/pack_status_interim.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/r2_14_pack/rollback/_gov_current.py",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/r2_14_pack/rollback/p5_gov_reopen_cpub_human_acceptance.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/r2_14_pack/rollback/phase5_governance_acceptance.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/r2_14_pack/rollback/phase5_governance_baseline.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/r2_14_pack/rollback/test_cpub_activation_candidate.py",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/r2_14_pack/rollback/test_cpub_candidate_binding.py",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/r2_14_pack/rollback/test_gov_reopen_cpub.py",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/r2_14_pack/successor_evidence_44_candidate.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/r2_14_pack/test_cpub_activation_candidate_r2_14_successor_candidate.py",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/r2_14_pack/test_cpub_candidate_binding_r2_14_successor_candidate.py",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/r2_14_pack/test_gov_reopen_cpub_r2_14_successor_candidate.py",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/r2_14_pack/transition_pack_manifest.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/r2_15/r2_15_recovery_transaction_manifest.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/r2_15/r2_15_recovery_transaction_manifest_rev2.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/r2_15c/engine_r2_15c_candidate.py",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/r2_15c/r2_15c_materialization_manifest.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/r2_15c/rollback/engine.py",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/r2_15c/rollback/test_2dot2_engines.py",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/r2_15c/rollback/test_governance.py",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/r2_15c/test_2dot2_engines_r2_15c_candidate.py",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/r2_15c/test_governance_r2_15c_candidate.py",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/r2_15d/canonical_publication_missing_only_candidate.py",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/r2_15d/successor/01_manifest_r2_15d.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/r2_15d/successor/02_package_r2_15d.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/r2_15d/successor/03_successor_cpub_acceptance_r2_15d.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/r2_15d/successor/04_activation_record_r2_15d.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/r2_15d/successor/05_activated_baseline_r2_15d.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/r2_15d/successor/06_governance_acceptance_prehuman_r2_15d.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/r2_15d/successor/07_governance_acceptance_completed_r2_15d.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/r2_15e/r2_15e_materialization_activation_manifest.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/r2_15e/r2_15e_materialization_activation_manifest_rev2.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/r2_15e/r2_15e_materialization_activation_manifest_rev3_seven_target.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/r2_15e/rollback/09_candidate_manifest.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/r2_15e/rollback/10_candidate_package.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/r2_15e/rollback/canonical_publication.py",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/r2_15e/rollback/p5_gov_reopen_cpub_activation.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/r2_15e/rollback/p5_gov_reopen_cpub_human_acceptance.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/r2_15e/rollback/phase5_governance_acceptance.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/r2_15e/rollback/phase5_governance_baseline.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/r2_15f/acceptance_repair_prehuman_candidate.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/r2_15f/chain_a/predecessor_baseline_163ddd73.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/r2_15f/chain_a/successor/06_governance_acceptance_prehuman_chain_a.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/r2_15f/chain_a/successor_evidence_candidate.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/r2_15f/chain_b/decision_ledger_repair_authority.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/r2_15f/chain_b/decision_ledger_repair_prehuman_acceptance.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/r2_15f/dual_authority_pack/dual_authority_materialization_manifest.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/r2_15f/dual_authority_pack/execute_rev2_materialization.py",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/r2_15f/dual_authority_pack/rollback/44_r2_14_successor_evidence.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/r2_15f/execute_second_recovery_source_bound.py",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/r2_15f/execute_successor_recovery_r15c_rev2.py",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/r2_15f/preflight_executor_r2_15f.py",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/r2_15f/r2_15f_successor_bound_r15c_candidate.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/r2_15f/stabilize_and_bind_r15b2.py",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/repository_controls/AGENTS.md",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/repository_controls/gitignore_candidate",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/specification/implementation_spec_standard.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/specification/implementation_spec_standard.md",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/specification/phase0/project_governance_foundation/phase0_project_governance_spec.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/specification/phase0/project_governance_foundation/phase0_project_governance_spec.md",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/specification/phase0/specification_catalog.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/specification/phase0/specification_catalog.md",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/specification/phase1/architecture/canonical_architecture_spec.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/specification/phase1/architecture/canonical_architecture_spec.md",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/specification/phase1/authority/authority_ownership_spec.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/specification/phase1/authority/authority_ownership_spec.md",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/specification/phase1/boundaries/module_contract_boundary_spec.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/specification/phase1/boundaries/module_contract_boundary_spec.md",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/specification/phase1/canonical_system/canonical_system_spec.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/specification/phase1/canonical_system/canonical_system_spec.md",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/specification/phase1/specification_catalog.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/specification/phase1/specification_catalog.md",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/specification/phase2/evidence_governance/evidence_governance_spec.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/specification/phase2/evidence_governance/evidence_governance_spec.md",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/specification/phase2/pit_provenance/pit_provenance_spec.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/specification/phase2/pit_provenance/pit_provenance_spec.md",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/specification/phase2/source_identity/source_identity_spec.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/specification/phase2/source_identity/source_identity_spec.md",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/specification/phase2/specification_catalog.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/specification/phase2/specification_catalog.md",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/specification/phase3/canonical_decision_chain/phase3_canonical_decision_chain_spec.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/specification/phase3/canonical_decision_chain/phase3_canonical_decision_chain_spec.md",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/specification/phase3/decision_identity/decision_identity_spec.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/specification/phase3/decision_identity/decision_identity_spec.md",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/specification/phase3/finalize_target/finalize_target_spec.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/specification/phase3/finalize_target/finalize_target_spec.md",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/specification/phase3/fsm/fsm_spec.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/specification/phase3/fsm/fsm_spec.md",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/specification/phase3/ledger_replay/ledger_replay_spec.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/specification/phase3/ledger_replay/ledger_replay_spec.md",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/specification/phase3/permission/permission_authority_spec.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/specification/phase3/permission/permission_authority_spec.md",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/specification/phase3/specification_catalog.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/specification/phase3/specification_catalog.md",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/specification/phase3/wave_proposal/wave_proposal_spec.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/specification/phase3/wave_proposal/wave_proposal_spec.md",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/specification/phase4/ablation/ablation_spec.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/specification/phase4/ablation/ablation_spec.md",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/specification/phase4/backtest/backtest_spec.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/specification/phase4/backtest/backtest_spec.md",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/specification/phase4/cost_model/cost_model_spec.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/specification/phase4/cost_model/cost_model_spec.md",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/specification/phase4/regime_validation/regime_validation_spec.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/specification/phase4/regime_validation/regime_validation_spec.md",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/specification/phase4/retail_practicality/retail_practicality_spec.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/specification/phase4/retail_practicality/retail_practicality_spec.md",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/specification/phase4/robustness/robustness_spec.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/specification/phase4/robustness/robustness_spec.md",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/specification/phase4/specification_catalog.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/specification/phase4/specification_catalog.md",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/specification/phase4/validation_framework/phase4_validation_spec.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/specification/phase4/validation_framework/phase4_validation_spec.md",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/specification/phase4/walk_forward/walk_forward_spec.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/specification/phase4/walk_forward/walk_forward_spec.md",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/specification/phase5/specification_catalog.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/specification/phase5/specification_catalog.md",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/specification/phase5/wp5_0_common_contracts/p5b_wp5_0_implementation_spec.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/specification/phase5/wp5_0_common_contracts/p5b_wp5_0_implementation_spec.md",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/specification/phase5/wp5_1_shadow_runtime_isolation/p5c_p5d_wp5_1_implementation_spec.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/specification/phase5/wp5_1_shadow_runtime_isolation/p5c_p5d_wp5_1_implementation_spec.md",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/specification/phase5/wp5_2_divergence/p5e_wp5_2_implementation_spec.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/specification/phase5/wp5_2_divergence/p5e_wp5_2_implementation_spec.md",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/specification/phase5/wp5_3_outcome_observation/p5f_wp5_3_implementation_spec.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/specification/phase5/wp5_3_outcome_observation/p5f_wp5_3_implementation_spec.md",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/specification/specification_tree_phase0_5_catalog.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/specification/standards/implementation_spec_full_template.md",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/specification/standards/implementation_spec_standard.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/specification/standards/implementation_spec_standard.md",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/specification/templates/implementation_spec_full_template.md",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/tools/governance/README.md",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/tools/governance/_common.py",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/tools/governance/authority_resolver.py",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/tools/governance/baseline_resolver.py",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/tools/governance/build_agent_context.py",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/tools/governance/spec_resolver.py",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/tools/governance/spec_validator.py",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/tools/governance/tests/helpers.py",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/tools/governance/tests/test_authority_resolver.py",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/tools/governance/tests/test_baseline_resolver.py",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/tools/governance/tests/test_build_agent_context.py",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/tools/governance/tests/test_spec_resolver.py",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/tools/governance/tests/test_spec_validator.py",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/tools/governance/tests/test_validate_change_manifest.py",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/tools/governance/tests/test_validate_patch_scope.py",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/tools/governance/tests/test_validate_traceability.py",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/tools/governance/validate_change_manifest.py",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/tools/governance/validate_patch_scope.py",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/external_governance_candidates/tools/governance/validate_requirement_traceability.py",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/outcome_observation_summary.json",
+      "git_status": "M",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/outcome_sample_evidence.json",
+      "git_status": "M",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/p5_gov_reopen_cpub_activation.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/p5_gov_reopen_cpub_candidate.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/p5_gov_reopen_cpub_human_acceptance.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/p5_gov_reopen_cpub_r1_1_current_state.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/p5_gov_reopen_cpub_r1_2_1_f1_1_current_state.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/p5_gov_reopen_cpub_r1_2_1_f1_2_current_state.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/p5_gov_reopen_cpub_r1_2_1_f1_current_state.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/p5_gov_reopen_cpub_r1_2_current_state.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/p5_gov_reopen_cpub_spec.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/p5_gov_reopen_cpub_spec.md",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/p5f_closure_evidence.json",
+      "git_status": "M",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/p5f_ext_r1_1_r2_semantic_guard_repair.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/p5f_ext_r1_1_semantic_guard_repair.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/p5f_ext_r1_1_universe_provider_inventory.txt",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/p5f_ext_r1_2_universe_provider_inventory.txt",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/p5f_ext_r1_authority_current_state.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/p5f_ext_r1_canonical_publication_repair.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/p5f_ext_r1_ledger_writer_inventory.txt",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/p5f_external_db_blocker.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/p5f_outcome_junit.xml",
+      "git_status": "M",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/p5f_r2/00_SOURCE_P5F_FINAL_PACKAGING_CORRECTION_R2_base_plan.md",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/p5f_r2/00_SOURCE_Spec_Aware_Execution_Revision.md",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/p5f_r2/01_governed_execution_plan.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/p5f_r2/02_stage_g_preflight_evidence.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/p5f_r2/03_r2_01b_r2_09_r2_11b_evidence.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/p5f_r2/04_r2_12_prehuman_review_evidence.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/p5f_r2/05_relocation_and_r2_12_evidence.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/p5f_r2/06_r2_08_human_scoped_authorization.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/p5f_r2/07_r2_08_g2_g3_classification_and_scope_blocker.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/p5f_r2/08_projection_state_evidence.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/p5f_r2/09_rev8_governance_bootstrap_h1_request.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/p5f_r2/10_h1_materialization_evidence.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/p5f_r2/11_h1_post_materialization_test_blocker.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/p5f_r2/12_h1b_fix2_bootstrap_request.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/p5f_r2/13_h1b_materialization_evidence.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/p5f_r2/14_h1c_transition_candidate_record.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/p5f_r2/15_h1c_package_and_validation.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/p5f_r2/16_h1c_gen2_package_and_validation.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/p5f_r2/17_h1c_materialization_evidence.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/p5f_r2/18_h1d_package_and_validation.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/p5f_r2/19_h1d2_package_and_validation.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/p5f_r2/20_h1e3_evidence.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/p5f_r2/21_h1e3_replay_result.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/p5f_r2/22_phase4_replayability_successor_policy.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/p5f_r2/23_phase4_replayability_state_evidence.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/p5f_r2/24_h1e4_package_and_validation.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/p5f_r2/25_h1f_package_and_validation.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/p5f_r2/26_h1f_materialization_commit_evidence.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/p5f_r2/28_h1g_completed_acceptance_evidence.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/p5f_r2/29_h1i_package_and_validation.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/p5f_r2/30_h1i_g2_h1j_evidence.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/p5f_r2/31_h1j_completed_and_h1h0_audit.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/p5f_r2/32_h1h_package_and_validation.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/p5f_r2/33_final_cpub_current_candidate.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/p5f_r2/34_r2_01c_convergence_proof.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/p5f_r2/35_r2_01d_candidate.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/p5f_r2/36_r2_01e_candidate.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/p5f_r2/37_h1k_package_and_validation.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/p5f_r2/38_r2_12_h1k_materialized_evidence.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/p5f_r2/39_r2_09_r2_11b_r2_12_h1k_convergence_evidence.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/p5f_r2/40_h2_candidate4_schema_closure_evidence.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/p5f_r2/41_h2_authority_acceptance_completed_evidence.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/p5f_r2/42_r2_13b_candidate_evidence.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/p5f_r2/43_r2_13b_acceptance_completed_r2_14_preflight_evidence.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/p5f_r2/44_r2_14_successor_evidence.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/p5f_r2/45_r2_14_activation_evidence.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/p5f_r2/46_r2_15_preflight_fail_closed_evidence.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/p5f_r2/47_r2_15b_root_cause_evidence.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/p5f_r2/48_r2_15c_repair_candidate_evidence.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/p5f_r2/49_r2_15c_validation_closed_evidence.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/p5f_r2/50_r2_15c_materialization_evidence.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/p5f_r2/51_r2_15d_successor_identity_evidence.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/p5f_r2/52_r2_15e_execution_evidence.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/p5f_r2/53_r2_15f_rollback_repair_candidate_evidence.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/p5f_r2/55_r2_15f_chain_a_convergence_evidence.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/p5f_r2/56_r2_15f_materialization_execution_evidence.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/p5f_r2/57_r2_15f_post_activation_preflight_evidence.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/p5f_r2/58_r2_15f_r15b_field_diagnostic_evidence.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/p5f_r2/59_r2_15f_recovery_execution_evidence.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/p5f_r2/60_r2_15f_recovery_gate_fail_diagnostic_evidence.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/p5f_r2/61_r2_15f_recovery_execution_evidence_second_attempt.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/p5f_r2/63_p5f_r2_17_f10_regression_evidence.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/p5f_r2/67_p5f_r2_19_f12_remote_backed_identity_evidence.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/p5f_r2/68_f12_final_commit_scope_allowlist_candidate.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/p5f_r2/68_f12_final_commit_scope_allowlist_candidate_rev3.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/p5f_r2/68_f12_final_commit_scope_allowlist_candidate_rev4.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/p5f_r2/68_f12_final_commit_scope_validation.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/p5f_r2/68_f12_final_commit_scope_validation_rev3.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/p5f_r2/68_f12_final_commit_scope_validation_rev4.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/p5f_r2/h2_cpub_authority_acceptance.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/p5f_r2/rev8_governance_baseline_acceptance.json",
+      "git_status": "??",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/phase5_governance_acceptance.json",
+      "git_status": "M",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "audit/phase5/phase5_governance_baseline.json",
+      "git_status": "M",
+      "exclusion": "AMBIGUOUS_NOT_AUTHORIZED"
+    },
+    {
+      "path": "tools/review/merge_project_for_phase4_review_v3.py",
+      "git_status": "??",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "tools/review/merge_project_for_phase5_review.py",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    },
+    {
+      "path": "tools/review/tests/test_merge_project_for_phase5_review.py",
+      "git_status": "M",
+      "exclusion": "UNAPPROVED_UNRELATED"
+    }
+  ],
+  "machine_action": "STOP FOR HUMAN EXACT-BYTE REVIEW. No permanent staging, commit, push, fetch. F12 closure, P5-F freeze, P5-G, Phase6 NOT authorized."
+}

@@ -1,0 +1,2800 @@
+{
+  "schema": "P5F-R2-R2-19-F12-REMOTE-BACKED-IDENTITY-EVIDENCE-1",
+  "generated_at_utc": "2026-09-09T12:44:17+00:00",
+  "verdict": "FAIL_CLOSED",
+  "binding": {
+    "f10_closure_evidence_65": "0664c46e584653f5a7f5a0c0ca96d92058f5a3d92ee71b6ff459f97480d420e8",
+    "f11_closure_evidence_66": "b45e272e56bb9b8a32006a883408be9c294f35650a536f76f0e3b9d6582070a5",
+    "formal_f10_log_sha256": "b5a55b5da4de2200413fba1eac394a2844f8a93e5f9820f6e00cef96428679bc",
+    "current_governance_baseline": "0b0b349a2ceb6f02814a6ef64a23618a24d8e4ff94ae756e3786276a31aeda4f",
+    "current_governance_acceptance": "07213f328c5c71e054fc8ffd6888bb884a6baaf137e25bdce25c59ea809c331c",
+    "chain_a_manifest_09": "113e61363eabd83841557e5629b4dea99785c460152d953803a7061faad893d2",
+    "chain_a_package_10": "d293ee10fbb7da79b31f27208f2fb6b0b0462b50bb24e78b1c635ebe30d78fdc",
+    "chain_b_decision_ledger": "991fedf52d2540982b7a921dbf265c30ad8c63a7811b66d4b881da41f560bbc4",
+    "R15_A": "4f9c4e631b0f7e96322511c9d0be120dc93ce156c5a236a2061ef3281e24a63a",
+    "R15_B2": "2a7ec1d807e84cb657daff6a96bc44ea805abc40d2b69289f960c76f05788fec",
+    "dataset_manifest": "4d6f06935cae6038",
+    "projection_evidence_62": "2f31b2bc3705999f81bca79aa24c711504915584585ed7a915ab3202c16e9923",
+    "wp5_3_canonical_json": "870c0e237892b43168d9afc4cefa97b7cc1d957556dfc6e5caaee762796bb87b",
+    "wp5_3_canonical_markdown": "14f9e2800d280ec932f820e51e14a286d3f928f82bef3073d32546308edc28db"
+  },
+  "repository": {
+    "remote": "origin\thttps://github.com/Quansheng2022/QCFP-MTF.git (fetch)\norigin\thttps://github.com/Quansheng2022/QCFP-MTF.git (push)",
+    "branch": "codex/phase5-shadow-operation",
+    "local_head": "7ecef2d860a6983e5166559a59534762f3ae5034",
+    "remote_head": "NOT_FETCHED (blocked)",
+    "local_final_commit": "NOT_CREATED (blocked)",
+    "remote_final_commit": "N/A (blocked)",
+    "reachability": "NOT_ESTABLISHED (blocked)"
+  },
+  "findings": [
+    {
+      "check": "pre-F12 canonical/authority/evidence state",
+      "classification": "PASS",
+      "detail": "{\"state\": {\"universe\": [\"00020\", \"00268\", \"00354\", \"00357\", \"00371\", \"00700\", \"00788\", \"01093\", \"01177\", \"01951\", \"02202\", \"02602\", \"02611\", \"03033\", \"03800\", \"06060\"], \"fusion\": [\"00020\", \"00268\", \"00354\", \"00357\", \"00371\", \"00700\", \"00788\", \"01093\", \"01177\", \"01951\", \"02202\", \"02602\", \"02611\", \"03033\", \"03800\", \"06060\"], \"ledger_codes\": [\"00020\", \"00268\", \"00354\", \"00357\", \"00371\", \"00700\", \"00788\", \"01093\", \"01177\", \"01951\", \"02202\", \"02602\", \"02611\", \"03033\", \"03800\", \"06060\"], \"ledger_count\": 16, \"subset\": \"4f9c4e631b0f7e96322511c9d0be120dc93ce156c5a236a2061ef3281e24a63a\", \"01093_rows\": 1, \"01093_identity\": \"2a7ec1d807e84cb657daff6a96bc44ea805abc40d2b69289f960c76f05788fec\", \"manifest\": \"4d6f06935cae6038\"}, \"helper_sha\": \"1c22679cfdf742dd40aeb778be85fd26ee4f01cce31420c448d03bc1a5d6f294\"}"
+    },
+    {
+      "check": "WP5.3 canonical JSON/MD pins",
+      "classification": "PASS",
+      "detail": "870c0e237892b43168d9afc4cefa97b7cc1d957556dfc6e5caaee762796bb87b / 14f9e2800d280ec932f820e51e14a286d3f928f82bef3073d32546308edc28db"
+    },
+    {
+      "check": "repository identity",
+      "classification": "PASS",
+      "detail": "origin\thttps://github.com/Quansheng2022/QCFP-MTF.git (fetch)\norigin\thttps://github.com/Quansheng2022/QCFP-MTF.git (push)"
+    },
+    {
+      "check": "branch identity",
+      "classification": "PASS",
+      "detail": "codex/phase5-shadow-operation"
+    },
+    {
+      "check": "local HEAD",
+      "classification": "PASS",
+      "detail": "7ecef2d860a6983e5166559a59534762f3ae5034"
+    },
+    {
+      "check": "remote reachability / push proof",
+      "classification": "BLOCKER",
+      "detail": "No push/fetch executed: scope gate did not pass; remote-backed identity cannot be established"
+    },
+    {
+      "check": "final-commit dirty scope audit",
+      "classification": "BLOCKER",
+      "detail": "{\"total_dirty\": 531, \"unapproved_unrelated\": 175, \"ambiguous\": 234, \"phase5_candidate_in_scope\": 122, \"examples_unrelated\": [\"Code_utl/synch_folders.py\", \"Doc/QCFP_MTF/QCFP-MTF_Project.xlsx\", \"Prompt/Prompt_Daily.txt\", \"Prompt/Prompt_Weekly.txt\", \"Report/00020_analysis_report.pdf\", \"Report/00020_buy_signal_analysis_sum.pdf\", \"Report/00020_daily_TA_indicator_analysis.pdf\", \"Report/00020_daily_analysis_report.pdf\", \"Report/00020_daily_chip_distribution_analysis.pdf\", \"Report/00020_daily_chip_signal_analysis.pdf\", \"Report/00020_daily_moneyflow_analysis.pdf\", \"Report/00020_sell_signal_analysis_sum.pdf\", \"Report/00020_weekly_TA_analysis.pdf\", \"Report/00020_weekly_analysis_report.pdf\", \"Report/00020_weekly_moneyflow_analysis.pdf\", \"Report/00268_analysis_report.pdf\", \"Report/00268_buy_signal_analysis_sum.pdf\", \"Report/00268_daily_TA_indicator_analysis.pdf\", \"Report/00268_daily_analysis_report.pdf\", \"Report/00268_daily_chip_distribution_analysis.pdf\"]}"
+    },
+    {
+      "check": "UNAPPROVED_FINAL_COMMIT_SCOPE",
+      "classification": "BLOCKER",
+      "detail": "Unrelated dirty files exist; no Human-approved final-commit scope allowlist was provided for this F12 run"
+    }
+  ],
+  "counts": {
+    "total": 8,
+    "blocker": 3,
+    "error": 0,
+    "warning": 0
+  },
+  "canonical_state": {
+    "universe": [
+      "00020",
+      "00268",
+      "00354",
+      "00357",
+      "00371",
+      "00700",
+      "00788",
+      "01093",
+      "01177",
+      "01951",
+      "02202",
+      "02602",
+      "02611",
+      "03033",
+      "03800",
+      "06060"
+    ],
+    "fusion": [
+      "00020",
+      "00268",
+      "00354",
+      "00357",
+      "00371",
+      "00700",
+      "00788",
+      "01093",
+      "01177",
+      "01951",
+      "02202",
+      "02602",
+      "02611",
+      "03033",
+      "03800",
+      "06060"
+    ],
+    "ledger_codes": [
+      "00020",
+      "00268",
+      "00354",
+      "00357",
+      "00371",
+      "00700",
+      "00788",
+      "01093",
+      "01177",
+      "01951",
+      "02202",
+      "02602",
+      "02611",
+      "03033",
+      "03800",
+      "06060"
+    ],
+    "ledger_count": 16,
+    "subset": "4f9c4e631b0f7e96322511c9d0be120dc93ce156c5a236a2061ef3281e24a63a",
+    "01093_rows": 1,
+    "01093_identity": "2a7ec1d807e84cb657daff6a96bc44ea805abc40d2b69289f960c76f05788fec",
+    "manifest": "4d6f06935cae6038"
+  },
+  "dirty_scope": {
+    "total": 531,
+    "entries": [
+      {
+        "code": "M",
+        "path": "Code_utl/synch_folders.py",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Core/QCFP_MTF/decision/decision_ledger.py",
+        "class": "PHASE5_CANDIDATE_IN_SCOPE"
+      },
+      {
+        "code": "M",
+        "path": "Core/QCFP_MTF/decision/engine.py",
+        "class": "PHASE5_CANDIDATE_IN_SCOPE"
+      },
+      {
+        "code": "M",
+        "path": "Core/QCFP_MTF/phase5/outcome_observer.py",
+        "class": "PHASE5_CANDIDATE_IN_SCOPE"
+      },
+      {
+        "code": "M",
+        "path": "Core/QCFP_MTF/phase5/outcome_store.py",
+        "class": "PHASE5_CANDIDATE_IN_SCOPE"
+      },
+      {
+        "code": "M",
+        "path": "Core/QCFP_MTF/tests/test_decision/test_2dot2_engines.py",
+        "class": "PHASE5_CANDIDATE_IN_SCOPE"
+      },
+      {
+        "code": "M",
+        "path": "Core/QCFP_MTF/tests/test_decision/test_governance.py",
+        "class": "PHASE5_CANDIDATE_IN_SCOPE"
+      },
+      {
+        "code": "M",
+        "path": "Core/QCFP_MTF/tests/test_decision/test_tactical_chain.py",
+        "class": "PHASE5_CANDIDATE_IN_SCOPE"
+      },
+      {
+        "code": "M",
+        "path": "Core/QCFP_MTF/tests/test_governance/test_phase4_evidence_integrity.py",
+        "class": "PHASE5_CANDIDATE_IN_SCOPE"
+      },
+      {
+        "code": "M",
+        "path": "Core/QCFP_MTF/tests/test_phase5/test_outcome_observer.py",
+        "class": "PHASE5_CANDIDATE_IN_SCOPE"
+      },
+      {
+        "code": "M",
+        "path": "Core/QCFP_MTF/tests/test_phase5/test_outcome_store.py",
+        "class": "PHASE5_CANDIDATE_IN_SCOPE"
+      },
+      {
+        "code": "M",
+        "path": "Core/QCFP_MTF/tests/test_phase5/test_p5a_current_state.py",
+        "class": "PHASE5_CANDIDATE_IN_SCOPE"
+      },
+      {
+        "code": "M",
+        "path": "Core/QCFP_MTF/tests/test_phase5/test_p5b01_human_acceptance.py",
+        "class": "PHASE5_CANDIDATE_IN_SCOPE"
+      },
+      {
+        "code": "M",
+        "path": "Doc/QCFP_MTF/QCFP-MTF_Project.xlsx",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Prompt/Prompt_Daily.txt",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "\"Prompt/Prompt_Daily_00020_\\345\\225\\206\\346\\261\\244\\347\\247\\221\\346\\212\\200.txt\"",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "M",
+        "path": "\"Prompt/Prompt_Daily_00268_\\351\\207\\221\\350\\235\\266\\345\\233\\275\\351\\231\\205.txt\"",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "M",
+        "path": "\"Prompt/Prompt_Daily_00354_\\344\\270\\255\\350\\275\\257\\345\\233\\275\\351\\231\\205.txt\"",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "M",
+        "path": "\"Prompt/Prompt_Daily_00357_\\347\\276\\216\\345\\205\\260\\347\\251\\272\\346\\270\\257.txt\"",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "M",
+        "path": "\"Prompt/Prompt_Daily_00371_\\345\\214\\227\\346\\216\\247\\346\\260\\264\\345\\212\\241.txt\"",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "M",
+        "path": "\"Prompt/Prompt_Daily_00700_\\350\\205\\276\\350\\256\\257\\346\\216\\247\\350\\202\\241.txt\"",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "M",
+        "path": "\"Prompt/Prompt_Daily_00788_\\344\\270\\255\\345\\233\\275\\351\\223\\201\\345\\241\\224.txt\"",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "M",
+        "path": "\"Prompt/Prompt_Daily_01093_\\347\\237\\263\\350\\215\\257\\351\\233\\206\\345\\233\\242.txt\"",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "M",
+        "path": "\"Prompt/Prompt_Daily_01177_\\344\\270\\255\\347\\224\\237\\345\\210\\266\\350\\215\\257.txt\"",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "M",
+        "path": "\"Prompt/Prompt_Daily_01951_\\351\\224\\246\\351\\221\\253\\347\\224\\237\\346\\256\\226.txt\"",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "M",
+        "path": "\"Prompt/Prompt_Daily_02202_\\346\\270\\257\\350\\202\\241\\344\\270\\207\\347\\247\\221\\344\\274\\201\\344\\270\\232.txt\"",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "M",
+        "path": "\"Prompt/Prompt_Daily_02602_\\346\\270\\257\\350\\202\\241\\344\\270\\207\\347\\211\\251\\344\\272\\221.txt\"",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "M",
+        "path": "\"Prompt/Prompt_Daily_02611_\\345\\233\\275\\346\\263\\260\\346\\265\\267\\351\\200\\232.txt\"",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "M",
+        "path": "\"Prompt/Prompt_Daily_03033_\\345\\215\\227\\346\\226\\271\\346\\201\\222\\347\\224\\237\\347\\247\\221\\346\\212\\200.txt\"",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "M",
+        "path": "\"Prompt/Prompt_Daily_03800_\\345\\215\\217\\351\\221\\253\\347\\247\\221\\346\\212\\200.txt\"",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "M",
+        "path": "\"Prompt/Prompt_Daily_06060_\\344\\274\\227\\345\\256\\211\\345\\234\\250\\347\\272\\277.txt\"",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "M",
+        "path": "Prompt/Prompt_Weekly.txt",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "\"Prompt/Prompt_Weekly_00020_\\345\\225\\206\\346\\261\\244\\347\\247\\221\\346\\212\\200.txt\"",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "M",
+        "path": "\"Prompt/Prompt_Weekly_00268_\\351\\207\\221\\350\\235\\266\\345\\233\\275\\351\\231\\205.txt\"",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "M",
+        "path": "\"Prompt/Prompt_Weekly_00354_\\344\\270\\255\\350\\275\\257\\345\\233\\275\\351\\231\\205.txt\"",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "M",
+        "path": "\"Prompt/Prompt_Weekly_00357_\\347\\276\\216\\345\\205\\260\\347\\251\\272\\346\\270\\257.txt\"",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "M",
+        "path": "\"Prompt/Prompt_Weekly_00371_\\345\\214\\227\\346\\216\\247\\346\\260\\264\\345\\212\\241.txt\"",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "M",
+        "path": "\"Prompt/Prompt_Weekly_00700_\\350\\205\\276\\350\\256\\257\\346\\216\\247\\350\\202\\241.txt\"",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "M",
+        "path": "\"Prompt/Prompt_Weekly_00788_\\344\\270\\255\\345\\233\\275\\351\\223\\201\\345\\241\\224.txt\"",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "M",
+        "path": "\"Prompt/Prompt_Weekly_01093_\\347\\237\\263\\350\\215\\257\\351\\233\\206\\345\\233\\242.txt\"",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "M",
+        "path": "\"Prompt/Prompt_Weekly_01177_\\344\\270\\255\\347\\224\\237\\345\\210\\266\\350\\215\\257.txt\"",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "M",
+        "path": "\"Prompt/Prompt_Weekly_01951_\\351\\224\\246\\351\\221\\253\\347\\224\\237\\346\\256\\226.txt\"",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "M",
+        "path": "\"Prompt/Prompt_Weekly_02202_\\346\\270\\257\\350\\202\\241\\344\\270\\207\\347\\247\\221\\344\\274\\201\\344\\270\\232.txt\"",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "M",
+        "path": "\"Prompt/Prompt_Weekly_02602_\\346\\270\\257\\350\\202\\241\\344\\270\\207\\347\\211\\251\\344\\272\\221.txt\"",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "M",
+        "path": "\"Prompt/Prompt_Weekly_02611_\\345\\233\\275\\346\\263\\260\\346\\265\\267\\351\\200\\232.txt\"",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "M",
+        "path": "\"Prompt/Prompt_Weekly_03033_\\345\\215\\227\\346\\226\\271\\346\\201\\222\\347\\224\\237\\347\\247\\221\\346\\212\\200.txt\"",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "M",
+        "path": "\"Prompt/Prompt_Weekly_03800_\\345\\215\\217\\351\\221\\253\\347\\247\\221\\346\\212\\200.txt\"",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "M",
+        "path": "\"Prompt/Prompt_Weekly_06060_\\344\\274\\227\\345\\256\\211\\345\\234\\250\\347\\272\\277.txt\"",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "M",
+        "path": "Report/00020_analysis_report.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/00020_buy_signal_analysis_sum.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/00020_daily_TA_indicator_analysis.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/00020_daily_analysis_report.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/00020_daily_chip_distribution_analysis.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/00020_daily_chip_signal_analysis.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/00020_daily_moneyflow_analysis.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/00020_sell_signal_analysis_sum.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/00020_weekly_TA_analysis.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/00020_weekly_analysis_report.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/00020_weekly_moneyflow_analysis.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/00268_analysis_report.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/00268_buy_signal_analysis_sum.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/00268_daily_TA_indicator_analysis.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/00268_daily_analysis_report.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/00268_daily_chip_distribution_analysis.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/00268_daily_chip_signal_analysis.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/00268_daily_moneyflow_analysis.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/00268_sell_signal_analysis_sum.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/00268_weekly_TA_analysis.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/00268_weekly_analysis_report.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/00268_weekly_moneyflow_analysis.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/00354_analysis_report.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/00354_buy_signal_analysis_sum.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/00354_daily_TA_indicator_analysis.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/00354_daily_analysis_report.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/00354_daily_chip_distribution_analysis.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/00354_daily_chip_signal_analysis.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/00354_daily_moneyflow_analysis.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/00354_sell_signal_analysis_sum.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/00354_weekly_TA_analysis.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/00354_weekly_analysis_report.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/00354_weekly_moneyflow_analysis.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/00357_analysis_report.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/00357_buy_signal_analysis_sum.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/00357_daily_TA_indicator_analysis.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/00357_daily_analysis_report.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/00357_daily_chip_distribution_analysis.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/00357_daily_chip_signal_analysis.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/00357_daily_moneyflow_analysis.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/00357_sell_signal_analysis_sum.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/00357_weekly_TA_analysis.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/00357_weekly_analysis_report.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/00357_weekly_moneyflow_analysis.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/00371_analysis_report.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/00371_buy_signal_analysis_sum.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/00371_daily_TA_indicator_analysis.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/00371_daily_analysis_report.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/00371_daily_chip_distribution_analysis.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/00371_daily_chip_signal_analysis.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/00371_daily_moneyflow_analysis.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/00371_sell_signal_analysis_sum.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/00371_weekly_TA_analysis.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/00371_weekly_analysis_report.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/00371_weekly_moneyflow_analysis.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/00700_analysis_report.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/00700_buy_signal_analysis_sum.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/00700_daily_TA_indicator_analysis.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/00700_daily_analysis_report.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/00700_daily_chip_distribution_analysis.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/00700_daily_chip_signal_analysis.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/00700_daily_moneyflow_analysis.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/00700_sell_signal_analysis_sum.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/00700_weekly_TA_analysis.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/00700_weekly_analysis_report.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/00700_weekly_moneyflow_analysis.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/00788_analysis_report.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/00788_buy_signal_analysis_sum.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/00788_daily_TA_indicator_analysis.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/00788_daily_analysis_report.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/00788_daily_chip_distribution_analysis.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/00788_daily_chip_signal_analysis.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/00788_daily_moneyflow_analysis.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/00788_sell_signal_analysis_sum.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/00788_weekly_TA_analysis.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/00788_weekly_analysis_report.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/00788_weekly_moneyflow_analysis.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/01093_analysis_report.pdf",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "M",
+        "path": "Report/01093_buy_signal_analysis_sum.pdf",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "M",
+        "path": "Report/01093_daily_TA_indicator_analysis.pdf",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "M",
+        "path": "Report/01093_daily_analysis_report.pdf",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "M",
+        "path": "Report/01093_daily_chip_distribution_analysis.pdf",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "M",
+        "path": "Report/01093_daily_chip_signal_analysis.pdf",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "M",
+        "path": "Report/01093_daily_moneyflow_analysis.pdf",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "M",
+        "path": "Report/01093_sell_signal_analysis_sum.pdf",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "M",
+        "path": "Report/01093_weekly_TA_analysis.pdf",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "M",
+        "path": "Report/01093_weekly_analysis_report.pdf",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "M",
+        "path": "Report/01093_weekly_moneyflow_analysis.pdf",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "M",
+        "path": "Report/01177_analysis_report.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/01177_buy_signal_analysis_sum.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/01177_daily_TA_indicator_analysis.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/01177_daily_analysis_report.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/01177_daily_chip_distribution_analysis.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/01177_daily_chip_signal_analysis.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/01177_daily_moneyflow_analysis.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/01177_sell_signal_analysis_sum.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/01177_weekly_TA_analysis.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/01177_weekly_analysis_report.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/01177_weekly_moneyflow_analysis.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/01951_analysis_report.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/01951_buy_signal_analysis_sum.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/01951_daily_TA_indicator_analysis.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/01951_daily_analysis_report.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/01951_daily_chip_distribution_analysis.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/01951_daily_chip_signal_analysis.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/01951_daily_moneyflow_analysis.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/01951_sell_signal_analysis_sum.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/01951_weekly_TA_analysis.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/01951_weekly_analysis_report.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/01951_weekly_moneyflow_analysis.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/02202_analysis_report.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/02202_buy_signal_analysis_sum.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/02202_daily_TA_indicator_analysis.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/02202_daily_analysis_report.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/02202_daily_chip_distribution_analysis.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/02202_daily_chip_signal_analysis.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/02202_daily_moneyflow_analysis.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/02202_sell_signal_analysis_sum.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/02202_weekly_TA_analysis.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/02202_weekly_analysis_report.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/02202_weekly_moneyflow_analysis.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/02602_analysis_report.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/02602_buy_signal_analysis_sum.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/02602_daily_TA_indicator_analysis.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/02602_daily_analysis_report.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/02602_daily_chip_distribution_analysis.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/02602_daily_chip_signal_analysis.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/02602_daily_moneyflow_analysis.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/02602_sell_signal_analysis_sum.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/02602_weekly_TA_analysis.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/02602_weekly_analysis_report.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/02602_weekly_moneyflow_analysis.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/02611_analysis_report.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/02611_buy_signal_analysis_sum.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/02611_daily_TA_indicator_analysis.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/02611_daily_analysis_report.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/02611_daily_chip_distribution_analysis.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/02611_daily_chip_signal_analysis.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/02611_daily_moneyflow_analysis.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/02611_sell_signal_analysis_sum.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/02611_weekly_TA_analysis.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/02611_weekly_analysis_report.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/02611_weekly_moneyflow_analysis.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/03033_analysis_report.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/03033_buy_signal_analysis_sum.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/03033_daily_TA_indicator_analysis.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/03033_daily_analysis_report.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/03033_daily_chip_distribution_analysis.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/03033_daily_chip_signal_analysis.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/03033_daily_moneyflow_analysis.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/03033_sell_signal_analysis_sum.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/03033_weekly_TA_analysis.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/03033_weekly_analysis_report.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/03033_weekly_moneyflow_analysis.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/03800_analysis_report.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/03800_buy_signal_analysis_sum.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/03800_daily_TA_indicator_analysis.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/03800_daily_analysis_report.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/03800_daily_chip_distribution_analysis.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/03800_daily_chip_signal_analysis.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/03800_daily_moneyflow_analysis.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/03800_sell_signal_analysis_sum.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/03800_weekly_TA_analysis.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/03800_weekly_analysis_report.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/03800_weekly_moneyflow_analysis.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/06060_analysis_report.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/06060_buy_signal_analysis_sum.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/06060_daily_TA_indicator_analysis.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/06060_daily_analysis_report.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/06060_daily_chip_distribution_analysis.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/06060_daily_chip_signal_analysis.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/06060_daily_moneyflow_analysis.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/06060_sell_signal_analysis_sum.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/06060_weekly_TA_analysis.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/06060_weekly_analysis_report.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/06060_weekly_moneyflow_analysis.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/HK_Macro_Dashboard.pdf",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/HK_Macro_Dashboard.txt",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "Report/QCFP_MTF/audit/oos/current_release_oos.json",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "M",
+        "path": "audit/phase1/phase1_acceptance.json",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "audit/phase5/outcome_observation_summary.json",
+        "class": "PHASE5_CANDIDATE_IN_SCOPE"
+      },
+      {
+        "code": "M",
+        "path": "audit/phase5/outcome_sample_evidence.json",
+        "class": "PHASE5_CANDIDATE_IN_SCOPE"
+      },
+      {
+        "code": "M",
+        "path": "audit/phase5/p5f_closure_evidence.json",
+        "class": "PHASE5_CANDIDATE_IN_SCOPE"
+      },
+      {
+        "code": "M",
+        "path": "audit/phase5/p5f_outcome_junit.xml",
+        "class": "PHASE5_CANDIDATE_IN_SCOPE"
+      },
+      {
+        "code": "M",
+        "path": "audit/phase5/phase5_governance_acceptance.json",
+        "class": "PHASE5_CANDIDATE_IN_SCOPE"
+      },
+      {
+        "code": "M",
+        "path": "audit/phase5/phase5_governance_baseline.json",
+        "class": "PHASE5_CANDIDATE_IN_SCOPE"
+      },
+      {
+        "code": "M",
+        "path": "tools/review/merge_project_for_phase5_review.py",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "M",
+        "path": "tools/review/tests/test_merge_project_for_phase5_review.py",
+        "class": "UNAPPROVED_UNRELATED"
+      },
+      {
+        "code": "??",
+        "path": "Core/QCFP_MTF/decision/canonical_publication.py",
+        "class": "PHASE5_CANDIDATE_IN_SCOPE"
+      },
+      {
+        "code": "??",
+        "path": "Core/QCFP_MTF/decision/publication_universe.py",
+        "class": "PHASE5_CANDIDATE_IN_SCOPE"
+      },
+      {
+        "code": "??",
+        "path": "Core/QCFP_MTF/phase5/outcome_binding.py",
+        "class": "PHASE5_CANDIDATE_IN_SCOPE"
+      },
+      {
+        "code": "??",
+        "path": "Core/QCFP_MTF/phase5/publication_universe.py",
+        "class": "PHASE5_CANDIDATE_IN_SCOPE"
+      },
+      {
+        "code": "??",
+        "path": "Core/QCFP_MTF/scripts/phase5_canonical_decision_publish.py",
+        "class": "PHASE5_CANDIDATE_IN_SCOPE"
+      },
+      {
+        "code": "??",
+        "path": "Core/QCFP_MTF/scripts/phase5_canonical_publication_workflow.py",
+        "class": "PHASE5_CANDIDATE_IN_SCOPE"
+      },
+      {
+        "code": "??",
+        "path": "Core/QCFP_MTF/tests/test_phase5/_gov_current.py",
+        "class": "PHASE5_CANDIDATE_IN_SCOPE"
+      },
+      {
+        "code": "??",
+        "path": "Core/QCFP_MTF/tests/test_phase5/test_canonical_decision_publish.py",
+        "class": "PHASE5_CANDIDATE_IN_SCOPE"
+      },
+      {
+        "code": "??",
+        "path": "Core/QCFP_MTF/tests/test_phase5/test_cpub_activation_candidate.py",
+        "class": "PHASE5_CANDIDATE_IN_SCOPE"
+      },
+      {
+        "code": "??",
+        "path": "Core/QCFP_MTF/tests/test_phase5/test_cpub_candidate_binding.py",
+        "class": "PHASE5_CANDIDATE_IN_SCOPE"
+      },
+      {
+        "code": "??",
+        "path": "Core/QCFP_MTF/tests/test_phase5/test_cpub_universe_provider_candidate.py",
+        "class": "PHASE5_CANDIDATE_IN_SCOPE"
+      },
+      {
+        "code": "??",
+        "path": "Core/QCFP_MTF/tests/test_phase5/test_gov_reopen_cpub.py",
+        "class": "PHASE5_CANDIDATE_IN_SCOPE"
+      },
+      {
+        "code": "??",
+        "path": "Core/QCFP_MTF/tests/test_phase5/test_outcome_binding.py",
+        "class": "PHASE5_CANDIDATE_IN_SCOPE"
+      },
+      {
+        "code": "??",
+        "path": "Core/QCFP_MTF/tests/test_phase5/test_publication_universe.py",
+        "class": "PHASE5_CANDIDATE_IN_SCOPE"
+      },
+      {
+        "code": "??",
+        "path": "Doc/Governance_AI_Engineering.md",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Doc/QCFP_MTF/Governed_AI_Implementation_Spec_Standard_Template.md",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Doc/QCFP_MTF/QCFP-MTF_Project_RoadMap_Updates.md",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Doc/QCFP_MTF/QCFP_MTF_AI_Agent_Specification-Aware_Execution_Plan.md",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/audit/coverage_report_20260903.csv",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/audit/coverage_report_20260903.json",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/audit/coverage_report_20260904.csv",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/audit/coverage_report_20260904.json",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/audit/coverage_report_20260907.csv",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/audit/coverage_report_20260907.json",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/audit/coverage_report_20260908.csv",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/audit/coverage_report_20260908.json",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/audit/coverage_report_20260909.csv",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/audit/coverage_report_20260909.json",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/audit/daily_data_trust_20260903.json",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/audit/daily_data_trust_20260903.md",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/audit/daily_data_trust_20260904.json",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/audit/daily_data_trust_20260904.md",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/audit/daily_data_trust_20260907.json",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/audit/daily_data_trust_20260907.md",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/audit/daily_data_trust_20260908.json",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/audit/daily_data_trust_20260908.md",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/audit/daily_data_trust_20260909.json",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/audit/daily_data_trust_20260909.md",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/audit/data_quality_report_20260903.csv",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/audit/data_quality_report_20260903.json",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/audit/data_quality_report_20260904.csv",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/audit/data_quality_report_20260904.json",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/audit/data_quality_report_20260907.csv",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/audit/data_quality_report_20260907.json",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/audit/data_quality_report_20260908.csv",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/audit/data_quality_report_20260908.json",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/audit/data_quality_report_20260909.csv",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/audit/data_quality_report_20260909.json",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/daily_tactical/daily_tactical_00700_20260903.csv",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/daily_tactical/daily_tactical_00700_20260903.json",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/daily_tactical/daily_tactical_00700_20260904.csv",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/daily_tactical/daily_tactical_00700_20260904.json",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/daily_tactical/daily_tactical_00700_20260905.csv",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/daily_tactical/daily_tactical_00700_20260905.json",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/daily_tactical/daily_tactical_00700_20260906.csv",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/daily_tactical/daily_tactical_00700_20260906.json",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/daily_tactical/daily_tactical_00700_20260907.csv",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/daily_tactical/daily_tactical_00700_20260907.json",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/daily_tactical/daily_tactical_00700_20260908.csv",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/daily_tactical/daily_tactical_00700_20260908.json",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/daily_tactical/daily_tactical_00700_20260909.csv",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/daily_tactical/daily_tactical_00700_20260909.json",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/daily_tactical/daily_tactical_20260903.csv",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/daily_tactical/daily_tactical_20260903.json",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/daily_tactical/daily_tactical_20260904.csv",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/daily_tactical/daily_tactical_20260904.json",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/daily_tactical/daily_tactical_20260907.csv",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/daily_tactical/daily_tactical_20260907.json",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/daily_tactical/daily_tactical_20260908.csv",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/daily_tactical/daily_tactical_20260908.json",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/daily_tactical/daily_tactical_20260909.csv",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/daily_tactical/daily_tactical_20260909.json",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/dss/00700_2026-09-04.json",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/dss/00700_2026-09-04.md",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/fusion/decision_00700_20260903.csv",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/fusion/decision_00700_20260903.json",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/fusion/decision_00700_20260904.csv",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/fusion/decision_00700_20260904.json",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/fusion/decision_00700_20260905.csv",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/fusion/decision_00700_20260905.json",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/fusion/decision_00700_20260906.csv",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/fusion/decision_00700_20260906.json",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/fusion/decision_00700_20260907.csv",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/fusion/decision_00700_20260907.json",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/fusion/decision_00700_20260908.csv",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/fusion/decision_00700_20260908.json",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/fusion/decision_00700_20260909.csv",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/fusion/decision_00700_20260909.json",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/fusion/decision_20260903.csv",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/fusion/decision_20260903.json",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/fusion/decision_20260904.csv",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/fusion/decision_20260904.json",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/fusion/decision_20260907.csv",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/fusion/decision_20260907.json",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/fusion/decision_20260908.csv",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/fusion/decision_20260908.json",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/fusion/decision_20260909.csv",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/fusion/decision_20260909.json",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/fusion/mtf_decision_00700_20260903.csv",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/fusion/mtf_decision_00700_20260903.json",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/fusion/mtf_decision_00700_20260904.csv",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/fusion/mtf_decision_00700_20260904.json",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/fusion/mtf_decision_00700_20260905.csv",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/fusion/mtf_decision_00700_20260905.json",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/fusion/mtf_decision_00700_20260906.csv",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/fusion/mtf_decision_00700_20260906.json",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/fusion/mtf_decision_00700_20260907.csv",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/fusion/mtf_decision_00700_20260907.json",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/fusion/mtf_decision_00700_20260908.csv",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/fusion/mtf_decision_00700_20260908.json",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/fusion/mtf_decision_00700_20260909.csv",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/fusion/mtf_decision_00700_20260909.json",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/fusion/mtf_decision_20260903.csv",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/fusion/mtf_decision_20260903.json",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/fusion/mtf_decision_20260904.csv",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/fusion/mtf_decision_20260904.json",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/fusion/mtf_decision_20260907.csv",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/fusion/mtf_decision_20260907.json",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/fusion/mtf_decision_20260908.csv",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/fusion/mtf_decision_20260908.json",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/fusion/mtf_decision_20260909.csv",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/fusion/mtf_decision_20260909.json",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/monthly/monthly_behavior_00700_20260903.csv",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/monthly/monthly_behavior_00700_20260903.json",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/monthly/monthly_behavior_00700_20260904.csv",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/monthly/monthly_behavior_00700_20260904.json",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/monthly/monthly_behavior_00700_20260905.csv",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/monthly/monthly_behavior_00700_20260905.json",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/monthly/monthly_behavior_00700_20260906.csv",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/monthly/monthly_behavior_00700_20260906.json",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/monthly/monthly_behavior_00700_20260907.csv",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/monthly/monthly_behavior_00700_20260907.json",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/monthly/monthly_behavior_00700_20260908.csv",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/monthly/monthly_behavior_00700_20260908.json",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/monthly/monthly_behavior_00700_20260909.csv",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/monthly/monthly_behavior_00700_20260909.json",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/monthly/monthly_behavior_20260903.csv",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/monthly/monthly_behavior_20260903.json",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/monthly/monthly_behavior_20260904.csv",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/monthly/monthly_behavior_20260904.json",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/monthly/monthly_behavior_20260907.csv",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/monthly/monthly_behavior_20260907.json",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/monthly/monthly_behavior_20260908.csv",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/monthly/monthly_behavior_20260908.json",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/monthly/monthly_behavior_20260909.csv",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/monthly/monthly_behavior_20260909.json",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/structural/structural_00700_20260903.csv",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/structural/structural_00700_20260903.json",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/structural/structural_00700_20260904.csv",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/structural/structural_00700_20260904.json",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/structural/structural_00700_20260905.csv",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/structural/structural_00700_20260905.json",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/structural/structural_00700_20260906.csv",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/structural/structural_00700_20260906.json",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/structural/structural_00700_20260907.csv",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/structural/structural_00700_20260907.json",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/structural/structural_00700_20260908.csv",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/structural/structural_00700_20260908.json",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/structural/structural_00700_20260909.csv",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/structural/structural_00700_20260909.json",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/structural/structural_20260903.csv",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/structural/structural_20260903.json",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/structural/structural_20260904.csv",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/structural/structural_20260904.json",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/structural/structural_20260907.csv",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/structural/structural_20260907.json",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/structural/structural_20260908.csv",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/structural/structural_20260908.json",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/structural/structural_20260909.csv",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/structural/structural_20260909.json",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/structural/validate_20260903.csv",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/structural/validate_20260903.json",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/structural/validate_20260904.csv",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/structural/validate_20260904.json",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/structural/validate_20260907.csv",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/structural/validate_20260907.json",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/structural/validate_20260908.csv",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/structural/validate_20260908.json",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/structural/validate_20260909.csv",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/structural/validate_20260909.json",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/weekly/weekly_tactical_00700_20260903.csv",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/weekly/weekly_tactical_00700_20260903.json",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/weekly/weekly_tactical_00700_20260904.csv",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/weekly/weekly_tactical_00700_20260904.json",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/weekly/weekly_tactical_00700_20260905.csv",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/weekly/weekly_tactical_00700_20260905.json",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/weekly/weekly_tactical_00700_20260906.csv",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/weekly/weekly_tactical_00700_20260906.json",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/weekly/weekly_tactical_00700_20260907.csv",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/weekly/weekly_tactical_00700_20260907.json",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/weekly/weekly_tactical_00700_20260908.csv",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/weekly/weekly_tactical_00700_20260908.json",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/weekly/weekly_tactical_00700_20260909.csv",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/weekly/weekly_tactical_00700_20260909.json",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/weekly/weekly_tactical_20260903.csv",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/weekly/weekly_tactical_20260903.json",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/weekly/weekly_tactical_20260904.csv",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/weekly/weekly_tactical_20260904.json",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/weekly/weekly_tactical_20260907.csv",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/weekly/weekly_tactical_20260907.json",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/weekly/weekly_tactical_20260908.csv",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/weekly/weekly_tactical_20260908.json",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/weekly/weekly_tactical_20260909.csv",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "Report/QCFP_MTF/weekly/weekly_tactical_20260909.json",
+        "class": "AMBIGUOUS"
+      },
+      {
+        "code": "??",
+        "path": "audit/phase5/cpub_candidate/",
+        "class": "PHASE5_CANDIDATE_IN_SCOPE"
+      },
+      {
+        "code": "??",
+        "path": "audit/phase5/cpub_candidate_final/",
+        "class": "PHASE5_CANDIDATE_IN_SCOPE"
+      },
+      {
+        "code": "??",
+        "path": "audit/phase5/external_governance_candidates/",
+        "class": "PHASE5_CANDIDATE_IN_SCOPE"
+      },
+      {
+        "code": "??",
+        "path": "audit/phase5/p5_gov_reopen_cpub_activation.json",
+        "class": "PHASE5_CANDIDATE_IN_SCOPE"
+      },
+      {
+        "code": "??",
+        "path": "audit/phase5/p5_gov_reopen_cpub_candidate.json",
+        "class": "PHASE5_CANDIDATE_IN_SCOPE"
+      },
+      {
+        "code": "??",
+        "path": "audit/phase5/p5_gov_reopen_cpub_human_acceptance.json",
+        "class": "PHASE5_CANDIDATE_IN_SCOPE"
+      },
+      {
+        "code": "??",
+        "path": "audit/phase5/p5_gov_reopen_cpub_r1_1_current_state.json",
+        "class": "PHASE5_CANDIDATE_IN_SCOPE"
+      },
+      {
+        "code": "??",
+        "path": "audit/phase5/p5_gov_reopen_cpub_r1_2_1_f1_1_current_state.json",
+        "class": "PHASE5_CANDIDATE_IN_SCOPE"
+      },
+      {
+        "code": "??",
+        "path": "audit/phase5/p5_gov_reopen_cpub_r1_2_1_f1_2_current_state.json",
+        "class": "PHASE5_CANDIDATE_IN_SCOPE"
+      },
+      {
+        "code": "??",
+        "path": "audit/phase5/p5_gov_reopen_cpub_r1_2_1_f1_current_state.json",
+        "class": "PHASE5_CANDIDATE_IN_SCOPE"
+      },
+      {
+        "code": "??",
+        "path": "audit/phase5/p5_gov_reopen_cpub_r1_2_current_state.json",
+        "class": "PHASE5_CANDIDATE_IN_SCOPE"
+      },
+      {
+        "code": "??",
+        "path": "audit/phase5/p5_gov_reopen_cpub_spec.json",
+        "class": "PHASE5_CANDIDATE_IN_SCOPE"
+      },
+      {
+        "code": "??",
+        "path": "audit/phase5/p5_gov_reopen_cpub_spec.md",
+        "class": "PHASE5_CANDIDATE_IN_SCOPE"
+      },
+      {
+        "code": "??",
+        "path": "audit/phase5/p5f_ext_r1_1_r2_semantic_guard_repair.json",
+        "class": "PHASE5_CANDIDATE_IN_SCOPE"
+      },
+      {
+        "code": "??",
+        "path": "audit/phase5/p5f_ext_r1_1_semantic_guard_repair.json",
+        "class": "PHASE5_CANDIDATE_IN_SCOPE"
+      },
+      {
+        "code": "??",
+        "path": "audit/phase5/p5f_ext_r1_1_universe_provider_inventory.txt",
+        "class": "PHASE5_CANDIDATE_IN_SCOPE"
+      },
+      {
+        "code": "??",
+        "path": "audit/phase5/p5f_ext_r1_2_universe_provider_inventory.txt",
+        "class": "PHASE5_CANDIDATE_IN_SCOPE"
+      },
+      {
+        "code": "??",
+        "path": "audit/phase5/p5f_ext_r1_authority_current_state.json",
+        "class": "PHASE5_CANDIDATE_IN_SCOPE"
+      },
+      {
+        "code": "??",
+        "path": "audit/phase5/p5f_ext_r1_canonical_publication_repair.json",
+        "class": "PHASE5_CANDIDATE_IN_SCOPE"
+      },
+      {
+        "code": "??",
+        "path": "audit/phase5/p5f_ext_r1_ledger_writer_inventory.txt",
+        "class": "PHASE5_CANDIDATE_IN_SCOPE"
+      },
+      {
+        "code": "??",
+        "path": "audit/phase5/p5f_external_db_blocker.json",
+        "class": "PHASE5_CANDIDATE_IN_SCOPE"
+      },
+      {
+        "code": "??",
+        "path": "audit/phase5/p5f_r2/00_SOURCE_P5F_FINAL_PACKAGING_CORRECTION_R2_base_plan.md",
+        "class": "PHASE5_CANDIDATE_IN_SCOPE"
+      },
+      {
+        "code": "??",
+        "path": "audit/phase5/p5f_r2/00_SOURCE_Spec_Aware_Execution_Revision.md",
+        "class": "PHASE5_CANDIDATE_IN_SCOPE"
+      },
+      {
+        "code": "??",
+        "path": "audit/phase5/p5f_r2/01_governed_execution_plan.json",
+        "class": "PHASE5_CANDIDATE_IN_SCOPE"
+      },
+      {
+        "code": "??",
+        "path": "audit/phase5/p5f_r2/02_stage_g_preflight_evidence.json",
+        "class": "PHASE5_CANDIDATE_IN_SCOPE"
+      },
+      {
+        "code": "??",
+        "path": "audit/phase5/p5f_r2/03_r2_01b_r2_09_r2_11b_evidence.json",
+        "class": "PHASE5_CANDIDATE_IN_SCOPE"
+      },
+      {
+        "code": "??",
+        "path": "audit/phase5/p5f_r2/04_r2_12_prehuman_review_evidence.json",
+        "class": "PHASE5_CANDIDATE_IN_SCOPE"
+      },
+      {
+        "code": "??",
+        "path": "audit/phase5/p5f_r2/05_relocation_and_r2_12_evidence.json",
+        "class": "PHASE5_CANDIDATE_IN_SCOPE"
+      },
+      {
+        "code": "??",
+        "path": "audit/phase5/p5f_r2/06_r2_08_human_scoped_authorization.json",
+        "class": "PHASE5_CANDIDATE_IN_SCOPE"
+      },
+      {
+        "code": "??",
+        "path": "audit/phase5/p5f_r2/07_r2_08_g2_g3_classification_and_scope_blocker.json",
+        "class": "PHASE5_CANDIDATE_IN_SCOPE"
+      },
+      {
+        "code": "??",
+        "path": "audit/phase5/p5f_r2/08_projection_state_evidence.json",
+        "class": "PHASE5_CANDIDATE_IN_SCOPE"
+      },
+      {
+        "code": "??",
+        "path": "audit/phase5/p5f_r2/09_rev8_governance_bootstrap_h1_request.json",
+        "class": "PHASE5_CANDIDATE_IN_SCOPE"
+      },
+      {
+        "code": "??",
+        "path": "audit/phase5/p5f_r2/10_h1_materialization_evidence.json",
+        "class": "PHASE5_CANDIDATE_IN_SCOPE"
+      },
+      {
+        "code": "??",
+        "path": "audit/phase5/p5f_r2/11_h1_post_materialization_test_blocker.json",
+        "class": "PHASE5_CANDIDATE_IN_SCOPE"
+      },
+      {
+        "code": "??",
+        "path": "audit/phase5/p5f_r2/12_h1b_fix2_bootstrap_request.json",
+        "class": "PHASE5_CANDIDATE_IN_SCOPE"
+      },
+      {
+        "code": "??",
+        "path": "audit/phase5/p5f_r2/13_h1b_materialization_evidence.json",
+        "class": "PHASE5_CANDIDATE_IN_SCOPE"
+      },
+      {
+        "code": "??",
+        "path": "audit/phase5/p5f_r2/14_h1c_transition_candidate_record.json",
+        "class": "PHASE5_CANDIDATE_IN_SCOPE"
+      },
+      {
+        "code": "??",
+        "path": "audit/phase5/p5f_r2/15_h1c_package_and_validation.json",
+        "class": "PHASE5_CANDIDATE_IN_SCOPE"
+      },
+      {
+        "code": "??",
+        "path": "audit/phase5/p5f_r2/16_h1c_gen2_package_and_validation.json",
+        "class": "PHASE5_CANDIDATE_IN_SCOPE"
+      },
+      {
+        "code": "??",
+        "path": "audit/phase5/p5f_r2/17_h1c_materialization_evidence.json",
+        "class": "PHASE5_CANDIDATE_IN_SCOPE"
+      },
+      {
+        "code": "??",
+        "path": "audit/phase5/p5f_r2/18_h1d_package_and_validation.json",
+        "class": "PHASE5_CANDIDATE_IN_SCOPE"
+      },
+      {
+        "code": "??",
+        "path": "audit/phase5/p5f_r2/19_h1d2_package_and_validation.json",
+        "class": "PHASE5_CANDIDATE_IN_SCOPE"
+      },
+      {
+        "code": "??",
+        "path": "audit/phase5/p5f_r2/20_h1e3_evidence.json",
+        "class": "PHASE5_CANDIDATE_IN_SCOPE"
+      },
+      {
+        "code": "??",
+        "path": "audit/phase5/p5f_r2/21_h1e3_replay_result.json",
+        "class": "PHASE5_CANDIDATE_IN_SCOPE"
+      },
+      {
+        "code": "??",
+        "path": "audit/phase5/p5f_r2/22_phase4_replayability_successor_policy.json",
+        "class": "PHASE5_CANDIDATE_IN_SCOPE"
+      },
+      {
+        "code": "??",
+        "path": "audit/phase5/p5f_r2/23_phase4_replayability_state_evidence.json",
+        "class": "PHASE5_CANDIDATE_IN_SCOPE"
+      },
+      {
+        "code": "??",
+        "path": "audit/phase5/p5f_r2/24_h1e4_package_and_validation.json",
+        "class": "PHASE5_CANDIDATE_IN_SCOPE"
+      },
+      {
+        "code": "??",
+        "path": "audit/phase5/p5f_r2/25_h1f_package_and_validation.json",
+        "class": "PHASE5_CANDIDATE_IN_SCOPE"
+      },
+      {
+        "code": "??",
+        "path": "audit/phase5/p5f_r2/26_h1f_materialization_commit_evidence.json",
+        "class": "PHASE5_CANDIDATE_IN_SCOPE"
+      },
+      {
+        "code": "??",
+        "path": "audit/phase5/p5f_r2/28_h1g_completed_acceptance_evidence.json",
+        "class": "PHASE5_CANDIDATE_IN_SCOPE"
+      },
+      {
+        "code": "??",
+        "path": "audit/phase5/p5f_r2/29_h1i_package_and_validation.json",
+        "class": "PHASE5_CANDIDATE_IN_SCOPE"
+      },
+      {
+        "code": "??",
+        "path": "audit/phase5/p5f_r2/30_h1i_g2_h1j_evidence.json",
+        "class": "PHASE5_CANDIDATE_IN_SCOPE"
+      },
+      {
+        "code": "??",
+        "path": "audit/phase5/p5f_r2/31_h1j_completed_and_h1h0_audit.json",
+        "class": "PHASE5_CANDIDATE_IN_SCOPE"
+      },
+      {
+        "code": "??",
+        "path": "audit/phase5/p5f_r2/32_h1h_package_and_validation.json",
+        "class": "PHASE5_CANDIDATE_IN_SCOPE"
+      },
+      {
+        "code": "??",
+        "path": "audit/phase5/p5f_r2/33_final_cpub_current_candidate.json",
+        "class": "PHASE5_CANDIDATE_IN_SCOPE"
+      },
+      {
+        "code": "??",
+        "path": "audit/phase5/p5f_r2/34_r2_01c_convergence_proof.json",
+        "class": "PHASE5_CANDIDATE_IN_SCOPE"
+      },
+      {
+        "code": "??",
+        "path": "audit/phase5/p5f_r2/35_r2_01d_candidate.json",
+        "class": "PHASE5_CANDIDATE_IN_SCOPE"
+      },
+      {
+        "code": "??",
+        "path": "audit/phase5/p5f_r2/36_r2_01e_candidate.json",
+        "class": "PHASE5_CANDIDATE_IN_SCOPE"
+      },
+      {
+        "code": "??",
+        "path": "audit/phase5/p5f_r2/37_h1k_package_and_validation.json",
+        "class": "PHASE5_CANDIDATE_IN_SCOPE"
+      },
+      {
+        "code": "??",
+        "path": "audit/phase5/p5f_r2/38_r2_12_h1k_materialized_evidence.json",
+        "class": "PHASE5_CANDIDATE_IN_SCOPE"
+      },
+      {
+        "code": "??",
+        "path": "audit/phase5/p5f_r2/39_r2_09_r2_11b_r2_12_h1k_convergence_evidence.json",
+        "class": "PHASE5_CANDIDATE_IN_SCOPE"
+      },
+      {
+        "code": "??",
+        "path": "audit/phase5/p5f_r2/40_h2_candidate4_schema_closure_evidence.json",
+        "class": "PHASE5_CANDIDATE_IN_SCOPE"
+      },
+      {
+        "code": "??",
+        "path": "audit/phase5/p5f_r2/41_h2_authority_acceptance_completed_evidence.json",
+        "class": "PHASE5_CANDIDATE_IN_SCOPE"
+      },
+      {
+        "code": "??",
+        "path": "audit/phase5/p5f_r2/42_r2_13b_candidate_evidence.json",
+        "class": "PHASE5_CANDIDATE_IN_SCOPE"
+      },
+      {
+        "code": "??",
+        "path": "audit/phase5/p5f_r2/43_r2_13b_acceptance_completed_r2_14_preflight_evidence.json",
+        "class": "PHASE5_CANDIDATE_IN_SCOPE"
+      },
+      {
+        "code": "??",
+        "path": "audit/phase5/p5f_r2/44_r2_14_successor_evidence.json",
+        "class": "PHASE5_CANDIDATE_IN_SCOPE"
+      },
+      {
+        "code": "??",
+        "path": "audit/phase5/p5f_r2/45_r2_14_activation_evidence.json",
+        "class": "PHASE5_CANDIDATE_IN_SCOPE"
+      },
+      {
+        "code": "??",
+        "path": "audit/phase5/p5f_r2/46_r2_15_preflight_fail_closed_evidence.json",
+        "class": "PHASE5_CANDIDATE_IN_SCOPE"
+      },
+      {
+        "code": "??",
+        "path": "audit/phase5/p5f_r2/47_r2_15b_root_cause_evidence.json",
+        "class": "PHASE5_CANDIDATE_IN_SCOPE"
+      },
+      {
+        "code": "??",
+        "path": "audit/phase5/p5f_r2/48_r2_15c_repair_candidate_evidence.json",
+        "class": "PHASE5_CANDIDATE_IN_SCOPE"
+      },
+      {
+        "code": "??",
+        "path": "audit/phase5/p5f_r2/49_r2_15c_validation_closed_evidence.json",
+        "class": "PHASE5_CANDIDATE_IN_SCOPE"
+      },
+      {
+        "code": "??",
+        "path": "audit/phase5/p5f_r2/50_r2_15c_materialization_evidence.json",
+        "class": "PHASE5_CANDIDATE_IN_SCOPE"
+      },
+      {
+        "code": "??",
+        "path": "audit/phase5/p5f_r2/51_r2_15d_successor_identity_evidence.json",
+        "class": "PHASE5_CANDIDATE_IN_SCOPE"
+      },
+      {
+        "code": "??",
+        "path": "audit/phase5/p5f_r2/52_r2_15e_execution_evidence.json",
+        "class": "PHASE5_CANDIDATE_IN_SCOPE"
+      },
+      {
+        "code": "??",
+        "path": "audit/phase5/p5f_r2/53_r2_15f_rollback_repair_candidate_evidence.json",
+        "class": "PHASE5_CANDIDATE_IN_SCOPE"
+      },
+      {
+        "code": "??",
+        "path": "audit/phase5/p5f_r2/54_r2_15f_successor_evidence.json",
+        "class": "PHASE5_CANDIDATE_IN_SCOPE"
+      },
+      {
+        "code": "??",
+        "path": "audit/phase5/p5f_r2/55_r2_15f_chain_a_convergence_evidence.json",
+        "class": "PHASE5_CANDIDATE_IN_SCOPE"
+      },
+      {
+        "code": "??",
+        "path": "audit/phase5/p5f_r2/56_r2_15f_materialization_execution_evidence.json",
+        "class": "PHASE5_CANDIDATE_IN_SCOPE"
+      },
+      {
+        "code": "??",
+        "path": "audit/phase5/p5f_r2/57_r2_15f_post_activation_preflight_evidence.json",
+        "class": "PHASE5_CANDIDATE_IN_SCOPE"
+      },
+      {
+        "code": "??",
+        "path": "audit/phase5/p5f_r2/58_r2_15f_r15b_field_diagnostic_evidence.json",
+        "class": "PHASE5_CANDIDATE_IN_SCOPE"
+      },
+      {
+        "code": "??",
+        "path": "audit/phase5/p5f_r2/59_r2_15f_recovery_execution_evidence.json",
+        "class": "PHASE5_CANDIDATE_IN_SCOPE"
+      },
+      {
+        "code": "??",
+        "path": "audit/phase5/p5f_r2/60_r2_15f_recovery_gate_fail_diagnostic_evidence.json",
+        "class": "PHASE5_CANDIDATE_IN_SCOPE"
+      },
+      {
+        "code": "??",
+        "path": "audit/phase5/p5f_r2/61_r2_15f_recovery_execution_evidence_second_attempt.json",
+        "class": "PHASE5_CANDIDATE_IN_SCOPE"
+      },
+      {
+        "code": "??",
+        "path": "audit/phase5/p5f_r2/62_r2_16_projection_evidence.json",
+        "class": "PHASE5_CANDIDATE_IN_SCOPE"
+      },
+      {
+        "code": "??",
+        "path": "audit/phase5/p5f_r2/63_p5f_r2_17_f10_regression_evidence.json",
+        "class": "PHASE5_CANDIDATE_IN_SCOPE"
+      },
+      {
+        "code": "??",
+        "path": "audit/phase5/p5f_r2/64_test_alignment_correction_candidate_evidence.json",
+        "class": "PHASE5_CANDIDATE_IN_SCOPE"
+      },
+      {
+        "code": "??",
+        "path": "audit/phase5/p5f_r2/65_test_alignment_materialization_f10_evidence.json",
+        "class": "PHASE5_CANDIDATE_IN_SCOPE"
+      },
+      {
+        "code": "??",
+        "path": "audit/phase5/p5f_r2/66_p5f_r2_18_f11_independent_review_evidence.json",
+        "class": "PHASE5_CANDIDATE_IN_SCOPE"
+      },
+      {
+        "code": "??",
+        "path": "audit/phase5/p5f_r2/h2_cpub_authority_acceptance.json",
+        "class": "PHASE5_CANDIDATE_IN_SCOPE"
+      },
+      {
+        "code": "??",
+        "path": "audit/phase5/p5f_r2/rev8_governance_baseline_acceptance.json",
+        "class": "PHASE5_CANDIDATE_IN_SCOPE"
+      },
+      {
+        "code": "??",
+        "path": "tools/review/merge_project_for_phase4_review_v3.py",
+        "class": "UNAPPROVED_UNRELATED"
+      }
+    ]
+  },
+  "machine_action": "STOP FOR HUMAN REVIEW. F12 = CLOSED is NOT authorized. UNAPPROVED_FINAL_COMMIT_SCOPE must be resolved (approved allowlist or clean-up) before commit/push/remote-backed identity can proceed. P5-F freeze, P5-G, Phase6 NOT authorized."
+}

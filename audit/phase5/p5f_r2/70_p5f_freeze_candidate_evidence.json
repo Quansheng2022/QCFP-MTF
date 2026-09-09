@@ -1,0 +1,91 @@
+{
+  "schema": "P5F-R2-P5-F-FREEZE-CANDIDATE-EVIDENCE-1",
+  "generated_at_utc": "2026-09-09T14:10:59+00:00",
+  "verdict": "PASS_CANDIDATE",
+  "status": "CANDIDATE-ONLY; not committed, not tagged",
+  "precondition_results": {
+    "head_equals_payload": true,
+    "head_tree": true,
+    "remote_commit": true,
+    "rev5_exact": true,
+    "state_16": true,
+    "01093_once": true,
+    "R15_A": true,
+    "R15_B2": true,
+    "manifest": true,
+    "resolver_active": true
+  },
+  "specifications": {
+    "wp5_3_json": "870c0e237892b43168d9afc4cefa97b7cc1d957556dfc6e5caaee762796bb87b",
+    "wp5_3_md": "14f9e2800d280ec932f820e51e14a286d3f928f82bef3073d32546308edc28db"
+  },
+  "closure_gates": {
+    "F10": "CLOSED / PASS",
+    "F10_evidence_65": "0664c46e584653f5a7f5a0c0ca96d92058f5a3d92ee71b6ff459f97480d420e8",
+    "F11": "CLOSED / PASS",
+    "F11_evidence_66": "b45e272e56bb9b8a32006a883408be9c294f35650a536f76f0e3b9d6582070a5",
+    "F12": "CLOSED / PASS",
+    "F12_evidence_69": "b83dee508eec7766fa639c92079b09484df1f20fa69fe13d687f278a71d3e611"
+  },
+  "git_identity": {
+    "payload_commit": "c9155ae4913f2f229cad222ee3dd0c521004aacc",
+    "commit_tree": "68864459fbd81072437637703e4e32a6740def7c",
+    "branch": "codex/phase5-shadow-operation",
+    "remote": "https://github.com/Quansheng2022/QCFP-MTF.git",
+    "remote_branch_commit": "c9155ae4913f2f229cad222ee3dd0c521004aacc",
+    "rev5_allowlist": "b6226b5db9d743c7e547b94befc9a12d2bb3bbab94547d9bf88f1684fce0cf6c",
+    "rev5_validation": "f7bdc587d7f1d58c78c14541aa0d07afba8bf5a9bdf580f0a1a06d113ce91d3f"
+  },
+  "active_authority": {
+    "chain_a_manifest": "113e61363eabd83841557e5629b4dea99785c460152d953803a7061faad893d2",
+    "chain_a_package": "d293ee10fbb7da79b31f27208f2fb6b0b0462b50bb24e78b1c635ebe30d78fdc",
+    "governance_baseline": "0b0b349a2ceb6f02814a6ef64a23618a24d8e4ff94ae756e3786276a31aeda4f",
+    "governance_acceptance": "07213f328c5c71e054fc8ffd6888bb884a6baaf137e25bdce25c59ea809c331c",
+    "chain_b_decision_ledger": "991fedf52d2540982b7a921dbf265c30ad8c63a7811b66d4b881da41f560bbc4",
+    "canonical_publication": "480ddd02a367b5cd091fff5f98ecac5aaf1c8bfed924c34f16ee629712ccc06f",
+    "publication_universe": "2f5379d7451f36ed1566c74be05a9ccb223b952e877f4450614edb10bed37cc6",
+    "resolver": "ACTIVE"
+  },
+  "decision_state": {
+    "R15_A": "4f9c4e631b0f7e96322511c9d0be120dc93ce156c5a236a2061ef3281e24a63a",
+    "R15_B2": "2a7ec1d807e84cb657daff6a96bc44ea805abc40d2b69289f960c76f05788fec",
+    "dataset_manifest": "4d6f06935cae6038",
+    "projection_evidence": "2f31b2bc3705999f81bca79aa24c711504915584585ed7a915ab3202c16e9923",
+    "projection": "ON",
+    "canonical_ledger": 16,
+    "01093": "exactly once"
+  },
+  "identity_lineage": {
+    "historical_R15_B": "163f067aab4c611a2a1a40d9bd79c5101cfb55f23d82c0b033abdaa3d0178ec2",
+    "prior_R15_B_prime": "45158cedce27c9e01f294e33a9755cdfcef2f81a38288e636aeec9a4324e410c",
+    "fresh_R15_B2": "2a7ec1d807e84cb657daff6a96bc44ea805abc40d2b69289f960c76f05788fec",
+    "distinctness_preserved": true
+  },
+  "immutable_lineage_evidence_61_69": {
+    "61": "b2befd991c063509ddf45af831e701147a8d5dfdd925b1798bf6c9fc1edfd40e",
+    "62": "2f31b2bc3705999f81bca79aa24c711504915584585ed7a915ab3202c16e9923",
+    "63": "27cb3f8d4ff143a28cf2415032f0c4bbeceea02664612f1cb69d68905662e8ff",
+    "64": "3deac2239d23d422ae242cfa45e224abe1a1370b3fd7e3ffdd259a94cb7af453",
+    "65": "0664c46e584653f5a7f5a0c0ca96d92058f5a3d92ee71b6ff459f97480d420e8",
+    "66": "b45e272e56bb9b8a32006a883408be9c294f35650a536f76f0e3b9d6582070a5",
+    "67": "3490b74c8a81d4b1ffdff0a3b0104a87ad88ea3f5dd78a7dc6893cbe49313520",
+    "68_allowlist": "b6226b5db9d743c7e547b94befc9a12d2bb3bbab94547d9bf88f1684fce0cf6c",
+    "68_validation": "f7bdc587d7f1d58c78c14541aa0d07afba8bf5a9bdf580f0a1a06d113ce91d3f",
+    "69": "b83dee508eec7766fa639c92079b09484df1f20fa69fe13d687f278a71d3e611"
+  },
+  "f11_warning_disposition": {
+    "former_warning": "standalone WP5.3 frozen-pin lineage",
+    "status": "PROSPECTIVELY_HARDENED_IN_F12",
+    "not_retroactive": true,
+    "historical_evidence_56_65_immutable": true
+  },
+  "counts": {
+    "blocker": 0,
+    "error": 0,
+    "warning": 0
+  },
+  "blockers": [],
+  "errors": [],
+  "warnings": [],
+  "machine_action": "STOP FOR HUMAN EXACT-BYTE REVIEW. No freeze commit, no Git tag, no Phase5 implementation change. P5-G, Phase6 NOT authorized."
+}

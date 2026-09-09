@@ -1,0 +1,12 @@
+{
+  "schema": "P5F-R2-R2-19-F12-SCOPED-STAGING-VALIDATION-5",
+  "generated_at_utc": "2026-09-09T13:47:22+00:00",
+  "verdict": "PASS",
+  "candidate_sha256": "b6226b5db9d743c7e547b94befc9a12d2bb3bbab94547d9bf88f1684fce0cf6c",
+  "allowlist_path_count": 49,
+  "staged_path_count": 49,
+  "path_difference_count": 0,
+  "staged_sha_mismatch_count": 0,
+  "unrelated_or_ambiguous_staged_count": 0,
+  "index_restored_after_validation": true
+}

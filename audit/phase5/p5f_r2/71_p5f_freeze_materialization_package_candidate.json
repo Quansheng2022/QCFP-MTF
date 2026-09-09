@@ -1,0 +1,112 @@
+{
+  "schema": "P5F-R2-P5F-FREEZE-MATERIALIZATION-PACKAGE-CANDIDATE-1",
+  "status": "CANDIDATE-ONLY; awaiting Human exact-byte approval",
+  "generated_at_utc": "2026-09-09T14:17:10+00:00",
+  "binding": {
+    "evidence_70": "01affee2f7e691917769a0e26abba605ce4b9db03540522d4c03220290ff8331",
+    "evidence_69": "b83dee508eec7766fa639c92079b09484df1f20fa69fe13d687f278a71d3e611",
+    "rev5_allowlist": "b6226b5db9d743c7e547b94befc9a12d2bb3bbab94547d9bf88f1684fce0cf6c",
+    "rev5_validation": "f7bdc587d7f1d58c78c14541aa0d07afba8bf5a9bdf580f0a1a06d113ce91d3f",
+    "payload_commit": "c9155ae4913f2f229cad222ee3dd0c521004aacc",
+    "payload_tree": "68864459fbd81072437637703e4e32a6740def7c",
+    "remote": "https://github.com/Quansheng2022/QCFP-MTF.git",
+    "branch": "codex/phase5-shadow-operation"
+  },
+  "freeze_package_scope": {
+    "file_count": 5,
+    "files": [
+      {
+        "path": "audit/phase5/p5f_r2/67_p5f_r2_19_f12_remote_backed_identity_evidence.json",
+        "sha256": "3490b74c8a81d4b1ffdff0a3b0104a87ad88ea3f5dd78a7dc6893cbe49313520",
+        "size": 84789,
+        "git_status": "untracked (not in payload commit)",
+        "tracked": false,
+        "reason_for_inclusion": "F12 fail-closed evidence; Human approved (allowlist-generation decision; F12 closure lineage)",
+        "human_authority_anchor": "HUMAN_DECISION_F12_FAIL_CLOSED_APPROVE"
+      },
+      {
+        "path": "audit/phase5/p5f_r2/68_f12_final_commit_scope_allowlist_candidate_rev5.json",
+        "sha256": "b6226b5db9d743c7e547b94befc9a12d2bb3bbab94547d9bf88f1684fce0cf6c",
+        "size": 193822,
+        "git_status": "untracked (not in payload commit)",
+        "tracked": false,
+        "reason_for_inclusion": "Final-commit allowlist REV5; Human exact-byte approved",
+        "human_authority_anchor": "HUMAN_DECISION_REV5_FINAL_COMMIT_SCOPE_APPROVE"
+      },
+      {
+        "path": "audit/phase5/p5f_r2/68_f12_final_commit_scope_validation_rev5.json",
+        "sha256": "f7bdc587d7f1d58c78c14541aa0d07afba8bf5a9bdf580f0a1a06d113ce91d3f",
+        "size": 433,
+        "git_status": "untracked (not in payload commit)",
+        "tracked": false,
+        "reason_for_inclusion": "REV5 scoped-staging validation; Human approved with REV5",
+        "human_authority_anchor": "HUMAN_DECISION_REV5_FINAL_COMMIT_SCOPE_APPROVE"
+      },
+      {
+        "path": "audit/phase5/p5f_r2/69_p5f_r2_19_f12_remote_backed_identity_evidence.json",
+        "sha256": "b83dee508eec7766fa639c92079b09484df1f20fa69fe13d687f278a71d3e611",
+        "size": 8267,
+        "git_status": "untracked (not in payload commit)",
+        "tracked": false,
+        "reason_for_inclusion": "F12 remote-backed closure evidence; Human approved (F12 closure)",
+        "human_authority_anchor": "HUMAN_DECISION_F12_CLOSURE_APPROVE"
+      },
+      {
+        "path": "audit/phase5/p5f_r2/70_p5f_freeze_candidate_evidence.json",
+        "sha256": "01affee2f7e691917769a0e26abba605ce4b9db03540522d4c03220290ff8331",
+        "size": 4370,
+        "git_status": "untracked (not in payload commit)",
+        "tracked": false,
+        "reason_for_inclusion": "P5-F freeze candidate; Human accepted",
+        "human_authority_anchor": "HUMAN_DECISION_P5F_FREEZE_CANDIDATE_APPROVE"
+      }
+    ],
+    "no_directory_authorization": true,
+    "no_wildcards": true,
+    "no_unrelated_cleanup": true,
+    "no_phase5_implementation_semantic_changes": true,
+    "self_inclusion_note": "Evidence 71 itself is excluded from this enumerated package and will be added only under a subsequent explicit freeze-commit Human authorization."
+  },
+  "tag_candidate": {
+    "tag_name": "qcfp-mtf-p5f-freeze-v1",
+    "tag_type": "annotated",
+    "target_commit_policy": "the freeze-materialization commit (future child of payload commit c9155ae4913f2f229cad222ee3dd0c521004aacc that adds exactly the freeze-package files above)",
+    "annotation_content": "P5-F FROZEN/CLOSED candidate marker: payload c9155ae4913f2f229cad222ee3dd0c521004aacc; freeze package evidence 67/68rev5/69/70",
+    "relationship_to_payload": "payload commit remains the Phase5 implementation/authority base; freeze commit adds governance/closure artifacts only",
+    "candidate_only": true
+  },
+  "wp53": {
+    "json": "870c0e237892b43168d9afc4cefa97b7cc1d957556dfc6e5caaee762796bb87b",
+    "md": "14f9e2800d280ec932f820e51e14a286d3f928f82bef3073d32546308edc28db"
+  },
+  "authority_state": {
+    "chain_a_manifest": "113e61363eabd83841557e5629b4dea99785c460152d953803a7061faad893d2",
+    "chain_a_package": "d293ee10fbb7da79b31f27208f2fb6b0b0462b50bb24e78b1c635ebe30d78fdc",
+    "chain_b_ledger": "991fedf52d2540982b7a921dbf265c30ad8c63a7811b66d4b881da41f560bbc4",
+    "governance_baseline": "0b0b349a2ceb6f02814a6ef64a23618a24d8e4ff94ae756e3786276a31aeda4f",
+    "governance_acceptance": "07213f328c5c71e054fc8ffd6888bb884a6baaf137e25bdce25c59ea809c331c",
+    "R15_A": "4f9c4e631b0f7e96322511c9d0be120dc93ce156c5a236a2061ef3281e24a63a",
+    "R15_B2": "2a7ec1d807e84cb657daff6a96bc44ea805abc40d2b69289f960c76f05788fec",
+    "dataset_manifest": "4d6f06935cae6038",
+    "projection": "ON",
+    "projection_evidence": "2f31b2bc3705999f81bca79aa24c711504915584585ed7a915ab3202c16e9923"
+  },
+  "identity_lineage_distinct": {
+    "historical_R15_B": "163f067aab4c611a2a1a40d9bd79c5101cfb55f23d82c0b033abdaa3d0178ec2",
+    "prior_R15_B_prime": "45158cedce27c9e01f294e33a9755cdfcef2f81a38288e636aeec9a4324e410c",
+    "fresh_R15_B2": "2a7ec1d807e84cb657daff6a96bc44ea805abc40d2b69289f960c76f05788fec"
+  },
+  "integrity_checks": {
+    "payload_commit_remote_backed_unchanged": true,
+    "zero_implementation_semantic_changes": true,
+    "proposed_path_set_exact": true,
+    "every_included_byte_has_authority": true,
+    "excluded_dirty_work_untouched": true,
+    "no_historical_evidence_rewritten": true,
+    "f11_warning_disposition": "PROSPECTIVELY_HARDENED_IN_F12",
+    "blocker": 0,
+    "error": 0
+  },
+  "blockers": [],
+  "machine_action": "STOP FOR HUMAN EXACT-BYTE REVIEW. Do NOT stage permanently; do NOT create freeze commit or Git tag; do NOT push. P5-F = FROZEN/CLOSED, P5-G, Phase6 NOT authorized."
+}
